@@ -23,7 +23,7 @@ script:
 
 before_deploy:
     # rename the pdf file
-    - cp main.pdf bulatov.pdf
+    - cp main.pdf bulatov2.pdf
     # set up git user name and tag this commit
     - git config --local user.name "travis"
     - git config --local user.email "travis"
