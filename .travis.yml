@@ -1,0 +1,22 @@
+dist: bionic
+
+language: tex
+
+addons:
+  apt:
+    packages:
+      # required to build
+      - cm-super
+      - texlive
+      - texlive-lang-cyrillic
+      - texlive-science
+      - texlive-latex-extra
+      - latexmk
+
+before_install:
+    # display Ubuntu version
+    lsb_release -a
+
+script:
+    make LATEXMK="./latexmk/latexmk.pl" LATEXMK_FLAGS="-Werror"
+
