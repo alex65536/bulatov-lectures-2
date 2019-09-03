@@ -13,10 +13,29 @@ addons:
       - texlive-latex-extra
       - latexmk
 
-before_install:
-    # display Ubuntu version
-    lsb_release -a
-
 script:
-    make LATEXMK="./latexmk/latexmk.pl" LATEXMK_FLAGS="-Werror"
+    make LATEXMK_FLAGS="-Werror"
 
+before_deploy:
+    # rename the pdf file
+    - cp main.pdf bulatov.pdf
+    # set up git user name and tag this commit
+    - git config --local user.name "travis"
+    - git config --local user.email "travis"
+    - export TRAVIS_TAG=latest
+    - git tag -f $TRAVIS_TAG
+
+deploy:
+  provider: releases
+  api_key:
+    secure: gF5iWU98HWZ4LPgfJ3JzFXMGpmPTR270YrJrHA1HwIVdufaQI88/8p8/DcA52ft27t6mG8LRRIGwtN92yiVUl6HObm3jsmTDSGJpeYepvZ81/Xr8guoUyXMq8F82a2McVF9CU8S/dTw03pAVuxE/au+yX8TRN2OjcIs/Wjw5M9bfdd3VztkIDaCt5POvbKez3z4MgL9p04ZMa04rzcYbDnPlGgRuwGSWVAe801n5QXSfsTo40V/DN58PklZWn5JE+BJIZmsu3yBl3sn66mbSRdOKQ5ATnXg05thcuzzDBV9rC4jGjWcReaWtMvbJzcB+O86XfyIR+DSv3nuTJ6EabnlMF5YtxOFzepjcjcGseqMmz+MBe9oKmti3kj6nf/Ki/jhSAZTUEHg7KkbxyuPFinrFKzZNCbDX+kpdsrDkxIw3+tyU/bwkVKDmcP1uK6I4L1N7S8doMlyuyjLgEJAn37CUAyHPbKC55PlxCktB++kmGQ/oYE/xISLkaewGSiNbIGa10b5yIs1Z4xuFSNbknekpcnVLurrT06teFPdv1B8nWUeocQi5s3UmS8p6YztHjMmu0PxpQXA3lYQtg5w2tfbgcG+rzA8oWwxVR1DjljhVptYv5YBSdT0mDPxiGxpl+c8gaAfU06WJTYdaJ+xwJLoAXVl+Yc6EGJSmrMgsgfU=
+  file:
+    - "bulatov.pdf"
+  skip_cleanup: true
+  overwrite: true
+  on:
+    branch: master
+
+tags:
+  except:
+    - latest
