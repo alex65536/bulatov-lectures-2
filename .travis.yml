@@ -35,7 +35,7 @@ deploy:
   api_key:
     secure: "SLYtB9Xhv7vrBtZOsqdepktfBXsR/bQ5wbCEOeqAfL9CWN8KVeB5Lp6S05CxSVqPVk3ik368hqhpZdiO/qaoRAA8+UKVKfCoScFBlCHBLa/NPIvWGu8h4LVJJe8Z4hV7z3QWAj08mP/rwqxUSDjNo8c/tsLFxtQVd1XTvKFcyLQnOKRiUPjRVmT82bAEkJVwwzTewcBnQfjgO2q14kAavlGMrlVF5egs98oz2LPQYWmxiRjvjIh7POe73r3frR+2rJezVyin0SqojIJS0zngePaeNThJVTqB980w3yqytuSR+MBOi52c2rV4jiZGQSxGJWiyCx5W/23OIVCRSEOQbw6gq52OSpcfNmXNtnh9HoQXgHiYVAy/hKGTGdAUdcvU6wkLk67hFKrVqeMlDFrrUlxnCnOyTckSluvTAFiGpQfCKaqMhWBnMbhWEw45Ko0IL9JdC+hSo31OHyd+BUEb1/X7tYgriWA/plUi+CsQPvnCP0ffpSC869oI4iuAQJciw3JgXZa37LbjYul3ZGzl6U3asDekkYbBc6aKcLIbLRbmbX1Sk/rTomWuTKwTKWs/IEEyOvUeiWQYxRY0dLB5fToh2kyKWCzFRsJ2HQZgoM48L+Qgen+gcFylDSY1DKvyrIMQaI3Yv4Ue2rXrpxD/4eLcc6qIyNgOa8GmjxqMVH8="
   file:
-    - "bulatov.pdf"
+    - "bulatov2.pdf"
   skip_cleanup: true
   overwrite: true
   on:
