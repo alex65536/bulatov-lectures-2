@@ -1,6 +1,6 @@
 dist: bionic
 
-language: tex
+language: generic
 
 addons:
   apt:
