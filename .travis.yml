@@ -13,8 +13,13 @@ addons:
       - texlive-latex-extra
       - latexmk
 
+install:
+    # download a newer latexmk
+    - curl https://ctan.mirror.norbert-ruehl.de/support/latexmk.zip -o /tmp/latexmk.zip
+    - unzip /tmp/latexmk.zip latexmk/latexmk.pl
+
 script:
-    make LATEXMK_FLAGS="-Werror"
+    make LATEXMK="./latexmk/latexmk.pl" LATEXMK_FLAGS="-Werror"
 
 before_deploy:
     # rename the pdf file
