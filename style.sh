@@ -118,6 +118,10 @@ Use equation and \eqref{}.'
 	check -- "$1" \
 	      '\\epsilon|\\varepsilon' \
 	      'Use \eps'
+	
+	check -- "$1" \
+	      '\\item\[[1aA][.)]?\]' \
+	      'Use enumerate instead of itemize for enumerated lists'
 }
 
 export -f error
