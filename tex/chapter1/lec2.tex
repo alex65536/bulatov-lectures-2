@@ -1,0 +1,336 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+\begin{exmps}
+	\;
+	\begin{itemize}
+		\item[1.] $\sum arctg\dfrac{2\sqrt{x}}{x+n^4},\ x \geq 0$
+
+$U_n(x) = arctg\dfrac{2\sqrt{x}}{x+n^4},\ x \in [0,+\infty]$
+	\begin{itemize}
+		\item[a)] $U_n(0) = 0 \implies \sum U_n(0)$ сходится
+		\item[б)] $x \neq 0 \implies U_n(x) \thicksim 
+	\left[ \begin{gathered}
+	t = arctg\dfrac{2\sqrt{x}}{x+n^4} \underset{n \to \infty}{\thicksim} 
+	arctg\dfrac{2\sqrt{x}}{n^4} \underset{n \to \infty}{\thicksim}
+	\dfrac{2\sqrt{x}}{x+n^4} \\
+	arctgt \underset{t \to 0}{\thicksim}
+	t = \dfrac{2\sqrt{x}}{x+n^4}
+	\end{gathered} \right] \underset{n \to \infty}{\thicksim}
+	\dfrac{2\sqrt{x}}{n^4}$
+	
+	В этом случае $\sum U_n(x)$ сходится, т.~к. сходится ряд 
+	$\dfrac{2\sqrt{x}}{n^4},\ (\alpha = 2 > 1)$.
+	
+	Ряд $\sum U_n(x)$ поточечно сходится на $[0;+\infty[$
+	
+	Рассмотрим функцию $h_n(x) = |U_n(x)| = arctg\dfrac{2\sqrt{x}}{x+n^4}$, 
+	исследуем на экстремум: \\
+	\[
+	h'_n(x) = \dfrac{\dfrac{2(x + n^4 - 2x)}{\sqrt{x}}}
+	{1 + \dfrac{4x}{(x+n^4)^2}} = \dfrac{2(n^4-x)(x+n^4)^2}
+	{\sqrt{x}((x+n^4)^2+4x)} = 0 \implies x = n^4
+	\]
+	$a_n = \max\{ h_n(0),\ h_n(n^4),\ h_n(+\infty) \}$
+	
+	$ h_n(n^4) = arctg\dfrac{1}{n^2} = a_n \geq 0$ --- мажоранта
+	
+	\[
+	\forall n \in \N \quad \forall x \geq 0 \implies |U_n(x)| \leq 
+	arctg\dfrac{1}{n^2} = a_n
+	\]
+	
+	$\sum a_n = \sum arctg\dfrac{1}{n^2}$ сходится, т.~к. 
+	$arctg\dfrac{1}{n^2} \underset{n \to \infty}{\thicksim}
+	\dfrac{1}{n^2}$ сходится (степенной признак)
+	
+	$\sum U_n \overset{\forall n \geq 0}{\rightrightarrows}$ 
+	по признаку Вейерштрасса.
+	\end{itemize}	
+
+	\item[2.] $\sum sin\dfrac{x}{n^2},\ x \in \R$ 	 
+	
+	$U_n(x) = \sin\dfrac{x}{n^2}$
+	
+	$U_n(0) = \sin0 = 0$ сходится.
+	
+	$U_n(x) \overset{x \neq 0}{\underset{n \to \infty}\thicksim} 
+	\dfrac{x}{n^2} \implies \sum U_n(x) \overset{x \neq 0}{\longrightarrow}
+	(\alpha = 2 > 1)$	
+	
+	$\exists x_n = \dfrac{\pi x^2}{2} \implies U_n(x_n) = 
+	\sin\dfrac{\pi}{2} = 1 \underset{n \to \infty}
+	{\not \longrightarrow} 0 \implies
+	U_n(x) \overset{\R}{\not \rightrightarrows} 0$
+
+	По необходимому условию равномерной сходимости ФР получаем, что ряд 
+	не сходится равномерно.
+	\end{itemize}	
+\end{exmps}	
+
+\section{Именные признаки сходимости ФП и ФР}
+
+Для ФР $\sum U_n(x)$ равномерная сходимость определяется как 
+равномерная сходимость последовательности его частных сумм, в свою очередь,
+если существует ФП, то этой ФП можно сопоставить ряд с 
+$U_n(x) = f_n(x) - f_{n-1}(x),\ n \in \N,\ f_0(x) = 0$, для которого
+\[
+S_n(x) = \underbrace{-f_0(x) + f_1(x)}_{= U_1} + 
+\underbrace{(-f_1(x) + f_2(x))}_{= U_2} + \ldots +
+\underbrace{(-f_{n-1}(x) + f_n(x))}_{= U_n},\ \forall n \in \N.	
+\]
+Поэтому поточечная сходимость любой последовательности совпадает с 
+равномерной поточечной сходимостью построенного, как выше, РФ.
+
+В связи с этим в дальнейшем все оставшиеся теоремы мы будем формулировать
+и доказывать для ФР, а с помощью выше указанного приёма для ФП будем
+формулировать по аналогии.
+
+\begin{thm}[признак Дини для равномерной сходимости ФР]
+Пусть выполнены условия:
+
+	\begin{itemize}
+		\item[1)] $\forall U_n(x),\ n \in \N$ непрерывна и неотрицательна на
+	$E=[a,b]$
+		\item[2)] $\sum U_n(x) \overset{[a,b]}{\longrightarrow} f(x)$
+	\end{itemize}
+Тогда, если $f(x) \in C([a,b])$, ряд 
+$\sum U_n(x) \overset{[a,b]}{\rightrightarrows} f(x)$
+\end{thm}	
+
+\begin{proof}
+Если $S_n(x) = U_1(x) + \ldots + U_n(x)$, то $r_n(x) = f(x) - S_n(x)$ обладает
+следующими свойстами:
+	\begin{itemize}
+		\item[а)] $\forall fix \ n \in \N \implies 
+	\forall r_n(x) \in C([a,b])$, т.~к. $f(x) \in C([a,b])$ и
+	$\forall S_n(x) \in C([a,b])$, как конечная сумма непрерывных функций.
+		\item[б)] $\forall fix \ x \in [a,b] \implies 
+	r_{n+1}(x) - r_n(x) = S_{n+1}(x) - S_n(x) = -U_{n+1}(x) \leq 0$, т.~е.
+	$r_n(x)$ как последовательность убывает.
+		\item[в)] Так как $S_n(x) \overset{[a,b]}
+	{\underset{n \to \infty}\longrightarrow} f(x)$, то 
+	$r_n(x) = f(x) - S_n(x) \overset{[a,b]}
+	{\underset{n \to \infty}\longrightarrow} 0$
+	\end{itemize}
+Предположим, что $r_n(x) \overset{[a,b]}
+{\underset{n \to \infty}{\not \rightrightarrows}} 0$, тогда по правилу
+де Моргана построения отрицаний логических утверждений получаем: 
+\[
+\exists \eps_0 > 0 \quad \forall n \in \N \implies 
+\exists x_n \in [a,b] \implies r_n(x) > \eps_0
+\]
+Так как $\forall r_n(x) \geq 0$ и т.~к. последовательность $x_n$ ограничена
+из неё можно выбрать сходящуюся подпоследовательность 
+$x_{n_k} \to x_0 \in [a,b]$, тогда $r_{n_k}(x_{n_k}) > \eps_0 > 0$, отсюда
+$\forall fix \ m \in \N, \forall n_k \geq m \implies r_m(x_{n_k}) \geq
+r_{n_k} > \eps_0$ (т.~к. свойсво в)). Переходя здесь к пределу при 
+$n_k \to \infty$ и учитывая непрерывность остатков получим:
+\[
+\exists \underset{n_k \to \infty}{\lim} r_m(x_{n_k}) = 
+r_m(\underset{n_k \to \infty}{\lim}x_{n_k}) = r_m(x_0) \geq
+\eps_0 > 0.
+\]
+Таким образом $\forall m \in \N$ получим: 
+\[
+r_m(x_0) \geq \eps_0 > 0 \implies
+r_m(x_0) \underset{n \to \infty}{\not \longrightarrow} 0
+\]
+Поэтому предположение о неравномерной сходимости ошибочно.
+\end{proof}
+
+\begin{rem}
+	\begin{itemize}
+		\item[1.] Теорема остаётся верной, когда слагаемые в рассматриваемом ФР
+	сохраняют один и тот же знак, т.~е. не только больше, но и меньше нуля.
+		\item[2.] Используя связь между ФП и соответствующими им ФР получаем
+	следующую теорему:
+	\end{itemize}
+\end{rem}	
+\begin{thm}[признак Дини для ФП]
+Если для ФП $f_n(x),\ n \in \N,\ x \in [a,b]$ выполнены условия:
+	\begin{itemize}
+		\item[а)] $\forall fix \ n \in \N \implies
+		f_n(x) \in C([a,b])$
+		\item[б)] $\forall fix \ x \in [a,b] \implies
+		(f_n(x))$ --- монотонная последовательность 
+	\end{itemize}			
+Если $f_n(x) \overset{[a,b]}
+{\underset{n \to \infty}\longrightarrow} f(x) \in C([a,b])$, то
+$f_n(x) \overset{[a,b]}
+{\underset{n \to \infty}\rightrightarrows} f(x) \in C([a,b])$
+\end{thm}  
+
+\begin{thm}[признак Абеля равномерно сходимости ФР]
+Пусть:
+\begin{itemize}
+	\item[1)] $\sum b_n(x) \overset{E}{\rightrightarrows}$
+	\item[2)] ФП $(a_n(x)),\ n \in \N,\ x \in E$ ограничена 
+в совокупности (равномерно ограничена как по $n$, так и по $x$, т.~е.
+$\exists c = const \geq 0 \implies (a_n(x)) \leq c,\ 
+\forall n \in N, \forall x \in E$)
+\end{itemize}
+Если $\forall fix \ x \in E \implies (a_n(x))$ --- монотонная 
+последовательность, то ряд $\sum a_n(x)b_n(x) \overset{E}{\rightrightarrows}$
+\end{thm}	
+
+\begin{proof}
+Доказательство основано на использовании критерия Коши сходимости ФП и ФР и
+на соответствующей оценке Абеля аналогичной, как и в ЧР.	
+\end{proof}
+
+\begin{thm}[Признак Дирихле равномерной сходимости ФР]
+Пусть:
+\begin{itemize}
+	\item[1)] Частные суммы ряда $\sum b_n(x),\ x \in E$ 
+ограничены в совокупности (равномерно ограничены по $x$ и $n$, 
+т.~е. $\exists c = const > 0 \implies |b_1(x) + \ldots + b_n(x)| \leq c,\
+\forall n \in \N,\ \forall x \in E$)
+	\item[2)] Для ФП $(a_n(x)),\ x \in E \implies a_n 
+\overset{E}
+{\underset{n \to \infty}\rightrightarrows} 0$
+\end{itemize}
+Тогда, если $\forall fix \ x \in E$ при $m \to \infty$ следует, 
+что $(a_n(x))$ --- монотонная последовательность, 
+то ряд $\sum a_n(x)b_n(x) \overset{E}
+{\underset{n \to \infty}\rightrightarrows}$
+\end{thm}
+
+\begin{proof}
+Доказательство использует то же, что и в признаке Абеля (критерий Коши и 
+оценка Абеля аналогично ЧП)
+\end{proof}
+
+\begin{crl*} (Признак Лейбница равномерной сходимости ФР)
+Если $a_n(x) \overset{E}
+{\underset{n \to \infty}\rightrightarrows} 0,\ \forall fix \ x \in E \implies
+(a_n(x))$ --- монотонна, то ряд $\sum (-1)^n a_n(x) \overset{E}
+{\rightrightarrows}$ 	
+\end{crl*}
+
+\begin{proof}
+Надо в признаке Дирихле взять $b_n=(-1)^n$. Хотя в этом случае ряд 
+$\sum b_n = \sum (-1)^n$ расходится $((-1)^n 
+\underset{n \to \infty}{\not \longrightarrow} 0)$, но зато частные суммы
+ограничены в совокупности $(|b_1 + b_2 + \ldots + b_n| = 
+|-1+1-1+ \ldots + (-1)^n| \leq 1,\ \forall x \in E,\ \forall n \in \N)$
+\end{proof}	
+
+\begin{exmps}
+Рассмотрим тригонометрические ряды: 
+	\begin{itemize}
+		\item[1)] $\sum a_n \sin(nx)$
+		\item[2)] $\sum a_n \cos(nx)$
+	\end{itemize}
+где $a_n$ --- ЧП.
+
+Используя оценки $|\sin x + \ldots + \sin(nx)| 
+\leq \ldots \leq \dfrac{1}{|\sin\dfrac{x}{2}|},\
+|\cos x + \ldots + \cos(nx)| 
+\leq \ldots \leq \dfrac{1}{|\sin\dfrac{x}{2}|}$
+для $x \neq 2\pi k,\ k \in \Z$ получаем по признаку Дирихле для ЧР, что
+$\forall x \in [\alpha; \beta]$, не содержащей точек вида 
+$x = 2\pi k,\ k \in \Z$, в случае когда $a_n \downarrow 0 (a_n \uparrow 0)$ 
+эти ряды сходятся поточечно на $[\alpha; \beta]$ и 
+из предыдущей теоремы следует, что сходимость будет и равномерной
+на $[\alpha; \beta]$.
+
+В частности, ряды $\dfrac{\sin x}{n^p}$ и $\dfrac{\cos x}{n^p}$ при
+$p > 0$ будут равномерно сходится $\forall [\alpha; \beta]$, не содержащей
+точек вида $x = 2\pi k,\ k \in \Z$ 
+\end{exmps}
+
+\section{Почленный предельный переход в ФР и ФП}
+Пусть 
+\begin{equation}
+\label{lec2:15}
+\begin{cases}
+U_n(x) \overset{E}{\longrightarrow} f(x),\ \text{тогда} \\
+f(x) = \sum\limits_{n = 1}^{\infty} U_n(x),\ x \in E
+\end{cases}
+\end{equation}
+
+\begin{thm}[о почленном предельном переходе в ФР]
+Пусть $x_0$ --- предельная точка на множестве $E$ и выполнено 
+$\eqref{lec2:15}$. Если: 
+\begin{itemize}
+	\item[1)] $\forall fix \ n \in \N \implies
+\exists \underset{x \to x_0}{\lim} U_n(x) = b_n \in \R$
+	\item[2)] ряд $\sum U_n(x) \overset{E}
+	{\underset{n \to \infty}\rightrightarrows} f(x)$
+\end{itemize}
+То допустим почленный предельный переход в этом ФР, т.~е.
+\begin{equation}
+\label{lec2:16}
+\exists \underset{x \to x_0}{\lim} f(x) \overset{\eqref{lec2:15}}{=}
+\underset{x \to x_0}{\lim} \sum\limits_{n = 1}^{\infty} U_n(x) =
+\sum\limits_{n = 1}^{\infty} \underset{x \to x_0}{\lim} U_n(x) =
+\sum\limits_{n = 1}^{\infty} b_n
+\end{equation}	
+При этом из условия теоремы автоматически следует, 
+что $\eqref{lec2:16}$ сходится.
+\end{thm}	
+
+\begin{proof}
+	\;
+	\begin{itemize}
+		\item[1)] Докажем, что $\exists \underset{x \to x_0}{\lim} f(x) = 
+	p \in \R$. Для этого воспользуемся критерием Коши существования 
+	конечного предела функции, в силу которого нужно показать, что
+	\begin{equation}
+	\label{lec2:17}
+	\forall \eps > 0 \quad \exists \bar\delta :
+	\forall x_1,\ x_2 \in E, 
+	\begin{cases}
+	|x_1 - x_0| \leq \bar\delta, \\
+	|x_2 - x_0| \leq \bar\delta_1;
+	\end{cases} \implies
+	|f(x_1) - f(x_2)| \leq \eps
+	\end{equation}
+	Используя частные суммы $S_n(x) = U_1(x + \ldots + U_n(x))$ и 
+	остаток $r_n(x) = f(x) - S_n(x),\ n \in \N$ имеем:
+	\[
+	|f(x_2) - f(x_1)| = |(S_n(x_2) + r_n(x_2)) - (S_n(x_1) + r_n(x_2))| =
+	|S_n(x_2) - S_n(x_1) + r_n(x_2) - r_n(x_1)| \leq 
+	\]
+	\[
+	\leq |S_n(x_2) - S_n(x_1)| + |r_n(x_2) - r_n(x_1)| \leq 
+	|S_n(x_2) - S_n(x_1)| + |r_n(x_2)| + |r_n(x_1)| \leq
+	\]
+	\[
+	\leq 
+	\left[
+	\begin{gathered}
+	r_n(x) = f(x) - S_n(x) \overset{E}
+	{\underset{n \to \infty}\longrightarrow} 0 \\
+	\exists \nu \in \R : \forall n \geq \nu \implies
+	|r_n(x)| \leq \eps
+	\end{gathered}
+	\right] \leq |S_n(x_2) - S_n(x_1)| + 2\eps.
+	\]
+	Далее из сходимости $S_n(x)$ к $f_n(x)$ на $E$ по критерию Коши для Ф1П
+	получаем, что $\exists \widetilde{\delta} = \widetilde{\delta_\eps} > 0,
+	\begin{cases} 
+	|x_1 - x_0| \leq \widetilde{\delta}, \\
+	|x_2 - x_0| \leq \widetilde{\delta};
+	\end{cases} \implies
+	|S_n(x_2) - S_n(x_1)| \leq \eps$ 
+	
+	В результате получаем, что $|f(x_1) - f(x_2)| \leq \ldots \leq 
+	\eps + 2\eps = 3\eps$, что в сочетании с М-леммой для Ф1П даёт
+	в силу Критерия Коши для Ф1П, что $\exists \underset{x \to x_0}{lim}
+	f(x) = p \in \R$ 
+	\end{itemize}
+\end{proof}
+
+
+
+
+
+
+
+	
+\end{document}	
