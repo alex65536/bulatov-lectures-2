@@ -7,17 +7,17 @@
 \begin{exmps}
 	\;
 	\begin{enumerate}
-		\item $\sum arctg\dfrac{2\sqrt{x}}{x+n^4},\ x \geq 0$
+		\item $\sum \arctan\dfrac{2\sqrt{x}}{x+n^4},\ x \geq 0$
 
-$U_n(x) = arctg\dfrac{2\sqrt{x}}{x+n^4},\ x \in [0,+\infty]$
+$U_n(x) = \arctan\dfrac{2\sqrt{x}}{x+n^4},\ x \in [0,+\infty]$
 	\begin{enumerate}
 		\item $U_n(0) = 0 \implies \sum U_n(0)$ сходится
 		\item $x \neq 0 \implies U_n(x) \thicksim 
 	\left[ \begin{gathered}
-	t = arctg\dfrac{2\sqrt{x}}{x+n^4} \underset{n \to \infty}{\thicksim} 
-	arctg\dfrac{2\sqrt{x}}{n^4} \underset{n \to \infty}{\thicksim}
+	t = \arctan\dfrac{2\sqrt{x}}{x+n^4} \underset{n \to \infty}{\thicksim} 
+	\arctan\dfrac{2\sqrt{x}}{n^4} \underset{n \to \infty}{\thicksim}
 	\dfrac{2\sqrt{x}}{x+n^4} \\
-	arctgt \underset{t \to 0}{\thicksim}
+	\arctan t \underset{t \to 0}{\thicksim}
 	t = \dfrac{2\sqrt{x}}{x+n^4}
 	\end{gathered} \right] \underset{n \to \infty}{\thicksim}
 	\dfrac{2\sqrt{x}}{n^4}$
@@ -27,7 +27,7 @@ $U_n(x) = arctg\dfrac{2\sqrt{x}}{x+n^4},\ x \in [0,+\infty]$
 	
 	Ряд $\sum U_n(x)$ поточечно сходится на $[0;+\infty[$
 	
-	Рассмотрим функцию $h_n(x) = |U_n(x)| = arctg\dfrac{2\sqrt{x}}{x+n^4}$, 
+	Рассмотрим функцию $h_n(x) = |U_n(x)| = \arctan\dfrac{2\sqrt{x}}{x+n^4}$, 
 	исследуем на экстремум: \\
 	\[
 	h'_n(x) = \dfrac{\dfrac{2(x + n^4 - 2x)}{\sqrt{x}}}
@@ -36,15 +36,15 @@ $U_n(x) = arctg\dfrac{2\sqrt{x}}{x+n^4},\ x \in [0,+\infty]$
 	\]
 	$a_n = \max\{ h_n(0),\ h_n(n^4),\ h_n(+\infty) \}$
 	
-	$ h_n(n^4) = arctg\dfrac{1}{n^2} = a_n \geq 0$ --- мажоранта
+	$ h_n(n^4) = \arctan\dfrac{1}{n^2} = a_n \geq 0$ --- мажоранта
 	
 	\[
 	\forall n \in \N \quad \forall x \geq 0 \implies |U_n(x)| \leq 
-	arctg\dfrac{1}{n^2} = a_n
+	\arctan\dfrac{1}{n^2} = a_n
 	\]
 	
-	$\sum a_n = \sum arctg\dfrac{1}{n^2}$ сходится, т.~к. 
-	$arctg\dfrac{1}{n^2} \underset{n \to \infty}{\thicksim}
+	$\sum a_n = \sum \arctan\dfrac{1}{n^2}$ сходится, т.~к. 
+	$\arctan\dfrac{1}{n^2} \underset{n \to \infty}{\thicksim}
 	\dfrac{1}{n^2}$ сходится (степенной признак)
 	
 	$\sum U_n \overset{\forall n \geq 0}{\rightrightarrows}$ 
@@ -105,10 +105,10 @@ $\sum U_n(x) \overset{[a,b]}{\rightrightarrows} f(x)$
 Если $S_n(x) = U_1(x) + \ldots + U_n(x)$, то $r_n(x) = f(x) - S_n(x)$ обладает
 следующими свойствами:
 	\begin{enumerate}
-		\item $\forall fix \ n \in \N \implies 
+		\item $\forall \fix \ n \in \N \implies 
 	\forall r_n(x) \in C([a,b])$, т.~к. $f(x) \in C([a,b])$ и
 	$\forall S_n(x) \in C([a,b])$, как конечная сумма непрерывных функций.
-		\item $\forall fix \ x \in [a,b] \implies 
+		\item $\forall \fix \ x \in [a,b] \implies 
 	r_{n+1}(x) - r_n(x) = S_{n+1}(x) - S_n(x) = -U_{n+1}(x) \leq 0$, т.~е.
 	$r_n(x)$ как последовательность убывает.
 		\item Так как $S_n(x) \overset{[a,b]}
@@ -126,7 +126,7 @@ $\sum U_n(x) \overset{[a,b]}{\rightrightarrows} f(x)$
 Так как $\forall r_n(x) \geq 0$ и т.~к. последовательность $x_n$ ограничена
 из неё можно выбрать сходящуюся подпоследовательность 
 $x_{n_k} \to x_0 \in [a,b]$, тогда $r_{n_k}(x_{n_k}) > \eps_0 > 0$, отсюда
-$\forall fix \ m \in \N, \forall n_k \geq m \implies r_m(x_{n_k}) \geq
+$\forall \fix \ m \in \N, \forall n_k \geq m \implies r_m(x_{n_k}) \geq
 r_{n_k} > \eps_0$ (т.~к. свойство в)). Переходя здесь к пределу при 
 $n_k \to \infty$ и учитывая непрерывность остатков получим:
 \[
@@ -143,6 +143,8 @@ r_m(x_0) \underset{n \to \infty}{\not \longrightarrow} 0
 \end{proof}
 
 \begin{rem}
+	\;
+	
 	\begin{enumerate}
 		\item Теорема остаётся верной, когда слагаемые в рассматриваемом ФР
 	сохраняют один и тот же знак, т.~е. не только больше, но и меньше нуля.
@@ -153,9 +155,9 @@ r_m(x_0) \underset{n \to \infty}{\not \longrightarrow} 0
 \begin{thm}[признак Дини для ФП]
 Если для ФП $f_n(x),\ n \in \N,\ x \in [a,b]$ выполнены условия:
 	\begin{enumerate}
-		\item $\forall fix \ n \in \N \implies
+		\item $\forall \fix \ n \in \N \implies
 		f_n(x) \in C([a,b])$
-		\item $\forall fix \ x \in [a,b] \implies
+		\item $\forall \fix \ x \in [a,b] \implies
 		(f_n(x))$ --- монотонная последовательность 
 	\end{enumerate}			
 Если $f_n(x) \overset{[a,b]}
@@ -173,7 +175,7 @@ $f_n(x) \overset{[a,b]}
 $\exists c = const \geq 0 \implies (a_n(x)) \leq c,\ 
 \forall n \in N, \forall x \in E$)
 \end{enumerate}
-Если $\forall fix \ x \in E \implies (a_n(x))$ --- монотонная 
+Если $\forall \fix \ x \in E \implies (a_n(x))$ --- монотонная 
 последовательность, то ряд $\sum a_n(x)b_n(x) \overset{E}{\rightrightarrows}$
 \end{thm}	
 
@@ -193,7 +195,7 @@ $\exists c = const \geq 0 \implies (a_n(x)) \leq c,\
 \overset{E}
 {\underset{n \to \infty}\rightrightarrows} 0$
 \end{enumerate}
-Тогда, если $\forall fix \ x \in E$ при $m \to \infty$ следует, 
+Тогда, если $\forall \fix \ x \in E$ при $m \to \infty$ следует, 
 что $(a_n(x))$ --- монотонная последовательность, 
 то ряд $\sum a_n(x)b_n(x) \overset{E}
 {\underset{n \to \infty}\rightrightarrows}$
@@ -206,7 +208,7 @@ $\exists c = const \geq 0 \implies (a_n(x)) \leq c,\
 
 \begin{crl*} (Признак Лейбница равномерной сходимости ФР)
 Если $a_n(x) \overset{E}
-{\underset{n \to \infty}\rightrightarrows} 0,\ \forall fix \ x \in E \implies
+{\underset{n \to \infty}\rightrightarrows} 0,\ \forall \fix \ x \in E \implies
 (a_n(x))$ --- монотонна, то ряд $\sum (-1)^n a_n(x) \overset{E}
 {\rightrightarrows}$ 	
 \end{crl*}
@@ -257,7 +259,7 @@ f(x) = \sum\limits_{n = 1}^{\infty} U_n(x),\ x \in E
 Пусть $x_0$ --- предельная точка на множестве $E$ и выполнено 
 $\eqref{lec2:15}$. Если: 
 \begin{enumerate}
-	\item $\forall fix \ n \in \N \implies
+	\item $\forall \fix \ n \in \N \implies
 \exists \underset{x \to x_0}{\lim} U_n(x) = b_n \in \R$
 	\item ряд $\sum U_n(x) \overset{E}
 	{\underset{n \to \infty}\rightrightarrows} f(x)$
@@ -276,6 +278,7 @@ $\eqref{lec2:15}$. Если:
 
 \begin{proof}
 	\;
+	
 	\begin{enumerate}
 		\item Докажем, что $\exists \underset{x \to x_0}{\lim} f(x) = 
 	p \in \R$. Для этого воспользуемся критерием Коши существования 
@@ -322,15 +325,8 @@ $\eqref{lec2:15}$. Если:
 	В результате получаем, что $|f(x_1) - f(x_2)| \leq \ldots \leq 
 	\eps + 2\eps = 3\eps$, что в сочетании с М-леммой для Ф1П даёт
 	в силу Критерия Коши для Ф1П, что $\exists \underset{x \to x_0}{lim}
-	f(x) = p \in \R$ 
+	f(x) = p \in \R$.
 	\end{enumerate}
 \end{proof}
-
-
-
-
-
-
-
 	
-\end{document}	
+\end{document}
