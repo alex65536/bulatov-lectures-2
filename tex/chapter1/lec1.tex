@@ -8,14 +8,17 @@
 \begin{proof}
 Так как 
 \[
-S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to \infty}\rightrightarrows} f(x),
+S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to 
+\infty}\rightrightarrows} f(x),
 \]
  то
 \begin{equation} \label{eq:18}
-	\forall \varepsilon > 0 \ \exists \nu(\varepsilon) \in \R : \forall x \in E, \forall n \ge \nu \implies |S_n(x) - f(x)| \le \varepsilon.
+	\forall \eps > 0 \ \exists \nu(\eps) \in \R : \forall x \in E, \forall n \ge 
+	\nu \implies |S_n(x) - f(x)| \le \eps.
 \end{equation}
 
-	Полагая $B_n = b_1 + b_2 + \ldots + b_n,$ где $\forall b_k = \lim\limits_{x \to x_0}U_k(x),$
+	Полагая $B_n = b_1 + b_2 + \ldots + b_n,$ где $\forall b_k = \lim\limits_{x 
+	\to x_0}U_k(x),$
 получаем, что 
 \[
 	S_n(x) \underset{x \to x_0}\longrightarrow B_n.
@@ -23,13 +26,14 @@ S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to \infty}
 
 Отсюда, переходя в $\eqref{eq:18}$ к пределу при $x \to x_0$, получим
 \[
- \lim_{x \to x_0}|S_n(x) - f(x)| \le \varepsilon \implies
- |\lim_{x \to x_0}(S_n(x) - f(x))| \le \varepsilon \implies |B_n - p| \le \varepsilon.
+ \lim_{x \to x_0}|S_n(x) - f(x)| \le \eps \implies
+ |\lim_{x \to x_0}(S_n(x) - f(x))| \le \eps \implies |B_n - p| \le \eps.
 \]
 
 Таким образом, 
 \[
-\forall \varepsilon > 0 \ \exists \nu = \nu(\varepsilon) \in \R : \forall n \ge \nu \implies |B_n(x) - p| \le \varepsilon.
+\forall \eps > 0 \ \exists \nu = \nu(\eps) \in \R : \forall n \ge \nu \implies 
+|B_n(x) - p| \le \eps.
 \]
 
 Значит, 
@@ -39,22 +43,27 @@ S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to \infty}
 \end{proof}
 
 \begin{rem}[1]
-	Используя стандартный переход от ФР к соответствующей ФП и наоборот, в силу выше доказанного, получаем следующую теорему:
+	Используя стандартный переход от ФР к соответствующей ФП и наоборот, в силу 
+	выше доказанного, получаем следующую теорему:
 \end{rem}
 \begin{thm}[о предельном переходе в ФП]
 	Если
 	\begin{enumerate}
 		\item[а)] $f_n(x) \overset{E}{\underset{n \to \infty}\rightrightarrows}$
-		\item[б)] $\forall n \in \N \implies \exists \lim\limits_{x\to x_0}f_n(x) \in \R, x_0$ --- предельная точа для $E,$
+		\item[б)] $\forall n \in \N \implies \exists \lim\limits_{x\to x_0}f_n(x) 
+		\in \R, x_0$ --- предельная точа для $E,$
 	\end{enumerate} 
 То тогда 
 \[
-	\exists \lim_{x \to x_0}(\lim_{n \to \infty}f_n(x)) = \lim_{n \to \infty}( \lim_{x \to x_0}f_n(x)).
+	\exists \lim_{x \to x_0}(\lim_{n \to \infty}f_n(x)) = \lim_{n \to \infty}( 
+	\lim_{x \to x_0}f_n(x)).
 \]
 \end{thm}
 
 \begin{rem}
-	В доказательствах предполагалось, что $x_0$ --- предельная точка --- конечна. Аналогично доказываются случаи, когда $x \to x_0 \pm 0, x \to \pm \infty, x \to \infty.$
+	В доказательствах предполагалось, что $x_0$ --- предельная точка --- конечна. 
+	Аналогично доказываются случаи, когда $x \to x_0 \pm 0, x \to \pm \infty, x 
+	\to \infty.$
 \end{rem}
 
 \begin{crl}[теорем Стокса-Зайделя для ФП и ФП]
@@ -67,7 +76,8 @@ S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to \infty}
 \begin{proof}
 	Для ФР возьмем любой $ x_0 \in E$. Тогда  
 	\[
-	\exists \lim_{x \to x_0} U_n(x) \overset{\text{непрерывность}}{=} U_n(x_0), \ \forall n \in \N.
+	\exists \lim_{x \to x_0} U_n(x) \overset{\text{непрерывность}}{=} U_n(x_0), \ 
+	\forall n \in \N.
 	\]
 	
 	Отсюда, в силу доказанной выше теоремы, для 
@@ -88,13 +98,16 @@ S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to \infty}
 	\sum_{n = 1}^{\infty} U_n(x) \overset{E}{\longrightarrow} f(x),
 	\]
 
-	 то в случае, когда $\forall U_n(x) \in C(E),$ а $f(x) \notin C(E),$ получаем, в силу теоремы Стокса-Зайделя, что равномерной сходимости нет.
+	 то в случае, когда $\forall U_n(x) \in C(E),$ а $f(x) \notin C(E),$ 
+	 получаем, в силу теоремы Стокса-Зайделя, что равномерной сходимости нет.
 	
-	Аналогичным образом получаем новые достаточные условия для отсутствия равномерной сходимости ФП:
+	Аналогичным образом получаем новые достаточные условия для отсутствия 
+	равномерной сходимости ФП:
 	
 	Если 
 	\[
-	f_n \overset{E}{\longrightarrow} f(x), \ \ \forall f_n(x) \in C(E), \text{ а } f(x) \notin C(E), \]
+	f_n \overset{E}{\longrightarrow} f(x), \ \ \forall f_n(x) \in C(E), \text{ а 
+	} f(x) \notin C(E), \]
 	 то $f(x)$ не сходится равномерно.
 \end{rem}
 
@@ -103,12 +116,14 @@ S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to \infty}
 	
 	Найдем множество сходимости этого ФР: $\sum U_n(x)$. Имеем:
 	\[
-	\sum_{n = 1}^{\infty} U_n(x) = (1 - x)\sum_{n = 1}^{\infty} x^n \overset{|x| < 1}{=} (1 - x) \cdot \frac{x}{1 - x} = x.
+	\sum_{n = 1}^{\infty} U_n(x) = (1 - x)\sum_{n = 1}^{\infty} x^n \overset{|x| 
+	< 1}{=} (1 - x) \cdot \frac{x}{1 - x} = x.
 	\]
 	
 	Если $|x| > 1,$ то $x^n \nrightarrow 0$ и ряд расходится.
 	
-	Непосредственно получаем, что $\exists f(1) \sum\limits_{n = 1}^{\infty} 0 \cdot 1^n = 0.$
+	Непосредственно получаем, что $\exists f(1) \sum\limits_{n = 1}^{\infty} 0 
+	\cdot 1^n = 0.$
 	$E = \left.\left(-1; 1\right.\right].$ 
 	
 	Таким образом, 
@@ -120,11 +135,14 @@ S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to \infty}
 	\end{cases}
 	\]
 	
-	В данном случае \[\forall U_n \in C(\left.\left.\right] -1; 1 \right]),\] но у предельной функции $f(x)$ точка $x = 1 \in \left.\left.\right] -1; 1 \right] $~--- точка скачка.	
+	В данном случае \[\forall U_n \in C(\left.\left.\right] -1; 1 \right]),\] но 
+	у предельной функции $f(x)$ точка $x = 1 \in \left.\left.\right] -1; 1 
+	\right] $~--- точка скачка.	
 	То есть 
 	$f(x) \notin  C(\left.\left.\right] -1; 1 \right]).$ 
 	
-	Значит, рассматриваемый ряд сходится неравномерно на $\left.\left.\right] -1; 1 \right].$
+	Значит, рассматриваемый ряд сходится неравномерно на $\left.\left.\right] -1; 
+	1 \right].$
 \end{exmp}
 
 
@@ -134,7 +152,8 @@ S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to \infty}
 %\begin{thm}[критерий Коши] Последовательность $(a_n)$ сходится тогда и только 
 %тогда, когда
 %\begin{equation}
-%\forall \eps > 0 \quad \exists \nu_\eps \in \R \quad \forall n, m \ge \nu_\eps 
+%\forall \eps > 0 \quad \exists \nu_\eps \in \R \quad \forall n, m \ge 
+\nu_\eps 
 %\implies \abs{a_n - a_m} \le \eps
 %\label{cauchy-demo}
 %\end{equation}
