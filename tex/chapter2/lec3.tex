@@ -1,0 +1,99 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+\section{Степенной ряд и его множество сходимости}
+
+Степенным рядом (СтР) называется ФР вида
+\begin{equation}\label{lec3_2:1}
+a_0+a_1(x-x_0)+a_2(x-x_0)^2+\dots+a_n(x-x_0)^n+\dots.
+\end{equation}
+который записывается также в виде
+\begin{equation}\label{lec3_2:2}
+\sum_{n=0}^{\infty}a_n(x-x_0)^n.
+\end{equation}
+В \ref{lec3_2:1}-\ref{lec3_2:2} $x_0$ называется центром СтР, 
+а $\forall a_n \in \R, n\in \N$ --- это коэффиценты СтР.
+
+Если переменной $x\in\R$ предать некоторые значения, 
+то степенные ряды становятся числовыми, которые могут как сходиться, 
+так и расходиться.
+
+Множество $X$ значений $x$, при котором СтР сходится, 
+называется множеством сходимости СтР. 
+
+$X \neq \emptyset$, т.~к. \ref{lec3_2:1}-\ref{lec3_2:2} 
+сходятся при $x=x_0$ т.~е. $x_0\in X$.
+
+\begin{lem}[Абеля о сходимости СтР]
+	Если СтР \ref{lec3_2:1}-\ref{lec3_2:2} сходится в некоторой 
+	точке $x_1\neq x_0$, то тогда он сходится $\forall x$ таких, что:
+	\begin{equation}\label{lec3_2:3}
+		 \abs{ x - x_0} \leq \abs{x_1 - x_0}.
+	\end{equation}
+\end{lem}
+\begin{proof}
+	При сходимости $\sum_{n=0}^{\infty}a_n(x_1-x_0)^n$ в силу необходимого
+	 условия сходимости ФР: $a_n(x_1-x_0)^n\underset{n\to\infty}{\rightarrow}0$. 
+	Т.~к. последовательность $a_n(x_1-x_0)^n$ --- бмп, 
+	то $\abs{a_n(x_1-x_0)^n}$ сходится $\implies$ ограничена.
+	
+	Т.~е. $\exists M=const \geq0 \implies \abs{a_n(x_1-x_0)} \leq M
+	\implies \abs{a_n}\geq \frac{M}{\abs{x_1-x_0}}, \forall n\in\N_0$
+	
+	Рассмотрим $\forall \fix x $, удовлетворяющий \ref{lec3_2:3}. 
+	В этом случае  
+	\begin{equation*}
+		\abs{a_n(x_1-x_0)} = \abs{a_n}\abs{(x_1-x_0)}\leq 
+		\cfrac{M}{\abs{x_1-x_0}^n}\cdot \abs{x_1-x_0}=Mq^n,
+	\end{equation*}
+	где $q=\cfrac{\abs{x-x_0}}{\abs{x_1-x_0}}\in{\left[0;1\right)}.$
+\end{proof}	
+
+\begin{crl*}
+	Если при некотором $x=x_1=x_0$ ряд \ref{lec3_2:1}-\ref{lec3_2:2}
+	 расходится, то тогда он расходится $\forall \abs{x-x_0} > \abs{x_1-x_0}$.
+\end{crl*}	
+\begin{rem}
+	Если $X$ --- множество сходимости \ref{lec3_2:1}-\ref{lec3_2:2}, 
+	то полагая $R=\underset{x\in X}{\sup} \abs{x-x_0}$ из полученных выше 
+	результатов и определения точной верхней грани получим, что СтР \ref{lec3_2:1}-\ref{lec3_2:2}
+	будет сходиться при $\abs{x-x_0}\leq R$ и расходиться при $\abs{x-x_0}>R$.
+	
+	При этом в случае, когда $R=+\infty \implies x=R=\left[-\infty;+\infty\right]$.
+	Если же $R=0$, то $X=\{x_0\}$.	
+\end{rem}	
+В общем  случае неотрицательная величина $R$ (конечная или бесконечная) 
+называется \textit{радиусом сходимости}  \ref{lec3_2:1}-\ref{lec3_2:2}, а 
+промежуток $I=\left]x_0-R;x_0+R\right[$ называется \textit{интервалом сходимости} 
+СтР \ref{lec3_2:1}-\ref{lec3_2:2}.
+	
+Внутри $I$ СтР \ref{lec3_2:1}-\ref{lec3_2:2} сходится абсолютно. Вне $I$
+$\forall x-in\left]-\infty;x_o-R\right[\cup\left]x_0+R;+\infty\right[$
+СтР будет расходиться.
+	 
+В общем случае $I\subset X$ причем интервал сходимости $I$ может
+отличаться от множества сходимости $X$ лишь может быть дополнительной 
+сходимостью или расходимостью в концевых точках $x=x_0\pm R$
+	 
+\section{Вычисление радиуса сходимости СтР}
+	
+Для простоты будем рассматривать СтР \ref{lec3_2:1}-\ref{lec3_2:2} в $x_0=0$
+т.~е. 
+\begin{equation}\label{lec3_2:4}
+	\sum_{n=0}^{\infty}a_nx^n
+\end{equation}
+для него как и для \ref{lec3_2:1}-\ref{lec3_2:2} будет один и тот же
+R.
+\begin{thm}[формула Даламбера для радиуса сходимости СтР]
+	Если $\exists \lim\lim\limits_{\abs{\frac{a_n}{a_{n+1}}}}$ конечный или 
+	бесконечный, то радиус сходимости как \ref{lec3_2:4} так и 
+	\ref{lec3_2:1}-\ref{lec3_2:2} имеем
+	\begin{equation}
+		R=\lim\limits_{n\rightarrow\infty}\frac{a_n}{a_{n+1}}
+	\end{equation}
+\end{thm}	
+\end{document}
