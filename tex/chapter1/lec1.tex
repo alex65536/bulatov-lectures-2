@@ -149,16 +149,21 @@ S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to
 \subsection{Почленное интегрирование и дифференцирование ФР и ФП}
 
 \begin{thm}[о почленном интегрировании и дифференцировании ФР]
-	Если $\forall U_n(x) \in R([a; b])$  и ряд $\sum\limits_{n = 1}^{\infty} U_n(x) \overset{[a; b]}{\rightrightarrows} f(x)$, то тогда, во-первых, $f(x) \in R([a; b])$ и, во-вторых, возможно почленное интегрирование рассматриваемого ФР на $[a; b]$, то есть:
+	Если $\forall U_n(x) \in R([a; b])$  и ряд $\sum\limits_{n = 1}^{\infty} 
+	U_n(x) \overset{[a; b]}{\rightrightarrows} f(x)$, то тогда, во-первых, $f(x) 
+	\in R([a; b])$ и, во-вторых, возможно почленное интегрирование 
+	рассматриваемого ФР на $[a; b]$, то есть:
 	\begin{equation} \label{eq:19}
-	\int\limits_{a}^{b} \sum\limits_{n = 1}^{\infty}  U_n(x) dx = \sum\limits_{n = 1}^{\infty}  \int\limits_{a}^{b} U_n(x) dx.
+	\int\limits_{a}^{b} \sum\limits_{n = 1}^{\infty}  U_n(x) dx = \sum\limits_{n 
+	= 1}^{\infty}  \int\limits_{a}^{b} U_n(x) dx.
 	\end{equation}
 	
 \end{thm}
 
 \begin{proof}
 	Полагая \[
-	S_n(x) = \sum\limits_{k = 1}^{n} U_k(x) \overset{[a; b]}{\underset{k \to \infty}\rightrightarrows} f(x),
+	S_n(x) = \sum\limits_{k = 1}^{n} U_k(x) \overset{[a; b]}{\underset{k \to 
+	\infty}\rightrightarrows} f(x),
 	\]
 	для
 	$
@@ -178,15 +183,18 @@ S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to
 		\int \limits_{a}^{b} \left| f(x) - 
 		S_n(x)  \right|	dx
 	\]
-	Далее так как $S_n(x)\overset{[a; b]}{\underset{k \to \infty}\rightrightarrows} f(x),$ то 
+	Далее так как $S_n(x)\overset{[a; b]}{\underset{k \to 
+	\infty}\rightrightarrows} f(x),$ то 
 	\[
-	\forall \eps > 0 \ \exists \nu = \nu(\eps) \in \R : \forall n \ge \nu, \forall x \in [a; b] \implies 
+	\forall \eps > 0 \ \exists \nu = \nu(\eps) \in \R : \forall n \ge \nu, 
+	\forall x \in [a; b] \implies 
 	|f(x) - S_n(x)| \le \eps.
 	\]
 	
 	Поэтому
 	\[
-		\int \limits_{a}^{b} \left| f(x) - S_n(x)  \right|	dx \le \int \limits_{a}^{b} \eps dx =
+		\int \limits_{a}^{b} \left| f(x) - S_n(x)  \right|	dx \le \int 
+		\limits_{a}^{b} \eps dx =
 		\eps(b - a) = M\eps.
 	\]
 	
@@ -197,7 +205,7 @@ S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to
 \end{proof}
 
 \begin{crl*}[почленное интегрирование ФП]
-	content...
+	content\dots
 \end{crl*}
 
 \begin{proof}
@@ -215,10 +223,11 @@ S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to
 		  f(x)=\sum_{n=1}^{\infty}u_n(x)=C+\int_{x_0}^{x}g(t)dt\\
 		  C=\sum_{n=1}^{\infty}u_n(x_0)=const\in \R
 	  \end{gather*}
-	  Применяя теорему Барроу о дифференцировании интеграла с переменным верхним пределом от непрерывной функции, имеем:
+	  Применяя теорему Барроу о дифференцировании интеграла с переменным верхним 
+	  пределом от непрерывной функции, имеем:
 	  \begin{equation*}
 	  	\exists f'(x)=(C)'+(\int_{x_0}^xg(t)dt)'_x=0+g(t)\bigg|_{t=x}=g(x)
-	  	\Leftrightarrow\ref*{eq:19}
+	  	\iff\ref*{eq:19}
 	  \end{equation*} 
 \end{proof}	
 
@@ -234,7 +243,8 @@ S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to
 		 $
 		 	\exists f_n'(x)\in C(\left[a,b\right]), \forall n\in \N,
 		 $
-		 то в случае, когда $ f_n\left(x\right)  \overset{[a; b]}{\underset{n\to \infty}\rightrightarrows},$ имеем:
+		 то в случае, когда $ f_n\left(x\right)  \overset{[a; b]}{\underset{n\to 
+		 \infty}\rightrightarrows},$ имеем:
 		 \begin{equation*}
 		 	\exists(\lim\limits_{n\to \infty}f_n(x))'
 		 	\overset{\left[a,b\right]}{=}
