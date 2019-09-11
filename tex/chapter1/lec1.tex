@@ -196,10 +196,52 @@ S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to
 	\]
 \end{proof}
 
-\begin{crl}[почленное интегрирование ФП]
+\begin{crl*}[почленное интегрирование ФП]
 	content...
-\end{crl}
+\end{crl*}
 
+\begin{proof}
+	Рассмотрим $g(t)=\sum\limits_{n=1}^{\infty}u_n'(t),
+	 t\in\left[a,b\right]$. В силу условий теоремы и теоремы
+	  Стокса-Зайделя получим, что 
+	  \begin{gather*}
+		  \forall \fix x\in\left[a,b\right]\implies
+		  \exists \int_{x_0}^{x}\underset{\text{непр.}}{g(t)}dx=
+		  \int_{x_0}^{x}\sum_{n=1}^{\infty}u_n'(t)dt=\sum_{n=1}^{\infty}
+		  \int_{x_0}^{x}u_n'(t)dt=\sum_{n=1}^{\infty}\left[u_n(t)\right]
+		  _{t=x_0}^{t=x}=\\
+		  =\sum_{n=1}^{\infty}(u_n(x)-u_n(x_0)) 
+		  =\sum_{n=1}^{\infty}u_n(x)-\sum_{n=1}^{\infty}u_n(x_0)\implies
+		  f(x)=\sum_{n=1}^{\infty}u_n(x)=C+\int_{x_0}^{x}g(t)dt\\
+		  C=\sum_{n=1}^{\infty}u_n(x_0)=const\in \R
+	  \end{gather*}
+	  Применяя теорему Барроу о дифференцировании интеграла с переменным верхним пределом от непрерывной функции, имеем:
+	  \begin{equation*}
+	  	\exists f'(x)=(C)'+(\int_{x_0}^xg(t)dt)'_x=0+g(t)\bigg|_{t=x}=g(x)
+	  	\Leftrightarrow\ref*{eq:19}
+	  \end{equation*} 
+\end{proof}	
+
+\begin{crl*}
+	из доказанной теоремы непосредственно следует:
+	\begin{thm}[о почленном дифференцировании ФП]
+		 Пусть 
+		 $
+		 	\exists x_0\in \left[a,b\right], f_n(x_0)
+		 	\underset{n\longrightarrow \infty}{\longrightarrow}.
+		 $
+		 Если 
+		 $
+		 	\exists f_n'(x)\in C(\left[a,b\right]), \forall n\in \N,
+		 $
+		 то в случае, когда $ f_n\left(x\right)  \overset{[a; b]}{\underset{n\to \infty}\rightrightarrows},$ имеем:
+		 \begin{equation*}
+		 	\exists(\lim\limits_{n\to \infty}f_n(x))'
+		 	\overset{\left[a,b\right]}{=}
+		 	\lim\limits_{n\to\infty}f_n'(x).
+		 \end{equation*}
+	\end{thm}	 
+\end{crl*}	
 
 %\begin{thm}[критерий Коши] Последовательность $(a_n)$ сходится тогда и только 
 %тогда, когда
