@@ -205,8 +205,30 @@ S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to
 \end{proof}
 
 \begin{crl*}[почленное интегрирование ФП]
-	content\dots
+	Используя соответствующую связь между ФП и ФР, из доказанной выше теормы получаем теорему о почленном интегрировании ФП:
+	
+	Если $\forall f_n(x) \in R([a; b]), n \in \N,$ и $f_n(x) \overset{[a; b]}{\underset{n \to 
+			\infty}\rightrightarrows} f(x),$ то тогда, во-первых, $f(x) \in R([a; b])$ и, во-вторых, 
+		\[
+			\int\limits_{a}^{b} f(x) dx = \int\limits_{a}^{b} \lim_{n \to \infty}f_n(x) dx =
+			\lim_{n \to \infty} \int\limits_{a}^{b} f_n(x) dx.
+		\]
 \end{crl*}
+
+\begin{thm}[о почленном дифференцировании ФР]
+	Пусть $\exists x \in [a; b] \colon \sum U_n(x_0)$ сходится.
+	Если
+	$
+	\forall n \in \N \text{ и } \forall x \in [a; b] \implies \exists U_n'(x)
+	$ --- непрерывная на $[a; b]$, то в случае, когда ряд 
+	$
+	\sum U_n(x) \overset{[a; b]}{\rightrightarrows},
+	$ 
+	то возможно почленное дифференцирование рассматриваемого ряда:
+	\begin{equation} \label{eq:20}
+	\exists \left(\sum U_n(x)\right)' = \sum U_n'(x) \ \forall x \in [a; b]
+	\end{equation}
+\end{thm}
 
 \begin{proof}
 	Рассмотрим $g(t)=\sum\limits_{n=1}^{\infty}u_n'(t),
@@ -227,7 +249,7 @@ S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to
 	  пределом от непрерывной функции, имеем:
 	  \begin{equation*}
 	  	\exists f'(x)=(C)'+(\int_{x_0}^xg(t)dt)'_x=0+g(t)\bigg|_{t=x}=g(x)
-	  	\iff\ref*{eq:19}
+	  	\iff \eqref{eq:20}
 	  \end{equation*} 
 \end{proof}	
 
@@ -252,69 +274,5 @@ S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to
 		 \end{equation*}
 	\end{thm}	 
 \end{crl*}	
-
-%\begin{thm}[критерий Коши] Последовательность $(a_n)$ сходится тогда и только 
-%тогда, когда
-%\begin{equation}
-%\forall \eps > 0 \quad \exists \nu_\eps \in \R \quad \forall n, m \ge 
-%\nu_\eps 
-%\implies \abs{a_n - a_m} \le \eps
-%\label{cauchy-demo}
-%\end{equation}
-%\end{thm}
-%\begin{proof}
-% \;
-%
-% \nec: Доказательство необходимости \eqref{cauchy-demo} нетрудно провести 
-% самостоятельно.
-% 
-% \suff: Доказательство достаточности \eqref{cauchy-demo} нетрудно провести 
-% самостоятельно.
-%\end{proof}
-%
-%\begin{crl}
-% Мы показали, как оформлять доказательство критериев.
-%\end{crl}
-%
-%\begin{proof}
-% 42
-%\end{proof}
-%
-%\begin{crl}
-% Мы показали, как оформлять следствия.
-%\end{crl}
-%
-%\begin{rem}
-% И замечания тоже :)
-%\end{rem}
-%
-%\begin{thm}
-% Если следствие одно, можно использовать \texttt{\textbackslash crl*}.
-%\end{thm}
-%
-%\begin{crl*}
-% В этом случае номер не добавляется.
-%\end{crl*}
-%
-%\begin{exmps}
-%\begin{enumerate}
-% \;
-%
-% \item $\displaystyle \int_0^1 x\,dx = \frac12$
-% 
-% \item $\displaystyle \int u\,dv = uv - \int v\,du$
-% 
-% \item $42 = \left[\begin{array}{c}\text{как известно, $42$~--- ответ на 
-% вопрос} \\ \text{Жизни, Вселенной и всего такого}\end{array}\right] = 6\cdot 
-% 7$.
-% 
-% \item Числовые множества: $\R \C \Z \N \Q$
-%\end{enumerate}
-%\end{exmps}
-%
-%\begin{lem}
-% Для получения дополнительной информации по \texttt{matanhelper}'у смотрите 
-% сам исходник \texttt{matanhelper.sty}.
-%\end{lem}
 
 \end{document}
