@@ -16,14 +16,14 @@ $U_n(x) = \arctan\dfrac{2\sqrt{x}}{x+n^4},\ x \in [0,+\infty]$
 	\left[ \begin{gathered}
 	t = \arctan\dfrac{2\sqrt{x}}{x+n^4} \underset{n \to \infty}{\thicksim} 
 	\arctan\dfrac{2\sqrt{x}}{n^4} \underset{n \to \infty}{\thicksim}
-	\dfrac{2\sqrt{x}}{x+n^4} \\
+	\dfrac{2\sqrt{x}}{n^4} \\
 	\arctan t \underset{t \to 0}{\thicksim}
 	t = \dfrac{2\sqrt{x}}{x+n^4}
 	\end{gathered} \right] \underset{n \to \infty}{\thicksim}
 	\dfrac{2\sqrt{x}}{n^4}$
 	
 	В этом случае $\sum U_n(x)$ сходится, т.~к. сходится ряд 
-	$\dfrac{2\sqrt{x}}{n^4},\ (\alpha = 2 > 1)$.
+	$\dfrac{2\sqrt{x}}{n^4},\ (\alpha = 4 > 1)$.
 	
 	Ряд $\sum U_n(x)$ поточечно сходится на $[0;+\infty[$
 	
@@ -128,7 +128,7 @@ $\sum U_n(x) \overset{[a,b]}{\rightrightarrows} f(x)$
 из неё можно выбрать сходящуюся подпоследовательность 
 $x_{n_k} \to x_0 \in [a,b]$, тогда $r_{n_k}(x_{n_k}) > \eps_0 > 0$, отсюда
 $\forall \fix \ m \in \N, \forall n_k \geq m \implies r_m(x_{n_k}) \geq
-r_{n_k}(x_{n_k}) > \eps_0$ (т.~к. свойство в)). Переходя здесь к пределу при 
+r_{n_k}(x_{n_k}) > \eps_0$ (т.~к. свойство 2)). Переходя здесь к пределу при 
 $n_k \to \infty$ и учитывая непрерывность остатков получим:
 \[
 \exists \underset{n_k \to \infty}{\lim} r_m(x_{n_k}) = 
@@ -251,7 +251,7 @@ $p > 0$ будут равномерно сходится $\forall [\alpha; \beta
 \begin{equation}
 \label{lec2:15}
 \begin{cases}
-U_n(x) \overset{E}{\longrightarrow} f(x),\ \text{тогда} \\
+\sum U_n(x) \overset{E}{\longrightarrow} f(x),\ \text{тогда} \\
 f(x) = \sum\limits_{n = 1}^{\infty} U_n(x),\ x \in E
 \end{cases}
 \end{equation}
