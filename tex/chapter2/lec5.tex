@@ -1,0 +1,255 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+	\begin{proof}
+		Неопределённый интеграл  \eqref{lec4:12} даёт степенной ряд вида 
+		\[ \sum\limits_{n = 0}^{\infty} b_n(x - x_0)^n, \text{ где } b_0 = C, 
+		b_n = \frac{a_n - 1}{n} \]
+		-- пропущено --
+	\end{proof}
+	
+	-- пропущено --
+	
+	\[ \sum\limits_{n = 0}^{\infty} \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n, \]
+	что соответствует ранее рассмотренным рядам Тейлора. Таким образом, 
+	любой степенной ряд \eqref{lec3:1}, \eqref{lec3:2} является внутри $I$ 
+	рядом Тейлора для своей суммы. В связи с этим все ранее полученные 
+	разложения элементарных функций в ряды Тейлора соответствуют разложениям 
+	этих функций в степенные ряды:
+	
+	\begin{enumerate}
+	    \item 
+	    \[(1 + x)^\alpha = 1 + \sum\limits_{k = 1}^{\infty} 
+	    \dfrac{\alpha(\alpha - 1)\ldots(\alpha - k + 1)}{k!}x^k, \quad k \in 
+	    ]-1; 1[.\]
+	    
+	    В данном случае имеем \eqref{lec3:1}, \eqref{lec3:2} с цетром в точке 
+	    $x_0 = 0$, для которого гарантированным множеством сходимости является 
+	    $I_0 = ]-1; 1[ \subset ]-R, R[ = I.$ $I$ зависит от $\alpha$. Например, 
+	    если $\alpha = m \in \N$, то $\forall a_k = 0 \; \forall k > m$. Т.е.
+	    \[(1 + x)^m = 1 + \sum\limits_{n = 1}^{m} C_M^n x^n \quad \forall x 
+	    \in \R = I.\]
+	    
+        \item 
+        \[e^x = 1 + \sum\limits_{n = 0}^{\infty} \frac{x^n}{n!},  \quad 
+        \forall x \in \R.\]
+
+        Отсюда для показательной функции с основанием $a > 0$ получаем
+        \[ a^x = e^{x \ln a} = \sum\limits_{n = 0}^{\infty} 
+        \frac{\ln^n a}{n!} x ^ n,  \quad \forall x \in \R.\]
+
+        В частности, для $\sh x, \ch x$ имеем 
+        \[\sh x = \frac12 (e^x - e^{-x}) = \frac12 
+        \left(\sum\limits_{n = 0}^{\infty} \frac{x^n}{n!} - 
+        \sum\limits_{n = 0}^{\infty} \frac{(-x)^n}{n!}\right) = \ldots =
+        \sum\limits_{n = 0}^{\infty} \frac{x^{2n+1}}{(2n+1)!}, \quad x \in \R\]
+	
+        Аналогично,
+        \[\ch x = \frac12 (e^x + e^{-x}) = \frac12 
+        \left(\sum\limits_{n = 0}^{\infty} \frac{x^n}{n!} + 
+        \sum\limits_{n = 0}^{\infty}\frac{(-x)^n}{n!}\right) = \ldots = 
+        \sum\limits_{n = 0}^{\infty} \frac{x^{2n}}{(2n)!}, \quad x \in \R\]
+	
+	    \item Тригонометрические разложения.
+	
+        \[\sin x = \ldots = \sum\limits_{n = 0}^{\infty} 
+        \frac{(-1)^nx^{2n+1}}{(2n+1)!}, \quad x \in \R.\]
+        \[\cos x = \ldots = \sum\limits_{n = 0}^{\infty} 
+        \frac{(-1)^nx^{2n}}{(2n)!}, \quad x \in \R.\]
+	
+	    Далее эти разложения будут обобщены для комплексных $x$ и, как 
+	    и раньше, получены формулы Эйлера:
+	
+        \[ e^{it} = \sum\limits_{n = 0}^{\infty} \frac{(it)^n}{n!} = 
+        \sum\limits_{n = 0}^{\infty} \frac{(-1)^nt^{2n}}{(2n)!} + 
+        2 \sum\limits_{n = 0}^{\infty} \frac{(-1)^nx^{2n+1}}{(2n+1)!} 
+        = \cos t + i \sin t, \quad i^2 = -1,\]
+        \[e^{-it} = \cos t - i \sin t\]
+
+        Складывая эти формулы, получаем выражение тригонометрический функций 
+        через гиперболические:
+        
+        \[ \cos t = \frac{e^{it} + e^{-it}}{2} = \ch (it) \]
+        \[ \sin t = \frac{e^{it} - e^{-it}}{2i} = -i\sh (it) \]
+        
+        Получаем формулы также заменой аргументов $t = iy$:
+        \[ \ch y = \cos(iy)\]
+        \[\sh y = i \sin (iy)\]
+        
+        \item Разложение обратных тригонометрических функций.
+        
+        Выше было показано, что 
+        \[ \arctg x = \sum\limits_{n = 0}^{\infty} \frac{(-1)^n}{2n + 1}
+        x^{2n+1}, \quad x \in [-1;1]. \]
+        
+        Отсюда, используя тождество $\arctg x + \arcctg x = \frac{\pi}{2}, 
+        \quad \forall x \in \R$, получаем 
+        
+        \[ \arcctg x = \frac{\pi}{2} - \sum\limits_{n = 0}^{\infty} 
+        \frac{(-1)^nx^{2n+1}}{2n + 1}, \quad x \in [-1; 1]. \]
+        
+        Аналогично, из соответствующего степенного разложения, после 
+        почленного интегрирования, имеем
+	
+	    \begin{multline*}
+	        \arcsin x = \int\limits_{0}^{x} \frac{dt}{\sqrt{1 - t^2}} =
+	        [(1 - t^2)^{1/2} = 1 + \frac{(-\frac12)}{1!}(-t^2) + 
+	        \frac{(-\frac12)(-\frac12 - 1)}{2!}(-t^2)^2 = \\ =
+            1 + \frac{1!!}{2!!}t^2 + \frac{3!!}{4!!}t^4 + \ldots ] = 
+            \int\limits_{0}^{x} 1 + \sum\limits_{n = 1}^{\infty} 
+            \frac{(2n-1)!!}{(2n)!!} t^{2n}dt = x + \sum\limits_{n = 1}^{\infty} 
+            \frac{(2n-1)!!}{(2n)!!(2n+1)}x^{2n+1} = \\ = 
+            \sum\limits_{n = 0}^{\infty} \frac{(2n + 1)!!}{(2n)!!} 
+            \cdot \frac{x^{2n+1}}{(2n+1)^2}.
+        \end{multline*}
+        
+        Причём, если бы до интегрирования интервал сходимости был $I = ]-1;1[$, 
+        то после интегрирования множество сходимости будет $[-1;1]$.
+        Используя далее тождество $\arcsin x + \arccos x = \frac{\pi}{2} \quad 
+        \forall x \in [-1; 1]$, имеем \[ \arccos x = \frac{\pi}{2} - 
+        \sum\limits_{n = 0}^{\infty} \frac{(2n + 1)}{(2n)!!} 
+        \frac{x^{2n + 1}}{(2n + 1)^2}, \quad x \in [-1; 1].\]
+        
+        \item \[\ln(1 + x) = \sum\limits_{n = 1}^{\infty}\frac{(-1)^{n - 1}x^n}
+        {n}, \quad x \in ]-1; 1].\]
+        
+        Отметим, что, так как степенной ряд является рядом Тейлора для своей 
+        суммы, то отсюда следует единственности разложения в степенной ряд, а 
+        именно, если два степенных ряда равны $\sum\limits_{n = 0}^{\infty} 
+        a_n(x - x_0)^n = \sum\limits_{n = 0}^{\infty} c_n(x-x_0)^n$, то внутри 
+        общего интервала сходимости, полагая в равенстве
+        \[ a_0 + a_1(x - x_0) + \ldots = c_0 + c_1(x - x_0) \]
+        $x = x_0$, получаем $a_0 = c_0$. После почленного дифференцирования
+        имеем\[1 \cdot a_1 + 2a_2(x - x_0) + \ldots = 
+        1 \cdot c_1 + 2c_2(x - x_0) + \ldots \]
+        при $x = x_0 \implies c_1 = a_1$ и т.д. Таким образом, 
+        $a_n = c_n \quad \forall n \in \N$. 
+	\end{enumerate}
+	
+    \begin{example}
+        Используя основные степенные разложения, разложить в ряд
+        \[f(x) = \frac12\ln\frac{1+x}{1-x},\quad x \in ]-1; 1[ \]
+        \begin{itemize}
+            \item I способ
+            \begin{multline*}
+                \forall x \in ]-1; 1[ \implies f(x) = \frac12 \ln(1+x) - \frac12 
+                \ln(1-x) = \\ = \frac12 \left(\sum\limits_{n = 1}^{\infty} 
+                \frac{(-1)^{n-1}x^n}{n} - \sum\limits_{n = 1}^{\infty} 
+                \frac{(-1)^{n - 1}(-x)^n}{n}\right) = \ldots = 
+                \sum\limits_{n = 0}^{\infty}
+                \frac{x^{2n+1}}{2n+1}.
+            \end{multline*}
+            
+            \item II способ
+            \begin{multline*}
+                \exists f'(x) = \frac12 (\ln(1+x) - \ln(1-x))' = \frac12 
+                \left(\frac{1}{1+x} + \frac{1}{1-x} \right) = \frac{1}{1-x^2}
+                = \\ = \sum\limits_{n = 0}^{\infty} x^{2n}, \quad |x| < 1 
+                \implies f(x) = \int\limits_{0}^{x} 
+                \sum\limits_{n = 0}^{\infty} x^{2n} = 
+                \sum\limits_{n = 0}^{\infty} \frac{x^{2n + 1}}{2n + 1}, 
+                \quad x \in ]-1;1[.
+            \end{multline*}
+            
+            При этом, хотя мы использовали разные способы, в результате 
+            получили один и тот же степенной ряд, что согласуется с 
+            единственностью разложения в степенной ряд.
+        \end{itemize}
+    \end{example}
+
+    \section{Основные действия со степенными рядами}
+    \subsection{Сложение степенных рядов}
+    
+    Если для степенных рядов \eqref{lec3:1}, \eqref{lec3:2}  с радиусом 
+    сходимости $R > 0$ интервал сходимости $I = ]x_0-R; x_0 + R[$, а у 
+    степенного ряда $\sum\limits_{n = 0}^{\infty} b_n(x-x_0)^n$ с радиусом 
+    сходимости $\widetilde R$ и интервалом сходимости $\widetilde I = 
+    ]x_0-\widetilde R; x_0 + \widetilde R[$, то тогда $\forall \lambda, \mu \in 
+    \R$ линейная комбинация этих рядов
+    \[\lambda \sum\limits_{n = 0}^{\infty}a_n(x-x_0)^n + \mu 
+    \sum\limits_{n = 0}^{\infty} b_n(x-x_0)^n \]
+    даёт степенной ряд с $c_n = \lambda a_n + \mu b_n, \quad \forall n \in 
+    \N_0$, т.е. степенной ряд
+    \[ \sum\limits_{n = 0}^{\infty}(\lambda a_n + \mu b_n)(x-x_0)^n. \]
+    У положительного ряда гарантированным множеством сходимости является 
+    $I_0 = ]x_0-R_0; x_0 + R_0[, \; R_0 = \min \{R, \widetilde R\}$. В 
+    некоторых случаях полученный степенной ряд может иметь более широкое 
+    множество сходимости, чем исходный. В частности, имеем для суммы/разности
+    \[ \sum\limits_{n = 0}^{\infty}a_n(x-x_0)^n \pm 
+    \sum\limits_{n = 0}^{\infty}b_n(x-x_0)^n = 
+    \sum\limits_{n = 0}^{\infty}(a_n \pm b_n) (x-x_0)^n.  \]
+
+    У суммы множество сходимости совпадает с исходным, а множество разности 
+    /* видимо, забыли конец предложения*/
+    
+    \subsection{Произведение степенных рядов}
+    Произведение степенных рядов по определению полагают
+
+    \begin{multline*}
+        \left( \sum\limits_{n = 0}^{\infty}a_n(x-x_0)^n \right)
+        \left( \sum\limits_{n = 0}^{\infty}b_n(x-x_0)^n \right) = 
+        (a_0 + a_1(x - x_0) + \ldots)(b_0 + b_1(x - x_0) + \ldots) =
+        \\ = a_0b_0 + (a_0b_0 + a_0b_1)(a - x_0) + \ldots = 
+        \sum\limits_{n = 0}^{\infty}c_n(x-x_0)^n, 
+    \end{multline*}
+    где $c_n = \sum\limits_{i + j = n} a_ib_j$. Гарантированным интервалом 
+    сходимости (не обязательно максимальным) является $I_0 = ]x_0-R_0; x_0 + 
+    R_0[, \; R_0 = \min \{R, \widetilde R\},$ где $R, \widetilde R$~--- 
+    соответствующие радиусы сходимости степенных рядов $\sum\limits_{n = 0}^
+    {\infty}a_n(x-x_0)^n$ и $\sum\limits_{n = 0}^{\infty}b_n(x-x_0)^n$.
+    
+    \begin{example}
+        Используя экспоненциальное разложение и бином Ньютона, имеем
+        \begin{multline*} 
+            e^xe^y = \left(\sum\limits_{n = 0}^{\infty}\frac{x^n}{n!} \right)
+            \left(\sum\limits_{n = 0}^{\infty}\frac{y^n}{n!} \right) = \ldots = 
+            \frac{1}{0!0!} + \left(\frac x{0!1!} + \frac y {1!0!}\right) + 
+            \left(\frac{x^2}{2!0!} + \frac{xy}{1!1!} + \frac{y^2}{0!2!}\right) 
+            + \ldots = \\ = 1 + \frac{C_1^0 x + C_1^1 y}{1!} + \frac{C_2^0 x^2 
+            + C_2^1xy + C_2^2 y^2}{2!} + \ldots = 1 + \frac{x + y}{1!} + 
+            \frac{(x + y)^2}{2!} + \ldots = \\ = \sum\limits_{n = 0}^{\infty} 
+            \frac{(x + y)^n}{n!} = e^{x + y}, \quad \forall x, y \in \R.
+        \end{multline*}
+    \end{example}
+
+    \subsection{Деление степенных рядов}
+
+    Частным от деления степенных рядов \eqref{lec3:1}, \eqref{lec3:2} на 
+    степенной ряд $\sum\limits_{n = 0}^{\infty}b_n(x - x_0)^n, \, b_0 
+    \ne 0$ называется такой ряд $\sum\limits_{n = 0}^{\infty}c_n(x - x_0)^n$, 
+    что 
+    \[\sum\limits_{n = 0}^{\infty}a_n(x - x_0)^n = 
+    \left(\sum\limits_{n = 0}^{\infty}c_n(x - x_0)^n\right) \cdot 
+    \left(\sum\limits_{n = 0}^{\infty}b_n(x - x_0)^n\right). \]
+    
+    Отсюда по правилу произведения степенных рядов и в силу единственности 
+    разложения в степенной ряд для определения $c_n$ получаем бесконечную систему 
+    \[
+    \begin{cases}
+        b_0c_0 = a_0, \\ 
+        b_0c_1 + b_1c_0 = a_1, \\
+        b_0c_2 + b_1c_1 + b_2c_0 = a_2, \\
+        \ldots
+    \end{cases} 
+    \]
+    и последовательно находим
+    \[ 
+    \begin{cases}
+    c_0 = \frac{a_0}{b_0}, \\ 
+    c_1 = \frac{a_1 - b_1c_0}{b_0} = \frac{a_1 - \frac{b_1}{b_0}a_0}{b_0} = 
+        \frac{a_1b_0-b_1a_0}{b_0^2}, \\
+    \ldots
+    \end{cases} 
+    \]
+    При этом область сходимости частного в общем случае не удаётся однозначно 
+    выразить через области сходимости исходных рядов.
+\end{document}
