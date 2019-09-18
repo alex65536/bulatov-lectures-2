@@ -13,11 +13,63 @@
 	\begin{proof}
 		Неопределённый интеграл  \eqref{lec4:12} даёт степенной ряд вида 
 		\[ \sum\limits_{n = 0}^{\infty} b_n(x - x_0)^n, \text{ где } b_0 = C, 
-		b_n = \frac{a_n - 1}{n} \]
-		-- пропущено --
-	\end{proof}
-	
-	-- пропущено --
+		b_n = \frac{a_n - 1}{n}. \]
+		Используя формулу Коши-Адамара, для его радиуса сходимости получаем
+		
+        \[ \widetilde R = \frac{1}{\overline{\lim\limits_{n \to \infty}}
+        \sqrt[n]{|b_n|}} = \frac{1}{\overline{\lim\limits_{n \to \infty}}
+        \sqrt[n]{\frac{|a_{n-1}|}{n}}} = \frac{1}{\overline{\lim\limits_{n \to
+        \infty}} \sqrt[n]{|a_n|}} = R, \]
+        где $R$~--- радиус сходимости исходного степенного ряда \eqref{lec3:1}, 
+        \eqref{lec3:2}. Т.е. при интегрировании ряд имеет один и тот же радиус 
+        сходимости $\implies$ интервал сходимости также один и тот же.
+    \end{proof}
+    
+    \begin{rem}
+        Интегрирование степенного ряда не ухудшает множество его сходимости 
+        в том смысле, что если исходный ряд сходится на одном из концов $I$, 
+        то и полученный ряд будет на нём сходиться, т.е. интегрирование не 
+        уменьшает множество сходимости, и если исходный ряд расходится на 
+        каком-то конце, то проинтегрированный может на нём сходиться.
+    \end{rem}
+
+    \begin{example}
+        Используем тот факт, что
+        \[\forall x \in ]-1;1[ \implies \frac{1}{1 + x^2} = 
+        \sum\limits_{n = 0}^{\infty} (-1)^n x^{2n}. \]
+        Отсюда после интегрирования имеем
+        \begin{multline*}
+            \forall x \in ]-1;1[ \implies \int\limits_{0}^{x} 
+            \frac{dx}{1 + x^2} = \sum\limits_{n = 0}^{\infty} (-1)^n 
+            \int\limits_{0}^{x} t^{2n} dt \iff \arctg x = 
+            \sum\limits_{n = 0}^{\infty} (-1)^n\frac{x^{2n + 1}}{2n + 1},
+        \end{multline*}
+        причём здесь проинтегрированный степенной ряд сходится не только 
+        $\forall x \in ]-1;1[$, но и на концах $x = \pm 1$, т.к. получаем
+        \[\sum\limits_{n = 0}^{\infty} \frac{(-1)^n}{2n + 1},\]
+        что сходится по признаку Лейбница, т.к. $\dfrac{1}{2n + 1} 
+        \downarrow 0$. В частности,
+        
+        \[ \text{при } x = 1 \implies \frac{\pi}4 = \arctg 1 =
+        \sum\limits_{n = 0}^{\infty} \frac{(-1)^n}{2n + 1} = 1 - 
+        \dfrac13 + \dfrac15 - \ldots \]
+    \end{example}
+
+    \section{Степенные ряды как ряд Тейлора. Основные 
+    раздложения в степенной ряд.}
+    Для степенных рядов \eqref{lec3:1}, \eqref{lec3:2} с 
+    радиусом сходимости $R > 0$ сумма
+    \[ f(x) = \sum\limits_{n = 0}^{\infty} a_n(x - x_0)^n \]
+    является непрерывно дифференцируемой функцией внутри 
+    $I = ]x_0 - R; x_0 + R[$. Отсюда получаем, что
+    \[ \forall k \in \N \implies \exists f^{(k)}(x) = \ldots = k! a_k + 
+    \frac{(k + 1)!a_{k + 1}}{1!}(x - x_0) + \ldots \quad \forall x \in I. \]
+
+    В частности,
+    \[ \text{при } x = x_0 \implies f^{(k)}(x_0) = k! \cdot a_k \implies 
+    a_k = \frac{f^{(k)}(x_0)}{k!} \quad \forall k \in \N_0. \]
+
+    Поэтому \eqref{lec3:1}, \eqref{lec3:2} принимает вид
 	
 	\[ \sum\limits_{n = 0}^{\infty} \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n, \]
 	что соответствует ранее рассмотренным рядам Тейлора. Таким образом, 
@@ -36,7 +88,7 @@
 	    $x_0 = 0$, для которого гарантированным множеством сходимости является 
 	    $I_0 = ]-1; 1[ \subset ]-R, R[ = I.$ $I$ зависит от $\alpha$. Например, 
 	    если $\alpha = m \in \N$, то $\forall a_k = 0 \; \forall k > m$. Т.е.
-	    \[(1 + x)^m = 1 + \sum\limits_{n = 1}^{m} C_M^n x^n \quad \forall x 
+	    \[(1 + x)^m = 1 + \sum\limits_{n = 1}^{m} C_m^n x^n \quad \forall x 
 	    \in \R = I.\]
 	    
         \item 
