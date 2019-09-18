@@ -4,18 +4,18 @@
 \documentclass[../../main.tex]{subfiles}
 
 \graphicspath{
-	{../../img/}
-	{../img/}
-	{img/}
+    {../../img/}
+    {../img/}
+    {img/}
 }
 
 \begin{document}
-	\begin{proof}
-		Неопределённый интеграл  \eqref{lec4:12} даёт степенной ряд вида 
-		\[ \sum\limits_{n = 0}^{\infty} b_n(x - x_0)^n, \text{ где } b_0 = C, 
-		b_n = \frac{a_n - 1}{n}. \]
-		Используя формулу Коши-Адамара, для его радиуса сходимости получаем
-		
+    \begin{proof}
+        Неопределённый интеграл  \eqref{lec4:12} даёт степенной ряд вида 
+        \[ \sum\limits_{n = 0}^{\infty} b_n(x - x_0)^n, \text{ где } b_0 = C, 
+        b_n = \frac{a_n - 1}{n}. \]
+        Используя формулу Коши-Адамара, для его радиуса сходимости получаем
+        
         \[ \widetilde R = \frac{1}{\overline{\lim\limits_{n \to \infty}}
         \sqrt[n]{|b_n|}} = \frac{1}{\overline{\lim\limits_{n \to \infty}}
         \sqrt[n]{\frac{|a_{n-1}|}{n}}} = \frac{1}{\overline{\lim\limits_{n \to
@@ -70,27 +70,27 @@
     a_k = \frac{f^{(k)}(x_0)}{k!} \quad \forall k \in \N_0. \]
 
     Поэтому \eqref{lec3:1}, \eqref{lec3:2} принимает вид
-	
-	\[ \sum\limits_{n = 0}^{\infty} \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n, \]
-	что соответствует ранее рассмотренным рядам Тейлора. Таким образом, 
-	любой степенной ряд \eqref{lec3:1}, \eqref{lec3:2} является внутри $I$ 
-	рядом Тейлора для своей суммы. В связи с этим все ранее полученные 
-	разложения элементарных функций в ряды Тейлора соответствуют разложениям 
-	этих функций в степенные ряды:
-	
-	\begin{enumerate}
-	    \item 
-	    \[(1 + x)^\alpha = 1 + \sum\limits_{k = 1}^{\infty} 
-	    \dfrac{\alpha(\alpha - 1)\ldots(\alpha - k + 1)}{k!}x^k, \quad k \in 
-	    ]-1; 1[.\]
-	    
-	    В данном случае имеем \eqref{lec3:1}, \eqref{lec3:2} с цетром в точке 
-	    $x_0 = 0$, для которого гарантированным множеством сходимости является 
-	    $I_0 = ]-1; 1[ \subset ]-R, R[ = I.$ $I$ зависит от $\alpha$. Например, 
-	    если $\alpha = m \in \N$, то $\forall a_k = 0 \; \forall k > m$. Т.е.
-	    \[(1 + x)^m = 1 + \sum\limits_{n = 1}^{m} C_m^n x^n \quad \forall x 
-	    \in \R = I.\]
-	    
+    
+    \[ \sum\limits_{n = 0}^{\infty} \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n, \]
+    что соответствует ранее рассмотренным рядам Тейлора. Таким образом, 
+    любой степенной ряд \eqref{lec3:1}, \eqref{lec3:2} является внутри $I$ 
+    рядом Тейлора для своей суммы. В связи с этим все ранее полученные 
+    разложения элементарных функций в ряды Тейлора соответствуют разложениям 
+    этих функций в степенные ряды:
+    
+    \begin{enumerate}
+        \item 
+        \[(1 + x)^\alpha = 1 + \sum\limits_{k = 1}^{\infty} 
+        \dfrac{\alpha(\alpha - 1)\ldots(\alpha - k + 1)}{k!}x^k, \quad k \in 
+        ]-1; 1[.\]
+        
+        В данном случае имеем \eqref{lec3:1}, \eqref{lec3:2} с цетром в точке 
+        $x_0 = 0$, для которого гарантированным множеством сходимости является 
+        $I_0 = ]-1; 1[ \subset ]-R, R[ = I.$ $I$ зависит от $\alpha$. Например, 
+        если $\alpha = m \in \N$, то $\forall a_k = 0 \; \forall k > m$. Т.е.
+        \[(1 + x)^m = 1 + \sum\limits_{n = 1}^{m} C_m^n x^n \quad \forall x 
+        \in \R = I.\]
+        
         \item 
         \[e^x = 1 + \sum\limits_{n = 0}^{\infty} \frac{x^n}{n!},  \quad 
         \forall x \in \R.\]
@@ -104,23 +104,23 @@
         \left(\sum\limits_{n = 0}^{\infty} \frac{x^n}{n!} - 
         \sum\limits_{n = 0}^{\infty} \frac{(-x)^n}{n!}\right) = \ldots =
         \sum\limits_{n = 0}^{\infty} \frac{x^{2n+1}}{(2n+1)!}, \quad x \in \R\]
-	
+    
         Аналогично,
         \[\ch x = \frac12 (e^x + e^{-x}) = \frac12 
         \left(\sum\limits_{n = 0}^{\infty} \frac{x^n}{n!} + 
         \sum\limits_{n = 0}^{\infty}\frac{(-x)^n}{n!}\right) = \ldots = 
         \sum\limits_{n = 0}^{\infty} \frac{x^{2n}}{(2n)!}, \quad x \in \R\]
-	
-	    \item Тригонометрические разложения.
-	
+    
+        \item Тригонометрические разложения.
+    
         \[\sin x = \ldots = \sum\limits_{n = 0}^{\infty} 
         \frac{(-1)^nx^{2n+1}}{(2n+1)!}, \quad x \in \R.\]
         \[\cos x = \ldots = \sum\limits_{n = 0}^{\infty} 
         \frac{(-1)^nx^{2n}}{(2n)!}, \quad x \in \R.\]
-	
-	    Далее эти разложения будут обобщены для комплексных $x$ и, как 
-	    и раньше, получены формулы Эйлера:
-	
+    
+        Далее эти разложения будут обобщены для комплексных $x$ и, как 
+        и раньше, получены формулы Эйлера:
+    
         \[ e^{it} = \sum\limits_{n = 0}^{\infty} \frac{(it)^n}{n!} = 
         \sum\limits_{n = 0}^{\infty} \frac{(-1)^nt^{2n}}{(2n)!} + 
         2 \sum\limits_{n = 0}^{\infty} \frac{(-1)^nx^{2n+1}}{(2n+1)!} 
@@ -151,11 +151,11 @@
         
         Аналогично, из соответствующего степенного разложения, после 
         почленного интегрирования, имеем
-	
-	    \begin{multline*}
-	        \arcsin x = \int\limits_{0}^{x} \frac{dt}{\sqrt{1 - t^2}} =
-	        [(1 - t^2)^{1/2} = 1 + \frac{(-\frac12)}{1!}(-t^2) + 
-	        \frac{(-\frac12)(-\frac12 - 1)}{2!}(-t^2)^2 = \\ =
+    
+        \begin{multline*}
+            \arcsin x = \int\limits_{0}^{x} \frac{dt}{\sqrt{1 - t^2}} =
+            [(1 - t^2)^{1/2} = 1 + \frac{(-\frac12)}{1!}(-t^2) + 
+            \frac{(-\frac12)(-\frac12 - 1)}{2!}(-t^2)^2 = \\ =
             1 + \frac{1!!}{2!!}t^2 + \frac{3!!}{4!!}t^4 + \ldots ] = 
             \int\limits_{0}^{x} 1 + \sum\limits_{n = 1}^{\infty} 
             \frac{(2n-1)!!}{(2n)!!} t^{2n}dt = x + \sum\limits_{n = 1}^{\infty} 
@@ -185,8 +185,8 @@
         1 \cdot c_1 + 2c_2(x - x_0) + \ldots \]
         при $x = x_0 \implies c_1 = a_1$ и т.д. Таким образом, 
         $a_n = c_n \quad \forall n \in \N$. 
-	\end{enumerate}
-	
+    \end{enumerate}
+    
     \begin{example}
         Используя основные степенные разложения, разложить в ряд
         \[f(x) = \frac12\ln\frac{1+x}{1-x},\quad x \in ]-1; 1[ \]
