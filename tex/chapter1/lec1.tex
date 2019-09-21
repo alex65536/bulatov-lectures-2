@@ -8,7 +8,7 @@
 \section{Поточечная и равномерная сходимость ФП}
 Обозначим через $P(X)$ пространство всех Ф1П 
 с общей областью определения $X \subset \R$.
-Произвольное отображение $f: \N \longrightarrow P(X)$ при котором 
+Произвольное отображение $f: \N \longrightarrow P(X)$, при котором 
 \begin{equation}
 \label{lec1:1}
 \forall n \in \N \implies \exists! f_n(x) \in P(X)
@@ -17,11 +17,11 @@
 которую кратко записывают $(f_n(x)),\\ x\in X$.
 
 Если для $x_0 \in X \implies (f_n(x_0))$ сходится, то $x_0$ называется
-\emph{точкой поточечной сходимости рассматриваемой ФП}.
+\emph{точкой поточечной сходимости} рассматриваемой ФП.
 
-Множество $D = \{x_0\}$ называется \emph{множеством поточечной сходимости
-рассматриваемой ФП}.
-При этом будет конкретно определена функция 
+Множество $D = \{x_0\}$ называется \emph{множеством поточечной сходимости}
+рассматриваемой ФП.
+При этом будет корректно определена функция 
 \begin{equation}
 \label{lec1:2}
 \exists f(x) = \lim f_n(x),\ \forall x \in D
@@ -38,7 +38,7 @@ f_n(x) \overset{D}{\underset{n \to \infty}\longrightarrow} f(x)
 \exists \nu = \nu_\eps(x_0) \in \R : \forall n \geq \nu \implies
 |f_n(x_0) - f(x_0)| \leq \eps
 \end{equation}
-ФП $(f_n(x)), x \in D$ называется \emph{равномерно сходящейся} 
+ФП $(f_n(x)), \ x \in D,$ называется \emph{равномерно сходящейся} 
 на множестве $E \subset D$, если 
 \begin{equation}
 \label{lec1:5}
@@ -49,14 +49,14 @@ f_n(x) \overset{D}{\underset{n \to \infty}\longrightarrow} f(x)
 |f_n(x) - f(x)| \leq \eps
 \end{equation}
 Отличие $\eqref{lec1:5}$ от $\eqref{lec1:4}$ в том, что  в $\eqref{lec1:5}$
-величина $\nu$ зависит только от $\eps > 0$ и одно и то же $\forall x \in E$,
-а в $\eqref{lec1:4}$ $\nu = \nu_\eps(x_0) \in \R$ зависит как от $\eps > 0$,
-так и от $x \in E$.
+величина $\nu$ зависит только от $\eps > 0$ и одна и та же для 
+$\forall x \in E$, а в $\eqref{lec1:4}$ $\nu = \nu_\eps(x_0) \in \R$ 
+зависит как от $\eps > 0$, так и от $x_0 \in E$.
 
 В связи с этим необходимым условием выполнения $\eqref{lec1:5}$ 
-является выполнение $\eqref{lec1:4}$ и в то же время из $\eqref{lec1:5}$
-всегда следует $\eqref{lec1:4}$, т.~е. из равномерной непрерывности на 
-множестве ФП следует равномерная сходимость.
+является выполнение $\eqref{lec1:4}$, и в то же время из $\eqref{lec1:5}$
+всегда следует $\eqref{lec1:4}$, т.~е. из равномерной сходимости ФП на 
+множестве следует поточечная сходимость ФП на этом множестве.
 
 В дальнейшем вместо $\eqref{lec1:5}$ будем использовать обозначение:
 \begin{equation}
@@ -73,10 +73,9 @@ f_n(x) \overset{E}{\underset{n \to \infty}\rightrightarrows} f(x)
 \begin{proof}
  \;
 
- \nec: Пусть выполнено $\eqref{lec1:6}$, тогда выполнено $\eqref{lec1:5}$,
- т.~к. $\forall \eps > 0 \in \R$ не зависит от $x \in E$, 
- то из $\eqref{lec1:5} \iff 
- \underset{x \in E}{\sup}|f_n(x) - f(x)| \leq \eps,\ 
+ \nec: Пусть выполнено $\eqref{lec1:6}$. Тогда выполнено и $\eqref{lec1:5}$.
+ Так как в $\eqref{lec1:5}$ $\nu = \nu_\eps$ не зависит от $x_0 \in E$, 
+ верно $ \rho_n = \underset{x \in E}{\sup}|f_n(x) - f(x)| \leq \eps,\ 
  \forall n \geq \nu_\eps$, т.~е.
  \[\forall \eps > 0 \quad \exists \nu = \nu_\eps \in \R : 
  \forall n \geq \nu \implies 
@@ -91,48 +90,51 @@ f_n(x) \overset{E}{\underset{n \to \infty}\rightrightarrows} f(x)
 = \rho_n \leq \eps. \qedhere\]
 \end{proof}
 
-\begin{rem}
+\begin{rems}
 	\;
 	
- \begin{enumerate}
-		\item Если оказывается, что 
+\begin{enumerate}
+	
+\item Если оказывается, что 
 $\rho_n \underset{n \to \infty}{\not \rightarrow}0$, 
 то равномерной сходимости не будет, но может быть поточечная.
 
-		\item Нетрудно получить, что если $\exists \alpha_n \geq 0 \quad 
-\underset{x \in E}{\sup}|f_n(x) - f(x)| \leq \alpha_n,\ \forall n \in \N;
-\alpha_n = o(1)$, то мы имеем
+\item Нетрудно получить, что если $\exists \alpha_n \geq 0, \ 
+\alpha_n = o(1) \colon \quad \underset{x \in E}{\sup}|f_n(x) - f(x)| 
+\leq \alpha_n,\ \forall n \in \N$, то мы имеем
 $f_n(x) \overset{E}{\underset{n \to \infty}\rightrightarrows} f(x)$ ---
 достаточное условие равномерной сходимости ФП.
 
-		\item Используя правило де Моргана 
-построения отрицаний нетрудно получить,
-что если \\ $\exists x_n \in E,\ n \in \N \quad (f_n(x_n) - f(x_n))
-\underset{n \to \infty}{\nrightarrow}0$, то 
-$f_n(x) \overset{E}{\not \rightrightarrows} f(x)$ (не сходится 
-равномерно либо сходится поточечно, либо расходится).
- \end{enumerate}	
-\end{rem}	
+\item Используя правило де Моргана 
+построения отрицаний, нетрудно получить,
+что если \\ $\exists x_n \in E,\ n \in \N \colon \ 
+\left|f_n(x_n) - f(x_n)\right| \underset{n \to \infty}{\nrightarrow}0$,
+то $f_n(x) \overset{E}{\not \rightrightarrows} f(x)$ (не сходится 
+равномерно, то есть либо сходится поточечно, либо расходится).
+
+\end{enumerate}	
+
+\end{rems}	
 
 \begin{exmps}
 	\;
 	
-	\begin{enumerate}
-		\item	 Пусть $f_n(x) = x^n,\ n \in \N.$ 
+\begin{enumerate}
+\item Пусть $f_n(x) = x^n,\ n \in \N$. 
 В данном случае $X = \R$. 
 
 Учитывая, что $\underset{n \to \infty}{\lim} x^n = 
 \begin{cases}
-0,\ |x| < 1, \\
-1,\  x = 1, \\
-\nexists,\ x = -1, \\
-\infty,\ |x| > 1;
+	0,\ |x| < 1, \\
+	1,\  x = 1, \\
+	\nexists,\ x = -1, \\
+	\infty,\ |x| > 1;
 \end{cases}$
 
-В данном случае множество сходимости рассматриваемой 
+получаем, что в данном случае множество сходимости рассматриваемой 
 последовательности $D = ]-1;1]$. 
-При этом сходимость на $D$ не будет равномерной, т.~к. 
-например для предельной функции получаем:
+При этом сходимость на $D$ не будет равномерной, т.~к.,
+например, для предельной функции получаем:
 
 $f(x) = \underset{n \to \infty}{\lim} x^n = 
 \begin{cases}
@@ -152,16 +154,17 @@ $f_n(x)$ не сходится равномерно на $]-1;1] \quad
 (f_n(x) \overset{]-1;1]}{\underset{n \to \infty}
 {\not \rightrightarrows}} f(x))$. 
 
-Хотя все члены ФП непрерывны, в то же время предельная функция
+Хотя все члены ФП непрерывны, предельная функция в то же время
 разрывна в точке $x=1$. Если бы была равномерная сходимость, 
 то можно было бы гарантировать непрерывность предельной функции.
 
-		\item Рассмотрим ФП $f_n(x) = x^n,
+\item Рассмотрим ФП $f_n(x) = x^n, \
 \begin{cases}
-x \in E = [-q;q], \\
-0 \leq q < 1;
+	x \in E = [-q;q], \\
+	0 \leq q < 1;
 \end{cases}.
 $
+
 $f(x) = \underset{n \to \infty}{\lim} x^n \overset{|x| \leq q < 1}{=} 0$ ---
 непрерывна на $E$.
 
@@ -174,24 +177,26 @@ $q^n \leq \eps,\ \eps > 0$ получаем,
 Если $0 < q < 1$, то $n \geq \log_q\eps = \nu_\eps \implies$
 $\forall \eps > 0,\ \exists \nu_\eps = 
 \begin{cases}
-\log_q \eps,\ 0 < q < 1, \\
-\forall,\ q = 0;
+	\log_q \eps,\ 0 < q < 1, \\
+	\forall,\ q = 0;
 \end{cases} : \forall n \geq \nu_\eps,\ \forall x,\ |x| < q \implies 
 |f_n(x) - f(x)| = |x|^n \leq |q|^n \leq |q|^{\nu_\eps} = 
 q^{\log_q \eps} = \eps,$ значит
 
 $f_n(x) \overset{\forall [-q;q] \subset ]-1,1]}
 {\underset{n \to \infty}\rightrightarrows} f(x)$
-	\end{enumerate}
+\end{enumerate}
+
 \end{exmps}	
-В дальнейшем ситуацию, в которой на всём рассматриваемом 
-множестве нет равномерной сходимости, но есть равномерная 
-сходимость на любом отрезке из этого множества будем называть 
-\emph{локально равномерной сходимостью} ФП на рассматриваемом множестве.
+
+В дальнейшем ситуацию, в которой равномерная сходимость отсутствует на всём 
+рассматриваемом множестве, но присутствует на любом отрезке из этого множества,
+будем называть \emph{локальной равномерной сходимостью} ФП на
+рассматриваемом множестве.
 
 \begin{thm}[критерий Коши равномерной сходимости ФП]
 Для того, чтобы $(f_n(x)) \overset{E}
-{\underset{n \to \infty}\rightrightarrows}$ необходимо и достаточно, 
+{\underset{n \to \infty}\rightrightarrows}$, необходимо и достаточно, 
 чтобы 
 \begin{equation}
 \label{lec1:8}
@@ -204,46 +209,50 @@ $f_n(x) \overset{\forall [-q;q] \subset ]-1,1]}
 \begin{proof}
 \;
 
-\nec: Используя М-лемму для критерия Коши сходимости ЧП 
+\nec: Используем М-лемму для критерия Коши сходимости ЧП 
 в случае выполнения $\eqref{lec1:6}$. Тогда
 \[\forall m, n \geq \nu \implies |f_m(x) - f_n(x)| = 
-|(f_m(x) - f(x)) - (f_n(x) - f(x)| \leq 
-\underbrace{|f_m(x) - f(x)|}_{\leq \eps} + 
-\underbrace{|f_n - f(x)|}_{\leq \eps} \leq  2\eps,\] т.~е. 
+|(f_m(x) - f(x)) - (f_n(x) - f(x)| \leq \]
+\[ \leq \underbrace{|f_m(x) - f(x)|}_{\leq \eps} + 
+\underbrace{|f_n - f(x)|}_{\leq \eps} \leq 2\eps,\] т.~е. 
 $\forall \fix \ x \in E \implies (f_n(x))$ 
 является фундаментальной в силу критерия Коши ЧП.
 
-\suff: Пусть выполнено $\eqref{lec1:8}$, тогда т.~к. $\nu=\nu_\eps \in \R$
-не зависит от $x \in E$ имеем $\eqref{lec1:8} \implies$ при $m \to \infty$ 
-существует предельная функция 
+\suff: Пусть выполнено $\eqref{lec1:8}$. Тогда, т.~к. 
+$\nu=\nu_\eps \in \R$ не зависит от $x \in E$, из $\eqref{lec1:8}$
+следует, что при $m \to \infty$ существует предельная функция 
 $\eqref{lec1:6}$, для которой $|f_n(x) - f(x)| = 
 \underset{m \to \infty}{\lim} |f_n(x) - f_m(x)| \leq  \eps \ 
-\forall x \in E,\ \forall n \geq \nu_\eps \implies \rho_n = 
-\underset{x \in E}{\sup} |f_n(x) - f(x)| \leq \eps \implies 
+\forall x \in E,\ \forall n \geq \nu_\eps$. Отсюда следует, что
+$\rho_n = \underset{x \in E}{\sup} |f_n(x) - f(x)| \leq \eps \implies 
 \rho_n \underset{n \to \infty}{\longrightarrow} 0 \implies
 f_n(x) \overset{E}
 {\underset{n \to \infty}\rightrightarrows} f(x)$
 в силу супремального критерия равномерной сходимости. 
 \end{proof}	
 
-\begin{rem}
+\begin{rems}
 	\;
 	
-	\begin{enumerate}
-		\item Если $f_n(x) \overset{E}
+\begin{enumerate}
+\item Если $f_n(x) \overset{E}
 {\underset{n \to \infty}\rightrightarrows} f(x)$, то 
 $\forall \widetilde{E} \subset E \implies f_n(x) \overset{\widetilde{E}}
 {\underset{n \to \infty}\rightrightarrows} f(x)$
-		\item Если $f_n(x) \overset{E_1}
-		{\underset{n \to \infty}\rightrightarrows} f(x)$ и 
-		$f_n(x) \overset{E_2}
-		{\underset{n \to \infty}\rightrightarrows} f(x)$, то
-		$f_n(x) \overset{E_1 \bigcup E_2}
-		{\underset{n \to \infty}\rightrightarrows} f(x)$
-	\end{enumerate}
-\end{rem}	
+
+\item Если $f_n(x) \overset{E_1}
+{\underset{n \to \infty}\rightrightarrows} f(x)$ и 
+$f_n(x) \overset{E_2}
+{\underset{n \to \infty}\rightrightarrows} f(x)$, то
+$f_n(x) \overset{E_1 \bigcup E_2}
+{\underset{n \to \infty}\rightrightarrows} f(x)$
+\end{enumerate}
+
+\end{rems}	
+
 \section{Поточечная и равномерная сходимость ФР}
-Рассмотрим ФП $(U_n(x))$ определённую $\forall x \in X \subset \R$. 
+
+Рассмотрим ФП $(U_n(x))$, определённую $\forall x \in X \subset \R$. 
 $\forall \fix \ x \in X$ имеем числовой ряд $\sum U_n(x)$. 
 
 Если этот ряд сходится в точке $x = x_0$, то точка $x_0$ является 
@@ -257,7 +266,7 @@ $\forall \fix \ x \in X$ имеем числовой ряд $\sum U_n(x)$.
 $\forall \fix \ x \in X$ рассмотрим последовательность частных сумм 
 $S_n(x) = U_1(x) + \ldots + U_n(x)$. 	
 
-Если $x \in D$, то $(S_n(x))$ будет поточечно сходиться и для неё 
+Если $x \in D$, то $(S_n(x))$ будет поточечно сходиться, и для неё 
 $\exists \underset{n \to \infty}{\lim} S_n(x) = f(x)$. В этом случае
 пишут 
 \begin{equation}
@@ -276,26 +285,28 @@ S_n \overset{D}{\underset{n \to \infty}\longrightarrow} f(x)
 \begin{equation}
 \label{lec1:11}
 \forall \eps > 0 \quad \exists \nu = \nu_\eps \in \R :
-\forall n \geq \nu \quad \forall x \in E \implies 
+\forall n \geq \nu \ \forall x \in E \implies 
 |S_n(x) - f(x)| \leq \eps
 \end{equation}
-Как и для ФП отличие в том, что в $\eqref{lec1:10}\, \nu = \nu_\eps \in \R$ 
-зависит как от $\forall \eps > 0$, так и от $x \in D$. В то же время в 
-$\eqref{lec1:11}\, \nu = \nu_\eps$ зависит только от $\forall \eps > 0$ и 
+Как и для ФП, отличие $\eqref{lec1:10}$ от $\eqref{lec1:11}$ в том,
+что в $\eqref{lec1:10}$ величина $\nu = \nu_\eps \in \R$ 
+зависит как от $\forall \eps > 0$, так и от $x_0 \in D$. В то же время, в 
+$\eqref{lec1:11} \ \nu = \nu_\eps$ зависит только от $\forall \eps > 0$ и 
 одна и та же $\forall x \in E$.  
 
 В дальнейшем для равномерной сходимости ФР будем использовать обозначение
  
-$\sum U_n(x) \overset{E}{\rightrightarrows} f(x)$ либо 
-$\sum U_n(x) \overset{E}{\rightrightarrows}$
+\[ \sum U_n(x) \overset{E}{\rightrightarrows} f(x) \]
+либо 
+\[ \sum U_n(x) \overset{E}{\rightrightarrows} \]
 
-Как и для ФП поточечная сходимость является необходимым, 
-но не достаточным условием для равномерной сходимости. В то же время
+Как и для ФП, поточечная сходимость является необходимым, 
+но не достаточным условием для равномерной сходимости. В то же время,
 из равномерной сходимости следует поточечная.
 
 \begin{thm}[мажорантный признак Вейерштрасса равномерной сходимости ФР] 
-Если для ФР $\sum U_n(x) \quad \exists a_n \geq 0 : \forall n \in \N$ на $E$,
-т.~е. $|U_n(x)| < a_n,\ \forall x \in E$, то в случае сходимости 
+Если для ФР $\sum U_n(x) \quad \exists a_n \geq 0 : \ \forall n \in \N 
+\implies |U_n(x)| < a_n,\ \forall x \in E$, то в случае сходимости 
 ЧР (сходимости мажоранты) $\implies \sum U_n(x) \overset{E}{\rightrightarrows}$
 \end{thm}	 
 
@@ -310,8 +321,8 @@ $\sum U_n(x) \overset{E}{\rightrightarrows}$
 \forall x \in E \implies
 |S_m(x) - S_n(x)| \leq \eps
 \end{equation}
-При этом в интересе практики в силу симметрии $m,n$ в $\eqref{lec1:12}$ можно
-считать, что $m > n$ и использовать $p = (m - n) \in \N$, тогда 
+При этом в силу симметрии $m$, $n$ в $\eqref{lec1:12}$, можно
+считать, что $m > n$, и использовать $p = (m - n) \in \N$, тогда 
 \begin{equation}
 \label{lec1:13}
 S_m(x) - S_n(x) = |S_{n+p}(x) - S_n(x)| =
@@ -333,7 +344,7 @@ $\eqref{lec1:13}$ даёт требуемый результат.
 \end{proof}	
 
 \begin{rem}
-В отличие от супремального критерия сходимости ФП
+В отличие от супремального критерия сходимости ФП,
 признак Вейерштрасса для ФР является лишь достаточным условием 
 равномерной сходимости ФР. 
 \end{rem}	
