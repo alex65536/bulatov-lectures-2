@@ -332,6 +332,41 @@ $\eqref{lec2:15}$. Если:
 	в силу критерия Коши для Ф1П, что $\exists \underset{x \to x_0}{\lim}
 	f(x) = p \in \R$.
 	\end{enumerate}
+	
+	Так как 
+\[
+S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to 
+\infty}\rightrightarrows} f(x),
+\]
+ то
+\begin{equation} \label{eq:18}
+	\forall \eps > 0 \ \exists \nu(\eps) \in \R : \forall x \in E, \forall n \ge 
+	\nu \implies |S_n(x) - f(x)| \le \eps.
+\end{equation}
+
+	Полагая $B_n = b_1 + b_2 + \ldots + b_n,$ где $\forall b_k = \lim\limits_{x 
+	\to x_0}U_k(x),$
+получаем, что 
+\[
+	S_n(x) \underset{x \to x_0}\longrightarrow B_n.
+\]
+
+Отсюда, переходя в $\eqref{eq:18}$ к пределу при $x \to x_0$, получим
+\[
+ \lim_{x \to x_0}|S_n(x) - f(x)| \le \eps \implies
+ |\lim_{x \to x_0}(S_n(x) - f(x))| \le \eps \implies |B_n - p| \le \eps.
+\]
+
+Таким образом, 
+\[
+\forall \eps > 0 \ \exists \nu = \nu(\eps) \in \R : \forall n \ge \nu \implies 
+|B_n(x) - p| \le \eps.
+\]
+
+Значит, 
+\[
+\exists \lim_{n \to \infty} B_n = p \in \R.
+\]
 \end{proof}
 	
 \end{document}

@@ -5,43 +5,6 @@
 
 \begin{document}
 
-\begin{proof}
-Так как 
-\[
-S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to 
-\infty}\rightrightarrows} f(x),
-\]
- то
-\begin{equation} \label{eq:18}
-	\forall \eps > 0 \ \exists \nu(\eps) \in \R : \forall x \in E, \forall n \ge 
-	\nu \implies |S_n(x) - f(x)| \le \eps.
-\end{equation}
-
-	Полагая $B_n = b_1 + b_2 + \ldots + b_n,$ где $\forall b_k = \lim\limits_{x 
-	\to x_0}U_k(x),$
-получаем, что 
-\[
-	S_n(x) \underset{x \to x_0}\longrightarrow B_n.
-\]
-
-Отсюда, переходя в $\eqref{eq:18}$ к пределу при $x \to x_0$, получим
-\[
- \lim_{x \to x_0}|S_n(x) - f(x)| \le \eps \implies
- |\lim_{x \to x_0}(S_n(x) - f(x))| \le \eps \implies |B_n - p| \le \eps.
-\]
-
-Таким образом, 
-\[
-\forall \eps > 0 \ \exists \nu = \nu(\eps) \in \R : \forall n \ge \nu \implies 
-|B_n(x) - p| \le \eps.
-\]
-
-Значит, 
-\[
-\exists \lim_{n \to \infty} B_n = p \in \R.
-\]
-\end{proof}
-
 \begin{rem}[1]
 	Используя стандартный переход от ФР к соответствующей ФП и наоборот, в силу 
 	выше доказанного, получаем следующую теорему:
@@ -66,7 +29,7 @@ S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to
 	\to \infty.$
 \end{rem}
 
-\begin{crl}[теорем Стокса-Зайделя для ФП и ФП]
+\begin{crl}[теорема Стокса-Зайделя для ФП и ФП]
 	Если любая $U_n(x)$ (любая $f_n(x)$) непрерывна на $E \subset \R$ и ряд 
 	\[\sum U_n(x) \overset{E}{\rightrightarrows} f(x)
 	\left(f_n(x)\overset{E}{\underset{n \to \infty}\rightrightarrows} f(x)\right),
@@ -148,7 +111,7 @@ S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to
 
 \subsection{Почленное интегрирование и дифференцирование ФР и ФП}
 
-\begin{thm}[о почленном интегрировании и дифференцировании ФР]
+\begin{thm}[о почленном интегрировании ФР]
 	Если $\forall U_n(x) \in R([a; b])$  и ряд $\sum\limits_{n = 1}^{\infty} 
 	U_n(x) \overset{[a; b]}{\rightrightarrows} f(x)$, то тогда, во-первых, $f(x) 
 	\in R([a; b])$ и, во-вторых, возможно почленное интегрирование 
@@ -178,8 +141,8 @@ S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to
 		\left| \int \limits_{a}^{b} f(x) dx - \sigma_n \right| = 
 		\left| \int \limits_{a}^{b} f(x) dx - 
 		\sum\limits_{k = 1}^{n} \int \limits_{a}^{b} U_k(x) dx \right| =
-		\left| \int \limits_{a}^{b} f(x) - 
-		S_n(x) dx \right| \le
+		\left| \int \limits_{a}^{b} (f(x) - 
+		S_n(x)) dx \right| \le
 		\int \limits_{a}^{b} \left| f(x) - 
 		S_n(x)  \right|	dx
 	\]
@@ -226,7 +189,7 @@ S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to
 	\forall n \in \N \text{ и } \forall x \in [a; b] \implies \exists U_n'(x)
 	$ --- непрерывная на $[a; b]$, то в случае, когда ряд 
 	$
-	\sum U_n(x) \overset{[a; b]}{\rightrightarrows},
+	\sum U_n'(x) \overset{[a; b]}{\rightrightarrows},
 	$ 
 	то возможно почленное дифференцирование рассматриваемого ряда:
 	\begin{equation} \label{eq:20}
@@ -235,19 +198,19 @@ S_n(x) = (U_1(x) + U_2(x) + \ldots + U_n(x)) \overset{E}{\underset{n \to
 \end{thm}
 
 \begin{proof}
-	Рассмотрим $g(t)=\sum\limits_{n=1}^{\infty}u_n'(t),
+	Рассмотрим $g(t)=\sum\limits_{n=1}^{\infty}U_n'(t),
 	 t\in\left[a,b\right]$. В силу условий теоремы и теоремы
 	  Стокса-Зайделя получим, что 
 	  \begin{gather*}
 		  \forall \fix x\in\left[a,b\right]\implies
 		  \exists \int_{x_0}^{x}\underset{\text{непр.}}{g(t)}dx=
-		  \int_{x_0}^{x}\sum_{n=1}^{\infty}u_n'(t)dt=\sum_{n=1}^{\infty}
-		  \int_{x_0}^{x}u_n'(t)dt=\sum_{n=1}^{\infty}\left[u_n(t)\right]
+		  \int_{x_0}^{x}\sum_{n=1}^{\infty}U_n'(t)dt=\sum_{n=1}^{\infty}
+		  \int_{x_0}^{x}U_n'(t)dt=\sum_{n=1}^{\infty}\left[U_n(t)\right]
 		  _{t=x_0}^{t=x}=\\
-		  =\sum_{n=1}^{\infty}(u_n(x)-u_n(x_0)) 
-		  =\sum_{n=1}^{\infty}u_n(x)-\sum_{n=1}^{\infty}u_n(x_0)\implies
-		  f(x)=\sum_{n=1}^{\infty}u_n(x)=C+\int_{x_0}^{x}g(t)dt\\
-		  C=\sum_{n=1}^{\infty}u_n(x_0)=const\in \R
+		  =\sum_{n=1}^{\infty}(U_n(x)-U_n(x_0)) 
+		  =\sum_{n=1}^{\infty}U_n(x)-\sum_{n=1}^{\infty}U_n(x_0)\implies
+		  f(x)=\sum_{n=1}^{\infty}U_n(x)=C+\int_{x_0}^{x}g(t)dt\\
+		  C=\sum_{n=1}^{\infty}U_n(x_0)=const\in \R
 	  \end{gather*}
 	  Применяя теорему Барроу о дифференцировании интеграла с переменным верхним 
 	  пределом от непрерывной функции, имеем:
