@@ -19,7 +19,7 @@
 Если для $x_0 \in X \implies (f_n(x_0))$ сходится, то $x_0$ называется
 \emph{точкой поточечной сходимости} рассматриваемой ФП.
 
-Множество $D = \{x_0\}$ называется \emph{множеством поточечной сходимости}
+Множество $D$ таких $x_0$ называется \emph{множеством поточечной сходимости}
 рассматриваемой ФП.
 При этом будет корректно определена функция 
 \begin{equation}
@@ -209,19 +209,19 @@ $f_n(x) \overset{\forall [-q;q] \subset ]-1,1]}
 \begin{proof}
 \;
 
-\nec: Используем М-лемму для критерия Коши сходимости ЧП 
-в случае выполнения $\eqref{lec1:6}$. Тогда
+\nec: Пусть $(f_n(x)) \overset{E}
+{\underset{n \to \infty}\rightrightarrows}$, тогда выполнено $\eqref{lec1:6}$. Имеем
 \[\forall m, n \geq \nu \implies |f_m(x) - f_n(x)| = 
 |(f_m(x) - f(x)) - (f_n(x) - f(x)| \leq \]
 \[ \leq \underbrace{|f_m(x) - f(x)|}_{\leq \eps} + 
 \underbrace{|f_n - f(x)|}_{\leq \eps} \leq 2\eps,\] т.~е. 
 $\forall \fix \ x \in E \implies (f_n(x))$ 
-является фундаментальной в силу критерия Коши ЧП.
+является фундаментальной в силу М-леммы для критерия Коши сходимости ЧП.
 
 \suff: Пусть выполнено $\eqref{lec1:8}$. Тогда, т.~к. 
 $\nu=\nu_\eps \in \R$ не зависит от $x \in E$, из $\eqref{lec1:8}$
 следует, что при $m \to \infty$ существует предельная функция 
-$\eqref{lec1:6}$, для которой $|f_n(x) - f(x)| = 
+$\eqref{lec1:2}$, для которой $|f_n(x) - f(x)| = 
 \underset{m \to \infty}{\lim} |f_n(x) - f_m(x)| \leq  \eps \ 
 \forall x \in E,\ \forall n \geq \nu_\eps$. Отсюда следует, что
 $\rho_n = \underset{x \in E}{\sup} |f_n(x) - f(x)| \leq \eps \implies 
@@ -258,7 +258,7 @@ $\forall \fix \ x \in X$ имеем числовой ряд $\sum U_n(x)$.
 Если этот ряд сходится в точке $x = x_0$, то точка $x_0$ является 
 \emph{точкой поточечной сходимости} для рассматриваемого ФР. 
 
-Множество $D = \{x_0\}$ называется \emph{множеством сходимости ФР}.
+Множество $D$ таких $x_0$ называется \emph{множеством сходимости ФР}.
 
 При этом $\exists f(x) = \sum\limits_{n=1}^{\infty} U_n(x),\ \forall x \in D$.
 Эта функция называется \emph{суммой рассматриваемого ФР} на $D$.
@@ -306,7 +306,7 @@ $\eqref{lec1:11} \ \nu = \nu_\eps$ зависит только от $\forall \ep
 
 \begin{thm}[мажорантный признак Вейерштрасса равномерной сходимости ФР] 
 Если для ФР $\sum U_n(x) \quad \exists a_n \geq 0 : \ \forall n \in \N 
-\implies |U_n(x)| < a_n,\ \forall x \in E$, то в случае сходимости 
+\implies |U_n(x)| \le a_n,\ \forall x \in E$, то в случае сходимости 
 ЧР (сходимости мажоранты) $\implies \sum U_n(x) \overset{E}{\rightrightarrows}$
 \end{thm}	 
 
