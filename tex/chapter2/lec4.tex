@@ -11,7 +11,7 @@
 
 \begin{document}
 \begin{proof}
-	Для $ p = \underset{n \to \infty}{\lim} \Bigl |\dfrac{a_n}{a_n+1} \Bigr | $ 
+	Для $ p = \underset{n \to \infty}{\lim} \Bigl |\dfrac{a_n}{a_{n+1}} \Bigr | $ 
 	рассмотрим три случая:
 	\begin{enumerate}
 		\item $0 < p < +\infty$ \\
@@ -21,16 +21,19 @@
 		a_n(x - x_0)^n$ на абсолютную сходимость по признаку Даламбера.
 		
 		Имеем:
-		\[ \biggl | \dfrac{u_n(x)}{u_n+1(x)} \biggr | \overset{x \ne x_0}
+		\[ \biggl | \dfrac{u_n(x)}{u_{n+1}(x)} \biggr | \overset{x \ne x_0}
 		 \ne \biggl | \dfrac{a_n(x - x_0)^n }{a_{n+1}(x - x_0)^{n+1}} \biggr | = 
 		 \dfrac{1}{|(x - x_0)|} \cdot \biggl | \dfrac{a_n}{a_{n+1}} \biggr | 
 		 \underset{n \to \infty} \longrightarrow \dfrac{p}{|x - x_0|}
 		\]
+		
 		\begin{enumerate}
 			\item $ \dfrac{p}{|x - x_0|} > 1 \iff
 			| x - x_0 | < p \implies \sum u_n(x)$ ~--- сходится абсолютно
-			% TODO: need a little skip between the lines
 			по признаку Даламбера.
+			
+			\medskip
+			
 			\item $ \dfrac{p}{|x - x_0|} < 1 \iff |x - x_0| > p
 			\longrightarrow \sum u_n(x)$ ~--- расходится по 
 			признаку Даламбера.
@@ -76,8 +79,6 @@
 \end{proof}
 
 \begin{rem}
-	%TODO: check if label works to (5) - it doesn't exist at the 
-	%TODO time of typesetting this lecture
 	Если предел в \eqref{lec3_2:5} не существует, то формула 
 	Даламбера для радиуса сходимости не работает.
 \end{rem}
@@ -89,8 +90,8 @@
 	$a_n = 2 + (-1)^n, \: n \in \N_0$ \\
 	$\Bigl |\dfrac{a_n}{a_n+1} \Bigr | = \dfrac{2 + (-1)^n}{2 + (-1)^{n + 1} } =
 	 \begin{cases}
-	 3, \; \text{n ~--- чётное} \\
-	 \dfrac{1}{3}, \; \text{n ~--- нечётное}
+	 3, \; \text{$n$ чётно} \\
+	 \dfrac{1}{3}, \; \text{$n$ нечётно}
 	 \end{cases} 
 	 \implies \nexists \underset{n \to \infty}{\lim} 
 	 \Bigl |\dfrac{a_n}{a_n+1} \Bigr | $
@@ -122,12 +123,11 @@
 		Т.~к. $x_0 \in X$, считая $x \ne x_0$ и применяя признак Коши
 		для ряда $\sum u_n(x) = \\ = \sum\limits_{n = 0}^{\infty} 
 		a_n(x - x_0)^n$, имеем:
-		%TODO: check why vertical skip is so big
 		\[ \sqrt[n]{ |u_n(x)| } = |x - x_0| \sqrt[n]{|a_n|} 
 		\longrightarrow k|x - x_0|
 		  \]
 		 Если $k|x - x_0| < 1$, т.~е. 
-		 $x \in \: ] x_0 - \dfrac{1}{k}; x_0 + \dfrac{1}{k} [$, то
+		 $x \in \: \left] x_0 - \dfrac{1}{k}; x_0 + \dfrac{1}{k} \right[$, то
 		 $\sum |u_n(x)| $ ~--- сходится $\implies \sum u_n(x)$ ~--- сходится.
 		 
 		 Пусть $k|x - x_0| > 1 \implies \sum |u_n(x)|$ ~--- расходится
@@ -139,9 +139,9 @@
 		 расходится в силу необходимого условия сходимости.
 		 
 		 $\forall x, |x - x_0| > \dfrac{1}{k} \implies 
-		 x \in ]-\infty; x_0 - \dfrac{1}{k} [ \;
-		 \cup \; ] x_0 + \dfrac{1}{k}; +\infty[ 
-		 \implies I = ]x_0 - \dfrac{1}{k}; x_0 + \dfrac{1}{k} [ 
+		 x \in \left]-\infty; x_0 - \dfrac{1}{k} \right[ \;
+		 \cup \; \left] x_0 + \dfrac{1}{k}; +\infty\right[ 
+		 \implies I = \left]x_0 - \dfrac{1}{k}; x_0 + \dfrac{1}{k} \right[ 
 		 \implies \\ \implies R = \dfrac{1}{k} \implies \eqref{lec4:7}$
 		 
 		 \item $k = 0$ \\
@@ -169,16 +169,14 @@
 	\;
 	
 	\begin{enumerate}
-		%TODO: check if label works to (5) - it doesn't exist at the 
-		%TODO time of typesetting this lecture
 		\item В случаях, когда формула Даламбера \eqref{lec3_2:5} не работает, 
 		формула Коши \eqref{lec4:7} может помочь. 
 		В предыдущем примере не работает формула Даламбера, а по Коши:
 		
 		\[ \sqrt[n]{|a_n|} = \sqrt[n]{2 + (-1)^n} = 
 		\begin{cases}
-		\sqrt{3}, \text{ n ~--- чётное}, \\
-		1, \text{ n ~--- нечётное}
+    \sqrt[n]{3},&\text{$n$ чётно} \\
+		1,&\text{$n$ нечётно}
 		\end{cases} \underset{n \to\ \infty}{\longrightarrow} 1
 		\]
 		
@@ -192,13 +190,11 @@
 		
 		Здесь $\sqrt[n]{|a_n|} = 2 + (-1)^n = 
 		\begin{cases}
-		3, \; n - \text{чётное}, \\
-		1, \; n - \text{нечётное}
+		3,&\text{$n$ чётно} \\
+		1,&\text{$n$ нечётно}
 		\end{cases} 
 		\implies \nexists  \underset{n \to \infty}{\lim} 
 		\sqrt[n]{|a_n|} \implies $ не работает \eqref{lec4:7},
-		%TODO: check if label works - it doesn't exist at the 
-		%TODO time of typesetting this lecture
 		не работает и \eqref{lec3_2:5}.
 		
 		\item  Можно показать, что в общем случае используя понятие
@@ -207,7 +203,7 @@
 		рассматриваемой последовательности), то тогда радиус сходимости
 		можно вычислить по формуле \emph{Коши-Адамара}:
 		\begin{equation} \label{lec4:8}
-			R = \dfrac{1}{\underset{n \to \infty}{\overline{lim}}  
+			R = \dfrac{1}{\underset{n \to \infty}{\overline{\lim}}  
 			\sqrt[n]{|a_n|}}
 		\end{equation}
 		
@@ -215,11 +211,13 @@
 		- формулы Коши и Даламбера не работают. Учитывая, что
 		$\sqrt[n]{|a_n|} = 2 + (-1)^n = 
 		\begin{cases}
-		3, n - \text{чётное} \\
-		1 , n - \text{нечётное}
+		3,&\text{$n$ чётно} \\
+		1,&\text{$n$ нечётно}
 		\end{cases} 
-		\implies \underset{n \to \infty}{\overline{lim}} 
-		\sqrt[n]{|a_n|} = \\ = \max \{3, 1\} = 3.$
+		\implies \underset{n \to \infty}{\overline{\lim}} 
+		\sqrt[n]{|a_n|} = \\ = \max \{3, 1\} = 3.$ Тогда получаем, что $R = 
+		\dfrac{1}{\underset{n \to \infty}{\overline{\lim}} 
+			\sqrt[n]{|a_n|}} = \dfrac13$.
 	\end{enumerate}
 \end{rems}
 
@@ -260,7 +258,7 @@
 	
 	В данном случае, для $\forall x \in [-r; r] \implies 
 	\sum u_n(x) \rightrightarrows$ т.~к. $|u_n(x)| \le r^n|a_n|$ 
-	- сходится мажоранта, в силу того, что $0 < r < R$.
+	мажоранта сходится в силу того, что $0 < r < R$.
 	А далее работает мажорантный признак Вейерштрасса.
 \end{proof}
 
@@ -273,27 +271,24 @@
 		бы была равномерная сходимость, то на основании теоремы 
 		о предельном переходе в ФР для $f(x) = \sum\limits_{n = 0}^{\infty} 
 		a_n x^n$, при $x \longrightarrow R - 0$, получили бы:
-		%TODO: mb dont \[ \] - to reduce vertical skip
-		\[ \exists \underset{n \to R - 0}{\lim} a_n x^n = 
-		\underset{n \to R - 0}{\lim} \sum\limits_{n = 0}^{\infty} a_n x^n = 	
-		\sum\limits_{n = 0}^{\infty} \underset{n \to R - 0}{\lim} a_n x^n = 
+		\[ \exists \underset{x \to R - 0}{\lim} a_n x^n = 
+		\underset{x \to R - 0}{\lim} \sum\limits_{n = 0}^{\infty} a_n x^n = 	
+		\sum\limits_{n = 0}^{\infty} \underset{x \to R - 0}{\lim} a_n x^n = 
 		\sum\limits_{n = 0}^{\infty} a_n R^n - \text{ по условию расходится.}
 		\]
 		
-		%TODO : check if label works
 		\item Аналогично показывается, что если ряд 
 		\eqref{lec3_2:4} сходится в точке 
 		$x_0 = R$, то на промежутке $[0, R]$ ~--- сходимость равномерная.
 	\end{enumerate}
 \end{rems}
 
-%TODO: add crls - don't exist
-\begin{crl*}[О непрерывности суммы степенного ряда на интервале сходимости]
+\begin{crl}[О непрерывности суммы степенного ряда на интервале сходимости]
 	\;
 	
 	Степенной ряд \eqref{lec3_2:4} с $R > 0$ имеет непрерывную сумму 
 	$f(x) = \sum a_n x^n$ на $I = ]-R; R[$
-\end{crl*}
+\end{crl}
 
 \begin{proof}
 	Берём $\forall x_0 \in I = ]-R; R[$ и заключаем его в отрезок 
@@ -305,22 +300,22 @@
 	В силу произвольности $x_0 \in I \implies f(x)$ непрерывна на $I$.
 \end{proof}
 
-\begin{crl*}
+\begin{crl}
 	Если степенной ряд \eqref{lec3_2:4} сходится при $x = R > 0$, то
 	тогда его сумма $f(x)$ будет непрерывна слева в $x = R$, т.~е.
 	\[ \exists \underset{n \to R - 0}{\lim} f(x) = f(R - 0) = f(R) 
 	= \sum\limits_{n = 0}^{\infty} a_n R^n
 	\]
-	Аналогичное утверждение и для правого конца $x = R$ интервала сходимости.
-\end{crl*}
+	Аналогичное утверждение верно и для непрерывности справа в точке $x = -R$.
+\end{crl}
 
 \begin{proof}
 	Достаточно воспользоваться локальной равномерной сходимостью
 	степенного ряда в рассматриваемых случаях и 
 	теоремой о предельном переходе. Например
 	\[ f(R - 0) = \underset{n \to R - 0}{\lim} f(x) = 
-	\underset{n \to R - 0}{\lim} \sum\limits_{n = 0}^{\infty} a_n x^n =
-	\sum\limits_{n = 0}^{\infty} \underset{n \to R - 0}{\lim} a_n x^n = 
+	\underset{x \to R - 0}{\lim} \sum\limits_{n = 0}^{\infty} a_n x^n =
+	\sum\limits_{n = 0}^{\infty} \underset{x \to R - 0}{\lim} a_n x^n = 
 	\sum\limits_{n = 0}^{\infty} a_n R^n = f(R)
 	\]
 	Аналогично, если ряд сходится при $x = -R \implies f(-R + 0) = 
@@ -335,11 +330,11 @@
 	\begin{equation} \label{lec4:9}
 		\exists \left( \sum\limits_{n = 0}^{\infty} a_n(x - x_0)^n \right)' = 
 		\sum\limits_{n = 0}^{\infty} \left( a_n(x - x_0)^n \right)' = 
-		\sum\limits_{n = 0}^{\infty} n a_n(x - x_0)^{n - 1} = 
+		\sum\limits_{n = 1}^{\infty} n a_n(x - x_0)^{n - 1} = 
 		\sum\limits_{n = 0}^{\infty} (n + 1)a_{n + 1} (x - x_0)^n
 	\end{equation} 
 	причём, у исходного ряда и продифференцированного ряда 
-	\eqref{lec4:9} будет один и тот же радиус, а значит и интервал схомости.
+	\eqref{lec4:9} будет один и тот же радиус, а значит и интервал сходимости.
 \end{thm}
 
 \begin{proof}
@@ -355,15 +350,15 @@
 	Для $\widetilde{R}$ ряда \eqref{lec4:10} в силу 
 	формулы Коши-Адамара \eqref{lec4:8}: 
 	\[ \begin{gathered}
-	\widetilde{R} = \dfrac{1}{  \underset{n \to \infty}{\overline{lim}}
+	\widetilde{R} = \dfrac{1}{  \underset{n \to \infty}{\overline{\lim}}
 	\sqrt[n]{n|a_n|}  } = 
-	\dfrac{1}{  \underset{n \to \infty}{\overline{lim}} \sqrt[n]{n}
-	\cdot \underset{n \to \infty}{\overline{lim}} \sqrt[n]{|a_n|}  } = \\
+	\dfrac{1}{  \underset{n \to \infty}{\overline{\lim}} \sqrt[n]{n}
+	\cdot \underset{n \to \infty}{\overline{\lim}} \sqrt[n]{|a_n|}  } = \\
 	= \left[ \sqrt[n]{n} = e^{ \dfrac{ln(n)}{n} \rightarrow 0 } 
 	\underset{n \to \infty}{\longrightarrow} 1 \right] = 
-	\dfrac{1}{  \underset{n \to \infty}{\overline{lim}} \sqrt[n]{|a_n|} } = R
+	\dfrac{1}{  \underset{n \to \infty}{\overline{\lim}} \sqrt[n]{|a_n|} } = R
 	\end{gathered} \]
-	Радиусы у \eqref{lec3:4} и у \eqref{lec4:10} совпадают $\implies$ 
+	Радиусы у \eqref{lec3_2:4} и у \eqref{lec4:10} совпадают, т.~е.
 	совпадают и интервалы сходимости.
 \end{proof}
 
@@ -392,14 +387,14 @@
 
 \begin{thm}[О почленном интегрировании степенного ряда]
 	Степенной ряд \eqref{lec3_2:1} - \eqref{lec3_2:2} можно почленно 
-	интегрировать по $\forall [\alpha; \beta] \subset I = \;
+	интегрировать на $\forall [\alpha; \beta] \subset I = \;
 	]x_0 - R;x_0 + R[ \:, R > 0 $. При этом:
 	\begin{equation} \label{lec4:11}
 		\exists \int_{\alpha}^{\beta} \sum\limits_{n = 0}^{\infty}
 		a_n(x - x_0)^n dx = \sum\limits_{n = 0}^{\infty} a_n
 		\int_{\alpha}^{\beta} (x - x_0)^n dx
 	\end{equation}
-	У исходного ряда \eqref{lec3:1} - \eqref{lec3:2} и продифференцированного
+	У исходного ряда \eqref{lec3_2:1} - \eqref{lec3_2:2} и продифференцированного
 	ряда 
 	\begin{equation} \label{lec4:12}
 		\sum\limits_{n = 0}^{\infty} a_n \int (x - x_0)^n dx =

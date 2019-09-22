@@ -1,0 +1,245 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+\begin{rem}[1]
+	Используя стандартный переход от ФР к соответствующей ФП и наоборот, в силу 
+	выше доказанного, получаем следующую теорему:
+\end{rem}
+\begin{thm}[о предельном переходе в ФП]
+	Если
+	\begin{enumerate}
+		\item[а)] $f_n(x) \overset{E}{\underset{n \to \infty}\rightrightarrows}$
+		\item[б)] $\forall n \in \N \implies \exists \lim\limits_{x\to x_0}f_n(x) 
+		\in \R, x_0$ --- предельная точа для $E,$
+	\end{enumerate} 
+То тогда 
+\[
+	\exists \lim_{x \to x_0}(\lim_{n \to \infty}f_n(x)) = \lim_{n \to \infty}( 
+	\lim_{x \to x_0}f_n(x)).
+\]
+\end{thm}
+
+\begin{rem}
+	В доказательствах предполагалось, что $x_0$ --- предельная точка --- конечна. 
+	Аналогично доказываются случаи, когда $x \to x_0 \pm 0, x \to \pm \infty, x 
+	\to \infty.$
+\end{rem}
+
+\begin{crl}[теорема Стокса-Зайделя для ФП и ФП]
+	Если любая $U_n(x)$ (любая $f_n(x)$) непрерывна на $E \subset \R$ и ряд 
+	\[\sum U_n(x) \overset{E}{\rightrightarrows} f(x)
+	\left(f_n(x)\overset{E}{\underset{n \to \infty}\rightrightarrows} f(x)\right),
+	\]
+	то $f(x)$ непрерывна на $E$.
+\end{crl}
+\begin{proof}
+	Для ФР возьмем любой $ x_0 \in E$. Тогда  
+	\[
+	\exists \lim_{x \to x_0} U_n(x) \overset{\text{непрерывность}}{=} U_n(x_0), \ 
+	\forall n \in \N.
+	\]
+	
+	Отсюда, в силу доказанной выше теоремы, для 
+	$f(x) = \sum\limits_{n = 1}^{\infty}U_n(x) $
+	
+	\[ \exists \lim_{x \to x_0} f(x) = \lim_{x \to x_0}
+	\sum_{n = 1}^{\infty}U_n(x) = \sum_{n = 1}^{\infty} \lim_{x \to x_0} U_n(x) = 
+	\sum_{n = 1}^{\infty} U_n(x_0) = f(x_0),
+	\]
+	то есть $f(x)$ непрерывна $\forall x_0 \subset E \implies f(x) \in C(E).$ 
+	
+	Для ФП доказательство аналогично.
+\end{proof}
+
+\begin{rem}
+	Если ряд 
+	\[
+	\sum_{n = 1}^{\infty} U_n(x) \overset{E}{\longrightarrow} f(x),
+	\]
+
+	 то в случае, когда $\forall U_n(x) \in C(E),$ а $f(x) \notin C(E),$ 
+	 получаем, в силу теоремы Стокса-Зайделя, что равномерной сходимости нет.
+	
+	Аналогичным образом получаем новые достаточные условия для отсутствия 
+	равномерной сходимости ФП:
+	
+	Если 
+	\[
+	f_n \overset{E}{\longrightarrow} f(x), \ \ \forall f_n(x) \in C(E), \text{ а 
+	} f(x) \notin C(E), \]
+	 то $f(x)$ не сходится равномерно.
+\end{rem}
+
+\begin{exmp}
+	Пусть $U_n(x) = x^n(1 - x), n \in \N$.
+	
+	Найдем множество сходимости этого ФР: $\sum U_n(x)$. Имеем:
+	\[
+	\sum_{n = 1}^{\infty} U_n(x) = (1 - x)\sum_{n = 1}^{\infty} x^n \overset{|x| 
+	< 1}{=} (1 - x) \cdot \frac{x}{1 - x} = x.
+	\]
+	
+	Если $|x| > 1,$ то $x^n \nrightarrow 0$ и ряд расходится.
+	
+	Непосредственно получаем, что $\exists f(1) \sum\limits_{n = 1}^{\infty} 0 
+	\cdot 1^n = 0.$
+	$E = \left.\left(-1; 1\right.\right].$ 
+	
+	Таким образом, 
+	\[
+	f(x) =
+	\begin{cases}
+	x, -1 < x < 1 \\
+	0, x = 1
+	\end{cases}
+	\]
+	
+	В данном случае \[\forall U_n \in C(\left.\left.\right] -1; 1 \right]),\] но 
+	у предельной функции $f(x)$ точка $x = 1 \in \left.\left.\right] -1; 1 
+	\right] $~--- точка скачка.	
+	То есть 
+	$f(x) \notin  C(\left.\left.\right] -1; 1 \right]).$ 
+	
+	Значит, рассматриваемый ряд сходится неравномерно на $\left.\left.\right] -1; 
+	1 \right].$
+\end{exmp}
+
+
+\subsection{Почленное интегрирование и дифференцирование ФР и ФП}
+
+\begin{thm}[о почленном интегрировании ФР]
+	Если $\forall U_n(x) \in R([a; b])$  и ряд $\sum\limits_{n = 1}^{\infty} 
+	U_n(x) \overset{[a; b]}{\rightrightarrows} f(x)$, то тогда, во-первых, $f(x) 
+	\in R([a; b])$ и, во-вторых, возможно почленное интегрирование 
+	рассматриваемого ФР на $[a; b]$, то есть:
+	\begin{equation} \label{eq:19}
+	\int\limits_{a}^{b} \sum\limits_{n = 1}^{\infty}  U_n(x) dx = \sum\limits_{n 
+	= 1}^{\infty}  \int\limits_{a}^{b} U_n(x) dx.
+	\end{equation}
+	
+\end{thm}
+
+\begin{proof}
+	Полагая \[
+	S_n(x) = \sum\limits_{k = 1}^{n} U_k(x) \overset{[a; b]}{\underset{k \to 
+	\infty}\rightrightarrows} f(x),
+	\]
+	для
+	$
+	a_k = \int \limits_{a}^{b}U_k dx 
+	$ 
+	и для частных сумм 
+	$
+	\sigma_n = a_1 + a_2 + \ldots + a_n
+	$
+	имеем
+	\[
+		\left| \int \limits_{a}^{b} f(x) dx - \sigma_n \right| = 
+		\left| \int \limits_{a}^{b} f(x) dx - 
+		\sum\limits_{k = 1}^{n} \int \limits_{a}^{b} U_k(x) dx \right| =
+		\left| \int \limits_{a}^{b} (f(x) - 
+		S_n(x)) dx \right| \le
+		\int \limits_{a}^{b} \left| f(x) - 
+		S_n(x)  \right|	dx
+	\]
+	Далее так как $S_n(x)\overset{[a; b]}{\underset{k \to 
+	\infty}\rightrightarrows} f(x),$ то 
+	\[
+	\forall \eps > 0 \ \exists \nu = \nu(\eps) \in \R : \forall n \ge \nu, 
+	\forall x \in [a; b] \implies 
+	|f(x) - S_n(x)| \le \eps.
+	\]
+	
+	Поэтому
+	\[
+		\int \limits_{a}^{b} \left| f(x) - S_n(x)  \right|	dx \le \int 
+		\limits_{a}^{b} \eps dx =
+		\eps(b - a) = M\eps.
+	\]
+	
+	Отсюда, в силу M-леммы для ЧП получаем, что
+	\[
+		\exists \lim \sigma_n = \int \limits_{a}^{b} f(x)dx \iff \eqref{eq:19}.
+	\]
+\end{proof}
+
+\begin{crl*}[почленное интегрирование ФП]
+	Используя соответствующую связь между ФП и ФР, из доказанной выше теоремы 
+	получаем теорему о почленном интегрировании ФП:
+	
+	Если $\forall f_n(x) \in R([a; b]), n \in \N,$ и $f_n(x) \overset{[a; 
+	b]}{\underset{n \to 
+			\infty}\rightrightarrows} f(x),$ то тогда, во-первых, $f(x) \in R([a; b])$ 
+			и, во-вторых, 
+		\[
+			\int\limits_{a}^{b} f(x) dx = \int\limits_{a}^{b} \lim_{n \to \infty}f_n(x) 
+			dx =
+			\lim_{n \to \infty} \int\limits_{a}^{b} f_n(x) dx.
+		\]
+\end{crl*}
+
+\begin{thm}[о почленном дифференцировании ФР]
+	Пусть $\exists x \in [a; b] \colon \sum U_n(x_0)$ сходится.
+	Если
+	$
+	\forall n \in \N \text{ и } \forall x \in [a; b] \implies \exists U_n'(x)
+	$ --- непрерывная на $[a; b]$, то в случае, когда ряд 
+	$
+	\sum U_n'(x) \overset{[a; b]}{\rightrightarrows},
+	$ 
+	то возможно почленное дифференцирование рассматриваемого ряда:
+	\begin{equation} \label{eq:20}
+	\exists \left(\sum U_n(x)\right)' = \sum U_n'(x) \ \forall x \in [a; b]
+	\end{equation}
+\end{thm}
+
+\begin{proof}
+	Рассмотрим $g(t)=\sum\limits_{n=1}^{\infty}U_n'(t),
+	 t\in\left[a,b\right]$. В силу условий теоремы и теоремы
+	  Стокса-Зайделя получим, что 
+	  \begin{gather*}
+		  \forall \fix x\in\left[a,b\right]\implies
+		  \exists \int_{x_0}^{x}\underset{\text{непр.}}{g(t)}dx=
+		  \int_{x_0}^{x}\sum_{n=1}^{\infty}U_n'(t)dt=\sum_{n=1}^{\infty}
+		  \int_{x_0}^{x}U_n'(t)dt=\sum_{n=1}^{\infty}\left[U_n(t)\right]
+		  _{t=x_0}^{t=x}=\\
+		  =\sum_{n=1}^{\infty}(U_n(x)-U_n(x_0)) 
+		  =\sum_{n=1}^{\infty}U_n(x)-\sum_{n=1}^{\infty}U_n(x_0)\implies
+		  f(x)=\sum_{n=1}^{\infty}U_n(x)=C+\int_{x_0}^{x}g(t)dt\\
+		  C=\sum_{n=1}^{\infty}U_n(x_0)=const\in \R
+	  \end{gather*}
+	  Применяя теорему Барроу о дифференцировании интеграла с переменным верхним 
+	  пределом от непрерывной функции, имеем:
+	  \begin{equation*}
+	  	\exists f'(x)=(C)'+(\int_{x_0}^xg(t)dt)'_x=0+g(t)\bigg|_{t=x}=g(x)
+	  	\iff \eqref{eq:20}
+	  \end{equation*} 
+\end{proof}	
+
+\begin{crl*}
+	из доказанной теоремы непосредственно следует:
+	\begin{thm}[о почленном дифференцировании ФП]
+		 Пусть 
+		 $
+		 	\exists x_0\in \left[a,b\right], f_n(x_0)
+		 	\underset{n\longrightarrow \infty}{\longrightarrow}.
+		 $
+		 Если 
+		 $
+		 	\exists f_n'(x)\in C(\left[a,b\right]), \forall n\in \N,
+		 $
+		 то в случае, когда $ f_n\left(x\right)  \overset{[a; b]}{\underset{n\to 
+		 \infty}\rightrightarrows},$ имеем:
+		 \begin{equation*}
+		 	\exists(\lim\limits_{n\to \infty}f_n(x))'
+		 	\overset{\left[a,b\right]}{=}
+		 	\lim\limits_{n\to\infty}f_n'(x).
+		 \end{equation*}
+	\end{thm}	 
+\end{crl*}	
+
+\end{document}
