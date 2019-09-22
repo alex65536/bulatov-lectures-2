@@ -22,7 +22,7 @@
 		
 		Имеем:
 		\[ \biggl | \dfrac{u_n(x)}{u_{n+1}(x)} \biggr | \overset{x \ne x_0}
-		 \ne \biggl | \dfrac{a_n(x - x_0)^n }{a_{n+1}(x - x_0)^{n+1}} \biggr | = 
+		 = \biggl | \dfrac{a_n(x - x_0)^n }{a_{n+1}(x - x_0)^{n+1}} \biggr | = 
 		 \dfrac{1}{|(x - x_0)|} \cdot \biggl | \dfrac{a_n}{a_{n+1}} \biggr | 
 		 \underset{n \to \infty} \longrightarrow \dfrac{p}{|x - x_0|}
 		\]
@@ -35,7 +35,7 @@
 			\medskip
 			
 			\item $ \dfrac{p}{|x - x_0|} < 1 \iff |x - x_0| > p
-			\longrightarrow \sum u_n(x)$ ~--- расходится по 
+			\implies \sum u_n(x)$ ~--- расходится по 
 			признаку Даламбера.
 		\end{enumerate}
 		Из доказательства признака Даламбера $ \implies 
@@ -237,12 +237,12 @@
 \begin{thm}[О локальной равномерной сходимости степенного ряда]
 	Степенной ряд \eqref{lec3_2:1} - \eqref{lec3_2:2} с $R \ne 0 $ 
 	сходится локально равномерно
-	на своём интервале сходимости  $I = \\ = \; ]x_0 - R; x_0 + R[$
+	на своём интервале сходимости  $I = \\ = \; ]x_0 - R; x_0 + R[$.
 \end{thm}
 
 \begin{proof}
 	Рассмотрим для простоты случай, когда $x_0 = 0$, т.~е. 
-	степенной ряд вида \eqref{lec3_2:4}, для которого $I = ]-R; R[ \; , R > 0$.
+	степенной ряд вида \eqref{lec3_2:4}, для которого $I = \left]-R; R\right[,\ R > 0$.
 	
 	Выбирая $\forall [\alpha, \beta] \in ]-R; R[$ и полагая 
 	$r = \max \{|\alpha|, |\beta|\}$, получаем, что $[\alpha, 
@@ -304,7 +304,7 @@
 	Если степенной ряд \eqref{lec3_2:4} сходится при $x = R > 0$, то
 	тогда его сумма $f(x)$ будет непрерывна слева в $x = R$, т.~е.
 	\[ \exists \underset{n \to R - 0}{\lim} f(x) = f(R - 0) = f(R) 
-	= \sum\limits_{n = 0}^{\infty} a_n R^n
+	= \sum\limits_{n = 0}^{\infty} a_n R^n.
 	\]
 	Аналогичное утверждение верно и для непрерывности справа в точке $x = -R$.
 \end{crl}
@@ -312,14 +312,14 @@
 \begin{proof}
 	Достаточно воспользоваться локальной равномерной сходимостью
 	степенного ряда в рассматриваемых случаях и 
-	теоремой о предельном переходе. Например
+	теоремой о предельном переходе. Например,
 	\[ f(R - 0) = \underset{n \to R - 0}{\lim} f(x) = 
 	\underset{x \to R - 0}{\lim} \sum\limits_{n = 0}^{\infty} a_n x^n =
 	\sum\limits_{n = 0}^{\infty} \underset{x \to R - 0}{\lim} a_n x^n = 
 	\sum\limits_{n = 0}^{\infty} a_n R^n = f(R)
 	\]
 	Аналогично, если ряд сходится при $x = -R \implies f(-R + 0) = 
-	\ldots = f(-R)$
+	\ldots = f(-R)$.
 \end{proof}
 
 \section{Почленное дифференцирование и интегрирование степенного ряда}
