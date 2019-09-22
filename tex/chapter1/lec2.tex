@@ -6,8 +6,9 @@
 \begin{document}
 \begin{exmps}
 	\;
-	\begin{enumerate}
-		\item $\sum \arctan\dfrac{2\sqrt{x}}{x+n^4},\ x \geq 0$
+	
+\begin{enumerate}
+\item $\sum \arctan\dfrac{2\sqrt{x}}{x+n^4},\ x \geq 0$
 
 $U_n(x) = \arctan\dfrac{2\sqrt{x}}{x+n^4},\ x \in [0,+\infty]$
 	\begin{enumerate}
@@ -74,7 +75,7 @@ $U_n(x) = \arctan\dfrac{2\sqrt{x}}{x+n^4},\ x \in [0,+\infty]$
 \section{Именные признаки сходимости ФП и ФР}
 
 Для ФР $\sum U_n(x)$ равномерная сходимость определяется как 
-равномерная сходимость последовательности его частных сумм, в свою очередь,
+равномерная сходимость последовательности его частных сумм. В свою очередь,
 если существует ФП, то этой ФП можно сопоставить ряд с 
 $U_n(x) = f_n(x) - f_{n-1}(x),\ n \in \N,\ f_0(x) = 0$, для которого
 \[
@@ -83,11 +84,12 @@ S_n(x) = \underbrace{-f_0(x) + f_1(x)}_{= U_1} +
 \underbrace{(-f_{n-1}(x) + f_n(x))}_{= U_n},\ \forall n \in \N.	
 \]
 Поэтому поточечная сходимость любой последовательности совпадает с 
-равномерной сходимостью построенного, как выше, ФР.
+равномерной сходимостью ФР, построенного аналогичным вышеприведенному
+способом.
 
-В связи с этим в дальнейшем все оставшиеся теоремы мы будем формулировать
-и доказывать для ФР, а с помощью выше указанного приёма для ФП будем
-формулировать по аналогии.
+В связи с этим, в дальнейшем все оставшиеся теоремы мы будем формулировать
+и доказывать для ФР, а с помощью указанного выше приёма их можно будет
+сформулировать и для ФП.
 
 \begin{thm}[признак Дини для равномерной сходимости ФР]
 Пусть выполнены условия:
@@ -124,12 +126,12 @@ $\sum U_n(x) \overset{[a,b]}{\rightrightarrows} f(x)$
 \exists \eps_0 > 0 \quad \forall n \in \N \implies 
 \exists x_n \in [a,b] \implies r_n(x) > \eps_0
 \]
-Так как $\forall r_n(x) \geq 0$ и т.~к. последовательность $x_n$ ограничена
+Так как $\forall r_n(x) \geq 0$, а последовательность $x_n$ ограничена,
 из неё можно выбрать сходящуюся подпоследовательность 
 $x_{n_k} \to x_0 \in [a,b]$, тогда $r_{n_k}(x_{n_k}) > \eps_0 > 0$, отсюда
-$\forall \fix \ m \in \N, \forall n_k \geq m \implies r_m(x_{n_k}) \geq
+$\forall \fix \ m \in \N, \ \forall n_k \geq m \implies r_m(x_{n_k}) \geq
 r_{n_k}(x_{n_k}) > \eps_0$ (т.~к. свойство 2)). Переходя здесь к пределу при 
-$n_k \to \infty$ и учитывая непрерывность остатков получим:
+$n_k \to \infty$ и учитывая непрерывность остатков, получим:
 \[
 \exists \underset{n_k \to \infty}{\lim} r_m(x_{n_k}) = 
 r_m(\underset{n_k \to \infty}{\lim}x_{n_k}) = r_m(x_0) \geq
@@ -143,16 +145,17 @@ r_m(x_0) \underset{n \to \infty}{\not \longrightarrow} 0
 Поэтому предположение о неравномерной сходимости ошибочно.
 \end{proof}
 
-\begin{rem}
+\begin{rems}
 	\;
 	
 	\begin{enumerate}
 		\item Теорема остаётся верной, когда слагаемые в рассматриваемом ФР
 	сохраняют один и тот же знак, т.~е. не только больше, но и меньше нуля.
-		\item Используя связь между ФП и соответствующими им ФР получаем
+		\item Используя связь между ФП и соответствующими им ФР, получаем
 	следующую теорему:
 	\end{enumerate}
-\end{rem}	
+\end{rems}	
+
 \begin{thm}[признак Дини для ФП]
 Если для ФП $f_n(x),\ n \in \N,\ x \in [a,b]$ выполнены условия:
 	\begin{enumerate}
@@ -167,22 +170,23 @@ $f_n(x) \overset{[a,b]}
 {\underset{n \to \infty}\rightrightarrows} f(x) \in C([a,b])$
 \end{thm}  
 
-\begin{thm}[признак Абеля равномерно сходимости ФР]
+\begin{thm}[признак Абеля равномерной сходимости ФР]
 Пусть:
 \begin{enumerate}
 	\item $\sum b_n(x) \overset{E}{\rightrightarrows}$
 	\item ФП $(a_n(x)),\ n \in \N,\ x \in E$ ограничена 
 в совокупности (равномерно ограничена как по $n$, так и по $x$, т.~е.
 $\exists c = const \geq 0 \implies (a_n(x)) \leq c,\ 
-\forall n \in N, \forall x \in E$)
+\forall n \in N, \ \forall x \in E$)
 \end{enumerate}
 Если $\forall \fix \ x \in E \implies (a_n(x))$ --- монотонная 
 последовательность, то ряд $\sum a_n(x)b_n(x) \overset{E}{\rightrightarrows}$
 \end{thm}	
 
 \begin{proof}
-Доказательство основано на использовании критерия Коши сходимости ФП и ФР и
-на соответствующей оценке Абеля аналогичной, как и в ЧР.	
+Доказательство основано на использовании критерия Коши сходимости ФП и ФР,
+а также на соответствующей оценке Абеля, которая аналогична подобной оценке
+для числовых рядов.	
 \end{proof}
 
 \begin{thm}[Признак Дирихле равномерной сходимости ФР]
@@ -203,8 +207,8 @@ $\exists c = const \geq 0 \implies (a_n(x)) \leq c,\
 \end{thm}
 
 \begin{proof}
-Доказательство использует то же, что и в признаке Абеля (критерий Коши и 
-оценка Абеля аналогично ЧП)
+В доказательстве используется то же, что и в доказательстве 
+признака Абеля (критерий Коши и оценка Абеля).
 \end{proof}
 
 \begin{crl*} (Признак Лейбница равномерной сходимости ФР)
@@ -215,9 +219,9 @@ $\exists c = const \geq 0 \implies (a_n(x)) \leq c,\
 \end{crl*}
 
 \begin{proof}
-Надо в признаке Дирихле взять $b_n=(-1)^n$. Хотя в этом случае ряд 
+Возьмем в признаке Дирихле $b_n=(-1)^n$. Хотя в этом случае ряд 
 $\sum b_n = \sum (-1)^n$ расходится $((-1)^n 
-\underset{n \to \infty}{\not \longrightarrow} 0)$, но зато частные суммы
+\underset{n \to \infty}{\not \longrightarrow} 0)$, его частные суммы
 ограничены в совокупности $(|b_1 + b_2 + \ldots + b_n| = 
 |-1+1-1+ \ldots + (-1)^n| \leq 1,\ \forall x \in E,\ \forall n \in \N)$
 \end{proof}	
@@ -230,34 +234,33 @@ $\sum b_n = \sum (-1)^n$ расходится $((-1)^n
 	\end{enumerate}
 где $a_n$ --- ЧП.
 
-Используя оценки $|\sin x + \ldots + \sin(nx)| 
-\leq \ldots \leq \dfrac{1}{|\sin\dfrac{x}{2}|},\
-|\cos x + \ldots + \cos(nx)| 
-\leq \ldots \leq \dfrac{1}{|\sin\dfrac{x}{2}|}$
-для $x \neq 2\pi k,\ k \in \Z$ получаем по признаку Дирихле для ЧР, что
-$\forall x \in [\alpha; \beta]$, не содержащей точек вида 
-$x = 2\pi k,\ k \in \Z$, в случае когда $a_n \downarrow 0 (a_n \uparrow 0)$ 
-эти ряды сходятся поточечно на $[\alpha; \beta]$ и 
-из предыдущей теоремы следует, что сходимость будет и равномерной
-на $[\alpha; \beta]$.
+Используя для $x \neq 2\pi k,\ k \in \Z$ оценки:
+\[ \left|\sin{x} + \ldots + \sin{nx}\right| \leq \ldots
+\leq \dfrac{1}{\left|\sin\dfrac{x}{2}\right|} \]
+\[ \left|\cos{x} + \ldots + \cos{nx}\right| \leq \ldots
+\leq \dfrac{1}{\left|\sin\dfrac{x}{2}\right|} \]
+получаем по признаку Дирихле для ЧР, что для
+$\forall x$ на отрезке $[\alpha; \beta]$, не содержащем точек вида 
+$x = 2\pi k,\ k \in \Z$, в случае, когда $a_n \downarrow 0 \ (a_n \uparrow 0)$,
+эти ряды сходятся поточечно на $[\alpha; \beta]$. А 
+из предыдущей теоремы следует, что сходимость на $[\alpha; \beta]$ 
+будет и равномерной.
 
-В частности, ряды $\dfrac{\sin x}{n^p}$ и $\dfrac{\cos x}{n^p}$ при
-$p > 0$ будут равномерно сходится $\forall [\alpha; \beta]$, не содержащей
-точек вида $x = 2\pi k,\ k \in \Z$ 
+В частности, ряды $\dfrac{\sin{nx}}{n^p}$ и $\dfrac{\cos{nx}}{n^p}$ при
+$p > 0$ будут равномерно сходится на любом отрезке $\forall [\alpha; \beta]$,
+не содержащем точек вида $x = 2\pi k,\ k \in \Z$ 
 \end{exmps}
 
 \section{Почленный предельный переход в ФР и ФП}
-Пусть 
+Пусть $\sum U_n(x) \overset{E}{\longrightarrow} f(x)$. Тогда:
 \begin{equation}
-\label{lec2:15}
-\begin{cases}
-\sum U_n(x) \overset{E}{\longrightarrow} f(x),\ \text{тогда} \\
-f(x) = \sum\limits_{n = 1}^{\infty} U_n(x),\ x \in E
-\end{cases}
+	\label{lec2:15}
+	f(x) = \sum\limits_{n = 1}^{\infty} U_n(x),\ x \in E
 \end{equation}
 
+
 \begin{thm}[о почленном предельном переходе в ФР]
-Пусть $x_0$ --- предельная точка на множестве $E$ и выполнено 
+Пусть $x_0$ --- предельная точка на множестве $E$, и выполнено 
 $\eqref{lec2:15}$. Если: 
 \begin{enumerate}
 	\item $\forall \fix \ n \in \N \implies
@@ -283,7 +286,7 @@ $\eqref{lec2:15}$. Если:
 	\begin{enumerate}
 		\item Докажем, что $\exists \underset{x \to x_0}{\lim} f(x) = 
 	p \in \R$. Для этого воспользуемся критерием Коши существования 
-	конечного предела функции, в силу которого нужно показать, что
+	конечного предела функции. Нужно показать, что
 	\begin{equation}
 	\label{lec2:17}
 	\forall \eps > 0 \quad \exists \bar\delta :
@@ -294,8 +297,8 @@ $\eqref{lec2:15}$. Если:
 	\end{cases} \implies
 	|f(x_1) - f(x_2)| \leq \eps
 	\end{equation}
-	Используя частные суммы $S_n(x) = U_1(x + \ldots + U_n(x))$ и 
-	остаток $r_n(x) = f(x) - S_n(x),\ n \in \N$ имеем:
+	Используя частные суммы $S_n(x) = (U_1(x) + \ldots + U_n(x))$ и 
+	остаток $r_n(x) = f(x) - S_n(x),\ n \in \N$, имеем:
 	\[
 	|f(x_2) - f(x_1)| = |(S_n(x_2) + r_n(x_2)) - (S_n(x_1) + r_n(x_2))| =
 	|S_n(x_2) - S_n(x_1) + r_n(x_2) - r_n(x_1)| \leq 
@@ -325,7 +328,7 @@ $\eqref{lec2:15}$. Если:
 	
 	В результате получаем, что $|f(x_1) - f(x_2)| \leq \ldots \leq 
 	\eps + 2\eps = 3\eps$, что в сочетании с М-леммой для Ф1П даёт
-	в силу Критерия Коши для Ф1П, что $\exists \underset{x \to x_0}{\lim}
+	в силу критерия Коши для Ф1П, что $\exists \underset{x \to x_0}{\lim}
 	f(x) = p \in \R$.
 	\end{enumerate}
 \end{proof}
