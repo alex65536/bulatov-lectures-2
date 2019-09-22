@@ -15,7 +15,7 @@ a_0+a_1(x-x_0)+a_2(x-x_0)^2+\dots+a_n(x-x_0)^n+\dots.
 \begin{equation}\label{lec3_2:2}
 \sum_{n=0}^{\infty}a_n(x-x_0)^n.
 \end{equation}
-В \ref{lec3_2:1}-\ref{lec3_2:2} $x_0$ называется центром СтР, 
+В \eqref{lec3_2:1}-\eqref{lec3_2:2} $x_0$ называется центром СтР, 
 а $\forall a_n \in \R, n\in \N$ --- это коэффициенты СтР.
 
 Если переменной $x\in\R$ предать некоторые значения, 
@@ -25,11 +25,11 @@ a_0+a_1(x-x_0)+a_2(x-x_0)^2+\dots+a_n(x-x_0)^n+\dots.
 Множество $X$ значений $x$, при котором СтР сходится, 
 называется множеством сходимости СтР. 
 
-$X \neq \emptyset$, т.~к. \ref{lec3_2:1}-\ref{lec3_2:2} 
+$X \neq \emptyset$, т.~к. \eqref{lec3_2:1}-\eqref{lec3_2:2} 
 сходятся при $x=x_0$ т.~е. $x_0\in X$.
 
 \begin{lem}[Абеля о сходимости СтР]
-	Если СтР \ref{lec3_2:1}-\ref{lec3_2:2} сходится в некоторой 
+	Если СтР \eqref{lec3_2:1}-\eqref{lec3_2:2} сходится в некоторой 
 	точке $x_1\neq x_0$, то тогда он сходится $\forall x$ таких, что:
 	\begin{equation}\label{lec3_2:3}
 		 \abs{ x - x_0} \leq \abs{x_1 - x_0}.
@@ -44,7 +44,7 @@ $X \neq \emptyset$, т.~к. \ref{lec3_2:1}-\ref{lec3_2:2}
 	Т.~е. $\exists M=const \geq0 \implies \abs{a_n(x_1-x_0)} \leq M
 	\implies \abs{a_n}\geq \frac{M}{\abs{x_1-x_0}}, \forall n\in\N_0$
 	
-	Рассмотрим $\forall \fix x $, удовлетворяющий \ref{lec3_2:3}. 
+	Рассмотрим $\forall \fix x $, удовлетворяющий \eqref{lec3_2:3}. 
 	В этом случае  
 	\begin{equation*}
 		\abs{a_n(x_1-x_0)} = \abs{a_n}\abs{(x_1-x_0)}\leq 
@@ -54,14 +54,14 @@ $X \neq \emptyset$, т.~к. \ref{lec3_2:1}-\ref{lec3_2:2}
 \end{proof}	
 
 \begin{crl*}
-	Если при некотором $x=x_1=x_0$ ряд \ref{lec3_2:1}-\ref{lec3_2:2}
+	Если при некотором $x=x_1=x_0$ ряд \eqref{lec3_2:1}-\eqref{lec3_2:2}
 	 расходится, то тогда он расходится $\forall \abs{x-x_0} > \abs{x_1-x_0}$.
 \end{crl*}	
 \begin{rem}
-	Если $X$ --- множество сходимости \ref{lec3_2:1}-\ref{lec3_2:2}, 
+	Если $X$ --- множество сходимости \eqref{lec3_2:1}-\eqref{lec3_2:2}, 
 	то полагая $R=\underset{x\in X}{\sup} \abs{x-x_0}$ из полученных выше 
 	результатов и определения точной верхней грани получим, 
-	что СтР \ref{lec3_2:1}-\ref{lec3_2:2}
+	что СтР \eqref{lec3_2:1}-\eqref{lec3_2:2}
 	будет сходиться при $\abs{x-x_0}\leq R$ и расходиться при $\abs{x-x_0}>R$.
 	
 	При этом в случае, когда $R=+\infty \implies 
@@ -69,12 +69,12 @@ $X \neq \emptyset$, т.~к. \ref{lec3_2:1}-\ref{lec3_2:2}
 	Если же $R=0$, то $X=\{x_0\}$.	
 \end{rem}	
 В общем  случае неотрицательная величина $R$ (конечная или бесконечная) 
-называется \emph{радиусом сходимости}  \ref{lec3_2:1}-\ref{lec3_2:2}, а 
+называется \emph{радиусом сходимости}  \eqref{lec3_2:1}-\eqref{lec3_2:2}, а 
 промежуток $I=\left]x_0-R;x_0+R\right[$ называется 
 \emph{интервалом сходимости} 
-СтР \ref{lec3_2:1}-\ref{lec3_2:2}.
+СтР \eqref{lec3_2:1}-\eqref{lec3_2:2}.
 	
-Внутри $I$ СтР \ref{lec3_2:1}-\ref{lec3_2:2} сходится абсолютно. Вне $I$
+Внутри $I$ СтР \eqref{lec3_2:1}-\eqref{lec3_2:2} сходится абсолютно. Вне $I$
 $\forall x-in\left]-\infty;x_o-R\right[\cup\left]x_0+R;+\infty\right[$
 СтР будет расходиться.
 	 
@@ -84,19 +84,20 @@ $\forall x-in\left]-\infty;x_o-R\right[\cup\left]x_0+R;+\infty\right[$
 	 
 \section{Вычисление радиуса сходимости СтР}
 	
-Для простоты будем рассматривать СтР \ref{lec3_2:1}-\ref{lec3_2:2} в $x_0=0$
+Для простоты будем рассматривать СтР \eqref{lec3_2:1}-\eqref{lec3_2:2} в $x_0=0$
 т.~е. 
 \begin{equation}\label{lec3_2:4}
 	\sum_{n=0}^{\infty}a_nx^n
 \end{equation}
-для него как и для \ref{lec3_2:1}-\ref{lec3_2:2} будет один и тот же
+для него как и для \eqref{lec3_2:1}-\eqref{lec3_2:2} будет один и тот же
 R.
 \begin{thm}[формула Даламбера для радиуса сходимости СтР]
 	Если $\exists \lim\lim\limits_{\abs{\frac{a_n}{a_{n+1}}}}$ конечный или 
-	бесконечный, то радиус сходимости как \ref{lec3_2:4} так и 
-	\ref{lec3_2:1}-\ref{lec3_2:2} имеем
+	бесконечный, то радиус сходимости как \eqref{lec3_2:4} так и 
+	\eqref{lec3_2:1}-\eqref{lec3_2:2} имеем
 	\begin{equation}
 		R=\lim\limits_{n\rightarrow\infty}\frac{a_n}{a_{n+1}}
+		\label{lec3_2:5}
 	\end{equation}
 \end{thm}	
 \end{document}
