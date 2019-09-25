@@ -1,0 +1,367 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+
+Пусть $ y_0 \in \R $ - предельная точка для $ D $. Будем говорить, что
+Ф2П $ f(x, y) $ сходится к $ g(x), x \in [a, b] $ при $ y \to y_0 $, если
+\begin{equation}
+\label{lec6:1}
+\forall \eps > 0 \quad \forall x \in [a, b] \quad  \exists 
+\delta(\eps, x) = \delta_\eps(x) : \forall y \in D, 0 < |y - y_0| \leq \delta 
+\implies |f(x, y) - g(x)| \leq \eps
+\end{equation}
+Предельную функцию $ g(x), x \in [a, b] $ в \eqref{lec6:1} будем называть 
+частным пределом $ f(x, y), y \to y_0 $ и использовать запись
+\begin{equation}
+\label{lec6:2}
+	\lim\limits_{y \to y_0} f(x, y) = g(x), x \in [a, b] \iff
+	f(x, y) \stackrel{[a, b]}{\underset{y \to y_0}{\to}} g(x) 
+	% нормально под стрелкой сделать, хз как
+\end{equation}
+По аналогии с критерием Гейне существования предела Ф1П доказывается критерий
+Гейне существования частного предела Ф2П:
+\[
+\eqref{lec6:2} \Leftrightarrow \quad
+\forall (y_n) \in D,\ y_n \neq y_0,\ y_n \underset{n \to \infty}{\to} t_0 
+\text{[последовательности Гейне]} \implies f(x, y_n) 
+\stackrel{[a, b]}{\underset{n \to \infty}{\to}} g(x).
+\]
+Функцию $ g(x), x \in [a, b] $ будем называть равным частным пределом 
+$ f(x, y),\ y \to y_0,\ x \in [a, b] $, если
+\begin{equation}
+\label{lec6:3}
+\forall \eps > 0 \quad \exists \delta = \delta_\eps > 0: \quad 
+\forall y \in D,\ 0 < |y - y_0| \leq \delta,\
+\forall x \in [a, b] \implies |f(x, y) - g(x)| \leq \eps
+\end{equation}
+В этом случае будем писать
+\begin{equation}
+\label{lec6:4}
+f(x, y) \stackrel{[a, b]}{\underset{y \to y_0}{\rightrightarrows}} g(x)
+\end{equation}
+Из \eqref{lec6:4} следует \eqref{lec6:2}, но обратное не всегда верно.\\
+Аналогично, как и выше, получаем критерий Гейне о существовании частного
+предела Ф2П.
+\begin{equation}
+\label{lec6:5}
+\eqref{lec6:4} \iff \forall (y_n) \in D,\ y_n \neq y_0,\ 
+y_n \underset{n \to \infty}{\to} y_0 \implies
+f(x, y) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x)
+\end{equation}
+\begin{thm}[О предельном переходе в СИЗОП]
+	Пусть при каждом $ \fix y \in D $ функция $ f(x, y) $ непрерывна 
+	$ \forall x \in [a, b] $. Если $
+	f(x, y) \stackrel{[a, b]}{\underset{y_n \to y_0}{\rightrightarrows}} g(x)$
+	, где $y_0$ ~--- предельная точка для $ D $, то, во-первых, 
+	$ g(x) \in C([a, b]) $, и, во-вторых, для СИЗОП \eqref{lec5:1} получаем:
+	\begin{equation}
+	\label{lec6:6}
+	\exists \lim\limits_{y \to y_0} F(y) \stackrel{\eqref{lec5:1}}{=} 
+	\lim\limits_{y \to y_0} \int\limits_a^b f(x, y) dx = 
+	\int\limits_a^b \lim\limits_{y \to y_0} f(x, y) dx = 
+	\int\limits_a^b g(x) dx
+	\end{equation}
+\end{thm}
+\begin{proof}
+	Положим, во-первых, что $ g(x) $ непрерывна $ \forall x \in [a, b] $.
+	Для этого воспользуемся критерием Гейне существования частного предела Ф2П.
+	\\
+	Функция $ (y_n) \in D $ - последовательность Гейне предельной точки $ y_0 $.
+	Для ФП $ f_n(x) = f(x, y_n) $ имеем:
+	\[
+	f(x, y) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x)
+	\]
+	А т.к. $ \forall f_n(x) \in C([a, b])$, то и $ g(x) \in C([a, b]) $ по 
+	свойствам равномерной сходимости.
+	Отсюда следует:
+	\[
+	\exists I_0 = \int\limits_a^b g(x) dx
+	\]
+	и во-вторых
+	\[
+	I_0 = \int\limits_a^b \lim\limits_{n \to \infty} f_n(x) dx = 
+	\lim\limits_{n \to \infty} \int\limits_a^b f(x, y_n) dx = 
+	\lim\limits_{n \to \infty} F(y_n)
+	\]
+	Отсюда по критерию Гейне получаем, что
+	\[
+	\exists \lim\limits_{y \to y_0} F(y) = I_0
+	\]
+\end{proof}
+\begin{rem}
+	Используя теорему Кантора о непрерывности Ф2П на компакте нетрудно получить,
+	что если $ f(x, y) $ непрерывная Ф2П $ \forall x \in [a, b],\ 
+	y \in [c, d] $, то тогда, во-первых, $ \forall y \in [c, d] \implies 
+	f(x, y) \stackrel{[a, b]}{\underset{y \to y_0}{\rightrightarrows}} f(x, y_0)
+	= g(x)
+	$, и, во-вторых, возможен почленный предельный переход 
+	в СИЗОП \eqref{lec5:1}:
+	\[
+	\exists \lim\limits_{y \to y_0} F(y) = 
+	\lim\limits_{y \to y_0} \int\limits_a^b f(x, y) dx = 
+	\int\limits_a^b \lim\limits_{y \to y_0} f(x, y) dx =
+	\int\limits_a^b f(x, y_0) dx = F(y_0)
+	\]
+	Поэтому в этом случае СИЗОП \eqref{lec5:1} будет непрерывной функцией 
+	$ \forall y \in [c, d] $.
+\end{rem}
+
+\section{Условия существования равномерного частного предела Ф2П}
+
+\begin{thm}[Супремальный критерий существования равномерного 
+										частного предела Ф2П]
+	\begin{equation}
+	\label{lec6:7}
+	\eqref{lec6:4} \iff \underset{x \in [a, b]}{\sup} |f(x, y) - g(x)|
+	\underset{y \to y_0}{\to} 0
+	\end{equation}
+\end{thm}
+\begin{proof}
+	Проводится по той же схеме, что и доказательство супремального критерия
+	ФП с использованием криетрия Гейне существования равномерного предела Ф2П.
+	Схема:
+	\begin{enumerate}
+		\item Берём $ (y_n) \in D $ -последовательность Гейне точки $ y_0 $.
+		\item $ \eqref{lec6:4} \iff f_n(x) = f(x, y_n)
+		\stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x) 
+		\iff \underset{x \in [a, b]}{\sup} |f_n(x) - g(x)| = \\ =
+		\underset{x \in [a, b]}{\sup} |f(x, y_n) - g(x)| 
+		\underset{n \to \infty}{\to} 0 
+		\stackrel{\text{кр-й Гейне}}{\iff} \underset{x \in [a, b]}{\sup}
+		|f(x, y) - g(x)| \underset{y \to y_0}{\to} 0
+		$
+	\end{enumerate}
+\end{proof}
+\begin{thm}[Критерий Коши существования равномерного частного предела Ф2П]
+	\[ 
+	\eqref{lec6:4} \iff \forall \eps > 0 \quad 
+	\exists \delta = \delta(\eps) > 0: \forall \widetilde{y},\ \overline{y}
+	\in D,\ 
+	\begin{cases}
+		0 < |\widetilde{y} - y_0| \leq \delta\\
+		0 < |\overline{y} - y_0| \leq \delta
+	\end{cases},
+	\]
+	\[
+	\forall x \in [a, b] \implies |f(x, \widetilde{y}) - f(x, \overline{y})
+	\leq \eps|
+	\]
+\end{thm}
+\begin{proof}
+	Проводится по той же схеме, что и выше с использованием критерия Гейне и
+	соответствующего критерия Коши равномерной сходимости ФП.
+\end{proof}
+
+Отметим ещё раз, что если $ f(x, y) \in C([a, b] \times [c, d]) $, то тогда
+$ \forall y_0 \in [c, d] \implies f(x, y)
+\stackrel{[a, b]}{\underset{y \to y_0}{\rightrightarrows}} f(x, y_0)$.
+При этом предельная функция $ g(x) = f(x, y_0) \in C([a, b]) $.
+В частности, если окажется, что $ f(x, y) 
+\stackrel{[a, b]}{\underset{y \to y_0}{\to}} g(x)$, где 
+$ \forall f(x, y) $, непрервывной по $ x \in [a, b] \ \forall fix y \in [c, d]$,
+то, в случае, когда $ g(x) \notin C([a, b]) $, получим, что у рассмотренной Ф2П
+нет равномерного частного предела(т.~е. существует лишь частный предел).
+
+\subsection{Почленное дифференцирование и интегрирование СИЗОП}
+
+\begin{thm}[о дифференцировании СИЗОП]
+	Пусть функция $ f(x, y) $ непрерывна по $ x \in [a, b]\ 
+	\forall fix\ y \in [c, d] $. Если $ \exists f_y'(x, y) $ -
+	непрерывная Ф2П на $ [a, b] \times [c, d] $, то тогда справедлива формула
+	Лейбница для СИЗОП \eqref{lec5:1}:
+	\begin{equation}
+		\label{lec6:8}
+		\exists F'(y) \stackrel{\eqref{lec5:1}}{=} \left(
+		\int\limits_a^b f(x, y) dx
+		\right)_y' = \int\limits_a^b f_y'(x, y)dx
+	\end{equation}
+\end{thm}
+\begin{proof}
+	Для произвольной точки $ y_0 \in [c, d] $ рассмотрим $ \Delta y \in \R $:
+	$ (y_0 + \Delta y) \in [c, d] $. Тогда 
+	\begin{equation}
+	\begin{gathered}
+		\lim\limits_{\Delta y \to 0} \dfrac{\Delta F(y_0)}{\Delta y} 
+		\stackrel{\eqref{lec5:1}}{=} \lim\limits_{\Delta y \to 0}
+		\dfrac{1}{\Delta y} \left(
+		\int\limits_a^b f(x, y_0 + \Delta y) dx - \int\limits_a^b f(x, y_0) dx
+		\right) = \\
+		\label{lec6:9} =
+		\lim\limits_{\Delta y \to 0} \dfrac{1}{\Delta y}
+		\int\limits_a^b (f(x, y_0 + \Delta y) - f(x, y_0)) dx = 
+		\lim\limits_{\Delta y \to 0}\int\limits_a^b
+		\dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{\Delta y}
+	\end{gathered}
+	\end{equation}
+	Положим, что в \eqref{lec6:8} 
+	\begin{equation}
+	\label{lec6:10} 
+	\forall\ fix \ \Delta y \neq 0 \implies
+	\dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{|Delta y} 
+	\stackrel{[a, b]}{\underset{\Delta y \to 0}{\rightrightarrows}} f_y'(x, y)
+	\end{equation}
+	Используя формулу Лагранжа конечных приращений по второй переменной 
+	Ф2П получаем, что 
+	\[ 
+	\exists \Theta = \Theta(x, \Delta y) \in ]0, 1[ 
+	\implies \dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{\Delta y} = 
+	f_y'(x, y_0 + \Delta y)
+	\]
+	Отсюда в силу непрерывности $ f_y'(x, y) $ на компакте $ [a, b] \times 
+	[c, d] $ по теореме Кантора получаем, что $ f_y'(x, y) $ равномерно
+	непрерывна на это компакте. Поэтому
+	\begin{equation}
+		\begin{gathered}
+		\forall \eps > 0 \ \exists \delta = \delta(\eps) > 0: \ 
+		\forall \widetilde{x},\ \overline{x} \in [a, b],\ 
+		|\widetilde{x} - \overline{x}| \leq \delta \\
+		\label{lec6:11}
+		\forall \widetilde{y},\ \overline{y} \in [c, d],\
+		|\widetilde{y} - \overline{y}| \leq \delta \implies
+		|f_y'(\widetilde{x}, \widetilde{y}) - f_y'(\overline{x}, \overline{y})|
+		\leq \eps
+		\end{gathered}
+	\end{equation}
+	Полагая здесь $ \widetilde{x} = \overline{x} = x \in [a, b],\ 
+	\widetilde{y} = \overline{y} = y \in [c, d]	$ и считая, что 
+	$ |\Theta\Delta y| \leq \delta $, получаем:
+	\[
+	\eqref{lec6:11} \implies\left|
+	\dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{\Delta y} - f_y'(x, y_0)
+	\right| \leq \eps \implies \eqref{lec6:10}
+	\]
+	Поэтому можно воспользоваться в \eqref{lec6:9} теоремой о почленном 
+	предельном переходе в СИЗОП, в силу которой имеем:
+	\[
+	\exists F'(y_0) \stackrel{\eqref{lec6:9}}{=} \lim\limits_{\Delta y \to 0}
+	\int\limits_a^b \dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{\Delta y} dx =
+	\int\limits_a^b \lim\limits_{\Delta y \to 0} 
+	\dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{\Delta y} dx = 
+	\int\limits_a^b f_y'(x, y_0) dx	
+	\]
+\end{proof}
+\begin{rem}[о дифференцировании СИЗОП с переменными пределами интегрирования]
+	Если в формуле
+	\[F(y) = \int\limits_a^n f(x, y)\,dx\]
+	$a = a(y), b = b(y)$~--- непрерывно-дифференцируемые функции на $[c; d]$,
+	а их значения не выходят за соответствующий отрезок $[a^*;b^*]$ и $f(x, y),
+	f'_y(x, y)\in C([a^*; b^*])$, то тогда имеем следующее 
+	обобщение формулы Лагранжа:
+	\[\exists \left(\int\limits_{a(y)}^{b(y)} f(x, y)\,dx\right)'_y = 
+	f(b(y), y)b'(y) - f(a(y), y)a'(y) + 
+	\int\limits_{a(y)}^{b(y)}f'_y(x, y)\,dx.\]
+\end{rem}
+
+\begin{proof}
+	Для начала введём одно обозначение. Пусть
+	\[G(x, y) = \int\limits_c^x f(t, y)\,dt,\]
+	где $c$~--- произвольная точка $[a^*;b^*]$. 
+	(Знаю, букв стало только больше, но так будет гораздо удобнее.)
+	
+	Тогда получаем, что
+	\[F(y) = G(b(y), y) - G(a(y), y),\]
+	\begin{gather*}
+		F'(y) = \left(G(b(y), y)\right)'_y -\left(G(a(y), y)\right)'_y =\\
+		= G'_x(b(y), y)b'(y) + G'_y(b(y), y) - G'_x(a(y), y)b'(y) - 
+		G'_y(a(y), y).
+	\end{gather*}
+	
+	А теперь смотрите:
+	\[G'_x(x, y) = \left(\int\limits_c^x f(t, y)\,dt\right)'_x = f(x, y)\]
+	по теореме Барроу, а
+	\[G'_y(x, y) = \left(\int\limits_c^x f(t, y)\,dt\right)'_y =
+	\int\limits_c^x f'_y(t, y)\,dt\]
+	по доказанной выше теореме.
+	
+	Тогда
+	\begin{gather*}
+		F(y) = f(b(y), y)b'(y) - f(a(y), y)a'(y) + 
+		\int\limits_c^{b(y)} f'_y(t, y)\,dt - 
+		\int\limits_c^{a(y)} f'_y(t, y)\,dt =\\
+		= f(b(y), y)b'(y) - f(a(y), y)a'(y) + 
+		\int\limits_{a(y)}^{b(y)} f'_y(t, y)\,dt =\\
+		= f(b(y), y)b'(y) - f(a(y), y)a'(y) + 
+		\int\limits_{a(y)}^{b(y)} f'_y(x, y)\,dx.
+	\end{gather*}
+\end{proof}
+\begin{exmp}
+	$ I_0 = \int\limits_0^1 \dfrac{x - 1}{\ln x} dx$\\
+	$ \exists \lim\limits_{x \to +0} \dfrac{x - 1}{\ln x} = \left[
+	\dfrac{-1}{-\infty} = 0
+	\right] $; \quad 
+	$
+	\exists \lim\limits_{x \to 1 - 0} \dfrac{x - 1}{\ln x} = \left[\ln x \equiv \\
+	x - 1\right] = 1 \in \R \implies 0,\ 1 \\ \text{ есть устраняемые разрывы } 
+	\dfrac{x - 1}{\ln x}.
+	$\\
+	Введя $ f_0(x) = 
+	\begin{cases}
+		0,\ x = 0\\
+		\dfrac{x - 1}{\ln x},\ 0 < x < 1\\
+		1,\ x = 1
+	\end{cases} $ получим, что она непрерывна на $ [0, 1] $ и для неё 
+	$ \int\limits_0^1 f_0(x) dx = \int\limits_0^1 f(x) dx $.
+	Для него рассмотрим $ F(y) = \int\limits_0^1 \dfrac{x^y - 1}{\ln x} dx $
+	при $ y \to 1 $, например $ \forall y \in \left[
+	\dfrac{1}{2}, \dfrac{3}{2}
+	\right] $. В данном случае для $ f(x, y) = \dfrac{x^y - 1}{\ln x} \implies 
+	\exists f_y' = \dfrac{x^y \ln x}{\ln x} = x^y \ \forall x \in [0, 1],\
+	\forall y \in \left[
+	\dfrac{1}{2}, \dfrac{3}{2}
+	\right] $. Здесь выполняются все условия теоремы о дифференцировании СИЗОП,
+	то $ \forall y \in \left[\dfrac{1}{2}, \dfrac{3}{2}\right] \implies 
+	F'(y) = \int\limits_0^1 x^y dx = \dfrac{x^{y + 1}}{y + 1} = \dfrac{1}{y + 1}
+	$. Из полученного уравнения следует, что $ F'(y) = \dfrac{1}{y + 1} $ после
+	неопределённого интеграла $ \implies F(y) = \int \dfrac{dy}{y + 1} = 
+	ln(1 + y) + C $. Далее в силу теоремы о предельном переходе в СИЗОП 
+	$ \exists F(+0) = \lim\limits_{y \to +0} \int\limits_0^1 
+	\dfrac{x^y - 1}{\ln x} dx = \int\limits_0^1 \lim\limits_{y \to +0} 
+	\dfrac{x^y - 1}{\ln x} dx = \int\limits_0^1 \dfrac{0dx}{\ln x} = 0$.
+	$ 0 = F(+0) = \left[\ln(1 + y) + C\right]_{y \to +0} = C \implies C = 0 $.
+	Тогда $ I_0 = F(1) = \ln 2 $.
+\end{exmp}
+\begin{thm}[о почленном интегрировании СИЗОП]
+	Пусть $ f(x, y) $ ~--- непрерывная Ф2П на компакте $ [a, b] \times [c, d]$.
+	Тогда для СИЗОП \eqref{lec5:1} имеем:
+	\begin{equation}
+		\exists \int\limits_c^d F(y) dy \stackrel{\eqref{lec5:1}}{=} 
+		\int\limits_c^d \left(
+		\int\limits_a^b f(x, y) dx
+		\right) dy = 
+		\int\limits_a^b \left(
+		\int\limits_c^d f(x, y) dy
+		\right) dx
+	\end{equation}
+\end{thm}
+\begin{proof}
+	Следует из представления двойного интеграла от непрерывной Ф2П по
+	прямоугольнку через соответствующие повторные интегралы.
+\end{proof}
+\begin{exmp}
+	Для ранее рассмотренного интеграла $ I_0 = 
+	\int\limits_0^1 \dfrac{x - 1}{\ln x} dx $.
+	$ \dfrac{x - 1}{\ln x} = \int\limits_0^1 x^y dy \implies I_0 = 
+	\int\limits_0^1 \int\limits_0^x x^y dy = \left[
+	\begin{gathered}
+		0 \leq y \leq x\\
+		0 \leq x \leq 1
+	\end{gathered}
+	\right] = \left[
+	\begin{gathered}
+		0 \leq y \leq 1\\
+		0 \leq x \leq y
+	\end{gathered}
+	\right] = \int\limits_0^1 \left(\int\limits_0^y x^y dx\right)dy
+	$
+\end{exmp}
+
+\end{document}
