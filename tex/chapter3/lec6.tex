@@ -11,7 +11,7 @@
 
 \begin{document}
 
-Пусть $ y_0 \in \R $ - предельная точка для $ D $. Будем говорить, что
+Пусть $ y_0 \in \R $ ~--- предельная точка для $ D $. Будем говорить, что
 Ф2П $ f(x, y) $ сходится к $ g(x), x \in [a, b] $ при $ y \to y_0 $, если
 \begin{equation}
 \label{lec6:1}
@@ -30,7 +30,7 @@
 По аналогии с критерием Гейне существования предела Ф1П доказывается критерий
 Гейне существования частного предела Ф2П:
 \[
-\eqref{lec6:2} \Leftrightarrow \quad
+\eqref{lec6:2} \iff \quad
 \forall (y_n) \in D,\ y_n \neq y_0,\ y_n \underset{n \to \infty}{\to} t_0 
 \text{[последовательности Гейне]} \implies f(x, y_n) 
 \stackrel{[a, b]}{\underset{n \to \infty}{\to}} g(x).
@@ -75,12 +75,12 @@ f(x, y) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x)
 	Положим, во-первых, что $ g(x) $ непрерывна $ \forall x \in [a, b] $.
 	Для этого воспользуемся критерием Гейне существования частного предела Ф2П.
 	\\
-	Функция $ (y_n) \in D $ - последовательность Гейне предельной точки $ y_0 $.
+	Функция $(y_n) \in D$ ~--- последовательность Гейне предельной точки $y_0$.
 	Для ФП $ f_n(x) = f(x, y_n) $ имеем:
 	\[
 	f(x, y) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x)
 	\]
-	А т.к. $ \forall f_n(x) \in C([a, b])$, то и $ g(x) \in C([a, b]) $ по 
+	А т.~к. $ \forall f_n(x) \in C([a, b])$, то и $ g(x) \in C([a, b]) $ по 
 	свойствам равномерной сходимости.
 	Отсюда следует:
 	\[
@@ -130,7 +130,7 @@ f(x, y) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x)
 	ФП с использованием криетрия Гейне существования равномерного предела Ф2П.
 	Схема:
 	\begin{enumerate}
-		\item Берём $ (y_n) \in D $ -последовательность Гейне точки $ y_0 $.
+		\item Берём $(y_n) \in D$ ~---последовательность Гейне точки $y_0$.
 		\item $ \eqref{lec6:4} \iff f_n(x) = f(x, y_n)
 		\stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x) 
 		\iff \underset{x \in [a, b]}{\sup} |f_n(x) - g(x)| = \\ =
@@ -167,15 +167,15 @@ $ \forall y_0 \in [c, d] \implies f(x, y)
 При этом предельная функция $ g(x) = f(x, y_0) \in C([a, b]) $.
 В частности, если окажется, что $ f(x, y) 
 \stackrel{[a, b]}{\underset{y \to y_0}{\to}} g(x)$, где 
-$ \forall f(x, y) $, непрервывной по $ x \in [a, b] \ \forall fix y \in [c, d]$,
-то, в случае, когда $ g(x) \notin C([a, b]) $, получим, что у рассмотренной Ф2П
+$ \forall f(x, y) $, непрерывной по $x \in [a, b] \ \forall \fix y \in [c, d]$,
+то, в случае, когда $g(x) \notin C([a, b])$, получим, что у рассмотренной Ф2П
 нет равномерного частного предела(т.~е. существует лишь частный предел).
 
 \subsection{Почленное дифференцирование и интегрирование СИЗОП}
 
 \begin{thm}[о дифференцировании СИЗОП]
 	Пусть функция $ f(x, y) $ непрерывна по $ x \in [a, b]\ 
-	\forall fix\ y \in [c, d] $. Если $ \exists f_y'(x, y) $ -
+	\forall \fix\ y \in [c, d] $. Если $ \exists f_y'(x, y) $ -
 	непрерывная Ф2П на $ [a, b] \times [c, d] $, то тогда справедлива формула
 	Лейбница для СИЗОП \eqref{lec5:1}:
 	\begin{equation}
@@ -205,7 +205,7 @@ $ \forall f(x, y) $, непрервывной по $ x \in [a, b] \ \forall fix 
 	Положим, что в \eqref{lec6:8} 
 	\begin{equation}
 	\label{lec6:10} 
-	\forall\ fix \ \Delta y \neq 0 \implies
+	\forall\ \fix \ \Delta y \neq 0 \implies
 	\dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{|Delta y} 
 	\stackrel{[a, b]}{\underset{\Delta y \to 0}{\rightrightarrows}} f_y'(x, y)
 	\end{equation}
