@@ -12,9 +12,9 @@
 
 \begin{example}
     $F(y) = \int\limits_y^{2y} \dfrac{\ln (1 + xy)}{x} dx$
-    \[ a(y) = y \Longrightarrow a'(y) = 1 \]
-    \[ b(y) = 2y \Longrightarrow b'(y) = 2 \]
-    \[ f(x, y) = \dfrac{\ln (1 + xy)}{x} \Longrightarrow
+    \[ a(y) = y \implies a'(y) = 1 \]
+    \[ b(y) = 2y \implies b'(y) = 2 \]
+    \[ f(x, y) = \dfrac{\ln (1 + xy)}{x} \implies
     \begin{cases}
         f(a, y) = \left. \dfrac{\ln (1 + xy)}{x} \right\vert_{x = y}
         = \dfrac{\ln (1 + y^2)}{y} \\
@@ -53,29 +53,31 @@
     \dfrac{1}{1-y} \int\limits_0^{+\infty} \left( \dfrac{1}{(t^2 + y)} -
     \dfrac{1}{(t^2 + 1)} \right) dt = \]
     \[ = \dfrac{1}{1 - y} \left[ \dfrac{1}{\sqrt{y}} \arctan \dfrac{t}{\sqrt{y}}
-    - \arctan t \right]_{t = 0}^{+\infty} = \dfrac{1}{1 - y} \left[ \dfrac{\pi}{2 \sqrt{y}}
+    - \arctan t \right]_{t = 0}^{+\infty} = \dfrac{1}{1 - y}
+    \left[ \dfrac{\pi}{2 \sqrt{y}}
     - \dfrac{\pi}{2} \right] = \dfrac{\pi (1 - \sqrt{y})}{2 (1 - y) \sqrt{y}} =
     \dfrac{\pi}{2 (1 + \sqrt{y}) \sqrt{y}} \]
-    Хотя в промежуточных действиях появилось ограничение $y \neq 1$, в силу непрерывности
+    Хотя в промежуточных действиях появилось ограничение $y \neq 1$,
+    в силу непрерывности
     подынтегральной функции и интеграла окончательный ответ верен для
     $\forall y > 0$.
 
     Используется непрерывное интегрирование для получения уравнения
-    \[F'(y) = \dfrac{\pi}{2(1+\sqrt{y})\sqrt{y}} \Longrightarrow F(y) =
+    \[F'(y) = \dfrac{\pi}{2(1+\sqrt{y})\sqrt{y}} \implies F(y) =
     \dfrac{\pi}{2} \int \dfrac{dy}{2 (1 + \sqrt{y}) \sqrt{y}}  = \pi
     \int \dfrac{d(\sqrt{y})}{1 + \sqrt{y}} = \pi \ln (1 + \sqrt{y}) + C \]
     Для вычисления постоянной $C$ возьмем: $y \to 1$ (в результате
     непрерывности СИЗОП).
     \[F(1) = \pi \ln 2 + C = \int\limits_0^{\frac{\pi}{2}}
     \underbrace{ \ln \left( \sin^2 x + \cos^2 x \right)}_{= 0} dx = 0
-    \Longrightarrow C = -\pi \ln 2\]
-    \[F(y) = \pi \ln(1 + \sqrt{y}) - \pi \ln 2 = \pi \ln \dfrac{1 + \sqrt{y}}{2}, \
-    \forall y > 0\]
+    \implies C = -\pi \ln 2\]
+    \[F(y) = \pi \ln(1 + \sqrt{y}) - \pi \ln 2 =
+    \pi \ln \dfrac{1 + \sqrt{y}}{2}, \ \forall y > 0\]
     Если при непрерывном вычислении интеграла перейти к пределу при $y \to 0$,
     то получим несобственный интеграл:
     \[ \int\limits_0^{\frac{\pi}{2}} \ln (\sin^2 x)dx = \pi \ln \dfrac{1}{2} =
-    \pi \ln 2 \Longrightarrow 2 \int\limits_0^{\frac{\pi}{2}} \ln (\sin x) dx = 
-    - \pi \ln 2 \Longrightarrow \int\limits_0^{\frac{\pi}{2}} \ln (\sin x) dx = 
+    \pi \ln 2 \implies 2 \int\limits_0^{\frac{\pi}{2}} \ln (\sin x) dx = 
+    - \pi \ln 2 \implies \int\limits_0^{\frac{\pi}{2}} \ln (\sin x) dx = 
     - \dfrac{\pi}{2}\ln 2\]
     
 \end{example}
