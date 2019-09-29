@@ -147,7 +147,7 @@ const\geq 0 \implies \left| g(x) \right| \leq C \; \forall x \geq a$
  Расматриваемый НИ-1 сходится по Дирихле.
  \end{exmp}
  
- \section{Несобственный интеграл 2-ого рода}
+ \section{Несобственный интеграл второго рода}
  
  Пусть $f(x)$ определена $\forall x \in \left[a; b \right[$. Если $\forall 
  \eps \in \left] 0, b - a \right[ \implies f(x) \in \R(\left[a, b - 
@@ -237,9 +237,7 @@ $\eqref{lec8:3}, \eqref{lec8:4}$ из-за неограниченности не
 0}^{b}f(x)dx = \underset{\scriptsize{
 \begin{gathered}
 \eps_1 \to 0\\
-\eps_2 \to 0                                                                   
-                                                                               
-                                                               \end{gathered}}}
+\eps_2 \to 0                                                \end{gathered}}}
 \lim\left(\int\limits_{a}^{c - \eps_1}f(x)dx + \int\limits_{c + 
 \eps_2}^{b}f(x)dx\right)
 \end{equation}
@@ -278,22 +276,22 @@ $\eqref{lec8:3}, \eqref{lec8:4}$ из-за неограниченности не
   расходятся.
   \item[б)] $p = 0$, т.~е. $f(x) = o(g(x))$ при $x \to b - 0$ то
   \begin{itemize}
-   \item[] сходится $\displaystyle\int\limits_{a}^{b}g(x)dx \implies $ 
+   \item сходится $\displaystyle\int\limits_{a}^{b}g(x)dx \implies $ 
    сходится $\displaystyle\int\limits_{a}^{b}f(x)dx$
-   \item[] расходится $\displaystyle\int\limits_{a}^{b}f(x)dx \implies $ 
+   \item расходится $\displaystyle\int\limits_{a}^{b}f(x)dx \implies $ 
    расходится $\displaystyle\int\limits_{a}^{b}g(x)dx$
   \end{itemize}
   \item[в)] $p = +\infty$
     \begin{itemize}
-     \item[] сходится $\displaystyle\int\limits_{a}^{b}f(x)dx \implies $ 
+     \item сходится $\displaystyle\int\limits_{a}^{b}f(x)dx \implies $ 
      сходится $\displaystyle\int\limits_{a}^{b}g(x)dx$
-     \item[] расходится $\displaystyle\int\limits_{a}^{b}g(x)dx \implies $ 
+     \item расходится $\displaystyle\int\limits_{a}^{b}g(x)dx \implies $ 
      сходится $\displaystyle\int\limits_{a}^{b}f(x)dx$
     \end{itemize}
  \end{itemize}
  \item Степенной признак сходимости НИ-2:
  \begin{itemize}
- \item[] Если имеет НИ-2 вида $\eqref{lec8:3}$, то в случае, когда $f(x) 
+ \item Для НИ-2 вида $\eqref{lec8:3}$ в случае, когда $f(x) 
  \underset{x \to b - 0}\sim \dfrac{c}{(b - x)^ {\alpha}}, c = const \neq 0$:
 
  \[\int\limits_{a}^{b} f(x)dx = \begin{cases}
@@ -301,7 +299,7 @@ $\eqref{lec8:3}, \eqref{lec8:4}$ из-за неограниченности не
                                  \text{расходится, } \alpha \geq 1
                                 \end{cases}\]
                                 
-\item[] Для НИ-2 вида $\eqref{lec8:4}$, если $f(x) \underset{x \to a + 0}\sim 
+\item Для НИ-2 вида $\eqref{lec8:4}$, если $f(x) \underset{x \to a + 0}\sim 
 \dfrac{c}{\left|x - \alpha\right|^{\alpha}}, \; c = const \neq 0$
 
 \[\int\limits_{a}^{b}f(x)dx = \begin{cases}
@@ -310,7 +308,7 @@ $\eqref{lec8:3}, \eqref{lec8:4}$ из-за неограниченности не
                               \end{cases}
 \]                                                    
                                                     
-\item[] Для НИ-2 вида $\eqref{lec8:5}$, если $f(x) \underset{x \to c \pm 
+\item Для НИ-2 вида $\eqref{lec8:5}$, если $f(x) \underset{x \to c \pm 
 0}\sim \dfrac{M}{\left|x - c\right|^{\alpha}}, \; M = const \neq 0,\; a < c < 
 b$
 
