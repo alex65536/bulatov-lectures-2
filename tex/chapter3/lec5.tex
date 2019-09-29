@@ -1,0 +1,27 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+{../../img/}
+{../img/}
+{img/}
+}
+
+\begin{document}
+    \section{Сходимость и непрерывность СИЗОП}
+    
+    Пусть есть функция двух переменных $f(x,y)$, где $y \in D \subset \R$, 
+    а $x \in [a;b]$. Если при каждом $\fix y \in D$ функция
+    $f(x, y)$ интегрируема 
+    по Риману по $x \in [a;b]$, то в этом случае корректно определён 
+    собственный интеграл, зависящий от параметра (СИЗОП)
+    
+    \begin{equation} \label{lec5:1}
+        F(y) = \int\limits_a^b f(x, y)dx.
+    \end{equation}
+
+    Мы будем рассматривать свойства \eqref{lec5:1} в зависимости от свойств 
+    подынтегральных функций.
+\end{document}
