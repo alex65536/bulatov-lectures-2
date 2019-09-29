@@ -310,8 +310,10 @@ d]$,
 		\frac{x - 1}{\ln x},& 0 < x < 1\\
 		1,& x = 1
 	\end{cases}\] получим, что она непрерывна на $ [0, 1] $ и для неё 
-	$ \displaystyle\int\limits_0^1 f_0(x) dx = \displaystyle\int\limits_0^1 f(x) dx $.
-	Теперь рассмотрим $ F(y) = \displaystyle\int\limits_0^1 \dfrac{x^y - 1}{\ln x} dx $
+	$ \displaystyle\int\limits_0^1 f_0(x) dx = \displaystyle\int\limits_0^1 f(x) 
+	dx $.
+	Теперь рассмотрим $ F(y) = \displaystyle\int\limits_0^1 \dfrac{x^y - 1}{\ln 
+	x} dx $
 	при $ y \to 1 $, например, на отрезке, $y \in \left[
 	\dfrac{1}{2}, \dfrac{3}{2}
 	\right] $. В данном случае для $ f(x, y) = \dfrac{x^y - 1}{\ln x} \implies 
@@ -320,10 +322,13 @@ d]$,
 	\dfrac{1}{2}, \dfrac{3}{2}
 	\right] $. Здесь выполняются все условия теоремы о дифференцировании СИЗОП,
 	т.~е.\[ \forall y \in \left[\dfrac{1}{2}, \dfrac{3}{2}\right] \implies 
-	F'(y) = \displaystyle\int\limits_0^1 x^y dx = \left.\dfrac{x^{y + 1}}{y + 1}\right|_{x=0}^{x=1} = \dfrac{1}{y + 1}
+	F'(y) = \displaystyle\int\limits_0^1 x^y dx = \left.\dfrac{x^{y + 1}}{y + 
+	1}\right|_{x=0}^{x=1} = \dfrac{1}{y + 1}
 	.\] Из полученного уравнения следует, что после
-	неопределённого интеграла получаем \[F'(y) = \dfrac{1}{y + 1} \implies F(y) = \int \dfrac{dy}{y + 1} = 
-	\ln(1 + y) + C.\] Далее в силу теоремы о предельном переходе в СИЗОП получаем, что
+	неопределённого интеграла получаем \[F'(y) = \dfrac{1}{y + 1} \implies F(y) = 
+	\int \dfrac{dy}{y + 1} = 
+	\ln(1 + y) + C.\] Далее в силу теоремы о предельном переходе в СИЗОП 
+	получаем, что
 	\[\exists F(+0) = \lim\limits_{y \to +0} \int\limits_0^1 
 	\dfrac{x^y - 1}{\ln x} dx = \int\limits_0^1 \lim\limits_{y \to +0} 
 	\dfrac{x^y - 1}{\ln x} dx = \int\limits_0^1 \dfrac{0dx}{\ln x} = 0.\]
