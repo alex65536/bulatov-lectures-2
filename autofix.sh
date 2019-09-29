@@ -58,7 +58,7 @@ sedfix 's/\\mathbb\{N\}/\\N/g'
 
 sedfix 's/\\epsilon|\\varepsilon/\\eps/g'
 
-sedfix 's/([^a-zA-Z\]|^)(lim|sin|cos|tan|sup|inf|mes|rank|diam|fix|arctan|arctg|sinh|cosh)/\1\\\2/g'
+sedfix 's/([^a-zA-Z\]|^)(lim|sin|cos|tan|sup|inf|mes|rank|diam|fix|arctan|arctg|sinh|cosh|ln)/\1\\\2/g'
 
 # Wrap each line to 80 chars each
 foldfix
