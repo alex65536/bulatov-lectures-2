@@ -31,7 +31,7 @@ $\begin{cases}
  \right), B \geq \delta, C \geq \delta \implies \left|F(B) - F(C) \right| \leq 
  \eps\]
  
- A так как:
+ А так как:
  $F(C) - F(B) = \displaystyle\int\limits_{a}^{C}fdx - 
  \displaystyle\int\limits_{a}^{B}fdx = \int\limits_{B}^{C}fdx$
  , то получаем \eqref{lec8:1}
@@ -40,7 +40,7 @@ $\begin{cases}
 \begin{crl}
  (Абсолютная сходимость НИ-1)
  
- Если рассматриваемый НИ-1 сходится абсюлютно, т.~е. сходится
+ Если рассматриваемый НИ-1 сходится абсолютно, т.~е. сходится
  $\displaystyle\int\limits_{a}^{+\infty}|f(x)|dx$, то тогда НИ-1 сходится и в 
  обычном смысле.
  
@@ -144,7 +144,7 @@ const\geq 0 \implies \left| g(x) \right| \leq C \; \forall x \geq a$
  
  \[g(x) = \dfrac{1}{x^{\alpha}} \xrightarrow[x \to +\infty]{\alpha > 0} 0\]
  
- Расматриваемый НИ-1 сходится по Дирихле.
+ Рассматриваемый НИ-1 сходится по Дирихле.
  \end{exmp}
  
  \section{Несобственный интеграл второго рода}
@@ -175,10 +175,10 @@ $\eqref{lec8:3} \lim = \infty$ или $\nexists \lim$, то рассматрив
  \eps}^{b}f(x)dx
 \end{equation}
 
-Где предполагется, что $\forall \eps > 0 \in \left]0;\; b - a\right[ \implies 
+Где предполагается, что $\forall \eps > 0 \in \left]0;\; b - a\right[ \implies 
 f(x) \in \R(\left[a + \eps;\; b\right])$. Если в $\eqref{lec8:4} \lim \in \R$, 
 то НИ-2 считается сходящимся, если $\lim = \infty$ или $\nexists \lim$, то 
-рассматривыемый НИ-2 считается расходящимся.
+рассматриваемый НИ-2 считается расходящимся.
 
 На практике $\eqref{lec8:3}, \eqref{lec8:4}$ будем обозначать 
 $\displaystyle\int\limits_{a}^{b}f(x)dx$. В $\eqref{lec8:3}$ предположим, что 
@@ -194,7 +194,7 @@ $\eqref{lec8:3}, \eqref{lec8:4}$ из-за неограниченности не
  Рассмотрим $\displaystyle\int\limits_{a}^{b}\dfrac{dx}{(b - x)^{\alpha}}$
  
  Если $\alpha > 0$, то $f(x) = \dfrac{1}{(b -x)^{\alpha}} \xrightarrow[x \to b 
- - 0]{} \infty$, т.~е. расматриваемый интеграл не является интегралом Римана, 
+ - 0]{} \infty$, т.~е. рассматриваемый интеграл не является интегралом Римана, 
  а является НИ-2 вида $\eqref{lec8:3}$
  
  \[\int\limits_{a}^{b}\dfrac{dx}{(b - x)^{\alpha}} =
@@ -327,7 +327,7 @@ $\displaystyle\int\limits_{a}^{b}f(x)dx$
 
 В общем случае, если для $f(x)$, определенной на промежутке $\left|a, \; 
 b\right|$, существует конечное число точек $a \leq x_1 < x_2 < \ldots < x_n 
-\leq b$, в кототрых $f(x)$ не ограничена, причем в остальных точках 
+\leq b$, в которых $f(x)$ не ограничена, причем в остальных точках 
 ограничена, то для такого общего НИ-2 полагают по определению:
 
 \begin{equation} \label{lec8:6}
@@ -359,7 +359,7 @@ $\infty$.
 \implies$ НИ-1 сходится по степенному признаку $\left(\alpha = 4 > 1\right)$
 
 Для НИ-2 $\displaystyle\int\limits_{1}^{\frac{3}{2}}f(x)dx$ подынтегральная 
-функция имеет едитсвенную особенность на конце $x = 1$. В данном случае:
+функция имеет единственную особенность на конце $x = 1$. В данном случае:
 
 $f(x) = \dfrac{1}{x^2(x-1)(x-2)} \underset{x \to 1 + 0}\sim -\dfrac{1}{x - 1} 
 \implies$ НИ-2 расходится по степенному признаку $\left(\alpha = 1\right)$, 
@@ -376,15 +376,15 @@ b\right[$.
 
 \begin{thm}[Формула Ньютона-Лейбница для НИ]
 Пусть $F(x)$ первообразная $f(x)$ на $\left[a,\; b\right[$. Тогда 
-рассмотриваемый НИ $\displaystyle\int\limits_{a}^{b}f(x)dx$ будет сходится 
+рассматриваемый НИ $\displaystyle\int\limits_{a}^{b}f(x)dx$ будет сходится 
 $\iff \exists F(b-0)\in \R$, при этом для него справедлива формула двойной 
-подставновки:
+подстановки:
 \begin{equation}\label{lec8:7}
 \int\limits_{a}^{b}f(x)dx = \left[F(x)\right]_{a}^{b} = \underset{\eps \to 
 +0}\lim\left[F(x)\right]_{a}^{b - \eps} = F(b - 0) - F(a) 
 \end{equation}
 
-Формула $\eqref{lec8:7}$ является формулой двойной подставновки НИ-2 вида 
+Формула $\eqref{lec8:7}$ является формулой двойной подстановки НИ-2 вида 
 $\eqref{lec8:3}$
 
 \begin{equation}\label{lec8:8}
