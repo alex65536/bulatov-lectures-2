@@ -355,19 +355,12 @@ d]$,
 \begin{exmp}
 	Для ранее рассмотренного интеграла $I_0 = 
 	\displaystyle\int\limits_0^1 \dfrac{x - 1}{\ln x} dx $ имеем:
-	\[ \dfrac{x - 1}{\ln x} = \int\limits_0^1 x^y dy \implies I_0 = 
-	\int\limits_0^1 \int\limits_0^x x^y dy = \left[
-	\begin{gathered}
-		0 \leq y \leq x\\
-		0 \leq x \leq 1
-	\end{gathered}
-	\right] = \left[
-	\begin{gathered}
-		0 \leq y \leq 1\\
-		0 \leq x \leq y
-	\end{gathered}
-	\right] = \int\limits_0^1 \left(\int\limits_0^y x^y dx\right)dy.
-	\]
+	\begin{gather*}
+	\dfrac{x - 1}{\ln x} = \int\limits_0^1 x^y dy \implies I_0 = 
+	\int\limits_0^1 \left(\int\limits_0^1 x^y dy\right)dx = \int\limits_0^1 \left(\int\limits_0^1 x^y dx\right)dy = 
+	\int\limits_0^1 \left[\frac{x^{y+1}}{y+1}\right]_0^1 dy =  \\
+  = \int\limits_0^1 \frac{1}{y+1} dy = \big[\ln(y+1)\big]_0^1 = \ln2.
+	\end{gather*}
 \end{exmp}
 
 \end{document}
