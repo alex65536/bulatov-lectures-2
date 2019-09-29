@@ -124,7 +124,7 @@ Use equation and \eqref{}.'
 	      'Use enumerate instead of itemize for enumerated lists'
 	
 	check -- "$1" \
-	      '([^a-zA-Z\]|^)(lim|sin|cos|tan|sup|inf|mes|rank|diam|fix|arctan|arctg|sinh|cosh)' \
+	      '([^a-zA-Z\]|^)(lim|sin|cos|tan|sup|inf|mes|rank|diam|fix|arctan|arctg|sinh|cosh|ln)' \
 	      'Do not forget \ before sin, cos, lim etc.'
 }
 

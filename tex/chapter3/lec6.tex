@@ -20,10 +20,10 @@
 \implies |f(x, y) - g(x)| \leq \eps
 \end{equation}
 Предельную функцию $ g(x), x \in [a, b] $ в \eqref{lec6:1} будем называть 
-частным пределом $ f(x, y), y \to y_0 $ и использовать запись
+частным пределом $ f(x, y)$, $y \to y_0 $ и использовать запись
 \begin{equation}
 \label{lec6:2}
-	\lim\limits_{y \to y_0} f(x, y) = g(x), x \in [a, b] \iff
+	\lim\limits_{y \to y_0} f(x, y) = g(x),\ x \in [a, b] \iff
 	f(x, y) \stackrel{[a, b]}{\underset{y \to y_0}{\to}} g(x) 
 	% нормально под стрелкой сделать, хз как
 \end{equation}
@@ -35,8 +35,8 @@
 \text{[последовательности Гейне]} \implies f(x, y_n) 
 \stackrel{[a, b]}{\underset{n \to \infty}{\to}} g(x).
 \]
-Функцию $ g(x), x \in [a, b] $ будем называть равным частным пределом 
-$ f(x, y),\ y \to y_0,\ x \in [a, b] $, если
+Функцию $ g(x), x \in [a, b] $ будем называть равномерным частным пределом 
+$ f(x, y)$, $y \to y_0$, $x \in [a, b] $, если
 \begin{equation}
 \label{lec6:3}
 \forall \eps > 0 \quad \exists \delta = \delta_\eps > 0: \quad 
@@ -50,7 +50,7 @@ f(x, y) \stackrel{[a, b]}{\underset{y \to y_0}{\rightrightarrows}} g(x)
 \end{equation}
 Из \eqref{lec6:4} следует \eqref{lec6:2}, но обратное не всегда верно.\\
 Аналогично, как и выше, получаем критерий Гейне о существовании частного
-предела Ф2П.
+предела Ф2П:
 \begin{equation}
 \label{lec6:5}
 \eqref{lec6:4} \iff \forall (y_n) \in D,\ y_n \neq y_0,\ 
@@ -98,7 +98,7 @@ f(x, y) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x)
 	\]
 \end{proof}
 \begin{rem}
-	Используя теорему Кантора о непрерывности Ф2П на компакте нетрудно получить,
+	Используя теорему Кантора о непрерывности Ф2П на компакте, нетрудно получить,
 	что если $ f(x, y) $ непрерывная Ф2П $ \forall x \in [a, b],\ 
 	y \in [c, d] $, то тогда, во-первых, $ \forall y \in [c, d] \implies 
 	f(x, y) \stackrel{[a, b]}{\underset{y \to y_0}{\rightrightarrows}} f(x, y_0)
@@ -109,7 +109,7 @@ f(x, y) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x)
 	\exists \lim\limits_{y \to y_0} F(y) = 
 	\lim\limits_{y \to y_0} \int\limits_a^b f(x, y) dx = 
 	\int\limits_a^b \lim\limits_{y \to y_0} f(x, y) dx =
-	\int\limits_a^b f(x, y_0) dx = F(y_0)
+	\int\limits_a^b f(x, y_0) dx = F(y_0).
 	\]
 	Поэтому в этом случае СИЗОП \eqref{lec5:1} будет непрерывной функцией 
 	$ \forall y \in [c, d] $.
@@ -130,7 +130,7 @@ f(x, y) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x)
 	ФП с использованием криетрия Гейне существования равномерного предела Ф2П.
 	Схема:
 	\begin{enumerate}
-		\item Берём $(y_n) \in D$ ~---последовательность Гейне точки $y_0$.
+		\item Берём $(y_n) \in D$~--- последовательность Гейне точки $y_0$.
 		\item $ \eqref{lec6:4} \iff f_n(x) = f(x, y_n)
 		\stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x) 
 		\iff \underset{x \in [a, b]}{\sup} |f_n(x) - g(x)| = \\ =
@@ -153,11 +153,11 @@ f(x, y) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x)
 	\]
 	\[
 	\forall x \in [a, b] \implies |f(x, \widetilde{y}) - f(x, \overline{y})
-	\leq \eps|
+	\leq \eps|.
 	\]
 \end{thm}
 \begin{proof}
-	Проводится по той же схеме, что и выше с использованием критерия Гейне и
+	Проводится по той же схеме, что и выше, с использованием критерия Гейне и
 	соответствующего критерия Коши равномерной сходимости ФП.
 \end{proof}
 
@@ -167,7 +167,8 @@ $ \forall y_0 \in [c, d] \implies f(x, y)
 При этом предельная функция $ g(x) = f(x, y_0) \in C([a, b]) $.
 В частности, если окажется, что $ f(x, y) 
 \stackrel{[a, b]}{\underset{y \to y_0}{\to}} g(x)$, где 
-$ \forall f(x, y) $, непрерывной по $x \in [a, b] \ \forall \fix y \in [c, d]$,
+$ \forall f(x, y) $, непрерывной по $x \in [a, b] \ \forall \fix y \in [c, 
+d]$,
 то, в случае, когда $g(x) \notin C([a, b])$, получим, что у рассмотренной Ф2П
 нет равномерного частного предела(т.~е. существует лишь частный предел).
 
@@ -175,7 +176,7 @@ $ \forall f(x, y) $, непрерывной по $x \in [a, b] \ \forall \fix y 
 
 \begin{thm}[о дифференцировании СИЗОП]
 	Пусть функция $ f(x, y) $ непрерывна по $ x \in [a, b]\ 
-	\forall \fix\ y \in [c, d] $. Если $ \exists f_y'(x, y) $ -
+	\forall \fix\ y \in [c, d] $. Если $ \exists f_y'(x, y) $~---
 	непрерывная Ф2П на $ [a, b] \times [c, d] $, то тогда справедлива формула
 	Лейбница для СИЗОП \eqref{lec5:1}:
 	\begin{equation}
@@ -206,7 +207,7 @@ $ \forall f(x, y) $, непрерывной по $x \in [a, b] \ \forall \fix y 
 	\begin{equation}
 	\label{lec6:10} 
 	\forall\ \fix \ \Delta y \neq 0 \implies
-	\dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{|Delta y} 
+	\dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{\Delta y} 
 	\stackrel{[a, b]}{\underset{\Delta y \to 0}{\rightrightarrows}} f_y'(x, y)
 	\end{equation}
 	Используя формулу Лагранжа конечных приращений по второй переменной 
@@ -246,12 +247,12 @@ $ \forall f(x, y) $, непрерывной по $x \in [a, b] \ \forall \fix y 
 	\int\limits_a^b \dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{\Delta y} dx =
 	\int\limits_a^b \lim\limits_{\Delta y \to 0} 
 	\dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{\Delta y} dx = 
-	\int\limits_a^b f_y'(x, y_0) dx	
+	\int\limits_a^b f_y'(x, y_0) dx.
 	\]
 \end{proof}
 \begin{rem}[о дифференцировании СИЗОП с переменными пределами интегрирования]
 	Если в формуле
-	\[F(y) = \int\limits_a^n f(x, y)\,dx\]
+	\[F(y) = \int\limits_a^b f(x, y)\,dx\]
 	$a = a(y), b = b(y)$~--- непрерывно-дифференцируемые функции на $[c; d]$,
 	а их значения не выходят за соответствующий отрезок $[a^*;b^*]$ и $f(x, y),
 	f'_y(x, y)\in C([a^*; b^*])$, то тогда имеем следующее 
@@ -290,42 +291,42 @@ $ \forall f(x, y) $, непрерывной по $x \in [a, b] \ \forall \fix y 
 		= f(b(y), y)b'(y) - f(a(y), y)a'(y) + 
 		\int\limits_{a(y)}^{b(y)} f'_y(t, y)\,dt =\\
 		= f(b(y), y)b'(y) - f(a(y), y)a'(y) + 
-		\int\limits_{a(y)}^{b(y)} f'_y(x, y)\,dx.
+		\int\limits_{a(y)}^{b(y)} f'_y(x, y)\,dx. \qedhere
 	\end{gather*}
 \end{proof}
 \begin{exmp}
-	$ I_0 = \int\limits_0^1 \dfrac{x - 1}{\ln x} dx$\\
-	$ \exists \lim\limits_{x \to +0} \dfrac{x - 1}{\ln x} = \left[
+	\[I_0 = \int\limits_0^1 \dfrac{x - 1}{\ln x} dx\]
+	\[ \exists \lim\limits_{x \to +0} \dfrac{x - 1}{\ln x} = \left[
 	\dfrac{-1}{-\infty} = 0
-	\right] $; \quad 
-	$
-	\exists \lim\limits_{x \to 1 - 0} \dfrac{x - 1}{\ln x} = \left[\ln x \equiv \\
-	x - 1\right] = 1 \in \R \implies 0,\ 1 \\ \text{ есть устраняемые разрывы } 
-	\dfrac{x - 1}{\ln x}.
-	$\\
-	Введя $ f_0(x) = 
+	\right]; \quad 
+	\exists \lim\limits_{x \to 1 - 0} \dfrac{x - 1}{\ln x} = \left[\ln x \equiv 
+	\\
+	x - 1\right] = 1 \in \R;\] т.~е. есть устранимые разрывы функции
+	$\dfrac{x - 1}{\ln x}$ в точках $x = 0$, $x = 1$.
+	
+	Введя \[ f_0(x) = 
 	\begin{cases}
-		0,\ x = 0\\
-		\dfrac{x - 1}{\ln x},\ 0 < x < 1\\
-		1,\ x = 1
-	\end{cases} $ получим, что она непрерывна на $ [0, 1] $ и для неё 
-	$ \int\limits_0^1 f_0(x) dx = \int\limits_0^1 f(x) dx $.
-	Для него рассмотрим $ F(y) = \int\limits_0^1 \dfrac{x^y - 1}{\ln x} dx $
-	при $ y \to 1 $, например $ \forall y \in \left[
+		0,& x = 0\\
+		\frac{x - 1}{\ln x},& 0 < x < 1\\
+		1,& x = 1
+	\end{cases}\] получим, что она непрерывна на $ [0, 1] $ и для неё 
+	$ \displaystyle\int\limits_0^1 f_0(x) dx = \displaystyle\int\limits_0^1 f(x) dx $.
+	Теперь рассмотрим $ F(y) = \displaystyle\int\limits_0^1 \dfrac{x^y - 1}{\ln x} dx $
+	при $ y \to 1 $, например, на отрезке, $y \in \left[
 	\dfrac{1}{2}, \dfrac{3}{2}
 	\right] $. В данном случае для $ f(x, y) = \dfrac{x^y - 1}{\ln x} \implies 
-	\exists f_y' = \dfrac{x^y \ln x}{\ln x} = x^y \ \forall x \in [0, 1],\
+	\exists f_y' = \dfrac{x^y \ln x}{\ln x} = x^y \quad \forall x \in [0, 1],\
 	\forall y \in \left[
 	\dfrac{1}{2}, \dfrac{3}{2}
 	\right] $. Здесь выполняются все условия теоремы о дифференцировании СИЗОП,
-	то $ \forall y \in \left[\dfrac{1}{2}, \dfrac{3}{2}\right] \implies 
-	F'(y) = \int\limits_0^1 x^y dx = \dfrac{x^{y + 1}}{y + 1} = \dfrac{1}{y + 1}
-	$. Из полученного уравнения следует, что $ F'(y) = \dfrac{1}{y + 1} $ после
-	неопределённого интеграла $ \implies F(y) = \int \dfrac{dy}{y + 1} = 
-	ln(1 + y) + C $. Далее в силу теоремы о предельном переходе в СИЗОП 
-	$ \exists F(+0) = \lim\limits_{y \to +0} \int\limits_0^1 
+	т.~е.\[ \forall y \in \left[\dfrac{1}{2}, \dfrac{3}{2}\right] \implies 
+	F'(y) = \displaystyle\int\limits_0^1 x^y dx = \left.\dfrac{x^{y + 1}}{y + 1}\right|_{x=0}^{x=1} = \dfrac{1}{y + 1}
+	.\] Из полученного уравнения следует, что после
+	неопределённого интеграла получаем \[F'(y) = \dfrac{1}{y + 1} \implies F(y) = \int \dfrac{dy}{y + 1} = 
+	\ln(1 + y) + C.\] Далее в силу теоремы о предельном переходе в СИЗОП получаем, что
+	\[\exists F(+0) = \lim\limits_{y \to +0} \int\limits_0^1 
 	\dfrac{x^y - 1}{\ln x} dx = \int\limits_0^1 \lim\limits_{y \to +0} 
-	\dfrac{x^y - 1}{\ln x} dx = \int\limits_0^1 \dfrac{0dx}{\ln x} = 0$.
+	\dfrac{x^y - 1}{\ln x} dx = \int\limits_0^1 \dfrac{0dx}{\ln x} = 0.\]
 	$ 0 = F(+0) = \left[\ln(1 + y) + C\right]_{y \to +0} = C \implies C = 0 $.
 	Тогда $ I_0 = F(1) = \ln 2 $.
 \end{exmp}
@@ -347,9 +348,9 @@ $ \forall f(x, y) $, непрерывной по $x \in [a, b] \ \forall \fix y 
 	прямоугольнку через соответствующие повторные интегралы.
 \end{proof}
 \begin{exmp}
-	Для ранее рассмотренного интеграла $ I_0 = 
-	\int\limits_0^1 \dfrac{x - 1}{\ln x} dx $.
-	$ \dfrac{x - 1}{\ln x} = \int\limits_0^1 x^y dy \implies I_0 = 
+	Для ранее рассмотренного интеграла $I_0 = 
+	\displaystyle\int\limits_0^1 \dfrac{x - 1}{\ln x} dx $ имеем:
+	\[ \dfrac{x - 1}{\ln x} = \int\limits_0^1 x^y dy \implies I_0 = 
 	\int\limits_0^1 \int\limits_0^x x^y dy = \left[
 	\begin{gathered}
 		0 \leq y \leq x\\
@@ -360,8 +361,8 @@ $ \forall f(x, y) $, непрерывной по $x \in [a, b] \ \forall \fix y 
 		0 \leq y \leq 1\\
 		0 \leq x \leq y
 	\end{gathered}
-	\right] = \int\limits_0^1 \left(\int\limits_0^y x^y dx\right)dy
-	$
+	\right] = \int\limits_0^1 \left(\int\limits_0^y x^y dx\right)dy.
+	\]
 \end{exmp}
 
 \end{document}
