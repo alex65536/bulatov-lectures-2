@@ -83,7 +83,7 @@
     \begin{enumerate}
         \item 
         \[(1 + x)^\alpha = 1 + \sum\limits_{k = 1}^{\infty} 
-        \dfrac{\alpha(\alpha - 1)\ldots(\alpha - k + 1)}{k!}x^k, \quad k \in 
+        \dfrac{\alpha(\alpha - 1)\ldots(\alpha - k + 1)}{k!}x^k, \quad x \in 
         ]-1; 1[.\]
         
         В данном случае имеем \eqref{lec3_2:1}, \eqref{lec3_2:2} с центром в 
@@ -96,7 +96,7 @@
         \in \R = I.\]
         
         \item 
-        \[e^x = 1 + \sum\limits_{n = 0}^{\infty} \frac{x^n}{n!},  \quad 
+        \[e^x = \sum\limits_{n = 0}^{\infty} \frac{x^n}{n!},  \quad 
         \forall x \in \R.\]
 
         Отсюда для показательной функции с основанием $a > 0$ получаем
@@ -127,7 +127,7 @@
     
         \[ e^{it} = \sum\limits_{n = 0}^{\infty} \frac{(it)^n}{n!} = 
         \sum\limits_{n = 0}^{\infty} \frac{(-1)^nt^{2n}}{(2n)!} + 
-        2 \sum\limits_{n = 0}^{\infty} \frac{(-1)^nx^{2n+1}}{(2n+1)!} 
+        i \sum\limits_{n = 0}^{\infty} \frac{(-1)^nt^{2n+1}}{(2n+1)!} 
         = \cos t + i \sin t, \quad i^2 = -1,\]
         \[e^{-it} = \cos t - i \sin t\]
 
@@ -139,7 +139,7 @@
         
         Получаем формулы также заменой аргументов $t = iy$:
         \[ \ch y = \cos(iy)\]
-        \[\sh y = i \sin (iy)\]
+        \[\sh y = -i \sin (iy)\]
         
         \item Разложение обратных тригонометрических функций.
         
@@ -159,7 +159,7 @@
         \begin{multline*}
             \arcsin x = \int\limits_{0}^{x} \frac{dt}{\sqrt{1 - t^2}} =
             [(1 - t^2)^{1/2} = 1 + \frac{(-\frac12)}{1!}(-t^2) + 
-            \frac{(-\frac12)(-\frac12 - 1)}{2!}(-t^2)^2 = \\ =
+            \frac{(-\frac12)(-\frac12 - 1)}{2!}(-t^2)^2 + \ldots = \\ =
             1 + \frac{1!!}{2!!}t^2 + \frac{3!!}{4!!}t^4 + \ldots ] = 
             \int\limits_{0}^{x} 1 + \sum\limits_{n = 1}^{\infty} 
             \frac{(2n-1)!!}{(2n)!!} t^{2n}dt = x + \sum\limits_{n = 
@@ -174,7 +174,7 @@
         то после интегрирования множество сходимости будет $[-1;1]$.
         Используя далее тождество $\arcsin x + \arccos x = \frac{\pi}{2} \quad 
         \forall x \in [-1; 1]$, имеем \[ \arccos x = \frac{\pi}{2} - 
-        \sum\limits_{n = 0}^{\infty} \frac{(2n + 1)}{(2n)!!} 
+        \sum\limits_{n = 0}^{\infty} \frac{(2n + 1)!!}{(2n)!!} 
         \frac{x^{2n + 1}}{(2n + 1)^2}, \quad x \in [-1; 1].\]
         
         \item \[\ln(1 + x) = \sum\limits_{n = 1}^{\infty}\frac{(-1)^{n - 1}x^n}
@@ -249,7 +249,7 @@
     \sum\limits_{n = 0}^{\infty}(a_n \pm b_n) (x-x_0)^n.  \]
 
     У суммы множество сходимости совпадает с исходным, а множество разности 
-    /* видимо, забыли конец предложения*/
+    может совпадать с $\R$.
     
     \subsection{Произведение степенных рядов}
     Произведение степенных рядов по определению полагают
@@ -258,7 +258,7 @@
         \left( \sum\limits_{n = 0}^{\infty}a_n(x-x_0)^n \right)
         \left( \sum\limits_{n = 0}^{\infty}b_n(x-x_0)^n \right) = 
         (a_0 + a_1(x - x_0) + \ldots)(b_0 + b_1(x - x_0) + \ldots) =
-        \\ = a_0b_0 + (a_0b_0 + a_0b_1)(a - x_0) + \ldots = 
+        \\ = a_0b_0 + (a_0b_0 + a_0b_1)(x - x_0) + \ldots = 
         \sum\limits_{n = 0}^{\infty}c_n(x-x_0)^n, 
     \end{multline*}
     где $c_n = \sum\limits_{i + j = n} a_ib_j$. Гарантированным интервалом 
