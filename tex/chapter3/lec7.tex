@@ -1,0 +1,86 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+\begin{document}
+
+\begin{example}
+    $\displaystyle F(y) = \int\limits_y^{2y} \dfrac{\ln (1 + xy)}{x} dx$
+    \[ a(y) = y \implies a'(y) = 1 \]
+    \[ b(y) = 2y \implies b'(y) = 2 \]
+    \[ f(x, y) = \dfrac{\ln (1 + xy)}{x} \implies
+    \begin{cases}
+        f(a, y) = \left. \dfrac{\ln (1 + xy)}{x} \right\vert_{x = y}
+        = \dfrac{\ln (1 + y^2)}{y} \\
+        f(b, y) = \left. \dfrac{\ln (1 + xy)}{x} \right\vert_{x = 2y}
+        = \dfrac{\ln (1 + 2y^2)}{2y}
+    \end{cases}
+    \]
+    \[F'(y) = \dfrac{\ln (1 + 2y^2)}{2y} \cdot 2 -\dfrac{\ln (1 + y^2)}{y}
+    + \int\limits_y^{2y} \left( \dfrac{\ln (1 + xy)}{x} \right)'_y dx =
+    \dfrac{1}{y} \ln \dfrac{1 + 2y^2}{1 + y^2} +
+    \int\limits_y^{2y} \dfrac{dx}{1 + xy} = \]
+    \[ = \dfrac{1}{y} \ln \dfrac{1 + 2y^2}{1 + y^2}
+    +  \dfrac{1}{y} \left[ \ln \left|1 + xy \right| \right]_{x = y}^{x = 2y}
+    = \ldots =  \dfrac{2}{y} \ln \left( \dfrac{1 + 2y^2}{1 + y^2} \right) \]
+\end{example}
+\begin{example}
+    Дифференцируя по параметру, вычислим СИЗОП:
+
+    \[F(y) = \int\limits_0^{\frac{\pi}{2}} \ln
+    \left( \sin^2 x + y \cos^2 x \right) dx, \ y > 0\]
+
+    Нетрудно проверить, что здесь все условия теоремы о дифференцируемости 
+    СИЗОП
+    выполнены:
+    \[ F'(y) = \int\limits_0^{\frac{\pi}{2}} \ln
+    \left( \sin^2 x + y \cos^2 x \right)'_y dx = 
+    \int\limits_0^{\frac{\pi}{2}} \dfrac{\cos^2 x}{\sin^2 x + y \cos^2 x} dx =
+    \int\limits_0^{\frac{\pi}{2}} \dfrac{dx}{\tg^2 x  + y} = \]
+    \[ = \left[
+    \begin{gathered}
+        t = \left. \tg x \right|_0^{+\infty} \\
+        x = \arctan t
+    \end{gathered} \ \ \
+    dx = \dfrac{dt}{1 + t^2}
+    \right] = \int\limits_0^{+\infty} \dfrac{dt}{(t^2 + y)(t^2 + 1)}
+    \overset{y \neq 1}{=}
+    \dfrac{1}{1-y} \int\limits_0^{+\infty} \left( \dfrac{1}{(t^2 + y)} -
+    \dfrac{1}{(t^2 + 1)} \right) dt = \]
+    \[ = \dfrac{1}{1 - y} \left[ \dfrac{1}{\sqrt{y}} \arctan 
+    \dfrac{t}{\sqrt{y}}
+    - \arctan t \right]_{t = 0}^{+\infty} = \dfrac{1}{1 - y}
+    \left[ \dfrac{\pi}{2 \sqrt{y}}
+    - \dfrac{\pi}{2} \right] = \dfrac{\pi (1 - \sqrt{y})}{2 (1 - y) \sqrt{y}} =
+    \dfrac{\pi}{2 (1 + \sqrt{y}) \sqrt{y}} \]
+    Хотя в промежуточных действиях появилось ограничение $y \neq 1$,
+    в силу непрерывности
+    подынтегральной функции и интеграла окончательный ответ верен для
+    $\forall y > 0$.
+
+    Используется непрерывное интегрирование для получения уравнения
+    \[F'(y) = \dfrac{\pi}{2(1+\sqrt{y})\sqrt{y}} \implies F(y) =
+    \dfrac{\pi}{2} \int \dfrac{dy}{2 (1 + \sqrt{y}) \sqrt{y}}  = \pi
+    \int \dfrac{d(\sqrt{y})}{1 + \sqrt{y}} = \pi \ln (1 + \sqrt{y}) + C \]
+    Для вычисления постоянной $C$ возьмем: $y \to 1$ (в результате
+    непрерывности СИЗОП).
+    \[F(1) = \pi \ln 2 + C = \int\limits_0^{\frac{\pi}{2}}
+    \underbrace{ \ln \left( \sin^2 x + \cos^2 x \right)}_{= 0} dx = 0
+    \implies C = -\pi \ln 2\]
+    \[F(y) = \pi \ln(1 + \sqrt{y}) - \pi \ln 2 =
+    \pi \ln \dfrac{1 + \sqrt{y}}{2}, \ \forall y > 0\]
+    Если при непрерывном вычислении интеграла перейти к пределу при $y \to 0$,
+    то получим несобственный интеграл:
+    \[ \int\limits_0^{\frac{\pi}{2}} \ln (\sin^2 x)dx = \pi \ln \dfrac{1}{2} =
+    \pi \ln 2 \implies 2 \int\limits_0^{\frac{\pi}{2}} \ln (\sin x) dx = 
+    - \pi \ln 2 \implies \int\limits_0^{\frac{\pi}{2}} \ln (\sin x) dx = 
+    - \dfrac{\pi}{2}\ln 2\]
+    
+\end{example}
+\end{document}
