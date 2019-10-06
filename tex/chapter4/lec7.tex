@@ -34,8 +34,10 @@ $\forall x \in [a, +\infty[ \ \forall A > a \implies f \in R([a, A])$.
     \lim\limits_{A \to \infty} \int\limits_a^A f(x)dx
 \end{equation}
 
-У этого интеграла $\Phi(+\infty)$ берется за значение этого интеграла. Если окажется,
-что ${\Phi(+\infty) \notin \R}$ или $ \nexists \Phi(+\infty)$, то рассматриваемый НИ-1 расходится.
+У этого интеграла $\Phi(+\infty)$ берется за значение этого интеграла. Если 
+окажется,
+что ${\Phi(+\infty) \notin \R}$ или $ \nexists \Phi(+\infty)$, то 
+рассматриваемый НИ-1 расходится.
 Аналогично определяется НИ-1 вида:
 \[\int\limits_{-\infty}^a f(x)dx =
 \lim\limits_{B \to \infty} \int\limits_{-B}^a f(x)dx, \]
@@ -62,9 +64,12 @@ $\forall x \in [a, +\infty[ \ \forall A > a \implies f \in R([a, A])$.
 
 Геометрически:
 
-Если $\forall x \geq a \implies f(x) \geq 0$, то учитывая, что в случае непрерывной $f(x)$ на $[a, +\infty[$ получаем, что
-$\int\limits_a^A f(x)dx = S_{\text{тр.}}$ (площадь криволинейной трапеции). Тогда при
-$A \to \infty$ получаем, что $\int\limits_a^{+\infty} f(x)dx$~--- площадь незамкнутой фигуры, заключенной между $x = a$ и $f(x)$.
+Если $\forall x \geq a \implies f(x) \geq 0$, то учитывая, что в случае 
+непрерывной $f(x)$ на $[a, +\infty[$ получаем, что
+$\int\limits_a^A f(x)dx = S_{\text{тр.}}$ (площадь криволинейной трапеции). 
+Тогда при
+$A \to \infty$ получаем, что $\int\limits_a^{+\infty} f(x)dx$~--- площадь 
+незамкнутой фигуры, заключенной между $x = a$ и $f(x)$.
 
 \includegraphics[scale = 0.3]{lec7_1.png}
 
@@ -74,15 +79,18 @@ $A \to \infty$ получаем, что $\int\limits_a^{+\infty} f(x)dx$~--- п�
         \item Линейность:
         
         Если сходятся $\displaystyle\int\limits_a^{+\infty} f(x)dx$ и
-        $\displaystyle\int\limits_a^{+\infty} g(x)dx$, то \[\forall \alpha, \beta \in \R
+        $\displaystyle\int\limits_a^{+\infty} g(x)dx$, то \[\forall \alpha, 
+        \beta \in \R
         \implies  \exists \int\limits_a^{+\infty} \left( \alpha f(x)
         + \beta g(x) \right)dx = \left( \alpha \int\limits_a^{+\infty}
         f(x)dx + \beta \int\limits_a^{+\infty} g(x)dx \right) \in \R.\]
         \item Аддитивность:
         
-        Можно заметить, что если $\displaystyle\int\limits_a^{+\infty} f(x)dx$ сходится, то
+        Можно заметить, что если $\displaystyle\int\limits_a^{+\infty} f(x)dx$ 
+        сходится, то
         $\forall b>a$ сходится остаток, т.~е.
-        $\displaystyle\int\limits_{b>a}^{+\infty} f(x)dx$ сходится. Имеем следующую формулу
+        $\displaystyle\int\limits_{b>a}^{+\infty} f(x)dx$ сходится. Имеем 
+        следующую формулу
         аддитивности НИ-1:
         \[\int\limits_a^{+\infty} f(x)dx = \int\limits_a^b f(x)dx +
         \int\limits_b^{+\infty} f(x)dx \]
@@ -92,13 +100,15 @@ $A \to \infty$ получаем, что $\int\limits_a^{+\infty} f(x)dx$~--- п�
         $[a, +\infty[$
         и $f(x) \leq g(x) \ {\forall x \in [a, +\infty[}$, то
         \[\int\limits_a^{+\infty} f(x)dx \leq \int\limits_a^{+\infty} g(x)dx.\]
-        В частности, т.~к. $\int\limits_a^{+\infty} 0dx = 0, \ \forall a \in \R$, то получаем свойство неотрицательности НИ-1: \[h(x) \geq 0 \ 
+        В частности, т.~к. $\int\limits_a^{+\infty} 0dx = 0, \ \forall a \in 
+        \R$, то получаем свойство неотрицательности НИ-1: \[h(x) \geq 0 \ 
         \forall x \in
         [a, +\infty[ \implies \int\limits_a^{+\infty} h(x)dx \geq 0.\]
         \item Критерий сходимости НИ-1:
         
         Если $f(x) \geq 0, \ \forall x \geq 0$, то для сходимости
-        $ \int\limits_a^{+\infty} f(x)dx$ необходимо и достаточно, чтобы $\Phi(A) =
+        $ \int\limits_a^{+\infty} f(x)dx$ необходимо и достаточно, чтобы 
+        $\Phi(A) =
         \int\limits_a^{A} f(x)dx$ была ограничена для $\forall A \geq a$.
         \begin{proof}
             Проводится по той же схеме, что и у положительных рядов (числовых).
@@ -150,7 +160,8 @@ $\int\limits_a^{+\infty} f(x)dx \implies$
 \end{crl*}
 
 Если $f(x) \underset{x \to + \infty}{\sim} \dfrac{c}{x^\alpha}$, где
-$c = const \neq 0, \alpha \in \R$, то $\displaystyle\int\limits_{a > 0}^{+\infty} f(x)dx =
+$c = const \neq 0, \alpha \in \R$, то $\displaystyle\int\limits_{a > 
+0}^{+\infty} f(x)dx =
 \begin{cases}
     \text{сходится}, \ \alpha > 1 \\
     \text{расходится}, \ \alpha \leq 1
@@ -177,8 +188,10 @@ $c = const \neq 0, \alpha \in \R$, то $\displaystyle\int\limits_{a > 0}^{+\inf
     сравнения для сходимости НИ-1.
   \end{proof}
     \begin{rem}
-        Если $f(x) = o \left(\dfrac{1}{x^\alpha}\right), \ x \to + \infty$, то в случае, когда $\alpha > 1$ получаем, что
-        $\displaystyle\int\limits_{a > 0}^{+\infty} f(x)dx$ сходится. Если $\alpha \leq 1$
+        Если $f(x) = o \left(\dfrac{1}{x^\alpha}\right), \ x \to + \infty$, то 
+        в случае, когда $\alpha > 1$ получаем, что
+        $\displaystyle\int\limits_{a > 0}^{+\infty} f(x)dx$ сходится. Если 
+        $\alpha \leq 1$
         --- требуются дополнительные исследования.  
     \end{rem}
 \end{document}
