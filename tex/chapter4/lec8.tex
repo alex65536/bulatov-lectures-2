@@ -22,7 +22,8 @@
 
 \begin{proof}
 По критерию Коши существования конечного предела функции
-$F(A) = \displaystyle\int\limits_{a}^{A}f(x)dx,$ $A \geq a$, при $A \to +\infty$, имеем:
+$F(A) = \displaystyle\int\limits_{a}^{A}f(x)dx,$ $A \geq a$, при $A \to 
++\infty$, имеем:
  
  \[\forall \eps > 0 \; \exists \delta > 0 : \forall B, C \in \left[a; +\infty 
  \right), B \geq \delta, C \geq \delta \implies \left|F(B) - F(C) \right| \leq 
@@ -82,16 +83,20 @@ $\displaystyle\int\limits_{a}^{+\infty}f(x)dx$ сходится.
  \dfrac{\cos{2x}}{2x^{\alpha}}dx$ ~--- сходится по признаку, аналогичному 
  признаку Дирихле для числовых рядов, т.~е. 
  $\displaystyle\int\limits_{1}^{+\infty} \dfrac{1 - \cos{2x}}{2x^{\alpha}}dx$ 
- ~--- расходится, откуда по признаку сравнения расходится и $\displaystyle\int\limits_{1}^{+\infty} \dfrac{|\sin x|dx}{x^{\alpha}}$.
+ ~--- расходится, откуда по признаку сравнения расходится и 
+ $\displaystyle\int\limits_{1}^{+\infty} \dfrac{|\sin x|dx}{x^{\alpha}}$.
 \end{exmp}
 
 \begin{theorem}[признак Дирихле сходимости НИ-1]
- Пусть $h(x)$ непрерывна, а $g(x)$~--- непрерывно дифференцируема и монотонна на 
+ Пусть $h(x)$ непрерывна, а $g(x)$~--- непрерывно дифференцируема и монотонна 
+ на 
  $\left[a; +\infty\right[$.
 Если:
 \begin{itemize}
-\item[a)] $H(x) = \displaystyle\int\limits_{a}^{x}h(t)dt$ ограничена $\forall x \in 
-\left[a; +\infty \right)$ т.~е. $\exists C = const \geq 0 \implies {\left| H(x) 
+\item[a)] $H(x) = \displaystyle\int\limits_{a}^{x}h(t)dt$ ограничена $\forall 
+x \in 
+\left[a; +\infty \right)$ т.~е. $\exists C = const \geq 0 \implies {\left| 
+H(x) 
 \right| \leq C} \quad {\forall x \geq a};$
 
 \item[б)] $g(x) \downarrow 0$ при $x \to +\infty$;
@@ -116,7 +121,8 @@ const\geq 0 \implies \left| g(x) \right| \leq C \ \forall x \geq a$;
 
 \begin{exmp}
  Покажем, что по признаку Дирихле
- $\displaystyle\int\limits_{1}^{+\infty}\dfrac{\cos{x}}{x^{\alpha}}$ сходится при 
+ $\displaystyle\int\limits_{1}^{+\infty}\dfrac{\cos{x}}{x^{\alpha}}$ сходится 
+ при 
  $\forall \alpha > 0$
  
  $\begin{cases}
@@ -125,7 +131,8 @@ const\geq 0 \implies \left| g(x) \right| \leq C \ \forall x \geq a$;
  x \geq 1
  \end{cases}$
  
- \[g'(x) = -\dfrac{\alpha}{x^{\alpha + 1}} < 0 \implies g(x) \downarrow \forall 
+ \[g'(x) = -\dfrac{\alpha}{x^{\alpha + 1}} < 0 \implies g(x) \downarrow 
+ \forall 
  x \geq 1 \implies g(x) \text{ монотонна для $x \geq 1$}\]
  \[g(x) = \dfrac{1}{x^{\alpha}} \xrightarrow[x \to +\infty]{\alpha > 0} 0\]
  \[\left| \int\limits_{1}^{x}h(t)dt\right| = 
@@ -133,7 +140,8 @@ const\geq 0 \implies \left| g(x) \right| \leq C \ \forall x \geq a$;
  \sin{t}\right]_{1}^{x} \right| = \left| \sin{x} - \sin{1} \right| \leq \left| 
  \sin{x} \right| + \left| \sin{1} \right| \leq 1 + 1 = 2\]
 
-  Получаем, что в силу ограниченности первообразной от функции $h(x)$, а также того, что $g(x) \downarrow 0$, рассматриваемый НИ-1 сходится по Дирихле.
+  Получаем, что в силу ограниченности первообразной от функции $h(x)$, а также 
+  того, что $g(x) \downarrow 0$, рассматриваемый НИ-1 сходится по Дирихле.
  \end{exmp}
  
  \section{Несобственный интеграл второго рода}
@@ -161,15 +169,18 @@ $\eqref{lec8:3} \lim = \infty$ или $\nexists \lim$, то рассматрив
  \eps}^{b}f(x)dx,
 \end{equation}
 где предполагается, что $\forall \eps > 0 \in \left]0;\; b - a\right[ \implies 
-f(x) \in R(\left[a + \eps;\; b\right])$. Если в \eqref{lec8:4} ${\lim \in \R}$, 
+f(x) \in R(\left[a + \eps;\; b\right])$. Если в \eqref{lec8:4} ${\lim \in 
+\R}$, 
 то НИ-2 считается сходящимся. Если $\lim = \infty$ или $\nexists \lim$, то 
 рассматриваемый НИ-2 считается расходящимся.
 
 На практике $\eqref{lec8:3}, \eqref{lec8:4}$ будем обозначать 
 $\displaystyle\int\limits_{a}^{b}f(x)dx$. В $\eqref{lec8:3}$ предположим, что 
 функция неограничена в окрестности точки $b$, т.~е. $f(b - 0) = \infty$, а в 
-$\eqref{lec8:4}$~--- неограничена в $a$, т.~е. $f(a + 0) = \infty$. В этом случае 
-$\eqref{lec8:3}, \eqref{lec8:4}$ из-за неограниченности эти интегралы не являются интегралами 
+$\eqref{lec8:4}$~--- неограничена в $a$, т.~е. $f(a + 0) = \infty$. В этом 
+случае 
+$\eqref{lec8:3}, \eqref{lec8:4}$ из-за неограниченности эти интегралы не 
+являются интегралами 
 Римана.
 
 В случае сходимости $\eqref{lec8:3}, \eqref{lec8:4}$ будем говорить, что 
@@ -192,10 +203,12 @@ $\eqref{lec8:3}, \eqref{lec8:4}$ из-за неограниченности эт
 Отсюда учитывая, что $\ln|b - x| \xrightarrow[b \to b - 0]{} \infty$, то 
 рассматриваемый НИ-2 расходится при $\alpha = 1$.
 
-Аналогично при $\alpha > 1$ имеем $(b - x)^{1- \alpha} \xrightarrow[x \to b - 0]{} 
+Аналогично при $\alpha > 1$ имеем $(b - x)^{1- \alpha} \xrightarrow[x \to b - 
+0]{} 
 \infty$, т.~е. НИ-2 расходится.
 
-При $1 > \alpha$ получаем $(b - x)^{1 - \alpha} \xrightarrow[x \to b - 0]{} 0$, т.~е. НИ-2 
+При $1 > \alpha$ получаем $(b - x)^{1 - \alpha} \xrightarrow[x \to b - 0]{} 
+0$, т.~е. НИ-2 
 сходится.
 
 \[\int\limits_{a}^{b} \dfrac{dx}{(b - x)^{\alpha}} = 
@@ -324,7 +337,8 @@ b\right|$, существует конечное число точек $a \leq x
 если в $\eqref{lec8:6}$ каждое слагаемое сходится. Если же хотя бы одно 
 слагаемое НИ-2 расходится, то вне зависимости от сходимости/расходимости 
 других слагаемых НИ-2 общего вида считается расходящимся. Аналогично для НИ-2 
-смешанного типа, где особенностями могут быть не только конечные точки, но и $\pm\infty$.
+смешанного типа, где особенностями могут быть не только конечные точки, но и 
+$\pm\infty$.
 
 \begin{exmp} Исследовать на сходимость
 \[I = \int\limits_{1}^{+\infty}\dfrac{dx}{x^2(x^2 - 3x + 2)}.\]
