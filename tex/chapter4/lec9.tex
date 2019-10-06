@@ -49,7 +49,7 @@
 		\label{lec9:2}
 		\int\limits_a^b f(x) dx = 
 		\begin{bmatrix}
-			x|\limits_a^b \iff= t|\limits_\alpha^\beta\\
+			x|_a^b \iff= t|_\alpha^\beta\\
 			x = \phi(t)\\
 			dx = \phi'(t)dt
 		\end{bmatrix} =
@@ -57,14 +57,14 @@
 	\end{equation}
 \end{thm}
 \begin{proof}
-	Пусть $ \gamma \in [\alpha; \beta) $. Тогда для $ c = \hi(\gamma) \in
+	Пусть $ \gamma \in [\alpha; \beta) $. Тогда для $ c = \phi(\gamma) \in
 	[a; b) \implies c \underset{\gamma \to \beta - 0}{\to} b - 0$. Отсюда,
 	используя соответствующую формулу замены переменных в интеграле Римана,
 	имееем
 	\[
 	\int\limits_a^c f(x) dx = 
 	\begin{bmatrix}
-	x|\limits_a^c \iff= t|\limits_\alpha^\beta\\
+	x|_a^c \iff= t|_\alpha^\beta\\
 	x = \phi(t)\\
 	dx = \phi'(t)dt
 	\end{bmatrix} =
@@ -89,11 +89,11 @@
 	\dfrac{d\left(\frac{1}{x}\right)}{\sqrt{1 + \frac{1}{x^2}}} = 
 	\begin{bmatrix}
 		t = \frac{1}{x}, x = \frac{1}{t}, dx = - \frac{dt}{t^2}\\
-		x|\limits_{1}^{+\infty} \iff t|\limits_{1}^0
+		x|_{1}^{+\infty} \iff t|_{1}^0
 	\end{bmatrix}
-	= \int\limtis_0^{1} \dfrac{dt}{\sqrt{1 + t^2}} = \\ = \left[
+	= \int\limits_0^{1} \dfrac{dt}{\sqrt{1 + t^2}} = \\ = \left[
 	\ln(t + \sqrt{1 + t^2})
-	\right]\limits_{0}^1 = \ln{1 + \sqrt{2}} \in \R 
+	\right]_{0}^1 = \ln{1 + \sqrt{2}} \in \R 
 	\implies I \text{ сходится.}
 	$
 	\item. $ I = \int\limits_{0}^1 \sqrt{\dfrac{1 + x}{1 - x}} dx $ 
@@ -103,7 +103,7 @@
 	\[
 	I = \begin{bmatrix}
 	x = \cos{t}, dx = -\sin{t}dt\\
-	t = \arccos{x}|\limits_{\frac{\pi}{2}}^0
+	t = \arccos{x}|_{\frac{\pi}{2}}^0
 	\end{bmatrix} = \int\limits_0^{\frac{\pi}{2}} \ctg{\dfrac{t}{2}}
 	\sin{t} dt = \int\limits_0^{\frac{\pi}{2}} 
 	\sqrt{\dfrac{2\cos^2{\frac{t}{2}}}{2\sin^2\frac{t}{2}}} \cdot 
@@ -112,7 +112,7 @@
 	\[ =
 	\int\limits_{0}^{\frac{\pi}{2}} 2\cos^2{\frac{t}{2}} dt =
 	\int\limits_0^{\frac{\pi}{2}} (1 + \cos{t}) dt = 
-	\left[t + \sin{t}\right]\limits_{0}^{\frac{\pi}{2}} = 
+	\left[t + \sin{t}\right]_{0}^{\frac{\pi}{2}} = 
 	\dfrac{\pi}{2} + 1 \in \R - \text{ сходится.}
 	\]
 \end{enumerate}
@@ -121,17 +121,17 @@
 	Пусть функции $u = u(x),\ v = v(x)$ непрерывно дифференцируемы на  $[a; b)$,
 	где $ b = +\infty $, либо в окрестности $ b $ для рассматриваемой далее
 	подынтегральной функции имеем неограниченность. Если
-	$\exits \lim\limits_{x \to b - 0} u(x)v(x) \in \R$ и один из
+	$\exists \lim\limits_{x \to b - 0} u(x)v(x) \in \R$ и один из
 	$\int\limits_a^bu(x)v'(x)dx$ или $ \int\limits_a^bv(x)u'(x)dx$
 	сходится, то будет сходится и второй, и при этом справедлива 
 	формула интегрирования по частям
 	\begin{equation}
 		\label{lec9:3}
 		\int\limits_a^b u(x)v'(x) dx = \left[
-		u(x)v(x)\right]\limits_a^b - 
+		u(x)v(x)\right]_a^b - 
 		\int\limits_a^b v(x)u'(x) dx,
 	\end{equation}
-	где $ \left[u(x)v(x)\right]\limits_a^b = \left[
+	где $ \left[u(x)v(x)\right]_a^b = \left[
 	\lim\limits_{x \to b - 0} u(x)v(x) -
 	u(a)v(a) \right]$.
 \end{thm}
@@ -149,7 +149,7 @@
 		u(x) = \ln{x} \\
 		v(x) = x
 	\end{bmatrix} \stackrel{\eqref{lec9:3}}{=}
-	\left[x\ln{x}\right]\limits_0^1 - 
+	\left[x\ln{x}\right]_0^1 - 
 	\int\limits_0^1 d(\ln{x}) = 0 - \lim\limits_{x \to +0} -
 	\int\limits_0^1 x \cdot \dfrac{1}{x} dx =
 	\]
@@ -157,7 +157,7 @@
 	- \lim\limits_{x \to +0} \dfrac{\ln{x}}{\frac{1}{x}} -
 	\int\limits_0^1 dx \stackrel{\text{Л}}{=}
 	- \lim\limits_{x \to +0} \dfrac{\frac{1}{x}}{-\frac{1}{x^2}} -
-	\left[x\right]\limits_0^1 = \lim\limits_{x \to +0} - 1 + 0 = -1 \in \R
+	\left[x\right]_0^1 = \lim\limits_{x \to +0} - 1 + 0 = -1 \in \R
 	- \text{ сходится.}
 	\]
 	\item.
@@ -177,7 +177,7 @@
 		u = \cos{bx}\\
 		v = e^{-ax}
 	\end{bmatrix} =
-	-\dfrac{1}{a} \left[e^{-ax}\cos{bx}\right]\limits_{0}^{+\infty} +
+	-\dfrac{1}{a} \left[e^{-ax}\cos{bx}\right]_{0}^{+\infty} +
 	\dfrac{1}{a} \int\limits_0^{+\infty} e^{-ax} d(\cos{bx}) = \]\[ =
 	-\dfrac{1}{a} \left(
 	\lim\limits_{x \to +\infty} \cos{bx} e^{-ax} + \dfrac{1}{a}\right) -
@@ -190,7 +190,7 @@
 		u = \sin{bx}\\
 		v = e^{-ax}
 	\end{bmatrix} = 
-	-\dfrac{1}{a} \left[e^{-ax}\sin{bx}\right]\limits_{0}^{+\infty} +
+	-\dfrac{1}{a} \left[e^{-ax}\sin{bx}\right]_{0}^{+\infty} +
 	\dfrac{b}{a} \int\limits_0^{+\infty} e^{-ax} \cos{bx} dx = 
 	\dfrac{b}{a} I_1
 	\]
@@ -230,14 +230,14 @@
 Если рассматриваемые в \eqref{lec9:4} и \eqref{lec9:5} конечны, то
 говорят, что рассматриваемые НИ сходятся в смысле главного значения.\\
 Главное значение для НИ-1 обладает следующими основными свойствами:\\
-\begin{enumerate}
-\item[1^$\circ$.] 
+\begin{enumerate}[label=\arabic*$^{\circ}$.]
+\item
 $ \forall f(x) \left(f(-x) \stackrel{\forall x \in \R}{=} -f(x) \right) $
 главное значение существует и $ v.p. \int\limits_{-\infty}^{+\infty}f(x)dx=0$.
 Действительно, из нечётности $ f(x) $ на любом $ [-A; A] \subset \R; A > 0 
 \implies \int\limits_{-A}^A f(x) dx = 0$. Отсюда при $ A \to +\infty $ для
 \eqref{lec9:4} получаем нулевой предел.
-\item[2^$\circ$.]
+\item
 Если $ f(x) \left(f(-x) \stackrel{\forall x \in \R}{=} f(x) \right) $, то
 \eqref{lec9:4} конечна $ \iff $ сходится $ \int\limits_0^{+\infty}f(x)dx $, и 
 при этом $ v.p. \int\limits_{-\infty}^{+\infty} f(x) dx = 
@@ -245,16 +245,16 @@ $ \forall f(x) \left(f(-x) \stackrel{\forall x \in \R}{=} -f(x) \right) $
 чётных $ f(x) $ на любом $ [-A; A] \subset \R; A > 0 
 \implies \int\limits_{-A}^A f(x) dx = 2\int\limits_0^A f(x) dx$, а далее 
 $ A \to +\infty $.
-\item[3^$\circ$.]
+\item
 Если имеется НИ-2, у которого на $ [a; b) $ имеется конечное число точек
 неограниченности $ c_k \geq a, k = \overline{1,n}, a < c_1 < \dots <
-c_n < b $, то, отделяя особенности, имеем $ v.p. int\limits_a^b f(x) dx = 
+c_n < b $, то, отделяя особенности, имеем $ v.p. \int\limits_a^b f(x) dx = 
 v.p. \left(\int\limits_{b_0}^{b_1} + \dots + \int\limits_{b_n - 1}^{b_n}
 \right) = v.p. \sum\limits_{i = 1}^n \int\limits_{b_{i - 1}}^{b_i} f(x)dx $,
 где $ a < b_0 < b_1 < \dots < b_{n - 1} < b_n = b $, где $ b $ выбрано так, 
 чтобы $ c_k \in ]b_{k - 1}; b_k[ $ и других $ c_i $ 
 на $ ]b_{k - 1}; b_k[ $ нет.
-\item[4^$\circ$.]
+\item
 Как для НИ-1, так и для НИ-2, главное значение обладает свойством линейности,
 т.~е. $ v.p. \int\limits_a^b \sum\limits_{k = 1}^n \lambda_kf_k(x)dx =
 \sum\limits_{k = 1}^n \lambda_k v.p. \int\limits_a^b f_k(x)dx$.
@@ -298,10 +298,10 @@ I = \lim\limits_{\eps \to +0} \left(
 \lim\limits_{\eps \to 0} \left(
 \left[
 -\dfrac{1}{2} \ln{|x - 1|} + \dfrac{3}{2} \ln{|x - 3|} 
-\right]\limits_0^{1 - \eps} +
+\right]_0^{1 - \eps} +
 \left[
 -\dfrac{1}{2} \ln{|x - 1} + \dfrac{3}{1} \ln{|x - 3|}
-\right]\limits_{1 + \eps}^\frac{3}{2}
+\right]_{1 + \eps}^\frac{3}{2}
 \right) =
 \]
 \[ =
