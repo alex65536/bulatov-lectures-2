@@ -1,0 +1,397 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+\begin {thm}[критерий Коши сходимости НИ-1]
+Для сходимости НИ-1 $\displaystyle \int\limits_{0}^{+\infty} f(x)dx$
+необходимо и достаточно, чтобы 
+ \begin{equation} \label{lec8:1}
+  \forall \eps > 0 \;  \exists \delta > 
+  0 : \forall B, C \in \left[a; +\infty\right), B \geq \delta, C \geq \delta 
+  \implies \left| \int\limits_{B}^{C} f(x)dx \right| \leq \eps.
+ \end{equation}
+\end {thm}
+
+\begin{proof}
+По критерию Коши существования конечного предела функции
+$F(A) = \displaystyle\int\limits_{a}^{A}f(x)dx,$ $A \geq a$, при $A \to 
++\infty$, имеем:
+ 
+ \[\forall \eps > 0 \; \exists \delta > 0 : \forall B, C \in \left[a; +\infty 
+ \right), B \geq \delta, C \geq \delta \implies \left|F(B) - F(C) \right| \leq 
+ \eps.\]
+ 
+ А так как
+ $F(C) - F(B) = \displaystyle\int\limits_{a}^{C}fdx - 
+ \displaystyle\int\limits_{a}^{B}fdx = \int\limits_{B}^{C}fdx$,
+ то получаем \eqref{lec8:1}.
+\end{proof}
+
+\begin{crl}[абсолютная сходимость НИ-1]
+ Если рассматриваемый НИ-1 сходится абсолютно, т.~е. сходится
+ $\displaystyle\int\limits_{a}^{+\infty}|f(x)|dx$, то тогда НИ-1 сходится и в 
+ обычном смысле.
+\end{crl}
+
+ \begin{proof}
+ Доказательство следует из оценки
+$\left|\displaystyle\int\limits_{B}^{C}f(x)dx \right| \leq 
+\left|\displaystyle\int\limits_{B}^{C}|f(x)|dx \right|$.
+
+Тогда из сходимости интеграла $\displaystyle\int\limits_{a}^{+\infty}\left| 
+f(x) \right| dx $ следует:
+
+\[\forall \eps > 0 \; \exists \delta > 0 : \forall B, C \in \left[a; +\infty 
+\right[, B, C \geq \delta \implies \left| \int\limits_{B}^{C} \left| f(x) 
+\right| dx \right| \leq \eps \implies \left| \int\limits_{B}^{C} f(x) dx 
+\right| \leq \left|\int\limits_{B}^{C} \left| f(x) \right| \right| \leq \eps.\]
+
+Применяя критерий Коши в другую сторону получаем, что 
+$\displaystyle\int\limits_{a}^{+\infty}f(x)dx$ сходится.
+ \end{proof}
+
+\begin{exmp}
+ Рассмотрим $\displaystyle\int\limits_{1}^{+\infty} 
+ \dfrac{\sin{x}}{x^{\alpha}}dx$.
+ 
+ \[\left| f(x) \right| = \left| \dfrac{\sin{x}}{x^{\alpha}}\right| \leq 
+ \dfrac{1}{x^{\alpha}}.\]
+ 
+ Так как $\displaystyle\int\limits_{1}^{+\infty} 
+ \dfrac{\sin{x}}{x^{\alpha}}dx$ сходится при $\alpha  > 1$, то 
+ рассматриваемый интеграл будет сходиться абсолютно.
+ 
+ Если у нас $\alpha \in \left]0; 1 \right]$, то здесь интеграл если и будет 
+ сходиться, то только условно, так как 
+ $\displaystyle\int\limits_{1}^{+\infty}\dfrac{\left| 
+ \sin{x}\right|}{x^{\alpha}}dx$ расходится.
+ 
+ \[\left| \sin{x} \right| \geq \sin^2{x} = \dfrac{1-\cos{2x}}{2} \implies 
+ \int\limits_{1}^{+\infty} \dfrac{\sin{x}}{x^{\alpha}}dx \geq 
+ \int\limits_{1}^{+\infty} \dfrac{1 - \cos{2x}}{2x^{\alpha}}dx.\]
+ 
+ $\displaystyle\int\limits_{1}^{+\infty} \dfrac{dx}{2x^{\alpha}}$ ~--- 
+ расходится $(\alpha \leq 1)$, а $\displaystyle\int\limits_{1}^{+\infty} 
+ \dfrac{\cos{2x}}{2x^{\alpha}}dx$ ~--- сходится по признаку, аналогичному 
+ признаку Дирихле для числовых рядов, т.~е. 
+ $\displaystyle\int\limits_{1}^{+\infty} \dfrac{1 - \cos{2x}}{2x^{\alpha}}dx$ 
+ ~--- расходится, откуда по признаку сравнения расходится и 
+ $\displaystyle\int\limits_{1}^{+\infty} \dfrac{|\sin x|dx}{x^{\alpha}}$.
+\end{exmp}
+
+\begin{theorem}[признак Дирихле сходимости НИ-1]
+ Пусть $h(x)$ непрерывна, а $g(x)$~--- непрерывно дифференцируема и монотонна 
+ на 
+ $\left[a; +\infty\right[$.
+Если:
+\begin{itemize}
+\item[a)] $H(x) = \displaystyle\int\limits_{a}^{x}h(t)dt$ ограничена $\forall 
+x \in 
+\left[a; +\infty \right)$ т.~е. $\exists C = const \geq 0 \implies {\left| 
+H(x) 
+\right| \leq C} \quad {\forall x \geq a};$
+
+\item[б)] $g(x) \downarrow 0$ при $x \to +\infty$;
+\end{itemize}
+тогда $\displaystyle\int\limits_{a}^{+\infty}h(x)g(x)dx$ ~--- сходится.
+\end{theorem}
+\begin{proof}
+ По той же схеме, что и для числовых рядов.
+\end{proof}
+
+\begin{thm}[признак Абеля сходимости НИ-1]
+Пусть $g(x)$ непрерывна, а $h(x)$ непрерывно дифференцируема и монотонна на 
+$\left[a; +\infty \right)$. Если:
+\begin{itemize}
+\item[а)] $\displaystyle\int\limits_{a}^{+\infty}h(x)dx$ ~--- сходится;
+
+\item[б)] $g(x)$ ограничена на $\left[a; +\infty\right)$, т.~е. $\exists C = 
+const\geq 0 \implies \left| g(x) \right| \leq C \ \forall x \geq a$;
+\end{itemize}
+тогда $\displaystyle\int\limits_{a}^{+\infty} h(x)g(x)dx$ сходится.
+\end{thm}
+
+\begin{exmp}
+ Покажем, что по признаку Дирихле
+ $\displaystyle\int\limits_{1}^{+\infty}\dfrac{\cos{x}}{x^{\alpha}}$ сходится 
+ при 
+ $\forall \alpha > 0$
+ 
+ $\begin{cases}
+ h(x) = \cos{x} \text{~--- непрерывна } \forall x \geq 1\\
+ g(x) = \dfrac{1}{x^{\alpha}} \text{~--- непрерывно дифференцируема }\ \forall 
+ x \geq 1
+ \end{cases}$
+ 
+ \[g'(x) = -\dfrac{\alpha}{x^{\alpha + 1}} < 0 \implies g(x) \downarrow 
+ \forall 
+ x \geq 1 \implies g(x) \text{ монотонна для $x \geq 1$}\]
+ \[g(x) = \dfrac{1}{x^{\alpha}} \xrightarrow[x \to +\infty]{\alpha > 0} 0\]
+ \[\left| \int\limits_{1}^{x}h(t)dt\right| = 
+ \left|\int\limits_{1}^{x}\cos{t}dt\right| = \left| \left[ 
+ \sin{t}\right]_{1}^{x} \right| = \left| \sin{x} - \sin{1} \right| \leq \left| 
+ \sin{x} \right| + \left| \sin{1} \right| \leq 1 + 1 = 2\]
+
+  Получаем, что в силу ограниченности первообразной от функции $h(x)$, а также 
+  того, что $g(x) \downarrow 0$, рассматриваемый НИ-1 сходится по Дирихле.
+ \end{exmp}
+ 
+ \section{Несобственный интеграл второго рода}
+ 
+ Пусть $f(x)$ определена для $\forall x \in \left[a; b \right[$. Если $\forall 
+ \eps \in \left] 0, b - a \right[$, то $f(x) \in \R(\left[a, b - 
+ \eps\right])$, и тогда
+
+\begin{equation}\label{lec8:2}
+\exists G(\eps) = \displaystyle\int\limits_{a}^{b - \eps}f(x)dx.
+\end{equation}
+
+В случае, когда $\exists G(+0) = \underset{\eps \to +0}\lim 
+\displaystyle\int\limits_{a}^{b - \eps}f(x)dx \in \R$, то говорят, что имеем 
+\emph{сходящийся НИ-2} вида
+\begin{equation}\label{lec8:3}
+\displaystyle\int\limits_{a}^{b - 0}f(x)dx = \underset{\eps \to +0}\lim 
+\displaystyle\int\limits_{a}^{b - \eps}f(x)dx,
+\end{equation}
+для которого $\eqref{lec8:3}$ является его конечным значением. Если в 
+$\eqref{lec8:3} \lim = \infty$ или $\nexists \lim$, то рассматриваемый НИ-2 
+считается расходящимся. Аналогично определяется НИ-2 вида
+\begin{equation} \label{lec8:4}
+ \int\limits_{a + 0}^{b}f(x)dx = \underset{\eps \to +0}\lim \int\limits_{a + 
+ \eps}^{b}f(x)dx,
+\end{equation}
+где предполагается, что $\forall \eps > 0 \in \left]0;\; b - a\right[ \implies 
+f(x) \in R(\left[a + \eps;\; b\right])$. Если в \eqref{lec8:4} ${\lim \in 
+\R}$, 
+то НИ-2 считается сходящимся. Если $\lim = \infty$ или $\nexists \lim$, то 
+рассматриваемый НИ-2 считается расходящимся.
+
+На практике $\eqref{lec8:3}, \eqref{lec8:4}$ будем обозначать 
+$\displaystyle\int\limits_{a}^{b}f(x)dx$. В $\eqref{lec8:3}$ предположим, что 
+функция неограничена в окрестности точки $b$, т.~е. $f(b - 0) = \infty$, а в 
+$\eqref{lec8:4}$~--- неограничена в $a$, т.~е. $f(a + 0) = \infty$. В этом 
+случае 
+$\eqref{lec8:3}, \eqref{lec8:4}$ из-за неограниченности эти интегралы не 
+являются интегралами 
+Римана.
+
+В случае сходимости $\eqref{lec8:3}, \eqref{lec8:4}$ будем говорить, что 
+рассматриваемый НИ-2 \emph{сходится в несобственном смысле}.
+
+\begin{exmp}
+ Рассмотрим $\displaystyle\int\limits_{a}^{b}\dfrac{dx}{(b - x)^{\alpha}}$.
+ 
+ Если $\alpha > 0$, то $f(x) = \dfrac{1}{(b -x)^{\alpha}} \xrightarrow[x \to b 
+ - 0]{} \infty$, т.~е. рассматриваемый интеграл не является интегралом Римана, 
+ а является НИ-2 вида $\eqref{lec8:3}$:
+ 
+ \[\int\limits_{a}^{b}\dfrac{dx}{(b - x)^{\alpha}} =
+ \begin{cases}
+ \left[\ln|b - x|\right]_{a}^{b},& \alpha = 1\\
+ \left[\dfrac{(b - x)^{\alpha + 1}}{\alpha + 1}\right]_{a}^{b},& \alpha 
+ \neq 1 
+\end{cases}\]
+
+Отсюда учитывая, что $\ln|b - x| \xrightarrow[b \to b - 0]{} \infty$, то 
+рассматриваемый НИ-2 расходится при $\alpha = 1$.
+
+Аналогично при $\alpha > 1$ имеем $(b - x)^{1- \alpha} \xrightarrow[x \to b - 
+0]{} 
+\infty$, т.~е. НИ-2 расходится.
+
+При $1 > \alpha$ получаем $(b - x)^{1 - \alpha} \xrightarrow[x \to b - 0]{} 
+0$, т.~е. НИ-2 
+сходится.
+
+\[\int\limits_{a}^{b} \dfrac{dx}{(b - x)^{\alpha}} = 
+\begin{cases}
+\text{сходится при } \alpha < 1\\
+\text{расходится при } \alpha \geq 1
+\end{cases}\]
+
+Аналогично показывается, что:
+
+\[\int\limits_{a}^{b} \dfrac{dx}{(x - a)^{\alpha}} = 
+\begin{cases}
+\text{сходится при } \alpha < 1\\
+\text{расходится при } \alpha \geq 1
+\end{cases}\]
+\end{exmp}
+
+Рассмотрим случай, когда $f(x)$ определена на $\left[a,\; c \right[ \cup 
+\left] c,\; b \right]$ и неограничена в точке $c$, т.~е. $f(c + 0) = f(c - 0) 
+= \infty$. В этом случае для НИ-2 полагают по определению:
+
+\begin{equation} \label{lec8:5}
+\int\limits_{a}^{b}f(x)dx = \int\limits_{a}^{c - 0}f(x)dx + \int\limits_{c + 
+0}^{b}f(x)dx = \lim_{\substack{
+\eps_1 \to 0\\
+\eps_2 \to 0}}
+\left(\int\limits_{a}^{c - \eps_1}f(x)dx + \int\limits_{c + 
+\eps_2}^{b}f(x)dx\right)
+\end{equation}
+
+Если в $\eqref{lec8:5}$ каждое слагаемое сходится, то рассматриваемый НИ-2 
+также считается сходящимся, в противном случае НИ-2 расходится.
+
+\begin{exc}
+ Доказать, что $\displaystyle\int\limits_{a}^{b} \dfrac{dx}{|x - c|^{\alpha}} 
+ \overset{a < c < b} = \begin{cases}
+ \text{сходится при } \alpha < 1\\
+ \text{расходится при } \alpha \geq 1
+ \end{cases}$ 
+\end{exc}
+
+Все признаки и свойства НИ-2 аналогичны признакам и свойствам для НИ-1 и 
+доказываются по той же схеме, что и для числовых рядов, поэтому ограничимся 
+формулировками для НИ-2 вида $\eqref{lec8:3}$:
+
+\begin{enumerate}
+ \item Для сходимости интеграла от неотрицательной функции $f(x)$ при 
+ условии существования соответствующих интегралов необходимо и 
+ достаточно, чтобы $G(\eps) = \displaystyle\int\limits_{a}^{b 
+ - \eps}f(x)dx$ была ограниченной для $\forall \eps \in 
+ \left]0; b - a\right[$.
+ 
+ \item Предельный признак сравнения для сходимости НИ-2 вида 
+ $\eqref{lec8:3}$:
+ 
+ Если $f(x) > 0,\; g(x) > 0\; \forall x \in \left[a, b\right[$, то в случае 
+ существования соответствующих интегралов этих функций и если 
+ $\exists \underset{x \to b - 
+ 0}\lim\dfrac{f(x)}{g(x)} = p$, то имеем:
+ \begin{itemize}
+  \item[а)] $0 < p < +\infty \implies \displaystyle\int\limits_{a}^{b}f(x)dx$ 
+  и $\displaystyle\int\limits_{a}^{b}g(x)dx$ одновременно либо сходятся, либо 
+  расходятся.
+  \item[б)] $p = 0$, т.~е. $f(x) = o(g(x))$ при $x \to b - 0$, то
+  \begin{itemize}
+   \item сходится $\displaystyle\int\limits_{a}^{b}g(x)dx \implies $ 
+   сходится $\displaystyle\int\limits_{a}^{b}f(x)dx$
+   \item расходится $\displaystyle\int\limits_{a}^{b}f(x)dx \implies $ 
+   расходится $\displaystyle\int\limits_{a}^{b}g(x)dx$
+  \end{itemize}
+  \item[в)] $p = +\infty$
+    \begin{itemize}
+     \item сходится $\displaystyle\int\limits_{a}^{b}f(x)dx \implies $ 
+     сходится $\displaystyle\int\limits_{a}^{b}g(x)dx$
+     \item расходится $\displaystyle\int\limits_{a}^{b}g(x)dx \implies $ 
+     сходится $\displaystyle\int\limits_{a}^{b}f(x)dx$
+    \end{itemize}
+ \end{itemize}
+ \item Степенной признак сходимости НИ-2:
+ \begin{itemize}
+ \item Для НИ-2 вида $\eqref{lec8:3}$ в случае, когда $f(x) 
+ \underset{x \to b - 0}\sim \dfrac{c}{(b - x)^ {\alpha}},\ c = const \neq 0$:
+
+ \[\int\limits_{a}^{b} f(x)dx = \begin{cases}
+                                 \text{сходится, } \alpha < 1\\
+                                 \text{расходится, } \alpha \geq 1
+                                \end{cases}\]
+                                
+\item Для НИ-2 вида $\eqref{lec8:4}$, если $f(x) \underset{x \to a + 0}\sim 
+\dfrac{c}{\left|x - a\right|^{\alpha}}, \ c = const \neq 0$
+
+\[\int\limits_{a}^{b}f(x)dx = \begin{cases}
+                               \text{сходится при } \alpha < 1\\
+                               \text{расходится при } \alpha >= 1
+                              \end{cases}
+\]                                                    
+                                                    
+\item Для НИ-2 вида $\eqref{lec8:5}$, если $f(x) \underset{x \to c \pm 
+0}\sim \dfrac{M}{\left|x - c\right|^{\alpha}}, \; M = const \neq 0,\; a < c < 
+b$
+
+\[\int\limits_{a}^{b}f(x)dx = \begin{cases}
+                               \text{сходится при } \alpha < 1\\
+                               \text{расходится при } \alpha >= 1
+                              \end{cases}
+\]
+ \end{itemize}
+\end{enumerate}
+
+
+Также, как и в случае НИ-1: из сходимости 
+$\displaystyle\int\limits_{a}^{b}\left|f(x)\right|dx$ следует сходимость 
+$\displaystyle\int\limits_{a}^{b}f(x)dx$.
+
+В общем случае, если для $f(x)$, определенной на промежутке $\left|a, \; 
+b\right|$, существует конечное число точек $a \leq x_1 < x_2 < \ldots < x_n 
+\leq b$, в которых $f(x)$ неограничена, причем в остальных точках 
+ограничена, то для такого общего НИ-2 полагают по определению:
+
+\begin{equation} \label{lec8:6}
+\int\limits_{a}^{b}f(x)dx = \int\limits_{a}^{x_1}f(x)dx + 
+\int\limits_{x_1}^{x_2}f(x)dx + \ldots + \int\limits_{x_n}^{b}f(x)dx,
+\end{equation}
+где у каждого из интегралов подынтегральная функция неограничена лишь на 
+концах промежутка. В этом случае рассматриваемый НИ-2 считается сходящимся, 
+если в $\eqref{lec8:6}$ каждое слагаемое сходится. Если же хотя бы одно 
+слагаемое НИ-2 расходится, то вне зависимости от сходимости/расходимости 
+других слагаемых НИ-2 общего вида считается расходящимся. Аналогично для НИ-2 
+смешанного типа, где особенностями могут быть не только конечные точки, но и 
+$\pm\infty$.
+
+\begin{exmp} Исследовать на сходимость
+\[I = \int\limits_{1}^{+\infty}\dfrac{dx}{x^2(x^2 - 3x + 2)}.\]
+
+У подынтегральной функции особенностями являются $x = +\infty,\ x = 1,\ x = 
+2$.
+
+\[I = \int\limits_{1}^{\frac{3}{2}}\dfrac{dx}{x^2(x^2 - 3x +2 )} + 
+\int\limits_{\frac{3}{2}}^{3}\dfrac{dx}{x^2(x^2 - 3x +2 )} + 
+\int\limits_{3}^{+\infty}\dfrac{dx}{x^2(x^2 - 3x +2 )}\]
+
+Для НИ-1 $\displaystyle\int\limits_{3}^{+\infty}f(x)dx f(x) = 
+\dfrac{1}{x^2(x^2 -3x + 2)} \underset{x \to +\infty} \sim \dfrac{1}{x^4} 
+\implies$ НИ-1 сходится по степенному признаку $\left(\alpha = 4 > 1\right)$
+
+Для НИ-2 $\displaystyle\int\limits_{1}^{\frac{3}{2}}f(x)dx$ подынтегральная 
+функция имеет единственную особенность на конце $x = 1$. В данном случае:
+
+$f(x) = \dfrac{1}{x^2(x-1)(x-2)} \underset{x \to 1 + 0}\sim -\dfrac{1}{x - 1} 
+\implies$ НИ-2 расходится по степенному признаку $\left(\alpha = 1\right)$, 
+поэтому исходный НИ-2 смешанного типа считается расходящимся. 
+\end{exmp}
+
+\section{Основные методы вычисления НИ-1 и НИ-2}
+
+Ограничимся рассмотрением НИ-1 вида \eqref{7:2} и НИ-2 вида \eqref{lec8:3}
+т.~е. будем 
+рассматривать $\displaystyle\int\limits_{a}^{b}f(x)dx$, в котором $b$~--- 
+единственная особенная точка, которая может быть бесконечной, при этом 
+подынтегральную функцию для простоты считают непрерывной на $\left[a,\; 
+b\right[$. 
+
+\begin{thm}[Формула Ньютона-Лейбница для НИ]
+Пусть $F(x)$~--- первообразная $f(x)$ на $\left[a,\; b\right[$. Тогда 
+рассматриваемый НИ $\displaystyle\int\limits_{a}^{b}f(x)dx$ будет сходится 
+$\iff \exists F(b-0)\in \R$, при этом для него справедлива формула двойной 
+подстановки:
+\begin{equation}\label{lec8:7}
+\int\limits_{a}^{b}f(x)dx = \left[F(x)\right]_{a}^{b} = \underset{\eps \to 
++0}\lim\left[F(x)\right]_{a}^{b - \eps} = F(b - 0) - F(a) 
+\end{equation}
+
+Формула $\eqref{lec8:7}$ является формулой двойной подстановки для НИ-2 вида 
+$\eqref{lec8:3}$. Для НИ\nobreakdash-1 вида \eqref{7:2} имеем:
+
+\begin{equation}\label{lec8:8}
+\int\limits_{a}^{+\infty}f(x)dx = \left[F(x)\right]_{a}^{+\infty} = F(+\infty) 
+- F(a), \;\;\; F(+\infty) \in \R.
+\end{equation}
+\end{thm}
+
+\begin{proof}
+По той же схеме, что и для интеграла Римана.
+\end{proof}
+
+\end{document}
