@@ -1,0 +1,52 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+
+\section{НИ первого типа(рода), зависящие от параметра}
+
+Рассмотрим $ f(x, y),\ \forall x \geq a,\ forqll y \in Y $.
+Предположим, что при каждом $ \fix y \in Y $ функция $ f(x, y) $
+интегрируема в несобственном смысле по $ x \in [a; +\infty) $, т.~е.
+\begin{equation}
+\label{lec9:1}
+\exists F(y) = \int\limits_a^{+\infty} f(x, y) dx
+\end{equation}
+В этом случае говорят, что на $ Y $ определен сходящийся НИЗОП-1.
+В случае, когда интеграл расходится, то НИЗОП-1 расходится.\\
+Если ранее в СИЗОП при изучении функциональных свойств достаточно
+было ограничиться рассмотрением равномерного частного предела $ f(x, y) $,
+то для НИЗОП-1 дополнительно будем рассматривать как поточечную сходимость,
+так и равномерную сходимость на $ Y $.\\
+НИЗОП-1 с чит. поточечной сходимостью к соответствующей функции $ F(y) $
+для $ y \in Y $, если для $ f(x, y) $ 
+\begin{equation}
+\label{lec9:2}
+\Phi(A, y) = \int\limits_a^A f(x, y) dx
+\end{equation}
+имеем
+\begin{equation}
+\label{lec9:3}
+\Phi(A, y) \stackrel{Y}{\underset{A \to +\infty}{\to}} F(y)
+\end{equation}
+На $ \eps-\delta $ языке \eqref{lec9:3} равносильно:
+\begin{equation}
+\label{lec9:4}
+\begin{gathered}
+\forall \eps > 0\ \forall y \in Y \implies \exists \delta = \delta(\eps, y)
+\geq a:\forall A \geq \delta \implies\\ 
+|\Phi(A, y) - F(y)| \leq \eps \iff
+|\int\limits_a^A f(x, y) dx - F(x)| \leq \eps \iff
+|\int\limits_A^{+\infty} f(x, y) dx| \leq \eps
+\end{gathered}
+\end{equation}
+
+\end{document}
