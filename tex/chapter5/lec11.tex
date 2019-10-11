@@ -1,0 +1,214 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+
+\begin{proof}
+	$$F(y) = \int\limits_a^{+\infty} f(x, y)dx \overset{[c, d]}\rightrightarrows \implies
+	\forall \varepsilon > \exists \sigma \geq a: \forall A \geq \sigma, \forall y \in [c, d] \implies \left|\int\limits_A^{+\infty}f(x, y) dx \right| \leq \varepsilon.$$ 
+	Далее получаем, что 
+	$$ \left| \int\limits_c^d\left(\int\limits_A^{+\infty}f(x, y)dx\right) dy\right| 
+	\leq \int\limits_c^d\left|\int\limits_A^{+\infty}f(x, y)dx\right| dy
+	\leq \int\limits_c^d \varepsilon dy = \varepsilon(c - d).$$
+	Поэтому 
+	$$
+	\int\limits_c^d \left( \int\limits_A^{+\infty} f(x, y) dx \right) dy \overset{[c, d]}{\underset{A \rightarrow +\infty}\longrightarrow} 0.$$ ЗДЕСЬ ДОЛЖНА БЫТЬ ССЫЛЬ
+	Отсюда следует, что
+	$$
+	\int\limits_c^d F(y)dy = \int\limits_c^d \left( \int\limits_a^A f(x, y)dx + \int\limits_A^{+\infty} f(x, y) dx \right) dy = \int\limits_c^d \left( \int\limits_a^A f(x, y) dx \right) dy + \int\limits_c^d \left( \int\limits_A^{+\infty} f(x, y) dx \right) dy.
+	$$
+	Отсуда, используя теорему о почленном интегрировании СИЗОП после предельного перехода $A \longrightarrow +\infty$ в силу ССЫЛИ, получаем 
+	$$
+	\exists \int\limits_c^d F(y) dy = \lim_{A \rightarrow +\infty} \int\limits_c^d \left( \int\limits_a^A f(x, y) dx \right) dy \; + \; 0 
+	= \lim_{A \rightarrow +\infty} \int\limits_a^A \left( \int\limits_c^d f(x, y) dy \right) dx 
+	= \int\limits_a^{+\infty} dx \left( \int\limits_c^d f(x, y) dy \right),
+	$$ что соответствует ССЫЛИ.
+\end{proof}
+
+\begin{rem}
+	Аналогичный результат имеем в случае интегрирования НИЗОП-1 по неограниченному промежутку, если:
+	\begin{enumerate}
+		\item $\displaystyle f(x, y)$ непрерывна для $\forall x \geq a, \forall y \geq c$
+		\item $\displaystyle \int\limits_a^{+\infty} \left| f(x, y) \right| dx \overset{\forall [\alpha, \beta] \subset [a, +\infty) }\rightrightarrows$
+		\item $\displaystyle \int\limits_c^{+\infty} \left| f(x, y) \right| dx \overset{\forall [\alpha, \beta] \subset [c, +\infty) }\rightrightarrows$
+		\item Один из интегралов $\displaystyle \int\limits_c^{+\infty} dy \int\limits_a^{+\infty} \left|f(x, y)\right| dx,
+		\int\limits_a^{+\infty} dx \int\limits_c^{+\infty} \left|f(x, y)\right| dy$
+		сходится. В этом случае
+		$\displaystyle \int\limits_c^{+\infty} dy \int\limits_a^{+\infty} \left|f(x, y)\right| dx = \int\limits_a^{+\infty} dx \int\limits_c^{+\infty} \left|f(x, y)\right| dy$.
+	\end{enumerate}
+\end{rem}
+
+\begin{thm}[о дифференцировании НИЗОП-1]
+	Пусть: 
+	\begin{enumerate}
+		\item $\forall fix \; y \in [c, d] \; f(x, y)$ непрерывна по $x \in [a, +\infty)$;
+		\item $\exists f^{'}_y (x, y)$ непрерывная на множестве $[a, +\infty) \times [c, d]$;
+		\item $\forall fix \; y \in [c, d] \implies \exists F(y) = \int\limits_a^{+\infty} f(x, y) dx$.
+	\end{enumerate}
+	Тогда, если $\displaystyle \int\limits_a^{+\infty} f^{'}_y (x, y) dx \overset{[c, d]}{\rightrightarrows}$, то справедлива следующая формула Лейбница почленного интегрирования НИЗОП-1:
+	
+	\begin{equation} \label{lec11:1}
+		\exists F^{'}(y) = \left( \int\limits_a^{+\infty} f(x, y) dx \right)^{'}_y = \int\limits_a^{+\infty} f^{'}_y (x, y) dx 
+	\end{equation}
+	
+	\begin{proof}
+		Для $\forall fix \; y \in [c, d]$ в силу предыдущей теоремы возможна перестановка пределов интегрирования
+		
+		\begin{equation*}
+		\begin{gathered}
+		\int\limits_c^y dt \int\limits_a^{+\infty} f^{'}_{t}(x, y) dx =
+		\int\limits_a^{+\infty} \left( \int\limits_c^y f^{'}_{t} (x, t) dt \right) dx =
+		\int\limits_a^{+\infty} \left[ f(x, t) \right]_{t = c}^{t = y} dx
+		= \underbrace{\int\limits_a^{+\infty} f(x, y) dx}_{F(y)}\;- \\
+		- \underbrace{\int\limits_a^{+\infty} f (x, c) dx}_{c_0\;=\;const} \implies 
+		F(y) = c_0 + \int\limits_c^y \left( \int\limits_a^{+\infty} f^{'}_{t} (x, t) \right) dt.
+		\end{gathered}
+		\end{equation*}
+		
+		В данном случае, по теореме о непрерывности НИЗОП-1 получаем, что $G(t) = \int\limits_a^{+\infty} f_{t}^{'}(x, t) dx$ непрерывна для $\forall t \in [c, d]$, поэтому по теореме Барроу о диференцировании интеграла Римана с переменным верхним пределом получаем, что
+		
+		$$
+		\exists F^{'}(y) = (c_0 + \int\limits_a^y G(t)dt)^{'}_y = 0 + (\int\limits_a^y G(t)dt)^{'}_y = G(t)\bigg|_{t = y} = \int\limits_a^{+\infty} f^{'}_t (x, t) dx\bigg|_{t = y} = \int\limits^{+\infty}_a  f^{'}_y (x, y) dx
+		$$ 
+	\end{proof}
+	
+\end{thm}
+
+\begin{rem}
+	Так же, как и в теореме о предельном переходе НИЗОП-1 и следствии из нее о непрерывности НИЗОП-1 в доказанной выше теореме можно вместо равномерной сходимости рассматриваемого НИЗОП ограничиться условием локальной равномерной сходимости.
+\end{rem}
+
+\begin{exmp}
+	$$
+	I = \int\limits_0^{+\infty} \frac{e^{-ax} - e^{-bx}}{x} dx,\; a, b > 0
+	$$
+	
+	I-ый способ:
+	
+	$$
+	\int\limits_a^b e^{-xy} dy = -\left[ \frac{e^{-xy}}{x} \right]^{b}_{y = a} = \frac{e^{-ax} - e^{-bx}}{x}, \; x \geq 0
+	$$
+	
+	$$
+	I = \int\limits_0^{+\infty} \left( \int\limits_a^b e^{-xy} dy \right) dx.
+	$$
+	
+	$$
+	\int\limits_0^{+\infty} e^{-xy} dx = \frac{1}{y^b}, \; y \in [a, b].
+	$$
+	
+	 В силу локальной равномернойсходимости соответствующего НИЗОП-1 имеем:
+	 
+	 $$
+	 I = \int\limits_a^b \left( \int\limits_0^{+\infty} e^{-xy} dx \right) dy = \int\limits_a^b \frac{dy}{y} = \left[ ln|y| \right]^b_a = ln\left(\frac{b}{a}\right).
+	 $$
+	 
+	 II-ой способ:
+	 
+	 Рассмотрим НИЗОП-1 $\displaystyle F(y) = \int\limits_0^{+\infty} \frac{e^{-ax} - e^{-xy}}{x} dx, \; y \in [a, b].$ В этом случае выполняются все условия теоремы об интегрировании НИЗОП-1
+	 
+	 $\displaystyle f(x, y) = \frac{e^{-ax} - e^{-xy}}{x}, x > 0, y \in [a, b] \implies \exists f^{'}_y (x, y) = e^{-xy}$
+	  - непрерывна для 
+	 $\forall x > 0, y \in [a, b]$ и 
+	 
+	 $\displaystyle \int\limits_0^{+\infty} f^{'}_y (x, y) dx = \int\limits^{+\infty}_0 e^{-xy} dx = \left[ \frac{e^{-xy}}{-y} \right]^{+\infty}_{x = 0} = \frac{1}{y} \overset{[a, b]}\rightrightarrows \implies \exists F^{'} (y) = \frac{1}{y}.$
+	 
+	 Тогда $\displaystyle F(y) = \int \frac{dy}{y} = ln|y| + c_0$. Учитывая, что $\displaystyle F(a) = \int\limits_0^{+\infty} 0\;dx = 0, y = 0 \implies 0 = ln|a| + c_0 \implies c_0 = -ln|a| \implies F(y) = ln\left| \frac{y}{a} \right|, \forall y \in [a, b].$ Отсюда, при $y = b > a > 0$
+	 
+	 $$
+	 I = F(b) = ln\left(\frac{b}{a}\right).
+	 $$
+\end{exmp}
+
+\section{НИ-2, зависящий от параметра (НИЗОП-2)}
+
+	Рассмотрим функцию $f(x, y)$, определенную для $\forall x \in [a, b], \forall y \in Y \subset \R$. Если $\exists y \in Y \implies f(x, y)$ неограничена в окрестности $x = b$, в этом случае имеем НИЗОП-2 
+	\begin{equation}\label{lec11:2}
+		F(y) = \int\limits_a^b f(x, y) dx
+	\end{equation}
+	
+	которая считается сходящейся, если $\displaystyle \exists \lim_{x \rightarrow +0} \int\limits_0^{b - \varepsilon} f(x, y) dx \in \R$.
+	
+	По аналогии с НИЗОП-1 кроме поточечной сходимости $\eqref{lec11:2}$, рассмотрим равномерную сходимость для $\eqref{lec11:2}$, которая определяется через 
+	
+	\begin{equation}\label{lec11:3}
+		\Phi(y, \varepsilon) = \int\limits_a^{b - \varepsilon} f(x, y) dx
+	\end{equation}
+	
+	а именно: $F(y) \overset{Y}\rightrightarrows\;$, если $\Phi(y, \varepsilon) \overset{Y}{\underset{\varepsilon \rightarrow +0}\rightrightarrows} F(y)$. Из равномерной сходимости НИЗОП-2 следует поточечная сходимость, обратное, вообще говоря, неверно. По аналогии с НИЗОП-1 доказывается соответствующие свойства НИЗОП-2, поэтому ограничимся только формулировками.
+	
+	\begin{thm}[Признак Вейерштрасса равномерной сходимости НИЗОП-2]
+		Если $\exists g(x) \geq 0, \forall x \in [a, b)$ и $\int\limits_a^b g(x) dx$ сходится, то в случае, когда $|f(x, y)| \leq d(x), \forall y \in Y, \forall x \in [a, b)$, то тогда $F(y) = \int\limits_a^b f(x, y) dx \overset{Y}{\rightrightarrows}$.
+	\end{thm}
+	
+	\begin{thm}[о предельном переходе в НИЗОП-2]
+		Пусть:
+		
+		\begin{enumerate}
+			\item $\forall fix \; y \in Y \implies f(x, y)$ непрывна по $x \in [a, b)$;
+			\item $\forall \varepsilon \in (0, b - a] \implies f(x, y) \overset{[a, b - \varepsilon]}{\underset{y \rightarrow y_0}\rightrightarrows} \phi(x)$, где $y_0$ --- предельная точка для $Y$.
+		\end{enumerate}
+		
+		Если $\int\limits_a^b f(x, y) dx \overset{Y}\rightrightarrows \;$, то тогда 
+		
+		\begin{equation}\label{lec11:4}
+			\exists \lim_{y \rightarrow y_0} \int\limits_a^b f(x, y) dx = \int\limits_a^b \lim_{y \rightarrow y_0} f(x, y) dx = \int\limits_a^b \phi(x) dx
+		\end{equation}
+	\end{thm}
+
+	\begin{crl*}[о непрерывности НИЗОП-2]
+		Если $f(x, y)$ непреывна на $[a, b) \times [c, d]$ и $F(y) = \int\limits_a^b f(x, y) dx \overset{[c, d]}\rightrightarrows \;$, то тогда $F(y) \in C([c, d])$.
+	\end{crl*}
+
+	\begin{rem}
+		Как и для НИЗОП-1, в теореме о предельном переходе в НИЗОП-2 и следствии из нее вместо равномерной сходимости НИЗОП-2 на рассматриваемом множестве $Y \subset \R$ можно рассматривать локальную равномерную сходимость соответствующего НИЗОП-2.
+	\end{rem}
+
+	\begin{thm}[о почленном дифференцировании НИЗОП-2]
+		Пусть:
+
+		\begin{enumerate}
+			\item $f(x, y)$ непрерывна по $x \in [a, b), \forall fix \; y \in [c, d]$;
+			\item $\exists f^{'}_{y} (x, y)$, непрерывная на множестве $[a, b) \times [c, d]$.
+		\end{enumerate}
+
+		Если $\int\limits_a^b f(x, y) dx \overset{[c, d]}\rightarrow\;$, а $\int\limits_a^b f^{'}_y (x, y) dx \overset{\forall [\alpha, \beta] \subset [c, d]}{\rightrightarrows}$, то тогда справдлива формула Лейбница почленного дифференцирования НИЗОП-2:
+		
+		$$
+		\exists F(y) = \left( \int\limits_a^b f(x, y) dx \right)^{'}_y = \int\limits_a^b f^{'}_y (x, y) dx, \; y \in [c, d].
+		$$
+	\end{thm}
+
+	\begin{exc}
+		По аналогии сформулировать соответствующую теорему о почленном интегрировании НИЗОП-2.
+	\end{exc}
+
+	Отметим, что на практике TO DO!!! с помощью соответствующей замены 
+	$\displaystyle 
+	\left\{
+		\begin{gathered}
+			t = \frac{1}{(b - x)^\alpha} \\
+			\alpha > 0
+		\end{gathered}
+	\right.
+	$ 
+	
+	рассматриваемый НИЗОП-2 $\int\limits_a^b f(x, y) dx$ сводится к НИЗОП-1 
+	
+	\begin{equation}\label{lec11:5}
+		\int\limits_{\frac{1}{(b - x)^\alpha}}^{+\infty} d(t, y) dt
+	\end{equation}
+
+	а далее используются доказательства TO DO!!! НИЗОП-1.
+	
+	Если в $\eqref{lec11:5}$ получается НИЗОП смешанного типа, то раскладываем $\eqref{lec11:5}$ на сумму НИЗОП одного типа (первого либо второго).
+	
+\end{document}
