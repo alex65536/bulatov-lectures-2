@@ -34,15 +34,18 @@ $\forall y \in Y$. В связи с этим \eqref{lec10:6} $\implies$ \eqref{l
 \Phi(A,y)\overset{Y}{\underset{A \to +\infty}{\rightrightarrows}}F(y) или 
 F(y)\overset{Y}{\rightrightarrows}
 \end{equation}
-Также как и выше, получаем критерий Гейне равномерной сходимости НИЗОП-1 
+Также как и выше, получаем 
+
+\begin{thm}[Критерий Гейне равномерной сходимости НИЗОП-1]
 \begin{equation}
 \label{lec10:8}
  \eqref{lec10:7} \iff \forall A_n \ge a, A_n\rightarrow +\infty \implies 
  \varphi_n(y) = \phi(A_n,y) \overset{Y}\rightrightarrows F(y) 
 \end{equation}
+\end{thm}
 Используя связь между равномерной сходимостью НИЗОП-1 и равномерной 
-сходимостью соответствующей ФП. Получаем следующий супремальный критерий 
-сходимости НИЗОП-1 
+сходимостью соответствующей ФП, получаем следующий супремальный критерий 
+сходимости НИЗОП-1:
 \begin{equation}
 \label{lec10:9}
 F(y)\overset{X} \rightrightarrows \sup\left|\phi(A , y) - F(y) \right| 
@@ -52,6 +55,7 @@ F(y)\overset{X} \rightrightarrows \sup\left|\phi(A , y) - F(y) \right|
 Y}\sup\left|\int\limits_A^{+\infty} f(x,y)\right| \underset{A \to + \infty} 
 \to 0  \end{equation}
 
+\begin{exmp}
 \[ \left\{\begin{array}{rcl}
 		F(y)=\int\limits_0^{+\infty}ye^{-xy}dx\\
 		y \in Y = (0,+\infty)\\
@@ -66,71 +70,81 @@ $\sup\left| \int\limits_A^{+\infty}ye^{-xy}dx \right|=\underset{y > 0}\sup
 
 $F(y) = \int\limits_0^{+\infty}ye^{-xy} = 1 \in \R;$ F(y) не сходится 
 равномерно.
-\\
+\end{exmp}
+
 В частности получаем, по аналогии с ФП, следующее достаточное условие 
 равномерной сходимости НИЗОП-2:
 $\exists g(x) \ge 0 \implies \left| f(x,y) \right| \le g(x), \forall x \ge a, 
 \forall y \in Y $ в случае сходимости $\int\limits_a^{+\infty}g(x)dx \implies 
 \int\limits_a^{+\infty}f(x,y) \overset{Y}\rightrightarrows $
-\begin{crl*}Критерий Коши сходимости НИЗОП-1\end{crl*}
 
+\begin{crl*}[критерий Коши сходимости НИЗОП-1]
 НИЗОП-1 сходится равномерно для $ y \in Y$ тогда и только тогда, 
 когда\begin{equation}\label{lec10:11} \forall \eps > 0, \exists \delta = 
 \delta_\eps \ge a, \forall \tilde{A} \ge \delta, \bar{A} \ge \delta, \forall y 
 \in Y \implies \left| \int\limits_{\tilde{A}}^{\bar{A}}f(x,y)dx \right| \le 
 \eps \end{equation}
-\\
-Аналогично, как для ФР и ФП доказываются признаки Дирихле и Абеля.
-\\
-Признак Дирихле равномерной сходимости НИЗОП-1:
-\\
+\end{crl*}
+
+Аналогично, как для ФР и ФП доказываются признаки Дирихле и Абеля:
+
+\begin{thm}
+[признак Дирихле равномерной сходимости НИЗОП-1]:
+
 Пусть при каждом фиксированном $y \in Y$ функции $f(x,y),g(x,y)$ непрерывны 
 для $\forall x \ge a$, если функция $g(x,y)$ непрерывно дифференцируема 
 ($\exists g(x,y)_x^\prime на [a;+\infty] \times Y $), когда $g(x,y)$ 
 монотонна по $x, \forall \fix \ y \in Y$ то при выполнении условий:
-\\
-1) $H(x,y) = \int\limits_a^x f(t,y)dt$ равномерно ограничена на $[a;+\infty]$ 
+
+\begin{enumerate}
+\item $H(x,y) = \int\limits_a^x f(t,y)dt$ равномерно ограничена на $[a;+\infty]$ 
 , то  есть $\exists C = const \ge 0 \implies \left|H(x,y)\right| \le C, 
 \forall x \ge a, \forall y \in Y.$
-\\
-2) $g(x,y)\underset{x \to +\infty}{\overset{Y}{\rightrightarrows} 0}$
+\item $g(x,y)\underset{x \to +\infty}{\overset{Y}{\rightrightarrows} 0}$
 Тогда $\int\limits_a^{+\infty} g(x,y)f(x,y) \overset{Y}{\rightrightarrows}$
-\\
-Признак Абеля равномерной сходимости НИЗОП-1:
-\\
+\end{enumerate}
+\end{thm}
+
+\begin{thm}[признак Абеля равномерной сходимости НИЗОП-1]
+
 Пусть при $\forall \fix \ y \in Y $ функции $g(x,y), f(x,y), g(x,y)_x^\prime$ 
 непрерывны на $[a;+\infty]\times Y.$Если $ g(x,y)_x^\prime \not = 0, \forall x 
 \ge a, \forall y \in Y $ то при выполнении условий:
-\\
-1) $\int\limits_a^{+\infty}f(x,y)dx \overset{Y}{\rightrightarrows}$
-\\
-2)$g(x,y)$ ограничена, то есть $\forall x \ge a, \forall y \in Y, \exists C = 
+
+\begin{enumerate}
+\item $\int\limits_a^{+\infty}f(x,y)dx \overset{Y}{\rightrightarrows}$
+
+\item $g(x,y)$ ограничена, то есть $\forall x \ge a, \forall y \in Y, \exists C = 
 const \ge 0 \implies \left|g(x,y)\right| \le C $
-\\
-Доказательство признаков Дирихле и Абеля имеются в "МА", А.А. Леваков.
-\\
-\\
-\\
+\end{enumerate}
+\end{thm}
+
+Доказательство признаков Дирихле и Абеля имеются в книге <<Математический Анализ>>, А.~А.~Леваков.
+
+
 \section{ Предельный переход НИЗОП-1}
-\begin{thm}Теорема.(О переходе к пределу под знаком НИЗОП-1)\end{thm}
-\\
+\begin{thm}Теорема.(О переходе к пределу под знаком НИЗОП-1)
 Пусть
-\\
-1)$\forall \fix \ y \in Y$ функция $f(x,y)$ непрерывна $x \in [a;+\infty)$ .
-\\
-2) $\forall A \ge a \implies f(x,y) \overset{\forall [a;A]}{\underset{y \to 
+
+\begin{enumerate}
+\item $\forall \fix \ y \in Y$ функция $f(x,y)$ непрерывна $x \in [a;+\infty)$ .
+\item $\forall A \ge a \implies f(x,y) \overset{\forall [a;A]}{\underset{y \to 
 y_0}{\rightrightarrows}} \phi(x) $, где $y_0$ точка множества $Y$.
-\\
+\end{enumerate}
+
 Если $\int\limits_a^{+\infty}f(x,y)dx \overset{Y}\rightrightarrows $, то тогда 
 предел \begin{equation}\label{lec10:12}
 \underset{y \to y_0}\lim F(y) \overset{(1)}= \underset{y \to 
 y_0}\lim\int\limits_a^{+\infty}f(x,y)dx =\int\limits_a^{+\infty} \underset{y 
 \to y_0}\lim f(x,y)dx = \int\limits_a^{+\infty}\varphi(x)dx \end{equation}
+\end{thm}
+
+\begin{proof}
 Используя критерий Гейне получаем, что предельная функция $\varphi(x) 
 =\underset{y \to y_0}{\lim}f(x,y)$ непрерывна $\forall x \ge a$. Поэтому 
 $\varphi(x) \in R([\tilde{A};\bar{A}]), \forall [\tilde{A};\bar{A}] \subset 
 [a;+\infty) $.
-\\
+
 Далее из критерия Коши сходимости НИЗОП-1 в силу равномерной сходимости 
 \eqref{lec9_1:1} следует, что $\forall \eps > 0, \exists \delta = \delta_\eps 
 \ge a, \forall \tilde{A},\bar {A} \ge \delta, (\tilde{A} < \bar{A}), \forall y 
@@ -139,16 +153,16 @@ $\varphi(x) \in R([\tilde{A};\bar{A}]), \forall [\tilde{A};\bar{A}] \subset
 Отсюда учитывая, что для СИЗОП 
 $G(y)=\int\limits_{\tilde{A}}^{\bar{A}}f(x,y)dx$ выполняются все условия 
 предельного перехода для СИЗОП.
-\\
+
 Имеем $\underset{y \to y_0}\lim  \left| 
 \int\limits_{\tilde{A}}^{\bar{A}}f(x,y)dx  \right| = \left| \underset{y \to 
 y_0}\lim \int\limits_{\tilde{A}}^{\bar{A}}f(x,y)dx  \right| = \left| 
 \int\limits_{\tilde{A}}^{\bar{A}}  \underset{y \to y_0}\lim f(x,y)dx  \right| 
 = \left| \int\limits_{\tilde{A}}^{\bar{A}}\varphi(x,y)dx \right| \le \eps $.
-\\
+
 Отсюда используя критерий Коши сходимости НИ-1 получаем, что 
 $\int\limits_a^{+\infty}\varphi(x)dx$ сходится.
-\\
+
 Кроме того \begin{equation}\label{lec10:13}  \forall A \ge a \implies 
 \left|\int\limits_{a}^{+\infty}f(x,y)dx  
 -\int\limits_{a}^{+\infty}\varphi(x)dx \right| = 
@@ -161,73 +175,76 @@ $\int\limits_a^{+\infty}\varphi(x)dx$ сходится.
 Далее учитывая, что $\forall \eps \ge 0, \exists \delta = \delta_\eps, \forall 
 A \ge \delta, \forall y \in Y  $ второе и третье слагаемое в \eqref{lec10:13}
 в силу теоремы $ \ge \eps$.
-\\
+
 Из \eqref{lec10:13} получаем $ \left| \int\limits_{a}^{+\infty}f(x,y)dx - 
 \int\limits_{a}^{+\infty}\varphi(x)dx\right| \le \left| 
 \int\limits_{a}^{A}(f(x,y) - \varphi(x))dx \right| + 2\eps \le 
 \int\limits_{a}^{A}\left| f(x,y) - \varphi(x)\right|dx + 2\eps  $.
-\\
+
 $ \forall A \ge \delta \ge a, \forall y \in Y$, зафиксируем $A$, тогда из 
 теоремы о предельном переходе в СИЗОП следует$ \exists \sigma_\eps, \forall y 
 \in Y, 0 < \left|y - y_0 \right| \ge \sigma_\eps \implies 
 \int\limits_{a}^{A}(f(x,y) - \varphi(x))dx \le \eps   $.
-\\
+
 Получаем конченую оценку $\left| \int\limits_{a}^{A}(f(x,y) - \varphi(x))dx 
 \right| + 2\eps \le 3\eps$.
-\\
-Следствие. О непрерывности НИЗОП-1
-\\
+\end{proof}
+
+\begin{crl*}[о непрерывности НИЗОП-1]
 Пусть функция $f(x,y)$ непрерывна $[a;+\infty) \times [ c; d]$. Тогда если 
 $\int\limits_a^{+\infty}f(x,y)dx \overset{[c;d]}\rightrightarrows F(y)$, то
 $ F(y) = \int\limits_a^{+\infty}f(x,y)dx$ непрерывна $\forall y \in [c;d]$
+\end{crl*}
+
+\begin{proof}
 Из достаточного условия равномерной сходимости Ф2П следует $\forall A \ge a, 
 \forall y \in [c;d] $ $f(x,y) \overset{[a;A]}{\underset{y \to 
 y_0}{\rightrightarrows}} f(x,y) $
-\\
+
 Отсюда используя теорему о предельном переходе получаем:$\exists \underset{y 
 \to y_0}{\lim} F(y) = \underset{y \to y_0}\lim \int\limits_a^{+\infty}f(x,y)dx 
 = \int\limits_a^{+\infty}\underset{y \to y_0}\lim f(x,y)dx = F(y) $, то есть 
 НИЗОП-1 $F(y) = \int\limits_a^{+\infty}f(x,y)dx $ непрерывен $ \forall y \in 
 [c;d] \implies F(y) $непрерывна для $ \forall y \in [c;d]$
-\\
+
 Доказательства теоремы выше справедливы, когда вместо равномерной сходимости 
 используется локальная равномерная сходимость, а именно$\forall [\alpha;\beta] 
 \subset Y \implies F(y) \overset{[\alpha;\beta]}{\rightrightarrows}$. 
 Обоснование такое же, как и в случае локальной равномерной сходимости ФП и ФР.
 $f(x,y)$ $[a;+\infty]\times[c;d]$
-\\
-Пример:
-\\
+\end{proof}
+
+\begin{exmp}
 Ранее было показано
 $\int\limits_0^{+\infty}ye^{-xy}dx \xrightarrow{\forall y > 0}$
-\\
+
 $\int\limits_0^{+\infty}ye^{-xy}dx \overset{\forall y > 
 0}{\not\rightrightarrows}$
-\\
+
 Так как здесь подынтегральная функция $f(x,y) = ye^{-xy}$ непрерывна $\forall 
 x \ge 0, \forall \in [\alpha,\beta] \subset [0;+\infty)$ 
 Отсюда следует
-\\
+
 $\int\limits_0^{+\infty}ye^{-xy}dx \overset{\forall y > 
 0}{\not\rightrightarrows}$
-\\
+
 Иначе был бы возможен предельный переход в НИЗОП-1 $y \to +0 $, а в данном 
 случае:
-\\
+
 $\underset{y \to +0}\lim\int\limits_0^{+\infty}ye^{-xy}dx = 1 \ne 0 = 
 \int\limits_0^{+\infty}\underset{y \to +0}\lim ye^{-xy}dx$
-\\
-\\
-\section{ Почленное интегрирование и дифференцирование НИЗОП-1}
+\end{exmp}
+
+\section{Почленное интегрирование и дифференцирование НИЗОП-1}
 
 \begin{thm}
-Теорема.О перестановке порядка интегрирования  в повторном интеграле у одного 
-из которых имеется бесконечный предел.
-\end{thm}
-\\
+[о перестановке порядка интегрирования в повторном интеграле у одного 
+из которых имеется бесконечный предел]
 Пусть функция $f(x,y)$ непрерывна на $[a;+\infty)\times [c;d]$, если $F(y) = 
 \int\limits_a^{+\infty}f(x,y)dx \overset{y \in [c;d]}{\rightrightarrows}$ , то 
   $\exists \int\limits_c^d F(y)dy =\int\limits_c^d\left( 
 \int\limits_a^{+\infty}f(x,y)dx\right) dy = 
 \int\limits_a^{+\infty}\left(\int\limits_c^d f(x,y)dy\right)dx $
+\end{thm}
+
 \end{document}
