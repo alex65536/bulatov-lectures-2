@@ -20,42 +20,44 @@
 \implies |f(x, y) - g(x)| \leq \eps
 \end{equation}
 Предельную функцию $ g(x), x \in [a, b] $ в \eqref{lec6:1} будем называть 
-частным пределом $ f(x, y)$, $y \to y_0 $ и использовать запись
+\emph{частным пределом} $ f(x, y)$, $y \to y_0 $ и использовать запись
 \begin{equation}
 \label{lec6:2}
 	\lim\limits_{y \to y_0} f(x, y) = g(x),\ x \in [a, b] \iff
-	f(x, y) \stackrel{[a, b]}{\underset{y \to y_0}{\to}} g(x) 
-	% нормально под стрелкой сделать, хз как
+	f(x, y) \xrightarrow[y \to y_0]{[a, b]} g(x)
 \end{equation}
 По аналогии с критерием Гейне существования предела Ф1П доказывается критерий
 Гейне существования частного предела Ф2П:
 \[
 \eqref{lec6:2} \iff \quad
-\forall (y_n) \in D,\ y_n \neq y_0,\ y_n \underset{n \to \infty}{\to} t_0 
+\forall (y_n) \in D,\ y_n \neq y_0,\ y_n \underset{n \to \infty}{\to} t_0 \
 \text{[последовательности Гейне]} \implies f(x, y_n) 
 \stackrel{[a, b]}{\underset{n \to \infty}{\to}} g(x).
 \]
-Функцию $ g(x), x \in [a, b] $ будем называть равномерным частным пределом 
+Функцию $ g(x), x \in [a, b] $ будем называть 
+\emph{равномерным частным пределом}
 $ f(x, y)$, $y \to y_0$, $x \in [a, b] $, если
 \begin{equation}
 \label{lec6:3}
 \forall \eps > 0 \quad \exists \delta = \delta_\eps > 0: \quad 
 \forall y \in D,\ 0 < |y - y_0| \leq \delta,\
-\forall x \in [a, b] \implies |f(x, y) - g(x)| \leq \eps
+\forall x \in [a, b] \implies |f(x, y) - g(x)| \leq \eps.
 \end{equation}
 В этом случае будем писать
 \begin{equation}
 \label{lec6:4}
-f(x, y) \stackrel{[a, b]}{\underset{y \to y_0}{\rightrightarrows}} g(x)
+f(x, y) \stackrel{[a, b]}{\underset{y \to y_0}{\rightrightarrows}} g(x).
 \end{equation}
-Из \eqref{lec6:4} следует \eqref{lec6:2}, но обратное не всегда верно.\\
-Аналогично, как и выше, получаем критерий Гейне о существовании частного
+Из \eqref{lec6:4} следует \eqref{lec6:2}, но обратное не всегда верно.
+
+Аналогично, как и выше, получаем критерий Гейне о 
+существовании равномерного частного
 предела Ф2П:
 \begin{equation}
 \label{lec6:5}
 \eqref{lec6:4} \iff \forall (y_n) \in D,\ y_n \neq y_0,\ 
 y_n \underset{n \to \infty}{\to} y_0 \implies
-f(x, y) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x)
+f(x, y) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x).
 \end{equation}
 \begin{thm}[О предельном переходе в СИЗОП]
 	Пусть при каждом $ \fix y \in D $ функция $ f(x, y) $ непрерывна 
@@ -68,11 +70,11 @@ f(x, y) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x)
 	\exists \lim\limits_{y \to y_0} F(y) \stackrel{\eqref{lec5:1}}{=} 
 	\lim\limits_{y \to y_0} \int\limits_a^b f(x, y) dx = 
 	\int\limits_a^b \lim\limits_{y \to y_0} f(x, y) dx = 
-	\int\limits_a^b g(x) dx
+	\int\limits_a^b g(x) dx.
 	\end{equation}
 \end{thm}
 \begin{proof}
-	Положим, во-первых, что $ g(x) $ непрерывна $ \forall x \in [a, b] $.
+	Покажем, во-первых, что $ g(x) $ непрерывна $ \forall x \in [a, b] $.
 	Для этого воспользуемся критерием Гейне существования частного предела Ф2П.
 	\\
 	Функция $(y_n) \in D$ ~--- последовательность Гейне предельной точки $y_0$.
@@ -94,7 +96,7 @@ f(x, y) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x)
 	\]
 	Отсюда по критерию Гейне получаем, что
 	\[
-	\exists \lim\limits_{y \to y_0} F(y) = I_0
+	\exists \lim\limits_{y \to y_0} F(y) = I_0.
 	\]
 \end{proof}
 \begin{rem}
@@ -118,11 +120,11 @@ f(x, y) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x)
 \section{Условия существования равномерного частного предела Ф2П}
 
 \begin{thm}[Супремальный критерий существования равномерного 
-										частного предела Ф2П]
+	частного предела Ф2П]
 	\begin{equation}
 	\label{lec6:7}
 	\eqref{lec6:4} \iff \underset{x \in [a, b]}{\sup} |f(x, y) - g(x)|
-	\underset{y \to y_0}{\to} 0
+	\underset{y \to y_0}{\to} 0.
 	\end{equation}
 \end{thm}
 \begin{proof}
@@ -153,7 +155,7 @@ f(x, y) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x)
 	\]
 	\[
 	\forall x \in [a, b] \implies |f(x, \widetilde{y}) - f(x, \overline{y})
-	\leq \eps|.
+	|\leq \eps.
 	\]
 \end{thm}
 \begin{proof}
@@ -170,7 +172,8 @@ $ \forall y_0 \in [c, d] \implies f(x, y)
 $ \forall f(x, y) $, непрерывной по $x \in [a, b] \ \forall \fix y \in [c, 
 d]$,
 то, в случае, когда $g(x) \notin C([a, b])$, получим, что у рассмотренной Ф2П
-нет равномерного частного предела(т.~е. существует лишь частный предел).
+нет равномерного частного предела (т.~е. возможно, существует лишь частный 
+предел).
 
 \subsection{Почленное дифференцирование и интегрирование СИЗОП}
 
@@ -200,24 +203,24 @@ d]$,
 		\lim\limits_{\Delta y \to 0} \dfrac{1}{\Delta y}
 		\int\limits_a^b (f(x, y_0 + \Delta y) - f(x, y_0)) dx = 
 		\lim\limits_{\Delta y \to 0}\int\limits_a^b
-		\dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{\Delta y}
+		\dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{\Delta y}.
 	\end{gathered}
 	\end{equation}
-	Положим, что в \eqref{lec6:8} 
+	Покажем, что в \eqref{lec6:9} 
 	\begin{equation}
 	\label{lec6:10} 
 	\forall\ \fix \ \Delta y \neq 0 \implies
 	\dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{\Delta y} 
-	\stackrel{[a, b]}{\underset{\Delta y \to 0}{\rightrightarrows}} f_y'(x, y)
+	\stackrel{[a, b]}{\underset{\Delta y \to 0}{\rightrightarrows}} f_y'(x, y).
 	\end{equation}
 	Используя формулу Лагранжа конечных приращений по второй переменной 
 	Ф2П получаем, что 
 	\[ 
-	\exists \Theta = \Theta(x, \Delta y) \in ]0, 1[ 
+	\exists \Theta = \Theta(x, \Delta y) \in \left]0, 1\right[ 
 	\implies \dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{\Delta y} = 
-	f_y'(x, y_0 + \Delta y)
+	f_y'(x, y_0 + \Theta\Delta y).
 	\]
-	Отсюда в силу непрерывности $ f_y'(x, y) $ на компакте $ [a, b] \times 
+	В силу непрерывности $ f_y'(x, y) $ на компакте $ [a, b] \times 
 	[c, d] $ по теореме Кантора получаем, что $ f_y'(x, y) $ равномерно
 	непрерывна на это компакте. Поэтому
 	\begin{equation}
@@ -233,7 +236,7 @@ d]$,
 		\end{gathered}
 	\end{equation}
 	Полагая здесь $ \widetilde{x} = \overline{x} = x \in [a, b],\ 
-	\widetilde{y} = \overline{y} = y \in [c, d]	$ и считая, что 
+	\widetilde{y} = y_0 + \Theta\D y, \ \overline{y} = y_0$ и считая, что 
 	$ |\Theta\Delta y| \leq \delta $, получаем:
 	\[
 	\eqref{lec6:11} \implies\left|
@@ -299,7 +302,7 @@ d]$,
 	\[ \exists \lim\limits_{x \to +0} \dfrac{x - 1}{\ln x} = \left[
 	\dfrac{-1}{-\infty} = 0
 	\right]; \quad 
-	\exists \lim\limits_{x \to 1 - 0} \dfrac{x - 1}{\ln x} = \left[\ln x \equiv 
+	\exists \lim\limits_{x \to 1 - 0} \dfrac{x - 1}{\ln x} = \left[\ln x \sim 
 	\\
 	x - 1\right] = 1 \in \R;\] т.~е. есть устранимые разрывы функции
 	$\dfrac{x - 1}{\ln x}$ в точках $x = 0$, $x = 1$.
