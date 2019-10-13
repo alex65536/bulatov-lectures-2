@@ -1,17 +1,22 @@
-\documentclass[a4paper,12pt,openany]{report}
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
 
-% Опциональный pscyr
-
-
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
 
 \begin{document}
 
 По аналогии с критерием Гейне существования конечного предела для Ф1П и Ф2П 
 получаем, что 
-$\left(\eqref{lec9:4}\right),\left(\eqref{lec9:6}\right) \iff \forall A_n \ge 
+$\eqref{lec9_1:3}, \eqref{lec9_1:4} \iff \forall A_n \ge 
 a, A_n \to \infty \implies \phi_n(y) =\Phi(A_n,y) \xrightarrow[n\rightarrow 
 \infty]{Y}F(y) $
-Будем говорить, что НИЗОП-1 формулы \eqref{label}  считается 
+Будем говорить, что НИЗОП-1 формулы \eqref{lec9_1:1}  считается 
 равномерно сходящимся на $Y$, если
 \begin{equation}
 \label{lec10:6}
@@ -19,10 +24,11 @@ a, A_n \to \infty \implies \phi_n(y) =\Phi(A_n,y) \xrightarrow[n\rightarrow
 \implies \left| \Phi(A,y) - F(y) \right| = \left| \int\limits_A^{+\infty} 
 f(x,y) dx \right| \le \eps
 \end{equation}
-Отличие \eqref{label} от \eqref{lec10:6} в том, что в \eqref{label} $\delta = 
+Отличие \eqref{lec9_1:4} от \eqref{lec10:6} в том, что в \eqref{lec9_1:4} 
+$\delta = 
 \delta(\eps,y)$, а в \eqref{lec10:6} $\delta = \delta(\eps)$ одно и тоже 
-$\forall y \in Y$. В связи с этим \eqref{lec10:6} $\implies$ \eqref{label}, 
-обратное вообще говоря неверно. 
+$\forall y \in Y$. В связи с этим \eqref{lec10:6} $\implies$ \eqref{lec9_1:4}, 
+обратное, вообще говоря, неверно. 
 В случае \eqref{lec10:6} будем использовать запись \begin{equation}
 \label{lec10:7}
 \Phi(A,y)\overset{Y}{\underset{A \to +\infty}{\rightrightarrows}}F(y) или 
@@ -126,7 +132,7 @@ $\varphi(x) \in R([\tilde{A};\bar{A}]), \forall [\tilde{A};\bar{A}] \subset
 [a;+\infty) $.
 \\
 Далее из критерия Коши сходимости НИЗОП-1 в силу равномерной сходимости 
-\eqref{lec9:1} следует, что $\forall \eps > 0, \exists \delta = \delta_\eps 
+\eqref{lec9_1:1} следует, что $\forall \eps > 0, \exists \delta = \delta_\eps 
 \ge a, \forall \tilde{A},\bar {A} \ge \delta, (\tilde{A} < \bar{A}), \forall y 
 \in Y \implies \left| \int\limits_{\tilde{A}}^{\bar{A}}f(x,y)dx \right| \le 
 \eps  $
