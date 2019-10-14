@@ -13,124 +13,142 @@
 
 По аналогии с критерием Гейне существования конечного предела для Ф1П и Ф2П 
 получаем, что 
-$\eqref{lec9_1:3}, \eqref{lec9_1:4} \iff \forall A_n \ge 
-a, A_n \to \infty \implies \phi_n(y) =\Phi(A_n,y) \xrightarrow[n\rightarrow 
-\infty]{Y}F(y) $
+\[\eqref{lec9_1:3}, \eqref{lec9_1:4} \iff \forall A_n \ge 
+a,\ A_n \to \infty \implies \phi_n(y) =\Phi(A_n,y) \xrightarrow[n\rightarrow 
+\infty]{Y}F(y).\]
 Будем говорить, что НИЗОП-1 формулы \eqref{lec9_1:1}  считается 
-равномерно сходящимся на $Y$, если
+\emph{равномерно сходящимся} на $Y$, если
 \begin{equation}
 \label{lec10:6}
-\forall \eps > 0, \exists \delta \ge a, \forall A \ge \delta, \forall y\in X 
+\forall \eps > 0\quad \exists \delta \ge a\quad \forall A \ge \delta\quad 
+\forall y\in X 
 \implies \left| \Phi(A,y) - F(y) \right| = \left| \int\limits_A^{+\infty} 
-f(x,y) dx \right| \le \eps
+f(x,y) dx \right| \le \eps.
 \end{equation}
 Отличие \eqref{lec9_1:4} от \eqref{lec10:6} в том, что в \eqref{lec9_1:4} 
 $\delta = 
-\delta(\eps,y)$, а в \eqref{lec10:6} $\delta = \delta(\eps)$ одно и тоже 
+\delta(\eps,y)$, а в \eqref{lec10:6} $\delta = \delta(\eps)$ одно и тоже для
 $\forall y \in Y$. В связи с этим \eqref{lec10:6} $\implies$ \eqref{lec9_1:4}, 
 обратное, вообще говоря, неверно. 
 В случае \eqref{lec10:6} будем использовать запись \begin{equation}
 \label{lec10:7}
-\Phi(A,y)\overset{Y}{\underset{A \to +\infty}{\rightrightarrows}}F(y) или 
+\Phi(A,y)\overset{Y}{\underset{A \to +\infty}{\rightrightarrows}}F(y)
+\end{equation}
+или 
+\begin{equation}
 F(y)\overset{Y}{\rightrightarrows}
 \end{equation}
 Также как и выше, получаем 
 
-\begin{thm}[Критерий Гейне равномерной сходимости НИЗОП-1]
+\begin{thm}[критерий Гейне равномерной сходимости НИЗОП-1]
 \begin{equation}
 \label{lec10:8}
- \eqref{lec10:7} \iff \forall A_n \ge a, A_n\rightarrow +\infty \implies 
- \varphi_n(y) = \phi(A_n,y) \overset{Y}\rightrightarrows F(y) 
+ \eqref{lec10:7} \iff \forall A_n \ge a,\ A_n\rightarrow +\infty \implies 
+ \varphi_n(y) = \phi(A_n,y) \overset{Y}\rightrightarrows F(y).
 \end{equation}
 \end{thm}
 Используя связь между равномерной сходимостью НИЗОП-1 и равномерной 
 сходимостью соответствующей ФП, получаем следующий супремальный критерий 
-сходимости НИЗОП-1:
+сходимости НИЗОП\nobreakdash-1:
 \begin{equation}
 \label{lec10:9}
-F(y)\overset{X} \rightrightarrows \sup\left|\phi(A , y) - F(y) \right| 
+F(y)\overset{X} \rightrightarrows \iff \sup\left|\phi(A , y) - F(y) \right| 
 \underset{A \to + \infty}\to 0 \end{equation}
+
+Нетрудно видеть, что \eqref{lec10:9} равносильно
 \begin{equation}
-\label{lec10:10}\iff \underset{\forall y \in 
+\label{lec10:10} \underset{\forall y \in 
 Y}\sup\left|\int\limits_A^{+\infty} f(x,y)\right| \underset{A \to + \infty} 
-\to 0  \end{equation}
+\to 0. \end{equation}
 
 \begin{exmp}
-\[ \left\{\begin{array}{rcl}
+\[ \left\{\begin{array}{l}
 		F(y)=\int\limits_0^{+\infty}ye^{-xy}dx\\
 		y \in Y = (0,+\infty)\\
 		\end{array}
 		\right. \]
-$\forall A \ge 0 \implies \int\limits_A^{+\infty}ye^{-xy}dx \overset{y > 0} = 
-\left[e^{-xy} \right]_{x = A}^{A = +\infty} = e^{-Ay} $
 
-$\sup\left| \int\limits_A^{+\infty}ye^{-xy}dx \right|=\underset{y > 0}\sup  
+\[\forall A \ge 0 \implies \int\limits_A^{+\infty}ye^{-xy}dx \overset{y > 0} = 
+\left[e^{-xy} \right]_{x = A}^{A = +\infty} = e^{-Ay}\]
+Отсюда
+\[\sup\left| \int\limits_A^{+\infty}ye^{-xy}dx \right|=\underset{y > 0}\sup  
 \left( e^{-Ay}\right) = \left[y \to +0\right] = 1 \underset{A \to 
-+\infty}\nrightarrow 0 $	
++\infty}\nrightarrow 0\]
 
-$F(y) = \int\limits_0^{+\infty}ye^{-xy} = 1 \in \R;$ F(y) не сходится 
+Получаем, что $F(y) = \displaystyle\int\limits_0^{+\infty}ye^{-xy} = 1 \in 
+\R$, т.~е. $F(y)$ не сходится 
 равномерно.
 \end{exmp}
 
-В частности получаем, по аналогии с ФП, следующее достаточное условие 
-равномерной сходимости НИЗОП-2:
-$\exists g(x) \ge 0 \implies \left| f(x,y) \right| \le g(x), \forall x \ge a, 
-\forall y \in Y $ в случае сходимости $\int\limits_a^{+\infty}g(x)dx \implies 
-\int\limits_a^{+\infty}f(x,y) \overset{Y}\rightrightarrows $
+\begin{thm}[достаточное условие 
+равномерной сходимости НИЗОП-2]
+Если $\exists g(x) \ge 0$ такое, что $\left| f(x,y) \right| \le g(x), \forall 
+x \ge a\quad
+\forall y \in Y $, то в случае сходимости $\int\limits_a^{+\infty}g(x)dx$ 
+получаем, что 
+$\int\limits_a^{+\infty}f(x,y) \overset{Y}\rightrightarrows.$ 
+\end{thm}
 
 \begin{crl*}[критерий Коши сходимости НИЗОП-1]
 НИЗОП-1 сходится равномерно для $ y \in Y$ тогда и только тогда, 
-когда\begin{equation}\label{lec10:11} \forall \eps > 0, \exists \delta = 
-\delta_\eps \ge a, \forall \tilde{A} \ge \delta, \bar{A} \ge \delta, \forall y 
-\in Y \implies \left| \int\limits_{\tilde{A}}^{\bar{A}}f(x,y)dx \right| \le 
-\eps \end{equation}
+когда\begin{equation}\label{lec10:11} \forall \eps > 0\quad \exists \delta = 
+\delta_\eps \ge a\quad \forall \widetilde{A}, \bar{A} \ge \delta \quad \forall 
+y 
+\in Y \implies \left| \int\limits_{\widetilde{A}}^{\bar{A}}f(x,y)\;dx \right| 
+\le
+\eps. \end{equation}
 \end{crl*}
 
-Аналогично, как для ФР и ФП доказываются признаки Дирихле и Абеля:
+Аналогично, как для ФР и ФП, доказываются признаки Дирихле и Абеля:
 
 \begin{thm}
-[признак Дирихле равномерной сходимости НИЗОП-1]:
+[признак Дирихле равномерной сходимости НИЗОП-1]
 
-Пусть при каждом фиксированном $y \in Y$ функции $f(x,y),g(x,y)$ непрерывны 
-для $\forall x \ge a$, если функция $g(x,y)$ непрерывно дифференцируема 
-($\exists g(x,y)_x^\prime на [a;+\infty] \times Y $), когда $g(x,y)$ 
-монотонна по $x, \forall \fix \ y \in Y$ то при выполнении условий:
-
+Пусть при каждом $\fix y \in Y$ функции $f(x,y)$, $g(x,y)$ непрерывны 
+для $\forall x \ge a$. Если функция $g(x,y)$ непрерывно дифференцируема по $x$
+(т.~е. $\exists g'_x(x,y)$ на $\left[a;+\infty\right[ \times Y $), то в 
+случае, когда $g'_x$ сохраняет один и тот же знак, т.~е. $g(x,y)$ 
+монотонна по $x \ge a$ для $\forall \fix \ y \in Y$, то 
+$\int\limits_a^{+\infty} g(x,y)f(x,y) \overset{Y}{\rightrightarrows}$ при 
+выполнении следующих условий:
 \begin{enumerate}
-\item $H(x,y) = \int\limits_a^x f(t,y)dt$ равномерно ограничена на 
+\item $H(x,y) = \int\limits_a^x f(t,y)\;dt$ равномерно ограничена на 
 $[a;+\infty]$ 
-, то  есть $\exists C = const \ge 0 \implies \left|H(x,y)\right| \le C, 
-\forall x \ge a, \forall y \in Y.$
+, т.~е. $\exists C = const \ge 0 \implies \left|H(x,y)\right| \le C \quad
+\forall x \ge a\quad \forall y \in Y$
 \item $g(x,y)\underset{x \to +\infty}{\overset{Y}{\rightrightarrows} 0}$
-Тогда $\int\limits_a^{+\infty} g(x,y)f(x,y) \overset{Y}{\rightrightarrows}$
 \end{enumerate}
 \end{thm}
 
 \begin{thm}[признак Абеля равномерной сходимости НИЗОП-1]
 
-Пусть при $\forall \fix \ y \in Y $ функции $g(x,y), f(x,y), g(x,y)_x^\prime$ 
-непрерывны на $[a;+\infty]\times Y.$Если $ g(x,y)_x^\prime \not = 0, \forall x 
-\ge a, \forall y \in Y $ то при выполнении условий:
+Пусть при $\forall \fix \ y \in Y $ функции $g(x,y)$, $f(x,y)$, $g'_x(x,y)$ 
+непрерывны на $\left[a;+\infty\right[\times Y.$Если $ g'_x(x,y) \not = 0\ 
+\forall x 
+\ge a \ \forall y \in Y $, то $\int\limits_a^{+\infty} g(x,y)f(x,y) 
+\overset{Y}{\rightrightarrows}$ при выполнении следующих условий:
 
 \begin{enumerate}
 \item $\int\limits_a^{+\infty}f(x,y)dx \overset{Y}{\rightrightarrows}$
 
-\item $g(x,y)$ ограничена, то есть $\forall x \ge a, \forall y \in Y, \exists 
+\item $g(x,y)$ ограничена, то есть $\forall x \ge a \quad \forall y \in Y 
+\quad \exists 
 C = 
 const \ge 0 \implies \left|g(x,y)\right| \le C $
 \end{enumerate}
 \end{thm}
 
 Доказательство признаков Дирихле и Абеля имеются в книге <<Математический 
-Анализ>>, А.~А.~Леваков.
+Анализ>>, автор А.~А.~Леваков.
 
 
 \section{ Предельный переход НИЗОП-1}
-\begin{thm}Теорема.(О переходе к пределу под знаком НИЗОП-1)
+\begin{thm}[о переходе к пределу под знаком НИЗОП-1]
 Пусть
 
 \begin{enumerate}
-\item $\forall \fix \ y \in Y$ функция $f(x,y)$ непрерывна $x \in [a;+\infty)$ 
+\item Для $\forall \fix \ y \in Y$ функция $f(x,y)$ непрерывна $x \in 
+[a;+\infty)$ 
 .
 \item $\forall A \ge a \implies f(x,y) \overset{\forall [a;A]}{\underset{y \to 
 y_0}{\rightrightarrows}} \phi(x) $, где $y_0$ точка множества $Y$.
@@ -146,23 +164,29 @@ y_0}\lim\int\limits_a^{+\infty}f(x,y)dx =\int\limits_a^{+\infty} \underset{y
 \begin{proof}
 Используя критерий Гейне получаем, что предельная функция $\varphi(x) 
 =\underset{y \to y_0}{\lim}f(x,y)$ непрерывна $\forall x \ge a$. Поэтому 
-$\varphi(x) \in R([\tilde{A};\bar{A}]), \forall [\tilde{A};\bar{A}] \subset 
+$\varphi(x) \in R([\widetilde{A};\bar{A}]), \forall [\widetilde{A};\bar{A}] 
+\subset 
 [a;+\infty) $.
 
 Далее из критерия Коши сходимости НИЗОП-1 в силу равномерной сходимости 
 \eqref{lec9_1:1} следует, что $\forall \eps > 0, \exists \delta = \delta_\eps 
-\ge a, \forall \tilde{A},\bar {A} \ge \delta, (\tilde{A} < \bar{A}), \forall y 
-\in Y \implies \left| \int\limits_{\tilde{A}}^{\bar{A}}f(x,y)dx \right| \le 
+\ge a, \forall \widetilde{A},\bar {A} \ge \delta, (\widetilde{A} < \bar{A}), 
+\forall y 
+\in Y \implies \left| \int\limits_{\widetilde{A}}^{\bar{A}}f(x,y)dx \right| 
+\le 
 \eps  $
 Отсюда учитывая, что для СИЗОП 
-$G(y)=\int\limits_{\tilde{A}}^{\bar{A}}f(x,y)dx$ выполняются все условия 
+$G(y)=\int\limits_{\widetilde{A}}^{\bar{A}}f(x,y)dx$ выполняются все условия 
 предельного перехода для СИЗОП.
 
 Имеем $\underset{y \to y_0}\lim  \left| 
-\int\limits_{\tilde{A}}^{\bar{A}}f(x,y)dx  \right| = \left| \underset{y \to 
-y_0}\lim \int\limits_{\tilde{A}}^{\bar{A}}f(x,y)dx  \right| = \left| 
-\int\limits_{\tilde{A}}^{\bar{A}}  \underset{y \to y_0}\lim f(x,y)dx  \right| 
-= \left| \int\limits_{\tilde{A}}^{\bar{A}}\varphi(x,y)dx \right| \le \eps $.
+\int\limits_{\widetilde{A}}^{\bar{A}}f(x,y)dx  \right| = \left| \underset{y 
+\to 
+y_0}\lim \int\limits_{\widetilde{A}}^{\bar{A}}f(x,y)dx  \right| = \left| 
+\int\limits_{\widetilde{A}}^{\bar{A}}  \underset{y \to y_0}\lim f(x,y)dx  
+\right| 
+= \left| \int\limits_{\widetilde{A}}^{\bar{A}}\varphi(x,y)dx \right| \le \eps 
+$.
 
 Отсюда используя критерий Коши сходимости НИ-1 получаем, что 
 $\int\limits_a^{+\infty}\varphi(x)dx$ сходится.
