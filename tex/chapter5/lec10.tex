@@ -44,7 +44,7 @@ F(y)\overset{Y}{\rightrightarrows}
 \begin{equation}
 \label{lec10:8}
  \eqref{lec10:7} \iff \forall A_n \ge a,\ A_n\rightarrow +\infty \implies 
- \varphi_n(y) = \phi(A_n,y) \overset{Y}\rightrightarrows F(y).
+ \phi_n(y) = \phi(A_n,y) \overset{Y}\rightrightarrows F(y).
 \end{equation}
 \end{thm}
 Используя связь между равномерной сходимостью НИЗОП-1 и равномерной 
@@ -143,136 +143,150 @@ const \ge 0 \implies \left|g(x,y)\right| \le C $
 
 
 \section{ Предельный переход НИЗОП-1}
-\begin{thm}[о переходе к пределу под знаком НИЗОП-1]
+\begin{thm}[о предельном переходе в НИЗОП-1]
 Пусть
 
 \begin{enumerate}
-\item Для $\forall \fix \ y \in Y$ функция $f(x,y)$ непрерывна $x \in 
+\item Для $\forall \fix  y \in Y$ функция $f(x,y)$ непрерывна для $\forall x 
+\in 
 [a;+\infty)$ 
 .
 \item $\forall A \ge a \implies f(x,y) \overset{\forall [a;A]}{\underset{y \to 
-y_0}{\rightrightarrows}} \phi(x) $, где $y_0$ точка множества $Y$.
+y_0}{\rightrightarrows}} \phi(x) $, где $y_0$~--- точка множества $Y$.
 \end{enumerate}
 
-Если $\int\limits_a^{+\infty}f(x,y)dx \overset{Y}\rightrightarrows $, то тогда 
-предел \begin{equation}\label{lec10:12}
-\underset{y \to y_0}\lim F(y) \overset{(1)}= \underset{y \to 
+Если \[\int\limits_a^{+\infty}f(x,y)dx \overset{Y}\rightrightarrows, \] то 
+тогда 
+\begin{equation}\label{lec10:12}
+\exists \underset{y \to y_0}\lim F(y) \stk{lec9_1:1}= \underset{y \to 
 y_0}\lim\int\limits_a^{+\infty}f(x,y)dx =\int\limits_a^{+\infty} \underset{y 
-\to y_0}\lim f(x,y)dx = \int\limits_a^{+\infty}\varphi(x)dx \end{equation}
+\to y_0}\lim f(x,y)dx = \int\limits_a^{+\infty}\phi(x)dx. \end{equation}
 \end{thm}
 
 \begin{proof}
-Используя критерий Гейне получаем, что предельная функция $\varphi(x) 
-=\underset{y \to y_0}{\lim}f(x,y)$ непрерывна $\forall x \ge a$. Поэтому 
-$\varphi(x) \in R([\widetilde{A};\bar{A}]), \forall [\widetilde{A};\bar{A}] 
+Используя критерий Гейне получаем, что предельная функция ${\phi(x) 
+=\underset{y \to y_0}{\lim}f(x,y)}$ непрерывна $\forall x \ge a$. Поэтому 
+$\phi(x) \in R([\widetilde{A};\bar{A}])\quad \forall [\widetilde{A};\bar{A}] 
 \subset 
 [a;+\infty) $.
 
 Далее из критерия Коши сходимости НИЗОП-1 в силу равномерной сходимости 
-\eqref{lec9_1:1} следует, что $\forall \eps > 0, \exists \delta = \delta_\eps 
-\ge a, \forall \widetilde{A},\bar {A} \ge \delta, (\widetilde{A} < \bar{A}), 
+\eqref{lec9_1:1} следует, что \[\forall \eps > 0\quad \exists \delta = 
+\delta_\eps 
+\ge a\quad \forall \widetilde{A},\bar {A} \ge \delta \ (\widetilde{A} < 
+\bar{A}) \quad
 \forall y 
 \in Y \implies \left| \int\limits_{\widetilde{A}}^{\bar{A}}f(x,y)dx \right| 
 \le 
-\eps  $
+\eps. \]
 Отсюда учитывая, что для СИЗОП 
 $G(y)=\int\limits_{\widetilde{A}}^{\bar{A}}f(x,y)dx$ выполняются все условия 
-предельного перехода для СИЗОП.
-
-Имеем $\underset{y \to y_0}\lim  \left| 
+предельного перехода для СИЗОП,
+получаем, что \[\underset{y \to y_0}\lim  \left| 
 \int\limits_{\widetilde{A}}^{\bar{A}}f(x,y)dx  \right| = \left| \underset{y 
 \to 
 y_0}\lim \int\limits_{\widetilde{A}}^{\bar{A}}f(x,y)dx  \right| = \left| 
 \int\limits_{\widetilde{A}}^{\bar{A}}  \underset{y \to y_0}\lim f(x,y)dx  
 \right| 
-= \left| \int\limits_{\widetilde{A}}^{\bar{A}}\varphi(x,y)dx \right| \le \eps 
-$.
+= \left| \int\limits_{\widetilde{A}}^{\bar{A}}\phi(x,y)dx \right| \le \eps 
+.\]
 
-Отсюда используя критерий Коши сходимости НИ-1 получаем, что 
-$\int\limits_a^{+\infty}\varphi(x)dx$ сходится.
-
-Кроме того \begin{equation}\label{lec10:13}  \forall A \ge a \implies 
+Отсюда, используя критерий Коши сходимости НИ-1, получаем, что 
+$\int\limits_a^{+\infty}\phi(x)dx$ сходится.
+Кроме того, \begin{equation}
+\begin{gathered}
+\label{lec10:13}  \forall A \ge a \implies 
 \left|\int\limits_{a}^{+\infty}f(x,y)dx  
--\int\limits_{a}^{+\infty}\varphi(x)dx \right| = 
-\left|\int\limits_{a}^{+\infty}(f(x,y) - \varphi(x))dx \right| = 
-\left|\int\limits_{a}^{A}(f(x,y) - \varphi(x))dx - 
-\int\limits_{A}^{+\infty}\varphi(x)dx + 
-\int\limits_{a}^{+\infty}f(x,y)dx\right| \le \left| \int\limits_{a}^{A}(f(x,y) 
-- \varphi(x))dx \right| + \left|\int\limits_{a}^{+\infty}\varphi(x)dx \right| 
-+ \left| \int\limits_{a}^{+\infty}f(x,y)dx\right|\end{equation}
-Далее учитывая, что $\forall \eps \ge 0, \exists \delta = \delta_\eps, \forall 
-A \ge \delta, \forall y \in Y  $ второе и третье слагаемое в \eqref{lec10:13}
-в силу теоремы $ \ge \eps$.
+-\int\limits_{a}^{+\infty}\phi(x)dx \right| = 
+\left|\int\limits_{a}^{+\infty}(f(x,y) - \phi(x))dx \right| = \\ =
+\left|\int\limits_{a}^{A}(f(x,y) - \phi(x))dx - 
+\int\limits_{A}^{+\infty}\phi(x)dx + 
+\int\limits_{A}^{+\infty}f(x,y)dx\right| \le\\\le \left| 
+\int\limits_{a}^{A}(f(x,y) 
+- \phi(x))dx \right| + \left|\int\limits_{A}^{+\infty}\phi(x)dx \right| 
++ \left| \int\limits_{A}^{+\infty}f(x,y)dx\right|
+\end{gathered}
+\end{equation}
+Далее учитывая, что $\forall \eps \ge 0 \quad \exists \delta = \delta_\eps 
+\quad \forall 
+A \ge \delta \quad \forall y \in Y  $ второе и третье слагаемое в 
+\eqref{lec10:13}
+не превосходят $\eps$ в силу условий теоремы.
 
-Из \eqref{lec10:13} получаем $ \left| \int\limits_{a}^{+\infty}f(x,y)dx - 
-\int\limits_{a}^{+\infty}\varphi(x)dx\right| \le \left| 
-\int\limits_{a}^{A}(f(x,y) - \varphi(x))dx \right| + 2\eps \le 
-\int\limits_{a}^{A}\left| f(x,y) - \varphi(x)\right|dx + 2\eps  $.
+Из \eqref{lec10:13} получаем: \[ \left| \int\limits_{a}^{+\infty}f(x,y)dx - 
+\int\limits_{a}^{+\infty}\phi(x)dx\right| \le \left| 
+\int\limits_{a}^{A}(f(x,y) - \phi(x))dx \right| + 2\eps \le 
+\int\limits_{a}^{A}\left| f(x,y) - \phi(x)\right|dx + 2\eps  .\]
 
-$ \forall A \ge \delta \ge a, \forall y \in Y$, зафиксируем $A$, тогда из 
-теоремы о предельном переходе в СИЗОП следует$ \exists \sigma_\eps, \forall y 
-\in Y, 0 < \left|y - y_0 \right| \ge \sigma_\eps \implies 
-\int\limits_{a}^{A}(f(x,y) - \varphi(x))dx \le \eps   $.
+$ \forall A \ge \delta \ge a \quad \forall y \in Y$ зафиксируем $A$, тогда из 
+теоремы о предельном переходе в СИЗОП следует: \[ \exists \sigma_\eps \quad 
+\forall y 
+\in Y \quad 0 < \left|y - y_0 \right| \le \sigma_\eps \implies 
+\int\limits_{a}^{A}(f(x,y) - \phi(x))dx \le \eps .\]
 
-Получаем конченую оценку $\left| \int\limits_{a}^{A}(f(x,y) - \varphi(x))dx 
-\right| + 2\eps \le 3\eps$.
+Получаем конечную оценку: \[\left| \int\limits_{a}^{A}(f(x,y) - \phi(x))dx 
+\right| + 2\eps \le 3\eps. \qedhere\]
 \end{proof}
 
 \begin{crl*}[о непрерывности НИЗОП-1]
-Пусть функция $f(x,y)$ непрерывна $[a;+\infty) \times [ c; d]$. Тогда если 
+Пусть функция $f(x,y)$ непрерывна на ${[a;+\infty) \times [ c; d]}$. Тогда 
+если 
 $\int\limits_a^{+\infty}f(x,y)dx \overset{[c;d]}\rightrightarrows F(y)$, то
-$ F(y) = \int\limits_a^{+\infty}f(x,y)dx$ непрерывна $\forall y \in [c;d]$
+$ F(y) = \int\limits_a^{+\infty}f(x,y)dx$ непрерывна на $y \in [c;d]$.
 \end{crl*}
 
 \begin{proof}
-Из достаточного условия равномерной сходимости Ф2П следует $\forall A \ge a, 
-\forall y \in [c;d] $ $f(x,y) \overset{[a;A]}{\underset{y \to 
-y_0}{\rightrightarrows}} f(x,y) $
+Из достаточного условия равномерной сходимости Ф2П следует \[\forall A \ge a 
+\quad
+\forall y \in [c;d] \quad f(x,y) \overset{[a;A]}{\underset{y \to 
+y_0}{\rightrightarrows}} f(x,y_0).\]
 
-Отсюда используя теорему о предельном переходе получаем:$\exists \underset{y 
+Отсюда, используя теорему о предельном переходе, получаем
+\[\exists \underset{y 
 \to y_0}{\lim} F(y) = \underset{y \to y_0}\lim \int\limits_a^{+\infty}f(x,y)dx 
-= \int\limits_a^{+\infty}\underset{y \to y_0}\lim f(x,y)dx = F(y) $, то есть 
+= \int\limits_a^{+\infty}\underset{y \to y_0}\lim f(x,y)dx = F(y_0) ,\] то 
+есть 
 НИЗОП-1 $F(y) = \int\limits_a^{+\infty}f(x,y)dx $ непрерывен $ \forall y \in 
-[c;d] \implies F(y) $непрерывна для $ \forall y \in [c;d]$
-
-Доказательства теоремы выше справедливы, когда вместо равномерной сходимости 
-используется локальная равномерная сходимость, а именно$\forall [\alpha;\beta] 
-\subset Y \implies F(y) \overset{[\alpha;\beta]}{\rightrightarrows}$. 
-Обоснование такое же, как и в случае локальной равномерной сходимости ФП и ФР.
-$f(x,y)$ $[a;+\infty]\times[c;d]$
+[c;d]$, откуда $F(y)$ непрерывна для $ \forall y \in [c;d]$.
 \end{proof}
 
+\begin{rem}
+Доказательства теоремы выше справедливы, когда вместо равномерной сходимости 
+используется локальная равномерная сходимость, а именно, $\forall 
+[\alpha;\beta] 
+\subset Y \implies F(y) \overset{[\alpha;\beta]}{\rightrightarrows}.$
+
+Обоснование такое же, как и в случае локальной равномерной 
+сходимости ФП и ФР.
+\end{rem}
+
 \begin{exmp}
-Ранее было показано
-$\int\limits_0^{+\infty}ye^{-xy}dx \xrightarrow{\forall y > 0}$
+Ранее было показано, что
+\[\int\limits_0^{+\infty}ye^{-xy}dx \xrightarrow{\forall y > 0},\]
+но в то же время
+\[\int\limits_0^{+\infty}ye^{-xy}dx \overset{\forall y > 
+0}{\not\rightrightarrows}.\]
 
-$\int\limits_0^{+\infty}ye^{-xy}dx \overset{\forall y > 
-0}{\not\rightrightarrows}$
-
-Так как здесь подынтегральная функция $f(x,y) = ye^{-xy}$ непрерывна $\forall 
-x \ge 0, \forall \in [\alpha,\beta] \subset [0;+\infty)$ 
-Отсюда следует
-
-$\int\limits_0^{+\infty}ye^{-xy}dx \overset{\forall y > 
-0}{\not\rightrightarrows}$
-
-Иначе был бы возможен предельный переход в НИЗОП-1 $y \to +0 $, а в данном 
-случае:
-
-$\underset{y \to +0}\lim\int\limits_0^{+\infty}ye^{-xy}dx = 1 \ne 0 = 
-\int\limits_0^{+\infty}\underset{y \to +0}\lim ye^{-xy}dx$
+Так как здесь подынтегральная функция $f(x,y) = ye^{-xy}$ непрерывна для 
+$\forall 
+x \ge 0$ ${\forall y \in [\alpha,\beta] \subset [0;+\infty)}$, то
+отсюда следует, что $\int\limits_0^{+\infty}ye^{-xy}dx \not\rightrightarrows$.
+Иначе был бы возможен предельный переход в НИЗОП-1 при $y \to +0 $, т.~е.:
+\[\underset{y \to +0}\lim\int\limits_0^{+\infty}ye^{-xy}dx \lim_{y\to+0} 
+\big[e^{-xy}\big]_0^{+\infty} = 1 \ne 0 = 
+\int\limits_0^{+\infty}\underset{y \to +0}\lim ye^{-xy}dx.\]
 \end{exmp}
 
 \section{Почленное интегрирование и дифференцирование НИЗОП-1}
 
 \begin{thm}
-[о перестановке порядка интегрирования в повторном интеграле у одного 
+[о перестановке порядка интегрирования в повторном интеграле, у одного 
 из которых имеется бесконечный предел]
-Пусть функция $f(x,y)$ непрерывна на $[a;+\infty)\times [c;d]$, если $F(y) = 
+Пусть функция $f(x,y)$ непрерывна на $[a;+\infty)\times [c;d]$. Если $F(y) = 
 \int\limits_a^{+\infty}f(x,y)dx \overset{y \in [c;d]}{\rightrightarrows}$ , то 
-  $\exists \int\limits_c^d F(y)dy =\int\limits_c^d\left( 
+\[\exists \int\limits_c^d F(y)dy =\int\limits_c^d\left( 
 \int\limits_a^{+\infty}f(x,y)dx\right) dy = 
-\int\limits_a^{+\infty}\left(\int\limits_c^d f(x,y)dy\right)dx $
+\int\limits_a^{+\infty}\left(\int\limits_c^d f(x,y)dy\right)dx.\]
 \end{thm}
 
 \end{document}
