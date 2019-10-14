@@ -1,0 +1,84 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+	\section{Интеграл Эйлера-Пуассона}
+	
+	\begin{equation}\label{lec11:6}
+		\int\limits_0^{+\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+	\end{equation}
+	
+	Этот интеграл был вычислен при изучении двойных интегралов (см. доказательство). 
+	
+	Обобщение интеграла Эйлера-Пуассона
+	
+	\begin{equation}\label{lec11:7}
+		\int\limits_0^{+\infty} e^{-ax^2} dx \overset{a > 0}{=} \left[ x = \frac{t}{\sqrt{a}} \bigg|_0^{+\infty} \right] = \int\limits_0^{+\infty} \frac{e^{-t^2}}{\sqrt{a}} dt \overset{\eqref{lec11:6}}{=} \frac{1}{2} \sqrt{\frac{\pi}{a}} \;, a > 0
+	\end{equation}
+	
+	\begin{exmp}
+		$$
+		I = \int\limits_0^{+\infty} e^{-ax^2} \ch (bx) dx, 
+		\; a > 0, b \in \R
+		$$.
+		
+		\begin{equation*}
+			\begin{gathered}
+				I = \frac{1}{2} \int\limits_0^{+\infty} e^{-ax^2} (e^{bx} + e^{-bx}) dx = \frac{1}{2} \int\limits_0^{+\infty} e^{-ax + bx} dx + \frac{1}{2} \int\limits_0^{+\infty} e^{-ax^2 - bx} dx = \frac{1}{4} \int\limits_{-\infty}^{+\infty} e^{-a \left( x - \frac{b}{2a} \right)^2 + \frac{b^2}{4a}} dx + \\
+				+ \frac{1}{4} \int\limits_{-\infty}^{+\infty} e^{-a \left( x + \frac{b}{2a} \right)^2 + \frac{b^2}{4a}} dx = 
+				\left[ 
+					\begin{gathered}
+						t = \left( x - \frac{b}{2a} \right) \bigg|_{-\infty}^{+\infty} \\
+						t = \left( x + \frac{b}{2a} \right) \bigg|_{-\infty}^{+\infty}
+					\end{gathered}
+				\right] 
+				= \left( \frac{1}{4} \int\limits_{-\infty}^{+\infty} e^{-at^2} dt + \frac{1}{4} \int\limits_{-\infty}^{+\infty} e^{-at^2} dt \right) e^{\frac{b^2}{4a}} = \\
+				= \left( \frac{1}{2} \int\limits_{-\infty}^{+\infty} e^{-at^2} dt \right) e^{-\frac{b^2}{4a}} = \left( \int\limits_0^{+\infty} e^{-at^2} dt \right) e^{\frac{b^2}{4a}} \overset{\eqref{lec11:7}}{=} \frac{1}{2} \sqrt{\frac{\pi}{a}} e^{\frac{b^2}{4a}}, \; a > 0
+			\end{gathered}
+		\end{equation*}
+	\end{exmp}
+
+	\section{Интеграл Дирихле}
+	
+	\begin{equation}\label{lec11:8}
+		\int\limits_0^{+\infty} \frac{\sin x}{x} dx = \frac{\pi}{2}
+	\end{equation}	
+	
+	Для обоснования $\eqref{lec11:8}$ рассмотрим следующий НИЗОП-1
+	
+	\begin{equation}\label{lec11:9}
+		\begin{cases}
+			\displaystyle F(y) = \int\limits_0^{+\infty} e^{-xy} \frac{\sin x}{x} dx \\
+			y > 0
+		\end{cases}
+	\end{equation}
+
+	Во-первых, $\eqref{lec11:9}$ сходится для $\forall y > 0$, что следует из оценки $\displaystyle \left|F(y)\right| \leq \int\limits_0^{+\infty} e^{-xy} \frac{\overbrace{|\sin x|}^{\leq 1}}{x} dx \leq \int\limits_0^{+\infty} e^{-xy} dx = \frac{1}{y} \in \R$ --- сходится для $\forall y > 0$. 
+	
+	$\displaystyle f(x, y) = e^{-xy} \frac{\sin x}{x}. \; \exists \lim_{x \rightarrow +0} f(x, y) = e^0 \cdot 1 = 1 \in \R$. Точка $x = 0$ является точкой устранимого разрыва и, во-вторых, $\displaystyle\forall y > 0, \forall x > 0 \implies \exists f^{'}_y (x, y) = -e^{-xy} \sin x$ непрерывна для $\displaystyle\forall [\alpha, \beta] \subset (0, +\infty) \implies |f^{'}_y (x, y)| \leq e^{-xy} \leq e^{\alpha x} = g(x)$.
+	
+	$\displaystyle \int\limits_0^{+\infty} g(x) dx = \int\limits_0^{+\infty} e^{-\alpha x} dx \overset{\alpha > 0}{=} \frac{1}{\alpha} \in \R$ --- сходится. По признаку Вейерштрасса $\int\limits_0^{+\infty} f^{'}_y (x, y) dx$ сходится локально равномерно для $\forall y > 0$. Поэтому воспользуемся формулой Лейбница
+	
+	$\displaystyle \exists F^{'}(y) = - \int\limits_0^{+\infty} e^{-xy} \sin x dx = \ldots = $ (см. пример соответствующего пункта) $\displaystyle = - \frac{1}{1 + y^2} \implies F(y) = - \int \frac{dy}{1 + y^2} = C - \arctan y$.
+	
+	В данном случае, учитывая, что $\displaystyle\frac{e^{-xy} \sin x}{x} \overset{x > 0, y > 0}{\underset{y \rightarrow +\infty}{\longrightarrow}} 0, \; F(y) \underset{y \rightarrow +\infty}{\longrightarrow} 0 \implies 0 = \lim_{y \rightarrow +\infty} (C - \arctan y) = C - \frac{\pi}{2} \implies C = \frac{\pi}{2}$.
+
+	\begin{equation}\label{lec11:10}
+		\forall y > 0 \implies F(y) \overset{\eqref{lec11:9}}{=} = \frac{\pi}{2} - \arctan y
+	\end{equation}
+
+	Используя далее теорему о предельном переходе в НИЗОП-1 $\eqref{lec11:10}$ из получаем
+	
+	$$
+	\int\limits_0^{+\infty} \frac{\sin x dx}{x} = \lim_{y \rightarrow +0} F(y) = \lim_{y \rightarrow +0} \left( \frac{\pi}{2} - \arctan y \right) = \frac{\pi}{2}
+	$$
+
+\end{document}
