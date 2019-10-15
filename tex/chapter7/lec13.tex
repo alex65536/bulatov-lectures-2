@@ -31,7 +31,8 @@ $
 $
 \\
 $
-1) x \to + 0; f(x, a) \underset{k \to +0}\sim \left[ e^{-x} \underset{x \to +0} \to 1 \right] \sim \frac{1}{x^{1-a}}
+1) x \to + 0; f(x, a) \underset{k \to +0}\sim \left[ e^{-x} 
+\underset{x \to +0} \to 1 \right] \sim \frac{1}{x^{1-a}}
 $
 \\
 $
@@ -39,7 +40,10 @@ $
 	0 \le f(x, a) = \dfrac{x^{a+1}}{e^x} \cdot \dfrac{1}{x^2} \le \dfrac{c}{x^2}, c=const \ge 0;
 $
 
-Особенность \eqref{lec13:1}, $G(a) = \int\limits_0^1 e^{-x} x^{a-1} dx +\int\limits_1^{+\infty} e^{-x} x^{a-1} dx $ - Первый интеграл - НИЗОП-2, второй - НИЗОП-1. Первое слагаемое сходится, когда \begin{equation}
+Особенность \eqref{lec13:1}, $G(a) = \int\limits_0^1 e^{-x} x^{a-1} dx +
+\int\limits_1^{+\infty} e^{-x} x^{a-1} dx $ - 
+Первый интеграл - НИЗОП-2, второй - НИЗОП-1. 
+Первое слагаемое сходится, когда \begin{equation}
 	\label{lec13:2}
 	1 - a < 1 \implies a > 0
 \end{equation}
@@ -73,15 +77,20 @@ $
 $\forall a > 0$
 
 $
-\forall x \in N_0 \implies \exists f^{(k)}_a = \cdots = \int\limits_0^{+\infty} e^x x^{a-1} \ln^k x dx 
+\forall x \in N_0 \implies \exists f^{(k)}_a = \cdots = 
+\int\limits_0^{+\infty} e^x x^{a-1} \ln^k x dx 
 $
 
 Гамма-функция бесконечно число раз непрерывно дифференцируема.
-При этом, т.~к. $G'(a) = \int\limits_0^{+\infty} e^{-x} x^{a-1} \ln^2 x dx \ge 0$ , то график для Г(а) будет выпуклым вниз. Имеем
+При этом, т.~к. $G'(a) = \int\limits_0^{+\infty} e^{-x} x^{a-1} \ln^2 x dx \ge 0$,
+то график для Г(а) будет выпуклым вниз. Имеем
 $
 G(1) = \int\limits_0^{+\infty} e^{-x} dx = [-e^{-x}]^{+\infty}_0 = 1
 \\
-G(2) = \int\limits_0^{+\infty} e^{-x} \alpha dx = - \int\limits_0^{+\infty} x d(e^{-x}) = xe^{-x}|^{+\infty}_0 + \int\limits_0^{+\infty} e^{-x} dx = 0 + 1 = 1
+G(2) = \int\limits_0^{+\infty} e^{-x} \alpha dx = 
+- \int\limits_0^{+\infty} x d(e^{-x}) = 
+xe^{-x}|^{+\infty}_0 + \int\limits_0^{+\infty} e^{-x} dx = 
+0 + 1 = 1
 \\
 \exists a_0 \in (1, 2) \implies G'(a_0) = 0$, т.~е. $a_0$ - стационарная точка - точка минимума.
 
@@ -93,7 +102,9 @@ $G(a_0) = G_{min} \simeq 0.886$
 
 Интегрирование по частям имеем:
 $
-G(a) = \int\limits_0^{+\infty} e^{-x} d(\dfrac{x^a}{a}) = \dfrac{e^{-x}x^a}{a} |^{+\infty}_0 - \int\limits_0^{+\infty} \frac{x^a}{a} d(e^{-x}) = \frac{1}{a} \int\limits_0^{+\infty} e^{-x} x^a dx = \frac{G(a+1)}{a}
+G(a) = \int\limits_0^{+\infty} e^{-x} d(\dfrac{x^a}{a}) =
+ \dfrac{e^{-x}x^a}{a} |^{+\infty}_0 - \int\limits_0^{+\infty} \frac{x^a}{a} d(e^{-x}) = 
+ \frac{1}{a} \int\limits_0^{+\infty} e^{-x} x^a dx = \frac{G(a+1)}{a}
 \\
 G(a) = \frac{G(a+1)}{a}
 \\
@@ -123,12 +134,16 @@ G(n) = (n-1)!,  \forall n \in \N
 $
 a = n + \frac{1}{2}, n \in \N
 \\
-G(n + \frac{1}{2}) = (n - \frac{1}{2})G(n-\frac{1}{2})=\ldots=(n-\frac{1}{2})(n-\frac{3}{2})\ldots\frac{3}{2}\frac{1}{2}G(\frac{1}{2}) = \frac{(2n-1)!!}{2^n}G(\frac{1}{2})
+G(n + \frac{1}{2}) = (n - \frac{1}{2})G(n-\frac{1}{2})=\ldots=
+(n-\frac{1}{2})(n-\frac{3}{2})\ldots\frac{3}{2}\frac{1}{2}G(\frac{1}{2}) = 
+\frac{(2n-1)!!}{2^n}G(\frac{1}{2})
 $
 Используем интеграл Эйлера-Пуассона:
 \\
 $
-G(\frac{1}{2})= \int\limits_0^{+\infty} e^{-x} x^{-\frac{1}{2}} dx = [] = \int\limits_0^{+\infty} e^{-t^2} t^{-1} 2t dt^2 = 2 \int\limits_0^{+\infty} e^{-t^2} dt = 2 \frac{\sqrt{\pi}}{2} = \sqrt{\pi}
+G(\frac{1}{2})= \int\limits_0^{+\infty} e^{-x} x^{-\frac{1}{2}} dx = [] = 
+\int\limits_0^{+\infty} e^{-t^2} t^{-1} 2t dt^2 = 2 \int\limits_0^{+\infty} e^{-t^2} dt 
+= 2 \frac{\sqrt{\pi}}{2} = \sqrt{\pi}
 $
 
 \begin{equation}
@@ -174,7 +189,8 @@ $
 \end{thm}
 
 \begin{proof}
-	$G(a) \stk{lec13:1}= [x=ty, y = \dfrac{x}{t}|^{+\infty}_0, t > 0 - \fix, dx = t dy] = \int\limits_0^{+\infty}e^{-ty}(ty)^{\alpha-1}tdy = t^a \int\limits_0^{+\infty}e^{-ty}y^{\alpha-1}dy$
+	$G(a) \stk{lec13:1}= [x=ty, y = \dfrac{x}{t}|^{+\infty}_0, t > 0 - \fix, dx = t dy] = 
+	\int\limits_0^{+\infty}e^{-ty}(ty)^{\alpha-1}tdy = t^a \int\limits_0^{+\infty}e^{-ty}y^{\alpha-1}dy$
 	\begin{equation}
 		\label{lec13:9}
 		\dfrac{G(a)}{t^a}=\int\limits_0^{+\infty}e^{-ty}y^{\alpha-1}dy
