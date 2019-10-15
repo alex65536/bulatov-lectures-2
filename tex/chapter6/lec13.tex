@@ -22,39 +22,39 @@
 \end{exmp}
 
 \begin{thm}[Вторая формула Фруллани]
-	$f \in C(]0, +\infty[)$. Если $\exists f(+0) \in \R$ и $\forall \epsilon > 0 \implies \int\limits_{\epsilon}^{+\infty} \frac{f(t)}{t} dt$ сходится, то тогда $\Phi(a, b) = f(+0) \ln(\frac{b}{a})$
+	$f \in C(]0, +\infty[)$. Если $\exists f(+0) \in \R$ и $\forall \eps > 0 \implies \int\limits_{\eps}^{+\infty} \frac{f(t)}{t} dt$ сходится, то тогда $\Phi(a, b) = f(+0) \ln(\frac{b}{a})$
 \end{thm}
 
 \begin{proof}
-	$\Phi(a, b) \stk{lec12:16}= \lim\limits_{\epsilon \to +0} \int\limits_{\epsilon}^{+\infty} \frac{f(ax) - f(bx)}{x} dx 
+	$\Phi(a, b) \stk{lec12:16}= \lim\limits_{\eps \to +0} \int\limits_{\eps}^{+\infty} \frac{f(ax) - f(bx)}{x} dx 
 	=
-	\lim\limits_{\epsilon \to +0} (\int\limits_{\epsilon}^{+\infty} \frac{f(ax)}{x} dx - \int\limits_{\epsilon}^{+\infty} \frac{f(bx)}{x} dx) 
+	\lim\limits_{\eps \to +0} (\int\limits_{\eps}^{+\infty} \frac{f(ax)}{x} dx - \int\limits_{\eps}^{+\infty} \frac{f(bx)}{x} dx) 
 	= \\ =
-	\left[ \begin{gathered} 1) t = ax|^{+\infty}_{\epsilon a}, dx = \frac{dt}{a} \\ 2) t = bx|^{+\infty}_{\epsilon b}, dx = \frac{dt}{b} \end{gathered} \right] 
+	\left[ \begin{gathered} 1) t = ax|^{+\infty}_{\eps a}, dx = \frac{dt}{a} \\ 2) t = bx|^{+\infty}_{\eps b}, dx = \frac{dt}{b} \end{gathered} \right] 
 	=
-	\lim\limits_{\epsilon \to +0} ( \int\limits_{\epsilon a}^{+\infty} \dfrac{f(t)}{\frac{t}{a}} \dfrac{dt}{a} - \int\limits_{\epsilon b}^{+\infty} \dfrac{f(t)}{\frac{t}{b}} \frac{dt}{b} )
+	\lim\limits_{\eps \to +0} ( \int\limits_{\eps a}^{+\infty} \dfrac{f(t)}{\frac{t}{a}} \dfrac{dt}{a} - \int\limits_{\eps b}^{+\infty} \dfrac{f(t)}{\frac{t}{b}} \frac{dt}{b} )
 	=
-	\lim\limits_{\epsilon \to +0} ( \int\limits_{\epsilon a}^{+\infty} \dfrac{f(t)dt}{t} - \int\limits_{\epsilon b}^{+\infty} \dfrac{f(t)dt}{t})
+	\lim\limits_{\eps \to +0} ( \int\limits_{\eps a}^{+\infty} \dfrac{f(t)dt}{t} - \int\limits_{\eps b}^{+\infty} \dfrac{f(t)dt}{t})
 	=
-	\lim\limits_{\epsilon \to +0} \int\limits_{\epsilon a}^{\epsilon b} \dfrac{f(t)dt}{t}
+	\lim\limits_{\eps \to +0} \int\limits_{\eps a}^{\eps b} \dfrac{f(t)dt}{t}
 	=
-	\left[ \begin{gathered} \textup{Теорема о среднем для ОИ, } \\ \exists t \in [a\epsilon, b\epsilon] \end{gathered} \right]
+	\left[ \begin{gathered} \textup{Теорема о среднем для ОИ, } \\ \exists t \in [a\eps, b\eps] \end{gathered} \right]
 	=
-	\lim\limits_{\epsilon \to +0} f(t_{\epsilon}) \int\limits_{\epsilon a}^{\epsilon b} \dfrac{dt}{t}
+	\lim\limits_{\eps \to +0} f(t_{\eps}) \int\limits_{\eps a}^{\eps b} \dfrac{dt}{t}
 	\\ = \\
-	\lim\limits_{\epsilon \to +0} f(t_{\epsilon} \ln \frac{b}{a} 
+	\lim\limits_{\eps \to +0} f(t_{\eps} \ln \frac{b}{a} 
 	= 
-	\left[ \begin{gathered} a\epsilon 
-	\le t_{\epsilon} \le b_{\epsilon} 
-	\\ f(t_{\epsilon}) \to f(+0) 
-	\end{gathered} \implies t_{\epsilon} \to +0 \right]
+	\left[ \begin{gathered} a\eps 
+	\le t_{\eps} \le b_{\eps} 
+	\\ f(t_{\eps}) \to f(+0) 
+	\end{gathered} \implies t_{\eps} \to +0 \right]
 	=
 	f(+0) \ln \frac{b}{a}
 	$
 	\end{proof}
 	
 	\begin{exmp}
-		$I = \int\limits_0^{+\epsilon} \frac{\cos \alpha x - \cos \beta x]}{x} dx, \alpha\beta \neq 0
+		$I = \int\limits_0^{+\eps} \frac{\cos \alpha x - \cos \beta x]}{x} dx, \alpha\beta \neq 0
 		\\
 		\cos \beta x = \cos |\alpha| x
 		\\
@@ -63,11 +63,11 @@
 		I = \left[ \begin{gathered} f(x) = \cos x \\ a = |\alpha| > 0 \\ b = |\beta| > 0 \end{gathered} \right]
 		= F(a, b).
 		\\ 
-		\begin{gathered} f(x) = \cos x  - \textup{c} \forall x \ge 0 \\ \exists f(+0) = \cos 0 = 1 \in \R \end{gathered} \implies \forall \epsilon > 0 \implies \int\limits_{\epsilon}^{+\infty} \frac{f(t)}{t} dt = \int\limits_{\epsilon}^{+\infty} \frac{\cos t}{t} dt$ - сходится по Дирихле.
+		\begin{gathered} f(x) = \cos x  - \textup{c} \forall x \ge 0 \\ \exists f(+0) = \cos 0 = 1 \in \R \end{gathered} \implies \forall \eps > 0 \implies \int\limits_{\eps}^{+\infty} \frac{f(t)}{t} dt = \int\limits_{\eps}^{+\infty} \frac{\cos t}{t} dt$ - сходится по Дирихле.
 	\end{exmp}
 
 	\begin{thm}[третья формула Фруллани]
-		$f \in C([0, +\infty])$. Если $\exists f(+\infty) \in R$ и  $\forall \epsilon > 0 \implies \int\limits_0^{\epsilon} \frac{f(t)}{t} dt$ - сходится.
+		$f \in C([0, +\infty])$. Если $\exists f(+\infty) \in R$ и  $\forall \eps > 0 \implies \int\limits_0^{\eps} \frac{f(t)}{t} dt$ - сходится.
 		
 		\begin{equation}
 			\label{lab13:20}
@@ -90,8 +90,8 @@
 		$
 		\exists g(+0) = f(+\infty) \in \R
 		\\
-		\int\limits_{A > 0}^{+\infty} \frac{g(t)}{t} dt = \left[ t = \frac{1}{x} \right] = \int\limits_0^{\epsilon = \frac{1}{A} > 0} \frac{f(x)}{x} dx$ - сходится $\forall \epsilon > \frac{1}{A} > 0 $
-		В силу предыдущей теоремы, $\Phi(a, b) = g(+0) = \ldots = f(+\infty) \ln \frac{\frac{1}{b}}{\frac{1}{a}} = f(+\infty) ln (\frac{a}{b})$
+		\int\limits_{A > 0}^{+\infty} \frac{g(t)}{t} dt = \left[ t = \frac{1}{x} \right] = \int\limits_0^{\eps = \frac{1}{A} > 0} \frac{f(x)}{x} dx$ - сходится $\forall \eps > \frac{1}{A} > 0 $
+		В силу предыдущей теоремы, $\Phi(a, b) = g(+0) = \ldots = f(+\infty) \ln \frac{\frac{1}{b}}{\frac{1}{a}} = f(+\infty) \ln (\frac{a}{b})$
 	\end{proof}
 
 
@@ -105,10 +105,10 @@
 		\left[ \begin{gathered}
 			f(x) = e^{-\frac{1}{x}} - \textup{ непрерывно } \forall x > 0 \\
 			f(+\infty) = 1 \in \R \\
-			\int\limits_0^{\forall \epsilon > 0} \frac{f(t)}{t} dt = \int\limits_0^{\epsilon} \frac{e^{-\frac{-\alpha}{t}}}{t} dt = [t = \frac{1}{x}]
+			\int\limits_0^{\forall \eps > 0} \frac{f(t)}{t} dt = \int\limits_0^{\eps} \frac{e^{-\frac{-\alpha}{t}}}{t} dt = [t = \frac{1}{x}]
 		\end{gathered} \right]
 		=
-		\int\limits_{A = \frac{1}{\epsilon} > 0}^{+\infty} \frac{e^{-x}}{x} dx - \textup{ сходится  } \forall A > 0
+		\int\limits_{A = \frac{1}{\eps} > 0}^{+\infty} \frac{e^{-x}}{x} dx - \textup{ сходится  } \forall A > 0
 		\\
 		0 \le \frac{e^{-x}}{x^3} \frac{1}{x^2} \le \frac{c}{x^2} - \textup{ сходится}
 		\\

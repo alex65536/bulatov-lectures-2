@@ -77,13 +77,13 @@ $
 $
 
 Гамма-функция бесконечно число раз непрерывно дифференцируема.
-При этом, т.~к. $G'(a) = \int\limits_0^{+\infty} e^{-x} x^{a-1} ln^2 x dx \ge 0$ , то график для Г(а) будет выпуклым вниз. Имеем
+При этом, т.~к. $G'(a) = \int\limits_0^{+\infty} e^{-x} x^{a-1} \ln^2 x dx \ge 0$ , то график для Г(а) будет выпуклым вниз. Имеем
 $
 G(1) = \int\limits_0^{+\infty} e^{-x} dx = [-e^{-x}]^{+\infty}_0 = 1
 \\
 G(2) = \int\limits_0^{+\infty} e^{-x} \alpha dx = - \int\limits_0^{+\infty} x d(e^{-x}) = xe^{-x}|^{+\infty}_0 + \int\limits_0^{+\infty} e^{-x} dx = 0 + 1 = 1
 \\
-\exists a_0 \in (1, 2) \implies G'(a_0) = 0$, т.е. $a_0$ - стационарная точка - точка минимума.
+\exists a_0 \in (1, 2) \implies G'(a_0) = 0$, т.~е. $a_0$ - стационарная точка - точка минимума.
 
 Приближенное вычисление $a_0 \simeq 1,462$
 
@@ -174,7 +174,7 @@ $
 \end{thm}
 
 \begin{proof}
-	$G(a) \stk{lec13:1}= [x=ty, y = \dfrac{x}{t}|^{+\infty}_0, t > 0 - fix, dx = t dy] = \int\limits_0^{+\infty}e^{-ty}(ty)^{\alpha-1}tdy = t^a \int\limits_0^{+\infty}e^{-ty}y^{\alpha-1}dy$
+	$G(a) \stk{lec13:1}= [x=ty, y = \dfrac{x}{t}|^{+\infty}_0, t > 0 - \fix, dx = t dy] = \int\limits_0^{+\infty}e^{-ty}(ty)^{\alpha-1}tdy = t^a \int\limits_0^{+\infty}e^{-ty}y^{\alpha-1}dy$
 	\begin{equation}
 		\label{lec13:9}
 		\dfrac{G(a)}{t^a}=\int\limits_0^{+\infty}e^{-ty}y^{\alpha-1}dy
