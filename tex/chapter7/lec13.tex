@@ -18,7 +18,7 @@
 Эйлеровым интегралом второго рода или гамма-функцией называется
 \begin{equation}
 \label{lec13:1}
-G(a) = \int\limits_0^{+\infty}e^{-x}x^{a-1}dx
+\Gamma(a) = \int\limits_0^{+\infty}e^{-x}x^{a-1}dx
 \end{equation}
 
 \[
@@ -27,7 +27,7 @@ G(a) = \int\limits_0^{+\infty}e^{-x}x^{a-1}dx
 \\
 $
 	x \implies +0; f(x, a) \sim [e^{-1} \to 1] \sim \frac{1}{x^{1-a}}
-	G(a) = \int\limits_0^1e^{-x}x^{a-1}dx + \int_0^{+\infty}e^{-x}x^{a-1}dx
+	\Gamma(a) = \int\limits_0^1e^{-x}x^{a-1}dx + \int_0^{+\infty}e^{-x}x^{a-1}dx
 $
 \\
 $
@@ -41,7 +41,7 @@ $
 	c=const \ge 0;
 $
 
-Особенность \eqref{lec13:1}, $G(a) = \int\limits_0^1 e^{-x} x^{a-1} dx +
+Особенность \eqref{lec13:1}, $\Gamma(a) = \int\limits_0^1 e^{-x} x^{a-1} dx +
 \int\limits_1^{+\infty} e^{-x} x^{a-1} dx $ - 
 Первый интеграл~--- НИЗОП-2, второй~--- НИЗОП-1. 
 Первое слагаемое сходится, когда \begin{equation}
@@ -59,7 +59,7 @@ $\int\limits_1^{+\infty}\dfrac{c}{x^2}dx$~--- сходится по степен
 Нетрудно получить, что оба слагаемых в \eqref{lec13:2} в полученной области 
 сходятся по Вейерштрассу локально равномерно:
 \[
-G(a) \overset{\forall \left[ \alpha, \beta \right] \in (0, 
+\Gamma(a) \overset{\forall \left[ \alpha, \beta \right] \in (0, 
 +\infty)}{\rightrightarrows}
 \]
 
@@ -76,7 +76,7 @@ C() \forall x > 0, \forall a > 0.
 \]
 
 $
-\exists G'(a) = \int\limits_0^{+\infty} ()'_a dx = \int\limits_0^{+\infty} 
+\exists \Gamma'(a) = \int\limits_0^{+\infty} ()'_a dx = \int\limits_0^{+\infty} 
 e^{-x} x^{a-1} \ln x dx 
 $
 
@@ -88,54 +88,54 @@ $
 $
 
 Гамма-функция бесконечно число раз непрерывно дифференцируема.
-При этом, т.~к. $G'(a) = \int\limits_0^{+\infty} e^{-x} x^{a-1} \ln^2 x dx \ge 
+При этом, т.~к. $\Gamma'(a) = \int\limits_0^{+\infty} e^{-x} x^{a-1} \ln^2 x dx \ge 
 0$,
 то график для Г(а) будет выпуклым вниз. Имеем
 $
-G(1) = \int\limits_0^{+\infty} e^{-x} dx = [-e^{-x}]^{+\infty}_0 = 1
+\Gamma(1) = \int\limits_0^{+\infty} e^{-x} dx = [-e^{-x}]^{+\infty}_0 = 1
 \\
-G(2) = \int\limits_0^{+\infty} e^{-x} \alpha dx = 
+\Gamma(2) = \int\limits_0^{+\infty} e^{-x} \alpha dx = 
 - \int\limits_0^{+\infty} x d(e^{-x}) = 
 xe^{-x}|^{+\infty}_0 + \int\limits_0^{+\infty} e^{-x} dx = 
 0 + 1 = 1
 \\
-\exists a_0 \in (1, 2) \implies G'(a_0) = 0$, т.~е. $a_0$~--- стационарная 
+\exists a_0 \in (1, 2) \implies \Gamma'(a_0) = 0$, т.~е. $a_0$~--- стационарная 
 точка~--- точка минимума.
 
 Приближенное вычисление $a_0 \simeq 1,462$
 
-$G(a_0) = G_{min} \simeq 0.886$
+$\Gamma(a_0) = \Gamma_{min} \simeq 0.886$
 
 В результате график
 
 Интегрирование по частям имеем:
 $
-G(a) = \int\limits_0^{+\infty} e^{-x} d(\dfrac{x^a}{a}) =
+\Gamma(a) = \int\limits_0^{+\infty} e^{-x} d(\dfrac{x^a}{a}) =
  \dfrac{e^{-x}x^a}{a} |^{+\infty}_0 - \int\limits_0^{+\infty} \frac{x^a}{a} 
  d(e^{-x}) = 
- \frac{1}{a} \int\limits_0^{+\infty} e^{-x} x^a dx = \frac{G(a+1)}{a}
+ \frac{1}{a} \int\limits_0^{+\infty} e^{-x} x^a dx = \frac{\Gamma(a+1)}{a}
 \\
-G(a) = \frac{G(a+1)}{a}
+\Gamma(a) = \frac{\Gamma(a+1)}{a}
 \\
-G(0) \simeq \frac{G(1)}{a} = \dfrac{1}{a}
+\Gamma(0) \simeq \frac{\Gamma(1)}{a} = \dfrac{1}{a}
 $
 a=0~--- асимптота
 
 Формула понижения
 \\
 $
-G(a+1) = aG(a), \forall a > 0
+\Gamma(a+1) = a\Gamma(a), \forall a > 0
 \\
-G(1) = 1
+\Gamma(1) = 1
 \\
 \forall n \in \N
 \\
-G(n) = (n-1)G(n-1) = \cdots = (n-1) \cdot \ldots \cdots 2 \cdot 1 G(1) = (n-1)!
+\Gamma(n) = (n-1)\Gamma(n-1) = \cdots = (n-1) \cdot \ldots \cdots 2 \cdot 1 \Gamma(1) = (n-1)!
 $
 
 \begin{equation}
 \label{lec13:4}
-G(n) = (n-1)!,  \forall n \in \N
+\Gamma(n) = (n-1)!,  \forall n \in \N
 \end{equation}
 
 \eqref{lec13:4}~--- гамма-функция~--- обобщение факториала.. 
@@ -144,14 +144,14 @@ G(n) = (n-1)!,  \forall n \in \N
 $
 a = n + \frac{1}{2}, n \in \N
 \\
-G(n + \frac{1}{2}) = (n - \frac{1}{2})G(n-\frac{1}{2})=\ldots=
-(n-\frac{1}{2})(n-\frac{3}{2})\ldots\frac{3}{2}\frac{1}{2}G(\frac{1}{2}) = 
-\frac{(2n-1)!!}{2^n}G(\frac{1}{2})
+\Gamma(n + \frac{1}{2}) = (n - \frac{1}{2})\Gamma(n-\frac{1}{2})=\ldots=
+(n-\frac{1}{2})(n-\frac{3}{2})\ldots\frac{3}{2}\frac{1}{2}\Gamma(\frac{1}{2}) = 
+\frac{(2n-1)!!}{2^n}\Gamma(\frac{1}{2})
 $
 Используем интеграл Эйлера-Пуассона:
 \\
 $
-G(\frac{1}{2})= \int\limits_0^{+\infty} e^{-x} x^{-\frac{1}{2}} dx = [] = 
+\Gamma(\frac{1}{2})= \int\limits_0^{+\infty} e^{-x} x^{-\frac{1}{2}} dx = [] = 
 \int\limits_0^{+\infty} e^{-t^2} t^{-1} 2t dt^2 = 2 \int\limits_0^{+\infty} 
 e^{-t^2} dt 
 = 2 \frac{\sqrt{\pi}}{2} = \sqrt{\pi}
@@ -160,8 +160,8 @@ $
 \begin{equation}
 	\label{lec13:5}
 	\begin{cases}
-		G(n+\frac{1}{2}) = \frac{(2n-1)!!}{2^n} \sqrt{\pi}, \forall n \in \N \\
-		G(\frac{1}{2}) = \sqrt{\pi}
+		\Gamma(n+\frac{1}{2}) = \frac{(2n-1)!!}{2^n} \sqrt{\pi}, \forall n \in \N \\
+		\Gamma(\frac{1}{2}) = \sqrt{\pi}
 	\end{cases}
 \end{equation}
 
@@ -201,13 +201,13 @@ $
 \end{thm}
 
 \begin{proof}
-	$G(a) \stk{lec13:1}= [x=ty, y = \dfrac{x}{t}|^{+\infty}_0, t > 0 - \fix, dx = 
+	$\Gamma(a) \stk{lec13:1}= [x=ty, y = \dfrac{x}{t}|^{+\infty}_0, t > 0 - \fix, dx = 
 	t dy] = 
 	\int\limits_0^{+\infty}e^{-ty}(ty)^{\alpha-1}tdy = t^a 
 	\int\limits_0^{+\infty}e^{-ty}y^{\alpha-1}dy$
 	\begin{equation}
 		\label{lec13:9}
-		\dfrac{G(a)}{t^a}=\int\limits_0^{+\infty}e^{-ty}y^{\alpha-1}dy
+		\dfrac{\Gamma(a)}{t^a}=\int\limits_0^{+\infty}e^{-ty}y^{\alpha-1}dy
 	\end{equation}
 	
 	заменяя в \eqref{lec13:8} $a > 0$ на $a+b > 0$ и $t > 0$ на $(1+t) > 0$, 
@@ -215,7 +215,7 @@ $
 	
 	\begin{equation}
 	\label{lec13:10}
-	\dfrac{G(a+b)}{(1+t)^{a+b}} = \int\limits_0^{+\infty} e^{-(1+t)y} y^{(a+b) - 
+	\dfrac{\Gamma(a+b)}{(1+t)^{a+b}} = \int\limits_0^{+\infty} e^{-(1+t)y} y^{(a+b) - 
 	1} dy
 	\end{equation}
 \end{proof}
