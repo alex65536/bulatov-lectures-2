@@ -12,7 +12,7 @@
 \begin{document}
 	\section{Интеграл Эйлера-Пуассона}
 	
-	\begin{equation}\label{lec11:6}
+	\begin{equation}\label{lec11:7}
 		\int\limits_0^{+\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
 	\end{equation}
 	
@@ -20,7 +20,7 @@
 	
 	Обобщение интеграла Эйлера-Пуассона
 	
-	\begin{equation}\label{lec11:7}
+	\begin{equation}\label{lec11:8}
 		\int\limits_0^{+\infty} e^{-ax^2} dx \overset{a > 0}{=} \left[ x = \frac{t}{\sqrt{a}} \bigg|_0^{+\infty} \right] = \int\limits_0^{+\infty} \frac{e^{-t^2}}{\sqrt{a}} dt \overset{\eqref{lec11:6}}{=} \frac{1}{2} \sqrt{\frac{\pi}{a}} \;, a > 0
 	\end{equation}
 	
@@ -48,13 +48,13 @@
 
 	\section{Интеграл Дирихле}
 	
-	\begin{equation}\label{lec11:8}
+	\begin{equation}\label{lec11:9}
 		\int\limits_0^{+\infty} \frac{\sin x}{x} dx = \frac{\pi}{2}
 	\end{equation}	
 	
 	Для обоснования $\eqref{lec11:8}$ рассмотрим следующий НИЗОП-1
 	
-	\begin{equation}\label{lec11:9}
+	\begin{equation}\label{lec11:10}
 		\begin{cases}
 			\displaystyle F(y) = \int\limits_0^{+\infty} e^{-xy} \frac{\sin x}{x} dx \\
 			y > 0
@@ -71,7 +71,7 @@
 	
 	В данном случае, учитывая, что $\displaystyle\frac{e^{-xy} \sin x}{x} \overset{x > 0, y > 0}{\underset{y \rightarrow +\infty}{\longrightarrow}} 0, \; F(y) \underset{y \rightarrow +\infty}{\longrightarrow} 0 \implies 0 = \lim_{y \rightarrow +\infty} (C - \arctan y) = C - \frac{\pi}{2} \implies C = \frac{\pi}{2}$.
 
-	\begin{equation}\label{lec11:10}
+	\begin{equation}\label{lec11:11}
 		\forall y > 0 \implies F(y) \overset{\eqref{lec11:9}}{=} = \frac{\pi}{2} - \arctan y
 	\end{equation}
 
