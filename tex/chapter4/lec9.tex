@@ -1,0 +1,338 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+
+\begin{exmps}
+\begin{enumerate}
+	\item Пусть $I = \displaystyle\int\limits_{0}^1 \dfrac{dx}{\sqrt{1 - x^2}} $.
+	Здесь $ f(x) = \dfrac{1}{\sqrt{1 - x^2}} \underset{x \to 1 - 0}{\to}
+	\infty $, т.~е. имеем НИ-2. Но учитывая, что подынтегральная функция 
+	имеет первообразную $ F(x) = \arcsin{x}$~--- непрерывную $ \forall x
+	\in [-1; 1] $, то по формуле Ньютона-Лейбница $ 
+	I = \left[\arcsin \right]_0^1 = \dfrac{\pi}{2} $.
+	\item \[I = \int\limits_{0}^{+\infty} \dfrac{dx}{(x + 1)^{\frac{3}{2}}}\]
+	Имеем НИ-1. \[I = \left[ \int (x + 1)^{\frac{3}{2}} dx\right]_0^{+\infty} 
+	= \left[ \dfrac{-2}{\sqrt{x + 1}} \right]_0^{+\infty} = -2 \left(
+	\lim\limits_{x \to + \infty} \dfrac{1}{\sqrt{x + 1}} - 1 \right) = 2
+	\in \R,\] т.~е. интеграл сходится.
+\end{enumerate}
+\end{exmps}
+\begin{thm}[О замене переменных в НИ]
+	Пусть $ f(x) $ определена на $ [a; b) $, где $ b = +\infty $ либо $ b $ ~---
+	точка неограниченности $ f(x) $.
+	Будем рассматривать НИ нескольких видов:
+	\begin{equation}
+		\label{lec9:1}
+		\int\limits_a^b f(x) dx = 
+		\begin{cases}
+			\int\limits_a^{+\infty} f(x) dx\\
+			\int\limits_{a}^{b - 0} f(x) dx
+		\end{cases}
+	\end{equation}
+	Если функция $ x = \phi(t) $ непрерывно дифференцируема на $ [\alpha; \beta) 
+	$,
+	$ \phi'(t) $ сохраняет знак $ \forall t \in [\alpha; \beta) $, то
+	в случае $ \phi(\alpha) = a $, $ \phi(t) \underset{t \to \beta - 0}{\to} b - 
+	0
+	$ получаем, что \eqref{lec9:1} сходится $\iff$ сходится
+	$ \int\limits_\alpha^\beta f(\phi(t)) \phi'(t) dt $, который может быть как
+	интегралом Римана, так и НИ соответствующего вида, и при этом справедлива 
+	следующая формула замены переменных в НИ:
+	\begin{equation}
+		\label{lec9:2}
+		\int\limits_a^b f(x) dx = 
+		\begin{bmatrix}
+			x|_a^b \iff= t|_\alpha^\beta\\
+			x = \phi(t)\\
+			dx = \phi'(t)dt
+		\end{bmatrix} =
+		\int\limits_\alpha^\beta f(\phi(t)) \phi'(t) dt
+	\end{equation}
+\end{thm}
+\begin{proof}
+	Пусть $ \gamma \in [\alpha; \beta) $. Тогда для $ c = \phi(\gamma) \in
+	[a; b) \implies c \underset{\gamma \to \beta - 0}{\to} b - 0$. Отсюда,
+	используя соответствующую формулу замены переменных в интеграле Римана,
+	имеем
+	\[
+	\int\limits_a^c f(x) dx = 
+	\begin{bmatrix}
+	x|_a^c \iff= t|_\alpha^\beta\\
+	x = \phi(t)\\
+	dx = \phi'(t)dt
+	\end{bmatrix} =
+	\int\limits_\alpha^\gamma f(\phi(t)) \phi'(t) dt
+	\]
+	Переходя здесь к пределу при $ \gamma \to \beta - 0 $ и учитывая, что
+	$ c \to b - 0 $, получаем
+	\[
+	\int\limits_a^b f(x) dx = 
+	\lim\limits_{\underset{(c \to b - 0)}{\gamma \to \beta - 0}}
+	\int\limits_a^c f(x) dx = \lim\limits_{\gamma \to \beta - 0}
+	\int\limits_\alpha^\gamma f(\phi(t)) \phi'(t) dt = 
+	\int\limits_\alpha^\beta f(\phi(t)) \phi'(t) dt
+	\]
+\end{proof}
+\begin{exmps}
+\begin{enumerate}
+	\item \[ I = \int\limits_1^{+\infty} \dfrac{dx}{x\sqrt{x^2 + 1}}
+  \text{~--- НИ-1.}\]
+	\[ I = \int\limits_{1}^{+\infty} \dfrac{dx}{x^2\sqrt{1 + \dfrac{1}{x^2}}} =
+	- \int\limits_{1}^{+\infty} 
+	\dfrac{d\left(\frac{1}{x}\right)}{\sqrt{1 + \frac{1}{x^2}}} = 
+	\begin{bmatrix}
+		t = \frac{1}{x}, x = \frac{1}{t}, dx = - \frac{dt}{t^2}\\
+		x|_{1}^{+\infty} \iff t|_{1}^0
+	\end{bmatrix}
+	= \int\limits_0^{1} \dfrac{dt}{\sqrt{1 + t^2}} = \]\\\[ = \left[
+	\ln(t + \sqrt{1 + t^2})
+	\right]_{0}^1 = \ln(1 + \sqrt{2}) \in \R 
+	\implies I \text{ сходится.}
+	\]
+	\item \[ I = \int\limits_{0}^1 \sqrt{\dfrac{1 + x}{1 - x}} dx  
+	\text{~--- НИ-2, т.~к. } f(x) = \sqrt{\dfrac{1 + x}{1 - x}} 
+	\underset{x \to 1 - 0}{\to} +\infty. \]
+	Имеем
+	\[
+	I = \begin{bmatrix}
+	x = \cos{t}\\ dx = -\sin{t}dt\\
+	t = \arccos{x}\big|_{\frac{\pi}{2}}^0
+	\end{bmatrix} = \int\limits_0^{\frac{\pi}{2}} \ctg{\dfrac{t}{2}}
+	\sin{t} dt = \int\limits_0^{\frac{\pi}{2}} 
+	\sqrt{\dfrac{2\cos^2{\frac{t}{2}}}{2\sin^2\frac{t}{2}}} \cdot 
+	2\sin{\frac{t}{2}}\cos{\frac{t}{2}} dt = 
+	\]
+	\[ =
+	\int\limits_{0}^{\frac{\pi}{2}} 2\cos^2{\frac{t}{2}} dt =
+	\int\limits_0^{\frac{\pi}{2}} (1 + \cos{t}) dt = 
+	\left[t + \sin{t}\right]_{0}^{\frac{\pi}{2}} = 
+	\dfrac{\pi}{2} + 1 \in \R - \text{ сходится.}
+	\]
+\end{enumerate}
+\end{exmps}
+\begin{thm}[интегрирование по частям в НИ]
+	Пусть функции $u = u(x),\ v = v(x)$ непрерывно дифференцируемы на  $[a; b)$,
+	где $ b = +\infty $, либо подынтегральная функция неограничена в окрестности 
+	$ b $. Если
+	$\exists \lim\limits_{x \to b - 0} u(x)v(x) \in \R$ и один из
+	$\int\limits_a^bu(x)v'(x)dx$ или $ \int\limits_a^bv(x)u'(x)dx$
+	сходится, то будет сходится и второй, и при этом справедлива 
+	формула интегрирования по частям:
+	\begin{equation}
+		\label{lec9:3}
+		\int\limits_a^b u(x)v'(x) dx = \left[
+		u(x)v(x)\right]_a^b - 
+		\int\limits_a^b v(x)u'(x) dx,
+	\end{equation}
+	где $ \left[u(x)v(x)\right]_a^b =
+	\lim\limits_{x \to b - 0} u(x)v(x) -
+	u(a)v(a)$.
+\end{thm}
+\begin{proof}
+	Проводится с помощью того же приёма, что и выше, с использованием 
+	соответствующей формулы интегрирования по частям в интеграле Римана.
+\end{proof}
+\begin{exmps}
+	\begin{enumerate}
+	\item
+	$\displaystyle I = \int\limits_0^1 \ln{x} dx $ ~--- НИ-2, т.~к.
+	$ f(x) =\ln{x} \underset{x \to +0}{\to} -\infty$.
+	
+	Используя \eqref{lec9:3}, получаем:
+	\begin{gather*}
+	I = \begin{bmatrix}
+		u(x) = \ln{x} \\
+		v(x) = x
+	\end{bmatrix} \stackrel{\eqref{lec9:3}}{=}
+	\left[x\ln{x}\right]_0^1 - 
+	\int\limits_0^1 d(\ln{x}) = 0 - \lim\limits_{x \to +0} x\ln x -
+	\int\limits_0^1 x \cdot \dfrac{1}{x} dx = \\
+	=
+	- \lim\limits_{x \to +0} \dfrac{\ln{x}}{\frac{1}{x}} -
+	\int\limits_0^1 dx \stackrel{\lopital}{=}
+	- \lim\limits_{x \to +0} \dfrac{\frac{1}{x}}{-\frac{1}{x^2}} -
+	\left[x\right]_0^1 = \lim\limits_{x \to +0} - 1 + 0 = -1 \in \R
+	\text{~--- сходится.}
+	\end{gather*}
+	\item
+	Рассмотрим НИ-1
+	\[
+	\begin{cases}
+		I_1 = \displaystyle\int\limits_0^{+\infty} e^{-ax} \cos{bx}\; dx\\
+		I_2 = \displaystyle\int\limits_0^{+\infty} e^{-ax} \sin{bx}\; dx\\
+		a = const > 0\\
+		b = const \in \R
+	\end{cases}
+	\]
+	Имеем
+	\[
+	I_1 = -\dfrac{1}{a} \int\limits_0^{+\infty} \cos{bx}\;d(e^{-ax})
+	\stackrel{\eqref{lec9:3}}{=} \begin{bmatrix}
+		u = \cos{bx}\\
+		v = e^{-ax}
+	\end{bmatrix} =
+	-\dfrac{1}{a} \left[e^{-ax}\cos{bx}\right]_{0}^{+\infty} +
+	\dfrac{1}{a} \int\limits_0^{+\infty} e^{-ax} d(\cos{bx}) = \]\[ =
+	-\dfrac{1}{a} \left(
+	\lim\limits_{x \to +\infty} \cos{bx} \cdot e^{-ax} - 1\right) -
+	\dfrac{b}{a} \int\limits_0^{+\infty} e^{-ax} \sin{bx} dx =
+	\dfrac{1}{a} - \dfrac{b}{a}I_2.
+	\]
+	Аналогично \[
+	I_2 = -\dfrac{1}{a} \int\limits_0^{+\infty} \sin{bx} \;d(e^{-ax})
+	\stackrel{\eqref{lec9:3}}{=} \begin{bmatrix}
+		u = \sin{bx}\\
+		v = e^{-ax}
+	\end{bmatrix} = 
+	-\dfrac{1}{a} \left[e^{-ax}\sin{bx}\right]_{0}^{+\infty} +
+	\dfrac{b}{a} \int\limits_0^{+\infty} e^{-ax} \cos{bx} dx = 
+	\dfrac{b}{a} I_1.
+	\]
+	Из полученной системы \[
+	\begin{cases}
+		I_1 = \frac{1}{a} - \frac{b}{a} I_2\\
+		I_2 = \frac{b}{a} I_1
+	\end{cases} \implies
+	I_1 = \frac{1}{a} - \frac{b^2}{a^2} I_1 \implies
+	\begin{cases}
+		I_1 = \dfrac{a}{a^2 + b^2}\\
+		I_2 = \dfrac{b}{a^2 + b^2}
+	\end{cases}
+	\]
+	\end{enumerate}
+\end{exmps}
+
+\section{Главное значение (V.P.)}
+Когда НИ расходятся в обычном смысле, они могут сходится в смысле 
+\emph{главного
+значения}, которое определяют только для НИ видов:
+\begin{enumerate}
+\item  \begin{equation}
+\label{lec9:4} \vp
+\int\limits_{-\infty}^{+\infty} f(x) dx = 
+\lim\limits_{A \to +\infty} \int\limits_{-A}^A f(x)dx
+\end{equation}
+\item \begin{equation}
+\label{lec9:5} \vp
+\int\limits_a^b f(x) dx = \begin{bmatrix}
+	\exists c \in \left[a; b\right]\\
+	f(x) \underset{x \to c \pm 0}{\to} \infty
+\end{bmatrix} =
+\lim\limits_{\eps \to +0} \left(
+\int\limits_a^{c - \eps} f(x) dx + 
+\int\limits_{c + \eps}^b f(x) dx
+\right)
+\end{equation} 
+\end{enumerate}
+
+Если рассматриваемые в \eqref{lec9:4} и \eqref{lec9:5} пределы конечны, то
+говорят, что рассматриваемые НИ сходятся \emph{в смысле главного значения.}
+
+Главное значение для НИ-1 обладает следующими основными свойствами:
+\begin{enumerate}[label=\arabic*$^{\circ}$.]
+\item
+$ \forall f(x) \left(f(-x) \stackrel{\forall x \in \R}{=} -f(x) \right) $
+главное значение существует и $\vp\int\limits_{-\infty}^{+\infty}f(x)dx=0$.
+Действительно, из нечётности $ f(x) $ на любом $ [-A; A] \subset \R; A > 0 
+\implies \int\limits_{-A}^A f(x) dx = 0$. Отсюда при $ A \to +\infty $ для
+\eqref{lec9:4} получаем нулевой предел.
+\item
+Если $ f(x) \left(f(-x) \stackrel{\forall x \in \R}{=} f(x) \right) $, то
+\eqref{lec9:4} конечна $ \iff $ сходится $ \int\limits_0^{+\infty}f(x)dx $, и 
+при этом $ \vp \int\limits_{-\infty}^{+\infty} f(x) dx = 
+2\int\limits_0^{+\infty} f(x) dx$. Доказательство следует из того, что для
+чётных $ f(x) $ на любом $ [-A; A] \subset \R; A > 0 
+\implies \int\limits_{-A}^A f(x) dx = 2\int\limits_0^A f(x) dx$, а далее 
+$ A \to +\infty $.
+\item
+Если имеется НИ-2, у которого на $ [a; b) $ имеется конечное число точек
+неограниченности $ c_k,\ k = \overline{1,n},\ a < c_1 < \dots <
+c_n < b $, то, отделяя особенности, имеем: \[\vp \int\limits_a^b f(x) dx = 
+\vp \left(\int\limits_{b_0}^{b_1} + \dots + \int\limits_{b_n - 1}^{b_n}
+\right) = \vp \sum\limits_{i = 1}^n \int\limits_{b_{i - 1}}^{b_i} f(x)dx, \]
+где $ a = b_0 < b_1 < \dots < b_{n - 1} < b_n = b $, где $ b $ выбрано так, 
+чтобы $ c_k \in ]b_{k - 1}; b_k[ $ для $\forall k = \overline{q, n}$, и других 
+$ c_i $ 
+на $ ]b_{k - 1}; b_k[ $ нет.
+\item
+Как для НИ-1, так и для НИ-2, главное значение обладает свойством линейности,
+т.~е. \[\vp \int\limits_a^b \sum\limits_{k = 1}^n \lambda_kf_k(x)dx =
+\sum\limits_{k = 1}^n \lambda_k \vp \int\limits_a^b f_k(x)dx.\]
+\end{enumerate}
+\begin{exmp}
+Рассмотрим НИ-2 \[ I = \int\limits_0^4 \dfrac{xdx}{x^2 - 4x + 3} .\]
+
+Здесь подынтегральная функция $ f(x) = \dfrac{x}{x^2 - 4x + 3} $ имеет
+особенности: $ x_1 = 1 \geq 0$, $ x_2 = 3 \geq 0 $.
+Отделяя особенности, имеем:
+\[
+\underbrace{\int\limits_0^{\frac{3}{2}} \dfrac{xdx}{x^2 - 4x + 3}}_{I_1} +
+\underbrace{\int\limits_\frac{3}{2}^\frac{7}{2}\dfrac{xdx}{x^2 - 4x + 
+3}}_{I_2} +
+\underbrace{\int\limits_\frac{7}{2}^4\dfrac{xdx}{x^2 - 4x + 3}}_{I_3}.
+\] 
+Здесь $ I_1 \text{ и } I_2 $ являются НИ-2 и расходятся в обычном смысле
+в связи с тем, что ${\forall x \in \left[0; \dfrac{3}{2}\right]}$ $\implies$
+$f(x) = \dfrac{x}{(x - 1)(x - 3)} \underset{x \to \pm 0}{\sim}
+\dfrac{1}{4(x - 1)},\ \alpha = 1 \implies I_1$ расходится. Также
+${\forall x \in \left[\dfrac{3}{2}; \dfrac{7}{2}\right]} \implies 
+f(x) \underset{x \to 3 \pm 0}{\sim} \dfrac{3}{2(x - 3)} \implies \alpha = 1,\
+I_2$ расходится.
+
+Для $ x \in \left[\dfrac{7}{2}; 4\right] $ нет
+особенностей, т.~е. она непрерывна, а значит, интегрируема по Риману.
+
+В смысле главного значения имеем
+$ \vp I = \vp I_1 + \vp I_2 + \vp I_3 $.
+\[
+I_1 = \lim\limits_{\eps \to +0} \left(
+\int\limits_0^{1 - \eps} \dfrac{xdx}{(x-1)(x-3)} +
+\int\limits_{1 + \eps}^\frac{3}{2} \dfrac{xdx}{(x-1)(x-3)}
+\right) = \]
+\[ =
+\lim\limits_{\eps \to +0} \left(
+\int\limits_0^{1 - \eps} \left(
+\dfrac{-1}{2(x - 1)} + \dfrac{3}{2(x - 3)}
+\right) dx + \int\limits_{1 + \eps}^\frac{3}{2} \left(
+\dfrac{-1}{2(x - 1)} + \dfrac{3}{2(x - 3)}
+\right) dx
+\right) =
+\]
+\[ =
+\lim\limits_{\eps \to +0} \left(
+\left[
+-\dfrac{1}{2} \ln{|x - 1|} + \dfrac{3}{2} \ln{|x - 3|} 
+\right]_0^{1 - \eps} +
+\left[
+-\dfrac{1}{2} \ln{|x - 1|} + \dfrac{3}{2} \ln{|x - 3|}
+\right]_{1 + \eps}^\frac{3}{2}
+\right) =
+\]
+\[ =
+\lim\limits_{\eps \to +0} \left(
+-\dfrac{1}{2}\ln\eps - \dfrac{3}{2}\ln(\eps + 2) - 0 - \dfrac{3}{2}\ln3 -
+\dfrac{1}{2}\ln\dfrac{1}{2} + \dfrac{1}{2}\ln\eps + 
+\dfrac{3}{2}\ln\dfrac{3}{2}-
+\dfrac{3}{2}\ln|2 - \eps|
+\right) = -\ln 2 \in \R
+\]
+Аналогичным способом, непосредственно посчитав, убеждаемся, что $ \exists \vp
+I_2$, т.~е. НИ сходится в смысле главного значения. Кроме того, $ \vp I_3 = 
+I_3 \in \R $ ~--- сходится. Т.~е., хотя исходный НИ расходится, он будет 
+сходиться в смысле главного значения.
+\end{exmp}
+\begin{exercise}
+	Вычислить в случае $ a < c < b : \vp \displaystyle\int\limits_a^b 
+	\dfrac{dx}{x - c} $.
+\end{exercise}
+
+\end{document}
