@@ -22,8 +22,8 @@ BEGIN {
 		cur_width = length(cur_line);
 		if (add + indent_len > width) {
 			printf( \
-				"error: word \"%s\" too long (%d chars long, but max allowed is %d)\n", \
-				substr($0, 1, add), add, width \
+				"error: word \"%s\" too long (%d chars long plus %d chars indent, but max allowed is %d)\n", \
+				substr($0, 1, add), add, indent_len, width \
 			) >"/dev/stderr";
 			_err = 1;
 			exit 1;
