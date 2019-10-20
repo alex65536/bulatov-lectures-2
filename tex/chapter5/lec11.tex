@@ -127,14 +127,13 @@
 
 \begin{exmp}
 	\[
-	I = \int\limits_0^{+\infty} \frac{e^{-ax} - e^{-bx}}{x} dx,\; a, b > 0
+	I = \int\limits_0^{+\infty} \frac{e^{-ax} - e^{-bx}}{x} dx,\ a, b > 0
 	\]
 	
-	I-й способ:
-	
+	\paragraph{I-й способ.}
 	\[
 	\int\limits_a^b e^{-xy} dy = -\left[ \frac{e^{-xy}}{x} \right]^{b}_{y = a} = 
-	\frac{e^{-ax} - e^{-bx}}{x}, \; x \geq 0
+	\frac{e^{-ax} - e^{-bx}}{x}, \ x \geq 0
 	\]
 	
 	\[
@@ -142,7 +141,7 @@
 	\]
 	
 	\[
-	\int\limits_0^{+\infty} e^{-xy} dx = \frac{1}{y^b}, \; y \in [a, b].
+	\int\limits_0^{+\infty} e^{-xy} dx = \frac{1}{y},\  y \in [a, b].
 	\]
 	
 	 В силу локальной равномерной сходимости соответствующего НИЗОП-1 имеем:
@@ -153,27 +152,22 @@
 	 \ln\left(\frac{b}{a}\right).
 	 \]
 	 
-	 II-ой способ:
+	 \paragraph{II-й способ.}
+	 Рассмотрим НИЗОП-1 \[\displaystyle F(y) = \int\limits_0^{+\infty} 
+	 \frac{e^{-ax} - e^{-xy}}{x} dx, \; y \in [a, b].\] В этом случае выполняются 
+	 все условия теоремы о дифференцировании НИЗОП-1:
 	 
-	 Рассмотрим НИЗОП-1 $\displaystyle F(y) = \int\limits_0^{+\infty} 
-	 \frac{e^{-ax} - e^{-xy}}{x} dx, \; y \in [a, b].$ В этом случае выполняются 
-	 все условия теоремы об интегрировании НИЗОП-1
-	 
-	 $\displaystyle f(x, y) = \frac{e^{-ax} - e^{-xy}}{x}, x > 0, y \in [a, b] 
-	 \implies \exists f^{'}_y (x, y) = e^{-xy}$
-	  --- непрерывна для 
-	 $\forall x > 0, y \in [a, b]$ и 
-	 
-	 $\displaystyle \int\limits_0^{+\infty} f^{'}_y (x, y) dx = 
+	 Так как $\displaystyle f(x, y) = \frac{e^{-ax} - e^{-xy}}{x},\ x > 0,\ y \in [a, b]$, то $\exists f^{'}_y (x, y) = e^{-xy}$
+	  --- непрерывная для 
+	 $\forall x > 0,\ y \in [a, b]$. Также
+	 \[\displaystyle \int\limits_0^{+\infty} f^{'}_y (x, y) dx = 
 	 \int\limits^{+\infty}_0 e^{-xy} dx = \left[ \frac{e^{-xy}}{-y} 
-	 \right]^{+\infty}_{x = 0} = \frac{1}{y} \overset{[a, b]}\rightrightarrows 
-	 \implies \exists F^{'} (y) = \frac{1}{y}.$
+	 \right]^{+\infty}_{x = 0} = \frac{1}{y} \overset{[a, b]}\rightrightarrows \implies \exists F^{'} (y) = \frac{1}{y}.\]
 	 
-	 Тогда $\displaystyle F(y) = \int \frac{dy}{y} = \ln|y| + c_0$. Учитывая, что 
-	 $\displaystyle F(a) = \int\limits_0^{+\infty} 0\;dx = 0, y = 0 \implies 0 = 
+	 Но тогда $\displaystyle F(y) = \int \frac{dy}{y} = \ln|y| + c_0$. Учитывая, что 
+	 $\displaystyle F(a) = \int\limits_0^{+\infty} 0\;dx = 0,\ y = 0$, тогда $0 = 
 	 \ln|a| + c_0 \implies c_0 = -\ln|a| \implies F(y) = \ln\left| \frac{y}{a} 
-	 \right|, \forall y \in [a, b].$ Отсюда, при $y = b > a > 0$
-	 
+	 \right|,\ \forall y \in [a, b].$ Отсюда, при $y = b > a > 0$ получаем, что
 	 \[
 	 I = F(b) = \ln\left(\frac{b}{a}\right).
 	 \]
