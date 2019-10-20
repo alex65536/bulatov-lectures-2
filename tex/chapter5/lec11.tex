@@ -30,7 +30,7 @@
 	$$
 	\int\limits_c^d F(y)dy = \int\limits_c^d \left( \int\limits_a^A f(x, y)dx + \int\limits_A^{+\infty} f(x, y) dx \right) dy = \int\limits_c^d \left( \int\limits_a^A f(x, y) dx \right) dy + \int\limits_c^d \left( \int\limits_A^{+\infty} f(x, y) dx \right) dy.
 	$$
-	Отсуда, используя теорему о почленном интегрировании СИЗОП после предельного перехода $A \longrightarrow +\infty$ в силу $\eqref{lec11:1}$, получаем 
+	Отсюда, используя теорему о почленном интегрировании СИЗОП после предельного перехода $A \longrightarrow +\infty$ в силу $\eqref{lec11:1}$, получаем 
 	$$
 	\exists \int\limits_c^d F(y) dy = \lim_{A \rightarrow +\infty} \int\limits_c^d \left( \int\limits_a^A f(x, y) dx \right) dy \; + \; 0 
 	= \lim_{A \rightarrow +\infty} \int\limits_a^A \left( \int\limits_c^d f(x, y) dy \right) dx 
@@ -78,7 +78,7 @@
 		\end{gathered}
 		\end{equation*}
 		
-		В данном случае, по теореме о непрерывности НИЗОП-1 получаем, что $G(t) = \int\limits_a^{+\infty} f_{t}^{'}(x, t) dx$ непрерывна для $\forall t \in [c, d]$, поэтому по теореме Барроу о диференцировании интеграла Римана с переменным верхним пределом получаем, что
+		В данном случае, по теореме о непрерывности НИЗОП-1 получаем, что $G(t) = \int\limits_a^{+\infty} f_{t}^{'}(x, t) dx$ непрерывна для $\forall t \in [c, d]$, поэтому по теореме Барроу о дифференцировании интеграла Римана с переменным верхним пределом получаем, что
 		
 		$$
 		\exists F^{'}(y) = (c_0 + \int\limits_a^y G(t)dt)^{'}_y = 0 + (\int\limits_a^y G(t)dt)^{'}_y = G(t)\bigg|_{t = y} = \int\limits_a^{+\infty} f^{'}_t (x, t) dx\bigg|_{t = y} = \int\limits^{+\infty}_a  f^{'}_y (x, y) dx
@@ -96,7 +96,7 @@
 	I = \int\limits_0^{+\infty} \frac{e^{-ax} - e^{-bx}}{x} dx,\; a, b > 0
 	$$
 	
-	I-ый способ:
+	I-й способ:
 	
 	$$
 	\int\limits_a^b e^{-xy} dy = -\left[ \frac{e^{-xy}}{x} \right]^{b}_{y = a} = \frac{e^{-ax} - e^{-bx}}{x}, \; x \geq 0
@@ -110,7 +110,7 @@
 	\int\limits_0^{+\infty} e^{-xy} dx = \frac{1}{y^b}, \; y \in [a, b].
 	$$
 	
-	 В силу локальной равномернойсходимости соответствующего НИЗОП-1 имеем:
+	 В силу локальной равномерной сходимости соответствующего НИЗОП-1 имеем:
 	 
 	 $$
 	 I = \int\limits_a^b \left( \int\limits_0^{+\infty} e^{-xy} dx \right) dy = \int\limits_a^b \frac{dy}{y} = \left[ ln|y| \right]^b_a = ln\left(\frac{b}{a}\right).
@@ -158,7 +158,7 @@
 		Пусть:
 		
 		\begin{enumerate}
-			\item $\forall fix \; y \in Y \implies f(x, y)$ непрывна по $x \in [a, b)$;
+			\item $\forall fix \; y \in Y \implies f(x, y)$ непрерывна по $x \in [a, b)$;
 			\item $\forall \varepsilon \in (0, b - a] \implies f(x, y) \overset{[a, b - \varepsilon]}{\underset{y \rightarrow y_0}\rightrightarrows} \phi(x)$, где $y_0$ --- предельная точка для $Y$.
 		\end{enumerate}
 		
@@ -170,7 +170,7 @@
 	\end{thm}
 
 	\begin{crl*}[о непрерывности НИЗОП-2]
-		Если $f(x, y)$ непреывна на $[a, b) \times [c, d]$ и $F(y) = \int\limits_a^b f(x, y) dx \overset{[c, d]}\rightrightarrows \;$, то тогда $F(y) \in C([c, d])$.
+		Если $f(x, y)$ непрерывна на $[a, b) \times [c, d]$ и $F(y) = \int\limits_a^b f(x, y) dx \overset{[c, d]}\rightrightarrows \;$, то тогда $F(y) \in C([c, d])$.
 	\end{crl*}
 
 	\begin{rem}
@@ -185,7 +185,7 @@
 			\item $\exists f^{'}_{y} (x, y)$, непрерывная на множестве $[a, b) \times [c, d]$.
 		\end{enumerate}
 
-		Если $\int\limits_a^b f(x, y) dx \overset{[c, d]}\rightarrow\;$, а $\int\limits_a^b f^{'}_y (x, y) dx \overset{\forall [\alpha, \beta] \subset [c, d]}{\rightrightarrows}$, то тогда справдлива формула Лейбница почленного дифференцирования НИЗОП-2:
+		Если $\int\limits_a^b f(x, y) dx \overset{[c, d]}\rightarrow\;$, а $\int\limits_a^b f^{'}_y (x, y) dx \overset{\forall [\alpha, \beta] \subset [c, d]}{\rightrightarrows}$, то тогда справедлива формула Лейбница почленного дифференцирования НИЗОП-2:
 		
 		$$
 		\exists F(y) = \left( \int\limits_a^b f(x, y) dx \right)^{'}_y = \int\limits_a^b f^{'}_y (x, y) dx, \; y \in [c, d].
