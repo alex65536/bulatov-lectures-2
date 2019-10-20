@@ -175,33 +175,32 @@
 
 \section{НИ-2, зависящий от параметра (НИЗОП-2)}
 
-	Рассмотрим функцию $f(x, y)$, определенную для $\forall x \in [a, b], \forall 
-	y \in Y \subset \R$. Если $\exists y \in Y \implies f(x, y)$ неограничена в 
-	окрестности $x = b$, в этом случае имеем НИЗОП-2 
+	Рассмотрим функцию $f(x, y)$, определенную для $\forall x \in [a, b],\ \forall 
+	y \in Y \subset \R$. Если ${\exists y \in Y}$ такой, что $f(x, y)$ неограничена в 
+	окрестности $x = b$, в этом случае имеем \emph{НИЗОП-2}:
 	\begin{equation}\label{lec11:3}
-		F(y) = \int\limits_a^b f(x, y) dx
+		F(y) = \int\limits_a^b f(x, y) dx.
 	\end{equation}
-	
-	которая считается сходящейся, если $\displaystyle \exists \lim_{x \rightarrow 
+	который считается сходящимся, если $\forall y \in Y\ \displaystyle \exists \lim_{\eps \rightarrow 
 	+0} \int\limits_0^{b - \eps} f(x, y) dx \in \R$.
 	
-	По аналогии с НИЗОП-1 кроме поточечной сходимости $\eqref{lec11:2}$, 
-	рассмотрим равномерную сходимость для $\eqref{lec11:2}$, которая определяется 
+	По аналогии с НИЗОП-1, кроме поточечной сходимости $\eqref{lec11:2}$ 
+	рассмотрим \emph{равномерную сходимость} для $\eqref{lec11:2}$, которая определяется 
 	через 
 	
 	\begin{equation}\label{lec11:4}
-		\Phi(y, \eps) = \int\limits_a^{b - \eps} f(x, y) dx
+		\Phi(y, \eps) = \int\limits_a^{b - \eps} f(x, y) dx,
 	\end{equation}
 	
-	а именно: $F(y) \overset{Y}\rightrightarrows\;$, если $\Phi(y, \eps) 
+	а именно: $F(y) \overset{Y}\rightrightarrows$, если $\Phi(y, \eps) 
 	\overset{Y}{\underset{\eps \rightarrow +0}\rightrightarrows} F(y)$. Из 
 	равномерной сходимости НИЗОП-2 следует поточечная сходимость, обратное, 
 	вообще говоря, неверно. По аналогии с НИЗОП-1 доказывается соответствующие 
 	свойства НИЗОП-2, поэтому ограничимся только формулировками.
 	
 	\begin{thm}[Признак Вейерштрасса равномерной сходимости НИЗОП-2]
-		Если $\exists g(x) \geq 0, \forall x \in [a, b)$ и $\int\limits_a^b g(x) dx$ 
-		сходится, то в случае, когда $|f(x, y)| \leq d(x), \forall y \in Y, \forall 
+		Если $\exists {g(x) \geq 0}$ $\forall x \in [a, b)$ и $\int\limits_a^b g(x) dx$ 
+		сходится, то в случае, когда $|f(x, y)| \leq g(x)\ \forall y \in Y\ \forall 
 		x \in [a, b)$, то тогда $F(y) = \int\limits_a^b f(x, y) dx 
 		\overset{Y}{\rightrightarrows}$.
 	\end{thm}
@@ -210,7 +209,7 @@
 		Пусть:
 		
 		\begin{enumerate}
-			\item $\forall \fix \; y \in Y \implies f(x, y)$ непрерывна по $x \in [a, 
+			\item $\forall \fix y \in Y \implies f(x, y)$ непрерывна по $x \in [a, 
 			b)$;
 			\item $\forall \eps \in (0, b - a] \implies f(x, y) \overset{[a, b - 
 			\eps]}{\underset{y \rightarrow y_0}\rightrightarrows} \phi(x)$, где $y_0$ 
@@ -222,13 +221,13 @@
 		\begin{equation}\label{lec11:5}
 			\exists \lim_{y \rightarrow y_0} \int\limits_a^b f(x, y) dx = 
 			\int\limits_a^b \lim_{y \rightarrow y_0} f(x, y) dx = \int\limits_a^b 
-			\phi(x) dx
+			\phi(x) dx.
 		\end{equation}
 	\end{thm}
 
 	\begin{crl*}[о непрерывности НИЗОП-2]
 		Если $f(x, y)$ непрерывна на $[a, b) \times [c, d]$ и $F(y) = 
-		\int\limits_a^b f(x, y) dx \overset{[c, d]}\rightrightarrows \;$, то тогда 
+		\int\limits_a^b f(x, y) dx \overset{[c, d]}\rightrightarrows$, то тогда 
 		$F(y) \in C([c, d])$.
 	\end{crl*}
 
@@ -243,7 +242,7 @@
 		Пусть:
 
 		\begin{enumerate}
-			\item $f(x, y)$ непрерывна по $x \in [a, b), \forall \fix \; y \in [c, d]$;
+			\item $f(x, y)$ непрерывна по $x \in [a, b)\ \forall \fix \; y \in [c, d]$;
 			\item $\exists f^{'}_{y} (x, y)$, непрерывная на множестве $[a, b) \times 
 			[c, d]$.
 		\end{enumerate}
@@ -255,7 +254,7 @@
 		
 		\[
 		\exists F(y) = \left( \int\limits_a^b f(x, y) dx \right)^{'}_y = 
-		\int\limits_a^b f^{'}_y (x, y) dx, \; y \in [c, d].
+		\int\limits_a^b f^{'}_y (x, y) dx, \ y \in [c, d].
 		\]
 	\end{thm}
 
@@ -282,24 +281,20 @@
 	\end{eans}
 
 	Отметим, что на практике с помощью соответствующей замены 
-	$\displaystyle 
+	\[\displaystyle 
 	\left\{
 		\begin{gathered}
 			t = \frac{1}{(b - x)^\alpha} \\
 			\alpha > 0
 		\end{gathered}
 	\right.
-	$ 
-	
+	\]
 	рассматриваемый НИЗОП-2 $\int\limits_a^b f(x, y) dx$ сводится к НИЗОП-1 
-	
 	\begin{equation}\label{lec11:6}
-		\int\limits_{\frac{1}{(b - x)^\alpha}}^{+\infty} d(t, y) dt
+		\int\limits_{\tfrac{1}{(b - x)^\alpha}}^{+\infty} d(t, y) dt,
 	\end{equation}
-
 	а далее используются доказательства НИЗОП-1.
 	
 	Если в $\eqref{lec11:5}$ получается НИЗОП смешанного типа, то раскладываем 
-	$\eqref{lec11:5}$ на сумму НИЗОП одного типа (первого либо второго).
-	
+	$\eqref{lec11:5}$ на сумму нескольких НИЗОП одного типа (первого либо второго).
 \end{document}
