@@ -9,13 +9,11 @@
 	{img/}
 }
 
-\externaldocument{lec10}
-
 \begin{document}
 
 \begin{proof}
 	$$F(y) = \int\limits_a^{+\infty} f(x, y)dx \overset{[c, d]}\rightrightarrows \implies
-	\forall \varepsilon > \exists \sigma \geq a: \forall A \geq \sigma, \forall y \in [c, d] \implies \left|\int\limits_A^{+\infty}f(x, y) dx \right| \leq \varepsilon.$$ 
+	\forall \varepsilon > 0 \quad \exists \sigma \geq a \quad \forall A \geq \sigma \quad \forall y \in [c, d] \implies \left|\int\limits_A^{+\infty}f(x, y) dx \right| \leq \varepsilon.$$ 
 	Далее получаем, что 
 	$$ \left| \int\limits_c^d\left(\int\limits_A^{+\infty}f(x, y)dx\right) dy\right| 
 	\leq \int\limits_c^d\left|\int\limits_A^{+\infty}f(x, y)dx\right| dy
@@ -43,7 +41,7 @@
 	\begin{enumerate}
 		\item $\displaystyle f(x, y)$ непрерывна для $\forall x \geq a, \forall y \geq c$
 		\item $\displaystyle \int\limits_a^{+\infty} \left| f(x, y) \right| dx \overset{\forall [\alpha, \beta] \subset [a, +\infty) }\rightrightarrows$
-		\item $\displaystyle \int\limits_c^{+\infty} \left| f(x, y) \right| dx \overset{\forall [\alpha, \beta] \subset [c, +\infty) }\rightrightarrows$
+		\item $\displaystyle \int\limits_c^{+\infty} \left| f(x, y) \right| dy \overset{\forall [\alpha, \beta] \subset [c, +\infty) }\rightrightarrows$
 		\item Один из интегралов $\displaystyle \int\limits_c^{+\infty} dy \int\limits_a^{+\infty} \left|f(x, y)\right| dx,
 		\int\limits_a^{+\infty} dx \int\limits_c^{+\infty} \left|f(x, y)\right| dy$
 		сходится. В этом случае
@@ -54,18 +52,18 @@
 \begin{thm}[о дифференцировании НИЗОП-1]
 	Пусть: 
 	\begin{enumerate}
-		\item $\forall fix \; y \in [c, d] \; f(x, y)$ непрерывна по $x \in [a, +\infty)$;
+		\item $\forall \fix y \in [c, d] \; f(x, y)$ непрерывна по $x \in [a, +\infty)$;
 		\item $\exists f^{'}_y (x, y)$ непрерывная на множестве $[a, +\infty) \times [c, d]$;
-		\item $\forall fix \; y \in [c, d] \implies \exists F(y) = \int\limits_a^{+\infty} f(x, y) dx$.
+		\item $\forall \fix \; y \in [c, d] \implies \exists F(y) = \int\limits_a^{+\infty} f(x, y) dx$.
 	\end{enumerate}
 	Тогда, если $\displaystyle \int\limits_a^{+\infty} f^{'}_y (x, y) dx \overset{[c, d]}{\rightrightarrows}$, то справедлива следующая формула Лейбница почленного дифференцирования НИЗОП-1:
 	
 	\begin{equation} \label{lec11:2}
-		\exists F^{'}(y) = \left( \int\limits_a^{+\infty} f(x, y) dx \right)^{'}_y = \int\limits_a^{+\infty} f^{'}_y (x, y) dx 
+		\exists F^{'}(y) = \left( \int\limits_a^{+\infty} f(x, y) dx \right)^{'}_y = \int\limits_a^{+\infty} f^{'}_y (x, y) dx. 
 	\end{equation}
 	
 	\begin{proof}
-		Для $\forall fix \; y \in [c, d]$ в силу предыдущей теоремы возможна перестановка пределов интегрирования
+		Для $\forall \fix y \in [c, d]$ в силу предыдущей теоремы возможна перестановка пределов интегрирования:
 		
 		\begin{equation*}
 		\begin{gathered}
@@ -80,9 +78,9 @@
 		
 		В данном случае, по теореме о непрерывности НИЗОП-1 получаем, что $G(t) = \int\limits_a^{+\infty} f_{t}^{'}(x, t) dx$ непрерывна для $\forall t \in [c, d]$, поэтому по теореме Барроу о дифференцировании интеграла Римана с переменным верхним пределом получаем, что
 		
-		$$
-		\exists F^{'}(y) = (c_0 + \int\limits_a^y G(t)dt)^{'}_y = 0 + (\int\limits_a^y G(t)dt)^{'}_y = G(t)\bigg|_{t = y} = \int\limits_a^{+\infty} f^{'}_t (x, t) dx\bigg|_{t = y} = \int\limits^{+\infty}_a  f^{'}_y (x, y) dx
-		$$ 
+		\[
+		\exists F^{'}(y) = \left(c_0 + \int\limits_a^y G(t)dt\right)^{'}_y = 0 + \left(\int\limits_a^y G(t)dt\right)^{'}_y = G(t)\bigg|_{t = y} = \int\limits_a^{+\infty} f^{'}_t (x, t) dx\bigg|_{t = y} = \int\limits^{+\infty}_a  f^{'}_y (x, y) dx.
+		\]
 	\end{proof}
 	
 \end{thm}
