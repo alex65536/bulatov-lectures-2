@@ -157,14 +157,17 @@
 	 \frac{e^{-ax} - e^{-xy}}{x} dx, \; y \in [a, b].\] В этом случае выполняются 
 	 все условия теоремы о дифференцировании НИЗОП-1:
 	 
-	 Так как $\displaystyle f(x, y) = \frac{e^{-ax} - e^{-xy}}{x},\ x > 0,\ y \in [a, b]$, то $\exists f^{'}_y (x, y) = e^{-xy}$
+	 Так как $\displaystyle f(x, y) = \frac{e^{-ax} - e^{-xy}}{x},\ x > 0,\ y \in 
+	 [a, b]$, то $\exists f^{'}_y (x, y) = e^{-xy}$
 	  --- непрерывная для 
 	 $\forall x > 0,\ y \in [a, b]$. Также
 	 \[\displaystyle \int\limits_0^{+\infty} f^{'}_y (x, y) dx = 
 	 \int\limits^{+\infty}_0 e^{-xy} dx = \left[ \frac{e^{-xy}}{-y} 
-	 \right]^{+\infty}_{x = 0} = \frac{1}{y} \overset{[a, b]}\rightrightarrows \implies \exists F^{'} (y) = \frac{1}{y}.\]
+	 \right]^{+\infty}_{x = 0} = \frac{1}{y} \overset{[a, b]}\rightrightarrows 
+	 \implies \exists F^{'} (y) = \frac{1}{y}.\]
 	 
-	 Но тогда $\displaystyle F(y) = \int \frac{dy}{y} = \ln|y| + c_0$. Учитывая, что 
+	 Но тогда $\displaystyle F(y) = \int \frac{dy}{y} = \ln|y| + c_0$. Учитывая, 
+	 что 
 	 $\displaystyle F(a) = \int\limits_0^{+\infty} 0\;dx = 0,\ y = 0$, тогда $0 = 
 	 \ln|a| + c_0 \implies c_0 = -\ln|a| \implies F(y) = \ln\left| \frac{y}{a} 
 	 \right|,\ \forall y \in [a, b].$ Отсюда, при $y = b > a > 0$ получаем, что
@@ -175,17 +178,21 @@
 
 \section{НИ-2, зависящий от параметра (НИЗОП-2)}
 
-	Рассмотрим функцию $f(x, y)$, определенную для $\forall x \in [a, b],\ \forall 
-	y \in Y \subset \R$. Если ${\exists y \in Y}$ такой, что $f(x, y)$ неограничена в 
+	Рассмотрим функцию $f(x, y)$, определенную для $\forall x \in [a, b],\ 
+	\forall 
+	y \in Y \subset \R$. Если ${\exists y \in Y}$ такой, что $f(x, y)$ 
+	неограничена в 
 	окрестности $x = b$, в этом случае имеем \emph{НИЗОП-2}:
 	\begin{equation}\label{lec11:3}
 		F(y) = \int\limits_a^b f(x, y) dx.
 	\end{equation}
-	который считается сходящимся, если $\forall y \in Y\ \displaystyle \exists \lim_{\eps \rightarrow 
+	который считается сходящимся, если $\forall y \in Y\ \displaystyle \exists 
+	\lim_{\eps \rightarrow 
 	+0} \int\limits_0^{b - \eps} f(x, y) dx \in \R$.
 	
 	По аналогии с НИЗОП-1, кроме поточечной сходимости $\eqref{lec11:2}$ 
-	рассмотрим \emph{равномерную сходимость} для $\eqref{lec11:2}$, которая определяется 
+	рассмотрим \emph{равномерную сходимость} для $\eqref{lec11:2}$, которая 
+	определяется 
 	через 
 	
 	\begin{equation}\label{lec11:4}
@@ -199,7 +206,8 @@
 	свойства НИЗОП-2, поэтому ограничимся только формулировками.
 	
 	\begin{thm}[Признак Вейерштрасса равномерной сходимости НИЗОП-2]
-		Если $\exists {g(x) \geq 0}$ $\forall x \in [a, b)$ и $\int\limits_a^b g(x) dx$ 
+		Если $\exists {g(x) \geq 0}$ $\forall x \in [a, b)$ и $\int\limits_a^b g(x) 
+		dx$ 
 		сходится, то в случае, когда $|f(x, y)| \leq g(x)\ \forall y \in Y\ \forall 
 		x \in [a, b)$, то тогда $F(y) = \int\limits_a^b f(x, y) dx 
 		\overset{Y}{\rightrightarrows}$.
@@ -296,5 +304,6 @@
 	а далее используются доказательства НИЗОП-1.
 	
 	Если в $\eqref{lec11:5}$ получается НИЗОП смешанного типа, то раскладываем 
-	$\eqref{lec11:5}$ на сумму нескольких НИЗОП одного типа (первого либо второго).
+	$\eqref{lec11:5}$ на сумму нескольких НИЗОП одного типа (первого либо 
+	второго).
 \end{document}
