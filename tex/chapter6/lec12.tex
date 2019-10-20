@@ -21,14 +21,24 @@
 \begin{proof}
 Для доказательства рассмотрим три случая:
 \begin{enumerate}
- \item $a > 0 \implies$ \[\implies F(x) = \left[ \begin{array}{l}ax = t|_0^{+\infty} \\ x = \frac ta,\ dx = \frac{dt}a\end{array}\right] = \ioinf \frac{\sin t}{\frac ta}\cdot\frac{dt}a = \ioinf \frac{\sin t}{t}dt = \frac\pi 2 \implies \eqref{lec12:6},\ \text{т.~к.} \sgn a = 1.\]
- \item $a = 0 \implies$ \[\implies F(0) = \ioinf 0\;dx = 0 \implies \eqref{lec12:6},\ \text{т.~к.} \sgn a = 0.\]
- \item $a < 0 \implies$ \[\implies F(a) = \ioinf \frac{\sin (ax)}x dx \stackrel{\text{случай 1}}= -\frac\pi2 \implies \eqref{lec12:6},\ \text{т.~к.} \sgn a = -1. \qedhere\]
+ \item $a > 0 \implies$ \[\implies F(x) = \left[ \begin{array}{l}ax = 
+ t|_0^{+\infty} \\ x = \frac ta,\ dx = \frac{dt}a\end{array}\right] = \ioinf 
+ \frac{\sin t}{\frac ta}\cdot\frac{dt}a = \ioinf \frac{\sin t}{t}dt = \frac\pi 
+ 2 \implies \eqref{lec12:6},\ \text{т.~к.} \sgn a = 1.\]
+ \item $a = 0 \implies$ \[\implies F(0) = \ioinf 0\;dx = 0 \implies 
+ \eqref{lec12:6},\ \text{т.~к.} \sgn a = 0.\]
+ \item $a < 0 \implies$ \[\implies F(a) = \ioinf \frac{\sin (ax)}x dx 
+ \stackrel{\text{случай 1}}= -\frac\pi2 \implies \eqref{lec12:6},\ 
+ \text{т.~к.} \sgn a = -1. \qedhere\]
 \end{enumerate}
 \end{proof}
 
 \begin{exmp}
-\[\ioinf \frac{\sin^2 x}{x^2} dx = -\ioinf \sin^2x\; d\left(\frac1x\right) = [\text{интегрирование по частям}] =\]\[= \frac{\sin^2 x}x\Big|_0^{+\infty} + \ioinf \frac{2\sin x\cos x}{x} dx = 0 + \underbrace{\lim_{x\to +\infty} \frac{\sin^2 x}x}_{=0} + \ioinf \frac{2\sin x\cos x}{x} dx = \ioinf\frac{\sin 2x}x = \frac\pi2.\]
+\[\ioinf \frac{\sin^2 x}{x^2} dx = -\ioinf \sin^2x\; d\left(\frac1x\right) = 
+[\text{интегрирование по частям}] =\]\[= \frac{\sin^2 x}x\Big|_0^{+\infty} + 
+\ioinf \frac{2\sin x\cos x}{x} dx = 0 + \underbrace{\lim_{x\to +\infty} 
+\frac{\sin^2 x}x}_{=0} + \ioinf \frac{2\sin x\cos x}{x} dx = \ioinf\frac{\sin 
+2x}x = \frac\pi2.\]
 \end{exmp}
 
 \subsection{Интегралы Френеля}
@@ -40,31 +50,60 @@
  \label{lec12:7}
 \end{equation}
 
-Доказательство проведем для первого интеграла \eqref{lec12:7}. Для второго интеграла доказательство аналогично.
+Доказательство проведем для первого интеграла \eqref{lec12:7}. Для второго 
+интеграла доказательство аналогично.
 
 \begin{proof}
-Делая замену переменной $t = x^2\big|_0^{+\infty},\ x = \sqrt t,\ dx = \dfrac{dt}{2\sqrt t}$, получаем
+Делая замену переменной $t = x^2\big|_0^{+\infty},\ x = \sqrt t,\ dx = 
+\dfrac{dt}{2\sqrt t}$, получаем
 \begin{equation}
  \ioinf \sin(x^2) dx =\frac12 \ioinf \frac{\sin t}{\sqrt t}dt.
  \label{lec12:8}
 \end{equation}
 
-Для вычисления \eqref{lec12:8} воспользуемся тем же методом, что и для вычисления интеграла Дирихле. Рассмотрим НИЗОП-1
+Для вычисления \eqref{lec12:8} воспользуемся тем же методом, что и для 
+вычисления интеграла Дирихле. Рассмотрим НИЗОП-1
 \begin{equation}
  F(a) = \frac12 \ioinf e^{-at} \frac{\sin t}{\sqrt t} dt,\ a \ge 0.
  \label{lec12:9}
 \end{equation}
-                                                                                   Нетрудно показать, что \eqref{lec12:9} сходится по признаку Дирихле, причем сходимость будет равномерной для $a \in [0; +\infty[$ в силу признака Абеля равномерной сходимости НИЗОП-1. Учитывая, что из обобщенного интеграла Эйлера-Пуассона следует, что \[\frac1{\sqrt t} = \frac2{\sqrt\pi} \ioinf e^{-ty^2}\;dy,\ t > 0 \implies F(a) = \frac1{\sqrt\pi} \ioinf e^{-at} \sin t\; dt \ioinf e^{-ty^2} dy =\]\[= \frac1{\sqrt\pi} \ioinf dt \ioinf e^{-(a + y^2)t} \sin t\; dy = \left[\begin{array}{c}\text{допустима перестановка} \\ \text{пределов интегрирования}\end{array}\right] =\]\[= \frac1{\sqrt\pi} \ioinf dy \ioinf e^{-(a + y^2)t} \sin t\; dt = \frac{1}{\sqrt\pi} \ioinf \frac{dy}{1 + (a + y^2)^2}.\]
+
+Нетрудно показать, что \eqref{lec12:9} сходится по признаку Дирихле, причем 
+сходимость будет равномерной для $a \in [0; +\infty[$ в силу признака Абеля 
+равномерной сходимости НИЗОП-1. Учитывая, что из обобщенного интеграла 
+Эйлера-Пуассона следует, что \[\frac1{\sqrt t} = \frac2{\sqrt\pi} \ioinf 
+e^{-ty^2}\;dy,\ t > 0 \implies F(a) = \frac1{\sqrt\pi} \ioinf e^{-at} \sin t\; 
+dt \ioinf e^{-ty^2} dy =\]\[= \frac1{\sqrt\pi} \ioinf dt \ioinf e^{-(a + 
+y^2)t} \sin t\; dy = \left[\begin{array}{c}\text{допустима перестановка} \\ 
+\text{пределов интегрирования}\end{array}\right] =\]\[= \frac1{\sqrt\pi} 
+\ioinf dy \ioinf e^{-(a + y^2)t} \sin t\; dt = \frac{1}{\sqrt\pi} \ioinf 
+\frac{dy}{1 + (a + y^2)^2}.\]
 В нашем случае первый из интегралов Френеля \eqref{lec12:7} соответствует
-\[F(0) = \lim_{a \to 0} \frac1{\sqrt\pi} \ioinf \frac{dy}{1 + (a + y^2)^2} \stackrel{\encircle!}= \frac1{\sqrt\pi} \ioinf \lim_{a \to +0} \frac{dy}{1 + (a + y^2)^2} = \frac1{\sqrt\pi} \ioinf \frac{dy}{1 + y^4}  =\]\[= \left[y \leftrightarrow \frac1y\Bigg|^{+\infty}_0\right] = \frac1{\sqrt\pi} \ioinf \frac{\frac1{y^2} dy}{1 + (\frac1y)^4}.\]
+\[F(0) = \lim_{a \to 0} \frac1{\sqrt\pi} \ioinf \frac{dy}{1 + (a + y^2)^2} 
+\stackrel{\encircle!}= \frac1{\sqrt\pi} \ioinf \lim_{a \to +0} \frac{dy}{1 + 
+(a + y^2)^2} = \frac1{\sqrt\pi} \ioinf \frac{dy}{1 + y^4}  =\]\[= \left[y 
+\leftrightarrow \frac1y\Bigg|^{+\infty}_0\right] = \frac1{\sqrt\pi} \ioinf 
+\frac{\frac1{y^2} dy}{1 + (\frac1y)^4}.\]
 Отсюда 
-\[2F(0) = \frac1{\sqrt\pi} \ioinf \frac{dy}{1 + y^4} + \frac1{\sqrt\pi} \ioinf \frac{y^2dy}{1 + y^4} = \frac1{\sqrt\pi} \ioinf \frac{\left(1 + \frac1{y^2}\right) dy}{y^2 + \frac1{y^2}} = \frac1{\sqrt\pi} \ioinf \frac{d(y - \frac1y)}{(y - \frac1y)^2 + 2} =\]\[= \left[z = y - \frac1y\Bigg|_{-\infty}^{+\infty}\right] = \frac1{\sqrt\pi} \ipminf \frac{dz}{z^2+2} = \frac1{\sqrt{2\pi}} \left[\arctan\frac z{\sqrt2}\right]_{-\infty}^{+\infty} = \frac{1}{\sqrt{2\pi}} \cdot \pi = \sqrt{\frac\pi2},\] т.~е. $\displaystyle 2F(0) = \sqrt{\frac\pi2} \implies F(0) = \ioinf \sin(x^2) dx = \frac12 \cdot \sqrt{\frac\pi2}.$
+\[2F(0) = \frac1{\sqrt\pi} \ioinf \frac{dy}{1 + y^4} + \frac1{\sqrt\pi} \ioinf 
+\frac{y^2dy}{1 + y^4} = \frac1{\sqrt\pi} \ioinf \frac{\left(1 + 
+\frac1{y^2}\right) dy}{y^2 + \frac1{y^2}} = \frac1{\sqrt\pi} \ioinf \frac{d(y 
+- \frac1y)}{(y - \frac1y)^2 + 2} =\]\[= \left[z = y - 
+\frac1y\Bigg|_{-\infty}^{+\infty}\right] = \frac1{\sqrt\pi} \ipminf 
+\frac{dz}{z^2+2} = \frac1{\sqrt{2\pi}} \left[\arctan\frac 
+z{\sqrt2}\right]_{-\infty}^{+\infty} = \frac{1}{\sqrt{2\pi}} \cdot \pi = 
+\sqrt{\frac\pi2},\] т.~е. $\displaystyle 2F(0) = \sqrt{\frac\pi2} \implies 
+F(0) = \ioinf \sin(x^2) dx = \frac12 \cdot \sqrt{\frac\pi2}.$
 \end{proof}
 
 \begin{exmp}
 Рассмотрим интеграл \[I = \ipminf \cos(x^2 + 2ax + b) dx.\]
 
-Выделяя полный квадрат, получаем \[I = \ipminf \cos((x+a)^2 + b - a^2)dx = \left[x = a + t\big|_{-\infty}^{+\infty},\ dx = dt\right] =\]\[= 2 \ioinf (\cos(t^2)\cos(b-a^2) - \sin(t^2)\sin(b-a^2)) dt \stk{lec12:7}= 2\cdot\frac12\cdot \sqrt{\frac\pi2} \cdot (\cos(b - a^2) - \sin(b - a^2)) =\]\[ = \sqrt{\pi} \cdot\cos\left(\frac{\pi}4 + b - a^2\right).\]
+Выделяя полный квадрат, получаем \[I = \ipminf \cos((x+a)^2 + b - a^2)dx = 
+\left[x = a + t\big|_{-\infty}^{+\infty},\ dx = dt\right] =\]\[= 2 \ioinf 
+(\cos(t^2)\cos(b-a^2) - \sin(t^2)\sin(b-a^2)) dt \stk{lec12:7}= 
+2\cdot\frac12\cdot \sqrt{\frac\pi2} \cdot (\cos(b - a^2) - \sin(b - a^2)) 
+=\]\[ = \sqrt{\pi} \cdot\cos\left(\frac{\pi}4 + b - a^2\right).\]
 \end{exmp}
 
 \subsection{Интеграл Лапласа}
@@ -77,16 +116,39 @@ G(a) = \ioinf \frac{\cos ax}{x^2 + b^2} dx,\quad a \in \R,\ b \ne 0 \\
 H(a) = \ioinf \frac{x\sin ax}{x^2 + b^2} dx,\quad a, b \in \R. 
 \end{gather}
 
-При вычислении \eqref{lec12:10} и \eqref{lec12:11} вначале ограничимся случаем $a \ge 0$, $b > 0$. Тогда \eqref{lec12:10} является равномерно сходящимся НИЗОП-1 для $a \ge 0$, т.~к. здесь у подынтегральной функции есть мажоранта $\left|\dfrac{\cos{ax}}{x^2 + b^2}\right| \le \dfrac1{x^2}$, а $\displaystyle\ioinf \frac{dx}{x^2 + b^2} = \left[\frac1{\sqrt b}\arctg\frac x{\sqrt b}\right]_0^{+\infty}$ сходится. Второй из интегралов Лапласа \eqref{lec12:11} будет сходится локально равномерно относительно $a > 0$. При этом можно показать, что интеграл \eqref{lec12:10}  можно почленно дифференцировать, в резулаьтате чего получаем, что
-\[\exists G'(a) = \ioinf \left(\frac{\cos ax}{x^2 + b^2}\right)'_a dx = -\ioinf \frac{x\sin ax}{x^2+b^2} dx = -H(a),\ a \ge 0,\ b > 0.\]
-Чтобы выполнить дальнейшее дифференцирование, воспользуемся интегралом Дирихле $\ioinf \frac{\sin ax}x dx,\ \forall a > 0$. В результате получим \[G'(a) + \frac\pi2 = \ioinf \left(-\frac{x \sin ax}{x^2 + b^2} + \frac{\sin ax}{x}\right)dx = \ioinf \left(\frac1x - \frac{x}{x^2+b^2}\right)\sin ax\;dx = b^2 \ioinf \frac{\sin ax\;dx}{x(x^2 + b^2)}.\]
+При вычислении \eqref{lec12:10} и \eqref{lec12:11} вначале ограничимся случаем 
+$a \ge 0$, $b > 0$. Тогда \eqref{lec12:10} является равномерно сходящимся 
+НИЗОП-1 для $a \ge 0$, т.~к. здесь у подынтегральной функции есть мажоранта 
+$\left|\dfrac{\cos{ax}}{x^2 + b^2}\right| \le \dfrac1{x^2}$, а 
+$\displaystyle\ioinf \frac{dx}{x^2 + b^2} = \left[\frac1{\sqrt b}\arctg\frac 
+x{\sqrt b}\right]_0^{+\infty}$ сходится. Второй из интегралов Лапласа 
+\eqref{lec12:11} будет сходится локально равномерно относительно $a > 0$. При 
+этом можно показать, что интеграл \eqref{lec12:10}  можно почленно 
+дифференцировать, в резулаьтате чего получаем, что
+\[\exists G'(a) = \ioinf \left(\frac{\cos ax}{x^2 + b^2}\right)'_a dx = 
+-\ioinf \frac{x\sin ax}{x^2+b^2} dx = -H(a),\ a \ge 0,\ b > 0.\]
+Чтобы выполнить дальнейшее дифференцирование, воспользуемся интегралом Дирихле 
+$\ioinf \frac{\sin ax}x dx,\ \forall a > 0$. В результате получим \[G'(a) + 
+\frac\pi2 = \ioinf \left(-\frac{x \sin ax}{x^2 + b^2} + \frac{\sin 
+ax}{x}\right)dx = \ioinf \left(\frac1x - \frac{x}{x^2+b^2}\right)\sin ax\;dx = 
+b^2 \ioinf \frac{\sin ax\;dx}{x(x^2 + b^2)}.\]
 Этот НИЗОП-1 допускает почленное дифференцирование:
-\[\exists G''(a) = \left(G'(a) + \frac{\pi}2\right)' = b^2 \ioinf \left(\frac{\sin ax} {x(x^2 + b^2)}\right)'_a dx = b^2 \ioinf \frac{\cos ax} {x^2 + b^2} dx = b^2\cdot G(a).\]
-Для $G(a)$ решим линейное стационарное дифференциальное уравнение второго порядка: $G''(a) - b^2G(a) = 0,\ a > 0,\ b \ne 0$. Для записи общего решения составим характеристическое уравнение: $\lambda^2 - b^2 = 0 \implies \lambda_{1, 2} = \pm b$. Т.~е. $G(a) = c_1e^{ab} + c_2e^{-ab},\ a > 0,\ b > 0$. Далее $c_1 = 0$, т~.к. функция \eqref{lec12:10} ограничена:
-\[|G_a| \le \ioinf \frac{|\cos x|}{x^2 + b^2} \le \ioinf \frac{dx}{x^2 + b^2} = \frac\pi{2|b|} \in \R.\] При этом $e^{ab} \appr{a\to \infty} \infty,\ b>0$. Но тогда $G(a) = c_2e^{-ab},\ a > 0,\ b > 0$.
+\[\exists G''(a) = \left(G'(a) + \frac{\pi}2\right)' = b^2 \ioinf 
+\left(\frac{\sin ax} {x(x^2 + b^2)}\right)'_a dx = b^2 \ioinf \frac{\cos ax} 
+{x^2 + b^2} dx = b^2\cdot G(a).\]
+Для $G(a)$ решим линейное стационарное дифференциальное уравнение второго 
+порядка: $G''(a) - b^2G(a) = 0,\ a > 0,\ b \ne 0$. Для записи общего решения 
+составим характеристическое уравнение: $\lambda^2 - b^2 = 0 \implies 
+\lambda_{1, 2} = \pm b$. Т.~е. $G(a) = c_1e^{ab} + c_2e^{-ab},\ a > 0,\ b > 
+0$. Далее $c_1 = 0$, т.~к. функция \eqref{lec12:10} ограничена:
+\[|G_a| \le \ioinf \frac{|\cos x|}{x^2 + b^2} \le \ioinf \frac{dx}{x^2 + b^2} 
+= \frac\pi{2|b|} \in \R.\] При этом $e^{ab} \appr{a\to \infty} \infty,\ b>0$. 
+Но тогда $G(a) = c_2e^{-ab},\ a > 0,\ b > 0$.
 
 Здесь возможен предельный переход при $a \to +0,\ b > 0$. В результате получим:
-\[c_2 = G(+0) = \lim_{a\to+0} \ioinf \frac{\cos ax}{x^2 + b^2}dx = \ioinf \frac{\lim\limits_{a\to+0} \cos ax}{x^2 + b^2}dx = \ioinf \frac{dx}{x^2 + b^2} = \frac{\pi}{2b}.\]
+\[c_2 = G(+0) = \lim_{a\to+0} \ioinf \frac{\cos ax}{x^2 + b^2}dx = \ioinf 
+\frac{\lim\limits_{a\to+0} \cos ax}{x^2 + b^2}dx = \ioinf \frac{dx}{x^2 + b^2} 
+= \frac{\pi}{2b}.\]
 
 Таким образом, \eqref{lec12:10} имеет значение
 \begin{equation}
@@ -94,25 +156,35 @@ G(a) = \frac\pi{2b}\cdot e^{-ab},\ a > 0,\ b > 0.
 \label{lec12:12}
 \end{equation}
 
-Непосредственной подстановкой убеждаемся, что \eqref{lec12:12} справедливо и для $a=0$. Кроме того, учитываем, что при замене в \eqref{lec12:10} $a$ на $-a$ и $b$ на $-b$ интеграл \eqref{lec12:10} не изменится, т.~е. имеем четность по $a$ и $b$. В результате получаем следующее обобщение формулы \eqref{lec12:12}:
+Непосредственной подстановкой убеждаемся, что \eqref{lec12:12} справедливо и 
+для $a=0$. Кроме того, учитываем, что при замене в \eqref{lec12:10} $a$ на 
+$-a$ и $b$ на $-b$ интеграл \eqref{lec12:10} не изменится, т.~е. имеем 
+четность по $a$ и $b$. В результате получаем следующее обобщение формулы 
+\eqref{lec12:12}:
 \begin{equation}
-\ioinf \frac{\cos ax}{x^2 + b^2}dx = \frac{\pi}{2|b|} e^{-|ab|},\ a \in R,\ b \ne 0
+\ioinf \frac{\cos ax}{x^2 + b^2}dx = \frac{\pi}{2|b|} e^{-|ab|},\ a \in \R,\ b 
+\ne 0
 \label{lec12:13}
 \end{equation}
 Как было получено выше, для второго интеграла Лапласа \eqref{lec12:11} имеем:
-\[H(a) = -G'(a) \stk{lec12:12}= [a > 0,\ b > 0] \stk{lec12:12}= \left(\frac\pi{2b} e^{-ab}\right)' = \frac\pi2 e^{-ab}.\]
-При замене в \eqref{lec12:11} $b$ На $-b$ интеграл не изменится, а при замене $a$ на $-a$ вынесется знак <<->>, т.~е. получаем, что результат
+\[H(a) = -G'(a) \stk{lec12:12}= [a > 0,\ b > 0] \stk{lec12:12}= 
+\left(\frac\pi{2b} e^{-ab}\right)' = \frac\pi2 e^{-ab}.\]
+При замене в \eqref{lec12:11} $b$ На $-b$ интеграл не изменится, а при замене 
+$a$ на $-a$ вынесется знак <<->>, т.~е. получаем, что результат
 \begin{equation}
 \ioinf \frac{x\sin ax}{x^2 + b^2} dx = \frac{\pi}2 e^{-ab},\ a > 0,\ b > 0
 \label{lec12:14}
 \end{equation}
 можно обобщить в виде
 \begin{equation}
-\ioinf \frac{x\sin ax}{x^2 + b^2} dx = \frac\pi2 e^{-|ab|}\cdot\sgn a,\ \forall a \in \R,\ b \in \R.
+\ioinf \frac{x\sin ax}{x^2 + b^2} dx = \frac\pi2 e^{-|ab|}\cdot\sgn a,\ 
+\forall a \in \R,\ b \in \R.
 \label{lec12:15}
 \end{equation}
 
-В отличие от \eqref{lec12:13}, формулы \eqref{lec12:14} и \eqref{lec12:15} выполняются и для $b = 0$, т.~к. в этом случае рассматриваемый интеграл Лапласа \eqref{lec12:11} переходит в общий интеграл Дирихле. 
+В отличие от \eqref{lec12:13}, формулы \eqref{lec12:14} и \eqref{lec12:15} 
+выполняются и для $b = 0$, т.~к. в этом случае рассматриваемый интеграл 
+Лапласа \eqref{lec12:11} переходит в общий интеграл Дирихле. 
 
 \subsection{Формулы Фруллани}
 
@@ -125,32 +197,42 @@ G(a) = \frac\pi{2b}\cdot e^{-ab},\ a > 0,\ b > 0.
 \begin{lem}[Фруллани]
 Если $f \in R([\alpha a, \beta b]),\ 0 < \alpha < \beta,\ 0 < a < b$, то тогда 
 \begin{equation}
-\int\limits_\alpha^\beta \frac{f(ax) - f(bx)}x dx = \int\limits_a^b \frac{f(\alpha x) - f(\beta x)}x dx.
+\int\limits_\alpha^\beta \frac{f(ax) - f(bx)}x dx = \int\limits_a^b 
+\frac{f(\alpha x) - f(\beta x)}x dx.
 \label{lec12:17} 
 \end{equation}
 \end{lem}
 
 \begin{proof}
 Пользуясь аддитивностью и линейностью интеграла Римана, имеем: 
-\[\int\limits_\alpha^\beta \frac{f(ax)}x dx - \int\limits_\alpha^\beta \frac{f(bx)}x dx = \left[
+\[\int\limits_\alpha^\beta \frac{f(ax)}x dx - \int\limits_\alpha^\beta 
+\frac{f(bx)}x dx = \left[
 \begin{gathered}
 1)\ \, t = ax\big|_{\alpha a}^{\beta a},\ x = \frac ta,\ dx = \frac{dt}a \\
 2)\ \, t = bx\big|_{\alpha b}^{\beta b},\ x = \frac tb,\ dx = \frac{dt}b
 \end{gathered}
-\right] = \int\limits_{\alpha a}^{\beta a} \frac{f(t)}{\frac ta} \cdot \frac {dt}a - \int\limits_{\alpha b}^{\beta b} \frac{f(t)}{\frac tb} \cdot \frac {dt}b.\] 
+\right] = \int\limits_{\alpha a}^{\beta a} \frac{f(t)}{\frac ta} \cdot \frac 
+{dt}a - \int\limits_{\alpha b}^{\beta b} \frac{f(t)}{\frac tb} \cdot \frac 
+{dt}b.\] 
 
 В результате получаем, что
-\[\int\limits_{\alpha a}^{\beta a} \dfrac{f(t)}t dt - \int\limits_{\alpha b}^{\beta b} \frac{f(t)}t dt = \int\limits_{\alpha a}^{\alpha b} \frac{f(t)}t dt - \int\limits_{\beta a}^{\beta b} \frac{f(t)}t dt = [\text{обратная замена}] = \left[
+\[\int\limits_{\alpha a}^{\beta a} \dfrac{f(t)}t dt - \int\limits_{\alpha 
+b}^{\beta b} \frac{f(t)}t dt = \int\limits_{\alpha a}^{\alpha b} \frac{f(t)}t 
+dt - \int\limits_{\beta a}^{\beta b} \frac{f(t)}t dt = [\text{обратная 
+замена}] = \left[
 \begin{gathered}
 1)\ \, t = \alpha x,\ x\big|_a^b,\ dt = \alpha dx \\
 2)\ \, t = \beta x,\ x\big|_a^b,\ dt = \beta dx
 \end{gathered}
 \right] =\]
-\[= \int\limits_a^b \frac{f(\alpha x)}{\alpha x} \cdot \alpha dx - \int\limits_a^b \frac{f(\beta x)}{\beta x} \cdot\beta dx = \int\limits_a^b \frac{f(\alpha x) - f(\beta x)}x dx. \qedhere\]
+\[= \int\limits_a^b \frac{f(\alpha x)}{\alpha x} \cdot \alpha dx - 
+\int\limits_a^b \frac{f(\beta x)}{\beta x} \cdot\beta dx = \int\limits_a^b 
+\frac{f(\alpha x) - f(\beta x)}x dx. \qedhere\]
 \end{proof}
 
 \begin{thm}[первая формула Фруллани]
-Если $f \in R([0; +\infty))$ и $\exists f(+\infty)$~--- конечное, то тогда для интеграла Фруллани \eqref{lec12:16} имеем:
+Если $f \in R([0; +\infty))$ и $\exists f(+\infty)$~--- конечное, то тогда для 
+интеграла Фруллани \eqref{lec12:16} имеем:
 \begin{equation}
 \Phi(a, b) = [a > 0,\ b > 0] = (f(0) - f(+\infty))\ln \frac ba. 
 \label{lec12:18} 
@@ -159,8 +241,15 @@ G(a) = \frac\pi{2b}\cdot e^{-ab},\ a > 0,\ b > 0.
 
 \begin{proof}
 Имеем
-\[\Phi(a, b) \stk{lec12:16}= \lim\limits_{\substack{\alpha \to +0 \\ \beta \to +\infty}} \int\limits_\alpha^\beta \frac{f(ax) - f(bx)}x dx \stk{lec12:17}= \lim\limits_{\substack{\alpha \to +0 \\ \beta \to +\infty}} \int\limits_a^b \frac{f(\alpha x) - f(\beta x)}x dx =\]\[= \lim\limits_{\substack{\alpha \to +0 \\ \beta \to +\infty}} \left( \int\limits_a^b \frac{f(\alpha x)}x dx - \int\limits_a^b \frac{f(\beta x) }x dx\right).\]
-По теореме о среднем для ОИ (если $g(x)$ непрерывна, а $h(x)$ интегрирема и сохраняет один и тот же знак, то $\exists x_0 \in [a, b]\quad \int\limits_a^b g(x)h(x) dx = g(x_0)\int_a^b h(x)dx$), получаем
+\[\Phi(a, b) \stk{lec12:16}= \lim\limits_{\substack{\alpha \to +0 \\ \beta \to 
++\infty}} \int\limits_\alpha^\beta \frac{f(ax) - f(bx)}x dx \stk{lec12:17}= 
+\lim\limits_{\substack{\alpha \to +0 \\ \beta \to +\infty}} \int\limits_a^b 
+\frac{f(\alpha x) - f(\beta x)}x dx =\]\[= \lim\limits_{\substack{\alpha \to 
++0 \\ \beta \to +\infty}} \left( \int\limits_a^b \frac{f(\alpha x)}x dx - 
+\int\limits_a^b \frac{f(\beta x) }x dx\right).\]
+По теореме о среднем для ОИ (если $g(x)$ непрерывна, а $h(x)$ интегрирема и 
+сохраняет один и тот же знак, то $\exists x_0 \in [a, b]\quad \int\limits_a^b 
+g(x)h(x) dx = g(x_0)\int_a^b h(x)dx$), получаем
 \[
 \Phi(a, b) = \dots = \left[
 \begin{gathered}
@@ -168,13 +257,21 @@ G(a) = \frac\pi{2b}\cdot e^{-ab},\ a > 0,\ b > 0.
 2)\ \, g(x) = f(\beta x),\ h(x) = \tfrac1x,\ \exists x_0 = d \in [a, b]
 \end{gathered}
 \right] =\]
-\[= \lim\limits_{\substack{\alpha \to +0 \\ \beta \to +\infty}} \left(f(\alpha c) \int\limits_a^b \frac1x dx - f(\beta d) \int\limits_a^b \frac1x dx \right) = \lim\limits_{\substack{\alpha \to +0 \\ \beta \to +\infty}} (f(\alpha c) - f(\beta d)) \cdot \ln\left(\frac ba\right) \implies\]
+\[= \lim\limits_{\substack{\alpha \to +0 \\ \beta \to +\infty}} \left(f(\alpha 
+c) \int\limits_a^b \frac1x dx - f(\beta d) \int\limits_a^b \frac1x dx \right) 
+= \lim\limits_{\substack{\alpha \to +0 \\ \beta \to +\infty}} (f(\alpha c) - 
+f(\beta d)) \cdot \ln\left(\frac ba\right) \implies\]
 \[\implies \left[
 \begin{gathered}
-1)\ \, c \in [a, b] \implies \alpha a \le \alpha c \le \alpha b,\ \alpha c \appr{\alpha\to 0} 0 \\ f(\alpha c) \appr{\alpha\to+0} f(0), \text{т.~к. } f \in C([a, b]) \\
-2)\ \, d \in [a, b] \implies \beta a \le \beta d \le \beta b,\ \beta d \appr{\beta\to+\infty} 0 \\ f(\beta d) \appr{\beta\to+\infty} f(+\infty), \text{т.~к. } f \in C([a, b])
+1)\ \, c \in [a, b] \implies \alpha a \le \alpha c \le \alpha b,\ \alpha c 
+\appr{\alpha\to 0} 0 \\ f(\alpha c) \appr{\alpha\to+0} f(0), \text{т.~к. } f 
+\in C([a, b]) \\
+2)\ \, d \in [a, b] \implies \beta a \le \beta d \le \beta b,\ \beta d 
+\appr{\beta\to+\infty} 0 \\ f(\beta d) \appr{\beta\to+\infty} f(+\infty), 
+\text{т.~к. } f \in C([a, b])
 \end{gathered}
-\right] \implies \Phi(a, b) = (f(0) - f(+\infty))\cdot \ln\left(\frac ba\right).\qedhere\]
+\right] \implies \Phi(a, b) = (f(0) - f(+\infty))\cdot \ln\left(\frac 
+ba\right).\qedhere\]
 \end{proof}
 
 
