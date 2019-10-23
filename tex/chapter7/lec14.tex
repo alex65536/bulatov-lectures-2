@@ -154,63 +154,157 @@ x = \frac{t}{1+t}  \bigg|_{1}^{0}
 		
 		\[  = \int\limits_{0}^{1} \frac{t^{a-1}}{1+t} \; dt +  \int\limits_{0}^{1} \frac{t^{-a}}{1+t} \; dt, 0<a<1       \]
 		
-		Отсюда, учитывая, что:
-		
-		\[  \frac{1}{1+t} = \frac{1-\left( -t\right)^n }{1-\left(-t \right) } + \frac{\left(-t \right)^n }{1+t} = \sum_{k=0}^{n-1} \left( -t\right)^k + \frac{\left( -1\right)^n t^n }{1+t} = \sum_{k=0}^{n-1} \left( -1\right)^k t^k  + \frac{\left( -1\right)^n t^n }{1+t}         \]
-		
-		\[  E(a) \sin{\pi a} =  \int\limits_{0}^{1} \left( \sum_{k=0}^{n-1} (-1)^k \; t^k \left( t^{a-1} + t^{-a} \right) + \frac{(-1)^n \; t^n \left( t^{a-1} + t^{-a}\right) }{1+t} \right) \sin{\pi a} \; dt        \]
-		
-		
-		Интегрируем
-		
-		\begin{equation}  
+		\begin{equation}
 		\label{14:17}
-		\sum_{k=0}^{n-1} (-1)^k \left( \frac{\sin{\pi a} }{k+a} + \frac{\sin{\pi a} }{k-a+1} \right) + (-1)^n  \left( \int\limits_{0}^{1} \frac{t^{n+a-1} + t^{n-a}}{1+t} \; dt \right) \sin{\pi a}  = a_n + b_n, \; \forall n \in N         
+		  E(a) =  \int\limits_{0}^{1}  \frac{t^{a-1} + t^{-a}}{1+t} \; dt     
 		\end{equation}
 		
-		В $\eqref{14:17}$ для второго слагаемого:
+		Для завершения доказательства нам понадобится следующая лемма:
 		
-		\[   \left| b_n \right| = \left| (-1)^n \int\limits_{0}^{1} \frac{t^{n+a-1} + t^{n-a}}{1+t} \; dt \right|  \sin{\pi a} = \sin{\pi a} \int\limits_{0}^{1} \frac{t^{n+a-1} + t^{n-a}}{1+t} \; dt \le \left[ t+1 \ge 1 \right] \le           \]
+		\begin{lemma}[Об одной формуле для интеграла Эйлера]
+			
+			Если $a \in (0,1)$, то для интегральной последовательности:
+			
+			\begin{equation}
+			\label{14:18}
+			a_n = 4 \int\limits_{0}^{\frac{\pi}{2}} \frac{\sin^2{at}}{\sin{t}} \sin{\left(2n-1 \right) } \; dt, \; n \in \N
+			\end{equation}
+			
+			Имеем:
+			
+			\begin{equation}
+			\label{14:19}
+			a_n = \pi - E(a) \sin{\pi a} + b_n \sin{\pi a}
+			\end{equation}
+			
+			Где:
+			
+			\begin{equation}
+			\label{14:20}
+			b_n = \left( - 1 \right)^{n-1} \int\limits_{0}^{1} \frac{t^{n-a-1} - t^{n+a-1} }{1+t} \; dt, \; n\ in \N
+			\end{equation}
+		\end{lemma}	
+			\begin{proof}
+				Для $\eqref{14:18} \implies $
+				
+				\[   a_n =  \int\limits_{0}^{\frac{\pi}{2}} \frac{\sin^2{at}}{\sin{t}} \sin{\left(2n-1 \right) } \; dt = \left[ 1 + \sum_{n-1}^{k = 1} \cos{2k t} = \frac{\sin{t} + 2 \sin{t} \cos{2t} + \dots + 2\sin{t} \cos{(2n - 2)t}}{\sin{t}} \right]   =   \]
+				
+				\[  = \left[ \frac{\sin{t} + \left( \sin{3t} - \sin{t} \right) + \dots +\left( \sin{(2n-1)t} - \sin{(2n-3)t} \right) }{\sin{t}} = \frac{\sin{(2n-1)t}}{\sin{t}} \right] =      \]
+				
+				\[ = 2 \int\limits_{0}^{\frac{\pi}{2}} \left( 1-\cos{2at}\right) \left( 1 + 2 \sum_{n-1}^{k = 1} \cos{2k t} \right) \; dt  = 2\int\limits_{0}^{\frac{\pi}{2}} \left( 1-\cos{2at} + 2 \sum_{n-1}^{k = 1} \cos{2k t} - 2 \cos{2at} \sum_{n-1}^{k = 1} \cos{2k t}\right) =   \]
+				
+				\[  = 2 \left[ t - \frac{\sin{2at}}{2a} + 2 \sum_{k=1}^{n-1}\frac{\sin{2kt}}{2k} \right]_{0}^{\frac{\pi}{2}} - 2 \int\limits_{0}^{\frac{\pi}{2}} \sum_{k=1}^{n-1} \left( \cos{(2k-2a)t} + \cos{(2k+2a)t} \right) \; dt =            \]
+				
+				\[  = \pi - \frac{\sin{\pi a}}{a} - 2 \sum_{k=1}^{n-1} \left[ \frac{\sin{(2k-2a)t}}{2k-2a} + \frac{\sin{(2k+2a)t}}{2k+2a} \right]_{0}^{\frac{\pi}{2}} =       \]
+				
+				\[    = \pi - \frac{\sin{\pi a}}{a} -  \sum_{k=1}^{n-1} \left( \frac{\sin{(\pi k- \pi a)}}{k-a} + \frac{\sin{(\pi k+ \pi a)}}{k+a} \right) = \left[ \sin{(\pi k + \phi) = \left( -1\right)^k \sin{\phi}} \right] =           \]
+				
+				\[  =   \pi - \frac{\sin{\pi a}}{a} - \sum_{k=1}^{n-1} \left( \frac{(-1)^k \sin{(- \pi a)}}{k-a} + \frac{(-1)^k \sin{(\pi a)}}{k+a} \right)  =          \]
+				
+				\[ = \pi -\left(  \frac{1}{a} + \sum_{k=1}^{n-1} (-1)^k \left( \frac{1}{k-a} - \frac{1}{k+a} \right)    \right) \sin{\pi a} =        \]
+				
+				Опять перейдем к интегралам:
+				
+				\[ = \pi - \left( \int\limits_{0}^{1} t^{a-1} \; dt + \sum_{k=1}^{n-1} (-1)^k \int\limits_{0}^{1} \left( t^{k-a-1} - t^{k+a - 1} \right) \; dt \right)  \sin{\pi a}  =           \]
+				
+				\[  =  \pi - \left( \int\limits_{0}^{1} t^{a-1} \; dt + \sum_{k=1}^{n-1} (-1)^k \int\limits_{0}^{1} t^{k-1} \left( t^{-a} - t^{a} \right) \; dt \right)  \sin{\pi a} =      \]
+				
+				\[  = \pi - \sin{\pi a} \int\limits_{0}^{1} \left( t^{a-1} + \frac{1-(-t)^{n-1}}{1-(-t)}\left( t^{-a} - t^{a} \right) \right) \; dt  =      \]
+				
+				\[ = \pi - \left( \int\limits_{0}^{1} \left( t^{a-1} + \frac{t^{-a} - t^a}{1+t} \right) \; dt + (-1)^{n-1} \int\limits_{0}^{1} \frac{t^{n-a-1} - t^{n+a-1}}{1+t} \; dt   \right) \sin{\pi a}  = \pi - \left( E(a) - b_n \right) \sin{\pi a} =    \]
+				
+				\[ = \pi - E(a) \sin{\pi a} + b_n \sin{\pi a} \implies \eqref{14:19}      \]
+			\end{proof}	
+			
+			
+	
+		Продолжим доказательство формулы Эйлера $\eqref{14:16}$. Интегрируя по частям, для $\eqref{14:18}$ получаем:
 		
-		\[  \le \sin{\pi a} \int\limits_{0}^{1} \left( t^{n+a-1} + t^{n-a} \right)  \; dt = \left| \frac{1}{n+a} + \frac{1}{n-a+1} \right| \sin{\pi a} {\underset{n \to \infty}\rightarrow} 0                  \]
+		\[  \left| a_n \right|   = \left| - \int\limits_{0}^{\frac{\pi}{2}} \frac{\sin^2{at}}{\sin{t}} \; d\left( \cos{(2n-1)t}\right)   \right|  =  
+		\frac{4}{2n-1} \left| \left[ \frac{\sin^2{at}}{\sin{t}} \cos{(2n-1)t} \right]_{0}^{\frac{\pi}{2}} -\int\limits_{0}^{\frac{\pi}{2}} \cos{(2n-1)t} \; d\left( \frac{\sin^2{at}}{\sin{t}} \right)   \right| =     \]
 		
-		Осталось показать, что первое слагаемое в $\eqref{14:17}$:
+		\[  = \frac{4}{2n-1}\left| \int\limits_{0}^{\frac{\pi}{2}} \left( \frac{\sin^2{at}}{\sin{t}} \right)'_t \cos{(2n-1)t} \; dt \right|  \le  \frac{4}{2n-1} \int\limits_{0}^{\frac{\pi}{2}} \left| \left( \frac{\sin^2{at}}{\sin{t}} \right)'_t \right| \cos{(2n-1)t} \; dt  \le                 \]
 		
-		\[ a_n =  \sum_{k=0}^{n-1} (-1)^k \left( \frac{\sin{\pi a} }{k+a} + \frac{\sin{\pi a} }{k-a+1} \right) = \left[  \begin{gathered}
-		(-1)^k \sin{\pi a} = \sin{\pi \left( a + k \right) } \\
-		(-1)^k \sin{\pi a} = \sin{\pi \left( k - a + 1 \right) }
-		\end{gathered}  \right]  = \]
+		\[ \le \frac{4}{2n-1} \int\limits_{0}^{\frac{\pi}{2}} \left| \left( \frac{\sin^2{at}}{\sin{t}} \right)'_t \right| \; dt  {\underset{n \to \infty}\rightarrow} 0      \]
 		
-		
+		НИЗОП сходится, особые точки устранимы, значит это интеграл Римана. Значит $\left| a_n \right|{\underset{n \to \infty}\longrightarrow} 0 \implies   a_n {\underset{n \to \infty}\longrightarrow} 0$
 		
 		
-		\[ \sum_{k=0}^{n-1} \left( \frac{\sin{\pi \left( a + k \right)} }{k+a} + \frac{\sin{\pi \left( k - a + 1 \right)} }{k-a+1} \right)           \]
+		\[  \left| b_n \right| = \left| (-1)^{n-1} \int\limits_{0}^{1} \frac{t^{n-a-1} - t^{n+a-1}}{1+t} \; dt \right| = \left[ \begin{gathered} \text{подинтегральная функция}\\
+		\text{не меньше нуля} \end{gathered} \right] =  \int\limits_{0}^{1} \frac{t^{n-a-1} - t^{n+a-1}}{1+t} \; dt =   \]
 		
-		Далее покажем $a_n {\underset{n \to \infty}\rightarrow} \pi $:
+		\[  \le \int\limits_{0}^{1} {t^{n-a-1} - t^{n+a-1}} \; dt = \left(  \frac{1}{n-a} - \frac{1}{n+a}\right)  {\underset{n \to \infty}\longrightarrow} 0  \implies  \left| b_n \right| {\underset{n \to \infty}\longrightarrow} 0  \implies   b_n  {\underset{n \to \infty}\longrightarrow} 0  \]
 		
-		\[   a_n = \sum_{k=0}^{n-1} \left( \int\limits_{0}^{\pi} \cos{(a+k)t} \; dt + \int\limits_{0}^{\pi} \cos{(k-a+1)t} \; dt \right) =  \int\limits_{0}^{\pi} \sum_{k=0}^{n-1} \left( \cos{(a+k)t} + \cos{(k-a+1)t} \right) =              \]
+		Далее переходя к пределу $n \longrightarrow 0$ в $\eqref{14:19}$, получим:
 		
-		\[ = \left[  \cos{\alpha} + \cos{\beta} = \cos{\frac{\alpha + \beta}{2}} \cos{\frac{\alpha - \beta}{2}}  \right] = 2 \int\limits_{0}^{\pi} \left( \sum_{k=0}^{n-1} \cos{\left( \frac{2k+1}{2} \; t\right) } \cos{\left( \frac{2a-1}{2} \; t\right)} \right) \; dt   =      \]
+		\[  \lim_{n \to \infty} a_n =  \lim_{n \to \infty} \pi - E(a) \sin{\pi a} + b_n \sin{\pi a} = \pi - E(a) \sin{\pi a} = 0 \implies \eqref{14:16}       \]
+		
+		\end{proof}
+	
+				
+		
+		%\[  \left[ \begin{gathered}
+		%\cos{\left( (2n-1) \frac{\pi }{2}\right)}  = 0 \\
+		%\frac{\sin{at}}{\sin{t}} {\underset{t \to +0}\rightarrow} a
+		%\end{gathered} \right] \]
+		
+		%Отсюда, учитывая, что:
+		
+		%\[  \frac{1}{1+t} = \frac{1-\left( -t\right)^n }{1-\left(-t \right) } + \frac{\left(-t \right)^n }{1+t} = \sum_{k=0}^{n-1} \left( -t\right)^k + \frac{\left( -1\right)^n t^n }{1+t} = \sum_{k=0}^{n-1} \left( -1\right)^k t^k  + \frac{\left( -1\right)^n t^n }{1+t}         \]
+		
+		%\[  E(a) \sin{\pi a} =  \int\limits_{0}^{1} \left( \sum_{k=0}^{n-1} (-1)^k \; t^k \left( t^{a-1} + t^{-a} \right) + \frac{(-1)^n \; t^n \left( t^{a-1} + t^{-a}\right) }{1+t} \right) \sin{\pi a} \; dt        \]
+		
+		
+		%Интегрируем
+		
+		%\begin{equation}  
+		%\label{14:17}
+		%\sum_{k=0}^{n-1} (-1)^k \left( \frac{\sin{\pi a} }{k+a} + \frac{\sin{\pi a} }{k-a+1} \right) + (-1)^n  \left( \int\limits_{0}^{1} \frac{t^{n+a-1} + t^{n-a}}{1+t} \; dt \right) \sin{\pi a}  = a_n + b_n, \; \forall n \in N         
+		%\end{equation}
+		
+		%В $\eqref{14:17}$ для второго слагаемого:
+		
+		%\[   \left| b_n \right| = \left| (-1)^n \int\limits_{0}^{1} \frac{t^{n+a-1} + t^{n-a}}{1+t} \; dt \right|  \sin{\pi a} = \sin{\pi a} \int\limits_{0}^{1} \frac{t^{n+a-1} + t^{n-a}}{1+t} \; dt \le \left[ t+1 \ge 1 \right] \le           \]
+		
+		%\[  \le \sin{\pi a} \int\limits_{0}^{1} \left( t^{n+a-1} + t^{n-a} \right)  \; dt = \left| \frac{1}{n+a} + \frac{1}{n-a+1} \right| \sin{\pi a} {\underset{n \to \infty}\rightarrow} 0                  \]
+		
+		%Осталось показать, что первое слагаемое в $\eqref{14:17}$:
+		
+		%\[ a_n =  \sum_{k=0}^{n-1} (-1)^k \left( \frac{\sin{\pi a} }{k+a} + \frac{\sin{\pi a} }{k-a+1} \right) = \left[  \begin{gathered}
+		%(-1)^k \sin{\pi a} = \sin{\pi \left( a + k \right) } \\
+		%(-1)^k \sin{\pi a} = \sin{\pi \left( k - a + 1 \right) }
+		%\end{gathered}  \right]  = \]
+		
+		
+		
+		
+		%\[ \sum_{k=0}^{n-1} \left( \frac{\sin{\pi \left( a + k \right)} }{k+a} + \frac{\sin{\pi \left( k - a + 1 \right)} }{k-a+1} \right)           \]
+		
+		%Далее покажем $a_n {\underset{n \to \infty}\rightarrow} \pi $:
+		
+		%\[   a_n = \sum_{k=0}^{n-1} \left( \int\limits_{0}^{\pi} \cos{(a+k)t} \; dt + \int\limits_{0}^{\pi} \cos{(k-a+1)t} \; dt \right) =  \int\limits_{0}^{\pi} \sum_{k=0}^{n-1} \left( \cos{(a+k)t} + \cos{(k-a+1)t} \right) =              \]
+		
+		%\[ = \left[  \cos{\alpha} + \cos{\beta} = \cos{\frac{\alpha + \beta}{2}} \cos{\frac{\alpha - \beta}{2}}  \right] = 2 \int\limits_{0}^{\pi} \left( \sum_{k=0}^{n-1} \cos{\left( \frac{2k+1}{2} \; t\right) } \cos{\left( \frac{2a-1}{2} \; t\right)} \right) \; dt   =      \]
 		
 		%Булатов собака
 		
-		\[  = \left[  \begin{gathered}
-		\alpha = \frac{t}{2} \\
-		\sum_{k=1}^{n} \cos{2k-1} = \frac{\sin{2n\alpha}}{2\sin{\alpha}}
-		\end{gathered}    \right]  = 2  \int\limits_{0}^{\pi} \frac{\sin{nt}}{2\sin{\frac{t}{2}}} \cos{\left( \frac{2a-1}{2} \; t\right)}  \; dt =         \]
+		%\[  = \left[  \begin{gathered}
+		%\alpha = \frac{t}{2} \\
+		%\sum_{k=1}^{n} \cos{2k-1} = \frac{\sin{2n\alpha}}{2\sin{\alpha}}
+		%\end{gathered}    \right]  = 2  \int\limits_{0}^{\pi} \frac{\sin{nt}}{2\sin{\frac{t}{2}}} \cos{\left( \frac{2a-1}{2} \; t\right)}  \; dt =         \]
 		
 		%Сутулая
 		
-		\[ \int\limits_{0}^{\pi} \frac{\sin{nt}}{\sin{\frac{t}{2}}}\left( 1 - \left(  1- \cos{\left( \frac{2a-1}{2} \; t\right)} \right)  \right)   \; dt =
-		\int\limits_{0}^{\pi} \frac{\sin{nt}}{\sin{\frac{t}{2}}} \; dt -  2 \int\limits_{0}^{\pi} \frac{\sin^2 {\left( \frac{2a-1}{4} \; t \right) }}{\sin{\frac{t}{2}}} \sin{nt} \; dt          \]
+		%\[ \int\limits_{0}^{\pi} \frac{\sin{nt}}{\sin{\frac{t}{2}}}\left( 1 - \left(  1- \cos{\left( \frac{2a-1}{2} \; t\right)} \right)  \right)   \; dt =
+		%\int\limits_{0}^{\pi} \frac{\sin{nt}}{\sin{\frac{t}{2}}} \; dt -  2 \int\limits_{0}^{\pi} \frac{\sin^2 {\left( \frac{2a-1}{4} \; t \right) }}{\sin{\frac{t}{2}}} \sin{nt} \; dt          \]
 		
-		Во-первых:
+		%Во-первых:
 		
-		\[  I_n =  \int\limits_{0}^{\pi} \frac{\sin{nt}}{\sin{\frac{t}{2}}} \; dt     \]
+		%\[  I_n =  \int\limits_{0}^{\pi} \frac{\sin{nt}}{\sin{\frac{t}{2}}} \; dt     \]
 		
-		\[  I_{n+1} - I_n =  \int\limits_{0}^{\pi} \frac{\sin{(n+1)t} - \sin{nt}}{\sin{\frac{t}{2}}} \; dt = 2 \int\limits_{0}^{\pi} \cos{\left(  \frac{2n+1}{2} \; t \right) } \; dt = \frac{4}{2n+1} \sin{\left( \frac{2n+1}{2} \right) } \bigg|_{\pi}^{0} = 0  \implies \]
+		%\[  I_{n+1} - I_n =  \int\limits_{0}^{\pi} \frac{\sin{(n+1)t} - \sin{nt}}{\sin{\frac{t}{2}}} \; dt = 2 \int\limits_{0}^{\pi} \cos{\left(  \frac{2n+1}{2} \; t \right) } \; dt = \frac{4}{2n+1} \sin{\left( \frac{2n+1}{2} \right) } \bigg|_{\pi}^{0} = 0  \implies \]
 		
-		\[  \implies I_n = I_1 = \int\limits_{0}^{\pi} 2 \cos{\frac{t}{2}} \;  dt = 4 \sin{\frac{t}{2}} \bigg|_{0}^{\pi} = 4    \]
-	\end{proof}	
+		%\[  \implies I_n = I_1 = \int\limits_{0}^{\pi} 2 \cos{\frac{t}{2}} \;  dt = 4 \sin{\frac{t}{2}} \bigg|_{0}^{\pi} = 4    \]
+%	\end{proof}	
 
 \end{document}
