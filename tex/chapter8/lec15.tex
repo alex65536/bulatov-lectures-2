@@ -1,0 +1,39 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+\section{Периодические функции}
+
+Функция $f(x)$, определенная на $D(f) \subset \R$ называется периодической, если:
+
+\begin{equation}
+\label{15:1}
+\exists T \in \R \ne 0, \forall x \in D(f) \implies x \pm t \in D(f) \; \text{и} \; f\left( x-T\right) = f\left( x+T\right) = f(x)
+\end{equation}
+
+$\forall T \ne 0$ в $\eqref{15:1}$ называется периодом $f(x)$.
+
+Нетрудно видеть, что если $T_0 \ne 0$ \--- один из периодов, то $\forall k \in \Z \setminus \{ 0\} \implies T_0 k = T$ \--- так же период $f(x)$. Среди всех периодов периодической $f(x)$ как правило рассматривают наименьший положительный период, если он существует. Простейшим примером периодической функции без наименьшего периода является константная функция, у которой период \--- $\forall b \in \R$, а значит минимального периода нету. Рассмотрим более сложный пример:
+
+\[  D_0(x) = \begin{cases} \begin{gathered}  
+							1, x \in \Q\\
+							0, x \notin \Q
+\end{gathered}\end{cases}       \]
+
+В данном случае любое рациональное число \--- период $D_0(x)$, так как:
+
+\[  D_0\left( x \pm T\right)  = \begin{cases} \begin{gathered}  
+1, \left( x \pm T\right) \in \Q \Leftrightarrow x \in \Q\\
+0, \left( x \pm T\right) \notin \Q \Leftrightarrow x \notin \Q
+\end{gathered}\end{cases} = D_0(x)      \]
+
+
+\end{document}
