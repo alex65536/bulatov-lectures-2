@@ -8,6 +8,7 @@ BEGIN {
 
 {
 	gsub(/\r/, $0, "");
+	# we keep indents plus "%" sign for the comments on each broken line
 	match($0, /^[[:space:]]*%?[[:space:]]?/);
 	indent_len = RLENGTH;
 	indent = substr($0, 1, indent_len);
