@@ -76,7 +76,8 @@ C() \forall x > 0, \forall a > 0.
 \]
 
 $
-\exists \Gamma'(a) = \int\limits_0^{+\infty} ()'_a dx = \int\limits_0^{+\infty} 
+\exists \Gamma'(a) = \int\limits_0^{+\infty} ()'_a dx = 
+\int\limits_0^{+\infty} 
 e^{-x} x^{a-1} \ln x dx 
 $
 
@@ -88,7 +89,8 @@ $
 $
 
 Гамма-функция бесконечно число раз непрерывно дифференцируема.
-При этом, т.~к. $\Gamma'(a) = \int\limits_0^{+\infty} e^{-x} x^{a-1} \ln^2 x dx \ge 
+При этом, т.~к. $\Gamma'(a) = \int\limits_0^{+\infty} e^{-x} x^{a-1} \ln^2 x 
+dx \ge 
 0$,
 то график для Г(а) будет выпуклым вниз. Имеем
 $
@@ -99,7 +101,8 @@ $
 xe^{-x}|^{+\infty}_0 + \int\limits_0^{+\infty} e^{-x} dx = 
 0 + 1 = 1
 \\
-\exists a_0 \in (1, 2) \implies \Gamma'(a_0) = 0$, т.~е. $a_0$~--- стационарная 
+\exists a_0 \in (1, 2) \implies \Gamma'(a_0) = 0$, т.~е. $a_0$~--- 
+стационарная 
 точка~--- точка минимума.
 
 Приближенное вычисление $a_0 \simeq 1,462$
@@ -130,7 +133,8 @@ $
 \\
 \forall n \in \N
 \\
-\Gamma(n) = (n-1)\Gamma(n-1) = \cdots = (n-1) \cdot \ldots \cdots 2 \cdot 1 \Gamma(1) = (n-1)!
+\Gamma(n) = (n-1)\Gamma(n-1) = \cdots = (n-1) \cdot \ldots \cdots 2 \cdot 1 
+\Gamma(1) = (n-1)!
 $
 
 \begin{equation}
@@ -145,7 +149,8 @@ $
 a = n + \frac{1}{2}, n \in \N
 \\
 \Gamma(n + \frac{1}{2}) = (n - \frac{1}{2})\Gamma(n-\frac{1}{2})=\ldots=
-(n-\frac{1}{2})(n-\frac{3}{2})\ldots\frac{3}{2}\frac{1}{2}\Gamma(\frac{1}{2}) = 
+(n-\frac{1}{2})(n-\frac{3}{2})\ldots\frac{3}{2}\frac{1}{2}\Gamma(\frac{1}{2}) 
+= 
 \frac{(2n-1)!!}{2^n}\Gamma(\frac{1}{2})
 $
 Используем интеграл Эйлера-Пуассона:
@@ -201,7 +206,8 @@ $
 \end{thm}
 
 \begin{proof}
-	$\Gamma(a) \stk{lec13:1}= [x=ty, y = \dfrac{x}{t}|^{+\infty}_0, t > 0 - \fix, dx = 
+	$\Gamma(a) \stk{lec13:1}= [x=ty, y = \dfrac{x}{t}|^{+\infty}_0, t > 0 - \fix, 
+	dx = 
 	t dy] = 
 	\int\limits_0^{+\infty}e^{-ty}(ty)^{\alpha-1}tdy = t^a 
 	\int\limits_0^{+\infty}e^{-ty}y^{\alpha-1}dy$
@@ -215,7 +221,8 @@ $
 	
 	\begin{equation}
 	\label{lec13:10}
-	\dfrac{\Gamma(a+b)}{(1+t)^{a+b}} = \int\limits_0^{+\infty} e^{-(1+t)y} y^{(a+b) - 
+	\dfrac{\Gamma(a+b)}{(1+t)^{a+b}} = \int\limits_0^{+\infty} e^{-(1+t)y} 
+	y^{(a+b) - 
 	1} dy
 	\end{equation}
 \end{proof}
