@@ -23,12 +23,14 @@ script:
 
 before_deploy:
     # rename the pdf file
-    - cp main.pdf bulatov2.pdf
+    cp main.pdf bulatov2.pdf
     # set up git user name and tag this commit
-    - git config --local user.name "travis"
-    - git config --local user.email "travis"
-    - export TRAVIS_TAG=latest
-    - git tag -f $TRAVIS_TAG
+    git config --local user.name "travis"
+    git config --local user.email "travis"
+    TRAVIS_TAG=latest
+    [[ "$(git branch --show-current)" == "devel" ]] && TRAVIS_TAG=devel-latest
+    echo "Using tag: $TRAVIS_TAG"
+    git tag -f $TRAVIS_TAG
 
 deploy:
   provider: releases
@@ -40,6 +42,7 @@ deploy:
   overwrite: true
   on:
     branch: master
+    branch: devel
 
 tags:
   except:
