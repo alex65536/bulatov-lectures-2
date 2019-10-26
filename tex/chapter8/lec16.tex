@@ -12,7 +12,7 @@
 \begin{document}
 \begin{thm}[о существовании конечного положительного периода]
 	Пусть $f(x) \not \equiv const$ является периодической функцией. Если $f(x)$
-	 непрерывна хотя бы в одной точке $x_0 \in D(f) \subset R$, то у $f(x)$ есть
+	 непрерывна хотя бы в одной точке $x_0 \in D(f) \subset \R$, то у $f(x)$ есть
 	  минимальный положительный период.
 	  \end{thm}
 	\begin{proof}
@@ -52,12 +52,12 @@
 	 Если $f(x)$ имеет период $T > 0$, то в случае когда
 	 \begin{equation}
 	 \label{lec16:2}
-	  f \in R(\left[a, b\right]) \-- \text{интегрируема} \implies \forall a \in R
+	  f \in \R(\left[a, b\right]) \-- \text{интегрируема} \implies \forall a \in R
 	   \quad \exists \int\limits_a^{a+T} f(x)dx = \int \limits_0^T f(x)dx.
 	 \end{equation}
 	 \end{lemma}
  \begin{proof}
-	 Пользуясь аддитивностью ОИ $\forall a \in R \implies
+	 Пользуясь аддитивностью ОИ $\forall a \in \R \implies
 	  \int\limits_{a}^{a+T}f(x)dx = \int\limits_a^T f(x)dx + \int
 	   \limits_T^{a+T}f(x)dx= \left[ \begin{gathered}1) x = t |_a^T \\ 2) t =
 	    (x-T)|_0^a \end{gathered}  \right] = \int\limits_a^Tf(t)dt +
@@ -85,8 +85,8 @@
 	  \end{equation}
 	  удовдетворяет всем аксиомам скалярного произведения в $C(\left[a, 
 	  b\right])$
-	 \begin{itemize}
-	 \item[1)] неотрицательность
+	 \begin{enumerate}
+	 \item неотрицательность
 	 \begin{equation}
 	 \label{lec16:4}
 	 \forall f \in C(\left[a, b\right]) \implies (f, f) = \int\limits_a^bf^2(x)\; 
@@ -110,18 +110,18 @@
 	  f^2(x)\; dx + \int\limits_\alpha^\beta f^2(x) \; dx + \int\limits_\beta ^b 
 	  f^2(x)dx \geq
 	   \int\limits_\alpha^\beta f^2(x)dx  > 0$. Противоречие.
-	 \item[2)] симметричность\\
+	 \item симметричность\\
 	 $\forall f, g \in C(\left[a, b\right]) \implies(f, g)
 	  \stackrel{\eqref{lec16:3}}{=} \int\limits_a^b g(x)f(x)\; dx = (g, f) $
-	 \item[3)] линейность\\
-	 $\forall f, g, h \in C(\left[a, b\right]), \forall \lambda, \ \mu \in R 
+	 \item линейность\\
+	 $\forall f, g, h \in C(\left[a, b\right]), \forall \lambda, \ \mu \in \R 
 	 \implies
 	  (f, (\lambda g + \mu h)) = \int \limits_a^bf(x) (\lambda g(x) + \mu h(x)) 
 	  \; dx =
 	   \lambda \int \limits_a^bf(x)g(x)\; dx + \mu \int \limits_a^bf(x)h(x)\; dx 
 	   = \lambda(f,
 	    g) + \mu (f, h)$.\\
-\end{itemize}
+\end{enumerate}
 	 По аналогии с нормированным пространством $R_n$ скалярное произведение
 	  $\eqref{lec16:3}$ порождает естественную норму в пространстве $C(\left[a,
 	   b\right])$
@@ -149,21 +149,21 @@
 	 \end{equation}
 	 В силу $\eqref{lec16:7}$, так же как и в $R_n$ показывается, что величина
 	  $\eqref{lec16:5}$ удовлетворяет всем аксиомам нормы:
-	 \begin{itemize}
-	 \item[a)]неотрицательность \\
+	 \begin{enumerate}
+	 \itemнеотрицательность \\
 	 $\forall f \in C(\left[a, b\right]) \implies ||f|| \geq 0$, причем $||f|| = 
 	 0
 	  \iff \begin{cases}
 	 f(x) = 0\\\forall x \in \left[a, b\right]\\
 	 \end{cases}$
-	 	\item[б)] однородность
-	 $\forall f \in C(\left[a, b\right]) \qquad \forall x \in R \implies 
+	 	\item однородность
+	 $\forall f \in C(\left[a, b\right]) \qquad \forall x \in \R \implies 
 	 ||\lambda
 	  f|| = |\lambda| \ ||f||$\\
-	 \item[в)] неравенство треугольника
+	 \item неравенство треугольника
 	 $\forall f, g, h \in C(\left[a, b\right]) \implies ||f - g|| \leq ||f - h|| 
 	 + ||h - g||$
-	 	\end{itemize}
+	 	\end{enumerate}
 	 Использование нормы $\eqref{lec16:5}$ в $C(\left[a, b\right])$ дает 
 	 естественное расстояние
 	 \begin{equation}
@@ -231,17 +231,16 @@
 	ТСФ $\eqref{lec16:10}$ для каждой функции $T_0 = 2 \pi > 0$ будет периодом. В 
 	силу
 	 этого ограничения рассмотрим $\eqref{lec16:10}$ на промежутке $[a, a+2\pi]$, 
-	 $a
-	  \in R$.
+	 $a  \in \R$.
 	\begin{thm}[об ортогональности основной тригономестрической системы]
 	Система $\eqref{lec16:10}$ ортогональна $\forall [a, a+2 \pi]$
 	\end{thm}
 	\begin{proof}
-	В силу леммы об интегрировании периодической функции, для $2\pi -$ 
+	В силу леммы об интегрировании периодической функции, для $2\pi$- 
 	периодичной
 	 функции имеем $\int\limits_a^{a+2\pi}f(x)\; dx = \int\limits_0^{2\pi}f(x)\; 
 	 dx = const
-	  \forall a \in R$\\
+	  \forall a \in \R$\\
 	Достаточно доказать для $a = -\pi$, т.~е. на промежутке $]-\pi, \pi[$\\
 	\begin{enumerate}
 	\item Во-первых, $<1, \cos kx> = \int\limits_{-\pi}^{\pi} 1 \cdot \sin kx \; 
