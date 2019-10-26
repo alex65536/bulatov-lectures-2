@@ -28,7 +28,9 @@ before_deploy: |
     git config --local user.name "travis"
     git config --local user.email "travis"
     TRAVIS_TAG=latest
-    [[ "$(git branch --show-current)" == "devel" ]] && TRAVIS_TAG=devel-latest
+    [[ "$TRAVIS_BRANCH" == "devel" ]] && TRAVIS_TAG=devel-latest
+    export TRAVIS_TAG
+    echo "Branch is: $TRAVIS_BRANCH"
     echo "Using tag: $TRAVIS_TAG"
     git tag -f $TRAVIS_TAG
 
