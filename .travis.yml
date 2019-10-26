@@ -21,7 +21,7 @@ install:
 script:
     make LATEXMK="./latexmk/latexmk.pl" LATEXMK_FLAGS="-Werror"
 
-before_deploy:
+before_deploy: |
     # rename the pdf file
     cp main.pdf bulatov2.pdf
     # set up git user name and tag this commit
