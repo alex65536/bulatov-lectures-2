@@ -51,7 +51,7 @@ $
 
 $\int\limits_1^{+\infty}\dfrac{c}{x^2}dx$~--- сходится по степенному признаку.
 
-Второе слагаемое НИЗОП-1 также сходится по признаку сравнения ???.
+Второе слагаемое НИЗОП-1 также сходится по признаку сравнения 1.
 \\\\
 Область существования(сходимости) для \eqref{lec13:1} будет $\forall a \in ]0, 
 +\infty[$.
@@ -66,22 +66,29 @@ $\int\limits_1^{+\infty}\dfrac{c}{x^2}dx$~--- сходится по степен
 В области сходимости~--- непрерывная функция от а.
 
 Учитывая, что для \eqref{lec13:2}
-\[
-\exists f'_a(x, a) = (e^{-x} x^{a-1})'_a = e^{-x}x^{a-1} \ln x \implies \in 
-C() \forall x > 0, \forall a > 0.
-\]
+$
+\exists f'_a(x, a) = (e^{-x} x^{a-1})'_a = e^{-x}x^{a-1} \ln x$ 
+непрерывна$\forall x>0,\forall a >0.
+$
 
 \[
-\int\limits_0^{+\infty} e^{-x} x^{a-1} \ln x dx ???
+\int\limits_0^{+\infty} e^{-x} x^{a-1} \ln x dx
+\overset{\forall \left[ \alpha, \beta \right] \in (0, 
+	+\infty)}{\rightrightarrows}
 \]
 
 $
-\exists \Gamma'(a) = \int\limits_0^{+\infty} ()'_a dx = 
-\int\limits_0^{+\infty} 
-e^{-x} x^{a-1} \ln x dx 
+\exists \Gamma'(a) = \int\limits_0^{+\infty} (e^{-x} x^{a-1})'_a dx = 
+\int\limits_0^{+\infty} e^{-x} x^{a-1} \ln x dx 
 $
-
+непрерывна
 $\forall a > 0$
+
+Аналогичным образом по индукции $\forall k \in \N$
+
+$
+\Gamma^{(k)}(a) = \ldots = \int\limits_0^{+\infty} e^{-x} x^{a-1} \ln x dx 
+$
 
 $
 \forall x \in N_0 \implies \exists f^{(k)}_a = \cdots = 
@@ -110,6 +117,9 @@ xe^{-x}|^{+\infty}_0 + \int\limits_0^{+\infty} e^{-x} dx =
 $\Gamma(a_0) = \Gamma_{min} \simeq 0.886$
 
 В результате график
+
+\includegraphics[scale = 1]{../../img/lec13_1}
+
 
 Интегрирование по частям имеем:
 $
