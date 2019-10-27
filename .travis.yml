@@ -18,17 +18,25 @@ install:
     - curl https://ctan.mirror.norbert-ruehl.de/support/latexmk.zip -o /tmp/latexmk.zip
     - unzip /tmp/latexmk.zip latexmk/latexmk.pl
 
-script:
-    make LATEXMK="./latexmk/latexmk.pl" LATEXMK_FLAGS="-Werror"
+script: |
+    if [[ "$TRAVIS_BRANCH" == "devel" ]]; then
+        make LATEXMK="./latexmk/latexmk.pl" build
+    else
+        make LATEXMK="./latexmk/latexmk.pl" LATEXMK_FLAGS="-Werror" style build
+    fi
 
-before_deploy:
+before_deploy: |
     # rename the pdf file
-    - cp main.pdf bulatov2.pdf
+    cp main.pdf bulatov2.pdf
     # set up git user name and tag this commit
-    - git config --local user.name "travis"
-    - git config --local user.email "travis"
-    - export TRAVIS_TAG=latest
-    - git tag -f $TRAVIS_TAG
+    git config --local user.name "travis"
+    git config --local user.email "travis"
+    TRAVIS_TAG=latest
+    [[ "$TRAVIS_BRANCH" == "devel" ]] && TRAVIS_TAG=devel-latest
+    export TRAVIS_TAG
+    echo "Branch is: $TRAVIS_BRANCH"
+    echo "Using tag: $TRAVIS_TAG"
+    git tag -f $TRAVIS_TAG
 
 deploy:
   provider: releases
@@ -40,6 +48,7 @@ deploy:
   overwrite: true
   on:
     branch: master
+    branch: devel
 
 tags:
   except:
