@@ -165,13 +165,13 @@ e^{-t^2} dt
 называется
 \begin{equation}
 	\label{lec13:6}
-	B(a; b) = \int\limits_0^1x^{a-1}(1-x)^{b-1}dx
+	B(a, b) = \int\limits_0^1x^{a-1}(1-x)^{b-1}dx
 \end{equation}
 
 Отделяя в \eqref{lec13:6} возможные особенности, получаем:
 \begin{equation}
 	\label{lec13:7}
-	B(a; b) = \int\limits_0^{\frac{1}{2}} 
+	B(a, b) = \int\limits_0^{\frac{1}{2}} 
 	x^{a-1} (1-x)^{b-1}dx + \int\limits_{\frac{1}{2}}^{1} 
 	x^{a-1}(1-x)^{b-1}dx
 \end{equation}
@@ -199,31 +199,5 @@ e^{-t^2} dt
 	\dfrac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)}.
 	\end{equation}
 \end{thm}
-
-\begin{proof}
-	\[\Gamma(a) \stk{lec13:1}= \left[
-	\begin{array}{l}
-    x=ty \\
-    y = \dfrac{x}{t}\Big|^{+\infty}_0 \\
-    dx = t\; dy \\
-    t > 0 - \fix
-	\end{array}\right] = 
-	\int\limits_0^{+\infty}e^{-ty}(ty)^{a-1}t\;dy = t^a 
-	\int\limits_0^{+\infty}e^{-ty}y^{a-1}\;dy,\]
-	откуда получаем, что
-	\begin{equation}
-		\label{lec13:9}
-		\dfrac{\Gamma(a)}{t^a}=\int\limits_0^{+\infty}e^{-ty}y^{a-1}dy
-	\end{equation}
-	
-	Заменяя в \eqref{lec13:9} $a > 0$ на $a+b > 0$ и $t > 0$ на $t+1 > 0$, 
-	получаем:
-	\begin{equation}
-	\label{lec13:10}
-	\dfrac{\Gamma(a+b)}{(1+t)^{a+b}} = \int\limits_0^{+\infty} e^{-(1+t)y} 
-	y^{(a+b) - 
-	1} dy.
-	\end{equation}
-\end{proof}
 
 \end{document}
