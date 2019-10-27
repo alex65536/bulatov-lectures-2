@@ -11,10 +11,10 @@
 
 \begin{document}
 	
-\begin{corollary*}[Формула дополнения для Эйлеровых интегралов.]
+\begin{corollary*}[формула дополнения для Эйлеровых интегралов]
 	\begin{equation}
 	\label{15:21}
-	\forall a \in (0,1) \implies \Gamma(a)\Gamma \left( 1-a\right)  = B\left( a,1-a\right) = E(a) = \frac{\pi}{\sin{\pi a}}
+	\forall a \in (0,1) \quad \Gamma(a)\Gamma \left( 1-a\right)  = B\left( a,1-a\right) = E(a) = \frac{\pi}{\sin{\pi a}}.
 	\end{equation}
 \end{corollary*}
 
@@ -22,54 +22,52 @@
 %поэтому пруфа по факту нема
 
 \begin{proof}
-	Для обоснования $\eqref{15:21}$ используем связь гамма и бета функций:
+	Для обоснования $\eqref{15:21}$ используем связь гамма- и бета-функций:
 	
 	\begin{equation}
 	\label{15:22}
 	\frac{\Gamma \left( a\right)\Gamma \left( 1-a\right)}{\Gamma \left( 1\right)} = \frac{\Gamma \left( a\right)\Gamma \left( 1-a\right)}{0!} = B \left( a,1-a\right)
 	\end{equation}
 	
-	
 	\begin{equation}
 	\label{15:23}
 	B \left( a,1-a\right) = E(a) = \frac{\pi}{\sin{\pi a}}
+	\qedhere
 	\end{equation}
 \end{proof}	
 
-Для $a = \frac{1}{2}$:
+Для $a = \dfrac{1}{2}$ имеем:
 
 \begin{equation}
 \label{15:24}
-\Gamma^2 \left( \frac{1}{2} \right) = \Gamma \left( \frac{1}{2} \right) \Gamma \left( 1-\frac{1}{2} \right) = \frac{\pi}{\sin{\frac{\pi}{2}}} = \pi \implies \left[ \Gamma(a) > 0, \forall a > 0\right] \implies \Gamma(a) = \sqrt{\pi}
+\Gamma^2 \left( \frac{1}{2} \right) = \Gamma \left( \frac{1}{2} \right) \Gamma \left( 1-\frac{1}{2} \right) = \frac{\pi}{\sin{\frac{\pi}{2}}} = \pi \implies \left[ \Gamma(a) > 0,\ \forall a > 0\right] \implies \Gamma(a) = \sqrt{\pi},
 \end{equation}
-
-что ранее было доказано с помощью интеграла Эйлера-Пуассона. Предложенное независимое вычисление $\eqref{15:24}$ в свою очередь дает новый способ нахождения интеграла Эйлера-Пуассона, через гамма-функцию:
-
-\[  \int\limits_{0}^{+\infty} e^{-x^2} \; dx = \left[ x = \sqrt{t} \right] =  \frac{1}{2} \int\limits_{0}^{+\infty} e^{-t} \frac{dt}{\sqrt{t}} = \frac{1}{2} \int\limits_{0}^{+\infty} e^{-t} t^{\frac{1}{2} - 1} \; dt = \frac{1}{2} \Gamma\left( \frac{1}{2} \right) = \frac{\sqrt{\pi}}{2}         \]
+что ранее было доказано с помощью интеграла Эйлера-Пуассона. Предложенное независимое вычисление $\eqref{15:24}$ в свою очередь дает новый способ нахождения интеграла Эйлера-Пуассона через $\Gamma$-функцию:
+\[  \int\limits_{0}^{+\infty} e^{-x^2} \; dx = \left[ x = \sqrt{t} \right] =  \frac{1}{2} \int\limits_{0}^{+\infty} e^{-t} \frac{dt}{\sqrt{t}} = \frac{1}{2} \int\limits_{0}^{+\infty} e^{-t} t^{\frac{1}{2} - 1} \; dt = \frac{1}{2} \cdot \Gamma\left( \frac{1}{2} \right) = \frac{\sqrt{\pi}}{2}. \]
 
 \begin{example}
-	Рассмотрим:
+	Рассмотрим
+	\[  F(a) = \int\limits_{0}^{\frac{\pi}{2}} \tg^a x \; dx. \]
 	
-	\[  F(a) = \int\limits_{0}^{\frac{\pi}{2}} tg^2 x \; dx      \]
+	\begin{enumerate}
+	 \item $\displaystyle \tg^a x  {\underset{x \to +0}\sim} x^a = \frac{1}{x^{-a}}$
+	 
+	 \item $\displaystyle \tg^a x {\underset{x \to \frac{\pi}{2} - 0}\sim\ } \frac{\cos^a \left( \frac{\pi}{2} - x\right) }{\sin^a \left( \frac{\pi}{2} - x\right)} {\underset{x \to \frac{\pi}{2} - 0}\sim\ } \frac{1}{\left( \frac{\pi}{2} - x\right)^a }$
+	\end{enumerate}
 	
-	\[ tg^2 x  {\underset{x \to +0}\sim} x^a = \frac{1}{x^{-a}}\]
-		
-	\[ tg^2 x {\underset{x \to \frac{\pi}{2} - 0}\sim} \frac{\cos^a \left( \frac{\pi}{2} - x\right) }{\sin^a \left( \frac{\pi}{2} - x\right)} {\underset{x \to \frac{\pi}{2} - 0}\sim} \frac{1}{\left( \frac{\pi}{2} - x\right)^a } \]
+	Отделяя особенности, получаем
+	\[  F(a) = \int\limits_{0}^{\frac{\pi}{4}} \tg^a x \; dx + \int\limits_{\frac{\pi}{4}}^{\frac{\pi}{2}} \tg^a x \; dx. \]
 	
-	\[  F(a) = \int\limits_{0}^{\frac{\pi}{4}} tg^2 x \; dx + \int\limits_{\frac{\pi}{4}}^{\frac{\pi}{2}} tg^2 x \; dx     \]
-	
-	По степенному признаку сходимости НИЗОП-2, первый интеграл сходится при $-a < 1 \implies a > -1$, второй при $a < 1$, следовательно $|a| < 1$. В заданной области, для вычисления $F(a)$ воспользуемся интегралом Эйлера:
-	
+	По степенному признаку сходимости НИЗОП-2 первый интеграл сходится при ${-a < 1} \implies {a > -1}$, второй~--- при $a < 1$, следовательно, $|a| < 1$. В заданной области для вычисления $F(a)$ воспользуемся интегралом Эйлера:
 	\[  F(a) = \left[ \begin{gathered}   
-	tg^2 x  = t \bigg|_{0}^{+\infty}\\
-	x = \arctg{\sqrt{t}}, \; dx = \frac{dt}{2(1+t)\sqrt{t}}
-	\end{gathered}\right] = \frac{1}{2} \int\limits_{0}^{+\infty} \frac{ t^{\frac{a}{2}}  \; dt}{(1+t)\sqrt{t}} = \frac{1}{2} \int\limits_{0}^{+\infty} \frac{t^{\frac{a+1}{2} - 1} }{1+t} \; dt = \frac{1}{2}E\left( \frac{a+1}{2} \right) =        \]
-	
-	\[  \left[ \begin{gathered}   
+	\tg^2 x  = t \big|_{0}^{+\infty}\\
+	x = \arctg{\sqrt{t}} \\
+	dx = \frac{dt}{2(1+t)\sqrt{t}}
+	\end{gathered}\right] = \frac{1}{2} \int\limits_{0}^{+\infty} \frac{ t^{\frac{a}{2}}  \; dt}{(1+t)\sqrt{t}} = \frac{1}{2} \int\limits_{0}^{+\infty} \frac{t^{\frac{a+1}{2} - 1} }{1+t} \; dt = \frac{1}{2}E\left( \frac{a+1}{2} \right) =   \]
+	\[ = \left[ \begin{gathered}   
 	|a|<1\\
 	0 < \frac{a+1}{2} < 1
-	\end{gathered}\right] = \frac{\pi}{2\sin{\pi\left( \frac{a+1}{2}\right) }} =  \frac{\pi}{2\cos{\pi\left( \frac{a}{2}\right) }}       \]
-	
+	\end{gathered}\right] = \frac{\pi}{2\sin{\pi\left( \frac{a+1}{2}\right) }} =  \frac{\pi}{2\cos{\pi\left( \frac{a}{2}\right) }}. \]
 \end{example}	
 
 \end{document}
