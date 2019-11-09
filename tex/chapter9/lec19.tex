@@ -1,0 +1,143 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+\section{Ряд Фурье для четных и нечетных периодических и непериодических функций}
+
+	Пусть $f(x)$ задана $\forall x\in ]-l; l[$. Если эта функция является $T=2l$ периодической, то интегрируя обычным образом имеем:
+	\begin{equation} \label{9.4.13}
+		f(x) \sim \frac{a_0}{2} + \sum_{k=1}^{\infty}  a_k \cos \frac{\pi k x}{l} +
+		b_k \sin \frac{\pi k x}{l},
+	\end{equation}
+	\begin{equation}\label{9.4.14}
+		a_k = \frac{1}{l}\int_{-l}^{l} f(x) \cos \frac{\pi k x}{l} dx, \; k \in \N _0,
+	\end{equation}
+	\begin{equation}\label{9.4.15}
+		b_k = \frac{1}{l}\int_{-l}^{l} f(x) \sin \frac{\pi k x}{l} dx, \; k \in \N.
+	\end{equation}
+	Точно также строится ряд Фурье, если $f(x)$ не является периодической. Рассмотрим 2 случая:
+	\begin{enumerate}
+		\item $f(x)$ --- четная на $]-l; l[,$ то есть $f(x) = f(-x), \forall x \in ]-l; l. $
+		Тогда подынтегральная \ref{9.4.13} также четна по свойствам ОИ. Значит, 
+		\[
+			a_k = \frac{2}{l}\int_{0}^{l} f(x) \cos \frac{\pi k x}{l} dx, \; k \in \N _0,
+		\]
+		В \ref{9.4.15} подынтегральная функция нечетна, получаем 
+		$\forall b_k = 0, k \in \N.$
+
+		\item $f(x)$ --- нечетная на $]-l; l[.$
+		Здесь:
+		\[
+		a_k \stackrel{\ref{9.4.14}}{=} 0, \; k \in \N _0,
+		\]
+		\[
+			b_k = \frac{2}{l}\int_{0}^{l} f(x) \sin \frac{\pi k x}{l} dx, \; k \in \N.
+		\]
+	\end{enumerate}
+
+		Эти результаты часто используются для $f(x),$ интегрируемой на $]0; l[, \, l > 0.$
+		В этом случае рассматривают либо четное продолжение $f(x)$ на $]-l; l[,$ полагая 
+		$f_{\text{чётн}}(x) = f(|x|).$
+		Получают для $f_{\text{чётн}}(0)$ разложение в ряд Фурье на $]0; l[$ только по $\cos.$
+		
+		Аналогично, используя для $f(x),$ интегрируемой на $]0; l[,\, l > 0$ ее нечетное продолжение на $]-l; l[ \ : \; f_{\text{неч}}(x) = f(|x|)\sign(x),$ получают соответствующий ряд Фурье, содержащий только синусы. Который для $x \in ]0; l[$ дает для $f(x) = f_{\text{неч}}(x)$ соответствующее разложение по синусам.
+		
+		\begin{examples}
+			\begin{enumerate}
+				\item Рассмотрим $f(x) = \{x\}, \; f(x + 1) = \{x+1\} = \{x\} = f(x), \forall x \in \R. \; 2l = T = 1 \implies l = \frac{1}{2}.$
+				Поэтому тут разложение в ряд Фурье будет иметь вид:
+				\[
+					\{x\} \sim \frac{a_0}{2} + \sum_{k=1}^{\infty}  a_k \cos 
+					2 \pi k x +
+					b_k \sin 2 \pi k x.
+				\]
+				Чтобы упростить вычисления рассмотрим функцию: $\{x\} - 1/2 = g(x), \; g(x) $ нечетная на $]-1; 1[,$ поэтому разложение $g(x)$ будет только по $\sin.$
+				\[
+					g(x) = \sum_{k=1}^{infty} b_k \sin 2 k \pi x.
+				\] 
+				В силу формулы \ref{9.4.15} имеем:
+				\[
+					b_k = 4 \int_{0}^{1/2} \left(x - \frac{1}{2}\right) \sin 2 k \pi x dx =
+					-\frac{2}{\pi k} \int_{0}^{1/2} \left(x - \frac{1}{2}\right)  d (\cos 2 \pi k x) = 
+					\]
+					\[
+					-\frac{2}{\pi k} \left. \left(x - \frac{1}{2}\right) \cos 2 \pi k x \right|_0^{1/2} + \frac{2}{\pi k}  \int_{0}^{1/2} \cos 2 \pi k x dx =
+					-\frac{2}{\pi k} \frac{1}{2} = -\frac{1}{\pi k} \implies
+				\]
+				\[
+				\implies
+				g(x) = \{x\} - \frac{1}{2} \sim - \sum_{k=1}^{\infty} \frac{1}{\pi k} \sin 2 \pi k x.
+				\]
+				Отсюда 
+				\[
+					\{x\} \sim \frac{1}{2}  -\frac{1}{\pi} \sum_{k=1}^{\infty} \frac{\sin 2 \pi k x}{k}.
+				\]
+				Учитывая, что для $f(x) = \{x\}$ точки $x_m = m \in \Z$ являются точками скачка, в которых:
+				\[
+					\frac{f(x_m+0) + f(x_m-0)}{2} = \frac{1}{2} \implies 
+					\forall x \notin \Z \implies \{x\} \sim \frac{1}{2}  -\frac{1}{\pi} \sum_{k=1}^{\infty} \frac{\sin 2 \pi k x}{k}.
+				\]
+				\item Рассмотрим функцию $f(x) = x, x \in ]0, \pi[.$ 
+				Ее четным продолжением будет $f_{\text{чётн}}(x) = f(|x|) = |x|, x \in ]-\pi, \pi[.$
+				
+				Здесь на графиках имеем:
+				
+				Строя далее периодическое продолжение $f_{\text{чётн}}(x)$ получаем:
+				
+				Для получения суммы ряда Фурье $S(x)$ по $\cos$, кратным 2, в силу того, что ранее точки $x_m = (2m -1)\pi, \; m \in \Z$ для $f_{\text{чётн}}(x)$ точками устраняемого разрыва, получаем непрерывную функцию $y = S(x).$
+				\[
+					S(x_m) = \frac{f_{\text{чётн}}(x_m+0)+ f_{\text{чётн}}(x_m-0)}{2} = \pi.
+				\]
+				После качественного исследования перейдем к количественному, а именно:
+				\[
+					|x| \sim \frac{a_0}{2} + \sum_{k=1}^{\infty}  a_k \cos k x, \; x \in ]-\pi, \pi[
+				\]
+				\[
+					a_0 = \frac{2}{\pi} \int_{0}^{\pi}xdx = \left. \frac{1}{\pi} x^2 \right|_0^{\pi} = \pi.
+				\]
+				\[
+					a_k = \frac{2}{\pi} \int_{0}^{\pi}x \cos kx dx = 
+					\frac{2}{\pi k } \int_{0}^{\pi}x d (\sin kx) = 
+					\left. \frac{2x \sin kx}{\pi k}\right|_0^{\pi} - \frac{2}{\pi k} \int_{0}^{\pi}\sin kx dx =  
+				\]
+				\[
+				 = \frac{2}{\pi k} \left. \frac{cos k x}{k} \right|_0^{\pi} =
+				 \frac{2}{\pi k^2} \left( \cos \pi k - 1 \right) = 
+				 \begin{cases}
+				 0, \, k = 2n \\
+				 -\frac{4}{\pi k^2}, k = 2n+1
+				 \end{cases}, \, n \in \N.
+				\]
+				Таким образом,
+				\[
+					|x| \sim \frac{\pi}{2} - \frac{4}{\pi} \sum_{k=1}^{\infty}\frac{\cos(2n-1)x}{(2n-1)^2}.
+				\]
+				Здесь $\forall x \in [-\pi; \pi]$ имеем равенство:
+				\[
+					|x| = \frac{\pi}{2} - \frac{4}{\pi} \sum_{k=1}^{\infty}\frac{\cos(2n-1)x}{(2n-1)^2}.
+				\]
+				В частности при $x = 0:$
+				\[
+					0 = \frac{\pi}{2} - \frac{4}{\pi} \sum_{k=1}^{\infty}\frac{1}{(2n-1)^2} \implies  \sum_{k=1}^{\infty}\frac{1}{(2n-1)^2} = \frac{\pi^2}{8}.
+				\]
+				Далее, используя сходимости ряда
+				\[
+					S_0 = \sum_{n=1}^{\infty} \frac{1}{n^2} = \sum_{n=1}^{\infty} \frac{1}{(2n)^2}  + \sum_{n=1}^{\infty} \frac{1}{(2n-1)^2} = 
+					\frac{1}{4} \sum_{n=1}^{\infty} \frac{1}{n^2} +  \sum_{n=1}^{\infty} \frac{1}{(2n-1)^2} =
+					\frac{1}{4}S_0 + \frac{\pi}{8} \implies S_0 = \frac{\pi^2}{6}.
+				\]
+				Полученное разложение дает следующий результат для 
+				\[
+					f(x) = x = \frac{\pi}{2} - \frac{4}{\pi} \sum_{k=1}^{\infty}\frac{\cos(2n-1)x}{(2n-1)^2}, \ \forall x \in ]0, \pi[.
+				\]
+			\end{enumerate}
+		\end{examples}
+\end{document}
