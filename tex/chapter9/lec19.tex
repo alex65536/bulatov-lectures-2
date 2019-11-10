@@ -9,7 +9,7 @@
 	{img/}
 }
 
-\begin{document}
+\begin{document}	
 \section{Ряд Фурье для четных и нечетных периодических и непериодических функций}
 
 	Пусть $f(x)$ задана $\forall x\in ]-l; l[$. Если эта функция является $T=2l$ периодической, то интегрируя обычным образом имеем:
@@ -140,4 +140,58 @@
 				\]
 			\end{enumerate}
 		\end{examples}
+
+\section{Равномерная сходимость ряда Фурье}
+	Для простоты рассмотрим $f(x),$ непрерывную на $[-\pi; \pi],$ для которой 
+	\begin{equation}\label{9.5.16}
+	f(-\pi) = f(\pi).
+	\end{equation}
+	\begin{thm}[О дифференцировании ряда Фурье]
+		При выполнении \ref{9.5.16} для непрерывно-дифференцируемой $2\pi$-периодической функции $f(x)$ нормальное дифференцирование ряда Фурье
+		\[
+		f(x) \sim \frac{a_0}{2} + \sum_{k=1}^{\infty}  a_k \cos k x +
+		b_k \sin k x
+		\]
+		дает ряд Фурье для $f'(x):$
+		\begin{equation} \label{9.5.17}
+			f'(x) \sim \left(\frac{a_0}{2}\right)' + \left(\sum_{k=1}^{\infty}  a_k \cos k x +
+			b_k \sin k x\right)' = \sum_{k=1}^{\infty} k b_k \cos k x - k
+			a_k \sin k x
+		\end{equation}
+	\end{thm}
+	\begin{proof}
+		Пусть
+		\[
+			f'(x) \sim \frac{\alpha_0}{2} + \sum_{k=1}^{\infty}  \alpha_k \cos k x +
+			\beta_k \sin k x,
+		\]
+		где $f'(x)$, в силу $2\pi$-периодичности $f(x)$, также является $2\pi$-периодической.
+		
+		Используя соответствующие формулы для коэффициентов ряда Фурье:
+		\[
+			\alpha_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} f'(x) dx = \frac{1}{\pi} \left[f(x)\right]_{-\pi}^{\pi} = 0.
+		\]
+		Аналогично интегрируя по частям:
+		\[
+			\alpha_k = \frac{1}{\pi} \int_{-\pi}^{\pi} f'(x) \cos kx dx = \frac{1}{\pi} \int_{-\pi}^{\pi} \cos kx df(x)  = \frac{1}{\pi} \left[\cos kx f(x)\right]_{-\pi}^{\pi} -
+			\frac{1}{\pi} \int_{-\pi}^{\pi} f(x)d \cos kx = 
+			\]
+			\[ =
+			\frac{1}{\pi} (f(\pi) - f(-\pi)) \cos kx -
+			\frac{k}{\pi} \int_{-\pi}^{\pi} f(x)\sin kxd x = k b_k.
+		\]
+		Аналогично
+		\[
+			\beta_k = \frac{1}{\pi} \int_{-\pi}^{\pi} f'(x) \sin kx dx =
+			= \frac{1}{\pi} \int_{-\pi}^{\pi} \sin kx df(x)  =
+			\frac{1}{\pi} \underbrace{\left[\sin kx f(x)\right]_{-\pi}^{\pi}}_{0} -
+			\frac{k}{\pi} \int_{-\pi}^{\pi} f(x) \cos kx dx = -ka_k.
+		\]
+		Таким образом, 
+		\[
+		f'(x) \sim 0 + \sum_{k=1}^{\infty}( k b_k \cos k x - k
+		a_k \sin k x) = \left(\frac{a_0}{2} + \sum_{k=1}^{\infty}  a_k \cos k x +
+		b_k \sin k x\right)'.
+		\]
+	\end{proof}
 \end{document}
