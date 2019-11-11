@@ -10,6 +10,154 @@
 }
 
 \begin{document}	
+		\begin{proof}
+		Используя в доказательстве теоремы
+		 $D_0=\cfrac{f(x_0+0)+f(x_0-0)}{2}\in\R$, имеем:
+		\[
+		\exists\lim_{t\rightarrow+0}\cfrac{f(x_0+0)+f(x_0-0)-2D_0}{t}=
+		\underset{\in\R}{\lim_{t\rightarrow+0}\cfrac{f(x_0+t)-f(x_0+0)}{t}}
+		+\underset{\in\R}{\lim_{t\rightarrow+0}\cfrac{f(x_0+t)-f(x_0+0)}{t}}\in\R,
+		\]
+		т.~е. рассматриваемый ряд Фурье сходится к 
+		$S(x_0)=D_0=\cfrac{f(x_0+0)+f(x_0-0)}{2}$ 
+	\end{proof}	
+	
+	\begin{rems}
+		\begin{enumerate}
+			\item Если $f(x)$ непрерывна в $x_0$, т.~е.
+			 $f(x_0-0)=f(x_0)=f(x_0+0)$, то при выполнении \ref{lec19:12}
+			ряд Фурье будет сходиться к $S(x_0)=D_0=\cfrac{f(x_0+0)+f(x_0-0)}{2}$.
+			
+			Если же \ref{lec19:12} не выполняется, то даже в случае
+			непрерывности $f(x)$ в $x_0$ не обязательно ряд будет сходиться.
+			Условия \ref{lec19:12} заведомо выполнены, если существует 
+			односторонний предел производной $f'_t(x_0)$. В этом случае для 
+			$f(x)$, непрерывно дифференцируемой в $x_0$, ряд Фурье будет 
+			сходиться к $S(x_0)=f(x_0)$
+			\item Если $f(x)$ имеет в точке $x_0$ разрыв 1 рода, 
+			(т.~е. $x_0$ либо точка непрерывности, либо точка скачка 
+			$(\exists f(x_0\pm0)\neq f(x_0))$\;), то при выполнении 
+			\ref{lec19:12} ряд Фурье будет сходиться к среднему 
+			арифметическому: $\cfrac{f(x_0+0)+f(x_0-0)}{2}$.
+			
+			\item Если $2\pi$-периодическая $f(x)$ на 
+			$\left[-\pi,\pi \right]$ непрерывна и кусочно-гладкая, т.~е.
+			дифференцируема во всех кроме конечного числа точек, причем
+			в этих точнках есть конечная односторонняя производная, то для 
+			этих точек $f(x_0)=S(x_0)$. 
+		\end{enumerate}
+	\end{rems}
+	\begin{example}
+		\[
+		a_0=\dots=2(a+l)
+		\]
+		
+		\[
+		x\sim a+l+\frac{2l}{\pi}\sum_{k=1}^{\infty}\frac{1}{k}
+		\left(
+		\sin \frac{\pi ka}{l} \cos\frac{\pi kx}{l}-\cos \frac{\pi ka}{l}
+		\sin\frac{\pi kx}{l}
+		\right)
+		\]
+		При
+		\[
+		\begin{cases}
+		a=\pi,\\
+		l=\pi,\\
+		\end{cases}
+		\]	
+		т.~е. $x\in\left[-\pi,\pi\right]$ следует 
+		
+		\begin{equation*}
+		\tilde{x}\sim 2\sum_{k=1}^{\infty}\frac{1}{k}
+		\left(0-\cos  kx \sin kx\right)=
+		2\sum_{k=1}^{\infty}\frac{(-1)^k \sin kx}{k}
+		\end{equation*}
+		
+		Для выяснения, для каких $x$ имеет место равенство, во-первых $f(x)=x, 
+		x\in \left] -\pi, \pi\right[$ продолжим на $\R$, то есть рассмотрим 
+		$2\pi$-периодическую $f^*(x):$ 
+		\[f^*(x)=x, x\in\left]-\pi,\pi\right[.\]
+		
+		
+		\usetikzlibrary{arrows}
+		\begin{tikzpicture}[line cap=round,line join=round,
+		>=triangle 45,x=1.3cm,y=1.3cm]
+		\draw[->,color=black] (-4.37,0) -- (4.37,0);
+		\foreach \x in {-3,-2,2,3}
+		\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt)
+		 node[below] {\footnotesize $\x\pi$};
+		\draw[shift={(1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+		node[below] {\footnotesize $\pi$};
+		\draw[shift={(-1,0)},color=black] (0pt,2pt) -- (0pt,-2pt)
+		 node[below] {\footnotesize $-\pi$};
+		\draw[->,color=black] (0,-1.25) -- (0,1.25) node[right] 
+		{\footnotesize $f^*(x)=x$};
+		\draw[shift={(0,1)},color=black] (2pt,0pt) -- (-2pt,0pt)
+		 node[left] {\footnotesize $\pi$};
+		\draw[shift={(0,-1)},color=black] (2pt,0pt) -- (-2pt,0pt)
+		 node[left] {\footnotesize $-\pi$};
+		\draw[color=black] (2pt,0pt) -- (-2pt,0pt) node[left] 
+		{\footnotesize $0$};
+		\draw[<->] (-1,-1)-- (1,1);
+		\draw[<->] (1,-1)-- (3,1);
+		\draw[<->] (-3,-1)-- (-1,1);
+		\end{tikzpicture}
+		
+		
+		Точки $x_m=(2m-1)\pi, m\in\Z$ --- точки скачка. В этих точках ряд Фурье
+		будет сходиться к
+		\[
+		S(x_m)=\frac{f(x_m+0)+f(x_m-0)}{2}=\frac{\pi+(-\pi)}{2}=0
+		\]
+		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 
+		45,x=1.3cm,y=1.3cm]
+		\draw[->,color=black] (-4.37,0) -- (4.37,0);
+		\foreach \x in {-3,-2,2,3}
+		\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+		node[below] {\footnotesize $\x\pi$};
+		\draw[shift={(1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+		node[below] {\footnotesize $\pi$};
+		\draw[shift={(-1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+		node[below] {\footnotesize $-\pi$};
+		\draw[->,color=black] (0,-1.25) -- (0,1.25)node[right] 
+		{\footnotesize $S(x)$};;
+		\draw[shift={(0,1)},color=black] (2pt,0pt) -- (-2pt,0pt) 
+		node[left] {\footnotesize $\pi$};
+		\draw[shift={(0,-1)},color=black] (2pt,0pt) -- (-2pt,0pt) 
+		node[left] {\footnotesize $-\pi$};
+		\draw[color=black] (2pt,0pt) -- (-2pt,0pt) node[left] 
+		{\footnotesize $0$};
+		\draw[<->] (-1,-1)-- (1,1);
+		\draw[<->] (1,-1)-- (3,1);
+		\draw[<->] (-3,-1)-- (-1,1);
+		\fill(1,0) circle (2pt);<br>
+		\fill(-1,0) circle (2pt);<br>
+		\fill(3,0) circle (2pt);<br>
+		\fill(-3,0) circle (2pt);<br>
+		\end{tikzpicture}
+		
+		
+		
+		Сравнив последний график с исходным получим $\forall 
+		x\in\left]-\pi,\pi \right[ \implies$:
+		\[
+		x=2\sum_{k=1}^{\infty}\frac{(-1)^{k-1}\sin kx}{k}.
+		\]
+		Этот метод периодического продолжения используют и для непериодических
+		функций $f(x), \forall x\in \left| a;2l+1\right|$, строя
+		\[
+		f^*(x), x\neq a+2ml, m\in \Z
+		\]
+		а затем при выполнении соответствующих условий доопределяют $S(x)$ 
+		в исколючительных точках как
+		\[
+		\frac{f(a+2ml+0)+f(a+2ml-0)}{2}
+		\]
+		В конце сравнивают графики и записывают окончательный результат.
+		
+	\end{example}
+	
 \section{Ряд Фурье для четных и нечетных периодических и непериодических функций}
 
 	Пусть $f(x)$ задана $\forall x\in ]-l; l[$. Если эта функция является $T=2l$ периодической, то интегрируя обычным образом имеем:
@@ -50,9 +198,11 @@
 		
 		Аналогично, используя для $f(x),$ интегрируемой на $]0; l[,\, l > 0$ ее нечетное продолжение на $]-l; l[ \ : \; f_{\text{неч}}(x) = f(|x|)\sign(x),$ получают соответствующий ряд Фурье, содержащий только синусы. Который для $x \in ]0; l[$ дает для $f(x) = f_{\text{неч}}(x)$ соответствующее разложение по синусам.
 		
+		
 		\begin{examples}
 			\begin{enumerate}
 				\item Рассмотрим $f(x) = \{x\}, \; f(x + 1) = \{x+1\} = \{x\} = f(x), \forall x \in \R. \; 2l = T = 1 \implies l = \frac{1}{2}.$
+	
 				Поэтому тут разложение в ряд Фурье будет иметь вид:
 				\[
 					\{x\} \sim \frac{a_0}{2} + \sum_{k=1}^{\infty}  a_k \cos 
@@ -63,6 +213,40 @@
 				\[
 					g(x) = \sum_{k=1}^{infty} b_k \sin 2 k \pi x.
 				\] 
+				
+				\begin{tikzpicture}[line cap=round,line 
+				join=round,x=1.3cm,y=1.3cm]
+				\draw[->,color=black] (-4.37,0) -- (4.37,0);
+				\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+				\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $\x$};
+				\draw[->,color=black] (0,-1.25) -- (0,1.25)node[right] 
+				{\footnotesize $\{x\}$};
+				\foreach \y in {-1,1}
+				\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) 
+				node[left] {\footnotesize $\y$};
+				\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+				\foreach \a in {-3,-2,-1,0,1,2,3,4}
+				\draw[->] (\a-1,0)-- (\a,1);
+				\end{tikzpicture}
+				
+				\begin{tikzpicture}[line cap=round,line 
+				join=round,x=1.3cm,y=1.3cm]
+				\draw[->,color=black] (-4.37,0) -- (4.37,0);
+				\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+				\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $\x$};
+				\draw[->,color=black] (0,-1.25) -- (0,1.25)node[right] 
+				{\footnotesize $g(x)$};
+				\foreach \y in {-1,1}
+				\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) 
+				node[left] {\footnotesize $\y$};
+				\draw[color=black] (0pt,-10pt) node[right] {\footnotesize 
+					$0$};
+				\foreach \a in {-3,-2,-1,0,1,2,3,4}
+				\draw[->] (\a-1,-0.5)-- (\a,0.5);
+				\end{tikzpicture}
+				
 				В силу формулы \ref{9.4.15} имеем:
 				\[
 					b_k = 4 \int_{0}^{1/2} \left(x - \frac{1}{2}\right) \sin 2 k \pi x dx =
@@ -90,9 +274,93 @@
 				
 				Здесь на графиках имеем:
 				
+				\begin{tikzpicture}[line cap=round,line join=round,x=1.3cm,y=1.3cm]
+				\draw[->,color=black] (-2.37,0) -- (2.37,0);
+				\foreach \x in {-2,2}
+				\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $\x\pi$};
+				\draw[shift={(1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $\pi$};
+				\draw[shift={(-1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $-\pi$};
+				\draw[->,color=black] (0,-1.25) -- (0,1.25)node[right] 
+				{\footnotesize $f(x)$};
+				\draw[shift={(0,1)},color=black] (2pt,0pt) -- (-2pt,0pt) 
+				node[left] {\footnotesize $\pi$};
+				\draw[shift={(0,-1)},color=black] (2pt,0pt) -- (-2pt,0pt) 
+				node[left] {\footnotesize $-\pi$};
+				\draw[color=black] (0pt,-10pt) node[right] {\footnotesize 
+					$0$};
+				\draw[<->] (0,0)-- (1,1);
+				\end{tikzpicture}\;\;\;\;
+				\begin{tikzpicture}[line cap=round,line 
+				join=round,x=1.3cm,y=1.3cm]
+				\draw[->,color=black] (-2.37,0) -- (2.37,0);
+				\foreach \x in {-2,2}
+				\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $\x\pi$};
+				\draw[shift={(1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $\pi$};
+				\draw[shift={(-1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $-\pi$};
+				\draw[->,color=black] (0,-1.25) -- (0,1.25 )node[right] 
+				{\footnotesize $f_{\text{четн}}(x)$};
+				\draw[shift={(0,1)},color=black] (2pt,0pt) -- (-2pt,0pt) 
+				node[left] {\footnotesize $\pi$};
+				\draw[shift={(0,-1)},color=black] (2pt,0pt) -- (-2pt,0pt) 
+				node[left] {\footnotesize $-\pi$};
+				\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+				\draw[->] (0,0)-- (1,1);
+				\draw[->] (0,0)-- (-1,1);
+				\end{tikzpicture}
+				
+				\begin{tikzpicture}[line cap=round,line join=round,x=1.3cm,y=1.3cm]
+				\draw[->,color=black] (-2.37,0) -- (2.37,0);
+				\foreach \x in {-2,2}
+				\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $\x\pi$};
+				\draw[shift={(1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $\pi$};
+				\draw[shift={(-1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $-\pi$};
+				\draw[->,color=black] (0,-1.25) -- (0,1.25 )node[right] 
+				{\footnotesize $f^+_{\text{четн}}(x)$};
+				\draw[shift={(0,1)},color=black] (2pt,0pt) -- (-2pt,0pt) 
+				node[left] {\footnotesize $\pi$};
+				\draw[shift={(0,-1)},color=black] (2pt,0pt) -- (-2pt,0pt) 
+				node[left] {\footnotesize $-\pi$};
+				\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+				\draw[->] (0,0)-- (1,1);
+				\draw[->] (0,0)-- (-1,1);
+				\draw[->] (-2,0)-- (-1,1);
+				\draw[->] (2,0)-- (1,1);
+				\draw[-] (-2,0)-- (-2.5,0.5);
+				\draw[-] (2,0)-- (2.5,0.5);
+				\end{tikzpicture}
+				
+				
 				Строя далее периодическое продолжение $f_{\text{чётн}}(x)$ получаем:
 				
 				Для получения суммы ряда Фурье $S(x)$ по $\cos$, кратным 2, в силу того, что ранее точки $x_m = (2m -1)\pi, \; m \in \Z$ для $f_{\text{чётн}}(x)$ точками устраняемого разрыва, получаем непрерывную функцию $y = S(x).$
+				
+				\begin{tikzpicture}[line cap=round,line join=round5,x=1.3cm,y=1.3cm]
+				\draw[->,color=black] (-2.37,0) -- (2.37,0);
+				\foreach \x in {-2,2}
+				\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x\pi$};
+				\draw[shift={(1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\pi$};
+				\draw[shift={(-1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $-\pi$};
+				\draw[->,color=black] (0,-1.25) -- (0,1.25 )node[right] {\footnotesize $S(x)$};
+				\draw[shift={(0,1)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\pi$};
+				\draw[shift={(0,-1)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $-\pi$};
+				\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+				\draw[-] (0,0)-- (1,1);
+				\draw[-] (0,0)-- (-1,1);
+				\draw[-] (-2,0)-- (-1,1);
+				\draw[-] (2,0)-- (1,1);
+				\draw[-] (-2,0)-- (-2.5,0.5);
+				\draw[-] (2,0)-- (2.5,0.5);
+				\end{tikzpicture}
+				
 				\[
 					S(x_m) = \frac{f_{\text{чётн}}(x_m+0)+ f_{\text{чётн}}(x_m-0)}{2} = \pi.
 				\]
