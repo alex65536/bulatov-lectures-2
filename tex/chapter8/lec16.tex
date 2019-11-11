@@ -30,6 +30,7 @@
 	   	 x}{T_n} < k_n < \frac{x_0 - x}{T_n} + 1$\\
 	$1) x_n = x + k_nT_n > x + \frac{x_0 - x}{T_n}T_n = x_0$\\
 	$2)x_n = x + k_nT_n \leq x+ \left( \frac{x_0 - x}{T_n} + 1 \right)T_n = k_0 + 
+	
 	T_n$\\
 	Отсюда $\forall n \in N \implies 0 < x_n - x_0 \leq T_n \leq \frac{1}{n}
 	 \xrightarrow[n \to \infty]{} 0$. Значит, $x_n \xrightarrow[n \to \infty]{} 
@@ -52,7 +53,8 @@
 	 Если $f(x)$ имеет период $T > 0$, то в случае когда
 	 \begin{equation}
 	 \label{lec16:2}
-	  f \in R(\left[a, b\right]) \-- \text{интегрируема} \implies \forall a \in \R
+	  f \in R(\left[a, b\right]) \-- \text{интегрируема} \implies \forall a \in 
+	  \R
 	   \quad \exists \int\limits_a^{a+T} f(x)dx = \int \limits_0^T f(x)dx.
 	 \end{equation}
 	 \end{lemma}
@@ -77,6 +79,7 @@
 	    периодическими.
 	 \section{Ортогональные системы функций (ОСФ)}
 	 Рассмотрим для простоты множество $C(\left[a, b\right])$ непрерывных функций 
+	 
 	 на
 	  $\left[a, b\right]$. Для этих функций величина
 	   \begin{equation}
@@ -90,6 +93,7 @@
 	 \begin{equation}
 	 \label{lec16:4}
 	 \forall f \in C(\left[a, b\right]) \implies (f, f) = \int\limits_a^bf^2(x)\; 
+	 
 	 dx \ge 0 
 	 \end{equation}
 	 $(f, f) = \int\limits_a^bf^2(x)\; dx = 0 $, то единственной $f \in 
@@ -204,6 +208,7 @@
 	  	   для которых $f^2 \in R(\left[a, b\right])$, т.~е.$\exists 
 	  	   \int\limits_a^b
    		f^2(x)\; dx$. Все результаты, полученные ранее для $C(\left[a, b\right])$ 
+   		
    		в
 	    основном сохраняются для $R(\left[a, b\right])$, кроме свойства
 	     неотрицательности, так как  если $g = f^2 \in R(\left[a, b\right])$, то 
@@ -225,12 +230,15 @@
 	 \begin{equation}
 	 \label{lec16:10}
 	 1, \ \cos x, \ \sin x, \ \cos 2x, \ \sin 2x, \ \ldots, \ \cos kx, \ \sin kx, 
+	 
 	 \
 	  \ldots  \ \forall k \in N
 	 \end{equation}
 	ТСФ $\eqref{lec16:10}$ для каждой функции $T_0 = 2 \pi > 0$ будет периодом. В 
+	
 	силу
 	 этого ограничения рассмотрим $\eqref{lec16:10}$ на промежутке $[a, a+2\pi]$, 
+	 
 	 $a  \in \R$.
 	\begin{thm}[об ортогональности основной тригономестрической системы]
 	Система $\eqref{lec16:10}$ ортогональна $\forall [a, a+2 \pi]$
@@ -253,6 +261,7 @@
 	   \frac{\sin(k+m)}{(k+m)}\right]_0^{\pi} = 0$
 	\item В третьих $\forall k, m \in N \implies <\cos kx, \cos mx> =
 	 \int\limits_{-\pi}^{\pi}\cos kx \sin kx \; dx = 0$ т.~е. $\cos kx \perp \sin 
+	 
 	 mx
 	  \forall \ k, m \in N$
 	\item В четвертых $\forall k, m \in N \implies <\sin kx, \sin mx> =
@@ -287,6 +296,7 @@
 	\begin{equation}
 	\label{lec16:12}
 	\frac{1}{\sqrt2\pi}, \ \frac{1}{\sqrt \pi} \cos x, \ \frac{1}{\sqrt \pi} \sin 
+	
 	x, \ \ldots,
 	\end{equation}
 	\section{Тригонометрические многочлены и тригонометрические ряды}
