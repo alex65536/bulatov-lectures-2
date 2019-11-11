@@ -52,7 +52,7 @@ a(y) \cos xy + b(y) \sin xy
 Далее то, что \eqref{lec20:4} является ИФ для $ f(x) $ будем записывать в виде
 \begin{equation}
 \label{lec20:5}
-f(x) \sim \int\limits_0^{+infty} \left(
+f(x) \sim \int\limits_0^{+\infty} \left(
 a(y) \cos xy + b(y) \sin xy
 \right) \ dy
 \end{equation}
@@ -77,7 +77,7 @@ f(x) \sim \dfrac{1}{\pi} \ioinf
 \right) dy = \] \[ =
 \dfrac{1}{\pi}
 \ioinf f(t) \left(
-\int\limits_{-\infty}^{+infty} (\cos ty\cos xy + \sin ty\sin xy) dt
+\int\limits_{-\infty}^{+\infty} (\cos ty\cos xy + \sin ty\sin xy) dt
 \right) dy =
 \dfrac{1}{\pi} \ioinf \left(
 \int\limits_{-\pi}^{+\pi} f(t) \cos(t - x)ydt
@@ -99,8 +99,8 @@ f(t) \cos(t - x)ydt
 \int\limits_{-\infty}^{\infty} f(t) 
 \dfrac{\sin A(t - x)y}{t - x}|_0^A\ dt = 
 \begin{bmatrix}
-t - x = z |_{-\infty}^{+infty}\\
-dt = dz;\ x fix
+t - x = z |_{-\infty}^{+\infty}\\
+dt = dz;\ x \fix
 \end{bmatrix} =
 \] \[ = 
 \lim\limits_{A \to +\infty} \dfrac{1}{\pi} 
@@ -132,6 +132,6 @@ dt = dz;\ x fix
 	F(A) = \dfrac{1}{\pi} \int\limits_0^{+\infty} 
 	\dfrac{f(x + t) + f(x - t)}{t} \sin At\ dt
 \end{equation}
-где $ x - fix \in \R $, является формулой Дирихле для ИФ.
+где $ x - \fix \in \R $, является формулой Дирихле для ИФ.
 
 \end{document}
