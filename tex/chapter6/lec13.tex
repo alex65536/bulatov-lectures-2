@@ -1,0 +1,165 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+
+
+\begin{exmp}
+	Рассмотрим \[\int\limits_0^{+\infty} \dfrac{e^{-(x\sqrt{\alpha})^2} 
+		- e^{-(x\sqrt{\beta})^2}}{x} dx = \left[ \begin{gathered} f(x) = e^{-x^2}, 
+		\\ a = \sqrt{a} > 0, \\b = \sqrt{b} > 0 \end{gathered} \right] = \Phi(a, 
+		b).\]
+	
+	$f(x) = e^{-x^2}$~--- непрерывна $\forall x \ge 0,$ а также $f(+\infty) = 0 
+	\in 
+	\R$.
+	
+	Из \eqref{lec12:18} следует: \[I = (1 - 0) \cdot \ln 
+	\sqrt{\frac{\beta}{\alpha}} = \frac{1}{2} \ln \frac{\beta}{\alpha}.\]
+\end{exmp}
+
+\begin{thm}[вторая формула Фруллани]
+	Пусть $f \in C(]0, +\infty[)$. Если $\exists f(+0) \in \R$ и $\forall \eps > 
+	0 
+	\implies \displaystyle\int\limits_{\eps}^{+\infty} \frac{f(t)}{t} dt$ 
+	сходится, то тогда 
+	\begin{equation}\
+	 Phi(a, b) = f(+0) \cdot \ln\frac{b}{a}.
+	 \label{lec13:19}
+	\end{equation}
+\end{thm}
+
+\begin{proof}
+	\[\Phi(a, b) \stk{lec12:16}= \lim\limits_{\eps \to +0} 
+	\left( \int\limits_{\eps}^{+\infty} \frac{f(ax) - f(bx)}{x} dx \right)
+	=
+	\lim\limits_{\eps \to +0} \left( \int\limits_{\eps}^{+\infty} \frac{f(ax)}{x} 
+	dx - 
+	\int\limits_{\eps}^{+\infty} \frac{f(bx)}{x} dx \right) 
+	= \]\[ =
+	\left[ \begin{gathered} 1)\; t = ax|^{+\infty}_{\eps a},\ dx = \frac{dt}{a} 
+	\\ 
+	2)\; t = bx|^{+\infty}_{\eps b},\ dx = \frac{dt}{b} \end{gathered} \right] 
+	=
+	\lim\limits_{\eps \to +0} \left( \int\limits_{\eps a}^{+\infty} 
+	\dfrac{f(t)}{\frac{t}{a}} \dfrac{dt}{a} - \int\limits_{\eps b}^{+\infty} 
+	\dfrac{f(t)}{\frac{t}{b}} \frac{dt}{b} \right)
+	=
+	\lim\limits_{\eps \to +0} \left( \int\limits_{\eps a}^{+\infty} 
+	\dfrac{f(t)dt}{t} 
+	- \int\limits_{\eps b}^{+\infty} \dfrac{f(t)dt}{t}\right)
+	=\]\[=
+	\lim\limits_{\eps \to +0} \int\limits_{\eps a}^{\eps b} \dfrac{f(t)dt}{t}
+	=
+	\left[ \begin{gathered} \text{теорема о среднем для ОИ, } \\ \exists t_\eps 
+	\in 
+	[a\eps, b\eps] \end{gathered} \right]
+	=
+	\lim\limits_{\eps \to +0} f(t_{\eps}) \int\limits_{\eps a}^{\eps b} 
+	\dfrac{dt}{t}
+	=\]\[=
+	\lim\limits_{\eps \to +0} f(t_{\eps}) \ln \frac{b\eps}{a\eps} 
+	= 
+	\left[ \begin{gathered} a\eps 
+	\le t_{\eps} \le b_{\eps} 
+	\\ f(t_{\eps}) \to f(+0) 
+	\end{gathered} \implies t_{\eps} \to +0 \right]
+	=
+	f(+0) \ln \frac{b}{a}. \qedhere
+	\]
+	\end{proof}
+	
+	\begin{exmp}
+		\[I = \int\limits_0^{+\eps} \frac{\cos \alpha x - \cos \beta x}{x} dx, \
+		\alpha, \beta \neq 0.\]
+		
+		Учитывая четность косинуса, получаем: $\cos \alpha x = \cos |\alpha| x$, 
+		$\cos \beta x = \cos |\beta| x$.
+		
+		\[I = \left[ \begin{gathered} f(x) = \cos x \\ a = |\alpha| > 0 \\ b = 
+		|\beta| 
+		> 0 \end{gathered} \right]
+		= \Phi(a, b) = \left[
+		 \begin{gathered} f(x) = \cos x \text{~--- непрерывна } \forall x \ge 0 \\ 
+		 \exists 
+		f(+0) = \cos 0 = 1 \in \R  \implies \forall \eps > 0 \\
+		\int\limits_{\eps}^{+\infty} \frac{f(t)}{t} dt = 
+		\int\limits_{\eps}^{+\infty} \frac{\cos t}{t} dt \text{~--- сходится по 
+		Дирихле}
+		\end{gathered} \right] \stk{lec13:19}= 1\cdot\ln\left|\frac ba\right|.
+		\]
+	\end{exmp}
+
+	\begin{thm}[третья формула Фруллани]
+		Пусть $f \in C([0, +\infty[)$. Если $\exists f(+\infty) \in \R$ и  
+		$\displaystyle \forall \eps > 
+		0 \implies \int\limits_0^{\eps} \frac{f(t)}{t} dt$ сходится, то тогда
+		
+		\begin{equation}
+			\label{lec13:20}
+			\Phi(a, b) \stk{lec12:16}= f(+\infty)\cdot \ln \frac{a}{b}
+		\end{equation}
+	\end{thm}
+
+	\begin{proof}
+		Доказательство можно провести по той же схеме, что и в предыдущей теореме. 
+		Мы сводим данную теорему к предыдущей.
+		
+		Используя замену $x = \dfrac{1}{t} \implies t = 
+		\dfrac{1}{x}\Big|^0_{+\infty} \implies dx = - 
+		\dfrac{dt}{t^2}$, получаем, что
+		
+		\[\Phi(a, b) \stk{lec12:16} = - \int\limits_{+\infty}^0 
+		\frac{f(\frac{a}{t})-f(\frac{b}{t})}{\frac{1}{t}} \dfrac{dt}{t^2} = 
+		\int\limits_0^{+\infty} \frac{g(\alpha t) - g(\beta t)}{t} dt,\] 
+		
+		при этом $\alpha = \frac{1}{a} > 0, \beta = \frac{1}{b} > 0$.
+		
+		Здесь $g(x) = f(\frac{1}{x})$ непрерывна для $\forall x \in \R$, а также
+		$\exists g(+0) = f(+\infty) \in \R$.
+		Имеем
+		
+		\[\forall A > 0\quad \int\limits_{A}^{+\infty} \frac{g(t)}{t} dt = \left[ t 
+		= \frac{1}{x} 
+		\right] = \int\limits_0^{\eps = \frac{1}{A} > 0} \frac{f(x)}{x} dx,\]
+		который сходится $\forall \eps > \frac{1}{A} > 0 $
+		в силу предыдущей теоремы, а также \[\Phi(a, b) = g(+0)\cdot 
+		\ln\frac\beta\alpha \stk{lec13:19}= f(+\infty) \ln 
+		\frac{\frac{1}{b}}{\frac{1}{a}} = f(+\infty) \ln \frac{a}{b}. \qedhere\]
+	\end{proof}
+
+
+	\begin{exmp}
+		Рассмотрим \[I = \int\limits_0^{+\infty} \frac{e^{-\frac{\alpha}{x}} - 
+		e^{-\frac{\beta}{x}}}{x} dx,\ 
+		\alpha > 0,\ \beta > 0.\]
+		\[I = \left[ \begin{gathered} f(x) = e^{-\frac{1}{x}} \\b = \frac{1}{\beta} 
+		> 0 
+		\\ a = \frac{1}{\alpha} > 0  \end{gathered} \right] \stk{lec12:16}= \Phi(a, 
+		b)
+		=
+		\left[ \begin{gathered}
+			f(x) = e^{-\frac{1}{x}} \text{~--- непрерывна } \forall x > 0 \\
+			f(+\infty) = 1 \in \R \\
+			\forall \eps > 0 \ \int\limits_0^{\eps} \frac{f(t)}{t} dt = 
+			\int\limits_0^{\eps} 
+			\frac{e^{-\frac{-\alpha}{t}}}{t} dt = \left[t = 
+			\tfrac{1}{x}\big|_{+\infty}^{\frac1\eps}\right] =\\=
+			\int\limits_{A = \frac{1}{\eps} > 0}^{+\infty} \frac{e^{-x}}{x} dx 
+      \text{~--- сходится  } \forall A > 0,\ \text{т.~к. }
+      0 \le \frac{e^{-x}}{x^3} \frac{1}{x^2} \le \frac{c}{x^2}
+		\end{gathered} \right]
+		=\]\[=
+		1\cdot \ln\frac{1/\alpha}{1/\beta} = \ln\frac{\beta}{\alpha}.
+		\]
+	\end{exmp}
+
+\end{document}
