@@ -47,8 +47,10 @@ deploy:
   skip_cleanup: true
   overwrite: true
   on:
-    branch: master
-    branch: devel
+    branches:
+      only:
+        - master
+        - devel
 
 tags:
   except:

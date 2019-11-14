@@ -12,283 +12,317 @@
 \begin{document}
 \begin{thm}[о существовании конечного положительного периода]
 	Пусть $f(x) \not \equiv const$ является периодической функцией. Если $f(x)$
-	 непрерывна хотя бы в одной точке $x_0 \in D(f) \subset R$, то у $f(x)$ есть
+	 непрерывна хотя бы в одной точке $x_0 \in D(f) \subset \R$, то у $f(x)$ есть
 	  минимальный положительный период.
 	  \end{thm}
 	\begin{proof}
 	От противного. Предположим, что у рассматриваемой периодической функции
-	 $f(x)$ нет минимального положительного периода, т.~е. у множества $M =
-	  \{T > 0 \--$ периоды $f(x) \}$ нет минимального положительного элемента.
-	   Тогда $\forall n \in N 
-	\exists T_n > 0$ \-- период $f(x) \implies 0 < T_n < \frac{1}{n}$. Если $x_0 
-	\--
-	 $ точка непрерывности $f(x)$, то $\forall \fix x \in D(f) \implies \exists 
+	 $f(x)$ нет минимального положительного периода, т.~е. у множества \[M =
+	  \{T\ |\ T > 0\text{~--- период $f(x)$}\}\] нет минимального положительного 
+	  элемента.
+	   Тогда \[\forall n \in N \quad
+	\exists T_n > 0\text{~--- период $f(x)$} \implies 0 < T_n < \frac{1}{n}.\] 
+	Если $x_0$
+	\--- точка непрерывности $f(x)$, то $\forall \fix x \in D(f) \quad \exists 
 	 k_n =
-	  \left[\frac{x_0 - x}{T_n}\right] + 1 \in Z$. Для этой последовательности
-	   рассмотрим  $x_n = x + k_n + T_n$ . Используя свойства целой части 
-	   $\frac{x_0 -
-	   	 x}{T_n} < k_n < \frac{x_0 - x}{T_n} + 1$\\
-	$1) x_n = x + k_nT_n > x + \frac{x_0 - x}{T_n}T_n = x_0$\\
-	$2)x_n = x + k_nT_n \leq x+ \left( \frac{x_0 - x}{T_n} + 1 \right)T_n = k_0 + 
-	T_n$\\
-	Отсюда $\forall n \in N \implies 0 < x_n - x_0 \leq T_n \leq \frac{1}{n}
+	  \left[\frac{x_0 - x}{T_n}\right] + 1 \in \Z$. Для этой последовательности
+	   рассмотрим  $x_n = x + k_n\cdot T_n$ . Используя свойства целой части 
+	   $\frac{x_0 - x}{T_n} < k_n < \frac{x_0 - x}{T_n} + 1$, получаем:
+	
+	\begin{enumerate}
+	\item $ x_n = x + k_n\cdot  T_n > x + \frac{x_0 - x}{T_n}\cdot T_n = x_0$;
+	\item $x_n = x + k_n\cdot T_n \leq x+ \left( \frac{x_0 - x}{T_n} + 1 
+	\right)T_n = k_0 + T_n$.
+	\end{enumerate}
+	
+	Отсюда $\forall n \in \N \implies 0 < x_n - x_0 \leq T_n \leq \frac{1}{n}
 	 \xrightarrow[n \to \infty]{} 0$. Значит, $x_n \xrightarrow[n \to \infty]{} 
 	 x_0$.
-	  Поэтому в силу непрервыности $f(x)$ в $x_0 \implies f(x_n) \xrightarrow[n 
+	  Поэтому в силу непрерывности $f(x)$ в $x_0 \implies f(x_n) \xrightarrow[n 
 	  \to
 	   \infty]{} f(x_0)$. В силу периодичности $f(x_n) = f(x + k_nT_n) = f(x)$. 
 	   Поэтому
 	    $f(x) \xrightarrow[n \to \infty]{} f(x_0)$, т.~е. $f(x) = f(x_0)$, что в 
 	    силу
-	     произвольности $x$  дает $f(x) = c\quad \forall x \in D(f)$ \--- 
-	     противоречие.
+	     произвольности $x$  дает $f(x) = c\quad \forall x \in D(f)$. 
+	     Противоречие.
 	\end{proof}
 	Отметим, что в силу доказанной теоремы функция Дирихле является разрывной в 
 	любой
 	 точке, т.~к. она не является постоянной и у нее нет наименьшего 
 	 положительного
-	  периода. В дальнейшем понадобится лемма :
+	  периода. В дальнейшем понадобится лемма:
 	\begin{lemma}[об интегрировании периодичной функции]
-	 Если $f(x)$ имеет период $T > 0$, то в случае когда
+	 Если $f(x)$ имеет период $T > 0$, то
 	 \begin{equation}
 	 \label{lec16:2}
-	  f \in R(\left[a, b\right]) \-- \text{интегрируема} \implies \forall a \in R
+	  f \in R(\left[a, b\right]) \text{ (интегрируема на $[a, b]$)} \implies 
+	  \forall a \in 
+	  \R
 	   \quad \exists \int\limits_a^{a+T} f(x)dx = \int \limits_0^T f(x)dx.
 	 \end{equation}
 	 \end{lemma}
  \begin{proof}
-	 Пользуясь аддитивностью ОИ $\forall a \in R \implies
+	 Пользуясь аддитивностью ОИ, получаем:
+	 \[\forall a \in \R \implies
 	  \int\limits_{a}^{a+T}f(x)dx = \int\limits_a^T f(x)dx + \int
-	   \limits_T^{a+T}f(x)dx= \left[ \begin{gathered}1) x = t |_a^T \\ 2) t =
+	   \limits_T^{a+T}f(x)dx= \left[ \begin{gathered}x = t |_a^T \\ t =
 	    (x-T)|_0^a \end{gathered}  \right] = \int\limits_a^Tf(t)dt +
-	     \int\limits_0^af(t+T)dt =\left[ \begin{gathered} T \-- \text{период } 
+	     \int\limits_0^af(t+T)dt =\]
+	     \[= \left[ \begin{gathered} T \-- \text{период } 
 	     f(t)\\
 	      f(t+T) = f(t) \end{gathered}  \right] = \int \limits_a^T f(t)dt +
-	       \int\limits_0^af(t)dt = \int\limits_0^Tf(t) \; dt $ с точностью до 
+	       \int\limits_0^af(t)dt = \int\limits_0^Tf(t) \; dt\] с точностью до 
 	       обозначения
 	        переменной интегрирования.
 	        \end{proof}
 	 В дальнейшем для краткости функцию $f(x)$ с наименьшим положительным 
 	 периодом $T >
-	  0$ будем называть $T \--$ периодической. Например, $\forall T>0$ функции 
+	  0$ будем называть $T$-периодической. Например, $\forall T>0$ функции 
 	  $f_1(x)
-	   = \frac{\sin{2\pi x}}{T}; f_2(x) = \frac{\cos{2\pi x}}{T}$ являются $T 
-	   \--$
-	    периодическими.
+	   = \frac{\sin{2\pi x}}{T}$; $f_2(x) = \frac{\cos{2\pi x}}{T}$ являются 
+	   $T$-периодическими.
 	 \section{Ортогональные системы функций (ОСФ)}
 	 Рассмотрим для простоты множество $C(\left[a, b\right])$ непрерывных функций 
-	 на
-	  $\left[a, b\right]$. Для этих функций величина
+	 на $\left[a, b\right]$. Для этих функций величина
 	   \begin{equation}
 	 \label{lec16:3}
-	 	 (f, g) = \int \limits_a^b f(x)g(x)\; dx
+	 	 \scal{f, g} = \int \limits_a^b f(x)g(x)\; dx
 	  \end{equation}
-	  удовдетворяет всем аксиомам скалярного произведения в $C(\left[a, 
-	  b\right])$
-	 \begin{itemize}
-	 \item[1)] неотрицательность
+	  удовлетворяет всем аксиомам скалярного произведения в $C(\left[a, 
+	  b\right])$:
+	 \begin{enumerate}
+	 \item Неотрицательность:
 	 \begin{equation}
 	 \label{lec16:4}
-	 \forall f \in C(\left[a, b\right]) \implies (f, f) = \int\limits_a^bf^2(x)\; 
+	 \forall f \in C(\left[a, b\right]) \implies \scal{f, f} = 
+	 \int\limits_a^bf^2(x)\; 
 	 dx \ge 0 
 	 \end{equation}
-	 $(f, f) = \int\limits_a^bf^2(x)\; dx = 0 $, то единственной $f \in 
+	 Если
+	 $\displaystyle \scal{f, f} = \int\limits_a^bf^2(x)\; dx = 0 $, то 
+	 единственной  подходящей $f \in 
 	 C(\left[a,
-	  b\right]) $ будет $f(x) \equiv 0, \quad \forall x \in \left[a, b\right]$\\
-	 Для доказазательства предположим, что для $\eqref{lec16:4}$ существует 
+	  b\right]) $ будет функция $f(x) \equiv 0, \ \forall x \in \left[a, 
+	  b\right]$.
+	  
+	 Для доказательства предположим, что для $\eqref{lec16:4}$ 
 	 $\exists
 	  x_0 \in \left[a, b\right] \implies f(x_0) \neq 0$. Тогда в силу 
 	  непрерывности,
-	   по теоремео стабилизации знака $\implies \exists \left[\alpha, \beta 
+	   по теореме о стабилизации знака получаем, что \[\exists \left[\alpha, 
+	   \beta 
 	   \right]
-	    \subset ]a, b [ : \begin{cases}
+	    \subset \left]a, b\right[ : \begin{cases}
 	 x_0 \in \left[\alpha, \beta \right]\\
 	 f(x) \neq 0 \quad \forall x \in \left[\alpha, \beta \right] 
-	 \end{cases}$\\
-	 Тогда при выполнении $\eqref{lec16:4}$ имеем $0 = (f, f) = 
-	 \int\limits_a^\alpha
-	  f^2(x)\; dx + \int\limits_\alpha^\beta f^2(x) \; dx + \int\limits_\beta ^b 
-	  f^2(x)dx \geq
-	   \int\limits_\alpha^\beta f^2(x)dx  > 0$. Противоречие.
-	 \item[2)] симметричность\\
-	 $\forall f, g \in C(\left[a, b\right]) \implies(f, g)
-	  \stackrel{\eqref{lec16:3}}{=} \int\limits_a^b g(x)f(x)\; dx = (g, f) $
-	 \item[3)] линейность\\
-	 $\forall f, g, h \in C(\left[a, b\right]), \forall \lambda, \ \mu \in R 
+	 \end{cases}\]
+	 Тогда при выполнении $\eqref{lec16:4}$ имеем:
+	 \[0 = \scal{f, f} = \int\limits_a^\alpha
+	  f^2(x)\; dx + \int\limits_\alpha^\beta f^2(x) \; dx + \int\limits_\beta^b 
+	  f^2(x)dx \geq \int\limits_\alpha^\beta f^2(x)dx  > 0.\]
+	  Противоречие.
+	 \item Cимметричность:
+	 \[\forall f, g \in C(\left[a, b\right]) \implies \scal{f, g}
+	  \stackrel{\eqref{lec16:3}}{=} \int\limits_a^b f(x)g(x)\; = \int\limits_a^b 
+	  g(x)f(x)\; dx \stackrel{\eqref{lec16:3}}{=} \scal{g, f}.\]
+	 \item Линейность:
+	 \[\forall f, g, h \in C(\left[a, b\right]),\ \forall \lambda, \mu \in \R 
 	 \implies
-	  (f, (\lambda g + \mu h)) = \int \limits_a^bf(x) (\lambda g(x) + \mu h(x)) 
-	  \; dx =
+	  \scal{f, (\lambda g + \mu h)} = \int \limits_a^bf(x) (\lambda g(x) + \mu 
+	  h(x)) 
+	  \; dx =\] \[=
 	   \lambda \int \limits_a^bf(x)g(x)\; dx + \mu \int \limits_a^bf(x)h(x)\; dx 
-	   = \lambda(f,
-	    g) + \mu (f, h)$.\\
-\end{itemize}
-	 По аналогии с нормированным пространством $R_n$ скалярное произведение
+	   = \lambda\scal{f, g} + \mu\scal{f, h}.\]
+\end{enumerate}
+	 По аналогии с нормированным пространством $\R^n$ скалярное произведение
 	  $\eqref{lec16:3}$ порождает естественную норму в пространстве $C(\left[a,
-	   b\right])$
+	   b\right])$:
 	 \begin{equation}
 	 \label{lec16:5}
-	 ||f - g|| = \sqrt{<f - g><f - g>} = \left(\int \limits_a^b (f(x) - g(x))^2
-	  \; dx\right)^\frac{1}{2}
+	 ||f - g|| = \sqrt{\scal{f - g,\ f - g}} = \left(\int \limits_a^b (f(x) - 
+	 g(x))^2
+	  \; dx\right)^\frac{1}{2}.
 	 \end{equation}
-	 По аналогии с $R_n$ доказывается неравенство Коши-Буняковского для 
+	 По аналогии с $\R^n$ доказывается \emph{неравенство Коши-Буняковского} для 
 	 пространства
-	  $C(\left[a, b\right])$ со скалярным произведением $\eqref{lec16:3}$	
-	 \[ \forall f, g \in C(\left[a, b\right]) \implies (<f, g>)^2 \leq (<f, 
-	 f>)(<g, g>)\]
+	  $C(\left[a, b\right])$ со скалярным произведением $\eqref{lec16:3}$:
+	 \[ \forall f, g \in C(\left[a, b\right]) \implies (\scal{f, g})^2 \leq 
+	 \scal{f, f}\cdot \scal{g, g}.\]
 	 \begin{equation}
 	\label{lec16:6}
 	 \left(\int\limits_a^bf(x)g(x)\; dx\right)^2 \le \left(\int \limits_a^b
 	  f^2(x)\; dx\right)\left(\int \limits_a^b g^2(x)\; dx\right) 
 	 \end{equation}
-	 На основании $\eqref{lec16:6}$ получаем неравенство Минковского
+	 На основании $\eqref{lec16:6}$ получаем \emph{неравенство Минковского}:
 	 \begin{equation}
 	 \label{lec16:7}
 	  \left(\int\limits_a^b(f(x) - g(x))^2\; dx\right)^\frac{1}{2} \le \left(\int
 	   \limits_a^b f^2(x)\; dx\right)^\frac{1}{2} + \left(\int \limits_a^b 
-	   g^2(x)\; dx\right) ^ \frac{1}{2}
+	   g^2(x)\; dx\right) ^ \frac{1}{2}.
 	 \end{equation}
-	 В силу $\eqref{lec16:7}$, так же как и в $R_n$ показывается, что величина
+	 В силу $\eqref{lec16:7}$, так же как и в $\R^n$ показывается, что величина
 	  $\eqref{lec16:5}$ удовлетворяет всем аксиомам нормы:
-	 \begin{itemize}
-	 \item[a)]неотрицательность \\
-	 $\forall f \in C(\left[a, b\right]) \implies ||f|| \geq 0$, причем $||f|| = 
-	 0
-	  \iff \begin{cases}
+	 \begin{enumerate}
+	 \item Неотрицательность:
+	 \[\forall f \in C(\left[a, b\right]) \implies ||f|| \geq 0, \text{ причем } 
+	 ||f|| = 0 \iff \begin{cases}
 	 f(x) = 0\\\forall x \in \left[a, b\right]\\
-	 \end{cases}$
-	 	\item[б)] однородность
-	 $\forall f \in C(\left[a, b\right]) \qquad \forall x \in R \implies 
+	 \end{cases}.\]
+	 	\item Однородность:
+	 \[\forall f \in C(\left[a, b\right]) \quad \forall x \in \R \implies 
 	 ||\lambda
-	  f|| = |\lambda| \ ||f||$\\
-	 \item[в)] неравенство треугольника
-	 $\forall f, g, h \in C(\left[a, b\right]) \implies ||f - g|| \leq ||f - h|| 
-	 + ||h - g||$
-	 	\end{itemize}
+	  f|| = |\lambda| \cdot ||f||.\]
+	 \item Неравенство треугольника:
+	 \[\forall f, g, h \in C(\left[a, b\right]) \implies ||f - g|| \leq ||f - h||
+	 + ||h - g||.\]
+	 	\end{enumerate}
 	 Использование нормы $\eqref{lec16:5}$ в $C(\left[a, b\right])$ дает 
 	 естественное расстояние
 	 \begin{equation}
 	 \label{lec16:8}
-	 \begin{cases}
-	 d(f, g) = ||f - g|| = \sqrt{<f, g>, <f, g>}\\
+	 d(f, g) = ||f - g|| = \sqrt{\scal{f-g,\ f-g}}, \quad
 	 \forall f, g \in C(\left[a, b\right])
-	 \end{cases}
 	 \end{equation}
-	\textbf{Упражнение} По аналогии с пространством $R_n$ доказать, что
+	 \begin{exc}
+	 По аналогии с пространством $\R^n$ доказать, что
 	 $\eqref{lec16:8}$ удовлетворяет всем аксиомам расстояния в $C(\left[a, 
-	 b\right])$\\
-	две функции называютя \emph{ортогональными}, если
+	 b\right])$.
+	 \end{exc}
+	
+	Две функции называются \emph{ортогональными}, если
 	\begin{equation} 
 	\label{lec16:9}
-	<f, g> \stackrel{\eqref{lec16:3}}{=} 0
+	\scal{f, g} \stackrel{\eqref{lec16:3}}{=} 0.
 	\end{equation}
-	 В этом случае будем писать $f \perp g$. В частности для нулевой функции 
-	 $f_0(x)
-	  \equiv 0 \forall x \in \left[a, b\right]$ имеем\\
-	 $<f_0, g> = <0, g> = 0, \forall g \in C(\left[a, b\right])$, т.~е. $g\perp 
-	 0$.\\
-	 Если имеется система функций $f_1, f_2, \ldots \in  C(\left[a, b\right]) $
-	  (конечная или бесконечная), для которой любые две функции попарно 
-	  ортогональны,
-	   т.~е. $f_i \perp f_j, \forall i \neq j$, то такую систему будем называть 
-	   \emph{ОСФ}.
-	    Если в этой системе нет нулевых функций, то $\forall f_k \implies ||f_k||
-	     \neq 0, k \in N $. Тогда переходя к новой системе функций $g_k =
-	      \frac{f_k}{||f_k||}$, получаем, что новая система \--- ОСФ, $||g_k|| =
-	       ||\frac{f_k}{||f_k||}|| = \frac{||f_k||}{||f_k||} = 1$. Такую 
-	       ортогональную
-	        систему функций будем называть \emph{ортонормированной системой 
-	        функций}.
-	 Предложенная теория ортогональных функций будет использоваться не только для
-	  $C(\left[a, b\right])$, но и для пространства $R(\left[a, b\right])$ 
-	  функций $f$,
-	  	   для которых $f^2 \in R(\left[a, b\right])$, т.~е.$\exists 
-	  	   \int\limits_a^b
-   		f^2(x)\; dx$. Все результаты, полученные ранее для $C(\left[a, b\right])$ 
-   		в
-	    основном сохраняются для $R(\left[a, b\right])$, кроме свойства
-	     неотрицательности, так как  если $g = f^2 \in R(\left[a, b\right])$, то 
-	     хотя
-	     $g(x) \ge 0 \forall x \in \left[a, b\right]$, из равенства $<f,f> =
-	     \int\limits_a^b g(x)\; dx$ не следует, что $f(x) \equiv 0, \forall x \in
-      \left[a, b\right]$. В дальнейшем свойство неотрицательности для 
-      $R(\left[a,
-      b\right])$ будем заменять на свойство эквивалентностинулевой функции,   
-      именно
-       все функции $f \in R(\left[a, b\right])$, для которых
-      $\int\limits_a^b f^2(x)\; dx = 0$, будем называть эквивалентными нулевой
-      функции и записывать $f(x) \sim 0$. При таком соглашении две функции, $,
-	            g \in R(\left[a, b\right])$ считаются ортогональными $f \perp g
-	             \iff <f, g> = 0$. Все остальные свойства для $R(\left[a,
-	              b\right])$ переносятся без изменений.
-	 \section{Ортогональность тригонометрической системы функций (ТСФ)}
-	 \emph{Тригонометрической системой функций (ТСФ)} называется система 
-	 \begin{equation}
-	 \label{lec16:10}
-	 1, \ \cos x, \ \sin x, \ \cos 2x, \ \sin 2x, \ \ldots, \ \cos kx, \ \sin kx, 
-	 \
-	  \ldots  \ \forall k \in N
-	 \end{equation}
-	ТСФ $\eqref{lec16:10}$ для каждой функции $T_0 = 2 \pi > 0$ будет периодом. В 
-	силу
-	 этого ограничения рассмотрим $\eqref{lec16:10}$ на промежутке $[a, a+2\pi]$, 
-	 $a
-	  \in R$.
-	\begin{thm}[об ортогональности основной тригономестрической системы]
-	Система $\eqref{lec16:10}$ ортогональна $\forall [a, a+2 \pi]$
-	\end{thm}
-	\begin{proof}
-	В силу леммы об интегрировании периодической функции, для $2\pi -$ 
-	периодичной
-	 функции имеем $\int\limits_a^{a+2\pi}f(x)\; dx = \int\limits_0^{2\pi}f(x)\; 
-	 dx = const
-	  \forall a \in R$\\
-	Достаточно доказать для $a = -\pi$, т.~е. на промежутке $]-\pi, \pi[$\\
-	\begin{enumerate}
-	\item Во-первых, $<1, \cos kx> = \int\limits_{-\pi}^{\pi} 1 \cdot \sin kx \; 
-	dx = 0$ \\
-	Таким образом, $\forall k \in N \implies 1 \perp \cos kx, 1 \perp \sin kx$
-	\item Во вторых, $\forall k, m \in N, k \ne m \implies <\cos kx, \cos mx> =
-	 \int\limits_{-\pi}^{\pi}\cos kx \cos mx \; dx = 
-	 \int\limits_0^{\pi}(\cos(k-m)x +
-	  \cos(k+m)x)\; dx = \left[\frac{\sin(k - m)x}{k-m} +
-	   \frac{\sin(k+m)}{(k+m)}\right]_0^{\pi} = 0$
-	\item В третьих $\forall k, m \in N \implies <\cos kx, \cos mx> =
-	 \int\limits_{-\pi}^{\pi}\cos kx \sin kx \; dx = 0$ т.~е. $\cos kx \perp \sin 
-	 mx
-	  \forall \ k, m \in N$
-	\item В четвертых $\forall k, m \in N \implies <\sin kx, \sin mx> =
-	 \int\limits_{-\pi}^{\pi} \sin kx \sin mx \; dx = \int\limits_0^{\pi} 
-	 (\cos(k-m)x -
-	  \cos(k+m)x)\; dx = \left[\frac{\sin(k-m)x}{k-m} -
-	   \frac{\sin(k+m)}{k+m}\right]_0^{\pi} = 0$, т.~е. $\sin kx \perp \sin mx 
-	   \forall k
-	    \ne m$\\
-	\end{enumerate}
-	Таким образом любые две функции в $\ref{lec16:10}$ взаимно ортогональны.
-	\end{proof}
-	\textbf{Замечание} Аналогичным образом рассмотрим обобщенную 
-	тригонометрическию
-	 систему вида 
-	\begin{equation}
-	\label{lec16:11}
-	1, \ \cos \frac{\pi x}{l}, \ \sin \frac{\pi x}{l}, \ \ldots, \ \cos 
-	(\frac{\pi kx}{l}), \
-	 \sin (\frac{\pi kx}{l}), \ \ldots 
-	\end{equation}
-	у которой каждая из функций имеет общий период $T = 2l > 0$\\
-	Аналогично как и ввше, показывается, что обобщенная тригонометрическая 
-	система
-	 $\eqref{lec16:11}$ ортогональна $\forall [a, a+2l]$\\
-	Кроме того, можно показать, что система $\frac{1}{\sqrt2l}, \frac{1}{\sqrt l}
-	 \cos(\frac{\pi x}{l}), \frac{1}{\sqrt l} \sin (\frac{\pi x}{l}), \ldots, $ 
-	 будет
-	  ортонормированной. Отсюда следует, что для ортогональной ТС 
-	  $\eqref{lec16:10}$
-	   имеем соответственно ортонормированную систему 
-	\begin{equation}
-	\label{lec16:12}
-	\frac{1}{\sqrt2\pi}, \ \frac{1}{\sqrt \pi} \cos x, \ \frac{1}{\sqrt \pi} \sin 
-	x, \ \ldots,
-	\end{equation}
-	\section{Тригонометрические многочлены и тригонометрические ряды}
-	\end{document}
+	В этом случае будем писать $f \perp g$. В частности, для нулевой функции 
+	$f_0(x) \equiv 0 \forall x \in \left[a, b\right]$ имеем
+	$\scal{f_0, g} = \scal{0, g} = 0,\ \forall g \in C(\left[a, b\right])$, т.~е. 
+	$g\perp 0$.
+	 
+Если имеется система функций $f_1, f_2, \ldots \in  C(\left[a, b\right]) $
+(конечная или бесконечная), для которой любые две функции попарно ортогональны
+(т.~е. $f_i \perp f_j,\ \forall i \neq j$), то такую систему будем называть 
+\emph{ортогональной системой функций}
+(\emph{ОСФ}).
+Если в такой системе нет нулевых функций, то $\forall f_k \implies ||f_k|| 
+\neq 0,\ k \in \N$. Тогда, переходя к новой системе функций $g_k =
+\frac{f_k}{||f_k||}$, получаем, что новая система \--- ОСФ, а также $||g_k|| =
+\left\|\frac{f_k}{||f_k||}\right\| = \frac{||f_k||}{||f_k||} = 1$. Такую 
+ортогональную
+систему функций будем называть \emph{ортонормированной системой 
+функций}.
+
+Предложенная теория ортогональных функций будет использоваться не только для 
+$C(\left[a, b\right])$, но и для пространства $R_2(\left[a, b\right])$ функций 
+$f$,
+для которых $f^2 \in R(\left[a, b\right])$, т.~е. $\exists 
+\int\limits_a^b
+f^2(x)\; dx$. Все результаты, полученные ранее для $C(\left[a, b\right])$, в
+основном сохраняются для $R_2(\left[a, b\right])$, кроме свойства
+неотрицательности, т.~к. если $g = f^2 \in R(\left[a, b\right])$, то,
+хотя $g(x) \ge 0,\ \forall x \in \left[a, b\right]$, из равенства $\scal{f,f} 
+=
+\int\limits_a^b g(x)\; dx = 0$ не обязательно следует, что ${f(x) \equiv 0}$,  
+$\forall x \in
+\left[a, b\right]$. Например, в случае, когда $g(x)$~--- функция Римана
+\[
+g(x) = \begin{cases}
+0, &x \notin \Q, \\
+\frac 1n, &x \in \Q \text{ и представима в виде несократимой дроби $\frac mn$, 
+$n > 0$}.
+\end{cases}
+\]
+то мы получаем, что $g(x) \ge 0,\ \forall x \in\R$, а также 
+$\exists\int\limits_a^b g(x)dx = 0$, $\forall a, b \in\R$, но при этом $g(x) 
+\not\equiv 0$.
+
+В дальнейшем свойство неотрицательности для 
+$R_2(\left[a, b\right])$ будем заменять на свойство \emph{эквивалентности 
+нулевой функции}, а именно:
+все функции $f \in R_2(\left[a, b\right])$, для которых
+$\int\limits_a^b f^2(x)\; dx = 0$, будем называть \emph{эквивалентными нулевой
+функции} и записывать $f(x) \sim 0$. При таком соглашении две функции, $f, g 
+\in R_2(\left[a, b\right])$ считаются ортогональными, если $\scal{f, g} = 0$. 
+Все остальные свойства для $R_2(\left[a, b\right])$ переносятся без изменений.
+
+\begin{erem}
+Множество $R_2([a, b])$ было здесь рассмотрено, поскольку это самое широкое 
+множество, на котором можно ввести ряды Фурье.
+\end{erem}
+
+\section{Ортогональность тригонометрической системы функций (ТСФ)}
+\emph{Тригонометрической системой функций (ТСФ)} называется система 
+\begin{equation}
+\label{lec16:10}
+1, \ \cos x, \ \sin x, \ \cos 2x, \ \sin 2x, \ \ldots, \ \cos kx, \ \sin kx, 
+\
+\ldots,  \quad k \in \N.
+\end{equation}
+В ТСФ $\eqref{lec16:10}$ для каждой функции $T_0 = 2 \pi > 0$ будет периодом. 
+В силу
+этого ограничения будем рассматривать $\eqref{lec16:10}$ на промежутке $[a, 
+a+2\pi],\ a \in \R$.
+\begin{thm}[об ортогональности основной тригонометрической системы]
+Система $\eqref{lec16:10}$ ортогональна $\forall [a, a+2 \pi]$.
+\end{thm}
+\begin{proof}
+В силу леммы об интегрировании периодической функции, для $2\pi$-периодичной
+функции имеем \[\int\limits_a^{a+2\pi}f(x)\; dx = \int\limits_0^{2\pi}f(x)\; 
+dx = const\quad
+\forall a \in \R,\]
+поэтому остаточно доказать теорему для $a = -\pi$, т.~е. на промежутке $]-\pi, 
+\pi[$.
+\begin{enumerate}
+\item Во-первых,
+\[\scal{1, \cos kx} = \int\limits_{-\pi}^{\pi} 1 \cdot \sin kx \; dx = 0.\]
+Таким образом, $\forall k \in \N \implies$ $1 \perp \cos kx$, $1 \perp \sin 
+kx$.
+\item Во-вторых,
+\[\forall k, m \in \N,\ k \ne m \implies \scal{\cos kx, \cos mx} =
+\int\limits_{-\pi}^{\pi}\cos kx \cos mx \; dx =\] \[=
+\int\limits_0^{\pi}(\cos(k-m)x +
+\cos(k+m)x)\; dx = \left[\frac{\sin(k - m)x}{k-m} +
+\frac{\sin(k+m)x}{k+m}\right]_0^{\pi} = 0.\]
+\item В-третьих, 
+\[\forall k, m \in \N \implies \scal{\cos kx, \sin mx} =
+\int\limits_{-\pi}^{\pi}\cos kx \sin mx \; dx = 0,\]
+т.~е. $\cos kx \perp \sin mx,\ \forall k, m \in \N$
+\item В-четвертых,
+\[\forall k, m \in N \implies \scal{\sin kx, \sin mx} =
+\int\limits_{-\pi}^{\pi} \sin kx \sin mx \; dx =\]\[= \int\limits_0^{\pi} 
+(\cos(k-m)x -
+\cos(k+m)x)\; dx = \left[\frac{\sin(k-m)x}{k-m} -
+\frac{\sin(k+m)}{k+m}\right]_0^{\pi} = 0,\]
+т.~е. $\sin kx \perp \sin mx,\ \forall k \ne m$.
+\end{enumerate}
+Таким образом любые, две функции в $\ref{lec16:10}$ взаимно ортогональны.
+\end{proof}
+Аналогичным образом рассмотрим \emph{обобщенную тригонометрическую систему} 
+вида 
+\begin{equation}
+\label{lec16:11}
+1, \ \cos \frac{\pi x}{l}, \ \sin \frac{\pi x}{l}, \ \ldots, \ \cos 
+\left(\frac{\pi kx}{l}\right), \
+\sin \left(\frac{\pi kx}{l}\right), \ \ldots,
+\end{equation}
+у которой каждая из функций имеет общий период $T = 2l > 0$.
+
+Аналогично как и выше, показывается, что обобщенная тригонометрическая 
+система $\eqref{lec16:11}$ ортогональна $\forall [a, a+2l]$.
+Кроме того, можно показать, что система \[\frac{1}{\sqrt2l},\ \frac{1}{\sqrt 
+l}\cos\left(\frac{\pi x}{l}\right),\ \frac{1}{\sqrt l} \sin \left(\frac{\pi 
+x}{l}\right),\ \ldots,\ \frac{1}{\sqrt l}\cos\left(\frac{\pi kx}{l}\right),\ 
+\frac{1}{\sqrt l} \sin \left(\frac{\pi kx}{l}\right),\ \ldots \]
+будет
+ортонормированной. Отсюда следует, что для ортогональной ТС 
+$\eqref{lec16:10}$
+имеем соответственно ортонормированную систему 
+\begin{equation}
+\label{lec16:12}
+\frac{1}{\sqrt2\pi}, \ \frac{1}{\sqrt \pi} \cos x, \ \frac{1}{\sqrt \pi} \sin 
+x, \ \ldots,\ \frac{1}{\sqrt \pi} \cos kx, \ \frac{1}{\sqrt \pi} \sin kx,\ 
+\ldots.
+\end{equation}
+\section{Тригонометрические многочлены и тригонометрические ряды}
+\end{document}
