@@ -69,7 +69,7 @@ Y}\sup\left|\int\limits_A^{+\infty} f(x,y)\right| \underset{A \to + \infty}
 		\right. \]
 
 \[\forall A \ge 0 \implies \int\limits_A^{+\infty}ye^{-xy}dx \overset{y > 0} = 
-\left[e^{-xy} \right]_{x = A}^{A = +\infty} = e^{-Ay}\]
+\left[-e^{-xy} \right]_{x = A}^{A = +\infty} = e^{-Ay}\]
 Отсюда
 \[\sup\left| \int\limits_A^{+\infty}ye^{-xy}dx \right|=\underset{y > 0}\sup  
 \left( e^{-Ay}\right) = \left[y \to +0\right] = 1 \underset{A \to 
@@ -81,13 +81,15 @@ Y}\sup\left|\int\limits_A^{+\infty} f(x,y)\right| \underset{A \to + \infty}
 \end{exmp}
 
 \begin{thm}[достаточное условие 
-равномерной сходимости НИЗОП-2]
+равномерной сходимости НИЗОП-1]
 Если $\exists g(x) \ge 0$ такое, что $\left| f(x,y) \right| \le g(x), \forall 
 x \ge a\quad
 \forall y \in Y $, то в случае сходимости $\int\limits_a^{+\infty}g(x)dx$ 
 получаем, что 
 $\int\limits_a^{+\infty}f(x,y) \overset{Y}\rightrightarrows.$ 
 \end{thm}
+
+Это условие аналогично признаку Вейерштрасса сходимости ФП и ФР.
 
 \begin{crl*}[критерий Коши сходимости НИЗОП-1]
 НИЗОП-1 сходится равномерно для $ y \in Y$ тогда и только тогда, 
@@ -131,10 +133,10 @@ $[a;+\infty]$
 \begin{enumerate}
 \item $\int\limits_a^{+\infty}f(x,y)dx \overset{Y}{\rightrightarrows}$
 
-\item $g(x,y)$ ограничена, то есть $\forall x \ge a \quad \forall y \in Y 
-\quad \exists 
+\item $g(x,y)$ ограничена, то есть $\exists 
 C = 
-const \ge 0 \implies \left|g(x,y)\right| \le C $
+const \ge 0\forall x \ge a \quad \forall y \in Y 
+\quad  \implies \left|g(x,y)\right| \le C $
 \end{enumerate}
 \end{thm}
 
@@ -284,9 +286,13 @@ x \ge 0$ ${\forall y \in [\alpha,\beta] \subset [0;+\infty)}$, то
 из которых имеется бесконечный предел]
 Пусть функция $f(x,y)$ непрерывна на $[a;+\infty)\times [c;d]$. Если $F(y) = 
 \int\limits_a^{+\infty}f(x,y)dx \overset{y \in [c;d]}{\rightrightarrows}$ , то 
-\[\exists \int\limits_c^d F(y)dy =\int\limits_c^d\left( 
-\int\limits_a^{+\infty}f(x,y)dx\right) dy = 
-\int\limits_a^{+\infty}\left(\int\limits_c^d f(x,y)dy\right)dx.\]
+
+\begin{equation} \label{lec10:14}
+	\exists \int\limits_c^d F(y)dy =\int\limits_c^d\left( 
+	\int\limits_a^{+\infty}f(x,y)dx\right) dy = 
+	\int\limits_a^{+\infty}\left(\int\limits_c^d f(x,y)dy\right)dx.
+\end{equation}
+
 \end{thm}
 
 \end{document}

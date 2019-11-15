@@ -8,7 +8,8 @@ BEGIN {
 
 {
 	gsub(/\r/, $0, "");
-	match($0, /^[[:space:]]*/);
+	# we keep indents plus "%" sign for the comments on each broken line
+	match($0, /^[[:space:]]*%?[[:space:]]?/);
 	indent_len = RLENGTH;
 	indent = substr($0, 1, indent_len);
 	$0 = substr($0, indent_len + 1);
@@ -22,8 +23,8 @@ BEGIN {
 		cur_width = length(cur_line);
 		if (add + indent_len > width) {
 			printf( \
-				"error: word \"%s\" too long (%d chars long, but max allowed is %d)\n", \
-				substr($0, 1, add), add, width \
+				"error: word \"%s\" too long (%d chars long plus %d chars indent, but max allowed is %d)\n", \
+				substr($0, 1, add), add, indent_len, width \
 			) >"/dev/stderr";
 			_err = 1;
 			exit 1;

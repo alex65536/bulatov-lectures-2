@@ -10,7 +10,6 @@
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=3cm,bindingoffset=0cm]{geometry}
 \usepackage{subfiles}
 \usepackage[bookmarks]{hyperref}
-\usepackage{pgfpatch}
 
 \usepackage{matanhelper}
 
@@ -25,22 +24,29 @@
 \usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage{esint}
+\usepackage{etoolbox}
 \usepackage{soul}
 \usepackage{cancel}
 \usepackage{centernot}
+
+\usepackage{xr}
 % Если нужны другие пакеты, их стоит добавлять сюда
 
-\begin{document}
+% Совместимость пакета subfiles версии 1.3 и выше с более старыми версиями
+\ifcsdef{subimport}{
+\renewcommand{\subimport}[2]{\input{#1#2}}
+}{}
 
+\begin{document}
 \subfile{tex/title.tex}
 \subfile{tex/credits.tex}
 \tableofcontents
-\subfile{tex/chapter_test.tex}
 \subfile{tex/chapter1.tex}
 \subfile{tex/chapter2.tex}
 \subfile{tex/chapter3.tex}
 \subfile{tex/chapter4.tex}
 \subfile{tex/chapter5.tex}
+\subfile{tex/chapter6.tex}
 \subfile{tex/chapter7.tex}
 \subfile{tex/chapter8.tex}
 \end{document}

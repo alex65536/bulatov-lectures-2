@@ -11,431 +11,318 @@
 
 \begin{document}
 
+\begin{proof}
+\[\Gamma(a) \stk{lec13:1}= \left[
+\begin{array}{l}
+  x=ty \\
+  y = \dfrac{x}{t}\Big|^{+\infty}_0 \\
+  dx = t\; dy \\
+  t > 0 - \fix
+\end{array}\right] = 
+\int\limits_0^{+\infty}e^{-ty}(ty)^{a-1}t\;dy = t^a 
+\int\limits_0^{+\infty}e^{-ty}y^{a-1}\;dy,\]
+откуда получаем, что
+\begin{equation}
+  \label{lec13:9}
+  \dfrac{\Gamma(a)}{t^a}=\int\limits_0^{+\infty}e^{-ty}y^{a-1}dy
+\end{equation}
+
+Заменяя в \eqref{lec13:9} $a > 0$ на $a+b > 0$ и $t > 0$ на $t+1 > 0$, 
+получаем:
+\begin{equation}
+\label{lec13:10}
+\dfrac{\Gamma(a+b)}{(1+t)^{a+b}} = \int\limits_0^{+\infty} e^{-(1+t)y} 
+y^{(a+b) - 
+1} dy.
+\end{equation}
+
 \[ \eqref{lec13:10} \implies \Gamma (a+b) \int\limits_{0}^{+\infty} \frac{ 
-t^{a-1} }{ (1+t)^{a+b} } \; dt = \int\limits_{0}^{+\infty} t^{a-1} \left(  
-\int\limits_{0}^{+\infty} e^{-(1+t)y } y^{a+b-1} dy \right) \; dt =  
+t^{a-1} }{ (1+t)^{a+b} } \; dt =
+\int\limits_{0}^{+\infty} t^{a-1} \frac{\Gamma(a + b)}{(1+t)^{a+b}} \; dt = 
+\int\limits_{0}^{+\infty} t^{a-1} \left(  
+\int\limits_{0}^{+\infty} e^{-(1+t)y } y^{a+b-1} dy \right) dt = \]
+\[ =
 \int\limits_{0}^{+\infty} \; dt  \int\limits_{0}^{+\infty} e^{ -(1+t)y } 
-y^{a+b-1}  t^{a-1} \; dy = \]
-
-Меняем порядок итнтегрирования:
-
-\[ =  \int\limits_{0}^{+\infty} \; dy \int\limits_{0}^{+\infty} e^{ -(1+t)y } 
+y^{a+b-1}  t^{a-1} \; dy = 
+[\text{меняем порядок интегрирования}]
+= \]\[ =
+\int\limits_{0}^{+\infty} \; dy \int\limits_{0}^{+\infty} e^{ -(1+t)y } 
 y^{a+b-1} t^{a-1} \; dt  = \int\limits_{0}^{+\infty} e^{-y} y^{a+b-1} \left( 
 \int\limits_{0}^{+\infty} e^{-ty} t^{a-1} \; dt \right) dy = \left[  
 \begin{gathered}
-									ty = z \bigg|_{0}^{+\infty} \; t = \frac{z}{y}\\
-									y = \fix > 0 \; t = \frac{dz}{y} 
-										\end{gathered} \right] =   \]
-
-\[  \int\limits_{0}^{+\infty} e^{-y} y^{a+b-1} \left( 
+ty = z \big|_{0}^{+\infty}, \ t = \frac{z}{y}\\
+y = \fix > 0, \ dt = \frac{dz}{y} 
+\end{gathered} \right] =   \]
+\[ = \int\limits_{0}^{+\infty} e^{-y} y^{a+b-1} \left( 
 \int\limits_{0}^{+\infty} e^{-z} z^{a-1} y^{-a}  \; dz   \right) \; dy = 
 \int\limits_{0}^{+\infty} e^{-y} y^{b-1} \left( \int\limits_{0}^{+\infty} 
 e^{-z} z^{a-1}  \; dz \right) \; dy  =  \]
+\[ = \int\limits_{0}^{+\infty} e^{-y} y^{b-1}\cdot \Gamma(a) \; dy = \Gamma(a) 
+\Gamma(b).  \]
 
-
-\[ = \int\limits_{0}^{+\infty} e^{-y} y^{b-1} \Gamma(a) \; dy = \Gamma(a) 
-\Gamma(b)  \]
-
-Таким образом:
-
+Таким образом,
 \begin{equation}
 	\label{14:11}
 	\int\limits_{0}^{+\infty} \frac{ t^{a-1} }{ (1+t)^{a+b} } \; dt = 
-	\frac{\Gamma(a) \Gamma(b)}{\Gamma(a+b)} \; \; a,b > 0
+	\frac{\Gamma(a) \Gamma(b)}{\Gamma(a+b)}, \;\; a,b > 0
 \end{equation}
 
-Отсюда для $B$ функции $\label{13:6}$ получаем: 
-
+Для $B$-функции $\eqref{lec13:6}$ получаем: 
 \begin{equation}
 \label{14:12}
    B(a,b) = \left[  \begin{gathered}
-t = \frac{x}{1-x} \bigg|_{0}^{+\infty}\\
-x = \frac{t}{1+t}  \bigg|_{1}^{0} 
+t = \frac{x}{1-x} \Big|_{0}^{+\infty}\\
+x = \frac{t}{1+t}  \Big|_{1}^{0} 
 \end{gathered}   \right]   = \int\limits_{0}^{+\infty} \left(  \frac{t}{1+t} 
-\right)^{a-1} \left(1 - \frac{t}{1+t} \right)^{b-1} \; \frac{dt}{\left( 1+t 
+\right)^{a-1} \cdot \left(1 - \frac{t}{1+t} \right)^{b-1} \cdot 
+\frac{dt}{\left( 1+t 
 \right)^2} = \int\limits_{0}^{+\infty} \frac{t^{a-1}}{\left( 1+t 
-\right)^{a+b}} \; dt 
+\right)^{a+b}} \; dt.
 \end{equation}
 
-Из  $\eqref{14:11} - \eqref{14:12}$ следует $\eqref{13:8}$. На основании этой 
-формулы из соответствующих свойств гамма-функции получаем соответствующие 
+Из  $\eqref{14:11},\ \eqref{14:12}$ следует $\eqref{lec13:8}$.
+\end{proof}
+
+На основании 
+этой формулы из соответствующих свойств гамма-функции получаем соответствующие 
 свойства бета-функции:
 
 \begin{enumerate}
-	\item Симметричность 
+	\item Симметричность: 
 	
 	\[  B(a,b) = \frac{\Gamma(a) \Gamma(b)}{\Gamma(a+b)} = \frac{\Gamma(b)  
-	\Gamma(a) }{\Gamma(a+b)} = B(b,a)   \]
+	\Gamma(a) }{\Gamma(a+b)} = B(b,a).   \]
 	
-	\item Понижение аргумента
-	
+	\item Понижение аргумента:
 	\[   B(a+1,b) = \frac{\Gamma(a+1) \Gamma(b)}{\Gamma(a+b+1)}  = \frac{a}{a+b} 
-	\frac{\Gamma(a) \Gamma(b)}{\Gamma(a+b)}  = \frac{a}{a+b}  B(a,b) \]
+	\cdot \frac{\Gamma(a) \Gamma(b)}{\Gamma(a+b)}  = \frac{a}{a+b}  B(a,b). \]
 	
-	Аналогично происходит разложение по второму аргументу:
-	
+	Аналогично происходит понижение по второму аргументу:
 	\[  B(a,b+1) =  \frac{\Gamma(a) \Gamma(b+1)}{\Gamma(a+b+1)}  = \frac{b}{a+b} 
-	\frac{\Gamma(a) \Gamma(b)}{\Gamma(a+b)}  = \frac{b}{a+b}  B(a,b)   \]
+	\cdot \frac{\Gamma(a) \Gamma(b)}{\Gamma(a+b)}  = \frac{b}{a+b}  B(a,b). \]
 	
-	В частности, если $a=m \in \N_0$. Тогда:
-	
+	В частности, если $a=m \in \N_0$, тогда:
 	\[  B(m+1,b) = \frac{m}{m+b} B(m,b) = \frac{m!}{(b+m)(b+m-1)\dots(b-2)(b-1)} 
 	B(1,b)  \]
 	
 	\[ B(1,b) = \int\limits_{0}^{1} \left( 1-x \right) ^{b-1} \; dx = \frac{1}{b} 
 	\]
-	
-	По итогу получаем:
-	
+	В итоге получаем:
 	\[  B(m+1,b) = \frac{m!}{(b+m)(b+m-1)\dots(b-1)b}     \]
-	
-	Аналогично для $\forall n \in \N_0$:
-	
+	Аналогично, для $\forall n \in \N_0$:
 	\[  B(a,n+1) = \frac{n!}{(a+n)(a+n-1)\dots(a-1)a}  \]
-	
-	В частности $\forall m,n \in \N_0$:
-	
+	В частности, для $\forall m,n \in \N_0$:
 	\[  B(m+1,n+1) = \frac{m! \; n!}{(1+m+n)!}   \]
 	
-	\item Значение $B$ функции для полуцелых значений аргументов. $\forall m,n 
-	\in \N$
-		
-	\[  B\left( m+\frac{1}{2}, n+\frac{1}{2} \right) = \frac{2m - 1}{2(m+n)} 
+	\item Значение $B$-функции для полуцелых значений аргументов:
+	\[  \forall m,n \in \N \implies B\left( m+\frac{1}{2}, n+\frac{1}{2} \right) 
+	= \frac{2m - 1}{2(m+n)} 
 	B\left( m-\frac{1}{2}, n+\frac{1}{2} \right) = \]
-	
 	\[ = \frac{(2m-1)(2m-3) \dots 3 \cdot 1}{2^m (m+n)(m+n-1)\dots (n+1)} B\left( 
 	\frac{1}{2}, n+\frac{1}{2} \right) = \frac{(2m-1)!! (2n-1)!! }{2^{m+n} 
 	(m+n)!} B\left( \frac{1}{2}, \frac{1}{2} \right) =  \]
-	
 	\[ = \left[  B\left( \frac{1}{2}, \frac{1}{2} \right) = \int\limits_{0}^{1} 
 	x^{-\frac{1}{2}} \left( 1-x \right)^{-\frac{1}{2}} \; dx = 2 
 	\int\limits_{0}^{1} \frac{d \sqrt{x} }{\sqrt{1 - \left(\sqrt{x} \right)^2 }} 
-	= 2 \arcsin{\sqrt{x}} \bigg|_{0}^{1} = \pi  \right] =     \]
-	
-	\[   \frac{(2m-1)!! (2n-1)!! }{2^{m+n} (m+n)!} \pi    \]
+	= 2 \arcsin{\sqrt{x}} \Big|_{0}^{1} = \pi  \right] =     \]
+	\[   \frac{(2m-1)!! (2n-1)!! }{2^{m+n} (m+n)!} \pi. \]
 \end{enumerate}
-	\section{Формула Лежандра}
+
+\section{Формула Лежандра}
 	
-	$\forall a > 0$ имеем:
-	
+	Для $\forall a > 0$ имеем:
 	\[ \frac{\Gamma^2(a)}{\Gamma(2a)} = \frac{\Gamma(a) \Gamma(a)}{\Gamma(2a)} = 
 	B(a,a) = \int\limits_{0}^{1} \left(x-x^2 \right) ^{a-1} \; dx = 
 	\int\limits_{0}^{1} \left(\frac{1}{4} - \left( \frac{1}{2} - x\right)^2  
 	\right) ^{a-1} \; dx =  \]
-	
 	\[  =  \left[  \begin{gathered}
-	t = (1-2x) \bigg|_{1}^{-1} \\
+	t = (1-2x) \big|_{1}^{-1} \\
 	dx = -\frac{1}{2} dt 
 	\end{gathered}   \right] = \frac{1}{2}  \int\limits_{-1}^{1} \left( 
-	\frac{1}{4} - \frac{t^2}{4}  \right)^{a-1} \; dt =\left[ 
+	\frac{1}{4} - \frac{t^2}{4}  \right)^{a-1} dt =\left[ 
 	\begin{gathered}
-	\text{т.~к. подинтегральная} \\
-	\text{ функция четная}
-	\end{gathered}	\right] = \frac{1}{2^{2a-1}}  2 \int\limits_{0}^{1} \left( 
+	\text{подынтегральная} \\
+	\text{функция четна}
+	\end{gathered}	\right] = \frac{1}{2^{2a-1}} \cdot 2 \int\limits_{0}^{1} 
+	\left( 
 	1-t^2  \right)  \; dt =     \] 
-	
 	\[  =  \left[  \begin{gathered}
 	t = \sqrt{y}, \; dt = \frac{dy}{2\sqrt{y}} \\
-	y = t^2  \bigg|_{0}^{1}
+	y = t^2  \big|_{0}^{1}
 	\end{gathered}   \right] =  \frac{1}{2^{2a-1}} \int\limits_{0}^{1} 
 	\frac{(1-y)^{a-1}}{\sqrt{y}} \; dy  = \frac{1}{2^{2a-1}} \int\limits_{0}^{1} 
 	y^{\frac{1}{2} - 1}(1-y)^{a-1} \; dy  =     \]
-	
 	\[  = \frac{1}{2^{2a-1}} B\left( \frac{1}{2},a \right) = \frac{\Gamma\left( 
 	\frac{1}{2} \right) \Gamma(a) }{2^{2a-1} \Gamma\left( a + \frac{1}{2} 
 	\right)} = \left[ \Gamma\left( \frac{1}{2} \right) = \sqrt{\pi}  \right] = 
-	\frac{\sqrt{\pi} \Gamma(a) }{2^{2a-1} \Gamma\left( a + \frac{1}{2} \right)}   
+	\frac{\sqrt{\pi} \cdot \Gamma(a) }{2^{2a-1} \cdot \Gamma\left( a + 
+	\frac{1}{2} \right)}. 
 	 \]
 	
+	Из полученного соотношения следует \emph{формула Лежандра}:
 	\begin{equation}
 	\label{14:13}
-	\begin{cases}
-		\Gamma(2a) = \frac{2^{2a-1}}{\sqrt{\pi}} \Gamma(a) \Gamma\left( \frac{1}{2} 
-		\right) \\
-		a > 0
-	\end{cases}
+	\frac{\Gamma^2(a)}{\Gamma(2a)} = \frac{\sqrt{\pi} \cdot \Gamma(a) }{2^{2a-1} 
+	\cdot \Gamma\left( a + \frac{1}{2} \right)} \implies
+	\Gamma(2a) = \frac{2^{2a-1}}{\sqrt{\pi}} \Gamma(a) \cdot \Gamma\left( 
+	\frac{1}{2} 
+	\right),\ 
+	a > 0.
 	\end{equation}
 	
 	\section{Формула дополнения для Эйлеровых интегралов}
 	
-	Пусть $0 < a < 1$, полагая $b = (1-a) \in (0;1)$, то из представления $B$ 
-	функции через НИЗОП смешанного типа получаем, что:
-	
+	Пусть $0 < a < 1$. Тогда, полагая $b = (1-a) \in (0;1)$, из представления 
+	$B$-функции через НИЗОП смешанного типа \eqref{14:12} получаем, что
 	\begin{equation}
 	\label{14:14}
-	B\left( a,1-a\right) = \int\limits_{0}^{+\infty} \frac{t^{a-1}}{1+t} \; dt = 
-	E(a)
+	B\left( a,1-a\right) \stk{14:12}= \int\limits_{0}^{+\infty} 
+	\frac{t^{a-1}}{1+t} \; dt = 
+	E(a).
 	\end{equation}
 	
-	Интеграл $\eqref{14:14}$ называется интегралом Эйлера.
+	Интеграл $\eqref{14:14}$ называется \emph{интегралом Эйлера}.
 	
 	\[  B\left( a,1-a\right)  = \frac{\Gamma(a) \Gamma(1-a) }{\Gamma(1)} = 
 	\Gamma(a) \Gamma(1-a) \]
 	
-	Так же имеем:
-	
+	Также имеем
 	\begin{equation}
 	\label{14:15}
-	\begin{cases}
-	\Gamma(a) \Gamma(1-a) = E(a)  \\
-	\forall a \in (0;1)
-	\end{cases}
+	\Gamma(a) \Gamma(1-a) = E(a),\ \forall a \in (0;1).
 	\end{equation}
 	
 	\begin{thm}[о вычислении интеграла Эйлера]
 		\begin{equation}
 		\label{14:16}
 		E(a) = \int\limits_{0}^{+\infty} \frac{x^{a-1}}{1+x} \; dx = 
-		\frac{\pi}{\sin{\pi a}}, \; \forall a \in(0,1)
+		\frac{\pi}{\sin{\pi a}}, \; \forall a \in(0,1).
 		\end{equation}
-		
 	\end{thm}
 
 	\begin{proof}
 		\[  E(a) =  \int\limits_{0}^{1}  \frac{x^{a-1}}{1+x} \; dx + 
 		\int\limits_{1}^{+\infty} \frac{x^{a-1}}{1+x} \; dx  = \left[  
-		\begin{gathered}
-	    1) \; x = t \bigg|_{0}^{1} \\
-		2) \; 	x = \frac{1}{t}, \; dx = - \frac{dt}{t^2}, \; t = \frac{1}{x}  
+		\begin{array}{ll}
+    1)& x = t \big|_{0}^{1} \\
+		2)& \displaystyle x = \frac{1}{t}, \; dx = - \frac{dt}{t^2}, \; t = 
+		\frac{1}{x} 
 		\bigg|_{0}^{1}
-		\end{gathered}  \right] = \int\limits_{0}^{1} \frac{t^{a-1}}{1+t} \; dt + 
+		\end{array}  \right] = \int\limits_{0}^{1} \frac{t^{a-1}}{1+t} \; dt + 
 		\int\limits_{0}^{1} \frac{t^{1-a}}{1+\frac{1}{t}} \; \frac{dt}{t^2} =      \]
-		
 		\[  = \int\limits_{0}^{1} \frac{t^{a-1}}{1+t} \; dt +  \int\limits_{0}^{1} 
-		\frac{t^{-a}}{1+t} \; dt, 0<a<1       \]
+		\frac{t^{-a}}{1+t} \; dt = \int\limits_{0}^{1}  \frac{t^{a-1} + t^{-a}}{1+t} 
+		\; dt.\]
 		
+		Отсюда получаем, что
 		\begin{equation}
 		\label{14:17}
-		  E(a) =  \int\limits_{0}^{1}  \frac{t^{a-1} + t^{-a}}{1+t} \; dt     
+		  E(a) = \int\limits_{0}^{1}  \frac{t^{a-1} + t^{-a}}{1+t} \; dt,\ 0<a<1.
 		\end{equation}
 		
-		Для завершения доказательства нам понадобится следующая лемма:
+		Для завершения доказательства в дальнейшем нам понадобится следующая лемма:
 		
-		\begin{lemma}[Об одной формуле для интеграла Эйлера]
-			
-			Если $a \in (0,1)$, то для интегральной последовательности:
-			
+		\begin{lemma}[об одной формуле для интеграла Эйлера]
+			Если $a \in (0,1)$, то для интегральной последовательности
 			\begin{equation}
 			\label{14:18}
 			a_n = 4 \int\limits_{0}^{\frac{\pi}{2}} \frac{\sin^2{at}}{\sin{t}} 
 			\sin{\left(2n-1 \right) } \; dt, \; n \in \N
 			\end{equation}
-			
-			Имеем:
-			
+			имеем
 			\begin{equation}
 			\label{14:19}
-			a_n = \pi - E(a) \sin{\pi a} + b_n \sin{\pi a}
+			a_n = \pi - E(a) \sin{\pi a} + b_n \sin{\pi a},
 			\end{equation}
-			
-			Где:
-			
+			где
 			\begin{equation}
 			\label{14:20}
 			b_n = \left( - 1 \right)^{n-1} \int\limits_{0}^{1} \frac{t^{n-a-1} - 
-			t^{n+a-1} }{1+t} \; dt, \; n\ in \N
+			t^{n+a-1} }{1+t} \; dt, \; n \in \N.
 			\end{equation}
 		\end{lemma}	
 			\begin{proof}
-				Для $\eqref{14:18} \implies $
-				
+				Для $\eqref{14:18}$ имеем
 				\[   a_n =  \int\limits_{0}^{\frac{\pi}{2}} \frac{\sin^2{at}}{\sin{t}} 
-				\sin{\left(2n-1 \right) } \; dt = \left[ 1 + \sum_{n-1}^{k = 1} \cos{2k t} 
+				\sin{\left(2n-1 \right) } \; dt = \left[ 1 + \sum^{n-1}_{k = 1} \cos{2k t} 
 				= \frac{\sin{t} + 2 \sin{t} \cos{2t} + \dots + 2\sin{t} \cos{(2n - 
-				2)t}}{\sin{t}} \right]   =   \]
-				
-				\[  = \left[ \frac{\sin{t} + \left( \sin{3t} - \sin{t} \right) + \dots 
+				2)t}}{\sin{t}} \right. = \]
+				\[ = \left. \frac{\sin{t} + \left( \sin{3t} - \sin{t} \right) + \dots 
 				+\left( \sin{(2n-1)t} - \sin{(2n-3)t} \right) }{\sin{t}} = 
-				\frac{\sin{(2n-1)t}}{\sin{t}} \right] =      \]
-				
+				\frac{\sin{(2n-1)t}}{\sin{t}} \right] = \]
 				\[ = 2 \int\limits_{0}^{\frac{\pi}{2}} \left( 1-\cos{2at}\right) \left( 1 
-				+ 2 \sum_{n-1}^{k = 1} \cos{2k t} \right) \; dt  = 
-				2\int\limits_{0}^{\frac{\pi}{2}} \left( 1-\cos{2at} + 2 \sum_{n-1}^{k = 1} 
-				\cos{2k t} - 2 \cos{2at} \sum_{n-1}^{k = 1} \cos{2k t}\right) =   \]
-				
+				+ 2 \sum^{n-1}_{k = 1} \cos{2k t} \right) dt  = 
+				2\int\limits_{0}^{\frac{\pi}{2}} \left( 1-\cos{2at} + 2 \sum^{n-1}_{k = 1} 
+				\cos{2k t} - 2 \cos{2at} \sum^{n-1}_{k = 1} \cos{2k t}\right) dt = \]
 				\[  = 2 \left[ t - \frac{\sin{2at}}{2a} + 2 
 				\sum_{k=1}^{n-1}\frac{\sin{2kt}}{2k} \right]_{0}^{\frac{\pi}{2}} - 2 
-				\int\limits_{0}^{\frac{\pi}{2}} \sum_{k=1}^{n-1} \left( \cos{(2k-2a)t} + 
-				\cos{(2k+2a)t} \right) \; dt =            \]
-				
+				\int\limits_{0}^{\frac{\pi}{2}} \sum_{k=1}^{n-1} \left( \cos((2k-2a)t) + 
+				\cos((2k+2a)t) \right) dt = \]
 				\[  = \pi - \frac{\sin{\pi a}}{a} - 2 \sum_{k=1}^{n-1} \left[ 
-				\frac{\sin{(2k-2a)t}}{2k-2a} + \frac{\sin{(2k+2a)t}}{2k+2a} 
-				\right]_{0}^{\frac{\pi}{2}} =       \]
-				
+				\frac{\sin((2k-2a)t)}{2k-2a} + \frac{\sin((2k+2a)t)}{2k+2a} 
+				\right]_{0}^{\frac{\pi}{2}} = \]
 				\[    = \pi - \frac{\sin{\pi a}}{a} -  \sum_{k=1}^{n-1} \left( 
 				\frac{\sin{(\pi k- \pi a)}}{k-a} + \frac{\sin{(\pi k+ \pi a)}}{k+a} 
 				\right) = \left[ \sin{(\pi k + \phi) = \left( -1\right)^k \sin{\phi}} 
-				\right] =           \]
-				
-				\[  =   \pi - \frac{\sin{\pi a}}{a} - \sum_{k=1}^{n-1} \left( \frac{(-1)^k 
+				\right] = \]
+				\[  = \pi - \frac{\sin{\pi a}}{a} - \sum_{k=1}^{n-1} \left( \frac{(-1)^k 
 				\sin{(- \pi a)}}{k-a} + \frac{(-1)^k \sin{(\pi a)}}{k+a} \right)  =        
 				  \]
-				
-				\[ = \pi -\left(  \frac{1}{a} + \sum_{k=1}^{n-1} (-1)^k \left( 
-				\frac{1}{k-a} - \frac{1}{k+a} \right)    \right) \sin{\pi a} =        \]
-				
-				Опять перейдем к интегралам:
-				
+				\[ = \pi -\left(  \frac{1}{a} + \sum_{k=1}^{n-1} (-1)^{k-1} \left( 
+				\frac{1}{k-a} - \frac{1}{k+a} \right)    \right) \sin{\pi a} = 
+				[\text{перейдем обратно к интегралам}] = \]
 				\[ = \pi - \left( \int\limits_{0}^{1} t^{a-1} \; dt + \sum_{k=1}^{n-1} 
-				(-1)^k \int\limits_{0}^{1} \left( t^{k-a-1} - t^{k+a - 1} \right) \; dt 
-				\right)  \sin{\pi a}  =           \]
-				
+				(-1)^{k-1} \int\limits_{0}^{1} \left( t^{k-a-1} - t^{k+a - 1} \right) dt 
+				\right)  \sin{\pi a}  = \]
 				\[  =  \pi - \left( \int\limits_{0}^{1} t^{a-1} \; dt + \sum_{k=1}^{n-1} 
-				(-1)^k \int\limits_{0}^{1} t^{k-1} \left( t^{-a} - t^{a} \right) \; dt 
-				\right)  \sin{\pi a} =      \]
-				
+				(-1)^{k-1} \int\limits_{0}^{1} t^{k-1} \left( t^{-a} - t^{a} \right) dt 
+				\right)  \sin{\pi a} =  \]
 				\[  = \pi - \sin{\pi a} \int\limits_{0}^{1} \left( t^{a-1} + 
-				\frac{1-(-t)^{n-1}}{1-(-t)}\left( t^{-a} - t^{a} \right) \right) \; dt  =  
-				    \]
-				
+				\frac{1-(-t)^{n-1}}{1-(-t)}\left( t^{-a} - t^{a} \right) \right) dt  = \]
 				\[ = \pi - \left( \int\limits_{0}^{1} \left( t^{a-1} + \frac{t^{-a} - 
-				t^a}{1+t} \right) \; dt + (-1)^{n-1} \int\limits_{0}^{1} \frac{t^{n-a-1} - 
-				t^{n+a-1}}{1+t} \; dt   \right) \sin{\pi a}  = \pi - \left( E(a) - b_n 
-				\right) \sin{\pi a} =    \]
-				
-				\[ = \pi - E(a) \sin{\pi a} + b_n \sin{\pi a} \implies \eqref{14:19}      
-				\]
+				t^a}{1+t} \right) \; dt - (-1)^{n-1} \int\limits_{0}^{1} \frac{t^{n-a-1} - 
+				t^{n+a-1}}{1+t} \; dt   \right) \sin{\pi a}  \stackrel{\eqref{14:17}, 
+				\eqref{14:20}}= \]
+				\[ \stackrel{\eqref{14:17}, \eqref{14:20}}= \pi - \left( E(a) - b_n 
+				\right) \sin{\pi a} = \pi - E(a) \sin{\pi a} + b_n \sin{\pi a} \implies 
+				\eqref{14:19}. 
+				\qedhere \]
 			\end{proof}	
 			
-			
-	
-		Продолжим доказательство формулы Эйлера $\eqref{14:16}$. Интегрируя по 
-		частям, для $\eqref{14:18}$ получаем:
-		
-		\[  \left| a_n \right|   = \left| - \int\limits_{0}^{\frac{\pi}{2}} 
-		\frac{\sin^2{at}}{\sin{t}} \; d\left( \cos{(2n-1)t}\right)   \right|  = 
-		\frac{4}{2n-1} \left| \left[ \frac{\sin^2{at}}{\sin{t}} \cos{(2n-1)t} 
+		Продолжим доказательство формулы Эйлера \eqref{14:16}. Интегрируя по 
+		частям, для \eqref{14:18} получаем:
+		\[  \left| a_n \right|   = \left| -4 \int\limits_{0}^{\frac{\pi}{2}} 
+		\frac{\sin^2{at}}{\sin{t}} \; d\left( \cos{(2n-1)t}\right)   \right|  =\]
+		\[ = \frac{4}{2n-1} \left| \left[ \frac{\sin^2{at}}{\sin{t}} \cos{(2n-1)t} 
 		\right]_{0}^{\frac{\pi}{2}} -\int\limits_{0}^{\frac{\pi}{2}} \cos{(2n-1)t} 
 		\; d\left( \frac{\sin^2{at}}{\sin{t}} \right)   \right| =     \]
-		
 		\[  = \frac{4}{2n-1}\left| \int\limits_{0}^{\frac{\pi}{2}} \left( 
 		\frac{\sin^2{at}}{\sin{t}} \right)'_t \cos{(2n-1)t} \; dt \right|  \le  
 		\frac{4}{2n-1} \int\limits_{0}^{\frac{\pi}{2}} \left| \left( 
-		\frac{\sin^2{at}}{\sin{t}} \right)'_t \right| \cos{(2n-1)t} \; dt  \le       
-		          \]
-		
+		\frac{\sin^2{at}}{\sin{t}} \right)'_t \right| \left|\cos{(2n-1)t}\right| \; 
+		dt  \le\]
 		\[ \le \frac{4}{2n-1} \int\limits_{0}^{\frac{\pi}{2}} \left| \left( 
 		\frac{\sin^2{at}}{\sin{t}} \right)'_t \right| \; dt  {\underset{n \to 
-		\infty}\rightarrow} 0      \]
+		\infty}\rightarrow} 0 \]
 		
-		НИЗОП сходится, особые точки устранимы, значит это интеграл Римана. Значит 
+		НИЗОП сходится, особые точки устранимы, значит это~--- интеграл Римана. 
+		Отсюда 
 		$\left| a_n \right|{\underset{n \to \infty}\longrightarrow} 0 \implies   a_n 
-		{\underset{n \to \infty}\longrightarrow} 0$
-		
-		
+		{\underset{n \to \infty}\longrightarrow} 0$.
 		\[  \left| b_n \right| = \left| (-1)^{n-1} \int\limits_{0}^{1} 
-		\frac{t^{n-a-1} - t^{n+a-1}}{1+t} \; dt \right| = \left[ \begin{gathered} 
-		\text{подинтегральная функция}\\
-		\text{не меньше нуля} \end{gathered} \right] =  \int\limits_{0}^{1} 
-		\frac{t^{n-a-1} - t^{n+a-1}}{1+t} \; dt =   \]
-		
-		\[  \le \int\limits_{0}^{1} {t^{n-a-1} - t^{n+a-1}} \; dt = \left(  
+		\frac{t^{n-a-1} - t^{n+a-1}}{1+t} \; dt \right| = \left[
+		\text{подынтегральная функция} \ge 0 \right] =  \int\limits_{0}^{1} 
+		\frac{t^{n-a-1} - t^{n+a-1}}{1+t} \; dt \le  \]
+		\[  \le \int\limits_{0}^{1} (t^{n-a-1} - t^{n+a-1})\; dt = \left(  
 		\frac{1}{n-a} - \frac{1}{n+a}\right)  {\underset{n \to 
 		\infty}\longrightarrow} 0  \implies  \left| b_n \right| {\underset{n \to 
 		\infty}\longrightarrow} 0  \implies   b_n  {\underset{n \to 
 		\infty}\longrightarrow} 0  \]
 		
-		Далее переходя к пределу $n \longrightarrow 0$ в $\eqref{14:19}$, получим:
-		
-		\[  \lim_{n \to \infty} a_n =  \lim_{n \to \infty} \pi - E(a) \sin{\pi a} + 
-		b_n \sin{\pi a} = \pi - E(a) \sin{\pi a} = 0 \implies \eqref{14:16}       \]
-		
-		\end{proof}
-	
-				
-		
-		%\[  \left[ \begin{gathered}
-		%\cos{\left( (2n-1) \frac{\pi }{2}\right)}  = 0 \\
-		%\frac{\sin{at}}{\sin{t}} {\underset{t \to +0}\rightarrow} a
-		%\end{gathered} \right] \]
-		
-		%Отсюда, учитывая, что:
-		
-		%\[  \frac{1}{1+t} = \frac{1-\left( -t\right)^n }{1-\left(-t \right) } + 
-		\frac{\left(-t \right)^n }{1+t} = \sum_{k=0}^{n-1} \left( -t\right)^k + 
-		\frac{\left( -1\right)^n t^n }{1+t} = \sum_{k=0}^{n-1} \left( -1\right)^k 
-		t^k  + \frac{\left( -1\right)^n t^n }{1+t}         \]
-		
-		%\[  E(a) \sin{\pi a} =  \int\limits_{0}^{1} \left( \sum_{k=0}^{n-1} (-1)^k 
-		\; t^k \left( t^{a-1} + t^{-a} \right) + \frac{(-1)^n \; t^n \left( t^{a-1} 
-		+ t^{-a}\right) }{1+t} \right) \sin{\pi a} \; dt        \]
-		
-		
-		%Интегрируем
-		
-		%\begin{equation}  
-		%\label{14:17}
-		%\sum_{k=0}^{n-1} (-1)^k \left( \frac{\sin{\pi a} }{k+a} + \frac{\sin{\pi a} 
-		}{k-a+1} \right) + (-1)^n  \left( \int\limits_{0}^{1} \frac{t^{n+a-1} + 
-		t^{n-a}}{1+t} \; dt \right) \sin{\pi a}  = a_n + b_n, \; \forall n \in N 
-		%\end{equation}
-		
-		%В $\eqref{14:17}$ для второго слагаемого:
-		
-		%\[   \left| b_n \right| = \left| (-1)^n \int\limits_{0}^{1} \frac{t^{n+a-1} 
-		+ t^{n-a}}{1+t} \; dt \right|  \sin{\pi a} = \sin{\pi a} \int\limits_{0}^{1} 
-		\frac{t^{n+a-1} + t^{n-a}}{1+t} \; dt \le \left[ t+1 \ge 1 \right] \le       
-		    \]
-		
-		%\[  \le \sin{\pi a} \int\limits_{0}^{1} \left( t^{n+a-1} + t^{n-a} \right)  
-		\; dt = \left| \frac{1}{n+a} + \frac{1}{n-a+1} \right| \sin{\pi a} 
-		{\underset{n \to \infty}\rightarrow} 0                  \]
-		
-		%Осталось показать, что первое слагаемое в $\eqref{14:17}$:
-		
-		%\[ a_n =  \sum_{k=0}^{n-1} (-1)^k \left( \frac{\sin{\pi a} }{k+a} + 
-		\frac{\sin{\pi a} }{k-a+1} \right) = \left[  \begin{gathered}
-		%(-1)^k \sin{\pi a} = \sin{\pi \left( a + k \right) } \\
-		%(-1)^k \sin{\pi a} = \sin{\pi \left( k - a + 1 \right) }
-		%\end{gathered}  \right]  = \]
-		
-		
-		
-		
-		%\[ \sum_{k=0}^{n-1} \left( \frac{\sin{\pi \left( a + k \right)} }{k+a} + 
-		\frac{\sin{\pi \left( k - a + 1 \right)} }{k-a+1} \right)           \]
-		
-		%Далее покажем $a_n {\underset{n \to \infty}\rightarrow} \pi $:
-		
-		%\[   a_n = \sum_{k=0}^{n-1} \left( \int\limits_{0}^{\pi} \cos{(a+k)t} \; dt 
-		+ \int\limits_{0}^{\pi} \cos{(k-a+1)t} \; dt \right) =  
-		\int\limits_{0}^{\pi} \sum_{k=0}^{n-1} \left( \cos{(a+k)t} + \cos{(k-a+1)t} 
-		\right) =              \]
-		
-		%\[ = \left[  \cos{\alpha} + \cos{\beta} = \cos{\frac{\alpha + \beta}{2}} 
-		\cos{\frac{\alpha - \beta}{2}}  \right] = 2 \int\limits_{0}^{\pi} \left( 
-		\sum_{k=0}^{n-1} \cos{\left( \frac{2k+1}{2} \; t\right) } \cos{\left( 
-		\frac{2a-1}{2} \; t\right)} \right) \; dt   =      \]
-		
-		%Булатов собака
-		
-		%\[  = \left[  \begin{gathered}
-		%\alpha = \frac{t}{2} \\
-		%\sum_{k=1}^{n} \cos{2k-1} = \frac{\sin{2n\alpha}}{2\sin{\alpha}}
-		%\end{gathered}    \right]  = 2  \int\limits_{0}^{\pi} 
-		\frac{\sin{nt}}{2\sin{\frac{t}{2}}} \cos{\left( \frac{2a-1}{2} \; t\right)}  
-		\; dt =         \]
-		
-		%Сутулая
-		
-		%\[ \int\limits_{0}^{\pi} \frac{\sin{nt}}{\sin{\frac{t}{2}}}\left( 1 - 
-		\left(  1- \cos{\left( \frac{2a-1}{2} \; t\right)} \right)  \right)   \; dt =
-		%\int\limits_{0}^{\pi} \frac{\sin{nt}}{\sin{\frac{t}{2}}} \; dt -  2 
-		\int\limits_{0}^{\pi} \frac{\sin^2 {\left( \frac{2a-1}{4} \; t \right) 
-		}}{\sin{\frac{t}{2}}} \sin{nt} \; dt          \]
-		
-		%Во-первых:
-		
-		%\[  I_n =  \int\limits_{0}^{\pi} \frac{\sin{nt}}{\sin{\frac{t}{2}}} \; dt   
-		  \]
-		
-		%\[  I_{n+1} - I_n =  \int\limits_{0}^{\pi} \frac{\sin{(n+1)t} - 
-		\sin{nt}}{\sin{\frac{t}{2}}} \; dt = 2 \int\limits_{0}^{\pi} \cos{\left(  
-		\frac{2n+1}{2} \; t \right) } \; dt = \frac{4}{2n+1} \sin{\left( 
-		\frac{2n+1}{2} \right) } \bigg|_{\pi}^{0} = 0  \implies \]
-		
-		%\[  \implies I_n = I_1 = \int\limits_{0}^{\pi} 2 \cos{\frac{t}{2}} \;  dt = 
-		4 \sin{\frac{t}{2}} \bigg|_{0}^{\pi} = 4    \]
-%	\end{proof}	
+		Далее, переходя к пределу при $n \to \infty$ в $\eqref{14:19}$, получим:
+		\[ 0 = \lim_{n \to \infty} a_n =  \lim_{n \to \infty} \pi - E(a) \sin{\pi a} 
+		+ 
+		b_n \sin{\pi a} = \pi - E(a) \sin{\pi a} \implies \eqref{14:16}. \qedhere\]
+\end{proof}
 
 \end{document}

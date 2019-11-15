@@ -76,11 +76,11 @@ Use equation and \eqref{}.'
 Это~--- тире'
 	
 	check -P -- "$1" \
-	      '(\\in|\\subset)\s+R(?!\s*\\left\s*\(|\s*\()' \
+	      '(\\in|\\subset)\s+R(?!_|\s*\\left\s*\(|\s*\()' \
 	      'Use \R instead of R (if it'\''s set of real numbers)'
 	
-	check -- "$1" \
-	      '\\R\s*_\s*[23n]' \
+	check -P -- "$1" \
+	      '\\?R\s*_\s*[23n](?!\s*\\left\s*\(|\s*\()' \
 	      'Maybe you meant \R^n?'
 	
 	check -- "$1" \
@@ -124,7 +124,7 @@ Use equation and \eqref{}.'
 	      'Use enumerate instead of itemize for enumerated lists'
 	
 	check -- "$1" \
-	      '([^a-zA-Z\]|^)(lim|sin|cos|tan|sup|inf|mes|rank|diam|fix|arctan|arctg|sinh|cosh|ln)' \
+	      '([^a-zA-Z\]|^)(lim|sin|cos|tan|tg|sup|inf|mes|rank|diam|fix|arctan|arctg|sinh|cosh|ln)' \
 	      'Do not forget \ before sin, cos, lim etc.'
 }
 
