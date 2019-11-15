@@ -12,8 +12,8 @@
 \begin{document}
 \section{Формула Дирихле для частных сумм ряда Фурье}
 \begin{thm}
-	Пусть $2\pi$- периодическая $f \in \R([-\pi;\pi])$. В этом случае для частных
-	сумм
+	Пусть имеется $2\pi$-периодическая функция $f \in \R([-\pi;\pi])$. В этом 
+	случае для частных сумм
 	\begin{equation}
 		\label{18:1}
 		S_n(x) = \dfrac{a_0}{2} + \sum_{k=1}^{n}(a_k\cos{kx} + b_k\sin{kx})
@@ -21,198 +21,202 @@
 	ряда Фурье, где
 	\begin{equation}
 		\label{18:2}
-		a_k = \dfrac{1}{\pi}\int\limits_{-\pi}^{\pi}{f(x)\cos{kx}\ dx}, k \in N_0
+		a_k = \dfrac{1}{\pi}\int\limits_{-\pi}^{\pi}{f(x)\cos{kx}\; dx},\ k \in \N_0
 	\end{equation}
 	\begin{equation}
 		\label{18:3}
-		b_k = \dfrac{1}{\pi}\int\limits_{-\pi}^{\pi}{f(x)\sin{kx}\ dx}, k \in N
+		b_k = \dfrac{1}{\pi}\int\limits_{-\pi}^{\pi}{f(x)\sin{kx}\; dx},\ k \in \N
 	\end{equation}
-	$\forall x_0 \in \R$ имеем:
+	для $\forall x_0 \in \R$ имеем:
 	\begin{equation}
 		\label{18:4}
 		S_n(x_0)=\dfrac{1}{\pi}\int\limits_{0}^{\pi}({f(x_0 + t) + f(x_0 - t)})
-		\dfrac{\sin(n + \dfrac{1}{2})t}{2\sin{\dfrac{t}{2}}}dt
+		\dfrac{\sin(n + \frac{1}{2})t}{2\sin{\frac{t}{2}}}\; dt.
 	\end{equation}
 \end{thm}
 \begin{proof}
-	$x = x_0$, в силу $\eqref{18:2}$ и $\eqref{18:3}$:
-	\\$S_n(x_0) \stackrel{\eqref{18:2}, \eqref{18:3}}{=}
-	\dfrac{1}{2\pi}\int\limits_{-\pi}^{\pi}{f(x)\ dx} + \dfrac{1}{\pi}
+	Используя в \eqref{18:1} $x = x_0$, в силу $\eqref{18:2}$ и $\eqref{18:3}$ 
+	получаем:
+	\[S_n(x_0) \stackrel{\eqref{18:2}, \eqref{18:3}}{=}
+	\dfrac{1}{2\pi}\int\limits_{-\pi}^{\pi}{f(x)\; dx} + \dfrac{1}{\pi}
 	\int\limits_{-\pi}^{\pi}{f(x)}\sum\limits_{k=1}^{n}
-	(\cos{kx}\ \cos{kx}_0 + \sin{kx}\ \sin{kx}_0)\ dx = $
-	\\$\dfrac{1}{\pi}\int\limits_{-\pi}^{\pi}f(x)(\dfrac{1}{2} + 
-	\sum\limits_{k=1}^{n}\cos(x-x_0))\ dx =$
-	\\$=\left[ 
+	(\cos{kx}\cdot \cos{kx}_0 + \sin{kx}\cdot \sin{kx}_0)\; dx = \]
+	\[ = \dfrac{1}{\pi}\int\limits_{-\pi}^{\pi}f(x)\left(\dfrac{1}{2} + 
+	\sum\limits_{k=1}^{n}\cos k(x-x_0)\right)\; dx =\]
+	\[=\left[ 
 	\begin{gathered} 
-	\dfrac{1}{2} + \cos\alpha + \cos{2\alpha} + \ldots + \cos{n\alpha} =
-	\dfrac{\sin\dfrac{\alpha}{2} + 2\sin{\dfrac{\alpha}{2}}\cos\alpha + \ldots +
-	2\sin{\dfrac{\alpha}{2}}\cos{n \alpha}}{\sin{\dfrac{\alpha}{2}}} =
-	\\\dfrac{\sin{\dfrac{\alpha}{2} + (-\sin{\dfrac{\alpha}{2}}+
-	\sin{\dfrac{3\alpha}{2}}) + \ldots + (-\sin(n-\dfrac{1}{2})\alpha) + 
-	\sin{(n + \dfrac{1}{2})\alpha}}}{2\sin\dfrac{\alpha}{2}} = 
-	\dfrac{\sin(n + \dfrac{1}{2})\alpha}{2\sin{\dfrac{\alpha}{2}}}, 
-	\alpha = x - x_0	
+	\frac{1}{2} + \cos\alpha + \cos{2\alpha} + \ldots + \cos{n\alpha} =
+	\frac{\sin\frac{\alpha}{2} + 2\sin{\frac{\alpha}{2}}\cos\alpha + \ldots +
+	2\sin{\frac{\alpha}{2}}\cos{n \alpha}}{2\sin{\frac{\alpha}{2}}} =
+	\\\frac{\sin{\frac{\alpha}{2} + (-\sin{\frac{\alpha}{2}}+
+	\sin{\frac{3\alpha}{2}}) + \ldots + (-\sin(n-\frac{1}{2})\alpha + 
+	\sin{(n + \frac{1}{2})\alpha)}}}{2\sin\frac{\alpha}{2}} = 
+	\frac{\sin(n + \frac{1}{2})\alpha}{2\sin{\frac{\alpha}{2}}},\quad
+	\alpha = x - x_0
 	\end{gathered} 
-	\right] = $
-	\\$=\dfrac{1}{\pi}\int\limits_{-\pi}^{\pi}
-	{\dfrac{f(x)\sin(n + \dfrac{1}{2})(x - x_0)}{2\sin(\dfrac{x-x_0}{2})}}=$
-	$\left[ 
+	\right] = \]
+	\[=\dfrac{1}{\pi}\int\limits_{-\pi}^{\pi}
+	{\dfrac{f(x)\sin((n + \frac{1}{2})(x - 
+	x_0))}{2\sin\left(\frac{x-x_0}{2}\right)}}\; dx=
+	\left[ 
 	\begin{gathered} 
-	x - x_0 = t|_{-\pi-x_0}^{\pi-x_0}
+	x - x_0 = t\big|_{-\pi-x_0}^{\pi-x_0}
 	\end{gathered} 
-	\right] $
-	$=\dfrac{1}{\pi}\int\limits_{-\pi-x_0}^{\pi - x_0}{f(x_0 + t)
-	\dfrac{\sin(n + \dfrac{1}{2})t}{2\sin(\dfrac{t}{2})}} = $
-	\\$=\left[ 
-	\begin{gathered} 
-	$теорема об интеграле от периодической функции$
-	\end{gathered} 
-	\right] = $
-	$\\=\dfrac{1}{\pi}\int\limits_{-\pi}^{\pi}{f(x_0 + t)}
-	\dfrac{\sin(n + \dfrac{1}{2})t}{2\sin(\dfrac{t}{2})} = $
-	$\dfrac{1}{\pi}(\int\limits_{-\pi}^{\pi} + \int\limits_{0}^{\pi}) =$
-	\\$=\left[ 
-	\begin{gathered} 
-	$1) $t = -u, u|_{\pi}^{0},\  dt = -du\\
-	$2) $t= v, v|_{0}^{\pi},\  dt = dv
-	\end{gathered} 
-	\right]  $
-	$= \dfrac{1}{\pi}(\int\limits_{0}^{\pi}{f(x_0 - u)
-	\dfrac{\sin(n + \dfrac{1}{2})(-u)}{2\sin(-\dfrac{u}{2})}}\ du\ +\ 
-	\int\limits_{0}^{\pi}{f(x_0 + v)\dfrac{\sin(n + \dfrac{1}{2})v}
-	{2\sin(\dfrac{v}{2})}}\ dv)=$
-	\\$=\left[ 
-	\begin{gathered} 
-	$1) $ u = t\\
-	$2) $ u = t
-	\end{gathered} 
-	\right] = $
-	$\ldots = \dfrac{1}{\pi}\int\limits_{0}^{\pi}(f(x_0 - t) + 
-	f(x_0 + t))\dfrac{\sin(n + \dfrac{1}{2})t}{2\sin(\dfrac{t}{2})}dt$
-	$\implies \eqref{18:4}$
+	\right]
+	=\dfrac{1}{\pi}\int\limits_{-\pi-x_0}^{\pi - x_0}{f(x_0 + t)
+	\dfrac{\sin(n + \frac{1}{2})t}{2\sin(\frac{t}{2})}}\; dt = \]
+	\[=\left[
+	\text{теорема об интеграле от периодической функции}
+	\right] =
+	\dfrac{1}{\pi}\int\limits_{-\pi}^{\pi}{f(x_0 + t)}
+	\dfrac{\sin(n + \frac{1}{2})t}{2\sin(\frac{t}{2})}\; dt =\]
+	\[= \dfrac{1}{\pi}\left(\int\limits_{-\pi}^{0} + \int\limits_{0}^{\pi}\right) 
+	=
+	\left[ 
+	\begin{aligned} 
+	1)\ & t = -u,& u\big|_{\pi}^{0},\ &  dt = -du\\
+	2)\ & t= v,& v\big|_{0}^{\pi},\ &  dt = dv
+	\end{aligned} 
+	\right] =\]
+	\[= \dfrac{1}{\pi}\left(\int\limits_{0}^{\pi}{f(x_0 - u)
+	\dfrac{\sin(n + \frac{1}{2})(-u)}{2\sin(-\frac{u}{2})}}\; du\ +\ 
+	\int\limits_{0}^{\pi}{f(x_0 + v)\dfrac{\sin(n + \frac{1}{2})v}
+	{2\sin(\frac{v}{2})}}\; dv\right)=
+	\left[ 
+	\begin{aligned} 
+	1)\ & u = t\\
+	2)\ & v = t
+	\end{aligned} 
+	\right] =
+	\ldots =\]
+	\[= \dfrac{1}{\pi}\int\limits_{0}^{\pi}(f(x_0 - t) + 
+	f(x_0 + t))\dfrac{\sin(n + \frac{1}{2})t}{2\sin(\frac{t}{2})}dt
+	\implies \eqref{18:4}. \qedhere\]
 \end{proof}
 
 \begin{rem}
-	Формула $\eqref{18:4}$ --- формула Дирихле. В этой формуле величина
+	Формула $\eqref{18:4}$ --- \emph{формула Дирихле}. В этой формуле величина
 	\begin{equation}
 		\label{18:5}
-		D_n(t) = \dfrac{\sin(n+\dfrac{1}{2})t}{2\sin(\dfrac{t}{2})},
-		n \in N_0 
+		D_n(t) = \dfrac{\sin(n+\frac{1}{2})t}{2\sin(\frac{t}{2})},\ 
+		n \in \N_0 
 	\end{equation}
-	называется ядром Дирихле.
+	называется \emph{ядром Дирихле}.
 \end{rem}
 
 \begin{crl*}
 	Для ядра Дирихле $\eqref{18:5}$ имеем:
 	\begin{equation}
 		\label{18:6}
-		\dfrac{2}{\pi}\int\limits_{0}^{\pi}{D_n(t)\ dt} = 1, \forall
-		n \in N_0
+		\dfrac{2}{\pi}\int\limits_{0}^{\pi}{D_n(t)\; dt} = 1,\ \forall
+		n \in \N_0
 	\end{equation}
 \end{crl*}
 \begin{proof}
-	Для доказательства достаточно в формуле $\eqref{18:5}$ взять
-	$f(x) = 1, \forall x \in \R$ и далее, используя то, что в этом
-	случае коэффиценты Фурье $\eqref{18:2}$ и $\eqref{18:3}$
-	соответственно равны $a_0 = 1$, $\forall\ a_k = b_k = 0$.\\
-	Поэтому все частные суммы дают:
-	$S_n(x_0) \stackrel{\eqref{18:1}}= 1$
-	\\В результате получаем $\eqref{18:6}$
+	Для доказательства достаточно в формуле $\eqref{18:4}$ взять
+	$f(x) = 1,\ \forall x \in \R$ и далее, используя то, что в этом
+	случае коэффициенты Фурье $\eqref{18:2}$ и $\eqref{18:3}$
+	соответственно равны $a_0 = 1$, $a_k = b_k = 0$.
+	Поэтому все частные суммы дают $S_n(x_0) \stackrel{\eqref{18:1}}= 1$.
+	В результате получаем $\eqref{18:6}$.
 \end{proof}
 
-
 \section{Принцип локализации}
-В дальнейшем нам понадобится:
-\begin{lemma}(Римана --- Лебега)\\
-	Если $f \in \R([a; b])$, то \\
+В дальнейшем нам понадобится
+\begin{lemma}(Риман-Лебег)
+	Если $f \in R([a; b])$, то
 	\begin{equation}
 		\label{18:7}
-		\int\limits_{a}^{b}{f(x)\sin{tx}dx} \underset
-		{t \rightarrow \infty}{\rightarrow} 0 
+		\int\limits_{a}^{b}{f(x)\sin{tx}\;dx}
+		\appr{t \rightarrow \infty} 0 
 	\end{equation}
 	\begin{equation}
 	\label{18:8}
-	\int\limits_{a}^{b}{f(x)\cos{tx}dx} \underset
-	{t \rightarrow \infty}{\rightarrow} 0
+	\int\limits_{a}^{b}{f(x)\cos{tx}\;dx}
+	\appr{t \rightarrow \infty} 0
 	\end{equation}
 \end{lemma}
 
 \begin{proof}
-	Для простоты будем считать, что $f \in \C([a; b])$. \\Тогда\\
-	$\exists I = \int\limits_{a}^{b}{f(x)dx} \in \R$
-	\\Из определения ОИ Римана получаем, что:
+	Для простоты будем считать, что $f \in C([a; b])$. Тогда
+	$\displaystyle{\exists I = \int\limits_{a}^{b}{f(x)dx} \in \R}$.
+	Из определения ОИ Римана следует, что:
 	\begin{equation}
 	\label{18:9}
 	\begin{gathered}
-	\forall \eps> 0 \quad \exists P = \left\{ x_k \right\}, 
-	k = \overline{0, n}, \text{т.~е.}\ 
+	\forall \eps> 0 \quad \exists P = \left\{ x_k \right\},\ 
+	k = \overline{0, n},\ \text{т.~ч.}\ 
 	a = x_0 < x_1 < \ldots < x_{k-1} < x_k < \ldots < x_{n-1} < x_n = b, 
-	\\\forall Q = \left\{ t_k \right\}, t_k \in
-	[x_{k-1}, x_k], k = \overline{1, n}, \quad
-	\delta = \sum\limits_{k=1}^{n}{f(t_k)\Delta x_k}, 
-	\text{где} \ \
+	\\\forall Q = \left\{ t_k \right\},\ t_k \in
+	[x_{k-1}, x_k],\ k = \overline{1, n}, \quad
+	\sigma = \sum\limits_{k=1}^{n}{f(t_k)\Delta x_k},\ 
+	\text{где} \ 
 	\Delta x_k = x_k - x_{k-1},\ k = \overline{1, n}
-	\implies |\delta - I| \leq \eps     
+	\implies \\ \implies |\sigma - I| \leq \eps.
 	\end{gathered}
-	\end{equation}     
-
-
+	\end{equation}
+	
 	В данном случае для СИЗОП 
 	\begin{equation}
 		\label{18:10}
-		F(p) = \int\limits_{a}^{b}{f(x)\sin{px}\ dx}
+		F(p) = \int\limits_{a}^{b}{f(x)\sin{px}\;dx}
 	\end{equation}
-	получаем: \\
-	$F(p) = \int\limits_{a}^{b}{f(x)dx} - \int\limits_{a}^{b}
-	{f(x)(1-\sin{px})dx} = I - \sum\limits_{k=1}^{n}{f(x)(1-\sin{px})dx} = $
-	\\$=\left[ 
-	\text{теорема о среднем для ОИ},
-	\ f(x) \text{--- непрерывна},\ g(x) = (1-\sin{px}) \geq 0,\  
+	получаем:
+	\[F(p) = \int\limits_{a}^{b}{f(x)\;dx} - \int\limits_{a}^{b}
+	{f(x)(1-\sin{px})\;dx} = I - 
+	\sum\limits_{k=1}^{n}\;\int\limits_{x_{k-1}}^{x_k}{f(x)(1-\sin{px})dx} =\]
+	\[=\left[
+	\begin{gathered}
+	\text{теорема о среднем для ОИ}
+	\\ f(x) \text{~--- непрерывна}\\ g(x) = (1-\sin{px}) \geq 0\\
 	\exists t_k \in [x_{k-1}; x_k]
-	\right] =$
-	\\
-	$I - \sum\limits_{k=1}^{n}{f(t_k)\int\limits_{x_{k-1}}^{x_k}
-	(1 - \sin{px})\ dx} = I - \sum\limits_{k=1}^{n}{f(t_k)
-	[x + \dfrac{\cos{px}}{p}]^{x = x_k}_{x = x_{k-1}}} = $\\
-	$I - \sum\limits_{k=1}^{n}{f(t_k)(x_k - x_{k-1})} - \dfrac{1}{p}
-	\sum\limits_{k=1}^{n}{f(t_k)(\cos{px}_k - \cos{px}_{k-1})}$\\
-	$I - \delta = \dfrac{1}{p}\sum\limits_{k=1}^{n}{f(t_k)(\cos{px}_k 
-		- \cos{px}_{k-1})}$\\
-	$|F(p)| \leq |I - \delta| + \dfrac{1}{|p|}\sum\limits_{k=1}^{n}
-	{|f(t_k)|}\cdot|\cos{px_k} - \cos{px_{k-1}}| \leq$ \\
-	\\$\leq \left[ 
+	\end{gathered}
+	\right] =
+	I - \sum\limits_{k=1}^{n}{f(t_k)\int\limits_{x_{k-1}}^{x_k}
+	(1 - \sin{px})\; dx} = I - \sum\limits_{k=1}^{n}{f(t_k)
+	\left[x + \dfrac{\cos{px}}{p}\right]^{x = x_k}_{x = x_{k-1}}} = \]
+	\[= I - \underbrace{\sum\limits_{k=1}^{n}{f(t_k)(x_k - x_{k-1})}}_\sigma - 
+	\dfrac{1}{p}
+	\sum\limits_{k=1}^{n}{f(t_k)(\cos{px}_k - \cos{px}_{k-1})}
+	= I - \sigma -
+	\dfrac{1}{p}\sum\limits_{k=1}^{n}{f(t_k)(\cos{px}_k 
+	- \cos{px}_{k-1})}.\]
+	Значит,  
+	\[|F(p)| \le |I - \sigma| + \dfrac{1}{|p|}\sum\limits_{k=1}^{n}
+	{|f(t_k)|}\cdot|\cos{px_k} - \cos{px_{k-1}}| \leq
+	\left[ 
 	\begin{gathered} 
-	f \in C([a; b]) \implies f = O(1), \text{т.~е.} \\
-	|f(x)| \leq C, \forall x \in [a; b], C = const > 0
+	f \in C([a, b]) \implies f = O(1),\ \text{т.~е.} \\
+	|f(x)| \leq C,\ \forall x \in [a, b],\ C = const > 0
 	\end{gathered} 
-	\right] \leq $
-	$\eps	 + \dfrac{C}{|p|}\sum\limits_{k=1}^{n}
-	(|\cos{px_k}| + |\cos{px_{k-1}}|) \leq$
-	\\$\leq \eps	 + \dfrac{C}{|p|}\sum\limits_{k=1}^{n}2 =
-	\eps	 + \dfrac{2nC}{|p|} \leq \eps	$\\
-	
-	Полагая $\delta = \dfrac{2nC}{\eps	} > 0$, получаем, что
-	$\forall |p| \implies \delta \implies |p| \geq
-	\dfrac{2nC}{\eps} \implies \dfrac{2nC}{|p|}  \leq \eps	$, т.~е. \\
-	$\forall \eps	 > 0 \quad \exists \delta = \dfrac{2nC}{\eps} 
-	> 0,
+	\right] \leq\]
+	\[ \leq \eps	 + \dfrac{C}{|p|}\sum\limits_{k=1}^{n}
+	(|\cos{px_k}| + |\cos{px_{k-1}}|)
+	\leq \eps	 + \dfrac{C}{|p|}\sum\limits_{k=1}^{n}2 =
+	\eps	 + \dfrac{2nC}{|p|}.\]
+	Полагая $\delta = \dfrac{2nC}{\eps} > 0$, получаем, что
+	$\forall |p| \geq \delta \implies |p| \geq
+	\dfrac{2nC}{\eps} \implies \dfrac{2nC}{|p|}  \leq \eps	$, т.~е.
+	\[\forall \eps	 > 0 \quad \exists \delta = \dfrac{2nC}{\eps} 
+	> 0 \quad
 	\forall |p| \geq \delta \implies |F(p)| \leq \eps	 + \eps	 
-	= 2\eps	$\\
-	$F(p) \underset {p \rightarrow \infty}{\rightarrow} 0 
-	\implies \eqref{18:7}$\\
+	= 2\eps	\implies
+	F(p) \appr{p \rightarrow \infty} 0 
+	\implies \eqref{18:7}.\]
 	Аналогично показывается, что
-	$G(p) = \int\limits_{a}^{b}{f(x)\cos{px}\ dx}  \underset {p \rightarrow
-	 \infty}{\rightarrow} 0 $
+	$G(p) = \displaystyle\int\limits_{a}^{b}{f(x)\cos{px}\; dx}  \appr{p 
+	\rightarrow
+	 \infty} 0$.
 \end{proof}
 
 \begin{crl*}
-	Для $f \in \R([-\pi; \pi])$ коэффиценты Фурье $\eqref{18:2}$ и
-	$\eqref{18:3}$ в силу функции $\eqref{18:7}$, $\eqref{18:8}$ при
-	$p=x$ являются бмп, т.~е. \\
-	\\$a_k \overset{\eqref{18:7}}{\underset
-		{k \rightarrow \infty}{\rightarrow}} 0, \
+	Для $f \in R([-\pi; \pi])$ коэффициенты Фурье $\eqref{18:2}$ и
+	$\eqref{18:3}$ в силу формул $\eqref{18:7}$, $\eqref{18:8}$ при
+	$p=k$ являются бмп, т.~е.
+	$\ a_k \overset{\eqref{18:7}}{\underset
+		{k \rightarrow \infty}{\rightarrow}} 0, \quad
 	b_k \overset{\eqref{18:7}}{\underset
-		{k \rightarrow \infty}{\rightarrow}} 0$
+		{k \rightarrow \infty}{\rightarrow}} 0$.
 \end{crl*}
 
 \begin{rem}
@@ -221,112 +225,120 @@
 \end{rem}
 
 \begin{thm}
-	Для $2\pi$-периодичной функции $f\in \R([-\pi;\pi])$ поведение
-	её ряда Фурье в $\forall x_0 \in \R$(сходимость/расходимость) зависит
+	Для $2\pi$-периодичной функции $f\in R([-\pi;\pi])$ поведение
+	ее ряда Фурье в $\forall x_0 \in \R$ (сходимость/расходимость) зависит
 	лишь от значений $f(x)$ в сколь угодно малой окрестности
-	$[x_0 - \delta_0; x_0 + \delta_0]$ точки $x_0$, где $\delta_0 > 0$ 
+	$[x_0 - \delta_0; x_0 + \delta_0]$ точки $x_0$, где $\delta_0 > 0$.
 \end{thm}
 
 \begin{proof}
-	В силу формулы Дирихле, имеем:\\
-	$S_n(x_0) = \dfrac{1}{\pi}(\int\limits_{0}^{\delta_0} + 
-	\int\limits_{\delta_0}^{\pi}) =$
-	$\int\limits_{\delta_0}^{\pi}(\dfrac{f(x_0 - t) + f(x_0 + t)}
-	{2\sin{\dfrac{t}{2}}})\sin(n+\dfrac{1}{2})tdt 
+	В силу формулы Дирихле, имеем:
+	\[S_n(x_0) = 
+	\int\limits_{0}^{\pi}\left(\dfrac{f(x_0 - t) + f(x_0 + t)}
+	{2\sin{\frac{t}{2}}}\right)\sin\left(n+\frac{1}{2}\right)t\;dt = 
+	\dfrac{1}{\pi}\left(\int\limits_{0}^{\delta_0} + 
+	\int\limits_{\delta_0}^{\pi}\right).\]
+	Имеем
+	\[\int\limits_{\delta_0 > 0}^{\pi} \underbrace{\left(\dfrac{f(x_0 - t) + 
+	f(x_0 + t)}
+	{2\sin{\frac{t}{2}}}\right)}_{\in R([\delta_0, \pi])} 
+	\sin\left(n+\frac{1}{2}\right)t\;dt 
 	 \overset{\eqref{18:7}}{\underset
-		{n \rightarrow \infty}{\rightarrow}} 0$\\
-	Поэтому \\
-	$\lim\limits_{n \rightarrow \infty}{S_n(x_0)} = \dfrac{1}{\pi}
+		{n \rightarrow \infty}{\rightarrow}} 0.\]
+	Поэтому
+	\[\lim\limits_{n \rightarrow \infty}{S_n(x_0)} = \dfrac{1}{\pi}
 	\lim\limits_{n \rightarrow \infty}{\int\limits_{0}^{\delta_0}
-	(f(x_0 - t) + f(x_0 + t)) \dfrac{\sin(n+\dfrac{1}{2})t}{
-	2\sin\dfrac{t}{2}}}dt$\\
+	(f(x_0 - t) + f(x_0 + t)) \dfrac{\sin(n+\frac{1}{2})t}{
+	2\sin\frac{t}{2}}}dt.\]
 	Учитывая, что для $t \in [0; \delta_0 ] \implies$
 	$\begin{cases}
 		x_0 - t \in [x_0 - \delta_0; x_0] 
 		\\
 		x_0 + t \in [x_0; x_0 + \delta_0] 
-	\end{cases}\implies$ \\
-	значения $x_0 - \delta_0 \leq x \leq x_0 + \delta_0$ для функции $f(x)$
-	попадают в окрестность\\
-	 $x \in [x_0 - \delta_0; x_0 + \delta_0], \forall \fix
-	  \delta_0 > 0$\\
+	\end{cases}$,
+	то значения $x$ для функции $f(x)$
+	попадают в окрестность
+	 $x \in [x_0 - \delta_0; x_0 + \delta_0],\ \forall \fix \delta_0 > 0$.
 	 Поэтому сходимость/расходимость определяется указанным значением $x$.
 	 Хотя для $\eqref{18:7}$ и $\eqref{18:8}$ требуется использовать все
 	 $x \in [-\pi; \pi]$, тем не менее для исследования частных сумм 
 	 $S_n(x)$ в каждой $x_0 \in [-\pi; \pi]$ весь отрезок не нужен.
-	 Достаточно лишь $\forall [x_0 - \delta_0; x_0 + \delta_0]$ с
-	 $[-\pi; \pi]$, т.~е. хотя для разных функций коэффиценты 
+	 Достаточно лишь $\forall [x_0 - \delta_0; x_0 + \delta_0] \subset
+	 [-\pi; \pi]$, т.~е. хотя для разных функций коэффициенты 
 	 $\eqref{18:7}$ и $\eqref{18:8}$ ряда Фурье могут отличаться, 
-	 тем не менее в рассмотренном $\fix\ x_0$, частные суммы для
+	 тем не менее в рассмотренном $\fix\ x_0$ частные суммы для
 	 ряда Фурье
 	 этих функций будут вести себя одинаково: либо одновременно сходится, 
-	 либо одновременно расходится\\
+	 либо одновременно расходится.
 	 Хотя характер сходимости один и тот же, значение $S_n(x)$ могут быть
 	 разными.
 \end{proof}
 
 \section{Поточечная сходимость ряда Фурье}
-\begin{thm}(о поточечной сходимости ряда Фурье)\\
-	Если $\exists D_0 \in \R$, такое что
-	\\$\exists \lim\limits_{t \rightarrow +0}{\dfrac
-		{f(x_0 - t) + f(x_0 + t) - 2D_0}{t}} \in \R$, то тогда для
-	$2\pi$- периодической $f(x), f \in \R([-\pi; \pi])$ её ряд Фурье
-	сходится к сумме:
+\begin{thm}(о поточечной сходимости ряда Фурье)
+	Если для $x_0$ $\exists D_0 \in \R$ такое, что
+	\[\exists \lim\limits_{t \rightarrow +0}{\dfrac
+		{f(x_0 - t) + f(x_0 + t) - 2D_0}{t}} \in \R,\] то тогда для
+	$2\pi$-периодической $f(x),\ f \in R([-\pi; \pi])$ ее ряд Фурье
+	сходится к
 	\begin{equation}
 		\label{18:11}
-		S(x) = \lim\limits_{n \rightarrow \infty}S_n(x_0) = D_0 \in \R
+		S(x_0) = \lim\limits_{n \rightarrow \infty}S_n(x_0) = D_0 \in \R.
 	\end{equation}
 \end{thm}
-
 \begin{proof}
 	Для обоснования $\eqref{18:11}$ преобразуем разность 
-	$S_n(x_0) - D_0$ используя формулу $\eqref{18:6}$. Имеем:\\
-	$D_0 \stackrel{\eqref{18:6}}{=} \dfrac{2}{\pi}
-	\int\limits_{0}^{\pi}{\dfrac{\sin(n+\dfrac{1}{2})t}{2\sin\dfrac{t}{2}}
-	dt} \cdot D_0$\\
-	Отсюда \\
-	$S_n(x) - D_0 = \dfrac{1}{\pi}\int\limits_{0}^{\pi}
-	{\dfrac{f(x_0 + t) + f(x_0 - t)}{2\sin\dfrac{t}{2}}} \cdot 
-	\sin(n + \dfrac{1}{2})t - (\dfrac{2}{\pi}\int\limits_{0}^{\pi}
-	\dfrac{\sin(n + \dfrac{1}{2})t}{2\sin\dfrac{t}{2}}dt)\cdot D_0 =$\\
-	$= \dfrac{1}{\pi}\int\limits_{0}^{\pi}{\dfrac{f(x_0 + t) +
-		f(x_0 - t) - 2D_0}{2\sin\dfrac{t}{2}}}\sin(n + \dfrac{1}{2})tdt$\\
-	$\exists \lim\limits_{t \rightarrow 0}{f_0(t)} = 
+	$S_n(x_0) - D_0$, используя формулу $\eqref{18:6}$. Имеем:
+	\[D_0 \stackrel{\eqref{18:6}}{=} \dfrac{2}{\pi}
+	\int\limits_{0}^{\pi}{\dfrac{\sin(n+\frac{1}{2})t}{2\sin\frac{t}{2}}
+	dt} \cdot D_0.\]
+	Отсюда
+	\[S_n(x) - D_0 = \dfrac{1}{\pi}\int\limits_{0}^{\pi}
+	{\dfrac{f(x_0 + t) + f(x_0 - t)}{2\sin\frac{t}{2}}} \cdot 
+	\sin\left(n + \frac{1}{2}\right)t\;dt - 
+	\left(\dfrac{2}{\pi}\int\limits_{0}^{\pi}
+	\dfrac{\sin(n + \frac{1}{2})t}{2\sin\frac{t}{2}}dt\right)\cdot D_0 =\]
+	\[= \dfrac{1}{\pi}\int\limits_{0}^{\pi}{\underbrace{\frac{f(x_0 + t) +
+		f(x_0 - t) - 2D_0}{2\sin\frac{t}{2}}}_{f_0(t)}}\cdot\sin\left(n + 
+		\dfrac{1}{2}\right)t\;dt.\]
+	Здесь
+	\[\lim\limits_{t \rightarrow 0}{f_0(t)} = 
 	\lim\limits_{t \rightarrow 0}{\dfrac{f(x_0 + t) + f(x_0 - t) - 2D_0}
-		{2\sin\dfrac{t}{2}}} =$
-	$\left[ 
+		{2\sin\frac{t}{2}}} =
+	\left[ 
 	\begin{gathered} 
-	sit\dfrac{t}{2} \underset {t \rightarrow 0}{\sim} \dfrac{t}{2} 
+	\sin\dfrac{t}{2} \underset {t \rightarrow 0}{\sim} \dfrac{t}{2} 
 	\end{gathered} 
-	\right]  =$\\
-	$=\lim\limits_{t \rightarrow 0}{\dfrac{f(x_0 + t) + f(x_0 - t)-
-		2D_0}t} \in \R$\\
-	Поэтому для $f_0(t)$, точки $t = 0$ --- точка устранимого разрыва 
-	$\implies f \in \R([0; \pi])$, значит 
-	$\int\limits_{0}^{\pi}{f_0(t)\sin(n+\dfrac{1}{2})tdt} 
-	\overset{\eqref{18:7}}{\underset
-		{p=(n+\dfrac{1}{2}) \rightarrow \infty}{\longrightarrow}} 0$\\
-	Значит $\exists \lim\limits_{n \rightarrow \infty}{(
+	\right]  =
+	\lim\limits_{t \rightarrow 0}{\dfrac{f(x_0 + t) + f(x_0 - t)-
+		2D_0}t} \in \R.\]
+	Поэтому для $f_0(t)$ точка $t = 0$~--- точка устранимого разрыва, откуда
+	$f \in R([0; \pi])$, а значит,
+	\[\int\limits_{0}^{\pi}{f_0(t)\sin\left(n+\dfrac{1}{2}\right)t\;dt} 
+	\stk{18:7}{\appr
+		{p=(n+\frac{1}{2}) \rightarrow \infty}} 0.\]
+	Значит, \[\exists \lim\limits_{n \rightarrow \infty}{(
 		S_n(x) - D_0)} = \lim\limits_{n\rightarrow \infty}
-	{\dfrac{1}{\pi}}\int\limits_{0}^{\pi}{f_0(t)\sin(n+\dfrac{1}{2})tdt} = 0
-	\implies \eqref{18:11}$
+	{\dfrac{1}{\pi}} \int\limits_{0}^{\pi} 
+	{f_0(t)\sin\left(n+\dfrac{1}{2}\right)t\;dt} = 0
+	\implies \eqref{18:11}. \qedhere\]
 \end{proof}
 
 \begin{crl*}
-	Пусть $2\pi$ --- периодическая $f\in \R([-\pi;\pi])$.
-	Если в точке $x_0 \implies \\ \exists f(x_0 \pm 0) \in \R$, то в
+	Пусть имеется $2\pi$-периодическая функция $f\in R([-\pi;\pi])$.
+	Если в точке $x_0$ $\exists f(x_0 \pm 0) \in \R$, то в
 	случае существования пределов
 	\begin{equation}
 		\label{18:12}
 		\begin{cases}
-			\exists \lim\limits_{t \rightarrow \pm 0}{\dfrac
-				{f(x_0 + t) - f(x_0 + t)}{t}} \in \R\\
-			\exists \lim\limits_{t \rightarrow \pm 0}{\dfrac
-				{f(x_0 - t) - f(x_0 - t)}{t}} \in \R\\ 
+			\lim\limits_{t \rightarrow \pm 0}{\dfrac
+				{f(x_0 + t) - f(x_0 + 0)}{t}} \in \R\\
+			\lim\limits_{t \rightarrow \pm 0}{\dfrac
+				{f(x_0 - t) - f(x_0 - 0)}{t}} \in \R\\ 
 		\end{cases}
 	\end{equation}
 	ряд Фурье рассматриваемой $f(x)$ сходится к числу
-	$D_0 = \dfrac{f(x_0 + 0) + f(x_0 - 0)}{2}$ 
+	$D_0 = \dfrac{f(x_0 + 0) + f(x_0 - 0)}{2}$.
 	
 \end{crl*}
 \end{document}
