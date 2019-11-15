@@ -12,7 +12,8 @@
 \begin{document}
 \section{Формула Дирихле для частных сумм ряда Фурье}
 \begin{thm}
-	Пусть имеется $2\pi$-периодическая функция $f \in \R([-\pi;\pi])$. В этом случае для частных сумм
+	Пусть имеется $2\pi$-периодическая функция $f \in \R([-\pi;\pi])$. В этом 
+	случае для частных сумм
 	\begin{equation}
 		\label{18:1}
 		S_n(x) = \dfrac{a_0}{2} + \sum_{k=1}^{n}(a_k\cos{kx} + b_k\sin{kx})
@@ -34,7 +35,8 @@
 	\end{equation}
 \end{thm}
 \begin{proof}
-	Используя в \eqref{18:1} $x = x_0$, в силу $\eqref{18:2}$ и $\eqref{18:3}$ получаем:
+	Используя в \eqref{18:1} $x = x_0$, в силу $\eqref{18:2}$ и $\eqref{18:3}$ 
+	получаем:
 	\[S_n(x_0) \stackrel{\eqref{18:2}, \eqref{18:3}}{=}
 	\dfrac{1}{2\pi}\int\limits_{-\pi}^{\pi}{f(x)\; dx} + \dfrac{1}{\pi}
 	\int\limits_{-\pi}^{\pi}{f(x)}\sum\limits_{k=1}^{n}
@@ -54,7 +56,8 @@
 	\end{gathered} 
 	\right] = \]
 	\[=\dfrac{1}{\pi}\int\limits_{-\pi}^{\pi}
-	{\dfrac{f(x)\sin((n + \frac{1}{2})(x - x_0))}{2\sin\left(\frac{x-x_0}{2}\right)}}\; dx=
+	{\dfrac{f(x)\sin((n + \frac{1}{2})(x - 
+	x_0))}{2\sin\left(\frac{x-x_0}{2}\right)}}\; dx=
 	\left[ 
 	\begin{gathered} 
 	x - x_0 = t\big|_{-\pi-x_0}^{\pi-x_0}
@@ -67,7 +70,8 @@
 	\right] =
 	\dfrac{1}{\pi}\int\limits_{-\pi}^{\pi}{f(x_0 + t)}
 	\dfrac{\sin(n + \frac{1}{2})t}{2\sin(\frac{t}{2})}\; dt =\]
-	\[= \dfrac{1}{\pi}\left(\int\limits_{-\pi}^{0} + \int\limits_{0}^{\pi}\right) =
+	\[= \dfrac{1}{\pi}\left(\int\limits_{-\pi}^{0} + \int\limits_{0}^{\pi}\right) 
+	=
 	\left[ 
 	\begin{aligned} 
 	1)\ & t = -u,& u\big|_{\pi}^{0},\ &  dt = -du\\
@@ -159,7 +163,8 @@
 	\end{equation}
 	получаем:
 	\[F(p) = \int\limits_{a}^{b}{f(x)\;dx} - \int\limits_{a}^{b}
-	{f(x)(1-\sin{px})\;dx} = I - \sum\limits_{k=1}^{n}\;\int\limits_{x_{k-1}}^{x_k}{f(x)(1-\sin{px})dx} =\]
+	{f(x)(1-\sin{px})\;dx} = I - 
+	\sum\limits_{k=1}^{n}\;\int\limits_{x_{k-1}}^{x_k}{f(x)(1-\sin{px})dx} =\]
 	\[=\left[
 	\begin{gathered}
 	\text{теорема о среднем для ОИ}
@@ -170,7 +175,8 @@
 	I - \sum\limits_{k=1}^{n}{f(t_k)\int\limits_{x_{k-1}}^{x_k}
 	(1 - \sin{px})\; dx} = I - \sum\limits_{k=1}^{n}{f(t_k)
 	\left[x + \dfrac{\cos{px}}{p}\right]^{x = x_k}_{x = x_{k-1}}} = \]
-	\[= I - \underbrace{\sum\limits_{k=1}^{n}{f(t_k)(x_k - x_{k-1})}}_\sigma - \dfrac{1}{p}
+	\[= I - \underbrace{\sum\limits_{k=1}^{n}{f(t_k)(x_k - x_{k-1})}}_\sigma - 
+	\dfrac{1}{p}
 	\sum\limits_{k=1}^{n}{f(t_k)(\cos{px}_k - \cos{px}_{k-1})}
 	= I - \sigma -
 	\dfrac{1}{p}\sum\limits_{k=1}^{n}{f(t_k)(\cos{px}_k 
@@ -198,7 +204,8 @@
 	F(p) \appr{p \rightarrow \infty} 0 
 	\implies \eqref{18:7}.\]
 	Аналогично показывается, что
-	$G(p) = \displaystyle\int\limits_{a}^{b}{f(x)\cos{px}\; dx}  \appr{p \rightarrow
+	$G(p) = \displaystyle\int\limits_{a}^{b}{f(x)\cos{px}\; dx}  \appr{p 
+	\rightarrow
 	 \infty} 0$.
 \end{proof}
 
@@ -232,8 +239,10 @@
 	\dfrac{1}{\pi}\left(\int\limits_{0}^{\delta_0} + 
 	\int\limits_{\delta_0}^{\pi}\right).\]
 	Имеем
-	\[\int\limits_{\delta_0 > 0}^{\pi} \underbrace{\left(\dfrac{f(x_0 - t) + f(x_0 + t)}
-	{2\sin{\frac{t}{2}}}\right)}_{\in R([\delta_0, \pi])} \sin\left(n+\frac{1}{2}\right)t\;dt 
+	\[\int\limits_{\delta_0 > 0}^{\pi} \underbrace{\left(\dfrac{f(x_0 - t) + 
+	f(x_0 + t)}
+	{2\sin{\frac{t}{2}}}\right)}_{\in R([\delta_0, \pi])} 
+	\sin\left(n+\frac{1}{2}\right)t\;dt 
 	 \overset{\eqref{18:7}}{\underset
 		{n \rightarrow \infty}{\rightarrow}} 0.\]
 	Поэтому
@@ -286,10 +295,12 @@
 	Отсюда
 	\[S_n(x) - D_0 = \dfrac{1}{\pi}\int\limits_{0}^{\pi}
 	{\dfrac{f(x_0 + t) + f(x_0 - t)}{2\sin\frac{t}{2}}} \cdot 
-	\sin\left(n + \frac{1}{2}\right)t\;dt - \left(\dfrac{2}{\pi}\int\limits_{0}^{\pi}
+	\sin\left(n + \frac{1}{2}\right)t\;dt - 
+	\left(\dfrac{2}{\pi}\int\limits_{0}^{\pi}
 	\dfrac{\sin(n + \frac{1}{2})t}{2\sin\frac{t}{2}}dt\right)\cdot D_0 =\]
 	\[= \dfrac{1}{\pi}\int\limits_{0}^{\pi}{\underbrace{\frac{f(x_0 + t) +
-		f(x_0 - t) - 2D_0}{2\sin\frac{t}{2}}}_{f_0(t)}}\cdot\sin\left(n + \dfrac{1}{2}\right)t\;dt.\]
+		f(x_0 - t) - 2D_0}{2\sin\frac{t}{2}}}_{f_0(t)}}\cdot\sin\left(n + 
+		\dfrac{1}{2}\right)t\;dt.\]
 	Здесь
 	\[\lim\limits_{t \rightarrow 0}{f_0(t)} = 
 	\lim\limits_{t \rightarrow 0}{\dfrac{f(x_0 + t) + f(x_0 - t) - 2D_0}
@@ -308,7 +319,8 @@
 		{p=(n+\frac{1}{2}) \rightarrow \infty}} 0.\]
 	Значит, \[\exists \lim\limits_{n \rightarrow \infty}{(
 		S_n(x) - D_0)} = \lim\limits_{n\rightarrow \infty}
-	{\dfrac{1}{\pi}}\int\limits_{0}^{\pi}{f_0(t)\sin\left(n+\dfrac{1}{2}\right)t\;dt} = 0
+	{\dfrac{1}{\pi}} \int\limits_{0}^{\pi} 
+	{f_0(t)\sin\left(n+\dfrac{1}{2}\right)t\;dt} = 0
 	\implies \eqref{18:11}. \qedhere\]
 \end{proof}
 
