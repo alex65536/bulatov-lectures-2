@@ -1,0 +1,296 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+\emph{Тригонометрическим многочленом порядка $n$} называется периодическая 
+функция 
+вида
+\begin{equation}
+\label{17:13}
+T_n(x) = \frac{A_0}{2} + \sum_{k=1}^{n} \left( A_k \cos{kx} + B_k 
+\sin{kx}\right),
+\end{equation}
+где $A_0,A_k,B_k \in \R,\ \forall k = \overline{1,n}$. Если в \eqref{17:13} 
+$A_n ^ 2 + B_n ^ 2 > 0$, т.~е. хотя бы одно из чисел $A_n$ или $B_n$ отлично 
+от нуля, 
+тогда $n$~--- степень $T_n$.
+
+Любой тригонометрический многочлен $T_n$ имеет период $2\pi$. Если в 
+\eqref{17:13} $n \to \infty$, то получится \emph{тригонометрический ряд}:
+\begin{equation}
+\label{17:14}
+T(x) = \frac{A_0}{2} + \sum_{k=1}^{\infty} \left( A_k \cos{kx} + B_k 
+\sin{kx}\right),
+\end{equation}
+для которого тригонометрический многочлен \eqref{17:13} является частной 
+суммой. Ряд \eqref{17:14}, в случае, когда последовательности $A_n$ и 
+$B_n$~--- бмп,
+будет заведомо сходиться для $\forall x \ne 2\pi m$, $m \in \Z$. Здесь для 
+обоснования используем признак Дирихле, а так же неравенства:
+\[  \left| \sum_{k=1}^{n} \cos{kx} \right| \le \frac{1}{ \left| 
+\sin{\frac{x}{2}} \right| } \in \R,\ \forall n \in \N,\ \forall x \in \R \ne 
+2\pi m,\ m \in \Z      \]
+\[  \left| \sum_{k=1}^{n} \sin{kx} \right| \le \frac{1}{ \left| 
+\sin{\frac{x}{2}}\right| } \in \R,\ \forall n \in \N,\ \forall x \in \R \ne 
+2\pi m,\ m \in \Z    \]
+Кроме того, если сходятся числовые ряды
+$\sum\limits_{k=1}^{\infty} A_k$, $\sum\limits_{k=1}^{\infty} B_k$,
+то функциональный ряд \eqref{17:14} будет равномерно сходиться на $\R$ в силу 
+признака Вейерштрасса, т.~к.
+\[ u_k(x) = A_k \cos{kx} + B_k \sin{kx}  \implies \left| u_k(x)\right|  \le 
+\left| A_k \right| + \left| B_k \right|,  \]
+а ряд
+$\sum\limits_{k=1}^{\infty} \left| A_k \right| + \left| B_k \right|$
+сходится. Далее нам потребуется следующая лемма:
+\begin{lemma}[об одном интеграле от тригонометрического многочлена]
+	Для любого тригонометрического многочлена $T_n(x)$ вида \eqref{17:13} и для 
+	$\forall a \in \R$ выполняется
+	\begin{equation}
+	\label{17:15}
+	\frac{1}{\pi} \int\limits_{a}^{a+2\pi} T_n^2(x)dx = \frac{A_0^2}{2} + 
+	\sum_{k=1}^{n} \left( A_k^2 + B_k^2 \right).
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	Во-первых, в силу того, что $2\pi$~--- период для \eqref{17:13}, то на 
+	основании Леммы об интегрировании периодической функции получаем, что
+	\[  \forall a \in \R \quad \int\limits_{a}^{a+2\pi} T_n^2(x)dx = 
+	\int\limits_{-\pi}^{\pi} T_n^2(x)dx. \]
+	Далее, используя ортогональные тригонометрические системы и теорему об 
+	ортогональности системы тригонометрических функций, получаем:
+	\[  \int\limits_{a}^{a+2\pi} T_n^2(x)dx = \int\limits_{-\pi}^{\pi} \left( 
+	\frac{A_0}{2} + \sum_{k=1}^{n} \left( A_k \cos{kx} + B_k \sin{kx}\right) 
+	\right)^2 dx  = \left< T_n(x), T_n(x) \right> = \]
+	\[  = \int\limits_{-\pi}^{\pi} \left( \frac{A_0^2}{4} + \sum_{k=1}^{n} \left( 
+	A_k^2 \cos^2{kx} + B_k \sin^2{kx}\right) \right) dx +       \]
+	\[ 2 \int\limits_{-\pi}^{\pi} \left( \frac{A_0}{2} \sum_{k=1}^{n} \left( A_k 
+	\cos{kx} + B_k \sin{kx}\right) + \sum_{1 \le i,j \le n} A_i B_j \cos{ix} 
+	\sin{jx}  \right) dx =   \]
+	\[ = \int\limits_{-\pi}^{\pi} \left( \frac{A_0^2}{4} + \sum_{k=1}^{n} \left( 
+	A_k^2 \cos^2{kx} + B_k \sin^2{kx}\right) \right) dx = \frac{A_0^2}{4} 
+	x\bigg|_{-\pi}^{\pi} + \sum_{k=1}^{n} \left( A_k^2 \int\limits_{-\pi}^{\pi} 
+	\cos^2{kx} \; dx  + B_k^2 \int\limits_{-\pi}^{\pi} \sin^2{kx} \; dx \right) = 
+	 \]
+	\[  = \left[ \begin{gathered} 
+	\int\limits_{-\pi}^{\pi} \cos^2{kx} \; dx = \frac{1}{2} 
+	\int\limits_{-\pi}^{\pi} \left( 1 + \cos{2kx} \right)  \; dx = \pi	\\
+	\int\limits_{-\pi}^{\pi} \sin^2{kx} \; dx = \frac{1}{2} 
+	\int\limits_{-\pi}^{\pi} \left( 1 - \cos{2kx} \right)  \; dx = \pi
+	\end{gathered}\right]  = \pi \left( \frac{A_0^2}{2} + \sum_{k=1}^{n} \left( 
+	A_k^2 + B_k^2 \right) \right) \implies \eqref{17:15}  \qedhere  \]
+\end{proof}
+
+\section{Тригонометрические ряды Фурье}
+Для функции $f \in R([-\pi,\pi])$, тригонометрический ряд вида
+\begin{equation}
+\label{17:16}
+f(x) \sim \frac{a_0}{2} + \sum_{k=1}^{\infty}  \left( a_k \cos{kx} + b_k 
+\sin{kx}\right),
+\end{equation}
+где
+\begin{align}
+\label{17:17}
+a_k &= \frac{1}{\pi} \int\limits_{-\pi}^{\pi} f(x)\cos{kx} \ dx, \quad k \in 
+\N_0 \\
+\label{17:18}
+b_k &= \frac{1}{\pi} \int\limits_{-\pi}^{\pi} f(x)\sin{kx} \ dx, \quad k \in 
+\N \\
+a_0 &= \frac{1}{\pi} \int\limits_{-\pi}^{\pi} f(x) \ dx \tag*{(частный случай 
+при $k = 0$)}
+\end{align}
+будем называть \emph{рядом Фурье} для $f(x)$.
+
+Если мы возьмем произвольный 
+тригонометрический ряд \eqref{17:14}, то как было отмечено ранее, в случае 
+сходимости рядов
+$\sum\limits_{k=1}^{\infty} \left| A_k \right|$ и $\sum\limits_{k=1}^{\infty} 
+\left| B_k \right|$ получаем, что
+\eqref{17:14}~--- равномерно сходящийся ряд, а поэтому в силу непрерывности 
+слагаемых этого ряда его сумма $S(x),\ x\in\left[ -\pi,\pi \right] $ будет 
+непрерывной, а значит, интегрируемой.
+Поэтому, умножая \eqref{17:14} на $\cos{mx},\ m \in \N_0$, получим равномерно 
+сходящийся ряд
+\[  S(x) \cos{mx} =  \frac{A_0}{2} \cos{mx} + \sum_{k=1}^{\infty}  \left( A_k 
+\cos{kx} \cos{mx} + B_k \sin{kx} \cos{mx} \right), \]
+который можно почленно интегрировать, в силу чего имеем:
+\[  \int\limits_{-\pi}^{\pi} S(x) \cos{mx} \ dx = 
+\frac{A_0}{2}\int\limits_{-\pi}^{\pi} \cos{mx} \ dx + \sum_{k=1}^{\infty}  
+\left( A_k \int\limits_{-\pi}^{\pi} \cos{kx} \cos{mx} \ dx + B_k 
+\int\limits_{-\pi}^{\pi} \sin{kx} \cos{mx} \ dx \right)  \]
+Если $m=0$, то:
+\begin{equation}
+\label{17:19}
+\int\limits_{-\pi}^{\pi} S(x) \ dx = \frac{A_0}{2}\int\limits_{-\pi}^{\pi} \ 
+dx  = \pi A_0  \implies A_0 = \frac{1}{\pi} \int\limits_{-\pi}^{\pi} S(x) \ dx
+\end{equation}
+Если же $m \ne 0$, то:
+\begin{equation}
+\label{17:20}
+\int\limits_{-\pi}^{\pi} S(x) \cos{mx} \ dx = 0 + \pi A_m \implies A_m = 
+\frac{1}{\pi} \int\limits_{-\pi}^{\pi} S(x) \cos{mx} \ dx,
+\end{equation}
+т.~е. с точностью до обозначения индекса \eqref{17:19} и \eqref{17:20} 
+соответствуют коэффициентам ряда Фурье \eqref{17:17} для $f(x) = S(x)$.
+
+Аналогично показывается, что
+\begin{equation}
+\label{17:21}
+B_k = \frac{1}{\pi} \int\limits_{-\pi}^{\pi} S(x) \cos{kx} \ dx, \quad 
+\forall k \in \N,
+\end{equation}
+что соответствует коэффициентам Фурье \eqref{17:18} для $f(x) \sim S(x)$. 
+
+Значит в рассматриваемом случае для равномерно сходящегося тригонометрического 
+ряда, этот ряд будет рядом Фурье для своей суммы.
+
+Укажем еще одно свойство, позволяющее получить коэффициенты ряда Фурье 
+\eqref{17:17},\eqref{17:18} для $f \in R\left( \left[ -\pi,\pi\right]  
+\right).$ Для этого рассмотрим задачу построения тригонометрического 
+многочлена заданного порядка $n \in \N_0$ с наименьшим отклонением от $f(x)$ в 
+среднеквадратическом смысле, т.~е. для которого:
+\begin{equation}
+\label{17:22}
+\left|| f(x) -T_n(x) |\right| ^2 = \int \limits_{-\pi}^{\pi} \left( f(x) - 
+T_n(x)\right)^2 \ dx \to \min
+\end{equation}
+путем выбора соответствующих $A_k,\ k \in \N_0$ и $B_k,\ k \in \N$ в 
+\eqref{17:13}.
+
+\begin{thm}[о тригонометрическом многочлене наименьшего отклонения]
+	Из всех тригонометрических многочленов \eqref{17:13} порядка $n \in \N_0$, 
+	наименьшее отклонение от ${f \in R\left( \left[ -\pi,\pi\right]  \right)}$ в 
+	смысле \eqref{17:22} имеет многочлен, у которого
+	\[ A_k = a_k \ \eqref{17:17}, \quad \forall k \in \N_0  \]
+	\[ B_k = b_k \ \eqref{17:17}, \quad \forall k \in \N  \]
+\end{thm}
+\begin{proof}
+	Используя лемму об одном интеграле от тригонометрического многочлена для 
+	\eqref{17:22}, имеем:
+	\[ \int\limits_{-\pi}^{\pi} \left( f(x) - T_n(x) \right)^2 \ dx = 
+	\int\limits_{-\pi}^{\pi} f(x)^2 \ dx + \int\limits_{-\pi}^{\pi} T_n(x)^2 \ dx 
+	- 2\int\limits_{-\pi}^{\pi} f(x) T_n(x) \ dx  =  \]
+	\[ = \int\limits_{-\pi}^{\pi} f(x)^2 \ dx - 2 \int\limits_{-\pi}^{\pi} \left( 
+	\frac{A_0 f(x) }{2} + \sum_{k=1}^{n} \left( A_k f(x) \cos{kx} + B_k f(x) 
+	\sin{kx} \right)  \right) \ dx +  \int\limits_{-\pi}^{\pi} T_n(x)^2 \ dx = \]
+	\[  = \int\limits_{-\pi}^{\pi} f(x)^2 \ dx - A_0 \int\limits_{-\pi}^{\pi} 
+	f(x) \ dx - 2 \sum_{k=1}^{n} \int\limits_{-\pi}^{\pi} \left( A_k f(x) 
+	\cos{kx} + B_k f(x) \sin{kx} \right) \ dx + \pi \left( \frac{A_0^2}{2}  + 
+	\sum_{k=1}^{n} \left( A_k^2 + B_k^2\right) \right)  =    \]
+	\[  = \int\limits_{-\pi}^{\pi} f(x)^2 \ dx - \pi \left( a_0 A_0 + 2 
+	\sum_{k=1}^{n}\left( a_k A_k + b_k B_k \right)  \right) + \pi \left( 
+	\frac{A_0^2}{2} + \sum_{k=1}^{n}\left( A_k^2 + B_k^2\right)  \right) =      \]
+	\[  = \int\limits_{-\pi}^{\pi} f(x)^2 \ dx + \pi \left( \left( 
+	\frac{A_0^2}{2} - A_0 a_0\right) + \sum_{k=1}^{n} \left( A_k^2 - 2 A_k a_k + 
+	B_k^2 - 2 B_k b_k\right) \right) =      \]
+	\[  = \int\limits_{-\pi}^{\pi} f(x)^2 \ dx + \pi \left( \frac{\left( A_0 - 
+	a_0\right)^2}{2} - \frac{a_0^2}{2} + \sum_{k=1}^{n} \left( \left( A_k - a_k 
+	\right)^2  + \left( B_k - b_k\right)^2 \right) - \sum_{k=1}^{n} \left( a_k^2 
+	+ b_k^2\right)   \right) \ge         \]
+	\[ \ge  \left[ \forall T_n(x) \text{ в } \eqref{17:13}  \right]   \ge 
+	\int\limits_{-\pi}^{\pi} f(x)^2 \ dx - \pi \left( \frac{a_0^2}{2} + 
+	\sum_{k=1}^{n} \left( a_k^2 + b_k^2\right) \right)  {\underset{\forall 
+	T_n(x)}\longrightarrow} \min. \]
+	Если $\forall A_k = a_k,\ k \in \N_0,\ \forall B_k = b_k,\ k \in \N$ то 
+	неравенство переходит в равенство. Таким образом, многочленом наименьшего 
+	отклонения будет $n$-я частная сумма ряда Фурье \eqref{17:16} для 
+	рассматриваемой функции $f \in R\left( [-\pi,\pi]\right) $.
+\end{proof}
+	Из доказательства теоремы имеем \emph{неравенство Бесселя} для коэффициентов 
+	ряда Фурье функции $f \in R\left( [-\pi,\pi]\right) $:
+	\begin{equation}
+	\label{17:23}
+	\frac{a_0^2}{2} + \sum_{k=1}^{n} \left( a_k^2 + b_k^2\right) \le 
+	\frac{1}{\pi}  \int\limits_{-\pi}^{\pi} f(x)^2 \ dx.
+	\end{equation}
+	Из неравенства \eqref{17:23} при $n \to \infty$, во-первых, получаем, что у 
+	положительного ряда
+	\[  \frac{a_0^2}{2} + \sum_{k=1}^{\infty} \left( a_k^2 + b_k^2  \right)     \]
+	частные суммы монотонно возрастают и ограничены сверху, а значит, этот ряд 
+	будет сходиться и удовлетворять \emph{неравенству Парсеваля}: 
+	\begin{equation}
+	\label{17:24}
+	\frac{a_0^2}{2} + \sum_{k=1}^{\infty} \left( a_k^2 + b_k^2\right) \le 
+	\frac{1}{\pi}  \int\limits_{-\pi}^{\pi} f(x)^2 \ dx
+	\end{equation}
+	Далее мы выясним, при каких условиях неравенство Парсеваля переходит в 
+	равенство.
+	
+	\begin{erem}
+	То, что Булатов назвал неравенством Парсеваля, на самом деле и является 
+	неравенством Бесселя, а его неравенство Бесселя вроде как имени не имеет. Но 
+	есть равенство Парсеваля~--- случай, когда неравенство Бесселя переходит в 
+	равенство.
+	\end{erem}
+	
+	Если $f \in R\left( [a,a+2l]\right)$ для $\fix a \in \R,\ l > 0$, то в 
+	этом случае рассмотрим \emph{обобщенный ряд Фурье}:
+	\begin{equation}
+	\label{17:25}
+	 f(x) \sim \frac{a_0^*}{2} + \sum_{k=1}^{\infty} \left( a_k^* \cos{\frac{\pi 
+	 k x}{l}} + b_k^* \sin{\frac{\pi k x}{l}} \right),
+	\end{equation}
+	где
+	\begin{equation}
+	\label{17:26}
+	a_k^* = \frac{1}{l} \int\limits_{a}^{a+2l} f(x) \cos{\frac{\pi k x}{l}} \ 
+	dx,\ 
+	\forall k \in \N_0
+	\end{equation}
+	\begin{equation}
+	\label{17:27}
+	b_k^* = \frac{1}{l} \int\limits_{a}^{a+2l} f(x) \sin{\frac{\pi k x}{l}} \ 
+	dx,\ 
+	\forall k \in \N
+	\end{equation}
+	В этом случае неравенства Бесселя и Парсеваля имеют вид:
+	\begin{equation}
+	\label{17:28}
+	\frac{{a_0^*}^2}{2} + \sum_{k=1}^{n} \left( {a_k^*}^2 + {b_k^*}^2\right) \le 
+	\frac{1}{l}  \int\limits_{-\pi}^{\pi} f(x)^2 \ dx
+	\end{equation}
+	\begin{equation}
+	\label{17:29}
+	\frac{{a_0^*}^2}{2} + \sum_{k=1}^{\infty} \left( {a_k^*}^2 + {b_k^*}^2\right) 
+	\le \frac{1}{l}  \int\limits_{-\pi}^{\pi} f(x)^2 \ dx
+	\end{equation}
+	\begin{exmp}
+	Для $f(x) = x$, $x \in [a,a+2l]$, $l > 0$, получаем:
+	\[ a_0^* = \frac{1}{l} \int\limits_{a}^{a+2l} x\, dx = \frac{1}{2l} \left[x^2 
+	\right]_{a}^{a+2l} = \frac{\left( a^2 + 4al + 4l^2 - a^2 \right) }{2l}=2(a+l) 
+	 \]
+	\[  a_k^* = \frac{1}{l} \int\limits_{a}^{a+2l} x \cos{\frac{\pi k x}{l}} \ dx 
+	= \frac{1}{\pi k}  \int\limits_{a}^{a+2l} x \; d \left(\sin{\frac{\pi k 
+	x}{l}} 
+	\right) = \frac{1}{\pi k} \left[ x \sin{\frac{\pi k x}{l}} \right]_{a}^{a+2l} 
+	- \frac{1}{\pi k} \int\limits_{a}^{a+2l} \sin{\frac{\pi k x}{l}} \ dx =\]
+	\[ = \left[ \begin{gathered} 
+	\sin{\frac{\pi k (a+2l)}{l}} = \sin{\left( \frac{\pi k a}{l} + 2\pi k\right)} 
+	= \sin{\left( \frac{\pi k a}{l} \right)}  \\
+	\cos{ \frac{\pi k x}{l} } \bigg|_{a}^{a+2l} = \cos{ \frac{\pi k a}{l} } - 
+	\cos{ \frac{\pi k a}{l} } = 0
+	\end{gathered}\right] =\frac{2l}{\pi k} \sin{\frac{\pi k a}{l}}, \quad 
+	\forall k \in \N     \]
+	\[  b_k^* = \frac{1}{l} \int\limits_{a}^{a+2l} x \sin{\frac{\pi k x}{l}} \ dx 
+	= \frac{1}{\pi k} \left[ - x \cos{\frac{\pi k x}{l}} \right]_{a}^{a+2l} + 
+	\frac{1}{\pi k} \int\limits_{a}^{a+2l} \cos{\frac{\pi k x}{l}} \ dx =         
+	   \]
+	\[= - \frac{1}{\pi k} \left( \left(a+2l \right)\cos{\frac{\pi k (a+2l)}{l}} - 
+	a \sin{\frac{\pi k a}{l}} \right)  = -\frac{2l}{\pi k} \cos{\frac{\pi k 
+	a}{l}}, \quad \forall k \in \N     \]
+	Таким образом,
+	\[ x \sim 2(a+l) + \frac{2l}{\pi} \sum_{k=1}^{\infty}\left(  \frac{1}{k} 
+	\sin{\frac{\pi k a}{l}} \cos{\frac{\pi k x}{l}} - \frac{1}{k} \cos{\frac{\pi 
+	k a}{l}} \sin{\frac{\pi k x}{l}} \right) \]
+	\end{exmp}
+	\begin{exercise}
+		Написать неравенства Бесселя и Парсеваля.
+	\end{exercise}
+\end{document}
