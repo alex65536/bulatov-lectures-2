@@ -76,11 +76,11 @@ Use equation and \eqref{}.'
 Это~--- тире'
 	
 	check -P -- "$1" \
-	      '(\\in|\\subset)\s+R(?!\s*\\left\s*\(|\s*\()' \
+	      '(\\in|\\subset)\s+R(?!_|\s*\\left\s*\(|\s*\()' \
 	      'Use \R instead of R (if it'\''s set of real numbers)'
 	
-	check -- "$1" \
-	      '\\R\s*_\s*[23n]' \
+	check -P -- "$1" \
+	      '\\?R\s*_\s*[23n](?!\s*\\left\s*\(|\s*\()' \
 	      'Maybe you meant \R^n?'
 	
 	check -- "$1" \
