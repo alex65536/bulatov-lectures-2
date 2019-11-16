@@ -14,10 +14,11 @@
 	функций $ f(x) $, имеющих кусочно-непрерывные производные, т.~е.
 	для которых существует разбиение $ P = \{x_k\}_{k = 0}^m $, 
 	где $ a = x_0 < x_1 < \dots < x_{m - 1} < x_m = b $, 
-	на каждой части которого $ (x_{k - 1}, x_k), k = \overline{1, m} 
-	\exists f'(x) $~--- непрерывна, а на концах в точках $ x_k,
-	k = \overline{0, m} $, существуют соответствующие односторонние
-	конечные производные$(f'_\pm(x) \in \R)$.\\
+	на каждой части которого $(x_{k - 1}, x_k)$, $k = \overline{1, m}$ 
+	$ \exists f'(x) $~--- непрерывная, а на концах в точках $ x_k $,
+	$ k = \overline{0, m} $, существуют соответствующие односторонние
+	конечные производные $f'_\pm(x) \in \R$.
+	
 	\begin{thm}[о равномерной сходимости РФ]
 		Пусть $ f \in C([-\pi; \pi]) $ и $ f(-\pi) = f(\pi) $. 
 		Если $ f(x) $ имеет на $ [-\pi; \pi] $ кусочно-непрерывную 
@@ -26,14 +27,14 @@
 	\end{thm}
 	\begin{proof}
 		Из теоремы о поточечной сходимости РФ для рассматриваемой 
-		$ f(x) $ её ряд Фурье 
-		$ f(x) \sim \dfrac{a_0}{2} + \sum\limits_{k = 1}^{\infty}
-		(a_k\cos{kx} + b_k\sin{kx}) $ 
+		$ f(x) $ ее ряд Фурье 
+		\[ f(x) \sim \dfrac{a_0}{2} + \sum\limits_{k = 1}^{\infty}
+		(a_k\cos{kx} + b_k\sin{kx}) \]
 		на $ [-\pi; \pi] $ сходится к $ f(x) $, т.~е.
 		\[
-		S'_n(x) = \dfrac{a_0}{2} + \sum\limits_{k = 1}^n(
+		S_n(x) = \dfrac{a_0}{2} + \sum\limits_{k = 1}^n(
 		a_k\cos{kx} + b_k\sin{kx}) 
-		\stackrel{[-\pi; \pi]}{\underset{k \to \infty}{\to}} f(x)
+		\stackrel{[-\pi; \pi]}{\underset{n \to \infty}{\to}} f(x).
 		\]
 		Кроме того, из кусочной дифференцируемости $ f(x) $ на 
 		$ [-\pi; \pi] $ в силу доказанной выше теоремы имеем 
@@ -41,27 +42,27 @@
 		f'(x) \sim \left(\dfrac{a_0}{2} + 
 		\sum\limits_{k = 1}^\infty a_k\cos kx + b_k\sin kx
 		\right)' = \sum\limits_{k = 1}^\infty kb_k\cos kx -
-		ka_k\sin kx
+		ka_k\sin kx.
 		\]
 		Для этого ряда в силу неравенства Бесселя
 		\begin{equation}
 		\label{lec20:18}
 		\sum\limits_{k = 1}^\infty k^2(b_k^2 + a_k^2) \leq
-		\dfrac{1}{\pi} \int\limits_{-\pi}^\pi (f^k)^2 dx
+		\dfrac{1}{\pi} \int\limits_{-\pi}^\pi (f'(x))^2 dx.
 		\end{equation}
 		Далее, учитывая, что
 		\[
-		|a_k\cos kx + b_k\sin kx| \leq |a_k||\cos kx| +
-		|b_k||\sin kx| \leq \]\[ \leq
+		|a_k\cos kx + b_k\sin kx| \leq |a_k|\cdot|\cos kx| +
+		|b_k|\cdot|\sin kx| \leq \]\[ \leq
 		\begin{bmatrix}
 		|a_k| = \dfrac{1}{2}\left(
 		k^2a_k^2 + \dfrac{1}{k^2} - \left(
 		k|a_k| - \dfrac{1}{k}\right)^2
 		\right) \leq \dfrac{k^2a_k^2}{2} + \dfrac{1}{2k^2}\\
 		|b_k| \leq \dots \leq \dfrac{k^2b_k^2}{2} + \dfrac{1}{2k^2}
-		\end{bmatrix} \leq \dfrac{k^2}{2}(a_k^2 + b_k^2) + \dfrac{1}{k^2} = C_k
+		\end{bmatrix} \leq \dfrac{k^2}{2}(a_k^2 + b_k^2) + \dfrac{1}{k^2} = C_k,
 		\]
-		Здесь в силу \eqref{lec20:18} ряд 
+		здесь в силу \eqref{lec20:18} ряд 
 		$
 		\sum\limits_{k = 1}^\infty C_k =
 		\left(
@@ -69,7 +70,8 @@
 		k^2(a_k^2 + b_k^2) + \sum\limits_{k = 1}^\infty
 		\dfrac{1}{k^2}
 		\right)
-		$ сходится.\\
+		$ сходится.
+		
 		Поэтому, учитывая, что $ |S_n(x)| \leq \dots \leq
 		\dfrac{a_0}{2} + \sum\limits_{k = 1}^\infty(|a_k| + |b_k|)  =
 		\left(\dfrac{|a_0|}{2} + \sum\limits_{k = 1}^\infty C_k\right)$~---
