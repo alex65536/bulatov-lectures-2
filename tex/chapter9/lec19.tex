@@ -168,18 +168,22 @@
 		b_k \sin \frac{\pi k x}{l},
 	\end{equation}
 	\begin{equation}\label{9.4.14}
-		a_k = \frac{1}{l}\int\limits_{-l}^{l} f(x) \cos \frac{\pi k x}{l} dx, \ k \in \N_0,
+		a_k = \frac{1}{l}\int\limits_{-l}^{l} f(x) \cos \frac{\pi k x}{l} dx, \ k 
+		\in \N_0,
 	\end{equation}
 	\begin{equation}\label{9.4.15}
-		b_k = \frac{1}{l}\int\limits_{-l}^{l} f(x) \sin \frac{\pi k x}{l} dx, \ k \in \N.
+		b_k = \frac{1}{l}\int\limits_{-l}^{l} f(x) \sin \frac{\pi k x}{l} dx, \ k 
+		\in \N.
 	\end{equation}
 	Точно так же строится ряд Фурье, если $f(x)$ не является периодической. 
 	Рассмотрим два случая:
 	\begin{enumerate}
-		\item $f(x)$ --- четная на $\left]-l; l\right[,$ то есть $f(x) = f(-x),\  \forall x \in \left]-l; l\right[. $
+		\item $f(x)$ --- четная на $\left]-l; l\right[,$ то есть $f(x) = f(-x),\  
+		\forall x \in \left]-l; l\right[. $
 		Тогда подынтегральная \eqref{9.4.13} также четна по свойствам ОИ. Значит, 
 		\[
-			a_k = \frac{2}{l}\int\limits_{0}^{l} f(x) \cos \frac{\pi k x}{l} dx, \; k \in \N 
+			a_k = \frac{2}{l}\int\limits_{0}^{l} f(x) \cos \frac{\pi k x}{l} dx, \; k 
+			\in \N 
 			_0,
 		\]
 		В \eqref{9.4.15} подынтегральная функция нечетна, получаем 
@@ -191,20 +195,27 @@
 		a_k \stackrel{\eqref{9.4.14}}{=} 0, \ k \in \N_0,
 		\]
 		\[
-			b_k = \frac{2}{l}\int\limits_{0}^{l} f(x) \sin \frac{\pi k x}{l} dx, \ k \in \N.
+			b_k = \frac{2}{l}\int\limits_{0}^{l} f(x) \sin \frac{\pi k x}{l} dx, \ k 
+			\in \N.
 		\]
 	\end{enumerate}
 
 		Эти результаты часто используются для $f(x),$ интегрируемой на $]0; l[, \ l 
 		> 0.$
-		В этом случае рассматривают либо четное продолжение $f(x)$ на $\left]-l; l\right[,$ 
+		В этом случае рассматривают либо четное продолжение $f(x)$ на $\left]-l; 
+		l\right[,$ 
 		полагая 
 		$f_{\text{четн}}(x) = f(|x|).$
-		Получаем, что для $f_{\text{четн}}(x)$ разложение в общий ряд Фурье на $\left]0; l\right[$ будет только по $\cos.$
+		Получаем, что для $f_{\text{четн}}(x)$ разложение в общий ряд Фурье на 
+		$\left]0; l\right[$ будет только по $\cos.$
 		
-		Аналогично, используя для $f(x),$ интегрируемой на $\left]0; l\right[,\ l > 0$ ее 
-		нечетное продолжение на $\left]-l; l\right[ : f_{\text{неч}}(x) = f(|x|)\sign(x),$ 
-		получают соответствующий ряд Фурье, содержащий только синусы, который для $x \in \left]0; l\right[$ дает для $f(x) = f_{\text{неч}}(x)$ соответствующее разложение 
+		Аналогично, используя для $f(x),$ интегрируемой на $\left]0; l\right[,\ l > 
+		0$ ее 
+		нечетное продолжение на $\left]-l; l\right[ : f_{\text{неч}}(x) = 
+		f(|x|)\sign(x),$ 
+		получают соответствующий ряд Фурье, содержащий только синусы, который для $x 
+		\in \left]0; l\right[$ дает для $f(x) = f_{\text{неч}}(x)$ соответствующее 
+		разложение 
 		по синусам.
 		
 		
@@ -212,8 +223,10 @@
 			\;
 			
 			\begin{enumerate}
-				\item Рассмотрим $f(x) = \{x\}$. Здесь $f(x + 1) = \{x+1\} = \{x\} = f(x),\  
-				\forall x \in \R$. т.~е. функция является $T=1$-периодической. В данном случае $2l = T = 1 \implies l = \frac{1}{2}$,
+				\item Рассмотрим $f(x) = \{x\}$. Здесь $f(x + 1) = \{x+1\} = \{x\} = 
+				f(x),\ 
+				\forall x \in \R$. т.~е. функция является $T=1$-периодической. В данном 
+				случае $2l = T = 1 \implies l = \frac{1}{2}$,
 				поэтому здесь разложение в ряд Фурье будет иметь вид
 				\[
 					\{x\} \sim \frac{a_0}{2} + \sum_{k=1}^{\infty}  a_k \cos 
@@ -221,7 +234,8 @@
 					b_k \sin 2 \pi k x.
 				\]
 				Чтобы упростить вычисления, рассмотрим функцию $\{x\} - \frac12 = g(x).$ 
-				$g(x)$~--- нечетная на $\left]-1; 1\right[,$ поэтому разложение $g(x)$ будет только по 
+				$g(x)$~--- нечетная на $\left]-1; 1\right[,$ поэтому разложение $g(x)$ 
+				будет только по 
 				$\sin$:
 				\[
 					g(x) = \sum_{k=1}^{\infty} b_k \sin 2 k \pi x.
@@ -266,13 +280,16 @@
 				
 				В силу формулы \eqref{9.4.15} имеем:
 				\[
-					b_k = 4 \int\limits_{0}^{1/2} \left(x - \frac{1}{2}\right) \sin 2 k \pi x\,dx =
-					-\frac{2}{\pi k} \int\limits_{0}^{1/2} \left(x - \frac{1}{2}\right)  d (\cos 2 
+					b_k = 4 \int\limits_{0}^{1/2} \left(x - \frac{1}{2}\right) \sin 2 k \pi 
+					x\,dx =
+					-\frac{2}{\pi k} \int\limits_{0}^{1/2} \left(x - \frac{1}{2}\right)  d 
+					(\cos 2 
 					\pi k x)\,dx = 
 					\]
 					\[
 					-\frac{2}{\pi k} \left. \left(x - \frac{1}{2}\right) \cos 2 \pi k x 
-					\right|_0^{1/2} + \frac{2}{\pi k}  \int\limits_{0}^{1/2} \cos 2 \pi k x\;dx =
+					\right|_0^{1/2} + \frac{2}{\pi k}  \int\limits_{0}^{1/2} \cos 2 \pi k 
+					x\;dx =
 					-\frac{2}{\pi k} \cdot \frac{1}{2} = -\frac{1}{\pi k} \implies
 				\]
 				\[
@@ -286,7 +303,8 @@
 					\pi k x}{k}.
 				\]
 				Учитывая, что для $f(x) = \{x\}$ точки $x_m = m \in \Z$ являются точками 
-				скачка, в которых $\dfrac{f(x_m+0) + f(x_m-0)}{2} = \dfrac{1}{2}$, получаем, что
+				скачка, в которых $\dfrac{f(x_m+0) + f(x_m-0)}{2} = \dfrac{1}{2}$, 
+				получаем, что
 				\[
 					\forall x \notin \Z \quad \{x\} \sim \frac{1}{2}  -\frac{1}{\pi} 
 					\sum_{k=1}^{\infty} \frac{\sin 2 \pi k x}{k}.
@@ -365,7 +383,9 @@
 				Строя далее периодическое продолжение $f^*_{\text{четн}}(x)$, получаем:
 				
 				Для получения суммы ряда Фурье $S(x)$ по $\cos$, в силу того, 
-				что точки ${x_m = (2m -1)\pi}$, ${m \in \Z}$ для $f_{\text{четн}}(x)$ являются точками устранимого разрыва, получаем непрерывную функцию $y = S(x).$
+				что точки ${x_m = (2m -1)\pi}$, ${m \in \Z}$ для $f_{\text{четн}}(x)$ 
+				являются точками устранимого разрыва, получаем непрерывную функцию $y = 
+				S(x).$
 				
 				\begin{center}
 				\begin{tikzpicture}[line cap=round,line join=round5,x=1.3cm,y=1.3cm]
@@ -402,7 +422,8 @@
 					\left]-\pi, \pi\right[.
 				\]
 				\[
-					a_0 = \frac{2}{\pi} \int\limits_{0}^{\pi}x\;dx = \left. \frac{1}{\pi}\cdot  x^2 \right|_0^{\pi} = \pi.
+					a_0 = \frac{2}{\pi} \int\limits_{0}^{\pi}x\;dx = \left. 
+					\frac{1}{\pi}\cdot  x^2 \right|_0^{\pi} = \pi.
 				\]
 				\[
 					a_k = \frac{2}{\pi} \int\limits_{0}^{\pi}x \cos kx\; dx = 
@@ -456,7 +477,8 @@
 	\end{equation}
 	\begin{thm}[О дифференцировании ряда Фурье]
 		При выполнении \eqref{9.5.16} для непрерывно дифференцируемой 
-		$2\pi$-периодической функции $f(x)$ нормальное дифференцирование ее ряда Фурье
+		$2\pi$-периодической функции $f(x)$ нормальное дифференцирование ее ряда 
+		Фурье
 		\[
 		f(x) \sim \frac{a_0}{2} + \sum_{k=1}^{\infty}  a_k \cos k x +
 		b_k \sin k x
@@ -485,7 +507,8 @@
 		\]
 		Аналогично, интегрируя по частям:
 		\[
-			\alpha_k = \frac{1}{\pi} \int\limits_{-\pi}^{\pi} f'(x) \cos kx\; dx = \frac{1}{\pi} 
+			\alpha_k = \frac{1}{\pi} \int\limits_{-\pi}^{\pi} f'(x) \cos kx\; dx = 
+			\frac{1}{\pi} 
 			\int\limits_{-\pi}^{\pi} \cos kx\; df(x)  = \frac{1}{\pi} \big[\cos kx
 			\cdot f(x)\big]_{-\pi}^{\pi} -
 			\frac{1}{\pi} \int\limits_{-\pi}^{\pi} f(x)\;d \cos kx = 
