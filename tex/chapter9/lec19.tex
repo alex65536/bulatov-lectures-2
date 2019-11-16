@@ -10,85 +10,287 @@
 }
 
 \begin{document}	
+		\begin{proof}
+		Используя в теореме о поточечной сходимости
+		 \[D_0=\cfrac{f(x_0+0)+f(x_0-0)}{2}\in\R,\] имеем:
+		\[
+		\exists\lim_{t\rightarrow+0}\cfrac{f(x_0+t)+f(x_0-t)-2D_0}{t}=
+		\underbrace{\lim_{t\rightarrow+0}\cfrac{f(x_0+t)-f(x_0+0)}{t}}_{\in\R}
+		+\underbrace{\lim_{t\rightarrow+0}\cfrac{f(x_0+t)-f(x_0+0)}{t}}_{\in\R}
+		\in\R,\]
+		т.~е. рассматриваемый ряд Фурье сходится к 
+		$S(x_0)=D_0=\cfrac{f(x_0+0)+f(x_0-0)}{2}$.
+	\end{proof}	
+	
+	\begin{rems}
+		\;
+		
+		\begin{enumerate}
+			\item Если $f(x)$ непрерывна в $x_0$, т.~е.
+			 $f(x_0-0)=f(x_0)=f(x_0+0)$, то при выполнении \eqref{18:12}
+			ряд Фурье будет сходиться к $S(x_0)=D_0=\cfrac{f(x_0+0)+f(x_0-0)}{2} = 
+			f(x_0)$.
+			
+			Если же \eqref{18:12} не выполняется, то даже в случае
+			непрерывности $f(x)$ в $x_0$ ряд не обязательно будет сходиться.
+			Условия \eqref{18:12} заведомо выполнены, если существуют 
+			односторонние производные $f'_+(x_0)$, $f'_-(x_0)$. В этом случае для 
+			$f(x)$, непрерывно дифференцируемой в $x_0$, ряд Фурье будет 
+			сходиться к $S(x_0)=f(x_0)$.
+			
+			\item Если $f(x)$ имеет в точке $x_0$ разрыв первого рода, 
+			(т.~е. $x_0$ либо точка устранимого разрыва, либо точка скачка 
+			$(\exists f(x_0\pm0)\neq f(x_0))$\;), то при выполнении 
+			\eqref{18:12} ряд Фурье будет сходиться к среднему 
+			арифметическому: $S(x_0) = \cfrac{f(x_0+0)+f(x_0-0)}{2}$.
+			
+			\item Если $2\pi$-периодическая $f(x)$ на 
+			$\left[-\pi,\pi \right]$ непрерывная и кусочно-гладкая, т.~е.
+			дифференцируема во всех кроме конечного числа точек, причем
+			в этих точках есть конечные односторонние производные, то для 
+			таких точек $S(x_0)=f(x_0)$. 
+		\end{enumerate}
+	\end{rems}
+	\begin{example}
+		$\displaystyle f(x) = x,\ x \in [a, a+2l],\ l > 0$.
+		
+		Как было получено ранее,
+		\[
+		a_0=\dots=2(a+l),
+		\]
+		
+		\[
+		x\sim a+l+\frac{2l}{\pi}\sum_{k=1}^{\infty}\frac{1}{k}
+		\left(
+		\sin \frac{\pi ka}{l} \cos\frac{\pi kx}{l}-\cos \frac{\pi ka}{l}
+		\sin\frac{\pi kx}{l}
+		\right).
+		\]
+		При
+		$a=-\pi,\ l=\pi,$
+		т.~е. $x\in\left[-\pi,\pi\right]$ следует 
+		\begin{equation*}
+		x \sim 2\sum_{k=1}^{\infty}\frac{1}{k}
+		\left(0-\cos  \pi k \sin kx\right)=
+		2\sum_{k=1}^{\infty}\frac{(-1)^{k+1} \sin kx}{k}.
+		\end{equation*}
+		
+		Для выяснения, для каких $x$ имеет место равенство, во-первых, $f(x)=x,\ 
+		x\in \left] -\pi, \pi\right[$ продолжим на $\R$, то есть рассмотрим 
+		$2\pi$-периодическую $f^*(x):$ 
+		\[f^*(x)=x,\ x\in\left]-\pi,\pi\right[.\]
+		
+		\usetikzlibrary{arrows}
+		\begin{center}
+		\begin{tikzpicture}[line cap=round,line join=round,
+		>=triangle 45,x=1.3cm,y=1.3cm]
+		\draw[->,color=black] (-4.37,0) -- (4.37,0);
+		\foreach \x in {-3,-2,2,3}
+		\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt)
+		 node[below] {\footnotesize $\x\pi$};
+		\draw[shift={(1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+		node[below] {\footnotesize $\pi$};
+		\draw[shift={(-1,0)},color=black] (0pt,2pt) -- (0pt,-2pt)
+		 node[below] {\footnotesize $-\pi$};
+		\draw[->,color=black] (0,-1.25) -- (0,1.25) node[right] 
+		{\footnotesize $f^*(x)=x$};
+		\draw[shift={(0,1)},color=black] (2pt,0pt) -- (-2pt,0pt)
+		 node[left] {\footnotesize $\pi$};
+		\draw[shift={(0,-1)},color=black] (2pt,0pt) -- (-2pt,0pt)
+		 node[left] {\footnotesize $-\pi$};
+		\draw[color=black] (2pt,0pt) -- (-2pt,0pt) node[left] 
+		{\footnotesize $0$};
+		\draw[<->] (-1,-1)-- (1,1);
+		\draw[<->] (1,-1)-- (3,1);
+		\draw[<->] (-3,-1)-- (-1,1);
+		\end{tikzpicture}
+		\end{center}
+		
+		Точки $x_m=(2m-1)\pi,\ m\in\Z$~--- точки скачка. В этих точках ряд Фурье
+		будет сходиться к
+		\[
+		S(x_m)=\frac{f^*(x_m+0)+f^*(x_m-0)}{2}=\frac{\pi+(-\pi)}{2}=0.
+		\]
+		\begin{center}
+		\begin{tikzpicture}[line cap=round,line join=round,>=triangle 
+		45,x=1.3cm,y=1.3cm]
+		\draw[->,color=black] (-4.37,0) -- (4.37,0);
+		\foreach \x in {-3,-2,2,3}
+		\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+		node[below] {\footnotesize $\x\pi$};
+		\draw[shift={(1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+		node[below] {\footnotesize $\pi$};
+		\draw[shift={(-1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+		node[below] {\footnotesize $-\pi$};
+		\draw[->,color=black] (0,-1.25) -- (0,1.25)node[right] 
+		{\footnotesize $S(x)$};;
+		\draw[shift={(0,1)},color=black] (2pt,0pt) -- (-2pt,0pt) 
+		node[left] {\footnotesize $\pi$};
+		\draw[shift={(0,-1)},color=black] (2pt,0pt) -- (-2pt,0pt) 
+		node[left] {\footnotesize $-\pi$};
+		\draw[color=black] (2pt,0pt) -- (-2pt,0pt) node[left] 
+		{\footnotesize $0$};
+		\draw[<->] (-1,-1)-- (1,1);
+		\draw[<->] (1,-1)-- (3,1);
+		\draw[<->] (-3,-1)-- (-1,1);
+		\fill(1,0) circle (2pt);<br>
+		\fill(-1,0) circle (2pt);<br>
+		\fill(3,0) circle (2pt);<br>
+		\fill(-3,0) circle (2pt);<br>
+		\end{tikzpicture}
+		\end{center}
+		
+		Сравнив последний график с исходным, получим:
+		\[
+		\forall 
+		x\in\left]-\pi,\pi \right[ \quad
+		x=2\sum_{k=1}^{\infty}\frac{(-1)^{k+1}\sin kx}{k}.
+		\]
+	\end{example}
+	
+		Этот метод периодического продолжения используют и для непериодических
+		функций $f(x), \forall x\in [a; a+2l]$. Для этого строят
+		$f^*(x),\ x\neq a+2ml,\ m\in \Z,$
+		а затем при выполнении соответствующих условий доопределяют $S(x)$ 
+		в исключительных точках, таких как
+		\[
+		\frac{f(a+2ml+0)+f(a+2ml-0)}{2},\ m \in \Z.
+		\]
+		В конце сравнивают графики и записывают окончательный результат.
+	
 \section{Ряд Фурье для четных и нечетных периодических и непериодических 
 функций}
 
-	Пусть $f(x)$ задана $\forall x\in ]-l; l[$. Если эта функция является $T=2l$ 
-	периодической, то интегрируя обычным образом имеем:
+	Пусть $f(x)$ задана на $\forall x\in \left]-l; l\right[$. Если эта функция 
+	является $T=2l$-периодической, то, интегрируя обычным образом, имеем:
 	\begin{equation} \label{9.4.13}
 		f(x) \sim \frac{a_0}{2} + \sum_{k=1}^{\infty}  a_k \cos \frac{\pi k x}{l} +
 		b_k \sin \frac{\pi k x}{l},
 	\end{equation}
 	\begin{equation}\label{9.4.14}
-		a_k = \frac{1}{l}\int_{-l}^{l} f(x) \cos \frac{\pi k x}{l} dx, \; k \in \N 
-		_0,
+		a_k = \frac{1}{l}\int\limits_{-l}^{l} f(x) \cos \frac{\pi k x}{l} dx, \ k 
+		\in \N_0,
 	\end{equation}
 	\begin{equation}\label{9.4.15}
-		b_k = \frac{1}{l}\int_{-l}^{l} f(x) \sin \frac{\pi k x}{l} dx, \; k \in \N.
+		b_k = \frac{1}{l}\int\limits_{-l}^{l} f(x) \sin \frac{\pi k x}{l} dx, \ k 
+		\in \N.
 	\end{equation}
-	Точно также строится ряд Фурье, если $f(x)$ не является периодической. 
-	Рассмотрим 2 случая:
+	Точно так же строится ряд Фурье, если $f(x)$ не является периодической. 
+	Рассмотрим два случая:
 	\begin{enumerate}
-		\item $f(x)$ --- четная на $]-l; l[,$ то есть $f(x) = f(-x), \forall x \in 
-		]-l; l. $
-		Тогда подынтегральная \ref{9.4.13} также четна по свойствам ОИ. Значит, 
+		\item $f(x)$ --- четная на $\left]-l; l\right[,$ то есть $f(x) = f(-x),\  
+		\forall x \in \left]-l; l\right[. $
+		Тогда подынтегральная \eqref{9.4.13} также четна по свойствам ОИ. Значит, 
 		\[
-			a_k = \frac{2}{l}\int_{0}^{l} f(x) \cos \frac{\pi k x}{l} dx, \; k \in \N 
+			a_k = \frac{2}{l}\int\limits_{0}^{l} f(x) \cos \frac{\pi k x}{l} dx, \; k 
+			\in \N 
 			_0,
 		\]
-		В \ref{9.4.15} подынтегральная функция нечетна, получаем 
-		$\forall b_k = 0, k \in \N.$
+		В \eqref{9.4.15} подынтегральная функция нечетна, получаем 
+		$\forall b_k = 0,\ k \in \N.$
 
-		\item $f(x)$ --- нечетная на $]-l; l[.$
+		\item $f(x)$ --- нечетная на $\left]-l; l\right[.$
 		Здесь:
 		\[
-		a_k \stackrel{\ref{9.4.14}}{=} 0, \; k \in \N _0,
+		a_k \stackrel{\eqref{9.4.14}}{=} 0, \ k \in \N_0,
 		\]
 		\[
-			b_k = \frac{2}{l}\int_{0}^{l} f(x) \sin \frac{\pi k x}{l} dx, \; k \in \N.
+			b_k = \frac{2}{l}\int\limits_{0}^{l} f(x) \sin \frac{\pi k x}{l} dx, \ k 
+			\in \N.
 		\]
 	\end{enumerate}
 
-		Эти результаты часто используются для $f(x),$ интегрируемой на $]0; l[, \, l 
+		Эти результаты часто используются для $f(x),$ интегрируемой на $]0; l[, \ l 
 		> 0.$
-		В этом случае рассматривают либо четное продолжение $f(x)$ на $]-l; l[,$ 
+		В этом случае рассматривают либо четное продолжение $f(x)$ на $\left]-l; 
+		l\right[,$ 
 		полагая 
-		$f_{\text{чётн}}(x) = f(|x|).$
-		Получают для $f_{\text{чётн}}(0)$ разложение в ряд Фурье на $]0; l[$ только 
-		по $\cos.$
+		$f_{\text{четн}}(x) = f(|x|).$
+		Получаем, что для $f_{\text{четн}}(x)$ разложение в общий ряд Фурье на 
+		$\left]0; l\right[$ будет только по $\cos.$
 		
-		Аналогично, используя для $f(x),$ интегрируемой на $]0; l[,\, l > 0$ ее 
-		нечетное продолжение на $]-l; l[ \ : \; f_{\text{неч}}(x) = f(|x|)\sign(x),$ 
-		получают соответствующий ряд Фурье, содержащий только синусы. Который для $x 
-		\in ]0; l[$ дает для $f(x) = f_{\text{неч}}(x)$ соответствующее разложение 
+		Аналогично, используя для $f(x),$ интегрируемой на $\left]0; l\right[,\ l > 
+		0$ ее 
+		нечетное продолжение на $\left]-l; l\right[ : f_{\text{неч}}(x) = 
+		f(|x|)\sign(x),$ 
+		получают соответствующий ряд Фурье, содержащий только синусы, который для $x 
+		\in \left]0; l\right[$ дает для $f(x) = f_{\text{неч}}(x)$ соответствующее 
+		разложение 
 		по синусам.
 		
+		
 		\begin{examples}
+			\;
+			
 			\begin{enumerate}
-				\item Рассмотрим $f(x) = \{x\}, \; f(x + 1) = \{x+1\} = \{x\} = f(x), 
-				\forall x \in \R. \; 2l = T = 1 \implies l = \frac{1}{2}.$
-				Поэтому тут разложение в ряд Фурье будет иметь вид:
+				\item Рассмотрим $f(x) = \{x\}$. Здесь $f(x + 1) = \{x+1\} = \{x\} = 
+				f(x),\ 
+				\forall x \in \R$. т.~е. функция является $T=1$-периодической. В данном 
+				случае $2l = T = 1 \implies l = \frac{1}{2}$,
+				поэтому здесь разложение в ряд Фурье будет иметь вид
 				\[
 					\{x\} \sim \frac{a_0}{2} + \sum_{k=1}^{\infty}  a_k \cos 
 					2 \pi k x +
 					b_k \sin 2 \pi k x.
 				\]
-				Чтобы упростить вычисления рассмотрим функцию: $\{x\} - 1/2 = g(x), \; 
-				g(x) $ нечетная на $]-1; 1[,$ поэтому разложение $g(x)$ будет только по 
-				$\sin.$
+				Чтобы упростить вычисления, рассмотрим функцию $\{x\} - \frac12 = g(x).$ 
+				$g(x)$~--- нечетная на $\left]-1; 1\right[,$ поэтому разложение $g(x)$ 
+				будет только по 
+				$\sin$:
 				\[
 					g(x) = \sum_{k=1}^{\infty} b_k \sin 2 k \pi x.
 				\] 
-				В силу формулы \ref{9.4.15} имеем:
+				
+				\begin{center}
+				\begin{tikzpicture}[line cap=round,line 
+				join=round,x=1.3cm,y=1.3cm]
+				\draw[->,color=black] (-4.37,0) -- (4.37,0);
+				\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+				\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $\x$};
+				\draw[->,color=black] (0,-1.25) -- (0,1.25)node[right] 
+				{\footnotesize $\{x\}$};
+				\foreach \y in {-1,1}
+				\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) 
+				node[left] {\footnotesize $\y$};
+				\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+				\foreach \a in {-3,-2,-1,0,1,2,3,4}
+				\draw[->] (\a-1,0)-- (\a,1);
+				\end{tikzpicture}
+				\end{center}
+				
+				\begin{center}
+				\begin{tikzpicture}[line cap=round,line 
+				join=round,x=1.3cm,y=1.3cm]
+				\draw[->,color=black] (-4.37,0) -- (4.37,0);
+				\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+				\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $\x$};
+				\draw[->,color=black] (0,-1.25) -- (0,1.25)node[right] 
+				{\footnotesize $g(x)$};
+				\foreach \y in {-1,1}
+				\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) 
+				node[left] {\footnotesize $\y$};
+				\draw[color=black] (0pt,-10pt) node[right] {\footnotesize 
+					$0$};
+				\foreach \a in {-3,-2,-1,0,1,2,3,4}
+				\draw[->] (\a-1,-0.5)-- (\a,0.5);
+				\end{tikzpicture}
+				\end{center}
+				
+				В силу формулы \eqref{9.4.15} имеем:
 				\[
-					b_k = 4 \int_{0}^{1/2} \left(x - \frac{1}{2}\right) \sin 2 k \pi x dx =
-					-\frac{2}{\pi k} \int_{0}^{1/2} \left(x - \frac{1}{2}\right)  d (\cos 2 
-					\pi k x) = 
+					b_k = 4 \int\limits_{0}^{1/2} \left(x - \frac{1}{2}\right) \sin 2 k \pi 
+					x\,dx =
+					-\frac{2}{\pi k} \int\limits_{0}^{1/2} \left(x - \frac{1}{2}\right)  d 
+					(\cos 2 
+					\pi k x)\,dx = 
 					\]
 					\[
 					-\frac{2}{\pi k} \left. \left(x - \frac{1}{2}\right) \cos 2 \pi k x 
-					\right|_0^{1/2} + \frac{2}{\pi k}  \int_{0}^{1/2} \cos 2 \pi k x dx =
-					-\frac{2}{\pi k} \frac{1}{2} = -\frac{1}{\pi k} \implies
+					\right|_0^{1/2} + \frac{2}{\pi k}  \int\limits_{0}^{1/2} \cos 2 \pi k 
+					x\;dx =
+					-\frac{2}{\pi k} \cdot \frac{1}{2} = -\frac{1}{\pi k} \implies
 				\]
 				\[
 				\implies
@@ -101,48 +303,141 @@
 					\pi k x}{k}.
 				\]
 				Учитывая, что для $f(x) = \{x\}$ точки $x_m = m \in \Z$ являются точками 
-				скачка, в которых:
+				скачка, в которых $\dfrac{f(x_m+0) + f(x_m-0)}{2} = \dfrac{1}{2}$, 
+				получаем, что
 				\[
-					\frac{f(x_m+0) + f(x_m-0)}{2} = \frac{1}{2} \implies 
-					\forall x \notin \Z \implies \{x\} \sim \frac{1}{2}  -\frac{1}{\pi} 
+					\forall x \notin \Z \quad \{x\} \sim \frac{1}{2}  -\frac{1}{\pi} 
 					\sum_{k=1}^{\infty} \frac{\sin 2 \pi k x}{k}.
 				\]
 				\item Рассмотрим функцию $f(x) = x, x \in ]0, \pi[.$ 
-				Ее четным продолжением будет $f_{\text{чётн}}(x) = f(|x|) = |x|, x \in 
-				]-\pi, \pi[.$
-				
+				Ее четным продолжением будет $f_{\text{четн}}(x) = f(|x|) = |x|,\ x \in 
+				\left]-\pi, \pi\right[.$
 				Здесь на графиках имеем:
 				
-				Строя далее периодическое продолжение $f_{\text{чётн}}(x)$ получаем:
+				\begin{center}
+				\begin{tikzpicture}[line cap=round,line join=round,x=1.3cm,y=1.3cm]
+				\draw[->,color=black] (-2.37,0) -- (2.37,0);
+				\foreach \x in {-2,2}
+				\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $\x\pi$};
+				\draw[shift={(1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $\pi$};
+				\draw[shift={(-1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $-\pi$};
+				\draw[->,color=black] (0,-1.25) -- (0,1.25)node[right] 
+				{\footnotesize $f(x)$};
+				\draw[shift={(0,1)},color=black] (2pt,0pt) -- (-2pt,0pt) 
+				node[left] {\footnotesize $\pi$};
+				\draw[shift={(0,-1)},color=black] (2pt,0pt) -- (-2pt,0pt) 
+				node[left] {\footnotesize $-\pi$};
+				\draw[color=black] (0pt,-10pt) node[right] {\footnotesize 
+					$0$};
+				\draw[<->] (0,0)-- (1,1);
+				\end{tikzpicture}\;\;\;\;
+				\begin{tikzpicture}[line cap=round,line 
+				join=round,x=1.3cm,y=1.3cm]
+				\draw[->,color=black] (-2.37,0) -- (2.37,0);
+				\foreach \x in {-2,2}
+				\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $\x\pi$};
+				\draw[shift={(1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $\pi$};
+				\draw[shift={(-1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $-\pi$};
+				\draw[->,color=black] (0,-1.25) -- (0,1.25 )node[right] 
+				{\footnotesize $f_{\text{четн}}(x)$};
+				\draw[shift={(0,1)},color=black] (2pt,0pt) -- (-2pt,0pt) 
+				node[left] {\footnotesize $\pi$};
+				\draw[shift={(0,-1)},color=black] (2pt,0pt) -- (-2pt,0pt) 
+				node[left] {\footnotesize $-\pi$};
+				\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+				\draw[->] (0,0)-- (1,1);
+				\draw[->] (0,0)-- (-1,1);
+				\end{tikzpicture}
 				
-				Для получения суммы ряда Фурье $S(x)$ по $\cos$, кратным 2, в силу того, 
-				что ранее точки $x_m = (2m -1)\pi, \; m \in \Z$ для $f_{\text{чётн}}(x)$ 
-				точками устраняемого разрыва, получаем непрерывную функцию $y = S(x).$
+				\begin{tikzpicture}[line cap=round,line join=round,x=1.3cm,y=1.3cm]
+				\draw[->,color=black] (-2.37,0) -- (2.37,0);
+				\foreach \x in {-2,2}
+				\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $\x\pi$};
+				\draw[shift={(1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $\pi$};
+				\draw[shift={(-1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) 
+				node[below] {\footnotesize $-\pi$};
+				\draw[->,color=black] (0,-1.25) -- (0,1.25 )node[right] 
+				{\footnotesize $f^*_{\text{четн}}(x)$};
+				\draw[shift={(0,1)},color=black] (2pt,0pt) -- (-2pt,0pt) 
+				node[left] {\footnotesize $\pi$};
+				\draw[shift={(0,-1)},color=black] (2pt,0pt) -- (-2pt,0pt) 
+				node[left] {\footnotesize $-\pi$};
+				\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+				\draw[->] (0,0)-- (1,1);
+				\draw[->] (0,0)-- (-1,1);
+				\draw[->] (-2,0)-- (-1,1);
+				\draw[->] (2,0)-- (1,1);
+				\draw[-] (-2,0)-- (-2.5,0.5);
+				\draw[-] (2,0)-- (2.5,0.5);
+				\end{tikzpicture}
+				\end{center}
+				
+				Строя далее периодическое продолжение $f^*_{\text{четн}}(x)$, получаем:
+				
+				Для получения суммы ряда Фурье $S(x)$ по $\cos$, в силу того, 
+				что точки ${x_m = (2m -1)\pi}$, ${m \in \Z}$ для $f_{\text{четн}}(x)$ 
+				являются точками устранимого разрыва, получаем непрерывную функцию $y = 
+				S(x).$
+				
+				\begin{center}
+				\begin{tikzpicture}[line cap=round,line join=round5,x=1.3cm,y=1.3cm]
+				\draw[->,color=black] (-2.37,0) -- (2.37,0);
+				\foreach \x in {-2,2}
+				\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] 
+				{\footnotesize $\x\pi$};
+				\draw[shift={(1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] 
+				{\footnotesize $\pi$};
+				\draw[shift={(-1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] 
+				{\footnotesize $-\pi$};
+				\draw[->,color=black] (0,-1.25) -- (0,1.25 )node[right] {\footnotesize 
+				$S(x)$};
+				\draw[shift={(0,1)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] 
+				{\footnotesize $\pi$};
+				\draw[shift={(0,-1)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] 
+				{\footnotesize $-\pi$};
+				\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+				\draw[-] (0,0)-- (1,1);
+				\draw[-] (0,0)-- (-1,1);
+				\draw[-] (-2,0)-- (-1,1);
+				\draw[-] (2,0)-- (1,1);
+				\draw[-] (-2,0)-- (-2.5,0.5);
+				\draw[-] (2,0)-- (2.5,0.5);
+				\end{tikzpicture}
+				\end{center}
+				
 				\[
-					S(x_m) = \frac{f_{\text{чётн}}(x_m+0)+ f_{\text{чётн}}(x_m-0)}{2} = \pi.
+					S(x_m) = \frac{f_{\text{четн}}(x_m+0)+ f_{\text{четн}}(x_m-0)}{2} = \pi.
 				\]
 				После качественного исследования перейдем к количественному, а именно:
 				\[
 					|x| \sim \frac{a_0}{2} + \sum_{k=1}^{\infty}  a_k \cos k x, \; x \in 
-					]-\pi, \pi[
+					\left]-\pi, \pi\right[.
 				\]
 				\[
-					a_0 = \frac{2}{\pi} \int_{0}^{\pi}xdx = \left. \frac{1}{\pi} x^2 
-					\right|_0^{\pi} = \pi.
+					a_0 = \frac{2}{\pi} \int\limits_{0}^{\pi}x\;dx = \left. 
+					\frac{1}{\pi}\cdot  x^2 \right|_0^{\pi} = \pi.
 				\]
 				\[
-					a_k = \frac{2}{\pi} \int_{0}^{\pi}x \cos kx dx = 
-					\frac{2}{\pi k } \int_{0}^{\pi}x d (\sin kx) = 
+					a_k = \frac{2}{\pi} \int\limits_{0}^{\pi}x \cos kx\; dx = 
+					\frac{2}{\pi k } \int\limits_{0}^{\pi}x\;d (\sin kx) = 
 					\left. \frac{2x \sin kx}{\pi k}\right|_0^{\pi} - \frac{2}{\pi k} 
-					\int_{0}^{\pi}\sin kx dx = 
+					\int\limits_{0}^{\pi}\sin kx\; dx = 
 				\]
 				\[
 				 = \frac{2}{\pi k} \left. \frac{\cos k x}{k} \right|_0^{\pi} =
 				 \frac{2}{\pi k^2} \left( \cos \pi k - 1 \right) = 
 				 \begin{cases}
-				 0, \, k = 2n \\
-				 -\frac{4}{\pi k^2}, k = 2n+1
-				 \end{cases}, \, n \in \N.
+				 0,& k = 2n \\
+				 -\frac{4}{\pi k^2},& k = 2n-1
+				 \end{cases}, \ n \in \N.
 				\]
 				Таким образом,
 				\[
@@ -154,20 +449,20 @@
 					|x| = \frac{\pi}{2} - \frac{4}{\pi} 
 					\sum_{k=1}^{\infty}\frac{\cos(2n-1)x}{(2n-1)^2}.
 				\]
-				В частности при $x = 0:$
+				В частности, при $x = 0$ имеем
 				\[
 					0 = \frac{\pi}{2} - \frac{4}{\pi} \sum_{k=1}^{\infty}\frac{1}{(2n-1)^2} 
 					\implies  \sum_{k=1}^{\infty}\frac{1}{(2n-1)^2} = \frac{\pi^2}{8}.
 				\]
-				Далее, используя сходимости ряда
+				Далее, используя сходимость ряда, имеем:
 				\[
 					S_0 = \sum_{n=1}^{\infty} \frac{1}{n^2} = \sum_{n=1}^{\infty} 
 					\frac{1}{(2n)^2}  + \sum_{n=1}^{\infty} \frac{1}{(2n-1)^2} = 
 					\frac{1}{4} \sum_{n=1}^{\infty} \frac{1}{n^2} +  \sum_{n=1}^{\infty} 
 					\frac{1}{(2n-1)^2} =
-					\frac{1}{4}S_0 + \frac{\pi}{8} \implies S_0 = \frac{\pi^2}{6}.
+					\frac{1}{4}S_0 + \frac{\pi^2}{8} \implies S_0 = \frac{\pi^2}{6}.
 				\]
-				Полученное разложение дает следующий результат для 
+				Полученное разложение дает следующий результат для $f(x) = x$:
 				\[
 					f(x) = x = \frac{\pi}{2} - \frac{4}{\pi} 
 					\sum_{k=1}^{\infty}\frac{\cos(2n-1)x}{(2n-1)^2}, \ \forall x \in ]0, \pi[.
@@ -181,8 +476,9 @@
 	f(-\pi) = f(\pi).
 	\end{equation}
 	\begin{thm}[О дифференцировании ряда Фурье]
-		При выполнении \ref{9.5.16} для непрерывно-дифференцируемой 
-		$2\pi$-периодической функции $f(x)$ нормальное дифференцирование ряда Фурье
+		При выполнении \eqref{9.5.16} для непрерывно дифференцируемой 
+		$2\pi$-периодической функции $f(x)$ дифференцирование обычным образом ее ряда 
+		Фурье
 		\[
 		f(x) \sim \frac{a_0}{2} + \sum_{k=1}^{\infty}  a_k \cos k x +
 		b_k \sin k x
@@ -192,7 +488,7 @@
 			f'(x) \sim \left(\frac{a_0}{2}\right)' + \left(\sum_{k=1}^{\infty}  a_k 
 			\cos k x +
 			b_k \sin k x\right)' = \sum_{k=1}^{\infty} k b_k \cos k x - k
-			a_k \sin k x
+			a_k \sin k x.
 		\end{equation}
 	\end{thm}
 	\begin{proof}
@@ -201,31 +497,32 @@
 			f'(x) \sim \frac{\alpha_0}{2} + \sum_{k=1}^{\infty}  \alpha_k \cos k x +
 			\beta_k \sin k x,
 		\]
-		где $f'(x)$, в силу $2\pi$-периодичности $f(x)$, также является 
+		где $f'(x)$ в силу $2\pi$-периодичности $f(x)$, также является 
 		$2\pi$-периодической.
 		
 		Используя соответствующие формулы для коэффициентов ряда Фурье:
 		\[
-			\alpha_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} f'(x) dx = \frac{1}{\pi} 
-			\left[f(x)\right]_{-\pi}^{\pi} = 0.
+			\alpha_0 = \frac{1}{\pi} \int\limits_{-\pi}^{\pi} f'(x) dx = \frac{1}{\pi} 
+			\big[f(x)\big]_{-\pi}^{\pi} = 0.
 		\]
-		Аналогично интегрируя по частям:
+		Аналогично, интегрируя по частям:
 		\[
-			\alpha_k = \frac{1}{\pi} \int_{-\pi}^{\pi} f'(x) \cos kx dx = \frac{1}{\pi} 
-			\int_{-\pi}^{\pi} \cos kx df(x)  = \frac{1}{\pi} \left[\cos kx 
-			f(x)\right]_{-\pi}^{\pi} -
-			\frac{1}{\pi} \int_{-\pi}^{\pi} f(x)d \cos kx = 
+			\alpha_k = \frac{1}{\pi} \int\limits_{-\pi}^{\pi} f'(x) \cos kx\; dx = 
+			\frac{1}{\pi} 
+			\int\limits_{-\pi}^{\pi} \cos kx\; df(x)  = \frac{1}{\pi} \big[\cos kx
+			\cdot f(x)\big]_{-\pi}^{\pi} -
+			\frac{1}{\pi} \int\limits_{-\pi}^{\pi} f(x)\;d \cos kx = 
 			\]
 			\[ =
-			\frac{1}{\pi} (f(\pi) - f(-\pi)) \cos kx -
-			\frac{k}{\pi} \int_{-\pi}^{\pi} f(x)\sin kxd x = k b_k.
+			\frac{1}{\pi} (f(\pi) - f(-\pi)) \cos kx +
+			\frac{k}{\pi} \int\limits_{-\pi}^{\pi} f(x)\sin kx\;dx = k b_k.
 		\]
 		Аналогично
 		\[
-			\beta_k = \frac{1}{\pi} \int_{-\pi}^{\pi} f'(x) \sin kx dx =
-			= \frac{1}{\pi} \int_{-\pi}^{\pi} \sin kx df(x)  =
-			\frac{1}{\pi} \underbrace{\left[\sin kx f(x)\right]_{-\pi}^{\pi}}_{0} -
-			\frac{k}{\pi} \int_{-\pi}^{\pi} f(x) \cos kx dx = -ka_k.
+			\beta_k = \frac{1}{\pi} \int\limits_{-\pi}^{\pi} f'(x) \sin kx\;dx
+			= \frac{1}{\pi} \int\limits_{-\pi}^{\pi} \sin kx\;df(x)  =
+			\frac{1}{\pi} \underbrace{\big[\sin kx \cdot f(x)\big]_{-\pi}^{\pi}}_{0} -
+			\frac{k}{\pi} \int\limits_{-\pi}^{\pi} f(x) \cos kx\;dx = -ka_k.
 		\]
 		Таким образом, 
 		\[
