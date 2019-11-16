@@ -10,36 +10,35 @@
 }
 
 \begin{document}
-\section{Аналогичные формулы Дирихле РФ для интеграла Фурье}
+\section{Аналог формулы Дирихле ряда Фурье для интеграла Фурье}
 
 Пусть $ f(x) $ абсолютно интегрируема на $ \R $, т.~е.
 \begin{equation}
 \label{lec20:1}
-\exists \int\limits_{-\infty}^\infty |f(x)| dx
+\exists \int\limits_{-\infty}^{+\infty} |f(x)|\;dx \text{~--- сходится.}
 \end{equation}
-~--- сходится.\\
 Здесь существуют функции
 \begin{equation}
 \label{lec20:2}
-a(y) = \dfrac{1}{\pi} \int\limits_{-\infty}^\infty 
-f(t) \cos ty dt
+a(y) = \dfrac{1}{\pi} \int\limits_{-\infty}^{+\infty} 
+f(t) \cos ty\;dt
 \end{equation}
 и
 \begin{equation}
 \label{lec20:3}
-b(y) = \dfrac{1}{\pi} \int\limits_{-\infty}^\infty
-f(t) \sin ty dt
+b(y) = \dfrac{1}{\pi} \int\limits_{-\infty}^{+\infty}
+f(t) \sin ty\;dt,
 \end{equation}
 т.~к. для подынтегральной функции имеем
 \[
 \begin{gathered}
-|f(t) \cos ty| \leq |f(t)||\cos ty| \leq |f(t)|\\
-|f(t) \sin ty| \leq |f(t)||\sin ty| \leq |f(t)|
+|f(t) \cos ty| \leq |f(t)|\cdot|\cos ty| \leq |f(t)|\\
+|f(t) \sin ty| \leq |f(t)|\cdot|\sin ty| \leq |f(t)|
 \end{gathered}
 \]
-а по условию \eqref{lec20:1} построенная мажоранта является сходящейся.\\
-Поэтому интегралы в правых частях \eqref{lec20:2} и \eqref{lec20:3}
-не только сходятся поточечно, но и равномерно на $ \R $.
+а по условию \eqref{lec20:1} построенная мажоранта является сходящейся,
+поэтому интегралы в правых частях \eqref{lec20:2} и \eqref{lec20:3}
+сходятся не только поточечно, но и равномерно на $ \R $.
 В соответствии с этим 
 \begin{equation}
 \label{lec20:4}
@@ -47,32 +46,35 @@ f(t) \sin ty dt
 a(y) \cos xy + b(y) \sin xy
 \right) dy
 \end{equation}
-называется \emph{интегралом Фурье}(ИФ) для рассмотренной
-абсолютно интегрируемой на $ \R $ функции $ f(x) $.\\
-Далее то, что \eqref{lec20:4} является ИФ для $ f(x) $ будем записывать в виде
+называется \emph{интегралом Фурье} (ИФ) для рассмотренной
+абсолютно интегрируемой на $ \R $ функции $ f(x) $.
+Далее то, что \eqref{lec20:4} является ИФ для $ f(x) $, будем записывать в 
+виде
 \begin{equation}
 \label{lec20:5}
 f(x) \sim \int\limits_0^{+\infty} \left(
 a(y) \cos xy + b(y) \sin xy
-\right) \ dy
+\right) \; dy,
 \end{equation}
 где в \eqref{lec20:5} подразумевается, что $ a(y),\ b(y) $ вычисляются по 
-\eqref{lec20:2} и \eqref{lec20:3}.\\
+\eqref{lec20:2} и \eqref{lec20:3}.
+
 Формулы \eqref{lec20:2}, \eqref{lec20:3}, \eqref{lec20:5} аналогичны
 соответствующим формулам для рядов Фурье, где 
 использовались дискретные суммы, а в 
 \eqref{lec20:2}, \eqref{lec20:3}, \eqref{lec20:5}
-вместо дискретных сумм используются непрерывные суммы(интегралы).
+вместо дискретных сумм используются непрерывные суммы (интегралы).
 По аналогии с РФ \eqref{lec20:2} и \eqref{lec20:3} будем называть 
-\emph{коэффициентами Фурье} для $ f(x) $.\\
-Для получения аналога формулы Дирихле для ИФ подставили
+\emph{коэффициентами Фурье} для $ f(x) $.
+
+Для получения аналога формулы Дирихле для ИФ подставляем
 \eqref{lec20:2}, \eqref{lec20:3} в \eqref{lec20:5}:
 \[
 f(x) \sim \dfrac{1}{\pi} \ioinf
 \left(
-\left(\int\limits_{-\infty}^{+\infty} f(t) \cos ty dt\right) \cos xy +
+\left(\int\limits_{-\infty}^{+\infty} f(t) \cos ty\;dt\right) \cos xy +
 \left(
-\int\limits_{-\infty}^{+\infty} f(t) \sin ty dt
+\int\limits_{-\infty}^{+\infty} f(t) \sin ty\;dt
 \right) \sin xy 
 \right) dy = \] \[ =
 \dfrac{1}{\pi}
@@ -80,31 +82,32 @@ f(x) \sim \dfrac{1}{\pi} \ioinf
 \int\limits_{-\infty}^{+\infty} (\cos ty\cos xy + \sin ty\sin xy) dt
 \right) dy =
 \dfrac{1}{\pi} \ioinf \left(
-\int\limits_{-\pi}^{+\pi} f(t) \cos(t - x)ydt
-\right) dy \] \[ =
+\ipminf f(t) \cos(t - x)y\;dt
+\right) dy = \] \[ =
 \lim\limits_{A \to +\infty} \dfrac{1}{\pi}
 \int\limits_0^{A} \left(
 \int\limits_{-\infty}^{+\infty}
-f(t) \cos(t - x)ydt
+f(t) \cos(t - x)y\;dt
 \right) dy =
 \] \[ = 
 \lim\limits_{\substack{A \to +\infty \\ B \to +\infty}} \dfrac{1}{\pi}
-\int\limits_0^A \int\limits_{-B}^B f(t) \cos(t-x)y\ dt\ dy =
+\int\limits_0^A \int\limits_{-B}^B f(t) \cos(t-x)y\;dtdy =
 \lim\limits_{\substack{A \to +\infty \\ B \to +\infty}}
 \dfrac{1}{\pi} \int\limits_{-B}^B f(t) \left(
 \int\limits_0^A
  \cos (t - x) y\ dy \right)\ dt =
 \] \[ = 
 \lim\limits_{A \to +\infty} \dfrac{1}{\pi}
-\int\limits_{-\infty}^{\infty} f(t) 
-\dfrac{\sin A(t - x)y}{t - x}|_0^A\ dt = 
+\int\limits_{-\infty}^{\infty} f(t) \cdot
+\dfrac{\sin (t - x)y}{t - x}\bigg|_0^A\;dt = 
 \begin{bmatrix}
-t - x = z |_{-\infty}^{+\infty}\\
-dt = dz;\ x \fix
+t - x = z \big|_{-\infty}^{+\infty}\\
+dt = dz \\
+x - \fix
 \end{bmatrix} =
 \] \[ = 
 \lim\limits_{A \to +\infty} \dfrac{1}{\pi} 
-\int\lim\limits_{-\infty}^{+\infty} f(z + x)
+\int\limits_{-\infty}^{+\infty} f(z + x)\cdot
 \dfrac{\sin Az}{z}\ dz =
 \lim\limits_{A \to +\infty} \dfrac{1}{\pi}
 \left(
@@ -113,25 +116,32 @@ dt = dz;\ x \fix
 \right) =
 \] \[ = 
 \begin{bmatrix}
-1. z = -t \\
-2. z = t
+1)& z = -t \\
+2)& z = t
 \end{bmatrix} =
 \lim\limits_{A \to \infty} \dfrac{1}{\pi}
 \int\limits_{0}^{+\infty}
-\dfrac{f(x - t) + f(x + t)}{t} \sin At\ dt
+\dfrac{f(x - t) + f(x + t)}{t} \sin At\;dt.
 \]
 В полученном соотношении имеем:
 \begin{equation}
 \label{lec20:6}
 	f(x) \sim \lim\limits_{A \to +\infty} \dfrac{1}{\pi} 
-	\int\limits_0^{+\infty} \dfrac{f(x + t) + f(x - t)}{t} \sin At\ dt
+	\int\limits_0^{+\infty} \dfrac{f(x + t) + f(x - t)}{t} \sin At\;dt.
 \end{equation}
-НИЗОП-1
+
+Полученный НИЗОП-1
 \begin{equation}
 \label{lec20:7}
 	F(A) = \dfrac{1}{\pi} \int\limits_0^{+\infty} 
-	\dfrac{f(x + t) + f(x - t)}{t} \sin At\ dt
+	\dfrac{f(x + t) + f(x - t)}{t} \sin At\ dt,
 \end{equation}
 где $ x - \fix \in \R $, является формулой Дирихле для ИФ.
+
+\begin{erem}
+Здесь и выше сходимость интегралов рассматривалась в 
+смысле главного значения.
+\end{erem}
+
 
 \end{document}
