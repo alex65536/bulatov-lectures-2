@@ -364,9 +364,8 @@
 				
 				Строя далее периодическое продолжение $f^*_{\text{четн}}(x)$, получаем:
 				
-				Для получения суммы ряда Фурье $S(x)$ по $\cos$, кратным 2, в силу того, 
-				что ранее точки $x_m = (2m -1)\pi, \; m \in \Z$ для $f_{\text{четн}}(x)$ 
-				точками устранимого разрыва, получаем непрерывную функцию $y = S(x).$
+				Для получения суммы ряда Фурье $S(x)$ по $\cos$, в силу того, 
+				что точки ${x_m = (2m -1)\pi}$, ${m \in \Z}$ для $f_{\text{четн}}(x)$ являются точками устранимого разрыва, получаем непрерывную функцию $y = S(x).$
 				
 				\begin{center}
 				\begin{tikzpicture}[line cap=round,line join=round5,x=1.3cm,y=1.3cm]
@@ -400,25 +399,24 @@
 				После качественного исследования перейдем к количественному, а именно:
 				\[
 					|x| \sim \frac{a_0}{2} + \sum_{k=1}^{\infty}  a_k \cos k x, \; x \in 
-					]-\pi, \pi[
+					\left]-\pi, \pi\right[.
 				\]
 				\[
-					a_0 = \frac{2}{\pi} \int_{0}^{\pi}xdx = \left. \frac{1}{\pi} x^2 
-					\right|_0^{\pi} = \pi.
+					a_0 = \frac{2}{\pi} \int\limits_{0}^{\pi}x\;dx = \left. \frac{1}{\pi}\cdot  x^2 \right|_0^{\pi} = \pi.
 				\]
 				\[
-					a_k = \frac{2}{\pi} \int_{0}^{\pi}x \cos kx dx = 
-					\frac{2}{\pi k } \int_{0}^{\pi}x d (\sin kx) = 
+					a_k = \frac{2}{\pi} \int\limits_{0}^{\pi}x \cos kx\; dx = 
+					\frac{2}{\pi k } \int\limits_{0}^{\pi}x\;d (\sin kx) = 
 					\left. \frac{2x \sin kx}{\pi k}\right|_0^{\pi} - \frac{2}{\pi k} 
-					\int_{0}^{\pi}\sin kx dx = 
+					\int\limits_{0}^{\pi}\sin kx\; dx = 
 				\]
 				\[
 				 = \frac{2}{\pi k} \left. \frac{\cos k x}{k} \right|_0^{\pi} =
 				 \frac{2}{\pi k^2} \left( \cos \pi k - 1 \right) = 
 				 \begin{cases}
-				 0, \, k = 2n \\
-				 -\frac{4}{\pi k^2}, k = 2n+1
-				 \end{cases}, \, n \in \N.
+				 0,& k = 2n \\
+				 -\frac{4}{\pi k^2},& k = 2n-1
+				 \end{cases}, \ n \in \N.
 				\]
 				Таким образом,
 				\[
@@ -430,20 +428,20 @@
 					|x| = \frac{\pi}{2} - \frac{4}{\pi} 
 					\sum_{k=1}^{\infty}\frac{\cos(2n-1)x}{(2n-1)^2}.
 				\]
-				В частности при $x = 0:$
+				В частности, при $x = 0$ имеем
 				\[
 					0 = \frac{\pi}{2} - \frac{4}{\pi} \sum_{k=1}^{\infty}\frac{1}{(2n-1)^2} 
 					\implies  \sum_{k=1}^{\infty}\frac{1}{(2n-1)^2} = \frac{\pi^2}{8}.
 				\]
-				Далее, используя сходимости ряда
+				Далее, используя сходимость ряда, имеем:
 				\[
 					S_0 = \sum_{n=1}^{\infty} \frac{1}{n^2} = \sum_{n=1}^{\infty} 
 					\frac{1}{(2n)^2}  + \sum_{n=1}^{\infty} \frac{1}{(2n-1)^2} = 
 					\frac{1}{4} \sum_{n=1}^{\infty} \frac{1}{n^2} +  \sum_{n=1}^{\infty} 
 					\frac{1}{(2n-1)^2} =
-					\frac{1}{4}S_0 + \frac{\pi}{8} \implies S_0 = \frac{\pi^2}{6}.
+					\frac{1}{4}S_0 + \frac{\pi^2}{8} \implies S_0 = \frac{\pi^2}{6}.
 				\]
-				Полученное разложение дает следующий результат для 
+				Полученное разложение дает следующий результат для $f(x) = x$:
 				\[
 					f(x) = x = \frac{\pi}{2} - \frac{4}{\pi} 
 					\sum_{k=1}^{\infty}\frac{\cos(2n-1)x}{(2n-1)^2}, \ \forall x \in ]0, \pi[.
@@ -457,8 +455,8 @@
 	f(-\pi) = f(\pi).
 	\end{equation}
 	\begin{thm}[О дифференцировании ряда Фурье]
-		При выполнении \eqref{9.5.16} для непрерывно-дифференцируемой 
-		$2\pi$-периодической функции $f(x)$ нормальное дифференцирование ряда Фурье
+		При выполнении \eqref{9.5.16} для непрерывно дифференцируемой 
+		$2\pi$-периодической функции $f(x)$ нормальное дифференцирование ее ряда Фурье
 		\[
 		f(x) \sim \frac{a_0}{2} + \sum_{k=1}^{\infty}  a_k \cos k x +
 		b_k \sin k x
@@ -468,7 +466,7 @@
 			f'(x) \sim \left(\frac{a_0}{2}\right)' + \left(\sum_{k=1}^{\infty}  a_k 
 			\cos k x +
 			b_k \sin k x\right)' = \sum_{k=1}^{\infty} k b_k \cos k x - k
-			a_k \sin k x
+			a_k \sin k x.
 		\end{equation}
 	\end{thm}
 	\begin{proof}
@@ -477,37 +475,38 @@
 			f'(x) \sim \frac{\alpha_0}{2} + \sum_{k=1}^{\infty}  \alpha_k \cos k x +
 			\beta_k \sin k x,
 		\]
-		где $f'(x)$, в силу $2\pi$-периодичности $f(x)$, также является 
+		где $f'(x)$, в силу $2\pi$-периодичности $f(x)$ также является 
 		$2\pi$-периодической.
 		
 		Используя соответствующие формулы для коэффициентов ряда Фурье:
 		\[
-			\alpha_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} f'(x) dx = \frac{1}{\pi} 
-			\left[f(x)\right]_{-\pi}^{\pi} = 0.
+			\alpha_0 = \frac{1}{\pi} \int\limits_{-\pi}^{\pi} f'(x) dx = \frac{1}{\pi} 
+			\big[f(x)\big]_{-\pi}^{\pi} = 0.
 		\]
-		Аналогично интегрируя по частям:
+		Аналогично, интегрируя по частям:
 		\[
-			\alpha_k = \frac{1}{\pi} \int_{-\pi}^{\pi} f'(x) \cos kx dx = \frac{1}{\pi} 
-			\int_{-\pi}^{\pi} \cos kx df(x)  = \frac{1}{\pi} \left[\cos kx 
-			f(x)\right]_{-\pi}^{\pi} -
-			\frac{1}{\pi} \int_{-\pi}^{\pi} f(x)d \cos kx = 
+			\alpha_k = \frac{1}{\pi} \int\limits_{-\pi}^{\pi} f'(x) \cos kx\; dx = \frac{1}{\pi} 
+			\int\limits_{-\pi}^{\pi} \cos kx\; df(x)  = \frac{1}{\pi} \big[\cos kx
+			\cdot f(x)\big]_{-\pi}^{\pi} -
+			\frac{1}{\pi} \int\limits_{-\pi}^{\pi} f(x)\;d \cos kx = 
 			\]
 			\[ =
-			\frac{1}{\pi} (f(\pi) - f(-\pi)) \cos kx -
-			\frac{k}{\pi} \int_{-\pi}^{\pi} f(x)\sin kxd x = k b_k.
+			\frac{1}{\pi} (f(\pi) - f(-\pi)) \cos kx +
+			\frac{k}{\pi} \int\limits_{-\pi}^{\pi} f(x)\sin kx\;dx = k b_k.
 		\]
 		Аналогично
 		\[
-			\beta_k = \frac{1}{\pi} \int_{-\pi}^{\pi} f'(x) \sin kx dx =
-			= \frac{1}{\pi} \int_{-\pi}^{\pi} \sin kx df(x)  =
-			\frac{1}{\pi} \underbrace{\left[\sin kx f(x)\right]_{-\pi}^{\pi}}_{0} -
-			\frac{k}{\pi} \int_{-\pi}^{\pi} f(x) \cos kx dx = -ka_k.
+			\beta_k = \frac{1}{\pi} \int\limits_{-\pi}^{\pi} f'(x) \sin kx\;dx
+			= \frac{1}{\pi} \int\limits_{-\pi}^{\pi} \sin kx\;df(x)  =
+			\frac{1}{\pi} \underbrace{\big[\sin kx \cdot f(x)\big]_{-\pi}^{\pi}}_{0} -
+			\frac{k}{\pi} \int\limits_{-\pi}^{\pi} f(x) \cos kx\;dx = -ka_k.
 		\]
 		Таким образом, 
 		\[
 		f'(x) \sim 0 + \sum_{k=1}^{\infty}( k b_k \cos k x - k
 		a_k \sin k x) = \left(\frac{a_0}{2} + \sum_{k=1}^{\infty}  a_k \cos k x +
 		b_k \sin k x\right)'.
+		\qedhere
 		\]
 	\end{proof}
 \end{document}
