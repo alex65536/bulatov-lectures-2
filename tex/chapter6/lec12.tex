@@ -22,13 +22,13 @@
 \begin{proof}
 Для доказательства рассмотрим три случая:
 \begin{enumerate}
- \item $a > 0 \implies$ \[\implies F(a) = \left[ \begin{array}{l}ax = 
+ \item $a > 0$: \[F(a) = \left[ \begin{array}{l}ax = 
  t|_0^{+\infty} \\ x = \frac ta,\ dx = \frac{dt}a\end{array}\right] = \ioinf 
  \frac{\sin t}{\frac ta}\cdot\frac{dt}a = \ioinf \frac{\sin t}{t}dt = \frac\pi 
  2 \implies \eqref{lec12:6},\ \text{т.~к.} \sgn a = 1.\]
- \item $a = 0 \implies$ \[\implies F(0) = \ioinf 0\;dx = 0 \implies 
+ \item $a = 0$: \[F(0) = \ioinf 0\;dx = 0 \implies 
  \eqref{lec12:6},\ \text{т.~к.} \sgn a = 0.\]
- \item $a < 0 \implies$ \[\implies F(a) = \ioinf \frac{\sin (ax)}x dx 
+ \item $a < 0$: \[F(a) = \ioinf \frac{\sin (ax)}x dx 
  \stackrel{F(-a) = -F(a)}= -\frac\pi2 \implies \eqref{lec12:6},\ 
  \text{т.~к.} \sgn a = -1. \qedhere\]
 \end{enumerate}
@@ -36,8 +36,8 @@
 
 \begin{exmp}
 \[\ioinf \frac{\sin^2 x}{x^2} dx = -\ioinf \sin^2x\; d\left(\frac1x\right) = 
-[\text{интегрирование по частям}] =\]\[= \frac{\sin^2 x}x\Big|_0^{+\infty} + 
-\ioinf \frac{2\sin x\cos x}{x} dx = 0 + \underbrace{\lim_{x\to +\infty} 
+[\text{интегрирование по частям}] =\]\[= -\frac{\sin^2 x}x\Big|_0^{+\infty} + 
+\ioinf \frac{2\sin x\cos x}{x} dx = 0 - \underbrace{\lim_{x\to +\infty} 
 \frac{\sin^2 x}x}_{=0} + \ioinf \frac{2\sin x\cos x}{x} dx = \ioinf\frac{\sin 
 2x}x = \frac\pi2.\]
 \end{exmp}
@@ -250,12 +250,12 @@ dt - \int\limits_{\beta a}^{\beta b} \frac{f(t)}t dt = [\text{обратная
 \int\limits_a^b \frac{f(\beta x) }x dx\right).\]
 По теореме о среднем для ОИ (если $g(x)$ непрерывна, а $h(x)$ интегрируема и 
 сохраняет один и тот же знак, то $\exists x_0 \in [a, b]\quad \int\limits_a^b 
-g(x)h(x) dx = g(x_0)\int_a^b h(x)dx$), получаем
+g(x)h(x) dx = g(x_0)\int_a^b h(x)dx$), получаем:
 \[
 \Phi(a, b) = \dots = \left[
 \begin{gathered}
-1)\ \, g(x) = f(\alpha x),\ h(x) = \tfrac1x,\ \exists x_0 = c \in [a, b] \\
-2)\ \, g(x) = f(\beta x),\ h(x) = \tfrac1x,\ \exists x_0 = d \in [a, b]
+1)\ \, g(x) = f(\alpha x),\ h(x) = \tfrac1x,\ \exists x_0 = c = c(\alpha) \in [a, b] \\
+2)\ \, g(x) = f(\beta x),\ h(x) = \tfrac1x,\ \exists x_0 = d = d(\beta) \in [a, b]
 \end{gathered}
 \right] =\]
 \[= \lim\limits_{\substack{\alpha \to +0 \\ \beta \to +\infty}} \left(f(\alpha 
@@ -264,10 +264,10 @@ c) \int\limits_a^b \frac1x dx - f(\beta d) \int\limits_a^b \frac1x dx \right)
 f(\beta d)) \cdot \ln\left(\frac ba\right) \implies\]
 \[\implies \left[
 \begin{gathered}
-1)\ \, c \in [a, b] \implies \alpha a \le \alpha c \le \alpha b,\ \alpha c 
+1)\ \, c \in [a, b] \implies \alpha a \le \alpha c(\alpha) \le \alpha b,\ \alpha c(\alpha) 
 \appr{\alpha\to 0} 0 \\ f(\alpha c) \appr{\alpha\to+0} f(0), \text{т.~к. } f 
 \in C([a, b]) \\
-2)\ \, d \in [a, b] \implies \beta a \le \beta d \le \beta b,\ \beta d 
+2)\ \, d \in [a, b] \implies \beta a \le \beta d(\beta) \le \beta b,\ \beta d(\beta) 
 \appr{\beta\to+\infty} 0 \\ f(\beta d) \appr{\beta\to+\infty} f(+\infty), 
 \text{т.~к. } f \in C([a, b])
 \end{gathered}
