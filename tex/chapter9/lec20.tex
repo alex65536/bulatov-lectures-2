@@ -1,0 +1,234 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+	Далее будем рассматривать множество непрерывных на $ [a; b] $
+	функций $ f(x) $, имеющих кусочно-непрерывные производные, т.~е.
+	для которых существует разбиение $ P = \{x_k\}_{k = 0}^m $, 
+	где $ a = x_0 < x_1 < \dots < x_{m - 1} < x_m = b $, 
+	на каждой части которого $(x_{k - 1}, x_k)$, $k = \overline{1, m}$ 
+	$ \exists f'(x) $~--- непрерывная, а на концах в точках $ x_k $,
+	$ k = \overline{0, m} $, существуют соответствующие односторонние
+	конечные производные $f'_\pm(x) \in \R$.
+	
+	\begin{thm}[о равномерной сходимости РФ]
+		Пусть $ f \in C([-\pi; \pi]) $ и $ f(-\pi) = f(\pi) $. 
+		Если $ f(x) $ имеет на $ [-\pi; \pi] $ кусочно-непрерывную 
+		производную, то тогда РФ рассматриваемой функции $f$
+		сходится равномерно к этой функции.
+	\end{thm}
+	\begin{proof}
+		Из теоремы о поточечной сходимости РФ для рассматриваемой 
+		$ f(x) $ ее ряд Фурье 
+		\[ f(x) \sim \dfrac{a_0}{2} + \sum\limits_{k = 1}^{\infty}
+		(a_k\cos{kx} + b_k\sin{kx}) \]
+		на $ [-\pi; \pi] $ сходится к $ f(x) $, т.~е.
+		\[
+		S_n(x) = \dfrac{a_0}{2} + \sum\limits_{k = 1}^n(
+		a_k\cos{kx} + b_k\sin{kx}) 
+		\stackrel{[-\pi; \pi]}{\underset{n \to \infty}{\to}} f(x).
+		\]
+		Кроме того, из кусочной дифференцируемости $ f(x) $ на 
+		$ [-\pi; \pi] $ в силу доказанной выше теоремы имеем 
+		\[
+		f'(x) \sim \left(\dfrac{a_0}{2} + 
+		\sum\limits_{k = 1}^\infty a_k\cos kx + b_k\sin kx
+		\right)' = \sum\limits_{k = 1}^\infty kb_k\cos kx -
+		ka_k\sin kx.
+		\]
+		Для этого ряда в силу неравенства Бесселя
+		\begin{equation}
+		\label{lec20:18}
+		\sum\limits_{k = 1}^\infty k^2(b_k^2 + a_k^2) \leq
+		\dfrac{1}{\pi} \int\limits_{-\pi}^\pi (f'(x))^2 dx.
+		\end{equation}
+		Далее, учитывая, что
+		\[
+		|a_k\cos kx + b_k\sin kx| \leq |a_k|\cdot|\cos kx| +
+		|b_k|\cdot|\sin kx| \leq \]\[ \leq
+		\begin{bmatrix}
+		|a_k| = \dfrac{1}{2}\left(
+		k^2a_k^2 + \dfrac{1}{k^2} - \left(
+		k|a_k| - \dfrac{1}{k}\right)^2
+		\right) \leq \dfrac{k^2a_k^2}{2} + \dfrac{1}{2k^2}\\
+		|b_k| \leq \dots \leq \dfrac{k^2b_k^2}{2} + \dfrac{1}{2k^2}
+		\end{bmatrix} \leq \dfrac{k^2}{2}(a_k^2 + b_k^2) + \dfrac{1}{k^2} = C_k,
+		\]
+		здесь в силу \eqref{lec20:18} ряд 
+		$
+		\sum\limits_{k = 1}^\infty C_k =
+		\left(
+		\dfrac{1}{2} \sum\limits_{k = 1}^\infty 
+		k^2(a_k^2 + b_k^2) + \sum\limits_{k = 1}^\infty
+		\dfrac{1}{k^2}
+		\right)
+		$ сходится.
+		
+		Поэтому, учитывая, что \[|S_n(x)| \leq \dots \leq
+		\dfrac{a_0}{2} + \sum\limits_{k = 1}^\infty(|a_k| + |b_k|)  =
+		\left(\dfrac{|a_0|}{2} + \sum\limits_{k = 1}^\infty C_k\right),\]
+		получаем, что сходится мажоранта для $ u_k(x) = a_k\cos kx + b_k\sin kx$, 
+		т.~к.
+		$ |u_k(x)| \leq |a_k| + |b_k| $. Отсюда
+		\[\left(
+		\dfrac{a_0}{2} + \sum\limits_{k = 1}^\infty a_k\cos kx + b_k\sin kx
+		\right) 
+		\stackrel{[-\pi; \pi]}{\rightrightarrows}
+		\] по признаку Вейерштрасса.
+	\end{proof}
+	\begin{rem}
+		Кроме поточечной и равномерной сходимости РФ
+		рассматривают также \emph{сходимость в среднем} РФ.
+		Говорят, что ФП $ f_n(x) \in R([a; b]),\ \forall
+		n \in \N $ сходится на $ [a; b] $ к $ f(x) \in 
+		R([a; b]) $ в среднем, если \[||f_n(x) - f(x)||^2=
+		\int\limits_{a}^b (f_n(x) - f(x))^2 dx \appr{n \to \infty} 0.\]
+		Здесь пишут 
+		\begin{equation}
+		\label{lec20:19}
+			\underset{n \to \infty}{\text{l.i.m.}} f_n(x) = f(x) 
+		\end{equation}
+	\end{rem}
+	Можно показать, что из того, что $ f_n 
+	\stackrel{[a; b]}{\underset{n \to \infty}{\to}} f(x) 
+	\implies \eqref{lec20:19} $. Обратное, вообще говоря, неверно.
+	В общем случае для рассматриваемых функций $ f \in R([a;b]) $
+	вне зависимости от сходимости/расходимости в обычном смысле соответствующего 
+	ей
+	РФ на $ [a; b] $ частные суммы $ S_n(x) $ этого РФ
+	будут сходиться в среднем на $ [a; b] $ к $ f(x) $.
+	
+	\section{Почленное интегрирование РФ}
+	
+	\begin{thm}[о почленном интегрировании РФ]
+		Для $ f \in C([-\pi; \pi]) $ ее РФ \[ f(x) \sim
+		\dfrac{a_0}{2} + \sum\limits_{k = 1}^\infty 
+		a_k\cos kx + b_k\sin kx \] можно почленно интегрировать 
+		на любом промежутке с концами $ 0 $ и $ x,\ x \in [-\pi; \pi] $, 
+		и при этом вне зависимости от сходимости/расходимости 
+		исходного ряда, для проинтегрированного ряда верно равенство
+		\begin{equation}
+		\label{lec20:20}
+		\int\limits_0^x f(t) dt = \dfrac{a_0}{2} \int\limits_0^x
+		dt + \sum\limits_{k = 1}^\infty \left(
+		a_k \int\limits_0^x \cos kt\; dt + 
+		b_k \int\limits_0^x \sin kt\; dt
+		\right).
+		\end{equation}
+	\end{thm}
+	\begin{proof}
+		В силу теоремы Барроу из того, что $ f \in C([-\pi; \pi]) \implies 
+		\forall x \in [-\pi; \pi]$ функция  
+		\begin{equation}
+		\label{lec20:21}
+		F(x) = 
+		\int\limits_0^x f(t)\;dt - \dfrac{a_0x}{2} 
+		\end{equation}
+		является дифференцируемой на $ [-\pi; \pi] $ и 
+		\begin{equation}
+		\label{lec20:22}
+		F'(x) = f(x) - \dfrac{a_0}{2}.
+		\end{equation}
+		Для \eqref{lec20:21} также имеем \[
+		F(\pi) - F(-\pi) = \int\limits_0^\pi f(t)\;dt - 
+		\int\limits_0^{-\pi} f(t)\;dt - \dfrac{a_0}{2}(\pi - (-\pi)) =
+		\int\limits_{-\pi}^\pi f(t)\;dt - \pi a_0 = 0.
+		\]
+		Поэтому из теоремы о равномерной сходимости РФ получаем, что РФ для 
+		\[F(x) \sim \dfrac{A_0}{2} + 
+		\sum\limits_{k = 1}^\infty A_k\cos kx + B_k\sin kx\]
+		будет равномерно сходиться на $ [-\pi; \pi] $ к $ F(x) $.
+		Здесь \[ A_k = \dfrac{1}{\pi} \int\limits_{-\pi}^\pi F(x) \cos kx\;dx = 
+		\dfrac{1}{\pi k} \int\limits_{-\pi}^\pi F(x) d(\sin kx) =
+		\dfrac{1}{\pi k} F(x) \sin kx \big|_{-\pi}^\pi - 
+		\dfrac{1}{\pi k} \int\limits_{-\pi}^\pi F'(x)\sin kx\;dx 
+		\stackrel{\eqref{lec20:22}}{=} \] \[
+		\stackrel{\eqref{lec20:22}}{=}
+		-\dfrac{1}{\pi k} \int\limits_{-\pi}^\pi \left(
+		f(x) - \dfrac{a_0}{2} \right) \sin kx\;dx =
+		-\dfrac{1}{\pi k} \int\limits_{-\pi}^\pi f(x) \sin kx\;dx + 
+		\dfrac{a_0}{2\pi k} \int\limits_{-\pi}^\pi \sin kx\;dx = \] \[ =
+		-\dfrac{1}{\pi k} \int\limits_{-\pi}^\pi f(x) \sin kx\;dx - 
+		\dfrac{a_0}{2\pi k^2} \cos kx \big|_{-\pi}^\pi = 
+		-\dfrac{b_k}{k},\ k \in \N.
+		\]
+		Аналогично получаем \[ 
+		B_k = \dfrac{1}{\pi} \int\limits_{-\pi}^\pi F(x) \sin kx\;dx = \dots =
+		\dfrac{a_k}{k},\ k \in \N.
+		\]
+		Для нахождения $ A_0 $ в равенстве $ F(x) =
+		\dfrac{A_0}{2} + \sum\limits_{k = 1}^\infty A_k\cos kx +
+		B_k\sin kx $ возьмём $ x = 0 $. В результате получим, что
+		\[
+		0 = F(0) = \dfrac{A_0}{2} + \sum\limits_{k = 1}^\infty A_k \implies
+		\dfrac{A_0}{2} = -\sum\limits_{k = 1}^\infty A_k = 
+		\sum\limits_{k = 1}^\infty \dfrac{b_k}{k}
+		\]
+		Итого получаем, что 
+		\[
+		\forall x \in [-\pi; \pi] \implies
+		\int\limits_0^x f(t) dt 
+		\stackrel{\eqref{lec20:21}}{=}
+		\dfrac{a_0x}{2} + F(x) = \dots = \dfrac{a_0x}{2} + 
+		\sum\limits_{k = 1}^\infty \left(
+		\dfrac{a_k}{k} \sin kx + \dfrac{b_k}{k} (1 - \cos kx)
+		\right) = \] \[= \dfrac{a_0}{2} \int\limits_0^x dt +
+		\sum\limits_{k = 1}^\infty \left(a_k \int\limits_0^x \cos kt\;dt +
+		b_k \int\limits_0^x \sin kt\;dt\right),
+		\]
+		что совпадает с \eqref{lec20:20}.
+	\end{proof}
+	\begin{rem}
+		Аналогичным образом показывается, что если рассмотренную
+		$ f \in C([-\pi; \pi]) $ умножить на некоторую функцию
+		$ g \in C([-\pi; \pi]) $, то \[f(x)g(x) \sim 
+		\dfrac{a_0}{2}g(x) + \sum\limits_{k = 1}^\infty
+		a_kg(x)\cos kx + b_kg(x)\sin kx,\] и здесь также возможно
+		почленное интегрирование, в результате чего имеем равенство:
+		\[
+		\forall x \in [-\pi; \pi]\quad
+		\int\limits_0^x f(t)g(t) dt = \dfrac{a_0}{2} 
+		\int\limits_0^x g(t) dt + \sum\limits_{k = 1}^\infty
+		\left(
+		a_k\int\limits_0^xg(t)\cos kt\;dt + 
+		b_k\int\limits_0^xg(t)\sin kt\;dt
+		\right).
+		\]
+		Если в свою очередь $ g(x) $ имеет РФ $ 
+		\dfrac{\alpha_0}{2} + \sum\limits_{k = 1}^\infty 
+		(\alpha_k\cos kx + \beta_k\sin kx)$ на $ [-\pi; \pi] $, 
+		то будет справедливо \emph{обобщённое равенство Парсеваля}:
+		\begin{equation}
+		\label{lec20:23}
+			\dfrac{1}{\pi} \int\limits_{-\pi}^\pi fg\;dx =
+			\dots = \dfrac{\alpha_0a_0}{2} +
+			\sum\limits_{k = 1}^\infty(\alpha_ka_k + \beta_kb_k).
+		\end{equation}
+		Если в \eqref{lec20:23} взять $ g(x) = f(x) $, 
+		то приходим к \emph{равенству Бесселя-Парсеваля}:
+		\begin{equation}
+		\label{lec20:24}
+			\dfrac{a_0^2}{2} + \sum\limits_{k = 1}^\infty(a_k^2 + b_k^2) =
+			\dfrac{1}{\pi} \int\limits_{-\pi}^\pi f^2\;dx.
+		\end{equation}
+		Можно показать, что \eqref{lec20:24} справедливо не только для 
+		$ g \in C([-\pi; \pi]) $, но и $ \forall f(x):
+		{f^2 \in R([-\pi; \pi])}$. 
+		Кроме того, \eqref{lec20:24} равносильно тому, что
+		\[
+		||S_n(x) - f(x)||^2 \appr{n \to \infty} 0
+		\iff \underset{n \to \infty}{\text{l.i.m.}} S_n(x) = f(x),
+		\]
+		следовательно, в рассмотренном случае частные суммы РФ для 
+		$ f(x) $ на $ [-\pi; \pi] $ всегда сходятся в среднем к $ f(x) $.
+	\end{rem}
+
+\end{document}
