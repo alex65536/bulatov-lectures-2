@@ -23,7 +23,7 @@ At\ dt
 F(A) = \dfrac{1}{\pi} \ioinf 
 \dfrac{f(x + t) + f(x - t)}{t} \sin At\ dt,
 \end{equation}
-где $ x\ fix\in \R $, является формулой Дирихле для ИФ.\\
+где $ x\ \fix\in \R $, является формулой Дирихле для ИФ.\\
 Отметим, что при получении \eqref{lec21:6}, \eqref{lec21:7}
 сходимость используется НИЗОП 
 для абсолютного интегрирования на $ \R\ f(x) $, подразумевается в смысле
@@ -57,9 +57,9 @@ F(A) = \dfrac{1}{\pi} \ioinf
 	Из сходимости НИ-1 \eqref{lec21:8} $ \implies $
 	\begin{equation}
 	\label{lec21:11}
-	\forall \epsilon > 0 \quad \exists A(\epsilon) \geq a, \quad
-	\forall A \geq A(\epsilon) \implies 
-	\int\limits_{A}^{+\infty} |g(t)|\ dt \leq \epsilon
+	\forall \eps > 0 \quad \exists A(\eps) \geq a, \quad
+	\forall A \geq A(\eps) \implies 
+	\int\limits_{A}^{+\infty} |g(t)|\ dt \leq \eps
 	\end{equation}
 	Отсюда, во-первых, имеем
 	\begin{equation}
@@ -81,30 +81,30 @@ F(A) = \dfrac{1}{\pi} \ioinf
 	\int\limits_{A}^{+\infty} |g(t)|\ dt \stackrel{\eqref{lec21:11}}{\leq}
 	\left|
 	\int\limits_{a}^{A} g(t) \sin pt\ dt
-	\right| + \epsilon
+	\right| + \eps
 	\end{gathered}
 	\end{equation}
 	Во-вторых, в силу леммы Римана-Лебега 
-	$ \forall A \geq A_\epsilon = A(\epsilon) \geq a \implies $
+	$ \forall A \geq A_\eps = A(\eps) \geq a \implies $
 	\[
 	\int\limits_{a}^{A} g(t) \sin pt\ dt \underset{p \to \infty}{\to} 0,
 	\]
 	и, значит,
 	\[
-	\forall \epsilon > 0 \quad \exists \delta = \delta_\epsilon > 0:\quad
+	\forall \eps > 0 \quad \exists \delta = \delta_\eps > 0:\quad
 	\forall p \in \R,\quad |p| \geq \delta \implies
 	\left|
 	\int\limits_{a}^{A} g(t) \sin pt\ dt
-	\right| \leq \epsilon
+	\right| \leq \eps
 	\]
 	Отсюда, на основании \eqref{lec21:12}, получаем, что
 	\[
-	\forall \epsilon > 0 \exists \delta = \delta_\epsilon > 0: 
+	\forall \eps > 0 \exists \delta = \delta_\eps > 0: 
 	\forall p \in \R: |p| \geq \delta
 	\stackrel{\eqref{lec21:12}}{\geq}
 	\left|
 	\int\limits_{a}^{+\infty} g(t) \sin pt\ dt
-	\right| \leq \dots \leq 2\epsilon
+	\right| \leq \dots \leq 2\eps
 	\], что равносильно \eqref{lec21:9}.
 \end{proof}
 \begin{thm}[о сходимости ИФ]
@@ -125,9 +125,10 @@ F(A) = \dfrac{1}{\pi} \ioinf
 	\dfrac{f(x_0 + 0) + f(x_0 - 0)}{2} = S_0 $.
 	Используя общий интеграл Дирихле 
 	\[
-	\int\limits_{0}^{+\infty} \dfrac{\sin Ax}{x}\ dx = \dfrac{\pi}{2} \forall A > 0.
+	\int\limits_{0}^{+\infty} \dfrac{\sin Ax}{x}\ dx = \dfrac{\pi}{2} \forall A > 
+	0.
 	\]
-	$ \forall fix x_0 \in \R $ для \eqref{lec21:7} имеем
+	$ \forall \fix x_0 \in \R $ для \eqref{lec21:7} имеем
 	\begin{equation}
 	\label{lec21:14}
 	\begin{gathered}
@@ -232,7 +233,8 @@ F(A) = \dfrac{1}{\pi} \ioinf
 \[
 f(x) = \Phi(x) = \ioinf
 a(y) \cos xy + b(y) \sin xy\ dy,
-\] где $ a(y),\ b(y) $ вычисляются по формулам \eqref{lec20:2}, \eqref{lec20:3}.
+\] где $ a(y),\ b(y) $ вычисляются по формулам \eqref{lec20:2}, 
+\eqref{lec20:3}.
 \begin{exmp}
 	Для функции $ f(x) = e^{-a|x|},\ a = const > 0 $ имеем ИФ. Учитывая, что
 	$ f(x) \in \C(\R) $, абсолютная интегрируема и кусочно-дифференцируема, имеем
@@ -259,10 +261,12 @@ a(y) \cos xy + b(y) \sin xy\ dy,
 	\]
 \end{exmp}
 
-\section{ИФ для чётных и нечётных функций. Синус- и косинус-преобразования Фурье}
+\section{ИФ для чётных и нечётных функций. Синус- и косинус-преобразования 
+Фурье}
 
 Аналогично, как и в предыдущем примере, в случае, 
-когда $ f(x) $ чётная на $ \R $, т.~е. $ f(-x) = f(x) $, для коэффициентов Фурье
+когда $ f(x) $ чётная на $ \R $, т.~е. $ f(-x) = f(x) $, для коэффициентов 
+Фурье
 \eqref{lec20:2}, \eqref{lec20:3} ИФ $ f(x) $ имеем 
 \begin{equation}
 \label{lec21:15}
@@ -305,7 +309,8 @@ b(y) \stackrel{\eqref{lec20:3}}{=}
 \label{lec21:20}
 f(x) = \ioinf b(y) \sin xy\ dy
 \end{equation}
-Формулы \eqref{lec21:19}, \eqref{lec21:20} также можно симм(не понял слова). с помощью синус-преобразования Фурье
+Формулы \eqref{lec21:19}, \eqref{lec21:20} также можно симм(не понял слова). с 
+помощью синус-преобразования Фурье
 \begin{equation}
 \label{lec21:21}
 \Phi_s(y) = \sqrt{\dfrac{2}{\pi}} \ioinf
@@ -321,7 +326,8 @@ f(x) = \sqrt{\dfrac{2}{\pi}} \ioinf \Phi_s(y) \sin xy\ dy
 на полуоси $ x \geq 0 $. Здесь можно рассатривать чётные
 продолжения(?) $ f_{\text{чётн}}(x) = f(|x|) $ и построить
 $ \Phi_c $ для $ f_{\text{чётн}}(x) $. Опять получим соответствующие формулы
-восстановления функции $ \forall x \geq 0 $ по $ \Phi_c \ f_{\text{чётн}}(x)$.\\
+восстановления функции $ \forall x \geq 0 $ по $ \Phi_c \ 
+f_{\text{чётн}}(x)$.\\
 Аналогично нечётное прододжение $ f_{\text{неч}}(x) = 
 f(|x|) sgn\ x$ на $ \R $ можем построить для 
 $ f_{\text{неч}} $ её $ \Phi_s $ \eqref{lec21:21} и по нему исходная функций 
