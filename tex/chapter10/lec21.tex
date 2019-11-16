@@ -1,0 +1,370 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+
+В полученном соотношении имеем
+\begin{equation}
+\label{lec21:6}
+f(x) \sim \lim\limits_{A \to \infty}
+\dfrac{1}{\pi} \ioinf \dfrac{f(x + t) + f(x - t)}{t} \sin 
+At\ dt
+\end{equation} НИЗОП-1.
+\begin{equation}
+\label{lec21:7}
+F(A) = \dfrac{1}{\pi} \ioinf 
+\dfrac{f(x + t) + f(x - t)}{t} \sin At\ dt,
+\end{equation}
+где $ x\ fix\in \R $, является формулой Дирихле для ИФ.\\
+Отметим, что при получении \eqref{lec21:6}, \eqref{lec21:7}
+сходимость используется НИЗОП 
+для абсолютного интегрирования на $ \R\ f(x) $, подразумевается в смысле
+главного значения этих НИЗОП. % я тут не очень понял из-за сокращений
+
+\section{Сходимость ИФ}
+
+Далее нам понадобится
+\begin{thm}[Римана-Лебега для НИЗОП]
+	Пусть $ g(t) $ на любом конечном промежутке из $ [a; +\infty) $
+	является кусочно-непрерывной функцией. Если $ g(t) $ 
+	абсолютно интегрируема на $ [a; +\infty) $, т.~е.
+	сходится 
+	\begin{equation}
+	\label{lec21:8}
+	\int\limits_{a}^{+\infty} |g(t)|\ dt
+	\end{equation}, то тогда
+	\begin{equation}
+	\label{lec21:9}
+	\int\limits_{a}^{+\infty} g(t) \sin pt\ dt
+	\underset{p \to \infty}{\to} 0
+	\end{equation}
+	\begin{equation}
+	\label{lec21:10}
+	\int\limits_{a}^{+\infty} g(t) \cos pt\ dt
+	\underset{p \to \infty}{\to} 0
+	\end{equation}
+\end{thm}
+\begin{proof}
+	Докажем \eqref{lec21:9}, \eqref{lec21:10} аналогично.\\
+	Из сходимости НИ-1 \eqref{lec21:8} $ \implies $
+	\begin{equation}
+	\label{lec21:11}
+	\forall \epsilon > 0 \quad \exists A(\epsilon) \geq a, \quad
+	\forall A \geq A(\epsilon) \implies 
+	\int\limits_{A}^{+\infty} |g(t)|\ dt \leq \epsilon
+	\end{equation}
+	Отсюда, во-первых, имеем
+	\begin{equation}
+	\label{lec21:12}
+	\begin{gathered}
+	\left|  
+	\int\limits_{a}^{+\infty} g(t) \sin pt\ dt
+	\right| = \left|
+	\int\limits_{a}^{A} g(t) \sin pt\ dt +
+	\int\limits_{A}^{+\infty} g(t) \sin pt\ dt
+	\right| \leq \\
+	\leq \left|
+	\int\limits_{a}^{A} g(t) \sin pt\ dt
+	\right| +
+	\int\limits_{A}^{+\infty} |g(t)||\sin pt|\ dt \leq
+	\left|
+	\int\limits_{a}^{A} g(t) \sin pt\ dt
+	\right| +
+	\int\limits_{A}^{+\infty} |g(t)|\ dt \stackrel{\eqref{lec21:11}}{\leq}
+	\left|
+	\int\limits_{a}^{A} g(t) \sin pt\ dt
+	\right| + \epsilon
+	\end{gathered}
+	\end{equation}
+	Во-вторых, в силу леммы Римана-Лебега 
+	$ \forall A \geq A_\epsilon = A(\epsilon) \geq a \implies $
+	\[
+	\int\limits_{a}^{A} g(t) \sin pt\ dt \underset{p \to \infty}{\to} 0,
+	\]
+	и, значит,
+	\[
+	\forall \epsilon > 0 \quad \exists \delta = \delta_\epsilon > 0:\quad
+	\forall p \in \R,\quad |p| \geq \delta \implies
+	\left|
+	\int\limits_{a}^{A} g(t) \sin pt\ dt
+	\right| \leq \epsilon
+	\]
+	Отсюда, на основании \eqref{lec21:12}, получаем, что
+	\[
+	\forall \epsilon > 0 \exists \delta = \delta_\epsilon > 0: 
+	\forall p \in \R: |p| \geq \delta
+	\stackrel{\eqref{lec21:12}}{\geq}
+	\left|
+	\int\limits_{a}^{+\infty} g(t) \sin pt\ dt
+	\right| \leq \dots \leq 2\epsilon
+	\], что равносильно \eqref{lec21:9}.
+\end{proof}
+\begin{thm}[о сходимости ИФ]
+	Пусть $ f(x) $~--- кусочно-непрерывна и имеет кусочно-непрерывные
+	производные для любых конечных отрезков, входящих в $ \R $.
+	Если $ f(x) $ абсолютно интегрируема на $ \R $, т.~е.
+	сходится \eqref{lec20:1} то тогда 
+	$ \forall x_0 \in \R $ ИФ \eqref{lec20:4} для $ f(x) $ сходится
+	к значению 
+	\begin{equation}
+	\label{lec21:13}
+	S_0 = \dfrac{f(x_0 + 0) + f(x_0 - 0)}{2}
+	\end{equation}
+\end{thm}
+\begin{proof}
+	Докажем, что в силу \eqref{lec21:6}, \eqref{lec21:7}
+	$ \Phi(x_0) = \lim\limits_{A \to \infty} F(A) = 
+	\dfrac{f(x_0 + 0) + f(x_0 - 0)}{2} = S_0 $.
+	Используя общий интеграл Дирихле 
+	\[
+	\int\limits_{0}^{+\infty} \dfrac{\sin Ax}{x}\ dx = \dfrac{\pi}{2} \forall A > 0.
+	\]
+	$ \forall fix x_0 \in \R $ для \eqref{lec21:7} имеем
+	\begin{equation}
+	\label{lec21:14}
+	\begin{gathered}
+	|F(A) - S_0| \stackrel{\eqref{lec21:13}}{=}
+	\left|
+	\dfrac{1}{\pi}
+	\ioinf
+	\dfrac{f(x + t) + f(x - t)}{t} \sin At\ dt - 
+	\dfrac{2}{\pi} \ioinf 
+	\dfrac{f(x_0 + 0) + f(x_0 - 0)}{2} \dfrac{\sin At}{t}\ dt
+	\right| = \\ =
+	\dfrac{1}{\pi} \left|
+	\ioinf \left(
+	\dfrac{f(x_0 + t) - f(x_0 + 0)}{t} +
+	\dfrac{f(x_0 - t) - f(x_0 - 0) }{t}
+	\right)
+	\sin At\ dt
+	\right| = \\ = \dfrac{1}{\pi}
+	\left|
+	\int\limits_{0}^{1} + \int\limits_{1}^{+\infty}
+	\right| \leq \dfrac{1}{\pi}
+	\left|
+	\int\limits_{0}^{1} g(t) \sin At\ dt
+	\right| + \dfrac{1}{\pi}
+	\left|
+	\int\limits_{1}^{+\infty} 
+	\dfrac{f(x_0 + t) + f(x_0 - t)}{t} \sin At\ dt
+	\right| + \dfrac{2|S_0|}{\pi}
+	\left|
+	\int\limits_{1}^{+\infty} \dfrac{\sin At}{t}\ dt
+	\right|
+	\end{gathered}
+	\end{equation}, где $ g(t) = \dfrac{f(x_0 + t) - f(x_0 + 0)}{t} - 
+	\dfrac{f(x_0 - t) - f(x_0 - 0)}{t}\ dt $.
+	Из кусочной непрервыности $ f \implies $
+	\[
+	\exists \lim\limits_{t \to 0} g(t) =
+	(f_+'(x_0 + 0) - f_-'(x_0 - 0)) \in \R,
+	\] т.~е. $ t = 0 $~--- устранимая особая точка для $ g(t) \implies $
+	по лемме Римана-Лебега получаем
+	\[
+	\int\limits_{0}^{1} g(t) \sin At\ dt
+	\underset{A \to +\infty}{\to} 0
+	\]
+	Аналогично функция \[
+	h(t) = \dfrac{f(x_0 + t) + f(x_0 - t)}{t}
+	\] во втором слагаемом \eqref{lec21:14} при 
+	$ t \geq 1 $ будет кусочно-непрерывной и кусочно-дифференцируемой, а также
+	абсолютно интегрирумеой на $ \R $, т.~к.
+	\[
+	|h(t)| \leq \dfrac{|f(x_0 + t)| + |f(x_0 - t)|}{t} \leq
+	|f(x_0 + t)| + |f(x_0 - t)|.
+	\]
+	А интегралы 
+	\[
+	\int\limits_{-\infty}^{+\infty} |f(x_0 \pm t)|\ dt = 
+	\begin{bmatrix}
+	x_0 \pm t = x|_{-\infty}^{+\infty}
+	\end{bmatrix} =
+	\int\limits_{-\infty}^{+\infty} |f(x)|\ dx
+	\] сходятся, то по теореме Римана-Лебега для второго слагаемого имеем
+	\[
+	\int\limits_{1}^{+\infty} h(t) \sin At\ dt
+	\underset{A \to \infty}{\to} 0.
+	\]
+	Осталось доказать, что третье слагаемое 
+	стремится к нулю при $ A \to +\infty $.\\
+	Действительно, делая замену, имеем
+	\[
+	\left|
+	\int\limits_{1}^{+\infty} \dfrac{\sin At}{t}\ dt
+	\right| = \begin{bmatrix}
+	x = At|_{A}^{+\infty} \\
+	dx = Adt
+	\end{bmatrix} = 
+	\left|
+	\int\limits_{A}^{+\infty} \dfrac{\sin x}{\frac{x}{A}}\ \dfrac{dx}{A}
+	\right| = \left|
+	\int\limits_{A}^{+\infty} \dfrac{\sin x}{x}\ dx
+	\right|
+	\]
+	\[
+	\int\limits_{A}^{+\infty} \dfrac{\sin x}{x}\ dx =
+	\ioinf \dfrac{\sin x}{x}\ dx - \int\limits_{0}^{A}
+	\dfrac{\sin x}{x}\ dx = \dfrac{\pi}{2} -
+	\underset{A \to +\infty}{\to} 0
+	\]
+	Т.~к. все слагаемые правой части \eqref{lec21:14} стремятся к нулю при
+	$ A \to +\infty $, то
+	\[
+	F(A) - \dfrac{f(x_0 + 0) + f(x_0 - 0)}{2} 
+	\underset{A \to +\infty}{\to} 0
+	\]
+\end{proof}
+\begin{rem}
+	Если $ x \in \R $~--- точка непрерывности рассмотренной функции, 
+	то $ f(x \pm 0) = f(x) $, и значит, 
+	$ S(x) = \dfrac{f(x_0 + 0) + f(x_0 - 0)}{2} = f(x) $.
+\end{rem}
+В связи с этим для используемых функций $ f(x) $ в точках непрерывности 
+получаем представление через ИФ:
+\[
+f(x) = \Phi(x) = \ioinf
+a(y) \cos xy + b(y) \sin xy\ dy,
+\] где $ a(y),\ b(y) $ вычисляются по формулам \eqref{lec20:2}, \eqref{lec20:3}.
+\begin{exmp}
+	Для функции $ f(x) = e^{-a|x|},\ a = const > 0 $ имеем ИФ. Учитывая, что
+	$ f(x) \in \C(\R) $, абсолютная интегрируема и кусочно-дифференцируема, имеем
+	\[
+	a(y) \stackrel{\eqref{lec20:2}}{=}
+	\dfrac{1}{\pi} \int\limits_{-\infty}^{+\infty}
+	e^{-a|t|} \cos yt\ dt = \dfrac{2}{\pi}
+	\ioinf e^{-at} \cos yt\ dt =\dfrac{2a}{\pi(a^2 + y^2)}
+	\] 
+	\[
+	b(y) \stackrel{\eqref{lec20:3}}{=}
+	\dfrac{1}{\pi} \int\limits_{-\infty}^{+\infty}
+	e^{-a|t|}\sin yt\ dt = 0
+	\]
+	Значит,
+	\[
+	\Phi(x) = \ioinf \dfrac{2a}{\pi(a^2 + y^2)} \cos xy + 0 \sin xy\ dy =
+	\dfrac{2a}{\pi} \ioinf \dfrac{\cos xy}{a^2 + y^2}\ dy = e^{-a|x|}
+	\]
+	Полученный интеграл даёт один из интегралов Лапласа:
+	\[
+	\ioinf \dfrac{\cos xy}{a^2 + y^2}\ dy =
+	\dfrac{\pi}{2a} e^{-a|x|},\ a > 0,\ x \in \R
+	\]
+\end{exmp}
+
+\section{ИФ для чётных и нечётных функций. Синус- и косинус-преобразования Фурье}
+
+Аналогично, как и в предыдущем примере, в случае, 
+когда $ f(x) $ чётная на $ \R $, т.~е. $ f(-x) = f(x) $, для коэффициентов Фурье
+\eqref{lec20:2}, \eqref{lec20:3} ИФ $ f(x) $ имеем 
+\begin{equation}
+\label{lec21:15}
+\begin{gathered}
+a(y) \stackrel{\eqref{lec20:2}}{=}
+\dfrac{2}{\pi} \ioinf f(t) \cos yt\ dt\\
+b(y) \stackrel{\eqref{lec20:3}}{=} 0
+\end{gathered}
+\end{equation}
+Поэтому при соответствующих условиях имеем 
+\begin{equation}
+\label{lec21:16}
+f(x) = \ioinf a(y) \cos xy\ dy.
+\end{equation}
+\eqref{lec21:15}, \eqref{lec21:16} можно записать в симметричном виде, если 
+рассматривается косинус-преобразование Фурье функции $ f(x) $
+\[
+\Phi_c(x) = \sqrt{\dfrac{2}{\pi}} \ioinf f(t) \cos xt\ dt
+\stackrel{\eqref{lec21:15}}{=} \sqrt{\dfrac{\pi}{2}}a(x)
+\]
+Используя это в \eqref{lec21:16}, получим, что рассматриваемая
+чётная функция восстанавливается по своему косинус-преобразованию, т.~е.
+\[
+f(x) = \sqrt{\dfrac{2}{\pi}} \ioinf \Phi_c(y) \cos xy\ dy
+\]
+Аналогично, когда $ f(x) $ нечётная на $ \R $, т.~е.
+$ f(-x) = -f(x) $, тогда имеем 
+\begin{equation}
+\label{lec21:18}
+a(y) \stackrel{\eqref{lec20:2}}{=} 0
+\end{equation}
+\begin{equation}
+\label{lec21:19}
+b(y) \stackrel{\eqref{lec20:3}}{=}
+\dfrac{2}{\pi}
+\ioinf f(t) \sin ty\ dt
+\end{equation}
+При этом ИФ через \eqref{lec21:19} записывается в виде
+\begin{equation}
+\label{lec21:20}
+f(x) = \ioinf b(y) \sin xy\ dy
+\end{equation}
+Формулы \eqref{lec21:19}, \eqref{lec21:20} также можно симм(не понял слова). с помощью синус-преобразования Фурье
+\begin{equation}
+\label{lec21:21}
+\Phi_s(y) = \sqrt{\dfrac{2}{\pi}} \ioinf
+f(t) \sin ty\ dt
+\end{equation}
+Тогда в силу \eqref{lec21:20} функция будет восстанавливаться по формуле:
+\begin{equation}
+\label{lec21:22}
+f(x) = \sqrt{\dfrac{2}{\pi}} \ioinf \Phi_s(y) \sin xy\ dy
+\end{equation}
+Полученные сину- и косинус-преобразования Фурье предполагают, что $ f(x) $ 
+определена на $ \R $. Их можно также использовать для функций, определённых
+на полуоси $ x \geq 0 $. Здесь можно рассатривать чётные
+продолжения(?) $ f_{\text{чётн}}(x) = f(|x|) $ и построить
+$ \Phi_c $ для $ f_{\text{чётн}}(x) $. Опять получим соответствующие формулы
+восстановления функции $ \forall x \geq 0 $ по $ \Phi_c \ f_{\text{чётн}}(x)$.\\
+Аналогично нечётное прододжение $ f_{\text{неч}}(x) = 
+f(|x|) sgn\ x$ на $ \R $ можем построить для 
+$ f_{\text{неч}} $ её $ \Phi_s $ \eqref{lec21:21} и по нему исходная функций 
+$ f(x) $ при соответствующих услових будет восстановлена по \eqref{lec21:22}.
+\begin{exmp}
+	$ \forall x \geq 0 $ рассмотрим $ f(x) = e^{-ax},\ a = const > 0 $.\\
+	$ f_{\text{неч}} $ на $ \R $ будет \[
+	f_{\text{неч}}(x) = f(|x|) sgn\ x = e{-a|x|}sgn\ x
+	\]
+	Вычисляя $ \Phi_s $ в силу \eqref{lec21:21} имеем
+	\[
+	\Phi_s = \sqrt{\dfrac{2}{\pi}} \ioinf f_{\text{неч}}(t)
+	\sin ty\ dt = 
+	\begin{bmatrix}
+	\forall x \geq 0\\
+	f_{\text{неч}}(x) = f(X) = e^{-ax}
+	\end{bmatrix} =
+	\sqrt{\dfrac{2}{\pi}} \ioinf
+	e^{-at} \sin ty\ dt = \sqrt{\dfrac{2}{\pi}}
+	\dfrac{y}{a^2 + y^2}
+	\]
+	Тогда по \eqref{lec21:22} получим, что $ \forall x > 0 \implies f(x) = 
+	f_{\text{неч}} \stackrel{\eqref{lec21:22}}{=}
+	\sqrt{\dfrac{2}{\pi}} \ioinf \Phi_s(y) \sin xy\ dy = 
+	\dfrac{2}{\pi} \ioinf \dfrac{y \sin xy}{a^2 + y^2}\ dy =
+	e^{-ax}$. В результате получаем 2й интеграл Лапласа:\[
+	\ioinf \dfrac{y \sin xy}{a^2 + y^2}\ dy = \dfrac{\pi}{2} e^{-ax},\
+	\forall x > 0
+	\]
+\end{exmp}
+
+\section{Комплексная форма ИФ. Общее преобразование Фурье}
+
+Пусть $ f(x) $ является кусочно-непрерывной и кусочно-дифференцируемой 
+на любом конечном отрезке, входящем в $ \R $. Тогда в случае абсолютной 
+сходимости соответствующих НИ от $ f(x) $ на $ \R $ имеем
+\begin{equation}
+\label{lec21:23}
+f(x) = \Phi(x) = \dfrac{1}{\pi} \ioinf \left(
+\int\limits_{-\infty}^{+\infty} f(t) \cos y(t-x)\ dt
+\right)\ dy = 
+\dfrac{1}{2\pi} \int\limits_{-\infty}^{+\infty}
+\int\limits_{-\infty}^{+\infty} f(t) \cos y(t-x)\ dt\ dy
+\end{equation}
+
+\end{document}
