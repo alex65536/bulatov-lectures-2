@@ -47,9 +47,10 @@ deploy:
   skip_cleanup: true
   overwrite: true
   on:
-    branch: master
-    branch: devel
+    all_branches: true
+    condition: $TRAVIS_BRANCH =~ ^(master|devel)$
 
 tags:
   except:
     - latest
+    - devel-latest

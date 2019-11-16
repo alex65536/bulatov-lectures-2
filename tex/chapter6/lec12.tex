@@ -13,7 +13,8 @@
 
 \begin{thm}[о вычислении общего интеграла Дирихле]
  \begin{equation}
-  \forall a \in \R \implies \ioinf \frac{\sin(ax)}x dx = \frac \pi 2 \sgn a.
+  \forall a \in \R \implies F(a) =
+  \ioinf \frac{\sin(ax)}x dx = \frac \pi 2 \sgn a.
   \label{lec12:6}
  \end{equation}
 \end{thm}
@@ -21,14 +22,14 @@
 \begin{proof}
 Для доказательства рассмотрим три случая:
 \begin{enumerate}
- \item $a > 0 \implies$ \[\implies F(x) = \left[ \begin{array}{l}ax = 
+ \item $a > 0 \implies$ \[\implies F(a) = \left[ \begin{array}{l}ax = 
  t|_0^{+\infty} \\ x = \frac ta,\ dx = \frac{dt}a\end{array}\right] = \ioinf 
  \frac{\sin t}{\frac ta}\cdot\frac{dt}a = \ioinf \frac{\sin t}{t}dt = \frac\pi 
  2 \implies \eqref{lec12:6},\ \text{т.~к.} \sgn a = 1.\]
  \item $a = 0 \implies$ \[\implies F(0) = \ioinf 0\;dx = 0 \implies 
  \eqref{lec12:6},\ \text{т.~к.} \sgn a = 0.\]
  \item $a < 0 \implies$ \[\implies F(a) = \ioinf \frac{\sin (ax)}x dx 
- \stackrel{\text{случай 1}}= -\frac\pi2 \implies \eqref{lec12:6},\ 
+ \stackrel{F(-a) = -F(a)}= -\frac\pi2 \implies \eqref{lec12:6},\ 
  \text{т.~к.} \sgn a = -1. \qedhere\]
 \end{enumerate}
 \end{proof}
