@@ -57,12 +57,12 @@ f(x, y) \stackrel{[a, b]}{\underset{y \to y_0}{\rightrightarrows}} g(x).
 \label{lec6:5}
 \eqref{lec6:4} \iff \forall (y_n) \in D,\ y_n \neq y_0,\ 
 y_n \underset{n \to \infty}{\to} y_0 \implies
-f(x, y) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x).
+f(x, y_n) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x).
 \end{equation}
-\begin{thm}[О предельном переходе в СИЗОП]
+\begin{thm}[о предельном переходе в СИЗОП]
 	Пусть при каждом $ \fix y \in D $ функция $ f(x, y) $ непрерывна 
 	$ \forall x \in [a, b] $. Если $
-	f(x, y) \stackrel{[a, b]}{\underset{y_n \to y_0}{\rightrightarrows}} g(x)$
+	f(x, y) \stackrel{[a, b]}{\underset{y \to y_0}{\rightrightarrows}} g(x)$
 	, где $y_0$ ~--- предельная точка для $ D $, то, во-первых, 
 	$ g(x) \in C([a, b]) $, и, во-вторых, для СИЗОП \eqref{lec5:1} получаем:
 	\begin{equation}
@@ -80,7 +80,7 @@ f(x, y) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x).
 	Функция $(y_n) \in D$ ~--- последовательность Гейне предельной точки $y_0$.
 	Для ФП $ f_n(x) = f(x, y_n) $ имеем:
 	\[
-	f(x, y) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x)
+	f(x, y_n) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x)
 	\]
 	А т.~к. $ \forall f_n(x) \in C([a, b])$, то и $ g(x) \in C([a, b]) $ по 
 	свойствам равномерной сходимости.
