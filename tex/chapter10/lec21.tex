@@ -377,9 +377,10 @@ f(x) = \Phi(x) = \dfrac{1}{\pi} \ioinf \left(
 \end{equation}
 
 В \eqref{lec21:23} сходимость внутреннего НИ-1 подразумевается в смысле 
-$\vp$, т.е.
+$\vp$, т.~е.
 \[ \vp \int\limits_{-\infty}^{+\infty} g(f) dt = \lim_{B \to \infty} 
-\int\limits_{-B}^{B} g(f) dt, \text{ где } g(f) = f(t) \cos y(t-x) \text{ для }  
+\int\limits_{-B}^{B} g(f) dt, \text{ где } g(f) = f(t) \cos y(t-x) \text{ для 
+} 
 \fix y \in \R, \, x \in \R\]
 
 Далее, учитывая, что для $\fix t \in \R$ и $x \in \R \implies h(y) = 
@@ -395,8 +396,10 @@ f(t) \sin y(t - x)$ нечётная по $y$,
   \label{lec21:25}
   f(x) = \frac{1}{2\pi} \intii \left(\intii f(t) \cos y (t - x) dt \right) dy
   + \frac{i}{2\pi} \intii \left(\intii f(t) \sin y (t - x) dt \right) dy =\\= 
-  \frac{1}{2\pi} \intii \left(\intii f(t) (\cos y (t - x) + i\sin y (t - x)) dt 
-  \right) dy = [\text{ф-лы Эйлера}] =\\= \frac{1}{2\pi} \intii \left(\intii f(t) 
+  \frac{1}{2\pi} \intii \left(\intii f(t) (\cos y (t - x) + i\sin y (t - x)) 
+  dt 
+  \right) dy = [\text{ф-лы Эйлера}] =\\= \frac{1}{2\pi} \intii \left(\intii 
+  f(t) 
   e^{iy(t-x)} dt \right) dy.
 \end{multline}
 
@@ -462,16 +465,17 @@ f(t) \sin y(t - x)$ нечётная по $y$,
 
 \begin{enumerate}
   \item \eqref{lec21:26} от непрерывано абсолютно интегрируемой на $\R$ 
-  вещественной функции $f(x)$ является непрерывно ограниченной на $\R$ функцией 
+  вещественной функции $f(x)$ является непрерывно ограниченной на $\R$ 
+  функцией 
   $F(y)$.
   \begin{proof}
-    Т.к. $f(x)$ абсолютно интегрируема на $\R$, то в силу \eqref{lec21:26}
+    Т.~к. $f(x)$ абсолютно интегрируема на $\R$, то в силу \eqref{lec21:26}
     \begin{multline*}
       \forall y \in \R \implies |F(y)| = \left|\frac{1}{\sqrt{2\pi}} \intii 
       f(t)e^{ity}dt\right| \leq [|e^{ity}| = 1] \leq \frac{1}{\sqrt{2\pi}} 
       \intii|f(t)|dt \in \R,
     \end{multline*}
-    т. к. сходится ограниченная д-на (снова не понял). Далее, используя 
+    т.~к. сходится ограниченная д-на (снова не понял). Далее, используя 
     формулы Эйлера,
     
     \begin{multline*}
@@ -486,7 +490,7 @@ f(t) \sin y(t - x)$ нечётная по $y$,
   
   \item Для непрерывной кусочно-дифференцируемой и абсолютно интегрируемой 
   на $\R$ вещественной функции $f(x)$ имеем  \[F^{-1}[F[f]] = 1,\] 
-  \[F[F^{-1}[f]] = 1,\] т. е. если для исходной вещественной Ф1П $f$ 
+  \[F[F^{-1}[f]] = 1,\] т.~е. если для исходной вещественной Ф1П $f$ 
   применять её преобразование Фурье $F(y)$ \eqref{lec21:26} и обратное 
   преобразование, то получим исходную функцию. При этом рассмотренный НИ 
   сходится в смысле $\vp$
@@ -504,11 +508,12 @@ f(t) \sin y(t - x)$ нечётная по $y$,
       '(t)dt = f(x) - f(0) \implies f(x) = f(0) + \int\limits_{0}^{x}f'(t)dt.
     \end{equation}
     
-    Т.к. производная $f'$ абсолютно интегрируема, то тем самым получаем, что 
+    Т.~к. производная $f'$ абсолютно интегрируема, то тем самым получаем, что 
     \[\exists p = \lim_{x \to \infty} f(x) \stackrel{\eqref{lec21:28}}{=} 
     \lim_{x \to \infty}\left(f(0) 
     + \int\limits_{0}^{x}f'(t)dt \right) \in \R.\]
-    Покажем, что $p = 0$. Если предположить, что, например, $p >0$, то для всех 
+    Покажем, что $p = 0$. Если предположить, что, например, $p >0$, то для 
+    всех 
     достаточно больших $x \in \R \implies |f(x)| \geq \frac p2$, а тогда 
     $\intii |f(x)|dx$ расходится по признаку сравнения. Поэтому $|p| = 0 
     \implies p = 0$.
@@ -603,7 +608,8 @@ f(t) \sin y(t - x)$ нечётная по $y$,
   u(x, t) = \frac{1}{\sqrt{2\pi}} \intii F[f](y)u(y,t)e^{ixy}dy.
 \end{equation}
 
-Подставим \eqref{lec21:33} в \eqref{lec21:31} и воспользуемся \eqref{lec21:32}. 
+Подставим \eqref{lec21:33} в \eqref{lec21:31} и воспользуемся 
+\eqref{lec21:32}. 
 Формальное дифференцирование \eqref{lec21:33} даёт
 
 \[\frac{\partial u}{\partial t} = \frac{\partial^2 u}{\partial x^2} = 
@@ -632,7 +638,8 @@ u(y,0) \equiv 1
 \begin{multline}
   \label{lec21:36}
   u(x,t) = \frac{1}{\sqrt{2\pi}} \intii F[f](y)e^{-ty^2}e^{ixy}dy =
-  \frac{1}{\sqrt{2\pi}} \intii F\left[f * \frac{1}{\sqrt{2t}}e^{-\frac{x^2}{4t}}
+  \frac{1}{\sqrt{2\pi}} \intii F\left[f * 
+  \frac{1}{\sqrt{2t}}e^{-\frac{x^2}{4t}}
   \right](y)e^{ixy}dy = \ldots =\\= \frac{1}{\sqrt{2\pi}} 
   F^{-1}\left[F\left[f*\frac{1}{\sqrt{2t}}e^{-\frac{x^2}{4t}}\right]\right] =
   \frac{1}{2\sqrt{\pi t}} \intii e^{-\frac{(x-\tau)^2}{4t}}f(\tau)d\tau.
