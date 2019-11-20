@@ -17,12 +17,12 @@
 	Получаем относительно введенных алгебраических операций множество 
 	пар, которое называется множеством комплексных чисел и обозначается $\C.$
 	
-	Тогда $\forall z = (x, y) \in \C \implies:$
-	\begin{itemize}
+	Тогда $\forall z = (x, y) \in \C \implies$
+	\begin{enumerate}
 		\item [a)] $z = x(1, 0) + y(0, 1),$
 		\item [б)] $j = (1, 0)\implies j^2 = (1, 0),$
 		\item [в)] $i = (0, 1)\implies i^2 = (-1, 0) = -1.$
-	\end{itemize}
+	\end{enumerate}
 
 	В связи с этим можно показать, что множество всех чисел вида $j = (1, 0)$ 
 	обладает всеми основными свойствами действительных чисел и $j$ играет роль
@@ -77,18 +77,17 @@
 	\frac{x_2y_1-x_1y_2}{x_2^2 + y_2^2}.\]
 	
 	Таким образом, $\forall z\in \C,$ 
-	$\left\{
-	\begin{gathered} 
+	$\begin{cases} 
 	x = Re\ z \in \R,\\
 	 y = Im\ z \in \R
-	\end{gathered}\right.$ определены следующие алгебраические операции в $\C:$
-	\begin{itemize}
+	\end{cases}$ определены следующие алгебраические операции в $\C:$
+	\begin{enumerate}
 		\item[a)] $\forall \lambda, \mu\in\C,\ \forall z_1, z_2\in\C:
 		(\lambda(x_1+iy_1)+\mu(x_2+iy_2)) \in\C,$
 		\item[б)] $z_1\cdot z_2 = (x_1+iy_1)(x_2+iy_2) \in\C,$
 		\item[в)] $\forall z_2 \neq 0 \implies \left(\frac{z_1}{z_2}\right)
 		\in \C.$
-	\end{itemize}
+	\end{enumerate}
 	
 	Кроме алгебраической формы записи \eqref{lec23:1} комплексного числа будем
 	использовать тригонометрическую форму записи. Для этого определим модуль 
@@ -96,15 +95,15 @@
 	
 	\[r = |z| = \sqrt{z\cdot \overline{z}} = \sqrt{x^2+y^2}.\]
 	
-	Нетрудно видеть, что $z \neq 0 \Leftrightarrow |z| \neq 0.$ Если
+	Нетрудно видеть, что $z \neq 0 \iff |z| \neq 0.$ Если
 	 $z = x+iy \neq 0,$ то \[z = \sqrt{x^2+y^2}\left(\frac{x}{\sqrt{x^2+y^2}}
 	 + i\frac{y}{\sqrt{x^2+y^2}}\right). \] 
 	
-	В данном случае $\exists \phi\in\R$ такой, что $\left\{
-	\begin{gathered} 
+	В данном случае $\exists \phi\in\R$ такой, что 
+	$\begin{cases} 
 	\cos \phi = \frac{x}{\sqrt{x^2+y^2}},\\
 	\sin \phi = \frac{y}{\sqrt{x^2+y^2}}.
-	\end{gathered}\right.$ Используя такой угол $\phi$, получаем
+	\end{cases}$ Используя такой угол $\phi$, получаем
 	тригонометрическую форму записи комплексного числа:
 	\begin{equation}\label{lec23:2}
 	z = |z|(\cos \phi + i \sin\phi),\ z\neq 0.
@@ -124,17 +123,16 @@
 	\eqref{lec23:3} состоит в том, что $\forall z \neq -1 \implies \arg\
 	\overline{z} = - \arg z$ в силу  \eqref{lec23:3}.
 	
-	Используя тригонометрическую форму  \eqref{lec23:2} для  $\left\{
-	\begin{gathered} 
+	Используя тригонометрическую форму  \eqref{lec23:2} для  
+	$\begin{cases} 
 	z_1 =  x_1+iy_1,\ x_1, y_1\in \R,\\
 	z_2 =  x_2+iy_2,\ x_2, y_2\in \R
-	\end{gathered}\right.$ имеем 
+	\end{cases}$ имеем 
 	
-	$\left\{
-	\begin{gathered} 
+	$\begin{cases} 
 	z_1 = |z_1|(\cos {\phi}_1 + i\sin {\phi}_1),\\
 	z_2 =  |z_2|(\cos {\phi}_2 + i\sin {\phi}_2),
-	\end{gathered}\right.$ тогда
+	\end{cases}$ тогда
 	
 	\[z_1\cdot z_2 = \ldots = |z_1| |z_2|(\cos({\phi}_1+{\phi}_2)+
 	i\sin({\phi}_1+{\phi}_2),\]
@@ -179,21 +177,20 @@
 	\label{lec23:5}
 	|w|^n (\cos n\phi + i\sin n\phi) = |z| (\cos {\phi}_0 + i\sin {\phi}_0),
 	\end{equation}
-	тогда $\left\{
-	\begin{gathered} 
+	тогда $\begin{cases} 
 	|w|^n \cos n\phi =  |z| \cos {\phi}_0,\\
 	|w|^n \sin n\phi  = |z| \sin {\phi}_0.
-	\end{gathered}\right.$
+	\end{cases}$
 	
-	Из этой системы получаем, что $\left\{
-	\begin{gathered} 
+	Из этой системы получаем, что 
+	$\begin{cases} 
 	|w|^n =  |z|,\\
 	n\phi  = {\phi}_0 + 2\pi k,\ k\in\Z
-	\end{gathered}\right. \implies \left\{
-	\begin{gathered} 
+	\end{cases} \implies 
+	\begin{cases} 
 	|w| =  |z|^{\frac{1}{n}},\\
 	\phi  = \frac{{\phi}_0 + 2\pi k}{n},\ k\in\Z,
-	\end{gathered}\right.$ то есть \begin{equation}
+	\end{cases}$ то есть \begin{equation}
 	\label{lec23:6}
 	\sqrt[n]{z} = |z|^{\frac{1}{n}}\left(\cos\frac{{\phi}_0 + 2\pi k}{n}
 	 + i\sin \frac{{\phi}_0 + 2\pi k}{n} \right),\ k\in\Z.
@@ -261,26 +258,24 @@
 		
 		\emph{1 способ.} $z = x+iy,\ x,\ y\in\R,$ подставляя, имеем
 		
-		$x^2 - y^2 +2ixy - 3i(x+iy) - 3- i =0 \Leftrightarrow
-		 \left\{
-		\begin{gathered} 
+		$x^2 - y^2 +2ixy - 3i(x+iy) - 3- i =0 \iff
+		\begin{cases} 
 		x^2 - y^2 + 3y  = 3,\\
 		2xy - 3x  =1,
-		\end{gathered}\right.$ и т.~д.
+		\end{cases}$ и т.~д.
 		
 		\emph{2 способ.}
 		$D = (-3i)^2 + 4(3-i) =3+4i.$ Пусть $\sqrt{D} = a + bi,\ a,\ b \in \R.$
 		
-		$(a+bi)^2 = 3+4i \Leftrightarrow  \left\{
-		\begin{gathered} 
+		$(a+bi)^2 = 3+4i \iff 
+		\begin{cases} 
 		a^2 - b^2 = 3,\\
 		2ab  = 4,
-		\end{gathered}\right.
-		\left\{
-		\begin{gathered} 
+		\end{cases}
+		\begin{cases} 
 		a = \pm 2,\\
 		b  = \pm 1,
-		\end{gathered}\right.
+		\end{cases}
 		\sqrt{D} = \pm2\pm i.
 		$
 		
