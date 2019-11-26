@@ -12,7 +12,7 @@
 \begin{document}
 \section{Аналог формулы Дирихле ряда Фурье для интеграла Фурье}
 
-Пусть $ f(x) $ абсолютно интегрируема на $ \R $, т.~е.
+Пусть $ f(x) $ \emph{абсолютно интегрируема} на $ \R $, т.~е.
 \begin{equation}
 \label{lec20:1}
 \exists \int\limits_{-\infty}^{+\infty} |f(x)|\;dx \text{~--- сходится.}
@@ -125,23 +125,21 @@ x - \fix
 \]
 В полученном соотношении имеем:
 \begin{equation}
-\label{lec20:6}
+\label{lec21:6}
 	f(x) \sim \lim\limits_{A \to +\infty} \dfrac{1}{\pi} 
 	\int\limits_0^{+\infty} \dfrac{f(x + t) + f(x - t)}{t} \sin At\;dt.
 \end{equation}
 
 Полученный НИЗОП-1
 \begin{equation}
-\label{lec20:7}
+\label{lec21:7}
 	F(A) = \dfrac{1}{\pi} \int\limits_0^{+\infty} 
 	\dfrac{f(x + t) + f(x - t)}{t} \sin At\ dt,
 \end{equation}
 где $ x - \fix \in \R $, является формулой Дирихле для ИФ.
 
-\begin{erem}
-Здесь и выше сходимость интегралов рассматривалась в 
-смысле главного значения.
-\end{erem}
-
+Отметим, что при получении \eqref{lec21:6}, \eqref{lec21:7}
+сходимость используемых НИЗОП для абсолютной интегрируемости $f(x)$ на
+$\R$ подразумевается в смысле \underline{главного значения} этих НИЗОП.
 
 \end{document}

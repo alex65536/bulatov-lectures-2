@@ -11,24 +11,6 @@
 
 \begin{document}
 
-В полученном соотношении имеем
-\begin{equation}
-\label{lec21:6}
-f(x) \sim \lim\limits_{A \to \infty}
-\dfrac{1}{\pi} \ioinf \dfrac{f(x + t) + f(x - t)}{t} \sin 
-At\ dt
-\end{equation} НИЗОП-1.
-\begin{equation}
-\label{lec21:7}
-F(A) = \dfrac{1}{\pi} \ioinf 
-\dfrac{f(x + t) + f(x - t)}{t} \sin At\ dt,
-\end{equation}
-где $ x\ \fix\in \R $, является формулой Дирихле для ИФ.\\
-Отметим, что при получении \eqref{lec21:6}, \eqref{lec21:7}
-сходимость используется НИЗОП 
-для абсолютного интегрирования на $ \R\ f(x) $, подразумевается в смысле
-главного значения этих НИЗОП. % я тут не очень понял из-за сокращений
-
 \section{Сходимость ИФ}
 
 Далее нам понадобится
@@ -39,76 +21,77 @@ F(A) = \dfrac{1}{\pi} \ioinf
 	сходится 
 	\begin{equation}
 	\label{lec21:8}
-	\int\limits_{a}^{+\infty} |g(t)|\ dt
-	\end{equation}, то тогда
+	\int\limits_{a}^{+\infty} |g(t)|\;dt,
+	\end{equation} то тогда
 	\begin{equation}
 	\label{lec21:9}
-	\int\limits_{a}^{+\infty} g(t) \sin pt\ dt
-	\underset{p \to \infty}{\to} 0
+	\int\limits_{a}^{+\infty} g(t) \sin pt\;dt
+	\underset{p \to \infty}{\to} 0,
 	\end{equation}
 	\begin{equation}
 	\label{lec21:10}
-	\int\limits_{a}^{+\infty} g(t) \cos pt\ dt
-	\underset{p \to \infty}{\to} 0
+	\int\limits_{a}^{+\infty} g(t) \cos pt\;dt
+	\underset{p \to \infty}{\to} 0.
 	\end{equation}
 \end{thm}
 \begin{proof}
-	Докажем \eqref{lec21:9}, \eqref{lec21:10} аналогично.\\
-	Из сходимости НИ-1 \eqref{lec21:8} $ \implies $
+	Докажем \eqref{lec21:9}, \eqref{lec21:10} аналогично.
+	
+	Из сходимости НИ-1 \eqref{lec21:8} следует, что
 	\begin{equation}
 	\label{lec21:11}
 	\forall \eps > 0 \quad \exists A(\eps) \geq a, \quad
 	\forall A \geq A(\eps) \implies 
-	\int\limits_{A}^{+\infty} |g(t)|\ dt \leq \eps
+	\int\limits_{A}^{+\infty} |g(t)|\;dt \leq \eps.
 	\end{equation}
 	Отсюда, во-первых, имеем
 	\begin{equation}
 	\label{lec21:12}
 	\begin{gathered}
 	\left|  
-	\int\limits_{a}^{+\infty} g(t) \sin pt\ dt
+	\int\limits_{a}^{+\infty} g(t) \sin pt\;dt
 	\right| = \left|
-	\int\limits_{a}^{A} g(t) \sin pt\ dt +
-	\int\limits_{A}^{+\infty} g(t) \sin pt\ dt
+	\int\limits_{a}^{A} g(t) \sin pt\;dt +
+	\int\limits_{A}^{+\infty} g(t) \sin pt\;dt
 	\right| \leq \\
 	\leq \left|
-	\int\limits_{a}^{A} g(t) \sin pt\ dt
+	\int\limits_{a}^{A} g(t) \sin pt\;dt
 	\right| +
-	\int\limits_{A}^{+\infty} |g(t)||\sin pt|\ dt \leq
+	\int\limits_{A}^{+\infty} |g(t)|\cdot|\sin pt|\;dt \leq
 	\left|
-	\int\limits_{a}^{A} g(t) \sin pt\ dt
+	\int\limits_{a}^{A} g(t) \sin pt\;dt
 	\right| +
-	\int\limits_{A}^{+\infty} |g(t)|\ dt \stackrel{\eqref{lec21:11}}{\leq}
+	\int\limits_{A}^{+\infty} |g(t)|\;dt \stackrel{\eqref{lec21:11}}{\leq}
 	\left|
-	\int\limits_{a}^{A} g(t) \sin pt\ dt
-	\right| + \eps
+	\int\limits_{a}^{A} g(t) \sin pt\;dt
+	\right| + \eps.
 	\end{gathered}
 	\end{equation}
 	Во-вторых, в силу леммы Римана-Лебега 
-	$ \forall A \geq A_\eps = A(\eps) \geq a \implies $
 	\[
-	\int\limits_{a}^{A} g(t) \sin pt\ dt \underset{p \to \infty}{\to} 0,
+	\forall A \geq A_\eps = A(\eps) \geq a \implies
+	\int\limits_{a}^{A} g(t) \sin pt\;dt \underset{p \to \infty}{\to} 0,
 	\]
 	и, значит,
 	\[
 	\forall \eps > 0 \quad \exists \delta = \delta_\eps > 0:\quad
 	\forall p \in \R,\quad |p| \geq \delta \implies
 	\left|
-	\int\limits_{a}^{A} g(t) \sin pt\ dt
+	\int\limits_{a}^{A} g(t) \sin pt\;dt
 	\right| \leq \eps
 	\]
 	Отсюда, на основании \eqref{lec21:12}, получаем, что
 	\[
-	\forall \eps > 0 \exists \delta = \delta_\eps > 0: 
-	\forall p \in \R: |p| \geq \delta
+	\forall \eps > 0 \quad \exists \delta = \delta_\eps > 0 \quad 
+	\forall p \in \R \quad |p| \geq \delta
 	\stackrel{\eqref{lec21:12}}{\geq}
 	\left|
-	\int\limits_{a}^{+\infty} g(t) \sin pt\ dt
-	\right| \leq \dots \leq 2\eps
-	\], что равносильно \eqref{lec21:9}.
+	\int\limits_{a}^{+\infty} g(t) \sin pt\;dt
+	\right| \leq \dots \leq 2\eps,
+	\] что равносильно \eqref{lec21:9}.
 \end{proof}
 \begin{thm}[о сходимости ИФ]
-	Пусть $ f(x) $~--- кусочно-непрерывна и имеет кусочно-непрерывные
+	Пусть $ f(x) $ кусочно-непрерывна и имеет кусочно-непрерывные
 	производные для любых конечных отрезков, входящих в $ \R $.
 	Если $ f(x) $ абсолютно интегрируема на $ \R $, т.~е.
 	сходится \eqref{lec20:1} то тогда 
@@ -116,19 +99,19 @@ F(A) = \dfrac{1}{\pi} \ioinf
 	к значению 
 	\begin{equation}
 	\label{lec21:13}
-	S_0 = \dfrac{f(x_0 + 0) + f(x_0 - 0)}{2}
+	S_0 = \dfrac{f(x_0 + 0) + f(x_0 - 0)}{2}.
 	\end{equation}
 \end{thm}
 \begin{proof}
-	Докажем, что в силу \eqref{lec21:6}, \eqref{lec21:7}
-	$ \Phi(x_0) = \lim\limits_{A \to \infty} F(A) = 
-	\dfrac{f(x_0 + 0) + f(x_0 - 0)}{2} = S_0 $.
+	Докажем, что в силу \eqref{lec21:6}, \eqref{lec21:7} выполняется
+	\[\Phi(x_0) = \lim\limits_{A \to \infty} F(A) = 
+	\dfrac{f(x_0 + 0) + f(x_0 - 0)}{2} = S_0.\]
 	Используя общий интеграл Дирихле 
 	\[
-	\int\limits_{0}^{+\infty} \dfrac{\sin Ax}{x}\ dx = 
-	\dfrac{\pi}{2} \forall A > 0.
+	\int\limits_{0}^{+\infty} \dfrac{\sin Ax}{x}\;dx = 
+	\dfrac{\pi}{2}, \quad A > 0,
 	\]
-	$ \forall \fix x_0 \in \R $ для \eqref{lec21:7} имеем
+	для $ \forall \fix x_0 \in \R $ для \eqref{lec21:7} имеем:
 	\begin{equation}
 	\label{lec21:14}
 	\begin{gathered}
@@ -136,41 +119,41 @@ F(A) = \dfrac{1}{\pi} \ioinf
 	\left|
 	\dfrac{1}{\pi}
 	\ioinf
-	\dfrac{f(x + t) + f(x - t)}{t} \sin At\ dt - 
+	\dfrac{f(x + t) + f(x - t)}{t} \sin At\;dt - 
 	\dfrac{2}{\pi} \ioinf 
-	\dfrac{f(x_0 + 0) + f(x_0 - 0)}{2} \dfrac{\sin At}{t}\ dt
+	\dfrac{f(x_0 + 0) + f(x_0 - 0)}{2} \dfrac{\sin At}{t}\;dt
 	\right| = \\ =
 	\dfrac{1}{\pi} \left|
 	\ioinf \left(
 	\dfrac{f(x_0 + t) - f(x_0 + 0)}{t} +
 	\dfrac{f(x_0 - t) - f(x_0 - 0) }{t}
 	\right)
-	\sin At\ dt
+	\sin At\;dt
 	\right| = \\ = \dfrac{1}{\pi}
 	\left|
 	\int\limits_{0}^{1} + \int\limits_{1}^{+\infty}
 	\right| \leq \dfrac{1}{\pi}
 	\left|
-	\int\limits_{0}^{1} g(t) \sin At\ dt
+	\int\limits_{0}^{1} g(t) \sin At\;dt
 	\right| + \dfrac{1}{\pi}
 	\left|
 	\int\limits_{1}^{+\infty} 
-	\dfrac{f(x_0 + t) + f(x_0 - t)}{t} \sin At\ dt
+	\dfrac{f(x_0 + t) + f(x_0 - t)}{t} \sin At\;dt
 	\right| + \dfrac{2|S_0|}{\pi}
 	\left|
-	\int\limits_{1}^{+\infty} \dfrac{\sin At}{t}\ dt
+	\int\limits_{1}^{+\infty} \dfrac{\sin At}{t}\;dt,
 	\right|
 	\end{gathered}
-	\end{equation}, где $ g(t) = \dfrac{f(x_0 + t) - f(x_0 + 0)}{t} - 
-	\dfrac{f(x_0 - t) - f(x_0 - 0)}{t}\ dt $.
-	Из кусочной непрерывности $ f \implies $
+	\end{equation} где $ g(t) = \dfrac{f(x_0 + t) - f(x_0 + 0)}{t} - 
+	\dfrac{f(x_0 - t) - f(x_0 - 0)}{t}\;dt $.
+	Из кусочной непрерывности $f$ следует, что
 	\[
-	\exists \lim\limits_{t \to 0} g(t) =
-	(f_+'(x_0 + 0) - f_-'(x_0 - 0)) \in \R,
-	\] т.~е. $ t = 0 $~--- устранимая особая точка для $ g(t) \implies $
-	по лемме Римана-Лебега получаем
+	\exists \lim\limits_{t \to +0} g(t) =
+	f_+'(x_0 + 0) - f_-'(x_0 - 0) \in \R,
+	\] т.~е. $ t = 0 $~--- устранимая особая точка для $ g(t)$.
+	По лемме Римана-Лебега получаем:
 	\[
-	\int\limits_{0}^{1} g(t) \sin At\ dt
+	\int\limits_{0}^{1} g(t) \sin At\;dt
 	\underset{A \to +\infty}{\to} 0
 	\]
 	Аналогично функция \[
@@ -180,183 +163,188 @@ F(A) = \dfrac{1}{\pi} \ioinf
 	абсолютно интегрируемой на $ \R $, т.~к.
 	\[
 	|h(t)| \leq \dfrac{|f(x_0 + t)| + |f(x_0 - t)|}{t} \leq
-	|f(x_0 + t)| + |f(x_0 - t)|.
+	|f(x_0 + t)| + |f(x_0 - t)|,
 	\]
-	А интегралы 
+	а интегралы 
 	\[
-	\int\limits_{-\infty}^{+\infty} |f(x_0 \pm t)|\ dt = 
+	\int\limits_{-\infty}^{+\infty} |f(x_0 \pm t)|\;dt = 
 	\begin{bmatrix}
-	x_0 \pm t = x|_{-\infty}^{+\infty}
+	x_0 \pm t = x\big|_{-\infty}^{+\infty}
 	\end{bmatrix} =
-	\int\limits_{-\infty}^{+\infty} |f(x)|\ dx
-	\] сходятся, то по теореме Римана-Лебега для второго слагаемого имеем
+	\int\limits_{-\infty}^{+\infty} |f(x)|\;dx
+	\] сходятся, то по теореме Римана-Лебега для второго слагаемого имеем:
 	\[
-	\int\limits_{1}^{+\infty} h(t) \sin At\ dt
+	\int\limits_{1}^{+\infty} h(t) \sin At\;dt
 	\underset{A \to \infty}{\to} 0.
 	\]
 	Осталось доказать, что третье слагаемое 
-	стремится к нулю при $ A \to +\infty $.\\
-	Действительно, делая замену, имеем
+	стремится к нулю при $ A \to +\infty $.
+	Действительно, делая замену, имеем:
 	\[
 	\left|
-	\int\limits_{1}^{+\infty} \dfrac{\sin At}{t}\ dt
+	\int\limits_{1}^{+\infty} \dfrac{\sin At}{t}\;dt
 	\right| = \begin{bmatrix}
-	x = At|_{A}^{+\infty} \\
+	x = At\big|_{A}^{+\infty} \\
 	dx = Adt
 	\end{bmatrix} = 
 	\left|
-	\int\limits_{A}^{+\infty} \dfrac{\sin x}{\frac{x}{A}}\ \dfrac{dx}{A}
+	\int\limits_{A}^{+\infty} \dfrac{\sin x}{\frac{x}{A}}\cdot \dfrac{dx}{A}
 	\right| = \left|
-	\int\limits_{A}^{+\infty} \dfrac{\sin x}{x}\ dx
+	\int\limits_{A}^{+\infty} \dfrac{\sin x}{x}\;dx
 	\right|
 	\]
 	\[
-	\int\limits_{A}^{+\infty} \dfrac{\sin x}{x}\ dx =
-	\ioinf \dfrac{\sin x}{x}\ dx - \int\limits_{0}^{A}
-	\dfrac{\sin x}{x}\ dx = \dfrac{\pi}{2} -
-	\underset{A \to +\infty}{\to} 0
+	\int\limits_{A}^{+\infty} \dfrac{\sin x}{x}\;dx =
+	\ioinf \dfrac{\sin x}{x}\;dx - \int\limits_{0}^{A}
+	\dfrac{\sin x}{x}\;dx = \dfrac{\pi}{2} -
+	\underbrace{\int\limits_{0}^{A} \dfrac{\sin x}{x}\;dx}_{\to\frac\pi2}
+	\underset{A \to +\infty}{\to} 0.
 	\]
 	Т.~к. все слагаемые правой части \eqref{lec21:14} стремятся к нулю при
 	$ A \to +\infty $, то
 	\[
 	F(A) - \dfrac{f(x_0 + 0) + f(x_0 - 0)}{2} 
-	\underset{A \to +\infty}{\to} 0
+	\underset{A \to +\infty}{\to} 0. \qedhere
 	\]
 \end{proof}
 \begin{rem}
 	Если $ x \in \R $~--- точка непрерывности рассмотренной функции, 
-	то $ f(x \pm 0) = f(x) $, и значит, 
+	то ${f(x \pm 0) = f(x)}$, и значит, 
 	$ S(x) = \dfrac{f(x_0 + 0) + f(x_0 - 0)}{2} = f(x) $.
 \end{rem}
 В связи с этим для используемых функций $ f(x) $ в точках непрерывности 
 получаем представление через ИФ:
 \[
 f(x) = \Phi(x) = \ioinf
-a(y) \cos xy + b(y) \sin xy\ dy,
+a(y) \cos xy + b(y) \sin xy\;dy,
 \] где $ a(y),\ b(y) $ вычисляются по формулам \eqref{lec20:2}, 
 \eqref{lec20:3}.
 \begin{exmp}
 	Для функции $ f(x) = e^{-a|x|},\ a = const > 0 $ имеем ИФ. Учитывая, что
-	$ f(x) \in \C(\R) $, абсолютная интегрируема и кусочно-дифференцируема, имеем
+	${f(x) \in C(\R)}$, абсолютно интегрируема и кусочно-дифференцируема, имеем
 	\[
 	a(y) \stackrel{\eqref{lec20:2}}{=}
 	\dfrac{1}{\pi} \int\limits_{-\infty}^{+\infty}
-	e^{-a|t|} \cos yt\ dt = \dfrac{2}{\pi}
-	\ioinf e^{-at} \cos yt\ dt =\dfrac{2a}{\pi(a^2 + y^2)}
+	e^{-a|t|} \cos yt\;dt = \dfrac{2}{\pi}
+	\ioinf e^{-at} \cos yt\;dt = \dots = \dfrac{2a}{\pi(a^2 + y^2)},
 	\] 
 	\[
 	b(y) \stackrel{\eqref{lec20:3}}{=}
 	\dfrac{1}{\pi} \int\limits_{-\infty}^{+\infty}
-	e^{-a|t|}\sin yt\ dt = 0
+	e^{-a|t|}\sin yt\;dt = 0.
 	\]
 	Значит,
 	\[
-	\Phi(x) = \ioinf \dfrac{2a}{\pi(a^2 + y^2)} \cos xy + 0 \sin xy\ dy =
-	\dfrac{2a}{\pi} \ioinf \dfrac{\cos xy}{a^2 + y^2}\ dy = e^{-a|x|}
+	\Phi(x) = \ioinf \dfrac{2a}{\pi(a^2 + y^2)} \cos xy + 0 \sin xy\;dy =
+	\dfrac{2a}{\pi} \ioinf \dfrac{\cos xy}{a^2 + y^2}\;dy = e^{-a|x|}.
 	\]
 	Полученный интеграл даёт один из интегралов Лапласа:
 	\[
-	\ioinf \dfrac{\cos xy}{a^2 + y^2}\ dy =
-	\dfrac{\pi}{2a} e^{-a|x|},\ a > 0,\ x \in \R
+	\ioinf \dfrac{\cos xy}{a^2 + y^2}\;dy =
+	\dfrac{\pi}{2a} e^{-a|x|},\ a > 0,\ x \in \R.
 	\]
 \end{exmp}
 
-\section{ИФ для чётных и нечётных функций. Синус~--- и косинус-преобразования 
+\section{ИФ для чётных и нечётных функций. Синус~\!- и косинус-преобразования 
 Фурье}
 
 Аналогично, как и в предыдущем примере, в случае, 
 когда $ f(x) $ чётная на $ \R $, т.~е. $ f(-x) = f(x) $, для коэффициентов 
 Фурье
-\eqref{lec20:2}, \eqref{lec20:3} ИФ $ f(x) $ имеем 
+\eqref{lec20:2}, \eqref{lec20:3} ИФ $ f(x) $ имеем:
 \begin{equation}
 \label{lec21:15}
 \begin{gathered}
 a(y) \stackrel{\eqref{lec20:2}}{=}
-\dfrac{2}{\pi} \ioinf f(t) \cos yt\ dt\\
-b(y) \stackrel{\eqref{lec20:3}}{=} 0
+\dfrac{2}{\pi} \ioinf f(t) \cos yt\;dt,\\
+b(y) \stackrel{\eqref{lec20:3}}{=} 0.
 \end{gathered}
 \end{equation}
 Поэтому при соответствующих условиях имеем 
 \begin{equation}
 \label{lec21:16}
-f(x) = \ioinf a(y) \cos xy\ dy.
+f(x) = \ioinf a(y) \cos xy\;dy.
 \end{equation}
-\eqref{lec21:15}, \eqref{lec21:16} можно записать в симметричном виде, если 
-рассматривается косинус-преобразование Фурье функции $ f(x) $
+\eqref{lec21:15}, \eqref{lec21:16} можно записать \emph{в симметричном 
+виде}, если 
+рассматривается \emph{косинус-преобразование Фурье} функции $ f(x) $
 \[
-\Phi_c(x) = \sqrt{\dfrac{2}{\pi}} \ioinf f(t) \cos xt\ dt
-\stackrel{\eqref{lec21:15}}{=} \sqrt{\dfrac{\pi}{2}}a(x)
+\Phi_c(x) = \sqrt{\dfrac{2}{\pi}} \ioinf f(t) \cos xt\;dt
+\stackrel{\eqref{lec21:15}}{=} \sqrt{\dfrac{\pi}{2}}\cdot a(x).
 \]
-Используя это в \eqref{lec21:16}, получим, что рассматриваемая
+Используя это преобразование в \eqref{lec21:16}, получим, что 
+рассматриваемая
 чётная функция восстанавливается по своему косинус-преобразованию, т.~е.
 \[
-f(x) = \sqrt{\dfrac{2}{\pi}} \ioinf \Phi_c(y) \cos xy\ dy
+f(x) = \sqrt{\dfrac{2}{\pi}} \ioinf \Phi_c(y) \cos xy\;dy.
 \]
 Аналогично, когда $ f(x) $ нечётная на $ \R $, т.~е.
 $ f(-x) = -f(x) $, тогда имеем 
 \begin{equation}
 \label{lec21:18}
-a(y) \stackrel{\eqref{lec20:2}}{=} 0
+a(y) \stackrel{\eqref{lec20:2}}{=} 0,
 \end{equation}
 \begin{equation}
 \label{lec21:19}
 b(y) \stackrel{\eqref{lec20:3}}{=}
 \dfrac{2}{\pi}
-\ioinf f(t) \sin ty\ dt
+\ioinf f(t) \sin ty\;dt,
 \end{equation}
-При этом ИФ через \eqref{lec21:19} записывается в виде
+при этом ИФ через \eqref{lec21:19} записывается в виде
 \begin{equation}
 \label{lec21:20}
-f(x) = \ioinf b(y) \sin xy\ dy
+f(x) = \ioinf b(y) \sin xy\;dy.
 \end{equation}
-Формулы \eqref{lec21:19}, \eqref{lec21:20} также можно симм(не понял слова). с 
-
-помощью синус-преобразования Фурье
+Формулы \eqref{lec21:19}, \eqref{lec21:20} также можно записать в
+симметричном виде с 
+помощью синус-преобразования Фурье:
 \begin{equation}
 \label{lec21:21}
 \Phi_s(y) = \sqrt{\dfrac{2}{\pi}} \ioinf
-f(t) \sin ty\ dt
+f(t) \sin ty\;dt.
 \end{equation}
 Тогда в силу \eqref{lec21:20} функция будет восстанавливаться по формуле:
 \begin{equation}
 \label{lec21:22}
-f(x) = \sqrt{\dfrac{2}{\pi}} \ioinf \Phi_s(y) \sin xy\ dy
+f(x) = \sqrt{\dfrac{2}{\pi}} \ioinf \Phi_s(y) \sin xy\;dy.
 \end{equation}
-Полученные синус~-- и косинус-преобразования Фурье предполагают, что $ f(x) $ 
+Полученные синус~\!- и косинус-преобразования Фурье предполагают, что $ f(x) $ 
 определена на $ \R $. Их можно также использовать для функций, определённых
 на полуоси $ x \geq 0 $. Здесь можно рассматривать чётные
-продолжения(?) $ f_{\text{чётн}}(x) = f(|x|) $ и построить
+продолжения $ f_{\text{чётн}}(x) = f(|x|) $ и построить
 $ \Phi_c $ для $ f_{\text{чётн}}(x) $. Опять получим соответствующие формулы
-восстановления функции $ \forall x \geq 0 $ по $ \Phi_c \ 
-f_{\text{чётн}}(x)$.\\
-Аналогично нечётное продолжение $ f_{\text{неч}}(x) = 
-f(|x|) sgn\ x$ на $ \R $ можем построить для 
-$ f_{\text{неч}} $ её $ \Phi_s $ \eqref{lec21:21} и по нему исходная функций 
+восстановления функции для $ \forall x \geq 0 $ по $ \Phi_c$
+исходной функции $f_{\text{чётн}}(x)$.
+
+Аналогично строится нечётное продолжение $ f_{\text{неч}}(x) = 
+f(|x|) \sgn x$ на $ \R $. Для 
+$ f_{\text{неч}} $ можно построить её $ \Phi_s $ \eqref{lec21:21} и по 
+нему исходная функция
 $ f(x) $ при соответствующих условиях будет восстановлена по \eqref{lec21:22}.
 \begin{exmp}
-	$ \forall x \geq 0 $ рассмотрим $ f(x) = e^{-ax},\ a = const > 0 $.\\
+	Для $ \forall x \geq 0 $ рассмотрим $ f(x) = e^{-ax},\ a = const > 0 $.
 	$ f_{\text{неч}} $ на $ \R $ будет \[
-	f_{\text{неч}}(x) = f(|x|) sgn\ x = e{-a|x|}sgn\ x
+	f_{\text{неч}}(x) = f(|x|) \sgn x = e^{-a|x|}\sgn x.
 	\]
-	Вычисляя $ \Phi_s $ в силу \eqref{lec21:21} имеем
+	Вычисляя $ \Phi_s $ в силу \eqref{lec21:21}, имеем:
 	\[
 	\Phi_s = \sqrt{\dfrac{2}{\pi}} \ioinf f_{\text{неч}}(t)
-	\sin ty\ dt = 
+	\sin ty\;dt = 
 	\begin{bmatrix}
 	\forall x \geq 0\\
-	f_{\text{неч}}(x) = f(X) = e^{-ax}
+	f_{\text{неч}}(x) = f(x) = e^{-ax}
 	\end{bmatrix} =
 	\sqrt{\dfrac{2}{\pi}} \ioinf
-	e^{-at} \sin ty\ dt = \sqrt{\dfrac{2}{\pi}}
-	\dfrac{y}{a^2 + y^2}
+	e^{-at} \sin ty\;dt = \sqrt{\dfrac{2}{\pi}}
+	\dfrac{y}{a^2 + y^2}.
 	\]
-	Тогда по \eqref{lec21:22} получим, что $ \forall x > 0 \implies f(x) = 
+	Тогда по \eqref{lec21:22} получим, что \[ \forall x > 0 \implies f(x) = 
 	f_{\text{неч}} \stackrel{\eqref{lec21:22}}{=}
-	\sqrt{\dfrac{2}{\pi}} \ioinf \Phi_s(y) \sin xy\ dy = 
-	\dfrac{2}{\pi} \ioinf \dfrac{y \sin xy}{a^2 + y^2}\ dy =
-	e^{-ax}$. В результате получаем 2й интеграл Лапласа:\[
-	\ioinf \dfrac{y \sin xy}{a^2 + y^2}\ dy = \dfrac{\pi}{2} e^{-ax},\
-	\forall x > 0
+	\sqrt{\dfrac{2}{\pi}} \ioinf \Phi_s(y) \sin xy\;dy = 
+	\dfrac{2}{\pi} \ioinf \dfrac{y \sin xy}{a^2 + y^2}\;dy =
+	e^{-ax}.\] В результате получаем второй интеграл Лапласа:\[
+	\ioinf \dfrac{y \sin xy}{a^2 + y^2}\;dy = \dfrac{\pi}{2} e^{-ax},\
+	\forall x > 0.
 	\]
 \end{exmp}
 
@@ -364,25 +352,32 @@ $ f(x) $ при соответствующих условиях будет во�
 
 Пусть $ f(x) $ является кусочно-непрерывной и кусочно-дифференцируемой 
 на любом конечном отрезке, входящем в $ \R $. Тогда в случае абсолютной 
-сходимости соответствующих НИ от $ f(x) $ на $ \R $ имеем
+сходимости соответствующих НИ от $ f(x) $ на $ \R $ имеем:
 \begin{equation}
 \label{lec21:23}
-f(x) = \Phi(x) = \dfrac{1}{\pi} \ioinf \left(
-\int\limits_{-\infty}^{+\infty} f(t) \cos y(t-x)\ dt
-\right)\ dy = 
+\begin{gathered}
+f(x) = \Phi(x) =
+\ioinf (a(y)\cos xy + b(y)\sin xy) dy =\\=
+\ioinf \left(\left(\frac1\pi \ipminf f(t) \cos ty\;dt\right)\cos xy + 
+\left(\frac1\pi \ipminf f(t) \sin ty\;dt\right)\sin xy\right) dy =\\=
+\frac1\pi \ioinf \left( \ipminf f(t)(\cos ty\cos xy + \sin ty\sin xy)dt 
+\right) dy =\\= \dfrac{1}{\pi} \ioinf \left(
+\int\limits_{-\infty}^{+\infty} f(t) \cos y(t-x)\;dt
+\right)dy = 
 \dfrac{1}{2\pi} \int\limits_{-\infty}^{+\infty}
-\int\limits_{-\infty}^{+\infty} f(t) \cos y(t-x)\ dt\ dy
+\int\limits_{-\infty}^{+\infty} f(t) \cos y(t-x)\;dt\;dy.
+\end{gathered}
 \end{equation}
 
 В \eqref{lec21:23} сходимость внутреннего НИ-1 подразумевается в смысле 
 $\vp$, т.~е.
-\[ \vp \int\limits_{-\infty}^{+\infty} g(f) dt = \lim_{B \to \infty} 
-\int\limits_{-B}^{B} g(f) dt, \text{ где } g(f) = f(t) \cos y(t-x) \text{ для 
+\[ \vp \int\limits_{-\infty}^{+\infty} g(t)\;dt = \lim_{B \to \infty} 
+\int\limits_{-B}^{B} g(t)\;dt, \text{ где } g(t) = f(t) \cos y(t-x) \text{ для 
 } 
 \fix y \in \R, \, x \in \R\]
 
 Далее, учитывая, что для $\fix t \in \R$ и $x \in \R \implies h(y) = 
-f(t) \sin y(t - x)$ нечётная по $y$,
+f(t) \sin y(t - x)$ нечётная по $y$, имеем
 \begin{equation}
   \label{lec21:24}
   \vp \ipminf h(y) dy = 0
@@ -396,25 +391,25 @@ f(t) \sin y(t - x)$ нечётная по $y$,
   + \frac{i}{2\pi} \ipminf \left(\ipminf f(t) \sin y (t - x) dt \right) dy =\\= 
   \frac{1}{2\pi} \ipminf \left(\ipminf f(t) (\cos y (t - x) + i\sin y (t - x)) 
   dt 
-  \right) dy = [\text{ф-лы Эйлера}] =\\= \frac{1}{2\pi} \ipminf \left(\ipminf 
-  f(t) 
-  e^{iy(t-x)} dt \right) dy.
+  \right) dy = [\text{формулы Эйлера}] =\\= \frac{1}{2\pi} \ipminf 
+  \left(\ipminf f(t) e^{iy(t-x)} dt \right) dy.
 \end{multline}
 
-Получили интеграл Фурье в комплексной форме \eqref{lec21:25}. Для симметр. 
-(?) формулы \eqref{lec21:25} рассмотрим НИЗОП
+Получили интеграл Фурье в комплексной форме \eqref{lec21:25}. Для 
+симметричной формулы \eqref{lec21:25} рассмотрим НИЗОП
 \begin{equation}
   \label{lec21:26}
   F(y) = \frac1{\sqrt{2\pi}}\ipminf f(t)e^{ity}dt.
 \end{equation}
 
-\eqref{lec21:26}~--- общее преобразование Фурье.  Из \eqref{lec21:26} следует,
+\eqref{lec21:26}~--- \emph{общее преобразование Фурье}. Из 
+\eqref{lec21:26} следует,
 что исходная действительная Ф1П $f(x)$ восстанавливается по её общему
 комплексному преобразованию Фурье по формуле
 \begin{equation}
   \label{lec21:27}
   f(x) = \frac{1}{2\pi} \ipminf \left(\ipminf f(t) e^{iyt} dt \right) 
-  e^{-ixy} dy = \frac{1}{2\sqrt{\pi}} \ipminf F(y) e^{-ixy} dy.
+  e^{-ixy} dy = \frac{1}{\sqrt{2\pi}} \ipminf F(y) e^{-ixy} dy.
 \end{equation}
 
 При  рассматриваемых условиях \eqref{lec21:27} выполняется во всех точках 
@@ -449,8 +444,9 @@ f(t) \sin y(t - x)$ нечётная по $y$,
   \begin{multline*}
     e^{-\frac{x^2}2} = \frac{1}{\sqrt{2\pi}}\ipminf e^{-\frac{y^2}2}e^{-ixy} dy 
     =\frac{1}{\sqrt{2\pi}}\ipminf e^{-\frac{y^2}2}(\cos xy - i\sin xy) dy =\\= 
-    \sqrt{\frac{2}{\pi}}\int\limits_{0}^{+\infty} e^{-\frac{y^2}2}\cos xy dy - 
-    0 \implies \int\limits_{0}^{+\infty} e^{-\frac{y^2}2}\cos xy dy = 
+    \sqrt{\frac{2}{\pi}}\int\limits_{0}^{+\infty} e^{-\frac{y^2}2}\cos xy 
+    \;dy - 
+    0 \implies \int\limits_{0}^{+\infty} e^{-\frac{y^2}2}\cos xy\;dy = 
     e^{-\frac{x^2}2}.
   \end{multline*}
 \end{example}
@@ -473,17 +469,16 @@ f(t) \sin y(t - x)$ нечётная по $y$,
       f(t)e^{ity}dt\right| \leq [|e^{ity}| = 1] \leq \frac{1}{\sqrt{2\pi}} 
       \ipminf|f(t)|dt \in \R,
     \end{multline*}
-    т.~к. сходится ограниченная д-на (снова не понял). Далее, используя 
-    формулы Эйлера,
-    
+    а т.~к. $f(t)$ абсолютно интегрируема, то для $F(y)$ 
+    длина ограничена. Далее, используя формулы Эйлера, получаем
     \begin{multline*}
       F(y) = \frac{1}{\sqrt{2\pi}} \ipminf f(x) (\cos xy + i\sin xy)dx = 
-      \frac{1}{\sqrt{2\pi}} \ipminf f(x) \cos xy dx + \frac{i}{\sqrt{2\pi}} 
-      \ipminf f(x) \sin xy dx,
+      \frac{1}{\sqrt{2\pi}}
+      \underbrace{\ipminf f(x) \cos xy\;dx}_{F_1} + \frac{i}{\sqrt{2\pi}} 
+      \underbrace{\ipminf f(x) \sin xy\;dx}_{F_2},
     \end{multline*}
-    
-    в силу теоремы о непрерывности НИЗОП $\implies F_1$ и $F_2$ непрерывны на 
-    $\R$.
+    откуда в силу теоремы о непрерывности НИЗОП получаем, что $F_1$ и 
+    $F_2$ непрерывны на $\R$.
   \end{proof}
   
   \item Для непрерывной кусочно-дифференцируемой и абсолютно интегрируемой 
@@ -499,13 +494,12 @@ f(t) \sin y(t - x)$ нечётная по $y$,
   на $\R$ вместе с $f'(x)$. Тогда $F[f'] = -iyF[f]$.
   
   \begin{proof}
-    Во-первых, используя формулу Ньютона-Лейбница $\forall x \in \R$,
+    Во-первых, используя формулу Ньютона-Лейбница для $\forall x \in \R$,
     \begin{equation}
       \label{lec21:28}
       \int\limits_{0}^{x}f
       '(t)dt = f(x) - f(0) \implies f(x) = f(0) + \int\limits_{0}^{x}f'(t)dt.
     \end{equation}
-    
     Т.~к. производная $f'$ абсолютно интегрируема, то тем самым получаем, что 
     \[\exists p = \lim_{x \to \infty} f(x) \stackrel{\eqref{lec21:28}}{=} 
     \lim_{x \to \infty}\left(f(0) 
@@ -516,15 +510,17 @@ f(t) \sin y(t - x)$ нечётная по $y$,
     $\ipminf |f(x)|dx$ расходится по признаку сравнения. Поэтому $|p| = 0 
     \implies p = 0$.
     Таким образом,
-    \[ \lim_{x \to +\infty} f(x) = 0.\]
+    $\lim\limits_{x \to +\infty} f(x) = 0.$
     Аналогично доказывается, что
-    \[ \lim_{x \to -\infty} f(x) = 0.\]
+    $\lim\limits_{x \to -\infty} f(x) = 0.$
     Отсюда, в силу формулы интегрирования по частям, получаем
     \begin{multline*}
       F[f'](y) = \frac{1}{\sqrt{2\pi}} \ipminf f'(t)e^{ity}dt = 
       \frac{1}{\sqrt{2\pi}} \ipminf e^{iyt}d(f(t)) =\\= \frac{1}{\sqrt{2\pi}} 
-      \left(f(t) e^{iyt}\bigg|_{t = -\infty}^{t = +\infty} \right) - 
-      \frac{1}{\sqrt{2\pi}} \ipminf f(t)f(e^{iyt}) = -iyF(y).
+      \underbrace{\left(f(t) e^{iyt}\bigg|_{t = -\infty}^{t = +\infty} 
+      \right)}_{e^{iyt} \text{ ограничена},\ f(\pm\infty)=0} - 
+      \frac{1}{\sqrt{2\pi}} \ipminf f(t)d(e^{iyt}) =
+      -iy\frac{1}{\sqrt{2\pi}} \ipminf f(t)e^{iyt}\;dt = -iyF(y). \qedhere
     \end{multline*}
   \end{proof}
   
@@ -532,24 +528,22 @@ f(t) \sin y(t - x)$ нечётная по $y$,
   
   Если две комплекснозначные функции $\phi(x)$ и $\psi(x)$ определены 
   на $\R$, то в случае сходимости НИЗОП
-  \[ \ipminf \phi(t)\psi(x - t)dt \]
-  называется \emph{свёрткой} $\phi, \, \psi$ и обозначается $(\phi * \psi)$.
-  
+  \[ \ipminf \phi(t)\psi(x - t)\;dt \]
+  называется \emph{свёрткой} $\phi$, $\psi$ и обозначается $\phi * \psi$.
   \begin{equation}
     \label{lec21:29}
-    (\phi * \psi)(x) = \ipminf \phi(t)\psi(x - t)dt.
+    (\phi * \psi)(x) = \ipminf \phi(t)\psi(x - t)\;dt.
   \end{equation}
-\end{enumerate}
 
-Также можно показать, что если действительные Ф1П $\phi(t)$ и $\psi(t)$ 
-непрерывны, ограниченны и абсолютно интегрируемы на $\R$, то свёртка этих 
+Можно показать, что если действительные Ф1П $\phi(t)$ и $\psi(t)$ 
+непрерывны, ограничены и абсолютно интегрируемы на $\R$, то свёртка этих 
 функций \eqref{lec21:29} также будет непрерывной, ограниченной и абсолютно 
 интегрируемой на $\R$.
 \begin{thm}[О преобразовании Фурье для свёртки]
   При указанных выше условиях преобразования Фурье для \eqref{lec21:29} имеем
   \begin{equation}
     \label{lec21:30}
-    F[\phi * \psi](y) = \sqrt{2\pi}(F[\phi](y))\cdot(F[\psi](y)).
+    F[\phi * \psi](y) = \sqrt{2\pi}\cdot F[\phi](y)\cdot F[\psi](y).
   \end{equation}
   \begin{proof}
     Доказательство основано на теореме о возможности перестановки порядка 
@@ -563,22 +557,27 @@ f(t) \sin y(t - x)$ нечётная по $y$,
       \frac{1}{\sqrt{2\pi}} 
       \ipminf \left(\ipminf e^{ixy} \phi(t)\psi(x - t)dt\right)dx =
       \frac{1}{\sqrt{2\pi}} 
-      \ipminf \phi(t) \left(\ipminf \psi(x - t)e^{ixy}dt\right)dx =\\=
-      \begin{bmatrix}
-        \text{внутренний: } & \tau = x - t, \tau \big|_{-\infty}^{+\infty} \\
-        & dx = d \tau
-      \end{bmatrix} =
+      \ipminf \phi(t) \left(\ipminf \psi(x - t)e^{ixy}dx\right)dt =\\=
+      \left[
+        \text{внутренний: }
+        \begin{array}{l}
+        \tau = x - t,\ \tau \big|_{-\infty}^{+\infty} \\
+        dx = d \tau
+        \end{array}
+      \right] =
       \frac{1}{\sqrt{2\pi}} 
-      \ipminf \phi(t)\ipminf \psi(\tau)e^{i(t + \tau)y}d\tau dt =\\=
-      \frac{1}{\sqrt{2\pi}} 
-      \ipminf \phi(t)e^{i(t + \tau)y}\left(\ipminf\psi(\tau)d\tau\right) dt =
+      \ipminf \phi(t) \left(\ipminf \psi(\tau)e^{i(t + \tau)y}d\tau\right) 
+      dt =\\= \frac{1}{\sqrt{2\pi}} 
+      \ipminf \phi(t)e^{ity}\left(\ipminf\psi(\tau)e^{i \tau y}d\tau\right) dt =
       \frac{\sqrt{2\pi}}{\sqrt{2\pi}} 
       F[\psi](y) \cdot 
       \underbrace{\ipminf\phi(t)e^{ity}dt}_{=\sqrt{2\pi}F[\phi](y)} =\\= 
-      \sqrt{2\pi}F[\psi](y) \cdot F[\phi](y)
+      \sqrt{2\pi} \cdot F[\psi](y) \cdot F[\phi](y). \qedhere
     \end{multline*}
   \end{proof}
 \end{thm}
+\end{enumerate}
+
 Полученные свойства общего преобразования Фурье позволяют при применении в 
 решениях дифференциальных и интегральных уравнений переходить от 
 дифференциальных и интегральных связей между преобразованиями к
@@ -590,7 +589,7 @@ f(t) \sin y(t - x)$ нечётная по $y$,
 \begin{equation}
 \label{lec21:31}
 \frac{\partial u(x,t)}{\partial t} = \frac{\partial^2 u(x,t)}{\partial x^2}, 
-\; x\in \R, \, t > 0
+\ x\in \R, \ t > 0
 \end{equation}
 
 Будем искать решения, удовлетворяющие начальному условию
@@ -600,47 +599,49 @@ f(t) \sin y(t - x)$ нечётная по $y$,
 \end{equation}
 где $f$~--- известная функция.
 Действуя формально, будем искать решения \eqref{lec21:31}  с начальным 
-условием \eqref{lec21:32} в следующем виде
+условием \eqref{lec21:32} в следующем виде:
 \begin{equation}
   \label{lec21:33}
-  u(x, t) = \frac{1}{\sqrt{2\pi}} \ipminf F[f](y)u(y,t)e^{ixy}dy.
+  u(x, t) = \frac{1}{\sqrt{2\pi}} \ipminf F[f](y)v(y,t)e^{-ixy}dy.
 \end{equation}
 
 Подставим \eqref{lec21:33} в \eqref{lec21:31} и воспользуемся 
 \eqref{lec21:32}. 
 Формальное дифференцирование \eqref{lec21:33} даёт
 
-\[\frac{\partial u}{\partial t} = \frac{\partial^2 u}{\partial x^2} = 
-\frac{1}{\sqrt{2\pi}} \ipminf F[f](y)\left(\frac{\partial u}{\partial t} + 
-y^2u\right)e^{ixy}dy \stackrel{\eqref{lec21:31}}{\equiv} 0.\]
+\[\frac{\partial u}{\partial t} - \frac{\partial^2 u}{\partial x^2} = 
+\frac{1}{\sqrt{2\pi}} \ipminf F[f](y)\left(\frac{\partial v}{\partial t} + 
+y^2v\right)e^{-ixy}dy \stackrel{\eqref{lec21:31}}{\equiv} 0.\]
 
 Чтобы выполнялось последнее соотношение, достаточно, чтобы
 
 \begin{equation}
 \label{lec21:34}
-\frac{\partial u}{\partial t} + y^2u \equiv 0.
+\frac{\partial v}{\partial t} + y^2v \equiv 0.
 \end{equation}
-Будем решать уравнение \eqref{lec21:34}.
+Будем решать уравнение \eqref{lec21:34} с начальным условием
 \begin{equation}
 \label{lec21:35}
-u(y,0) \equiv 1
+v(y,0) \equiv 1.
 \end{equation}
 
 Далее, если $y$~--- $\fix$, получаем, что \eqref{lec21:34}~--- линейное 
 стационарное уравнение по отношению к $t$. Его решением при \eqref{lec21:35} 
 будет
-\[u(y,t) = e^{-ty^2}.\]
+\[v(y,t) = e^{-ty^2}.\]
 Поэтому, используя эту функцию в \eqref{lec21:33}, на основании теоремы 
-о преобразовании Фурье для свёртки
-
+о преобразовании Фурье для свёртки имеем
 \begin{multline}
   \label{lec21:36}
-  u(x,t) = \frac{1}{\sqrt{2\pi}} \ipminf F[f](y)e^{-ty^2}e^{ixy}dy =
+  u(x,t) = \frac{1}{\sqrt{2\pi}} \ipminf F[f](y)e^{-ty^2}e^{-ixy}dy =
+  \frac{1}{\sqrt{2\pi}} \ipminf \frac1{\sqrt{2\pi}}F[f](y)\cdot 
+  F\left[\frac{1}{\sqrt{2t}}e^{-\frac{x^2}{4t}}\right](y) \cdot e^{-ixy}
+  \;dy =\\=
   \frac{1}{\sqrt{2\pi}} \ipminf F\left[f * 
   \frac{1}{\sqrt{2t}}e^{-\frac{x^2}{4t}}
-  \right](y)e^{ixy}dy = \ldots =\\= \frac{1}{\sqrt{2\pi}} 
-  F^{-1}\left[F\left[f*\frac{1}{\sqrt{2t}}e^{-\frac{x^2}{4t}}\right]\right] =
-  \frac{1}{2\sqrt{\pi t}} \ipminf e^{-\frac{(x-\tau)^2}{4t}}f(\tau)d\tau.
+  \right](y)\cdot e^{-ixy}\;dy = \frac{1}{\sqrt{2\pi}} 
+  F^{-1}\left[F\left[f*\frac{1}{\sqrt{2t}}e^{-\frac{x^2}{4t}}\right]\right] =\\=
+  \frac{1}{2\sqrt{\pi t}} \ipminf e^{-\frac{(x-\tau)^2}{4t}}f(\tau)\;d\tau.
 \end{multline}
 
 Формула \eqref{lec21:36}~--- \emph{формула Пуассона}. Она даёт требуемое 
