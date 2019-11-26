@@ -399,7 +399,7 @@ f(t) \sin y(t - x)$ нечётная по $y$, имеем
 симметричной формулы \eqref{lec21:25} рассмотрим НИЗОП
 \begin{equation}
   \label{lec21:26}
-  F(y) = \frac1{\sqrt{2\pi}}\ipminf f(t)e^{ity}dt.
+  \F(y) = \frac1{\sqrt{2\pi}}\ipminf f(t)e^{ity}dt.
 \end{equation}
 
 \eqref{lec21:26}~--- \emph{общее преобразование Фурье}. Из 
@@ -409,7 +409,7 @@ f(t) \sin y(t - x)$ нечётная по $y$, имеем
 \begin{equation}
   \label{lec21:27}
   f(x) = \frac{1}{2\pi} \ipminf \left(\ipminf f(t) e^{iyt} dt \right) 
-  e^{-ixy} dy = \frac{1}{\sqrt{2\pi}} \ipminf F(y) e^{-ixy} dy.
+  e^{-ixy} dy = \frac{1}{\sqrt{2\pi}} \ipminf \F(y) e^{-ixy} dy.
 \end{equation}
 
 При  рассматриваемых условиях \eqref{lec21:27} выполняется во всех точках 
@@ -426,7 +426,7 @@ f(t) \sin y(t - x)$ нечётная по $y$, имеем
 \begin{example}
   Действуя формально над  $f(x) = e^{-\frac{x^2}2}, \, x \in \R$, имеем
   \begin{multline*}
-    F(y) = \frac1{\sqrt{2\pi}}\ipminf e^{-\frac{t^2}2} \cdot e^{ity} dt = 
+    \F(y) = \frac1{\sqrt{2\pi}}\ipminf e^{-\frac{t^2}2} \cdot e^{ity} dt = 
     \frac1{\sqrt{2\pi}}\ipminf e^{-\frac{(t-iy)^2}2-\frac{y^2}2} dt =
     \begin{bmatrix}
       z = t-iy \\
@@ -461,18 +461,18 @@ f(t) \sin y(t - x)$ нечётная по $y$, имеем
   \item \eqref{lec21:26} от непрерывно абсолютно интегрируемой на $\R$ 
   вещественной функции $f(x)$ является непрерывно ограниченной на $\R$ 
   функцией 
-  $F(y)$.
+  $\F(y)$.
   \begin{proof}
     Т.~к. $f(x)$ абсолютно интегрируема на $\R$, то в силу \eqref{lec21:26}
     \begin{multline*}
-      \forall y \in \R \implies |F(y)| = \left|\frac{1}{\sqrt{2\pi}} \ipminf 
+      \forall y \in \R \implies |\F(y)| = \left|\frac{1}{\sqrt{2\pi}} \ipminf 
       f(t)e^{ity}dt\right| \leq [|e^{ity}| = 1] \leq \frac{1}{\sqrt{2\pi}} 
       \ipminf|f(t)|dt \in \R,
     \end{multline*}
-    а т.~к. $f(t)$ абсолютно интегрируема, то для $F(y)$ 
+    а т.~к. $f(t)$ абсолютно интегрируема, то для $\F(y)$ 
     длина ограничена. Далее, используя формулы Эйлера, получаем
     \begin{multline*}
-      F(y) = \frac{1}{\sqrt{2\pi}} \ipminf f(x) (\cos xy + i\sin xy)dx = 
+      \F(y) = \frac{1}{\sqrt{2\pi}} \ipminf f(x) (\cos xy + i\sin xy)dx = 
       \frac{1}{\sqrt{2\pi}}
       \underbrace{\ipminf f(x) \cos xy\;dx}_{F_1} + \frac{i}{\sqrt{2\pi}} 
       \underbrace{\ipminf f(x) \sin xy\;dx}_{F_2},
@@ -482,16 +482,16 @@ f(t) \sin y(t - x)$ нечётная по $y$, имеем
   \end{proof}
   
   \item Для непрерывной кусочно-дифференцируемой и абсолютно интегрируемой 
-  на $\R$ вещественной функции $f(x)$ имеем  \[F^{-1}[F[f]] = 1,\] 
-  \[F[F^{-1}[f]] = 1,\] т.~е. если для исходной вещественной Ф1П $f$ 
-  применять её преобразование Фурье $F(y)$ \eqref{lec21:26} и обратное 
+  на $\R$ вещественной функции $f(x)$ имеем  \[\F^{-1}[\F[f]] = 1,\] 
+  \[\F[\F^{-1}[f]] = 1,\] т.~е. если для исходной вещественной Ф1П $f$ 
+  применять её преобразование Фурье $\F(y)$ \eqref{lec21:26} и обратное 
   преобразование, то получим исходную функцию. При этом рассмотренный НИ 
   сходится в смысле $\vp$
   
   \item Преобразование для $f'(x)$.
   
   Пусть $f(x)$ непрерывно дифференцируема на $\R$ и абсолютно интегрируема 
-  на $\R$ вместе с $f'(x)$. Тогда $F[f'] = -iyF[f]$.
+  на $\R$ вместе с $f'(x)$. Тогда $\F[f'] = -iy\F[f]$.
   
   \begin{proof}
     Во-первых, используя формулу Ньютона-Лейбница для $\forall x \in \R$,
@@ -515,12 +515,12 @@ f(t) \sin y(t - x)$ нечётная по $y$, имеем
     $\lim\limits_{x \to -\infty} f(x) = 0.$
     Отсюда, в силу формулы интегрирования по частям, получаем
     \begin{multline*}
-      F[f'](y) = \frac{1}{\sqrt{2\pi}} \ipminf f'(t)e^{ity}dt = 
+      \F[f'](y) = \frac{1}{\sqrt{2\pi}} \ipminf f'(t)e^{ity}dt = 
       \frac{1}{\sqrt{2\pi}} \ipminf e^{iyt}d(f(t)) =\\= \frac{1}{\sqrt{2\pi}} 
       \underbrace{\left(f(t) e^{iyt}\bigg|_{t = -\infty}^{t = +\infty} 
       \right)}_{e^{iyt} \text{ ограничена},\ f(\pm\infty)=0} - 
       \frac{1}{\sqrt{2\pi}} \ipminf f(t)d(e^{iyt}) =
-      -iy\frac{1}{\sqrt{2\pi}} \ipminf f(t)e^{iyt}\;dt = -iyF(y). \qedhere
+      -iy\frac{1}{\sqrt{2\pi}} \ipminf f(t)e^{iyt}\;dt = -iy\F(y). \qedhere
     \end{multline*}
   \end{proof}
   
@@ -543,13 +543,13 @@ f(t) \sin y(t - x)$ нечётная по $y$, имеем
   При указанных выше условиях преобразования Фурье для \eqref{lec21:29} имеем
   \begin{equation}
     \label{lec21:30}
-    F[\phi * \psi](y) = \sqrt{2\pi}\cdot F[\phi](y)\cdot F[\psi](y).
+    \F[\phi * \psi](y) = \sqrt{2\pi}\cdot \F[\phi](y)\cdot \F[\psi](y).
   \end{equation}
   \begin{proof}
     Доказательство основано на теореме о возможности перестановки порядка 
     интегрирования с двумя несобственными интегралами. Имеем
     \begin{multline*}
-      F[\phi * \psi](y) = 
+      \F[\phi * \psi](y) = 
       \frac{1}{\sqrt{2\pi}} \ipminf 
       e^{ixy}(\phi * \psi)(x)dx \stackrel{\eqref{lec21:29}}{=}
       \frac{1}{\sqrt{2\pi}} 
@@ -570,9 +570,9 @@ f(t) \sin y(t - x)$ нечётная по $y$, имеем
       dt =\\= \frac{1}{\sqrt{2\pi}} 
       \ipminf \phi(t)e^{ity}\left(\ipminf\psi(\tau)e^{i \tau y}d\tau\right) dt =
       \frac{\sqrt{2\pi}}{\sqrt{2\pi}} 
-      F[\psi](y) \cdot 
-      \underbrace{\ipminf\phi(t)e^{ity}dt}_{=\sqrt{2\pi}F[\phi](y)} =\\= 
-      \sqrt{2\pi} \cdot F[\psi](y) \cdot F[\phi](y). \qedhere
+      \F[\psi](y) \cdot 
+      \underbrace{\ipminf\phi(t)e^{ity}dt}_{=\sqrt{2\pi}\F[\phi](y)} =\\= 
+      \sqrt{2\pi} \cdot \F[\psi](y) \cdot \F[\phi](y). \qedhere
     \end{multline*}
   \end{proof}
 \end{thm}
@@ -602,7 +602,7 @@ f(t) \sin y(t - x)$ нечётная по $y$, имеем
 условием \eqref{lec21:32} в следующем виде:
 \begin{equation}
   \label{lec21:33}
-  u(x, t) = \frac{1}{\sqrt{2\pi}} \ipminf F[f](y)v(y,t)e^{-ixy}dy.
+  u(x, t) = \frac{1}{\sqrt{2\pi}} \ipminf \F[f](y)v(y,t)e^{-ixy}dy.
 \end{equation}
 
 Подставим \eqref{lec21:33} в \eqref{lec21:31} и воспользуемся 
@@ -610,7 +610,7 @@ f(t) \sin y(t - x)$ нечётная по $y$, имеем
 Формальное дифференцирование \eqref{lec21:33} даёт
 
 \[\frac{\partial u}{\partial t} - \frac{\partial^2 u}{\partial x^2} = 
-\frac{1}{\sqrt{2\pi}} \ipminf F[f](y)\left(\frac{\partial v}{\partial t} + 
+\frac{1}{\sqrt{2\pi}} \ipminf \F[f](y)\left(\frac{\partial v}{\partial t} + 
 y^2v\right)e^{-ixy}dy \stackrel{\eqref{lec21:31}}{\equiv} 0.\]
 
 Чтобы выполнялось последнее соотношение, достаточно, чтобы
@@ -633,14 +633,14 @@ v(y,0) \equiv 1.
 о преобразовании Фурье для свёртки имеем
 \begin{multline}
   \label{lec21:36}
-  u(x,t) = \frac{1}{\sqrt{2\pi}} \ipminf F[f](y)e^{-ty^2}e^{-ixy}dy =
-  \frac{1}{\sqrt{2\pi}} \ipminf \frac1{\sqrt{2\pi}}F[f](y)\cdot 
-  F\left[\frac{1}{\sqrt{2t}}e^{-\frac{x^2}{4t}}\right](y) \cdot e^{-ixy}
+  u(x,t) = \frac{1}{\sqrt{2\pi}} \ipminf \F[f](y)e^{-ty^2}e^{-ixy}dy =
+  \frac{1}{\sqrt{2\pi}} \ipminf \frac1{\sqrt{2\pi}}\F[f](y)\cdot 
+  \F\left[\frac{1}{\sqrt{2t}}e^{-\frac{x^2}{4t}}\right](y) \cdot e^{-ixy}
   \;dy =\\=
-  \frac{1}{\sqrt{2\pi}} \ipminf F\left[f * 
+  \frac{1}{\sqrt{2\pi}} \ipminf \F\left[f * 
   \frac{1}{\sqrt{2t}}e^{-\frac{x^2}{4t}}
   \right](y)\cdot e^{-ixy}\;dy = \frac{1}{\sqrt{2\pi}} 
-  F^{-1}\left[F\left[f*\frac{1}{\sqrt{2t}}e^{-\frac{x^2}{4t}}\right]\right] =\\=
+  \F^{-1}\left[\F\left[f*\frac{1}{\sqrt{2t}}e^{-\frac{x^2}{4t}}\right]\right] =\\=
   \frac{1}{2\sqrt{\pi t}} \ipminf e^{-\frac{(x-\tau)^2}{4t}}f(\tau)\;d\tau.
 \end{multline}
 
