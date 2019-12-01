@@ -83,8 +83,7 @@ r{e}^{it}
 \]
 
 Из этой равносильности следует, 
-что  все основные свойства сходящихся Ф1П 
-(кроме свойств, использующих неравенства),
+что  все основные свойства сходящихся Ф1П,
 арифметические операции над сходящимися Ф1П автоматически переносятся на КФ.
 В частности, функция \eqref{lec25:1} непрерывна в $t_0 \in [\alpha,\beta ]$,\
 если
@@ -197,10 +196,10 @@ z_n\neq z_0, \ z_n \underset{n \longrightarrow \infty}{\longrightarrow} z_0 $.
 если для нее $\exists$ последовательность Гейне $(z_n) \subset D$. Как и в
 действительном случае, можно показать,
  что $z_0$ --- предельная для $D \iff
-  \begin{cases} 
-  z_0 \text{--- внутренняя} \\
-  z_0 \text{--- граничная}
-\end{cases} \text{для}\ D$, иными словами $z_0 \in \overline{D}$, где
+ \left[\begin{aligned} 
+  z_0 \text{ --- внутренняя} \\
+  z_0 \text{ --- граничная}
+\end{aligned}\right. \  \text{для}\ D$, иными словами $z_0 \in \overline{D}$, где
 $\overline{D} = \sigma\!{D}\cup D$ --- \emph{замыкание} множества $D$.
  Множество $D$ называется \emph{замкнутым}, если все граничные точки $D$
  входят в $D$ (иначе говоря, $D = \overline{D}$). 
@@ -220,14 +219,14 @@ f: D \longrightarrow \C, \ \text{где $D$ --- область в $\C$}.
 $\begin{cases} 
   u =  \operatorname{Re} f(z) \\
   v =  \operatorname{Im} f(z)
-\end{cases}$
+\end{cases}$\!\!\!\!\!\!
  , получаем, что \eqref{lec25:3} можно представить в виде:
  \[
  w = f(z) = u + iv,  \quad
 \begin{cases} 
   u = u(x,y) \\
   v = v(x,y)
-\end{cases}\!\!\!,\quad
+\end{cases}\!\!\!\!\!\!,\quad
 \begin{cases} 
   x =  \operatorname{Re} z \\
   y =  \operatorname{Im} z
@@ -242,7 +241,7 @@ $\begin{cases}
  
  Соответствующие свойства сходимости и непрерывности общих ФКП \eqref{lec25:3}
  определяются через аналогичные свойства действительных Ф2П.
- Свойства дифференцируемости и интегрируемости ФКП eqref{lec25:3} несколько
+ Свойства дифференцируемости и интегрируемости ФКП \eqref{lec25:3} несколько
  отличаются от соответствующих свойств действительных Ф2П и будут
  рассмотрены позже. К \emph{простейшим ФКП} будем относить \emph{линейниые},  
  \emph{дробные},  \emph{степенные},  \emph{тригонометрические} и 
@@ -250,7 +249,7 @@ $\begin{cases}
  а также обратные к ним, \emph{экспоненциальные},
  \emph{общепоказательные} и \emph{логарифмические ФКП}.
 \begin{enumerate}
- \item Линейные
+ \item Линейные ФКП
 \begin{equation}
 \label{lec25:4}
 \begin{cases} 
@@ -260,6 +259,9 @@ $\begin{cases}
 \end{equation}
 	\begin{enumerate}
 	\item Если $a = 0$, то $w \overset{\eqref{lec25:4}}{=} b = const$
+	
+	 \includegraphics[height=0.4\textwidth]{lec25_3.png}
+	
 	\item Если $a \ne 0$, то $\eqref{lec25:4}  \implies z = \frac{w - b}{a}= \alpha{w} + \beta,\ \text{где}\ 
 	\begin{cases} 
  	 \alpha = \frac{1}{a} \ne 0\\
@@ -277,8 +279,8 @@ $\begin{cases}
 			\end{cases}
 			$ --- это соответствует растяжению/сжатию в $k$ раз 
 			линии из \textcircled{z} в \textcircled{w}
-			 и, аналогично, для 
-			более сложных фигур.
+			(аналогично для 
+			более сложных фигур).
 			
 			
 			Параметрически, мы получаем преобразование подобия с возможным поворотом на
@@ -300,7 +302,74 @@ $\begin{cases}
 			
 			 \includegraphics[height=0.4\textwidth]{lec25_4.png}
 			 
+			 \item 
+			 \begin{equation}
+			 \label{lec25:6}
+			 \begin{cases} 
+ 	 		  a = 1\\
+  			 w = z + b
+			 \end{cases}
+			\end{equation}
+			В таком случае имеем параллельный перенос на вектор, соответствующий радиус-вектору числа $b$.
+			
+			\includegraphics[height=0.4\textwidth]{lec25_5.png}
 		\end{enumerate}
-	\end{enumerate}
+		В общем случае для $a \ne 0$ общую линейную ФКП можно записать в следующем виде:
+		\[
+	           w = az + b = a\left(z + \frac{b}{a}\right) = a(z + z_0).
+		\]
+		Применим линейную ФКП сначала к вектору $w_1 = z + z_0$ --- параллельному переносу $z$  на радиус-вектор числа $z_0 = \frac{b}{a}$.
+		 Получим $w = aw_1$, где:
+		 \[
+		 a = |a|e^{i\phi_0}, k = |a| > 0 \implies 
+		 \begin{cases}
+		 w = kw_2 \text{ --- подобие} \\
+		 w_2 = e^{i\phi_0}w_1  \text{ --- поворот}
+		 \end{cases}
+		 \]
+		
+		Образ любой линейной ФКП получается с помощью линейного переноса, растяжения/сжатия и поворота.
+		\end{enumerate}
+	\item Дробно-линейные ФКП
+	\begin{equation}
+	\label{lec25:7}
+	w = \frac{az + b}{cz + d},\  \text{где} \fix{a, b, c, d} \in \C,  
+	\begin{cases} 
+ 	  c \ne 0\\
+  	  d \ne 0
+	\end{cases}
+	\end{equation}
+	Если $c = 0, d \ne 0$, то  $w \overset{\eqref{lec25:7}}{=} \frac{az + b}{d} = a_0{z} + b_0, \ 
+	\begin{cases} 
+ 	 a_0  = \frac{a}{d} \in \C\\
+  	 b_0  = \frac{b}{d} \in \C
+	\end{cases}
+	 $ --- переходим к линейной ФКП. В этом случае $\Delta = \begin{vmatrix}a&b\\ c&d\end{vmatrix} = ad - bc = 0$.
+	 
+	Пусть  $\Delta \ne 0, c \ne 0$. Тогда имеем:
+	\begin{equation}
+	\label{lec25:8}
+	w \overset{\eqref{lec25:7}}{=} \frac{a}{c} - \frac{\Delta}{c^{2}(z + \frac{d}{c})}
+	\end{equation}
+	
+	\eqref{lec25:8} можно представить как последовательное применение следующих отображений:
+		 \begin{enumerate}
+	 	\item 
+	 	$ \begin{cases} 
+ 	 	w_1 = z + z_0\\
+  	  	z_0 = \frac{d}{c} \in C
+		\end{cases}$ --- паралелльный перенос на радиус-вектор числа $z_0$,
+		\item $w_2 = \frac{1}{w_1}$ --- инверсия (подобие относительно единичной окружности),
+		\item 
+		$ \begin{cases} 
+ 	 	w_3 = pw_2\\
+  	  	p = -\frac{\Delta}{c^2} \ne 0
+		\end{cases}$ --- растяжение/сжатие и поворот,
+		\item 
+		$ \begin{cases} 
+ 	 	w_4 = w_3 + w_0\\
+  	  	w_0 = \frac{a}{c} \ne 0
+		\end{cases}$ --- параллельный перенос.
+	 	 \end{enumerate}
  \end{enumerate}
 \end{document}
