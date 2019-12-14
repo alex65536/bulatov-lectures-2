@@ -388,7 +388,8 @@ f(t) \sin y(t - x)$ нечётная по $y$, имеем
 \begin{multline}
   \label{lec21:25}
   f(x) = \frac{1}{2\pi} \ipminf \left(\ipminf f(t) \cos y (t - x) dt \right) dy
-  + \frac{i}{2\pi} \ipminf \left(\ipminf f(t) \sin y (t - x) dt \right) dy =\\= 
+  + \frac{i}{2\pi} \ipminf \left(\ipminf f(t) \sin y (t - x) dt \right) dy 
+  =\\= 
   \frac{1}{2\pi} \ipminf \left(\ipminf f(t) (\cos y (t - x) + i\sin y (t - x)) 
   dt 
   \right) dy = [\text{формулы Эйлера}] =\\= \frac{1}{2\pi} \ipminf 
@@ -442,7 +443,8 @@ f(t) \sin y(t - x)$ нечётная по $y$, имеем
   Отсюда, учитывая, что рассматриваемая $f(x)$ непрерывно дифференцируема и 
   абсолютно интегрируема на $\R$, используя \eqref{lec21:27}, имеем
   \begin{multline*}
-    e^{-\frac{x^2}2} = \frac{1}{\sqrt{2\pi}}\ipminf e^{-\frac{y^2}2}e^{-ixy} dy 
+    e^{-\frac{x^2}2} = \frac{1}{\sqrt{2\pi}}\ipminf e^{-\frac{y^2}2}e^{-ixy} 
+    dy 
     =\frac{1}{\sqrt{2\pi}}\ipminf e^{-\frac{y^2}2}(\cos xy - i\sin xy) dy =\\= 
     \sqrt{\frac{2}{\pi}}\int\limits_{0}^{+\infty} e^{-\frac{y^2}2}\cos xy 
     \;dy - 
@@ -568,7 +570,8 @@ f(t) \sin y(t - x)$ нечётная по $y$, имеем
       \frac{1}{\sqrt{2\pi}} 
       \ipminf \phi(t) \left(\ipminf \psi(\tau)e^{i(t + \tau)y}d\tau\right) 
       dt =\\= \frac{1}{\sqrt{2\pi}} 
-      \ipminf \phi(t)e^{ity}\left(\ipminf\psi(\tau)e^{i \tau y}d\tau\right) dt =
+      \ipminf \phi(t)e^{ity}\left(\ipminf\psi(\tau)e^{i \tau y}d\tau\right) dt 
+      =
       \frac{\sqrt{2\pi}}{\sqrt{2\pi}} 
       \F[\psi](y) \cdot 
       \underbrace{\ipminf\phi(t)e^{ity}dt}_{=\sqrt{2\pi}\F[\phi](y)} =\\= 

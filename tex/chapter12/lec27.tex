@@ -11,7 +11,7 @@
 
 \begin{document}
 
-Полагая $ z = x + iy,\ x, y \in \R $ и $ \omega = u + iv,\ um v \in \R $
+Полагая $ z = x + iy,\ x, y \in \R $ и $ \omega = u + iv,\ u, v \in \R $
 в силу \eqref{lec26;4} имеем:
 \begin{equation}
 \label{lec27:14}
@@ -42,15 +42,15 @@ $ v_0 = \arg z \in ]-\pi; \pi] $. А тогда общее решение \eqref
 будет записываться в виде
 \begin{equation}
 \label{lec27:17}
-v = v_0 + 2\pi k = \arg z + 2\pi k = Arg z, k \in \Z
+v = v_0 + 2\pi k = \arg z + 2\pi k = \Arg z, k \in \Z
 \end{equation}
 Тогда общее решение для \eqref{lec26;4} можно записать в виде:
 \begin{equation}
 \label{lec27:18}
 \omega 
 \stackrel{\eqref{lec27:15}, \eqref{lec27:17}}{=}
-\ln |z| + i Arg z \iff
-\forall z \neq 0 \exists Ln z = \ln |z| + i Arg z = 
+\ln |z| + i \Arg z \iff
+\forall z \neq 0 \exists \Ln z = \ln |z| + i \Arg z = 
 \ln |z| + i(\arg z + 2\pi k), k \in \Z
 \end{equation}
 В \eqref{lec27:18} используется значение натурального логарифма
@@ -74,11 +74,12 @@ $ x = \Re z > 0 $ в силу того, что $ \arg z = 0 $, то компле
 формально
 получаем:\\
 \begin{itemize}
-	\item. $Ln(z_1z_2 = Ln z_1 + Ln z_2)$
-	\item. $Ln \dfrac{z_1}{z_2} = Ln z_1 - Ln z_2,\ \forall z_1, z_2 \neq 0$
+	\item $\Ln(z_1z_2) = \Ln z_1 + \Ln z_2$
+	\item $\Ln \dfrac{z_1}{z_2} = \Ln z_1 - \Ln z_2,\ \forall z_1, z_2 \neq 0$
 \end{itemize}
-При этом $ Ln 1:\ z = 1, z \neq 0 \implies |z| = 1, \arg z = 0 \implies 
-Ln 1 = \ln 1 + i(0 + 2\pi k) = 2i\pi k, k\in\Z
+При этом $ \Ln 1:\ z = 1, z \neq 0 \implies |z| = 1, \arg z = 0 \implies 
+\Ln 1 = \ln 1 + i(0 + 2\pi k) = 2i\pi k, 
+k\in\Z
 $
 Т.~е. в отличие от действительного значения $ \ln 1 = 0 $ все остальные 
 значения комплексные.\\
@@ -88,37 +89,37 @@ $
 $ a, b\ \in \C,\ a \neq 0 $ полагают 
 \begin{equation}
 \label{lec27:20}
-a^b = e^{b Ln a}
+a^b = e^{b \Ln a}
 \end{equation}
 Отсюда, в частности, вводится общая комплексно-степенная функция:
 \begin{equation}
 \label{lec27:21}
-z^\alpha = e ^{\alpha Ln z},\ \alpha \in \C, z \neq 0
+z^\alpha = e ^{\alpha \Ln z},\ \alpha \in \C, z \neq 0
 \end{equation}
 и общая комлексно-показательная функция 
 \begin{equation}
 \label{lec27:22}
-a^z = e^{z Ln a},\ a \neq 0
+a^z = e^{z \Ln a},\ a \neq 0
 \end{equation}
 Как правило в результате получаем многозначные функции.
 \begin{exmps}
 1. Вычислим $ \omega = (-1)^i $.\\
 Имеем \[
-\omega = (-1)^i = e^{i Ln(-1)} = 
+\omega = (-1)^i = e^{i \Ln(-1)} = 
 e^{i(\ln |-1| + i(\arg(-1) + 2\pi k))} = 
 e^{-\pi - 2\pi k},\ k \in \Z
 \]
 Получили бесконечное множество значений.
-2. Найдём $ Arg(-1)^{\sqrt{2}} $. Имеем: \[
-(-1)^{\sqrt{2}} = e^{\sqrt{2} Ln(-1)} = \dots =
+2. Найдём $ \Arg(-1)^{\sqrt{2}} $. Имеем: \[
+(-1)^{\sqrt{2}} = e^{\sqrt{2} \Ln(-1)} = \dots =
 e^{\sqrt{2}(0 + i(\pi + 2\pi k))} = 
 e^{i\sqrt{2}(\pi + 2\pi k)},\ k \in \Z \implies
 \cos (\pi + 2\pi k)\sqrt{2} + i\sin(\pi + 2\pi k)\sqrt{2}
 \]
-Здесь $ Arg z $ будет отличаться от $ (\pi + 2\pi k)\sqrt{2} $ на слагаемое, 
+Здесь $ \Arg z $ будет отличаться от $ (\pi + 2\pi k)\sqrt{2} $ на слагаемое, 
 кратное $ 2\pi $.
 \[
-Arg z = (\pi + 2\pi k)\sqrt{2} + 2\pi m,\ k, m \in \Z
+\Arg z = (\pi + 2\pi k)\sqrt{2} + 2\pi m,\ k, m \in \Z
 \]
 \end{exmps}
 
@@ -128,7 +129,7 @@ Arg z = (\pi + 2\pi k)\sqrt{2} + 2\pi m,\ k, m \in \Z
 Рассмотрим комплексный арксинус
 \begin{equation}
 \label{lec27:23}
-Arcsin z
+\Arcsin z
 \end{equation}, который определяется как решение уравнения
 \begin{equation}
 \label{lec27:24}
@@ -143,7 +144,7 @@ Arcsin z
 	\omega = u + iv\\
 	u, v \in \R
 \end{cases} \implies
-\sin \omega = \dfrac{e^{i\omega} - e^{-i\omega}}{2i} \implies
+\sin \omega = \dfrac{e^{i\omega} - e^{-i\omega}}{2i} \implies\]\[
 e^{i\omega} - e^{-i\omega} = 2iz \implies
 e^{2i\omega} - 2ize^{i\omega} - 1 = 0
 \]
@@ -151,14 +152,14 @@ e^{2i\omega} - 2ize^{i\omega} - 1 = 0
 \[
 t = iz \pm \sqrt{1 - z^2} \implies
 e^{i\omega} = iz \pm \sqrt{1 - z^2} \implies
-i\omega = Ln(iz \pm \sqrt{1 - z^2}) \implies
-\omega = -iLn(iz \pm \sqrt{1 - z^2}) \implies
+i\omega = \Ln(iz \pm \sqrt{1 - z^2}) \implies
+\omega = -i\Ln(iz \pm \sqrt{1 - z^2}) \implies
 \]
 \begin{equation}
 \label{lec27:25}
-Arcsin z = -iLn(iz\pm\sqrt{1 - z^2})
+\Arcsin z = -i\Ln(iz\pm\sqrt{1 - z^2})
 \end{equation}
-Аналогично решая уравнение для $ \omega = Arccos z, z = \cos \omega = 
+Аналогично решая уравнение для $ \omega = \Arccos z, z = \cos \omega = 
 \dfrac{e^{i\omega} + e^{-i\omega}}{2i} $ для $ t = e^{i\omega} $:
 \[
 \begin{cases}
@@ -168,33 +169,33 @@ Arcsin z = -iLn(iz\pm\sqrt{1 - z^2})
 \] 
 \begin{equation}
 \label{lec27:26}
-\omega = Arccos z = -iLn(z \pm \sqrt{z^2 - 1})
+\omega = \Arccos z = -i\Ln(z \pm \sqrt{z^2 - 1})
 \end{equation}
-Для $ \omega = Arctg z $ для $ z = \tg \omega = 
+Для $ \omega = \Arctg z $ для $ z = \tg \omega = 
 \dfrac{e^{2i\omega} - 1}{e^{2i\omega} + 1} $ нетрудно получить, что 
 \begin{equation}
 \label{lec27:27}
-\omega = Arctg z = \dfrac{1}{2i} Ln \dfrac{i - z}{i + z} = 
--\dfrac{i}{2} Ln\dfrac{1 + iz}{1 - iz} = 
-\dfrac{i}{2} Ln\dfrac{1 - iz}{1 + iz},\ \forall z \neq \pm i
+\omega = \Arctg z = \dfrac{1}{2i} \Ln \dfrac{i - z}{i + z} = 
+-\dfrac{i}{2} \Ln\dfrac{1 + iz}{1 - iz} = 
+\dfrac{i}{2} \Ln\dfrac{1 - iz}{1 + iz},\ \forall z \neq \pm i
 \end{equation}
-Аналогично для $ \omega = Arcctg z $ имеем $ z = \ctg \omega = 
+Аналогично для $ \omega = \Arcctg z $ имеем $ z = \ctg \omega = 
 \dfrac{e^{2i\omega} + 1}{e^{2i\omega} - 1} $ получаем
 \begin{equation}
 \label{lec27:28}
-\omega = Arcctg z = \dots = \dfrac{1}{2i} Ln \dfrac{z + i}{z - i} = 
-\dfrac{i}{2} Ln \dfrac{z - i}{z + i},\ z \neq \pm i
+\omega = \Arcctg z = \dots = \dfrac{1}{2i} \Ln \dfrac{z + i}{z - i} = 
+\dfrac{i}{2} \Ln \dfrac{z - i}{z + i},\ z \neq \pm i
 \end{equation}
 Для $ z = \sh \omega = \dfrac{e^{\omega} - e^{-\omega}}{2} \implies $
 \begin{equation}
 \label{lec27:29}
-\omega = Azsh z = Ln(z \pm \sqrt{z^2 + 1})
+\omega = \Azsh z = \Ln(z \pm \sqrt{z^2 + 1})
 \end{equation}
 Таким же образом решается уравнение $ z = \ch \omega = \dfrac{e^{\omega} + 
 e^{-\omega}}{2} $ будет 
 \begin{equation}
 \label{lec27:30}
-\omega = Azch z = \dots = Ln(z \pm \sqrt{z^2 - 1})
+\omega = \Azch z = \dots = \Ln(z \pm \sqrt{z^2 - 1})
 \end{equation}
 Также решая уравнение $ z = \th 
 \omega = \dfrac{e^{2\omega - 1}}{e^{2\omega} + 1} $ и 
@@ -202,18 +203,18 @@ $ z = \cth \omega = \dfrac{e^{2\omega} + 1}{e^{2\omega} - 1} $ соответс�
 получаем
 \begin{equation}
 \label{lec27:31}
-\omega = Azth z = \dfrac{1}{2} Ln \dfrac{1 + z}{1 - z},\ z \neq \pm 1
+\omega = \Azth z = \dfrac{1}{2} \Ln \dfrac{1 + z}{1 - z},\ z \neq \pm 1
 \end{equation}
 \begin{equation}
 \label{lec27:32}
-W = Azcth z = \dfrac{1}{2} Ln \dfrac{z + 1}{z - 1},\
+W = \Azcth z = \dfrac{1}{2} \Ln \dfrac{z + 1}{z - 1},\
 z \neq \pm 1
 \end{equation}
 \begin{exmp}
 	Найдём модуль решения уравнения $ \cos t = 2 $.
 	\[
-	z = Arccos 2 = -iLn(2 \pm \sqrt{4 - 1}) = 
-	-i Ln(2 \pm \sqrt{3}) = -i (\ln|2 \pm \sqrt{3}|) + i(\arg(2 \pm \sqrt{3}) + 
+	z = \Arccos 2 = -i\Ln(2 \pm \sqrt{4 - 1}) = 
+	-i \Ln(2 \pm \sqrt{3}) = -i (\ln|2 \pm \sqrt{3}|) + i(\arg(2 \pm \sqrt{3}) + 
 	2\pi k) = \]\[
 	-i \ln(2 \pm \sqrt{3}) + 2\pi k,\ k \in \Z	
 	\]
