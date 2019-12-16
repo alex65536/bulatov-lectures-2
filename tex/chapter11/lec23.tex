@@ -127,34 +127,32 @@
 	$\begin{cases} 
 	z_1 =  x_1+iy_1,\ x_1, y_1\in \R,\\
 	z_2 =  x_2+iy_2,\ x_2, y_2\in \R
-	\end{cases}$ имеем 
-	
-	$\begin{cases} 
+	\end{cases}$ имеем:
+	\[\begin{cases} 
 	z_1 = |z_1|(\cos {\phi}_1 + i\sin {\phi}_1),\\
 	z_2 =  |z_2|(\cos {\phi}_2 + i\sin {\phi}_2),
-	\end{cases}$ тогда
-	
+	\end{cases}.\] Тогда
 	\[z_1\cdot z_2 = \ldots = |z_1| |z_2|(\cos({\phi}_1+{\phi}_2)+
 	i\sin({\phi}_1+{\phi}_2),\]
 	\[\frac{z_1}{z_2} =[z_2 \neq 0] = \ldots =\frac{ |z_1|}{ |z_2|}
-	(\cos({\phi}_1-{\phi}_2)+i\sin({\phi}_1-{\phi}_2),\]
-	\[ |z_1\cdot z_2| = |z_1||z_2|,\ \text{т.~е. } (x_1^2+y_1^2)(x_2^2+y_2^2)
+	(\cos({\phi}_1-{\phi}_2)+i\sin({\phi}_1-{\phi}_2)),\]
+	\[ |z_1\cdot z_2| = |z_1||z_2| \implies (x_1^2+y_1^2)(x_2^2+y_2^2)
 	 = (x_1x_2 + y_1y_2)^2 + (x_1y_2+x_2y_1)^2 \]
-	и аналогично $|\frac{z_1}{z_2}| = [z_2 \neq 0] = \frac{|z_1|}{|z_2|}.$
+	и аналогично \[\left|\frac{z_1}{z_2}\right| = [z_2 \neq 0] = \frac{|z_1|}{|z_2|}.\]
 	
 	Кроме того, для множества значений аргументов имеем 
-	\[Arg\ (z_1\cdot z_2) = Arg\ z_1 + Arg\ z_2,\]
-	\[Arg\ \left(\frac{z_1}{z_2}\right) =[z_2 \neq 0] = Arg\ z_1 - Arg\ z_2.\]
+	\[\Arg (z_1\cdot z_2) = Arg\ z_1 + Arg\ z_2,\]
+	\[\Arg \left(\frac{z_1}{z_2}\right) =[z_2 \neq 0] = \Arg z_1 - \Arg z_2.\]
 	
-	Далее для удобства кроме алгебраической и тригонометрической форм записи
-	комплексного числа будем использовать также экспоненциальную форму,
+	Далее для удобства, кроме алгебраической и тригонометрической форм записи
+	комплексного числа будем использовать также \emph{экспоненциальную форму},
 	полагая \[\cos \phi + i \sin\phi = e^{i\phi},\] не придавая пока
 	величине $e$ какого-то определенного смысла.
 	
 	В связи с этим получаем:
 	\[z_1\cdot z_2 = \left(|z_1| e^{i{\phi}_1}\right)
 	\left(|z_2| e^{i{\phi}_2}\right) = |z_1||z_2| e^{i({\phi}_1+{\phi}_2)} \]
-	и аналогично $\frac{z_1}{z_2} =  [z_2 \neq 0] = \frac{|z_1|}{|z_2|} 
+	и аналогично $\dfrac{z_1}{z_2} =  [z_2 \neq 0] = \dfrac{|z_1|}{|z_2|} 
 	e^{i({\phi}_1-{\phi}_2)},$ где ${\phi}_1$ и ${\phi}_2$ необязательно 
 	главные значения аргумента.
 	
@@ -166,12 +164,12 @@
 	\end{equation}
 	
 	Формула \eqref{lec23:4} позволяет по аналогии получить все значения корня
-	$n$-й степени $\sqrt[n]{z},\ n\in\N, z\neq 0, z\in \C.$
+	$n$-й степени $\sqrt[n]{z}$, $n\in\N$, $z\neq 0$, $z\in \C.$
 	
 	Определим $w = \sqrt[n]{z}$  как решение уравнения $w^n = z.$ Если 
 	$z\neq 0,$ то $w\neq 0,$ и тогда, используя \eqref{lec23:4}, получаем
-	$w^n = |w|^n(\cos n\phi + i\sin n\phi).$ Рассмотрим ${\phi}_0\in\R:\
-	Arg\ z = {\phi}_0,$ получаем в силу  \eqref{lec23:4}:
+	$w^n = |w|^n(\cos n\phi + i\sin n\phi).$ Рассмотрим ${\phi}_0\in\R:
+	\Arg z = {\phi}_0,$ получаем в силу  \eqref{lec23:4}:
 	
 	\begin{equation}
 	\label{lec23:5}
@@ -199,8 +197,8 @@
 	Под записью $|z|^{\frac{1}{n}}$ подразумевают арифметический положительный
 	корень из числа $|z|$, т.~е. $|z|^{\frac{1}{n}} = \sqrt[n]{z}.$ Хотя в
 	качестве ${\phi}_0$ в \eqref{lec23:6} можно взять любой аргумент 
-	${\phi}_0 = Arg\ z,$ как правило, используют главное значение 
-	${\phi}_0 = arg\ z \in ]-\pi, pi].$ В силу периодичности тригонометрических
+	${\phi}_0 = \Arg z,$ как правило, используют главное значение 
+	${\phi}_0 = \arg z \in \left]-\pi, \pi\right].$ В силу периодичности тригонометрических
 	функций в \eqref{lec23:6}, чтобы получить все значения корня $n$-й степени
 	из комплексного числа $z\neq 0,$ достаточно взять $n$ последовательных целых
 	чисел $k\in\Z.$
@@ -208,25 +206,24 @@
 			\begin{examples}
 		\;
 		\begin{enumerate}
-			\item Вычислить $A=\frac{(1+i\sqrt{3})^{20}}{(1-i)^5}.$
+			\item Вычислить $A=\dfrac{(1+i\sqrt{3})^{20}}{(1-i)^5}.$
 			
-			$A = \frac{\left(2\left(\frac{1}{2}+\frac{i\sqrt{3}}{2}\right)
+			В экспоненциальной форме:
+			\[A = \frac{\left(2\left(\frac{1}{2}+\frac{i\sqrt{3}}{2}\right)
 				\right)^{20}}{\left(\sqrt{2}\left(\frac{1}{\sqrt{2}}-\frac{i}
 				{\sqrt{2}}\right)\right)^5} = \frac{\left(2\left(\cos \frac{\pi}
 				{3}+i\sin \frac{\pi}{3}\right)\right)^{20}}{\left(\sqrt{2}\left(
 				\cos \frac{\pi}{4}-i\sin \frac{\pi}{4}\right)\right)^5} =
 			 \frac{\left(2e^{i\frac{\pi}{3}}\right)^{20}}{\left(\sqrt{2}
 				e^{-i\frac{\pi}{4}}\right)^{5}} = 2^{17}\sqrt{2}e^
-			{i\frac{95\pi}{12}}$ -- в экспоненциальной форме,
-			
+			{i\frac{95\pi}{12}}.\]
 			\begin{multline*}A = 2^{17}\sqrt{2}\left(\cos \left(\pi+\frac{11\pi}
 			{12}\right)+i\sin \left(\pi+\frac{11\pi}{12}\right)\right)= -2^{17}
 			\sqrt{2}\left(\cos \frac{11\pi}{12}+i\sin \frac{11\pi}{12}\right)
 			 = \\=-2^{17}\sqrt{2}\left(\cos \left(\pi-\frac{\pi}{12}\right)+
 			 i\sin \left(\pi-\frac{\pi}{12}\right)\right)=2^{17}\sqrt{2}\left(
 			 \cos \frac{\pi}{12}-i\sin \frac{\pi}{12}\right)\end{multline*}
-			  -- в тригонометрической форме записи, где
-					
+			  Получили ответ в тригонометрической форме записи, где
 			\[\cos \frac{\pi}{12} = \cos \left(\frac{\pi}{3} - 
 			\frac{\pi}{4}\right) = \cos \frac{\pi}{3} \cos \frac{\pi}{4}
 			+ \sin \frac{\pi}{3} \sin\frac{\pi}{4} =\frac{\sqrt{6}+\sqrt{2}}{4}
@@ -235,20 +232,15 @@
 			 \[ \sin \frac{\pi}{12} = \sin \left(\frac{\pi}{3} - 
 			 \frac{\pi}{4}\right) = \sin \frac{\pi}{3} \cos \frac{\pi}{4}
 			 - \cos \frac{\pi}{3} \sin\frac{\pi}{4} =\frac{\sqrt{6}-
-			 \sqrt{2}}{4},\] тогда,
-			  подставляя, получаем
-			 
-			$ A =  2^{16}(\sqrt{3}+1) + i 2^{16}(\sqrt{3}-1)$ -- в
-			алгебраической форме.
-			 
-			
-		\item Найти все корни 4-й степени из комплексного числа $z = -1.$
-		
+			 \sqrt{2}}{4}.\] Тогда,
+			  подставляя, получаем ответ в алгебраической форме:
+			 \[A =  2^{16}(\sqrt{3}+1) + i 2^{16}(\sqrt{3}-1).\]
+		\item Найти все корни четвертой степени из комплексного числа $z = -1.$
 		\[z = e^{i\pi} \implies \forall k\in\Z \implies \sqrt[4]{z} =
 		\left(e^{i(\pi+2\pi k)}\right)^{\frac{1}{4}} = e^{i\left(
 			\frac{\pi}{4}+\frac{\pi k}{2}\right)}.  \]
-		Придавая $k$ 4 последовательных целых значения так, чтобы они были 
-		небольшими, т.~e. используя $k = 0, \pm 1, \pm 2,$ получаем:
+		Придавая $k$ четыре последовательных целых значения так, чтобы они были 
+		небольшими, т.~e. используя $k = 0, \pm 1, 2,$ получаем:
 		\[w_1 = e^{i\frac{\pi}{4}} = \frac{1+i}{\sqrt{2}},\ w_2 = 
 		e^{i\frac{3\pi}{4}} = \frac{-1+i}{\sqrt{2}},\
 		w_3 = e^{-i\frac{\pi}{4}} = \frac{1-i}{\sqrt{2}},\ w_4 = 
@@ -256,7 +248,7 @@
 		
 		\item Решить уравнение $z^2 - 3iz - 3- i = 0.$
 		
-		\emph{1 способ.} $z = x+iy,\ x,\ y\in\R,$ подставляя, имеем
+		\paragraph{1-й способ.} $z = x+iy,\ x,\ y\in\R.$ Подставляя, имеем
 		
 		$x^2 - y^2 +2ixy - 3i(x+iy) - 3- i =0 \iff
 		\begin{cases} 
@@ -264,8 +256,8 @@
 		2xy - 3x  =1,
 		\end{cases}$ и т.~д.
 		
-		\emph{2 способ.}
-		$D = (-3i)^2 + 4(3-i) =3+4i.$ Пусть $\sqrt{D} = a + bi,\ a,\ b \in \R.$
+		\paragraph{2-й способ.}
+		$D = (-3i)^2 + 4(3+i) =3+4i.$ Пусть $\sqrt{D} = a + bi,\ a,\ b \in \R.$
 		
 		$(a+bi)^2 = 3+4i \iff 
 		\begin{cases} 
@@ -279,7 +271,7 @@
 		\sqrt{D} = \pm2\pm i.
 		$
 		
-		Тогда $z_{1, 2} = i-1,\ z_{3, 4} =2i+1. $
+		Тогда \[z_1 = \frac{3i - (2+i)}{2} = i-1,\ z_2 = \frac{3i + (2+i)}{2} =2i+1.\]
 		\end{enumerate}
 		\end{examples}
 
