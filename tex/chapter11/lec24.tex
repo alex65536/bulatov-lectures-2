@@ -26,7 +26,8 @@ $.
 
 Будем говорить, что $ (z_n) $ сходится, если
 \begin{equation}\label{24:2}
-	\exists\, p \in \C :\, \forall \eps > 0\quad \exists \nu = \nu_\eps \in \R \quad 
+	\exists\, p \in \C :\, \forall \eps > 0\quad \exists \nu = \nu_\eps \in \R 
+	\quad 
 	\forall n > \nu \implies |z_n - p| \leq \eps.
 \end{equation}
 
@@ -76,7 +77,8 @@ $ имеем:
 	\R\quad \forall n \geq \widetilde{\nu} \implies 
 	|x_n - p_1| \leq \frac{\eps}{\sqrt{2}}\]
 	
-	\[\forall \eps > 0\quad \exists\,\overline{\nu} = \overline{\nu}_\eps \in \R\quad 
+	\[\forall \eps > 0\quad \exists\,\overline{\nu} = \overline{\nu}_\eps \in 
+	\R\quad 
 	\forall n \geq \overline{\nu} \implies 
 	|y_n - p_2| \leq \frac{\eps}{\sqrt{2}} \]
 	
@@ -104,7 +106,8 @@ $ имеем:
 
 	\begin{thm}(Принцип выбора для комплексных последовательностей (КП))		
 		Из любой ограниченноой последовательности $ z_n $, для которой $ \exists M = 
-		const \geq 0 \quad |z_n| \leq M\quad \forall n \in \N $, можно выбрать сходящуюся 
+		const \geq 0 \quad |z_n| \leq M\quad \forall n \in \N $, можно выбрать 
+		сходящуюся 
 		подпоследовательность.
 	\end{thm}
 	
@@ -120,8 +123,10 @@ $ имеем:
 			(\lambda \underset{n \to \infty}{\lim}z_n + \mu \underset{n \to 
 			\infty}{\lim}w_n) \in \R. \]
 			
-			\item $ \underset{n \to \infty}{\lim} (z_n \cdot w_n) = \left(\underset{n \to 
-			\infty}{\lim} z_n\right)\cdot\left(\underset{n \to \infty}{\lim} w_n\right).$
+			\item $ \underset{n \to \infty}{\lim} (z_n \cdot w_n) = \left(\underset{n 
+			\to 
+			\infty}{\lim} z_n\right)\cdot\left(\underset{n \to \infty}{\lim} 
+			w_n\right).$
 			
 			\item Если $ w_n \neq 0 $ и $ \underset{n \to \infty}{\lim} w_n 
 			\neq 0 $, то $ \underset{n \to \infty}{\lim} \dfrac{z_n}{w_n} = 
@@ -130,7 +135,8 @@ $ имеем:
 		\end{enumerate}
 	\end{thm}
 
-Если $ z_n \appr{n \rightarrow \infty} 0 $, то эту КП называют \emph{бесконечно 
+Если $ z_n \appr{n \rightarrow \infty} 0 $, то эту КП называют 
+\emph{бесконечно 
 малой последовательностью} и пишут $ z_n \underset{n \to \infty}{=} o(1) $.
 
 \begin{exc}
@@ -143,7 +149,8 @@ $ имеем:
 Последовательность, не являющуюся сходящейся, называют расходящейся. Среди 
 расходящихся последовательностей выделяют ББП (бесконечно большие 
 последовательности).
-$ (z_n) $ является ББП, если $ \forall \eps > 0\quad \exists \nu = \nu_\eps \in 
+$ (z_n) $ является ББП, если $ \forall \eps > 0\quad \exists \nu = \nu_\eps 
+\in 
 \R\quad \forall n > \nu \implies |z_n| \geq \eps.$
 При этом, в отличие от действительного случая, в КП не используются величины $ 
 +\infty, -\infty $.
@@ -166,7 +173,8 @@ $ (z_n) $ является ББП, если $ \forall \eps > 0\quad \exists \nu 
 			
 			\item При $ |q| > 1 $ получаем, что \[\forall\, \eps > 0 \quad \exists\, 
 			\nu = \log_{|q|}\eps \in \R: \quad \forall\, n \geq \nu \quad |z_n| = 
-			|q^n| \geq [|q| > 1, n \geq \nu] \geq {|q|}^{\nu} = \eps,\] т.~е. $(z_n)$~--- ББП.
+			|q^n| \geq [|q| > 1, n \geq \nu] \geq {|q|}^{\nu} = \eps,\] т.~е. 
+			$(z_n)$~--- ББП.
 			
 			\item При $ q = 1 \quad \forall z_n = 1 \appr{n \rightarrow \infty} 1 \in 
 			\C $ ~--- сходящаяся КП.
@@ -232,7 +240,8 @@ z = \infty $, будем обозначать $ \overline{\C} = \C \cup {\infty}
 \begin{exmp}(Комплексный геометрический ряд)
 	\;
 	
-	Для $ \fix\, q \in \C $ рассмотрим $ \sum\limits_{k=1}^{\infty}q^{n - 1} = 1 + q + 
+	Для $ \fix\, q \in \C $ рассмотрим $ \sum\limits_{k=1}^{\infty}q^{n - 1} = 1 
+	+ q + 
 	q^2 + \ldots $.
 	
 	Для его частных сумм имеем:
@@ -246,7 +255,8 @@ z = \infty $, будем обозначать $ \overline{\C} = \C \cup {\infty}
 	Для $ q = 1,\ s_n \appr{n \rightarrow \infty} \infty $ получаем, что в этом 
 	случае КР расходится.
 	
-	Если $ |q| < 1 $, то в силу предыдущего примера $ q^n \appr{n \rightarrow \infty} 0 
+	Если $ |q| < 1 $, то в силу предыдущего примера $ q^n \appr{n \rightarrow 
+	\infty} 0 
 	\implies \exists\, \underset{n \to \infty}{\lim} s_n = \dfrac{1}{1 - q} $. А 
 	значит, в этом случае рассматриваемый КР сходится и 
 	\[\sum_{n=1}^{\infty}q^{n - 1} \stackrel{|q| < 1}{=} \frac{1}{1 - q}.\]
@@ -353,7 +363,8 @@ z = \infty $, будем обозначать $ \overline{\C} = \C \cup {\infty}
 		
 		Для $ z_n = \frac{e^{\frac{i}{n}}}{n^\alpha}$ получаем: \[|z_n| = 
 		\frac{1}{n^\alpha} |e^{\frac{i}{n}}| = \left[|e^{\frac{i}{n}}| = 
-		\left|\cos\left(\frac{1}{n}\right) + i\sin\left(\frac{1}{n}\right)\right| = \sqrt{\cos^2\left(\frac{1}{n}\right) + 
+		\left|\cos\left(\frac{1}{n}\right) + i\sin\left(\frac{1}{n}\right)\right| = 
+		\sqrt{\cos^2\left(\frac{1}{n}\right) + 
 		\sin^2\left(\frac{1}{n}\right)} = 1\right] = \frac{1}{n^\alpha}.\]
 		
 		Отсюда, учитывая, что $ \sum \frac{1}{n^\alpha} $ сходится при $ \alpha > 1 
@@ -368,7 +379,8 @@ z = \infty $, будем обозначать $ \overline{\C} = \C \cup {\infty}
 			x_n \quad \text{расходится}, &\alpha \leq 1
 		\end{cases}\]
 		
-		Аналогично $\displaystyle y_n \sim \left[\sin\left(\frac{1}{n}\right) \sim \frac{1}{n} = 
+		Аналогично $\displaystyle y_n \sim \left[\sin\left(\frac{1}{n}\right) \sim 
+		\frac{1}{n} = 
 		\frac{1}{n^{\alpha + 1}}\right] \implies
 		\begin{cases}
 		y  \text{ сходится},& \alpha > 0 \\
@@ -388,10 +400,13 @@ z = \infty $, будем обозначать $ \overline{\C} = \C \cup {\infty}
 	\item Используя произведение КЧР по Коши для $ \sum q^{n - 1} $, абсолютно 
 	сходящегося при ${|q| < 1}$, имеем
 	
-	\[\left(\sum_{n=1}^{\infty}q^{n - 1}\right)^2 = \left(\sum_{n=1}^{\infty}q^{n - 
-	1}\right)\left(\sum_{n=1}^{\infty}q^{n - 1}\right) = (1 + (1 + 1)q + (1 + 1 + 1)q^2 + \ldots ) = \]
+	\[\left(\sum_{n=1}^{\infty}q^{n - 1}\right)^2 = \left(\sum_{n=1}^{\infty}q^{n 
+	- 
+	1}\right)\left(\sum_{n=1}^{\infty}q^{n - 1}\right) = (1 + (1 + 1)q + (1 + 1 + 
+	1)q^2 + \ldots ) = \]
 	\[= 1 + 2q + 3q^2 + \ldots\, \implies
-	\sum_{n=1}^{\infty}nq^{n - 1} = [|q| < 1] = \left(\sum_{n=1}^{\infty}q^{n}\right)^2 = 
+	\sum_{n=1}^{\infty}nq^{n - 1} = [|q| < 1] = 
+	\left(\sum_{n=1}^{\infty}q^{n}\right)^2 = 
 	\frac{1}{(1 - q)^2}.\]
 	\end{enumerate}
 \end{exmp}
