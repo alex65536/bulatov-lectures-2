@@ -1,0 +1,279 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+\begin{document}
+	\section{Арифметические действия над комплексными числами}
+	Рассмотрим пространство $\R^2$, т.~е. множество пар $(a,b),$ где $a,b\in\R.$
+	Как и в случае евклидова пространства, определяется линейная комбинация 
+	элементов множества, т.~e.
+    \[\forall z_1 = (a_1, b_1),\ z_2 = (a_2, b_2) \text{ и } \forall \lambda,
+    \mu \in \R \implies  \lambda z_1 + \mu z_2 = (\lambda a_1 + \mu a_2;\ 
+    \lambda b_1 + \mu b_2)\in \R^2.\] 
+	
+	Наряду с этой алгебраической операцией определим произведение пар по 
+	формуле:
+	\[z_1\cdot z_2 = (a_1a_2 - b_1b_2;\ a_1b_2 + a_2b_1)\in \R^2.\]
+	Получаем относительно введенных алгебраических операций множество 
+	пар, которое называется \emph{множеством комплексных чисел} и обозначается $\C.$
+	
+	Тогда для $\forall z = (x, y) \in \C$ получаем:
+	\begin{enumerate}
+		\item $z = x(1, 0) + y(0, 1),$
+		\item $j = (1, 0)\implies j^2 = (1, 0),$
+		\item $i = (0, 1)\implies i^2 = (-1, 0) = -1.$
+	\end{enumerate}
+
+	В связи с этим можно показать, что множество всех чисел вида $j = (x, 0)$ 
+	обладает всеми основными свойствами действительных чисел и $j$ играет роль
+	единицы рассматриваемого множества комплексных чисел. Поэтому далее для
+	простоты $j = (1, 0)$ будем отождествлять с действительным числом $1$.
+
+	Тогда $\forall z = (x, y) = x(1, 0) + y(0, 1) \in\C$ можно записать в виде:
+	\begin{equation}\label{lec23:1}
+	z = x + iy,\ i^2 = -1,
+	\end{equation}
+	где $x = \Re z \in \R,\ y = \Im z \in \R$ --- соответственно \emph{действительная} 
+	и \emph{мнимая} части копмлексного числа. 
+	
+	Представление комплексного числа в виде \eqref{lec23:1} называется 
+	алгебраической записью.
+	
+	В связи с  \eqref{lec23:1} \begin{multline*}z_1 \cdot z_2 = 
+	(x_1 + iy_1)(x_2 + iy_2) = (x_1x_2 + i^2y_1y_2)+i((x_1y_2+x_2y_1)= [i^2 = 1]
+	= \\=(x_1x_2 - y_1y_2)+i(x_1y_2+x_2y_1)\in\C,\end{multline*}
+	что соответствует первоначальному определению произведения в $\R^2.$
+	
+	Несмотря на то, что множество чисел $\R$ является подмножеством $\C$, не все
+	свойства действительных чисел переносятся на комплексные. Например, хотя
+	множество $\R$ вполне упорядочено (удовлетворяет всем аксиомам порядка),
+	множество $\C$ нельзя полностью упорядочить, т.~e. нельзя ввести сравнение
+	комплексных чисел, чтобы выполнялись все аксиомы порядка. Поэтому в 
+	дальнейшем все, что касается неравенств для комплексных чисел, требует
+	уточнения.
+	
+	Кроме введенных арифметических операций (линейная комбинация и произведение)
+	рассматривают также деление комплексных чисел.
+	
+	Комплексное число $z = x + iy,\ x, y\in\R$ считают ненулевым, если 
+	$\left\{
+	\begin{gathered} 
+		x \neq  0, \\
+		y \neq  0. 
+	\end{gathered} \right.$
+	
+	Если $z_1 = (x_1 + iy_1)\in \C,\ z_2 = (x_2 + iy_2)\in\C,$ то для 
+	$z_2 \neq 0$ частным $z = \frac{z_1}{z_2}$ называется такое число $z$,
+	что $z\cdot z_2 = z_1.$
+	
+	В данном случае удобно использовать комплексно сопряженные числа. Для
+	$z = x +iy,$ $x,\ y\in\R$ \emph{комплексно сопряженным} будет 
+	$\overline{z} = x - iy.$
+	
+	Тогда решением уравнения $z\cdot z_2 = z_1,$ записанном в виде 
+	$z = \frac{z_1}{z_2} = \frac{x_1 + iy_1}{x_2 + iy_2},$ будет
+	\[z = \frac{(x_1 + iy_1)(x_2 - iy_2)}{(x_2 + iy_2)(x_2 - iy_2)} =
+	\frac{x_1x_2+y_1y_2}{x_2^2 + y_2^2} + i  
+	\frac{x_2y_1-x_1y_2}{x_2^2 + y_2^2}.\]
+	
+	Таким образом, $\forall z\in \C,$ 
+	$\begin{cases} 
+	x = \Re z \in \R,\\
+	 y = \Im z \in \R
+	\end{cases}$ определены следующие алгебраические операции в $\C:$
+	\begin{enumerate}
+		\item $\forall \lambda, \mu\in\C,\ \forall z_1, z_2\in\C:
+		(\lambda(x_1+iy_1)+\mu(x_2+iy_2)) \in\C,$
+		\item $z_1\cdot z_2 = (x_1+iy_1)(x_2+iy_2) \in\C,$
+		\item $\forall z_2 \neq 0 \implies \dfrac{z_1}{z_2}
+		\in \C.$
+	\end{enumerate}
+	
+	Кроме алгебраической формы записи \eqref{lec23:1} комплексного числа будем
+	использовать тригонометрическую форму записи. Для этого определим модуль 
+	комплексного числа:
+	
+	\[r = |z| = \sqrt{z\cdot \overline{z}} = \sqrt{x^2+y^2}.\]
+	
+	Нетрудно видеть, что $z \neq 0 \iff |z| \neq 0.$ Если
+	 $z = x+iy \neq 0,$ то \[z = \sqrt{x^2+y^2}\left(\frac{x}{\sqrt{x^2+y^2}}
+	 + i\frac{y}{\sqrt{x^2+y^2}}\right). \] 
+	
+	В данном случае $\exists \phi\in\R$ такой, что 
+	$\begin{cases} 
+	\cos \phi = \frac{x}{\sqrt{x^2+y^2}},\\
+	\sin \phi = \frac{y}{\sqrt{x^2+y^2}}.
+	\end{cases}$ Используя такой угол $\phi$, получаем
+	\emph{тригонометрическую форму записи} комплексного числа:
+	\begin{equation}\label{lec23:2}
+	z = |z|(\cos \phi + i \sin\phi),\ z\neq 0.
+	\end{equation} 
+	
+	Значение аргумента ${\phi}_0 \in \left]-\pi, \pi\right]$ называется \emph{главным
+	значением аргумента} для $z$ и записывается в виде
+	\begin{equation}
+	\label{lec23:3}
+	{\phi}_0 = \arg z.
+	\end{equation}
+	
+	Тогда \eqref{lec23:2} с \eqref{lec23:3} определяет \emph{полный аргумент}:
+	\[ \phi = \Arg z = {\phi}_0+2\pi k,\ k\in\Z. \]
+	
+	У некоторых авторов ${\phi}_0\in[0, 2\pi[.$ Удобство использования
+	\eqref{lec23:3} состоит в том, что $\forall z \neq -1 \implies \arg\
+	\overline{z} = - \arg z$ в силу  \eqref{lec23:3}.
+	
+	Используя тригонометрическую форму  \eqref{lec23:2} для  
+	$\begin{cases} 
+	z_1 =  x_1+iy_1,\ x_1, y_1\in \R,\\
+	z_2 =  x_2+iy_2,\ x_2, y_2\in \R
+	\end{cases}$ имеем:
+	\[\begin{cases} 
+	z_1 = |z_1|(\cos {\phi}_1 + i\sin {\phi}_1),\\
+	z_2 =  |z_2|(\cos {\phi}_2 + i\sin {\phi}_2),
+	\end{cases}.\] Тогда
+	\[z_1\cdot z_2 = \ldots = |z_1| |z_2|(\cos({\phi}_1+{\phi}_2)+
+	i\sin({\phi}_1+{\phi}_2),\]
+	\[\frac{z_1}{z_2} =[z_2 \neq 0] = \ldots =\frac{ |z_1|}{ |z_2|}
+	(\cos({\phi}_1-{\phi}_2)+i\sin({\phi}_1-{\phi}_2)),\]
+	\[ |z_1\cdot z_2| = |z_1||z_2| \implies (x_1^2+y_1^2)(x_2^2+y_2^2)
+	 = (x_1x_2 + y_1y_2)^2 + (x_1y_2+x_2y_1)^2 \]
+	и аналогично \[\left|\frac{z_1}{z_2}\right| = [z_2 \neq 0] = \frac{|z_1|}{|z_2|}.\]
+	
+	Кроме того, для множества значений аргументов имеем 
+	\[\Arg (z_1\cdot z_2) = Arg\ z_1 + Arg\ z_2,\]
+	\[\Arg \left(\frac{z_1}{z_2}\right) =[z_2 \neq 0] = \Arg z_1 - \Arg z_2.\]
+	
+	Далее для удобства, кроме алгебраической и тригонометрической форм записи
+	комплексного числа будем использовать также \emph{экспоненциальную форму},
+	полагая \[\cos \phi + i \sin\phi = e^{i\phi},\] не придавая пока
+	величине $e$ какого-то определенного смысла.
+	
+	В связи с этим получаем:
+	\[z_1\cdot z_2 = \left(|z_1| e^{i{\phi}_1}\right)
+	\left(|z_2| e^{i{\phi}_2}\right) = |z_1||z_2| e^{i({\phi}_1+{\phi}_2)} \]
+	и аналогично $\dfrac{z_1}{z_2} =  [z_2 \neq 0] = \dfrac{|z_1|}{|z_2|} 
+	e^{i({\phi}_1-{\phi}_2)},$ где ${\phi}_1$ и ${\phi}_2$ необязательно 
+	главные значения аргумента.
+	
+	Из полученного в частности следует формула Муавра:
+	\begin{equation}
+	\label{lec23:4}
+	z^n = (r(\cos \phi + i\sin \phi))^n = r^n(\cos n\phi + i\sin n\phi),\
+    \forall n\in \Z.
+	\end{equation}
+	
+	Формула \eqref{lec23:4} позволяет по аналогии получить все значения корня
+	$n$-й степени $\sqrt[n]{z}$, $n\in\N$, $z\neq 0$, $z\in \C.$
+	
+	Определим $w = \sqrt[n]{z}$  как решение уравнения $w^n = z.$ Если 
+	$z\neq 0,$ то $w\neq 0,$ и тогда, используя \eqref{lec23:4}, получаем
+	$w^n = |w|^n(\cos n\phi + i\sin n\phi).$ Рассмотрим ${\phi}_0\in\R:
+	\Arg z = {\phi}_0,$ получаем в силу  \eqref{lec23:4}:
+	
+	\begin{equation}
+	\label{lec23:5}
+	|w|^n (\cos n\phi + i\sin n\phi) = |z| (\cos {\phi}_0 + i\sin {\phi}_0),
+	\end{equation}
+	тогда $\begin{cases} 
+	|w|^n \cos n\phi =  |z| \cos {\phi}_0,\\
+	|w|^n \sin n\phi  = |z| \sin {\phi}_0.
+	\end{cases}$
+	
+	Из этой системы получаем, что 
+	$\begin{cases} 
+	|w|^n =  |z|,\\
+	n\phi  = {\phi}_0 + 2\pi k,\ k\in\Z
+	\end{cases} \implies 
+	\begin{cases} 
+	|w| =  |z|^{\frac{1}{n}},\\
+	\phi  = \frac{{\phi}_0 + 2\pi k}{n},\ k\in\Z,
+	\end{cases}$ то есть \begin{equation}
+	\label{lec23:6}
+	\sqrt[n]{z} = |z|^{\frac{1}{n}}\left(\cos\frac{{\phi}_0 + 2\pi k}{n}
+	 + i\sin \frac{{\phi}_0 + 2\pi k}{n} \right),\ k\in\Z.
+	\end{equation}
+	
+	Под записью $|z|^{\frac{1}{n}}$ подразумевают арифметический положительный
+	корень из числа $|z|$, т.~е. $|z|^{\frac{1}{n}} = \sqrt[n]{z}.$ Хотя в
+	качестве ${\phi}_0$ в \eqref{lec23:6} можно взять любой аргумент 
+	${\phi}_0 = \Arg z,$ как правило, используют главное значение 
+	${\phi}_0 = \arg z \in \left]-\pi, \pi\right].$ В силу периодичности тригонометрических
+	функций в \eqref{lec23:6}, чтобы получить все значения корня $n$-й степени
+	из комплексного числа $z\neq 0,$ достаточно взять $n$ последовательных целых
+	чисел $k\in\Z.$
+	
+			\begin{examples}
+		\;
+		\begin{enumerate}
+			\item Вычислить $A=\dfrac{(1+i\sqrt{3})^{20}}{(1-i)^5}.$
+			
+			В экспоненциальной форме:
+			\[A = \frac{\left(2\left(\frac{1}{2}+\frac{i\sqrt{3}}{2}\right)
+				\right)^{20}}{\left(\sqrt{2}\left(\frac{1}{\sqrt{2}}-\frac{i}
+				{\sqrt{2}}\right)\right)^5} = \frac{\left(2\left(\cos \frac{\pi}
+				{3}+i\sin \frac{\pi}{3}\right)\right)^{20}}{\left(\sqrt{2}\left(
+				\cos \frac{\pi}{4}-i\sin \frac{\pi}{4}\right)\right)^5} =
+			 \frac{\left(2e^{i\frac{\pi}{3}}\right)^{20}}{\left(\sqrt{2}
+				e^{-i\frac{\pi}{4}}\right)^{5}} = 2^{17}\sqrt{2}e^
+			{i\frac{95\pi}{12}}.\]
+			\begin{multline*}A = 2^{17}\sqrt{2}\left(\cos \left(\pi+\frac{11\pi}
+			{12}\right)+i\sin \left(\pi+\frac{11\pi}{12}\right)\right)= -2^{17}
+			\sqrt{2}\left(\cos \frac{11\pi}{12}+i\sin \frac{11\pi}{12}\right)
+			 = \\=-2^{17}\sqrt{2}\left(\cos \left(\pi-\frac{\pi}{12}\right)+
+			 i\sin \left(\pi-\frac{\pi}{12}\right)\right)=2^{17}\sqrt{2}\left(
+			 \cos \frac{\pi}{12}-i\sin \frac{\pi}{12}\right)\end{multline*}
+			  Получили ответ в тригонометрической форме записи, где
+			\[\cos \frac{\pi}{12} = \cos \left(\frac{\pi}{3} - 
+			\frac{\pi}{4}\right) = \cos \frac{\pi}{3} \cos \frac{\pi}{4}
+			+ \sin \frac{\pi}{3} \sin\frac{\pi}{4} =\frac{\sqrt{6}+\sqrt{2}}{4}
+			,\]
+			 
+			 \[ \sin \frac{\pi}{12} = \sin \left(\frac{\pi}{3} - 
+			 \frac{\pi}{4}\right) = \sin \frac{\pi}{3} \cos \frac{\pi}{4}
+			 - \cos \frac{\pi}{3} \sin\frac{\pi}{4} =\frac{\sqrt{6}-
+			 \sqrt{2}}{4}.\] Тогда,
+			  подставляя, получаем ответ в алгебраической форме:
+			 \[A =  2^{16}(\sqrt{3}+1) + i 2^{16}(\sqrt{3}-1).\]
+		\item Найти все корни четвертой степени из комплексного числа $z = -1.$
+		\[z = e^{i\pi} \implies \forall k\in\Z \implies \sqrt[4]{z} =
+		\left(e^{i(\pi+2\pi k)}\right)^{\frac{1}{4}} = e^{i\left(
+			\frac{\pi}{4}+\frac{\pi k}{2}\right)}.  \]
+		Придавая $k$ четыре последовательных целых значения так, чтобы они были 
+		небольшими, т.~e. используя $k = 0, \pm 1, 2,$ получаем:
+		\[w_1 = e^{i\frac{\pi}{4}} = \frac{1+i}{\sqrt{2}},\ w_2 = 
+		e^{i\frac{3\pi}{4}} = \frac{-1+i}{\sqrt{2}},\
+		w_3 = e^{-i\frac{\pi}{4}} = \frac{1-i}{\sqrt{2}},\ w_4 = 
+		e^{i\frac{5\pi}{4}} = \frac{-1-i}{\sqrt{2}}.\]
+		
+		\item Решить уравнение $z^2 - 3iz - 3- i = 0.$
+		
+		\paragraph{1-й способ.} $z = x+iy,\ x,\ y\in\R.$ Подставляя, имеем
+		
+		$x^2 - y^2 +2ixy - 3i(x+iy) - 3- i =0 \iff
+		\begin{cases} 
+		x^2 - y^2 + 3y  = 3,\\
+		2xy - 3x  =1,
+		\end{cases}$ и т.~д.
+		
+		\paragraph{2-й способ.}
+		$D = (-3i)^2 + 4(3+i) =3+4i.$ Пусть $\sqrt{D} = a + bi,\ a,\ b \in \R.$
+		
+		$(a+bi)^2 = 3+4i \iff 
+		\begin{cases} 
+		a^2 - b^2 = 3,\\
+		2ab  = 4,
+		\end{cases}
+		\begin{cases} 
+		a = \pm 2,\\
+		b  = \pm 1,
+		\end{cases}
+		\sqrt{D} = \pm2\pm i.
+		$
+		
+		Тогда \[z_1 = \frac{3i - (2+i)}{2} = i-1,\ z_2 = \frac{3i + (2+i)}{2} =2i+1.\]
+		\end{enumerate}
+		\end{examples}
+
+
+\end{document}
