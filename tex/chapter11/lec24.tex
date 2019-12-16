@@ -16,81 +16,75 @@
 \begin{equation}\label{24:1}
 f: \N \to \C
 \end{equation}
-~--- комплексная последовательность (КП).
+называется \emph{комплексной последовательностью} (КП).
 
-В $ \eqref{24:1} \quad \forall n \in \N \implies \exists!\, z_n = f(n) \in \C 
+В $ \eqref{24:1} \quad \forall n \in \N \quad \exists!\, z_n = f(n) \in \C 
 $.
 
 По аналогии с действительными последовательностями будем использовать запись $ 
 (z_n),\ n \in \N $.
 
 Будем говорить, что $ (z_n) $ сходится, если
-
 \begin{equation}\label{24:2}
-	\exists\, p \in \C :\, \forall\, \eps > 0\, \exists \nu = \nu_\eps \in \R \ 
-	\forall n > \nu \implies |z_n - p| \leq \eps
+	\exists\, p \in \C :\, \forall \eps > 0\quad \exists \nu = \nu_\eps \in \R \quad 
+	\forall n > \nu \implies |z_n - p| \leq \eps.
 \end{equation}
 
-Представим $ z_n $ в виде
+Представим $ z_n $ в виде $x_n + i y_n$, где
 $\begin{cases}
-x_n + i y_n  \\
-x_n = Re\ z_n \in \R \\
-y_n = Im\ z_n \in \R;
-\end{cases},\ $
+x_n = \Re z_n \in \R \\
+y_n = \Im z_n \in \R;
+\end{cases}.$
 
 Предположим $ p = p_1 + i p_2,\ p_1, p_2 \in \R $. Тогда в силу $ \eqref{24:2} 
 $ имеем:
 
 \begin{equation}\label{24:3}
-	|z_n - p| = |(z_n - p_1) + i(y_n - p_2)| = \sqrt{(x_n - p_1)^2 + (y_n - 
-	p_2)^2} \leq \eps
+	|z_n - p| = |(x_n - p_1) + i(y_n - p_2)| = \sqrt{(x_n - p_1)^2 + (y_n - 
+	p_2)^2} \leq \eps.
 \end{equation}
 
 \begin{thm}(Критерий сходимости комплексной последовательности(КП))
 	\begin{equation}\label{24:4}
-		z_n = x_n + i y_n \appr{n \rightarrow \infty} p = p_1 + i p_2
+		z_n = x_n + i y_n \appr{n \rightarrow \infty} p = p_1 + i p_2 \iff
 	\end{equation}
 	\begin{equation}\label{24:5}
 		\iff
 		\begin{cases}
 			x_n \appr{n \rightarrow \infty} p_1, \\
-			y_n \appr{n \rightarrow \infty} p_2
-		\end{cases}\,
+			y_n \appr{n \rightarrow \infty} p_2.
+		\end{cases}
 	\end{equation}
 \end{thm}
 \begin{proof}
 \;
 
 	\nec: Пусть выполнено $ \eqref{24:4} $. Тогда учитывая, что
-	
-	\[|x_n - p_1| \leq \sqrt{(x_n - p_1)^2 + (y_n - p_2)^2} = |z_n - p|\]
-	\[|y_n - p_2| \leq \sqrt{(x_n - p_1)^2 + (y_n - p_2)^2} = |z_n - p|\]
-	
-	и в силу $ \eqref{24:2}, \eqref{24:3} $, получаем:
-	
-	\[\forall \eps > 0,\ \exists \nu \in \R,\ \forall n \geq \nu \implies 
+	\[|x_n - p_1| \leq \sqrt{(x_n - p_1)^2 + (y_n - p_2)^2} = |z_n - p|,\]
+	\[|y_n - p_2| \leq \sqrt{(x_n - p_1)^2 + (y_n - p_2)^2} = |z_n - p|,\]
+	в силу $ \eqref{24:2}, \eqref{24:3} $, получаем:	
+	\[\forall \eps > 0\quad \exists \nu \in \R\quad \forall n \geq \nu \implies 
 	\begin{cases}
 		|x_n - p_1| \leq |z_n - p| \leq \eps \\
 		|y_n - p_2| \leq |z_n - p| \leq \eps \\
-	\end{cases} \iff \eqref{24:5} \]
+	\end{cases} \implies  \eqref{24:5}. \]
 	
-	\suff: Пусть выполнено $ \eqref{24:5} $. Тогда в силу $ M- $ леммы сходимости 
+	\suff: Пусть выполнено $ \eqref{24:5} $. Тогда в силу  M-леммы сходимости 
 	действительных числовых последовательностей имеем:
 	
-	\[\forall \eps > 0\,\ \exists\, \widetilde{\nu} = \widetilde{\nu}_\eps \in 
-	\R\, \forall n \geq \widetilde{\nu} \implies 
+	\[\forall \eps > 0 \quad \exists\,\widetilde{\nu} = \widetilde{\nu}_\eps \in 
+	\R\quad \forall n \geq \widetilde{\nu} \implies 
 	|x_n - p_1| \leq \frac{\eps}{\sqrt{2}}\]
 	
-	\[\forall \eps > 0\,\ \exists\, \overline{\nu} = \overline{\nu}_\eps \in \R\, 
+	\[\forall \eps > 0\quad \exists\,\overline{\nu} = \overline{\nu}_\eps \in \R\quad 
 	\forall n \geq \overline{\nu} \implies 
 	|y_n - p_2| \leq \frac{\eps}{\sqrt{2}} \]
 	
 	Выберем $ \nu = \max\{\widetilde{\nu}, \overline{\nu}\} \in \R $. Тогда:
-	
 	\[\forall n \geq \nu \implies 
 	|z_n - p| \stackrel{\eqref{24:3}}{=} \sqrt{(x_n - p_1)^2 + (y_n - p_2)^2} 
 	\leq \sqrt{\left(\frac{\eps}{\sqrt{2}}\right)^2 + 
-	\left(\frac{\eps}{\sqrt{2}}\right)^2} = \eps \iff \eqref{24:2} \]
+	\left(\frac{\eps}{\sqrt{2}}\right)^2} = \eps \implies \eqref{24:2}. \qedhere\]
 \end{proof}
 
 \begin{rem}
@@ -102,64 +96,60 @@ $ имеем:
 	Поэтому большинство свойств сходимости действительных последовательностей 
 	 переносится на комплексные (кроме свойств с неравенствами, так как множество
 	 комплексных чисел нельзя упорядочить). В связи с этим имеем:
-	
+\end{rem}
 	\begin{thm}(Критерий Коши сходимости комплексных последовательностей (КП))
-		$ (z_n) $ ~---  сходится $ \iff \forall\, \eps > 0\, \exists \nu = \nu_\eps 
-		\in \R \quad \forall\, m, n \geq \nu_\eps \implies |z_m - z_n| \leq \eps $
+		$ (z_n) $ сходится $ \iff \forall \eps > 0\quad \exists \nu = \nu_\eps 
+		\in \R \quad \forall\, m, n \geq \nu_\eps \implies |z_m - z_n| \leq \eps.$
 	\end{thm} 
 
 	\begin{thm}(Принцип выбора для комплексных последовательностей (КП))		
 		Из любой ограниченноой последовательности $ z_n $, для которой $ \exists M = 
-		const \geq 0, |z_n| \leq M,\, \forall n \in \N $, можно выбрать сходящуюся 
+		const \geq 0 \quad |z_n| \leq M\quad \forall n \in \N $, можно выбрать сходящуюся 
 		подпоследовательность.
-		
-		Доказательство, в отличие от действительного случая, где используется 
-		неравенство, проводится как в $ n-\text{мерных} $ последовательностях, без 
-		сравнения.
 	\end{thm}
+	
+		Доказательство, в отличие от действительного случая, где используется 
+		неравенство, проводится как в $n$-\text{мерных} последовательностях, без 
+		сравнения.
 
 	\begin{thm}(Арифметические операции для сходящихся КП)
 		\begin{enumerate}
-			\item Если $ (z_n) $ и $ (w_n) $ ~--- 2 сходящиеся КП, то $ \forall\, 
-			\lambda, \mu \in \C \implies $
-			
-			$ \exists\, \underset{n \to \infty}{\lim} (\lambda z_n + \mu w_n) = 
+			\item Если $ (z_n) $ и $ (w_n) $ ~--- сходящиеся КП, то \[ \forall\, 
+			\lambda, \mu \in \C \implies
+			\exists\, \underset{n \to \infty}{\lim} (\lambda z_n + \mu w_n) = 
 			(\lambda \underset{n \to \infty}{\lim}z_n + \mu \underset{n \to 
-			\infty}{\lim}w_n) \in \R $
+			\infty}{\lim}w_n) \in \R. \]
 			
-			\item $ \underset{n \to \infty}{\lim} (z_n \cdot w_n) = (\underset{n \to 
-			\infty}{\lim} z_n)(\underset{n \to \infty}{\lim} w_n) $
+			\item $ \underset{n \to \infty}{\lim} (z_n \cdot w_n) = \left(\underset{n \to 
+			\infty}{\lim} z_n\right)\cdot\left(\underset{n \to \infty}{\lim} w_n\right).$
 			
-			\item Если $ \forall\, w_n \neq 0 $ и $ \underset{n \to \infty}{\lim} w_n 
-			\neq 0 $, то $ \underset{n \to \infty}{\lim} \frac{z_n}{w_n} = 
-			\frac{\underset{n \to \infty}{\lim} z_n}{\underset{n \to \infty}{\lim} w_n} 
+			\item Если $ w_n \neq 0 $ и $ \underset{n \to \infty}{\lim} w_n 
+			\neq 0 $, то $ \underset{n \to \infty}{\lim} \dfrac{z_n}{w_n} = 
+			\frac{\underset{n \to \infty}{\lim} z_n}{\underset{n \to \infty}{\lim} w_n}.
 			$
 		\end{enumerate}
 	\end{thm}
-\end{rem}
 
-Если $ z_n \appr{n \rightarrow \infty} 0 $, то эту КП называют бесконечно 
-малой последовательностью и пишут $ z_n \underset{n \to \infty}{=} o(1) $.
+Если $ z_n \appr{n \rightarrow \infty} 0 $, то эту КП называют \emph{бесконечно 
+малой последовательностью} и пишут $ z_n \underset{n \to \infty}{=} o(1) $.
 
 \begin{exc}
 	По аналогии с числовыми последовательностями сформулировать основные свойства 
 	комплексных бмп.
 \end{exc}
 
-\;
+\medskip
 
 Последовательность, не являющуюся сходящейся, называют расходящейся. Среди 
 расходящихся последовательностей выделяют ББП (бесконечно большие 
 последовательности).
-
-$ (z_n) $ является ББП, если $ \forall\, \eps > 0\, \exists \nu = \nu_\eps \in 
-\R:\, \forall n > \nu \implies |z_n| \geq \eps $
-
+$ (z_n) $ является ББП, если $ \forall \eps > 0\quad \exists \nu = \nu_\eps \in 
+\R\quad \forall n > \nu \implies |z_n| \geq \eps.$
 При этом, в отличие от действительного случая, в КП не используются величины $ 
 +\infty, -\infty $.
 
-Как и в действительном случае, можно показать, что если $ \forall\, z_n \neq 
-0,\, z_n = o(1) $, то $ w_n = \frac{1}{z_n} $ ~--- ББП, и наоборот.
+Как и в действительном случае, можно показать, что если $ \forall z_n \neq 
+0,\ z_n = o(1) $, то $ w_n = \frac{1}{z_n} $ ~--- ББП, и наоборот.
 
 \begin{exmp}
 	\;
