@@ -11,7 +11,7 @@
 
 \begin{document}
 
-Полагая $ z = x + iy,\ x, y \in \R $ и $ \omega = u + iv,\ u, v \in \R $
+Полагая $ z = x + iy,\ x, y \in \R $ и $ w = u + iv,\ u, v \in \R $
 в силу \eqref{lec26;4} имеем:
 \begin{equation}
 \label{lec27:14}
@@ -47,7 +47,7 @@ v = v_0 + 2\pi k = \arg z + 2\pi k = \Arg z, k \in \Z
 Тогда общее решение для \eqref{lec26;4} можно записать в виде:
 \begin{equation}
 \label{lec27:18}
-\omega 
+w 
 \stackrel{\eqref{lec27:15}, \eqref{lec27:17}}{=}
 \ln |z| + i \Arg z \iff
 \forall z \neq 0 \exists \Ln z = \ln |z| + i \Arg z = 
@@ -103,9 +103,9 @@ a^z = e^{z \Ln a},\ a \neq 0
 \end{equation}
 Как правило в результате получаем многозначные функции.
 \begin{exmps}
-1. Вычислим $ \omega = (-1)^i $.\\
+1. Вычислим $ w = (-1)^i $.\\
 Имеем \[
-\omega = (-1)^i = e^{i \Ln(-1)} = 
+w = (-1)^i = e^{i \Ln(-1)} = 
 e^{i(\ln |-1| + i(\arg(-1) + 2\pi k))} = 
 e^{-\pi - 2\pi k},\ k \in \Z
 \]
@@ -133,7 +133,7 @@ e^{i\sqrt{2}(\pi + 2\pi k)},\ k \in \Z \implies
 \end{equation}, который определяется как решение уравнения
 \begin{equation}
 \label{lec27:24}
-\sin \omega = z
+\sin w = z
 \end{equation}
 \[
 \begin{cases}
@@ -141,26 +141,26 @@ e^{i\sqrt{2}(\pi + 2\pi k)},\ k \in \Z \implies
 	x, y \in \R
 \end{cases},
 \begin{cases}
-	\omega = u + iv\\
+	w = u + iv\\
 	u, v \in \R
 \end{cases} \implies
-\sin \omega = \dfrac{e^{i\omega} - e^{-i\omega}}{2i} \implies\]\[
-e^{i\omega} - e^{-i\omega} = 2iz \implies
-e^{2i\omega} - 2ize^{i\omega} - 1 = 0
+\sin w = \dfrac{e^{iw} - e^{-iw}}{2i} \implies\]\[
+e^{iw} - e^{-iw} = 2iz \implies
+e^{2iw} - 2ize^{iw} - 1 = 0
 \]
-Решая его относительно $ t = e^{i\omega} $ обычным образом, получаем, что
+Решая его относительно $ t = e^{iw} $ обычным образом, получаем, что
 \[
 t = iz \pm \sqrt{1 - z^2} \implies
-e^{i\omega} = iz \pm \sqrt{1 - z^2} \implies
-i\omega = \Ln(iz \pm \sqrt{1 - z^2}) \implies
-\omega = -i\Ln(iz \pm \sqrt{1 - z^2}) \implies
+e^{iw} = iz \pm \sqrt{1 - z^2} \implies
+iw = \Ln(iz \pm \sqrt{1 - z^2}) \implies
+w = -i\Ln(iz \pm \sqrt{1 - z^2}) \implies
 \]
 \begin{equation}
 \label{lec27:25}
 \Arcsin z = -i\Ln(iz\pm\sqrt{1 - z^2})
 \end{equation}
-Аналогично решая уравнение для $ \omega = \Arccos z, z = \cos \omega = 
-\dfrac{e^{i\omega} + e^{-i\omega}}{2i} $ для $ t = e^{i\omega} $:
+Аналогично решая уравнение для $ w = \Arccos z, z = \cos w = 
+\dfrac{e^{iw} + e^{-iw}}{2i} $ для $ t = e^{iw} $:
 \[
 \begin{cases}
 	t^2 - 2tz + 1 = 0 \\
@@ -169,41 +169,41 @@ i\omega = \Ln(iz \pm \sqrt{1 - z^2}) \implies
 \] 
 \begin{equation}
 \label{lec27:26}
-\omega = \Arccos z = -i\Ln(z \pm \sqrt{z^2 - 1})
+w = \Arccos z = -i\Ln(z \pm \sqrt{z^2 - 1})
 \end{equation}
-Для $ \omega = \Arctg z $ для $ z = \tg \omega = 
-\dfrac{e^{2i\omega} - 1}{e^{2i\omega} + 1} $ нетрудно получить, что 
+Для $ w = \Arctg z $ для $ z = \tg w = 
+\dfrac{e^{2iw} - 1}{e^{2iw} + 1} $ нетрудно получить, что 
 \begin{equation}
 \label{lec27:27}
-\omega = \Arctg z = \dfrac{1}{2i} \Ln \dfrac{i - z}{i + z} = 
+w = \Arctg z = \dfrac{1}{2i} \Ln \dfrac{i - z}{i + z} = 
 -\dfrac{i}{2} \Ln\dfrac{1 + iz}{1 - iz} = 
 \dfrac{i}{2} \Ln\dfrac{1 - iz}{1 + iz},\ \forall z \neq \pm i
 \end{equation}
-Аналогично для $ \omega = \Arcctg z $ имеем $ z = \ctg \omega = 
-\dfrac{e^{2i\omega} + 1}{e^{2i\omega} - 1} $ получаем
+Аналогично для $ w = \Arcctg z $ имеем $ z = \ctg w = 
+\dfrac{e^{2iw} + 1}{e^{2iw} - 1} $ получаем
 \begin{equation}
 \label{lec27:28}
-\omega = \Arcctg z = \dots = \dfrac{1}{2i} \Ln \dfrac{z + i}{z - i} = 
+w = \Arcctg z = \dots = \dfrac{1}{2i} \Ln \dfrac{z + i}{z - i} = 
 \dfrac{i}{2} \Ln \dfrac{z - i}{z + i},\ z \neq \pm i
 \end{equation}
-Для $ z = \sh \omega = \dfrac{e^{\omega} - e^{-\omega}}{2} \implies $
+Для $ z = \sh w = \dfrac{e^{w} - e^{-w}}{2} \implies $
 \begin{equation}
 \label{lec27:29}
-\omega = \Azsh z = \Ln(z \pm \sqrt{z^2 + 1})
+w = \Azsh z = \Ln(z \pm \sqrt{z^2 + 1})
 \end{equation}
-Таким же образом решается уравнение $ z = \ch \omega = \dfrac{e^{\omega} + 
-e^{-\omega}}{2} $ будет 
+Таким же образом решается уравнение $ z = \ch w = \dfrac{e^{w} + 
+e^{-w}}{2} $ будет 
 \begin{equation}
 \label{lec27:30}
-\omega = \Azch z = \dots = \Ln(z \pm \sqrt{z^2 - 1})
+w = \Azch z = \dots = \Ln(z \pm \sqrt{z^2 - 1})
 \end{equation}
 Также решая уравнение $ z = \th 
-\omega = \dfrac{e^{2\omega - 1}}{e^{2\omega} + 1} $ и 
-$ z = \cth \omega = \dfrac{e^{2\omega} + 1}{e^{2\omega} - 1} $ соответсвенно,
+w = \dfrac{e^{2w - 1}}{e^{2w} + 1} $ и 
+$ z = \cth w = \dfrac{e^{2w} + 1}{e^{2w} - 1} $ соответсвенно,
 получаем
 \begin{equation}
 \label{lec27:31}
-\omega = \Azth z = \dfrac{1}{2} \Ln \dfrac{1 + z}{1 - z},\ z \neq \pm 1
+w = \Azth z = \dfrac{1}{2} \Ln \dfrac{1 + z}{1 - z},\ z \neq \pm 1
 \end{equation}
 \begin{equation}
 \label{lec27:32}
