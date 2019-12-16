@@ -115,6 +115,12 @@
 \renewcommand{\leq}{\leqslant}
 \renewcommand{\geq}{\geqslant}
 
+% Буквенные \Re и \Im
+\DeclareMathOperator{\@custom@Re}{Re}
+\DeclareMathOperator{\@custom@Im}{Im}
+\renewcommand{\Re}{\@custom@Re}
+\renewcommand{\Im}{\@custom@Im}
+
 % Еще переопределения
 \renewcommand{\emptyset}{\varnothing}
 
@@ -126,6 +132,16 @@
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\sign}{sgn}
 \DeclareMathOperator{\vp}{v.p.}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\Ln}{Ln}
+\DeclareMathOperator{\Arcsin}{Arcsin}
+\DeclareMathOperator{\Arccos}{Arccos}
+\DeclareMathOperator{\Arctg}{Arctg}
+\DeclareMathOperator{\Arcctg}{Arcctg}
+\DeclareMathOperator{\Azsh}{Azsh}
+\DeclareMathOperator{\Azch}{Azch}
+\DeclareMathOperator{\Azth}{Azth}
+\DeclareMathOperator{\Azcth}{Azcth}
 
 % arctan -> arctg
 \renewcommand{\arctan}{\arctg}
