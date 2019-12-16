@@ -132,104 +132,102 @@ e^{i\sqrt{2}(\pi + 2\pi k)},\ k \in \Z \implies\]
 
 \subsection{Функции КП, обратные к гиперболическим и тригонометрическим ФКП}
 
-Действуют по той же схеме, что и выше.\\
-Рассмотрим комплексный арксинус
+Действуя, по той же схеме, что и выше,
+рассмотрим комплексный арксинус
 \begin{equation}
 \label{lec27:23}
-\Arcsin z
-\end{equation}, который определяется как решение уравнения
+\Arcsin z,
+\end{equation} который определяется как решение уравнения
 \begin{equation}
 \label{lec27:24}
-\sin w = z
+\sin w = z.
 \end{equation}
 \[
 \begin{cases}
-	z = x + iy\\
-	x, y \in \R
-\end{cases},
-\begin{cases}
-	w = u + iv\\
-	u, v \in \R
-\end{cases} \implies
-\sin w = \dfrac{e^{iw} - e^{-iw}}{2i} \implies\]\[
+	z = x + iy,\\
+	w = u + iv,\\
+	x, y \in \R, \\
+	u, v \in \R,
+\end{cases} \hspace{-1em}\implies
+\sin w = \dfrac{e^{iw} - e^{-iw}}{2i} \implies
 e^{iw} - e^{-iw} = 2iz \implies
-e^{2iw} - 2ize^{iw} - 1 = 0
+e^{2iw} - 2ize^{iw} - 1 = 0.
 \]
 Решая его относительно $ t = e^{iw} $ обычным образом, получаем, что
 \[
-t = iz \pm \sqrt{1 - z^2} \implies
-e^{iw} = iz \pm \sqrt{1 - z^2} \implies
+t = e^{iw} = iz \pm \sqrt{1 - z^2} \implies
 iw = \Ln(iz \pm \sqrt{1 - z^2}) \implies
-w = -i\Ln(iz \pm \sqrt{1 - z^2}) \implies
+w = -i\Ln(iz \pm \sqrt{1 - z^2}),
 \]
+откуда
 \begin{equation}
 \label{lec27:25}
-\Arcsin z = -i\Ln(iz\pm\sqrt{1 - z^2})
+\Arcsin z = -i\Ln(iz\pm\sqrt{1 - z^2}).
 \end{equation}
-Аналогично решая уравнение для $ w = \Arccos z, z = \cos w = 
-\dfrac{e^{iw} + e^{-iw}}{2i} $ для $ t = e^{iw} $:
+Аналогично решая уравнение для $ w = \Arccos z,\ z = \cos w = 
+\dfrac{e^{iw} + e^{-iw}}{2} $ для $ t = e^{iw} $, получаем:
 \[
-\begin{cases}
-	t^2 - 2tz + 1 = 0 \\
-	t = z \pm \sqrt{z^2 - 1}
-\end{cases} \implies
-\] 
+t^2 - 2tz + 1 = 0 \implies
+t = z \pm \sqrt{z^2 - 1} \implies
+iw = \Ln (z \pm \sqrt{z^2 - 1}),
+\]
+откуда
 \begin{equation}
 \label{lec27:26}
-w = \Arccos z = -i\Ln(z \pm \sqrt{z^2 - 1})
+w = \Arccos z = -i\Ln(z \pm \sqrt{z^2 - 1}).
 \end{equation}
-Для $ w = \Arctg z $ для $ z = \tg w = 
-\dfrac{e^{2iw} - 1}{e^{2iw} + 1} $ нетрудно получить, что 
+Для $ w = \Arctg z $, решая уравнение $ z = \tg w = 
+-i\dfrac{e^{2iw} - 1}{e^{2iw} + 1} $, нетрудно получить, что 
 \begin{equation}
 \label{lec27:27}
 w = \Arctg z = \dfrac{1}{2i} \Ln \dfrac{i - z}{i + z} = 
 -\dfrac{i}{2} \Ln\dfrac{1 + iz}{1 - iz} = 
-\dfrac{i}{2} \Ln\dfrac{1 - iz}{1 + iz},\ \forall z \neq \pm i
+\dfrac{i}{2} \Ln\dfrac{1 - iz}{1 + iz},\ \forall z \neq \pm i.
 \end{equation}
 Аналогично для $ w = \Arcctg z $ имеем $ z = \ctg w = 
-\dfrac{e^{2iw} + 1}{e^{2iw} - 1} $ получаем
+i\dfrac{e^{2iw} + 1}{e^{2iw} - 1} $, откуда получаем
 \begin{equation}
 \label{lec27:28}
 w = \Arcctg z = \dots = \dfrac{1}{2i} \Ln \dfrac{z + i}{z - i} = 
-\dfrac{i}{2} \Ln \dfrac{z - i}{z + i},\ z \neq \pm i
+\dfrac{i}{2} \Ln \dfrac{z - i}{z + i},\ z \neq \pm i.
 \end{equation}
-Для $ z = \sh w = \dfrac{e^{w} - e^{-w}}{2} \implies $
+Для $ z = \sh w = \dfrac{e^{w} - e^{-w}}{2} $ имеем
 \begin{equation}
 \label{lec27:29}
-w = \Arsh z = \Ln(z \pm \sqrt{z^2 + 1})
+w = \Arsh z = \Ln(z \pm \sqrt{z^2 + 1}).
 \end{equation}
 Таким же образом решается уравнение $ z = \ch w = \dfrac{e^{w} + 
-e^{-w}}{2} $ будет 
+e^{-w}}{2} $, откуда получаем 
 \begin{equation}
 \label{lec27:30}
-w = \Arch z = \dots = \Ln(z \pm \sqrt{z^2 - 1})
+w = \Arch z = \Ln(z \pm \sqrt{z^2 - 1}).
 \end{equation}
-Также решая уравнение $ z = \th 
-w = \dfrac{e^{2w - 1}}{e^{2w} + 1} $ и 
-$ z = \cth w = \dfrac{e^{2w} + 1}{e^{2w} - 1} $ соответсвенно,
+Также решая уравнения $ z = \th 
+w = \dfrac{e^{2w} - 1}{e^{2w} + 1} $ и 
+$ z = \cth w = \dfrac{e^{2w} + 1}{e^{2w} - 1} $ соответственно,
 получаем
 \begin{equation}
 \label{lec27:31}
-w = \Arth z = \dfrac{1}{2} \Ln \dfrac{1 + z}{1 - z},\ z \neq \pm 1
+w = \Arth z = \dfrac{1}{2} \Ln \left(\dfrac{1 + z}{1 - z}\right),\ z \neq \pm 1,
 \end{equation}
 \begin{equation}
 \label{lec27:32}
-W = \Arcth z = \dfrac{1}{2} \Ln \dfrac{z + 1}{z - 1},\
-z \neq \pm 1
+w = \Arcth z = \dfrac{1}{2} \Ln \left(\dfrac{z + 1}{z - 1}\right),\
+z \neq \pm 1.
 \end{equation}
 \begin{exmp}
 	Найдём модуль решения уравнения $ \cos t = 2 $.
 	\[
 	z = \Arccos 2 = -i\Ln(2 \pm \sqrt{4 - 1}) = 
-	-i \Ln(2 \pm \sqrt{3}) = -i (\ln|2 \pm \sqrt{3}|) + i(\arg(2 \pm \sqrt{3}) + 
-	2\pi k) = \]\[
-	-i \ln(2 \pm \sqrt{3}) + 2\pi k,\ k \in \Z	
+	-i \Ln(2 \pm \sqrt{3}) = -i (\ln|2 \pm \sqrt{3}| + i(\arg(2 \pm \sqrt{3}) + 
+	2\pi k)) = \]\[
+	-i \ln(2 \pm \sqrt{3}) + 2\pi k,\ k \in \Z.
 	\]
 	\[
 	2 - \sqrt{3} = (2 + \sqrt{3})^{-1} \implies
-	z = \pm i \ln (2 + \sqrt{3}) + 2\pi k,\ k \in \Z \implies \] \[
+	z = \pm i \ln (2 + \sqrt{3}) + 2\pi k,\ k \in \Z \implies \] \[\implies
 	|z| = |2\pi k \pm i\ln(2 + \sqrt{3})| = 
-	\sqrt{4\pi^2 k^2 + \ln^2(2 + \sqrt{3})},\ k \in \Z
+	\sqrt{4\pi^2 k^2 + \ln^2(2 + \sqrt{3})},\ k \in \Z.
 	\]
 \end{exmp}
 
