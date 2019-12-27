@@ -135,5 +135,107 @@
 	\textbf{Случай, когда $z_0$ --- существенно особая точка}
 	
 	В этом случае вычет для $f(z) $ находим либо в силу определения, либо через сумму всех вычетов, котрая по теореме о вычетах с учетом бесконечно удаленной точки равна нулю.
+	
+\section{Ряд Лорана и вычеты БУТ(бесконечно удаленной точки)}
+
+	Если $z_0$ --- конечная особая точка, то в соответствующей окрестности имеем разложение в ряд Лорана:
+	
+	\[
+	f(z) = \sum_{n=-\infty}^{+\infty}c_n(z-z_0)^n=\dots+
+	\frac{c_{-2}}{(z-z_0)^2}+\frac{c_{-1}}{(z-z_0)}+c_0+c_1(z-z_0)+\dots .
+	\] 
+	
+	В частности, $z_0=0, 0< \mid z\mid < R:
+	 f(z)=\sum\limits_{n=-\infty}^{+\infty} \frac{c_{-n}}{z^n}$.
+	 
+	$\sum\limits_{n=1}^{+\infty} \frac{c_{-n}}{z^n}$ --- главная часть,
+	$\sum\limits_{n=0}^{+\infty} c_{n}z^n$ --- правильная часть. 
+	 
+	 Если $\mid z \mid > R$, а $f(z)$ --- аналитична, то полагаем: 
+	 $t=\cfrac{1}{z} \implies \mid t \mid = \cfrac{1}{\mid z \mid} <
+	 \cfrac1R=R_0$ и вводим
+	 $\begin{cases}
+	 g(t)=f\left(\cfrac 1t\right)\\
+	 0<\mid t \mid < R 
+	 \end{cases}.$
+	 Имеем разложение 
+	 \[g(t) = \sum\limits_{n=-\infty}^{+\infty}d_nt^n=
+	 \dots + \cfrac{d_{-2}}{t^2} + \cfrac{d_{-1}}{t}+d_0+d_1t+\dots.
+	 \]
+	 
+	 Для исходной функции: $f(z)=g\left(\cfrac1z\right)=\sum\limits_{n=-\infty}^{+\infty}
+	 \frac{d_n}{z^n}=\dots + \cfrac{d_{2}}{t^2} + \cfrac{d_{1}}{t}
+	 +d_0+d_{-1}t+d_{-2}z^2+\dots$, поэтому любое разложение в
+	  окрестности нуля есть разложение в окрестности БУТ:
+	 \[
+	 f(z)=\underbrace{\dots+\frac{c_{-2}}{z^2}+\cfrac{c_{-1}}{z}+c_0}_{\text{правильная часть }z=\infty}+
+	 \underbrace{c_1z+\dots}_{\text{главная часть }z=\infty} .
+	 \] 
+	 
+	 Тогда в зависимости от вида главной части для $z=\infty$ дают классификацию особенностей по аналогии с обычным случаем:
+	 \begin{itemize}
+	 	\item[а)] $z=\infty$ --- УОТ, когда главная часть отсутствует, т.е.
+	 	$\exists\lim\limits_{z\rightarrow \infty} f(z)=c_0\in \C$
+	 	\item[б)] $z=\infty$ --- полюс, порядка $p\neq 0$, если в 
+	 	главной части имеем только $p\neq 0$ слагаемых, то есть 
+	 	$
+	 	\begin{cases}
+	 	f(z)=c_0+c_1z+\dots+c_pz^p+\sum\limits_{n=0}^{+\infty}\cfrac{c_n}
+	 	z^n\\
+	c_p\neq 0
+	 	\end{cases}
+	 	$ 
+	 \item[в)] $z=\infty$ --- СОТ, если главная часть содержит бесконечное число ненулевых слагаемых. Для нахождения вычетов БУТ использвется тот факт, что сумма вычетов, в том числе и БУТ, равна нулю, а значит 
+	 $\sum\limits_{k=1}^m\underset{z_k}{res}+\underset{\infty}{res}f(z)=0 \implies\underset{\infty}{res}f(z)-\sum\limits_{k=1}^m \underset{z_k}{res}f(z)$, либо используются формулы. аналогичные для конечных особенностей. При этом, когда конечная особенность является УОТ, и вычет в ней равен нулю, имеем 	$\underset{\infty}{res}f(z)=-c_{-1}.$ Он не обязательно будет нулевым, даже если $z=\infty$ --- УОТ.
+	 
+	 \begin{itemize}
+	 	\item[1)] В разложении $f(z)$ в окрестности $z=\infty$ нет главной части, и значит, это УОТ, и тогда $f(z)=c_0+\cfrac{c_{-1}}{z}+\cfrac{c_{-2}}{z^2}+ \dots$ . В этом случае 
+	 	$c_0=\lim\limits_{z\rightarrow \infty}f(z)=f(\infty)\in \R$, тогда 
+	 	$(f(z)-f(\infty))z=c_{-1}+\cfrac{c_{-2}}{2}+\dots\underset{z\rightarrow\infty}{\rightarrow}c_{-1}$. В этом случае имеем 	
+	 	
+	 	\begin{equation}\label{35.7}
+	 	\underset{\infty}{res}f(z)=-c_{-1}=\lim\limits_{z-\rightarrow\infty}z(f(\infty)-f(z)).
+	 	\end{equation}
+	 	
+	 	Из \ref{35.7} следует, что если $z=\infty$ --- нуль кратности $m$, то $f(z)=\cfrac{c_{-m}}{z^m}+\cfrac{c_{-m+1}}{z^{m-1}}+\dots\sim \cfrac{c_{-1}}{z}, c_m\neq0$.
+	 
+	 	\[
+	 	\underset{\infty}{res}f(z)=
+	 	\begin{cases}
+	 		-c_{-1}, m=1,\\
+	 		0, m>1.
+	 	\end{cases}
+	 	\]
+	 	
+	 	\item[2)]
+	 	$z=\infty$ --- полюс порядка $p$.
+	 	
+	 	\[
+	 	\begin{cases}
+	 	f(z)=\dots+\cfrac{c_{-2}}{z^2}+\cfrac{c_{-1}}{z}+c_0+c_1z+c_pz^p,\\
+	 	c_p\neq0.
+	 	\end{cases}
+	 	\]
+	 	
+	 	Дифференцируя обе части $(p+1)$ раз, получим:
+	 	
+	 	\[
+	 	f^{(p+1)}(z)=\dots+\cfrac{(-1)^{p}c_{-2}\cdot2\cdot3\cdot\dots\cdot(p+2)}{z^{p+3}}+\cfrac{(-1)^{p+1}c_{-1}(p+1)!}{z^{p+2}}+0\implies
+	 	z^{p+2}f^{(p+1)}(z)=\dots+\cfrac{const}{z}+(-1)^{p+1}c_{-1}(p+1)!\underset{z\rightarrow \infty}{\rightarrow}(-1)^{p+1}c_{-1}(p+1)!.
+	 	\]
+	 	
+	 	\begin{equation}
+	 	\underset{\infty}{res}f(z)=-c_{-1}=\cfrac{(-1)^p}{(p+1)!}\lim\limits_{z\rightarrow\infty}z^{p+2}f^{(p+1)}(z).
+	 	\end{equation}
+	 	
+	 	\item[3)] 
+	 	БУТ является СОТ. В этом случае как правило считается через ряд Лорана. Отметим, что при применении вычетов на бесконечности при вычислении интегралов можно использовать особые точки как внутри области интегрирования, так и снаружи, с учетом БУТ, в силу того что сумма всех вычетов равна нулю:
+	 	\[
+	 	I=\oint\limits_lf(z)dz=2\pi i \sum_{i=1}^{k}\underset{z_j}{res}f(z)=-2\pi i\left(\sum_{j=k+1}^{m}\underset{z_j}{res}f(z)+\underset{\infty}{res}f(z)
+	 	\right)=-\oint\limits_lf(z)dz.
+	 	\]
+	 	\includegraphics{lec_27}
+	 \end{itemize}
+	 \end{itemize}
 \end{document}
 
