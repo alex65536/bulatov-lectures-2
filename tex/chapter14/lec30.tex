@@ -50,7 +50,7 @@ $S = \{M_k\}_{k=1}^n$ можно составить
     \sum_{k=1}^{n}{f\left(M_k\right)\Delta z_k}
 \end{equation}
 Функция $f\left(z\right), z \in l, $ называется интегралом на $l$, если
-\exists\ I \in C:
+$\exists\ I \in C:$
 
 \begin{equation}
     \label{lec30_2:3}
@@ -71,7 +71,7 @@ $f\left(z\right)$ по $l$ и обозначать
 Определение интеграла ФКП соответствует определению КрИ-2 для
 действительных функций.
 
-Пусть $f\left(z\right) = c_0 = const \in C\\$
+Пусть $f\left(z\right) = c_0 = const \in C$
 $\sigma \stackrel{\eqref{lec30_2:2}}{=} \sum\limits_{k=1}^n{c_0\Delta z_k} = 
 c_0\left(-z_0 + z_1 - z_1 + z_2 - \ldots - z_{n-1} + z_n\right) = 
 c_0\left(z_n - z_0\right) = c_0\left(z_\beta - z_\alpha\right)$
@@ -102,9 +102,9 @@ $\eqref{lec30_2:2}$ запишем в виде
 
 $\sigma = \sum\limits_{k=1}^n{\left(u(x(\tau_k), y(\tau_k))
 + iv(x(\tau_k), y(\tau_k))\right)\left(\Delta x_k + 
-i\Delta y_k\right)}, \text{где } \\
-\Delta x_k = x\left(t_k\right) - 
-x\left(t_{k-1}\right), \\ \Delta y_k = y\left(t_k\right) - 
+i\Delta y_k\right)}, \text{где }$ \\
+$\Delta x_k = x\left(t_k\right) - 
+x\left(t_{k-1}\right),$ \\ $\Delta y_k = y\left(t_k\right) - 
 y\left(t_{k-1}\right)$
 
 Отделяя действительную и мнимую части, имеем
@@ -117,11 +117,11 @@ v\left(x(\tau_k), y(\tau_k)\right)\Delta x_k}
 Переходя к пределу 
 $d = \underset{1 \leq k \leq n}{max}|\Delta z_k| = 
 \underset{1 \leq k \leq n}{max}\sqrt{\Delta x_k^2 + \Delta y_k^2}
-\longrightarrow 0 \implies$
+\longrightarrow 0 \implies
 \begin{cases}
     \Delta x_k \longrightarrow 0\\
     \Delta y_k \longrightarrow 0
-\end{cases}
+\end{cases}$
 
 получаем в силу определения КрИ-2 для действительных Ф2П
 \[
@@ -137,7 +137,6 @@ udx - vdy} + i\int\limits_l{udy + vdx}, \text{т.е}
 \[
 f\left(z\right) = u + iv, \quad
 dz = dx + idy
-
 \int\limits_l{\left(u+iv\right)\left(dx + idy\right)} = 
 \int\limits_l{udx - vdy} + i\int\limits_l{udy + vdx} 
 \Leftrightarrow \eqref{lec30_2:5}.
@@ -146,11 +145,11 @@ dz = dx + idy
 В частности, если $l$ имеет параметризацию $\eqref{lec30_2:1},$ то в 
 этом случае 
 
-I = \left[
+$I = \left[
 \begin{array}{ccc}
      x = x\left(t\right)\quad dx = x^\prime\left(t\right)dt \\
      y = y\left(t\right)a\quad dy = y^\prime\left(t\right)dt \\
-     \alpha \leq t \leq \bet\\
+     \alpha \leq t \leq \beta\\
 \end{array} 
 \right]=
 $
@@ -226,8 +225,6 @@ $|\sigma| \stackrel{\eqref{lec30_2:2}}{=}
 \underset{z\in l}{sup}|f\left(z\right)|$\\
 $|\int\limits_l{f\left(z\right)dz}| \leq \int\limits_l{M|dz|} = 
 M\int\limits_l{|dz|} = M\ \text{Длина}\ l = Ml_0$, где $l_0 - $ длина $l.$
- 
-
 \end{enumerate}
 
 \section{Интеграл ФКП от аналитической ФКП}
