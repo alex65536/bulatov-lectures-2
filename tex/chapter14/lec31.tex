@@ -157,19 +157,19 @@ D$ будем называть первообразной для $f(z)$, есл�
 	некоторый компакт $ l_0 \subseteq D_0 \subset D$. В результате
 	непрерывность $f(z)$ на компакте $D_0 \subset D$ будет равносильна
 	непрерывности на $D_0$, а значит, и на $l_0$, поэтому
-	\[ \forall \varepsilon > 0 \ \ \ \exists \delta = \delta_\varepsilon
+	\[ \forall \eps > 0 \ \ \ \exists \delta = \delta_\eps
 	> 0 \ \ \ \forall z, t \in l_0 , \ |z - t| \leq \delta
-	\ \ \ \implies \ \ \ |f(z) - f(t)| \leq \varepsilon \]
+	\ \ \ \implies \ \ \ |f(z) - f(t)| \leq \eps \]
 	В результате, используя вместо $ t \ z + \Delta z $ получаем, что
 	если $| \Delta z| < \delta$ , то
-	\[ | f(z + \Delta z ) - f(z) | \leq \varepsilon \]
+	\[ | f(z + \Delta z ) - f(z) | \leq \eps \]
 	Поэтому
 	\[ \left| \dfrac{\Delta \Phi(z)}{\Delta z} - f(z) \right|
 	\stackrel{ \eqref{lec31:5} }{\le}
 	\dfrac{1}{ | \Delta z | } \left| \int\limits_{z}^{z + \Delta z}
-	\varepsilon dt \right| = 
-	\dfrac{\varepsilon}{ | \Delta z | } \left| z + \Delta
-	z - z \right| = \varepsilon\]
+	\eps dt \right| = 
+	\dfrac{\eps}{ | \Delta z | } \left| z + \Delta
+	z - z \right| = \eps\]
 	Поэтому
 	\[ \exists \Phi ' (z) = \lim\limits_{\Delta z \to 0}
 	\dfrac{\Delta \Phi(z)}{\Delta z} = f(z). \]	
