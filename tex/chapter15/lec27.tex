@@ -192,13 +192,13 @@
 	 \begin{itemize}
 	 	\item[1)] В разложении $f(z)$ в окрестности $z=\infty$ нет главной части, и значит, это УОТ, и тогда $f(z)=c_0+\cfrac{c_{-1}}{z}+\cfrac{c_{-2}}{z^2}+ \dots$ . В этом случае 
 	 	$c_0=\lim\limits_{z\rightarrow \infty}f(z)=f(\infty)\in \R$, тогда 
-	 	$(f(z)-f(\infty))z=c_{-1}+\cfrac{c_{-2}}{2}+\dots\underset{z\rightarrow\infty}{\rightarrow}c_{-1}$. В этом случае имеем 	
+	 	$(f(z)-f(\infty))z=c_{-1}+\cfrac{c_{-2}}{2}+ \dots\underset{z\rightarrow\infty}{\rightarrow}c_{-1}$. В этом случае имеем 	
 	 	
 	 	\begin{equation}\label{35.7}
 	 	\underset{\infty}{res}f(z)=-c_{-1}=\lim\limits_{z-\rightarrow\infty}z(f(\infty)-f(z)).
 	 	\end{equation}
 	 	
-	 	Из \ref{35.7} следует, что если $z=\infty$ --- нуль кратности $m$, то $f(z)=\cfrac{c_{-m}}{z^m}+\cfrac{c_{-m+1}}{z^{m-1}}+\dots\sim \cfrac{c_{-1}}{z}, c_m\neq0$.
+	 	Из \ref{35.7} следует, что если $z=\infty$ --- нуль кратности $m$, то $f(z)=\cfrac{c_{-m}}{z^m}+ \cfrac{c_{-m+1}}{z^{m-1}}+\dots\sim \cfrac{c_{-1}}{z}, c_m\neq0$.
 	 
 	 	\[
 	 	\underset{\infty}{res}f(z)=
@@ -221,12 +221,12 @@
 	 	Дифференцируя обе части $(p+1)$ раз, получим:
 	 	
 	 	\[
-	 	f^{(p+1)}(z)=\dots+\cfrac{(-1)^{p}c_{-2}\cdot2\cdot3\cdot\dots\cdot(p+2)}{z^{p+3}}+\cfrac{(-1)^{p+1}c_{-1}(p+1)!}{z^{p+2}}+0\implies
-	 	z^{p+2}f^{(p+1)}(z)=\dots+\cfrac{const}{z}+(-1)^{p+1}c_{-1}(p+1)!\underset{z\rightarrow \infty}{\rightarrow}(-1)^{p+1}c_{-1}(p+1)!.
+	 	f^{(p+1)}(z)=\dots+\cfrac{(-1)^{p}c_{-2}\cdot2\cdot3\cdot\dots \cdot(p+2)}{z^{p+3}}+\cfrac{(-1)^{p+1}c_{-1}(p+1)!}{z^{p+2}}+0\implies
+	 	z^{p+2}f^{(p+1)}(z)=\dots+\cfrac{const}{z}+(-1)^{p+1}c_{-1}(p+1)! \underset{z\rightarrow \infty}{\rightarrow}(-1)^{p+1}c_{-1}(p+1)!.
 	 	\]
 	 	
 	 	\begin{equation}
-	 	\underset{\infty}{res}f(z)=-c_{-1}=\cfrac{(-1)^p}{(p+1)!}\lim\limits_{z\rightarrow\infty}z^{p+2}f^{(p+1)}(z).
+	 	\underset{\infty}{res}f(z)=-c_{-1}=\cfrac{(-1)^p}{(p+1)!} \lim\limits_{z\rightarrow\infty}z^{p+2}f^{(p+1)}(z).
 	 	\end{equation}
 	 	
 	 	\item[3)] 
