@@ -36,15 +36,15 @@ $w = z^2 = (x + iy)^2 = x^2 - y^2 + 2ixy$:
     L:
     \begin{cases}
         x = 1\\
-        y|_{-1}^1
+        y\big|_{-1}^1
     \end{cases}
     \implies
     \begin{cases}
-        u = 1 - y\\
-        v = 2y|_{-2}^2
+        u = 1 - y^2\\
+        v = 2y\big|_{-2}^2
     \end{cases}
     \implies
-    u = 1 - \frac{v^2}{4},\ v|_{-2}^2 
+    u = 1 - \frac{v^2}{4},\ v\big|_{-2}^2 
 \end{gather*}
 
 \begin{center}
@@ -68,7 +68,7 @@ $w = z^2 = (x + iy)^2 = x^2 - y^2 + 2ixy$:
   \end{array}
 \right]
 = 2 \int\limits_{-1}^1{\sqrt{1 + y^2}\ dy} = 
-2\int\limits_0^1{\sqrt{1 + y^2}\ dy} =\\= 4
+4\int\limits_0^1{\sqrt{1 + y^2}\ dy} =\\= 2
 \left[
   \sqrt{1 + y^2} + \ln(y + \sqrt{1 + y^2})
 \right]_0^1 =
@@ -79,17 +79,16 @@ $w = z^2 = (x + iy)^2 = x^2 - y^2 + 2ixy$:
 $\begin{cases}
     0 \leq x \leq 1,\\
     0 \leq y \leq 1;
-\end{cases}$ и отображение $w = z^2$.
+\end{cases}$ \hspace{-1.1em} и отображение ${w = z^2}$.
 \begin{center}
 \includegraphics[height=0.3\textwidth]{lec30_3.png}
 \end{center}
-\[\begin{gathered}
+\[\begin{cases}
 u = \Re w = \Re\ (x + iy)^2 = x^2 - y^2 \\
 v = \Im w = \Im\ (x + iy)^2 = 2xy
-\end{gathered}\]
+\end{cases}\]
 
 Рассмотрим все четыре стороны квадрата:
-
 \begin{itemize}
 \item[а)] $l_1: y = 0,\ 0 \leq x \leq 1 \stackrel{w}{\implies} L_1:
 \begin{cases}
