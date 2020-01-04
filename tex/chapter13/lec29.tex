@@ -12,6 +12,10 @@
 \begin{document}
 	
 \begin{rems}
+
+\;
+
+\begin{enumerate}
 	\item В обосновании достаточности доказанной теоремы существенную роль 
 	играло предположение о непрерывности дифференцируемой функции 
 	$ u = \Re f(z) $ и $ v = \Im f(z) $. В общем случае  можно отказаться 
@@ -48,6 +52,7 @@
 	\]
 	(Я так и не понял, что и в каком порядке у Никиты в конспекте идёт на \dots)
 	Указанные действия поясняют смысл условий Коши-Римана \eqref{lec28:17}.
+\end{enumerate}
 \end{rems}
 \begin{exmps}
 \begin{enumerate}
@@ -66,7 +71,7 @@
 	\end{cases}
 	\]
 	Условия \eqref{lec29:17} выполняются, значит ФКП является дифференцируемой,
-	причём $ f'(z) = (z)' = \stackrel{\eqref{lec29:21}}{=} u_x' + iv_y' = 
+	причём $ f'(z) = (z)' = \stackrel{\eqref{lec28:21}}{=} u_x' + iv_y' = 
 	1 + i0 = 1 $, что согласуется с действительным случаем.
 	\item $ f(z) = \overline{z} = x - iy, x, y \in \R $\\
 	$ u = x, v = -y, \implies u_x' = 1 \neq -1 = v_y' \leftarrow $ 
@@ -155,10 +160,10 @@ $.
 \[
 \begin{gathered}
 \exists u_{x^2}'' = (u_x')_x' 
-\stackrel{\eqref{lec29:17}}{=}
+\stackrel{\eqref{lec28:17}}{=}
 [u_x' = v_y'] = (v_y')_x' = v_{yx}''\\
 \exists u_{y^2}'' = (u_y')_y' 
-\stackrel{\eqref{lec29:17}}{=}
+\stackrel{\eqref{lec28:17}}{=}
 [u_y' = -v_x'] = (-v_x')_y' = -v_{yx}''\\
 \end{gathered}
 \]
