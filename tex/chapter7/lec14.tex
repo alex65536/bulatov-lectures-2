@@ -227,24 +227,24 @@ x = \frac{t}{1+t}  \Big|_{1}^{0}
 			\begin{equation}
 			\label{14:18}
 			a_n = 4 \int\limits_{0}^{\frac{\pi}{2}} \frac{\sin^2{at}}{\sin{t}} 
-			\sin{\left(2n-1 \right) } \; dt, \; n \in \N
+			\sin{(2n-1)t} \; dt, \; n \in \N
 			\end{equation}
 			имеем
 			\begin{equation}
 			\label{14:19}
-			a_n = \pi - E(a) \sin{\pi a} + b_n \sin{\pi a},
+			a_n = \pi - E(a) \sin{\pi a} + b_n,
 			\end{equation}
 			где
 			\begin{equation}
 			\label{14:20}
-			b_n = \left( - 1 \right)^{n-1} \int\limits_{0}^{1} \frac{t^{n-a-1} - 
-			t^{n+a-1} }{1+t} \; dt, \; n \in \N.
+			b_n = \left( - 1 \right)^{n-1} \sin{\pi a} \int\limits_{0}^{1}
+			\frac{t^{n-a-1} - t^{n+a-1} }{1+t} \; dt, \; n \in \N.
 			\end{equation}
 		\end{lemma}	
 			\begin{proof}
 				Для $\eqref{14:18}$ имеем
-				\[   a_n =  \int\limits_{0}^{\frac{\pi}{2}} \frac{\sin^2{at}}{\sin{t}} 
-				\sin{\left(2n-1 \right) } \; dt = \left[ 1 + \sum^{n-1}_{k = 1} \cos{2k t} 
+				\[   a_n =  4\int\limits_{0}^{\frac{\pi}{2}} \frac{\sin^2{at}}{\sin{t}} 
+				\sin{(2n-1)t} \; dt = \left[ 1 + 2\sum^{n-1}_{k = 1} \cos{2k t} 
 				= \frac{\sin{t} + 2 \sin{t} \cos{2t} + \dots + 2\sin{t} \cos{(2n - 
 				2)t}}{\sin{t}} \right. = \]
 				\[ = \left. \frac{\sin{t} + \left( \sin{3t} - \sin{t} \right) + \dots 
