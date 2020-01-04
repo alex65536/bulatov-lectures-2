@@ -27,7 +27,7 @@
 \begin{equation*}
     \begin{cases}
         z = 1 + iy\\
-        -1 \leqslant y \leqslant 1
+        -1 \leq y \leq 1
     \end{cases}
 \end{equation*}
 \center{\includegraphics[height=0.3\textwidth]{lec30_1.png}}
@@ -83,17 +83,17 @@ $w = z^2 = (x + iy)^2 = x^2 - y^2 + 2ixy$
 4\int\limits_0^1{\sqrt{1 + y^2}\ dy} = 4
 \left[
   \begin{array}{ccc}
-     \sqrt{1 + y^2} + ln(y + \sqrt{1 + y^2})
+     \sqrt{1 + y^2} + \ln(y + \sqrt{1 + y^2})
   \end{array}
 \right]_0^1 = 
-4(\sqrt{2} + ln(1 + \sqrt{2}))
+4(\sqrt{2} + \ln(1 + \sqrt{2}))
 \end{gathered}\]
 
 
 \item На комлексной плоскости рассмотрим квадрат D:
 $\begin{cases}
-    0 \leqslant x \leqslant 1,\\
-    0 \leqslant y \leqslant 1;
+    0 \leq x \leq 1,\\
+    0 \leq y \leq 1;
 \end{cases} w = z^2$
 
 \center{\includegraphics[height=0.3\textwidth]{lec30_3.png}}
@@ -102,7 +102,7 @@ $\begin{cases}
 \[\begin{gathered}
 u = Re w = Re\ (x + iy)^2 = x^2 - y^2 \\
 v = Im w = Im\ (x + iy)^2 = 2xy\\
-    \text{a) }  l_1: y = 0,\ 0 \leqslant x \leqslant 1 \stackrel{w}{\implies}
+    \text{a) }  l_1: y = 0,\ 0 \leq x \leq 1 \stackrel{w}{\implies}
 L_1:
 \begin{cases}
     u = x^2|_0^1\\
@@ -113,11 +113,11 @@ L_1:
 
 
 \[
-\text{б) } l_2: x = 1, 0 \leqslant x \leqslant 1 \stackrel{w}{\implies}
+\text{б) } l_2: x = 1, 0 \leq x \leq 1 \stackrel{w}{\implies}
 L_2: \begin{cases}
     u = 1 - y^2\\
     v = 2y|_0^2
-\end{cases} \Longleftrightarrow
+\end{cases} \iff
 \begin{cases}
     u = 1 - \frac{v^2}{4}\\
     v|_0^2
@@ -135,7 +135,7 @@ L_3:
 \begin{cases}
     u = x^2 - 1\\
     v = 2x|_0^2
-\end{cases} \Longleftrightarrow
+\end{cases} \iff
 \begin{cases}
     u = \frac{v^2}{4} - 1\\
     v|_2^0

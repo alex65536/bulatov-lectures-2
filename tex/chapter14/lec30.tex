@@ -38,7 +38,7 @@ l_k = \overbowright{z_{k-1}z_k},\ k = \overline{1, n}
 \center{\includegraphics[height=0.4\textwidth]{lec30_9.png}}
 
 Пусть $d = max |\Delta z_k|,\ \text{где } \Delta z_k = z_k - z_{k-1}, 
-k = \overline{1, n}.\ d - \text{диаметр, }d = diam\ P$ нашего разбиения $P$ 
+k = \overline{1, n}.\ d - \text{диаметр, }d = \diam\ P$ нашего разбиения $P$ 
 точками $z_i, i = \overline{0, n}.$ На каждой дуге разбиения $l_k$ 
 выберем отмеченные точки $M_k \in l_k, k = \overline{1, n}.$ 
 Если на исходной кривой определена функция $w = f\left(z\right), $ то в 
@@ -54,10 +54,10 @@ $\exists\ I \in C:$
 
 \begin{equation}
     \label{lec30_2:3}
-    \forall \varepsilon > 0 \quad \exists \delta = 
-    \delta_\varepsilon > 0 : 
-    \forall \{P, Q\},\ d = diam\ P \leq \delta \implies
-    |\sigma - I| \leq \varepsilon.
+    \forall \eps > 0 \quad \exists \delta = 
+    \delta_\eps > 0 : 
+    \forall \{P, Q\},\ d = \diam\ P \leq \delta \implies
+    |\sigma - I| \leq \eps.
 \end{equation}
 
 Здесь число $I \in C$ будем называть значением интеграла ФКП
@@ -126,7 +126,7 @@ $d = \underset{1 \leq k \leq n}{max}|\Delta z_k| =
 получаем в силу определения КрИ-2 для действительных Ф2П
 \[
 \sigma \underset{d \to 0}{\longrightarrow} \int\limits_l{
-udx - vdy} + i\int\limits_l{udy + vdx}, \text{т.е}
+udx - vdy} + i\int\limits_l{udy + vdx}, \text{т.~е.}
 \]
 \begin{equation}
     \label{lec30_2:5}    
@@ -139,7 +139,7 @@ f\left(z\right) = u + iv, \quad
 dz = dx + idy
 \int\limits_l{\left(u+iv\right)\left(dx + idy\right)} = 
 \int\limits_l{udx - vdy} + i\int\limits_l{udy + vdx} 
-\Leftrightarrow \eqref{lec30_2:5}.
+\iff \eqref{lec30_2:5}.
 \]
 
 В частности, если $l$ имеет параметризацию $\eqref{lec30_2:1},$ то в 
@@ -222,7 +222,7 @@ $|\sigma| \stackrel{\eqref{lec30_2:2}}{=}
 \sum\limits_{k=1}^n{|f\left(z(t_k)\right)||\Delta z_k|}
 \underset{d \to 0}{\to} \int\limits_l{|f\left(z\right)||dz|}$\\
 В частности, из основной оценки, полагая $M = 
-\underset{z\in l}{sup}|f\left(z\right)|$\\
+\underset{z\in l}{\sup}|f\left(z\right)|$\\
 $|\int\limits_l{f\left(z\right)dz}| \leq \int\limits_l{M|dz|} = 
 M\int\limits_l{|dz|} = M\ \text{Длина}\ l = Ml_0$, где $l_0 - $ длина $l.$
 \end{enumerate}
@@ -244,4 +244,3 @@ $D \in C,$ то тогда для любого замкнутого кусочн
     \oint\limits_l{f\left(z\right)dz} = 0.
 \end{equation}
 \end{document}  
-
