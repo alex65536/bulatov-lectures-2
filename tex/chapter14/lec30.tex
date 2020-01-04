@@ -18,7 +18,7 @@
     l:
     \begin{cases}
         z = x(t) + iy(t)\\
-        x, y \in R\\
+        x, y \in \R\\
         \alpha \leq t \leq \beta
     \end{cases}
 \end{equation}
@@ -38,7 +38,7 @@ l_k = \overbowright{z_{k-1}z_k},\ k = \overline{1, n}
 \center{\includegraphics[height=0.4\textwidth]{lec30_9.png}}
 
 Пусть $d = max |\Delta z_k|,\ \text{где } \Delta z_k = z_k - z_{k-1}, 
-k = \overline{1, n}.\ d - \text{диаметр, }d = diam\ P$ нашего разбиения $P$ 
+k = \overline{1, n}.\ d - \text{диаметр, }d = \diam\ P$ нашего разбиения $P$ 
 точками $z_i, i = \overline{0, n}.$ На каждой дуге разбиения $l_k$ 
 выберем отмеченные точки $M_k \in l_k, k = \overline{1, n}.$ 
 Если на исходной кривой определена функция $w = f\left(z\right), $ то в 
@@ -54,10 +54,10 @@ $\exists\ I \in C:$
 
 \begin{equation}
     \label{lec30_2:3}
-    \forall \varepsilon > 0 \quad \exists \delta = 
-    \delta_\varepsilon > 0 : 
-    \forall \{P, Q\},\ d = diam\ P \leq \delta \implies
-    |\sigma - I| \leq \varepsilon.
+    \forall \eps > 0 \quad \exists \delta = 
+    \delta_\eps > 0 : 
+    \forall \{P, Q\},\ d = \diam\ P \leq \delta \implies
+    |\sigma - I| \leq \eps.
 \end{equation}
 
 Здесь число $I \in C$ будем называть значением интеграла ФКП
@@ -88,16 +88,16 @@ $\int\limits_{\overbow{z_\alpha z_\beta}}{0dz} = 0$
 
 \begin{equation*}
  \begin{cases}
-  u = u\left(x, y\right) = Re\ f\left(z\right)\\
-  \quad v = v\left(x, y\right) = Im\ f\left(z\right)
+  u = u\left(x, y\right) = \Re f\left(z\right)\\
+  \quad v = v\left(x, y\right) = \Im f\left(z\right)
  \end{cases}
 \end{equation*}
 
 В соответствии   с используемым разбиением точками $P = \{z_k\}$ с
 отмеченными точками 
 $S = \{M_k = M_k\left(x(\tau_k), y(\tau_k)\right)\}, $ а 
-$\{t_k\}_{k=1}^n - $ соответствующие точки разбиения 
-$\left[\alpha,\beta\right],$ то рассматриваемая интегральную сумму 
+$\{t_k\}_{k=1}^n $~--- соответствующие точки разбиения 
+$\left[\alpha,\beta\right],$ то рассматриваемую интегральную сумму 
 $\eqref{lec30_2:2}$ запишем в виде
 
 $\sigma = \sum\limits_{k=1}^n{\left(u(x(\tau_k), y(\tau_k))
@@ -126,7 +126,7 @@ $d = \underset{1 \leq k \leq n}{max}|\Delta z_k| =
 получаем в силу определения КрИ-2 для действительных Ф2П
 \[
 \sigma \underset{d \to 0}{\longrightarrow} \int\limits_l{
-udx - vdy} + i\int\limits_l{udy + vdx}, \text{т.е}
+udx - vdy} + i\int\limits_l{udy + vdx}, \text{т.~е.}
 \]
 \begin{equation}
     \label{lec30_2:5}    
@@ -139,7 +139,7 @@ f\left(z\right) = u + iv, \quad
 dz = dx + idy
 \int\limits_l{\left(u+iv\right)\left(dx + idy\right)} = 
 \int\limits_l{udx - vdy} + i\int\limits_l{udy + vdx} 
-\Leftrightarrow \eqref{lec30_2:5}.
+\iff \eqref{lec30_2:5}.
 \]
 
 В частности, если $l$ имеет параметризацию $\eqref{lec30_2:1},$ то в 
@@ -164,11 +164,11 @@ $
 \begin{example}
     Пусть $n \in Z.$ Рассмотрим 
     $I_n = \int\limits_{|z-z_0| = R}{\frac{dz}{\left(z-z_0\right)^n}}$\\
-    Используем параметр этой окрестности $z=z_0 + Re^{it}, \
+    Используем параметр этой окрестности $z=z_0 + R e^{it}, \
     0 \leq t \leq 2\pi,$ имеем
     $dz = iRe^{it}dt$\\
     Значит, $I_n = \int\limits_0^{2\pi}{\frac{iRe^{it}dt}{
-    (Re^{it})^n}} = \frac{i}{R^{n-1}}\int\limits_0^{2\pi}{
+    (R e^{it})^n}} = \frac{i}{R^{n-1}}\int\limits_0^{2\pi}{
     e^{(1-n)it}dt}$\\
     Если $n \neq 1, $ то $I_n = \frac{i}{R^{n-1}}\frac{
     e^{(1-n)it}}{(1-n)i}\bigg|_0^{2\pi} = \frac{
@@ -196,7 +196,7 @@ $\int\limits_{\overbowright{AB}}{f\left(z\right)dz} =
 -\int\limits_{\overbowright{BA}}{
 f\left(z\right)dz}$
 
-\item Линейность. Если $f, g - $ интегрируемы на $l$ в 
+\item Линейность. Если $f, g $~--- интегрируемы на $l$ в 
 комплексной плоскости, то тогда \\
 $\forall\ \lambda, \mu \in C \implies \exists \int\limits_l{\left(
 \lambda f + \mu g\right)dz} = \lambda\int\limits_l{fdz} + 
@@ -212,8 +212,8 @@ $\int\limits_{l_1\cup l_2}{f\left(z\right)dz} =
 \item  Основная оценка интеграла ФКП.
 Если $f\left(z\right)$ интегрируема на $l$, то \\
 $|\int\limits_l{f\left(z\right)dz}| \leq \int\limits_l{
-|f\left(z\right)||dz|} - $ КрИ-1, где
-$|dz| = \sqrt{dx^2 + dy^2} - $  дифф. дуги.
+|f\left(z\right)||dz|} $~--- КрИ-1, где
+$|dz| = \sqrt{dx^2 + dy^2} $~---  дифф. дуги.
 
 Доказательство следует из соответствующей оценки для 
 $\eqref{lec30_2:2}$:\\
@@ -222,14 +222,14 @@ $|\sigma| \stackrel{\eqref{lec30_2:2}}{=}
 \sum\limits_{k=1}^n{|f\left(z(t_k)\right)||\Delta z_k|}
 \underset{d \to 0}{\to} \int\limits_l{|f\left(z\right)||dz|}$\\
 В частности, из основной оценки, полагая $M = 
-\underset{z\in l}{sup}|f\left(z\right)|$\\
+\underset{z\in l}{\sup}|f\left(z\right)|$\\
 $|\int\limits_l{f\left(z\right)dz}| \leq \int\limits_l{M|dz|} = 
-M\int\limits_l{|dz|} = M\ \text{Длина}\ l = Ml_0$, где $l_0 - $ длина $l.$
+M\int\limits_l{|dz|} = M\ \text{Длина}\ l = Ml_0$, где $l_0 $~--- длина $l.$
 \end{enumerate}
 
 \section{Интеграл ФКП от аналитической ФКП}
 Напомним, что $f\left(z\right)$ считается аналитической в $D \in C, $
-если она дифференцируема в каждой точке $D$($D$ - область).\\
+если она дифференцируема в каждой точке $D$($D$~--- область).\\
 Так как далее будет понятно, что из существования производной первого
 порядка ФКП следует существование всех производных высших порядков этой
 ФКП, то аналитическая функция будет бесконечное число раз непрерывно 
@@ -244,4 +244,3 @@ $D \in C,$ то тогда для любого замкнутого кусочн
     \oint\limits_l{f\left(z\right)dz} = 0.
 \end{equation}
 \end{document}  
-

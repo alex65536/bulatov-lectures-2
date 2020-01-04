@@ -9,172 +9,161 @@
 }
 
 \begin{document}
-Длина
-\begin{equation}
-    \label{lec30:1}
-    L = \int\limits_{l}{|f^\prime\left(z\right)||dz|}
-\end{equation}
-
-Площадь
-\begin{equation}
-    \label{lec30:2}
-    D = \iint\limits_D{|f^\prime\left(z\right)|^2\ dxdy}
-\end{equation}
 
 \begin{examples}
+
+\;
+
 \begin{enumerate}
 \item Рассмотрим
 \begin{equation*}
     \begin{cases}
-        z = 1 + iy\\
-        -1 \leqslant y \leqslant 1
+        z = 1 + iy,\\
+        -1 \leq y \leq 1.
     \end{cases}
 \end{equation*}
-\center{\includegraphics[height=0.3\textwidth]{lec30_1.png}}
+\begin{center}
+\includegraphics[height=0.3\textwidth]{lec30_1.png}
+\end{center}
 
 Рассмотрим образ $L$ этого отрезка при 
-$w = z^2 = (x + iy)^2 = x^2 - y^2 + 2ixy$
-
-\begin{equation*}
+$w = z^2 = (x + iy)^2 = x^2 - y^2 + 2ixy$:
+\begin{gather*}
     \begin{cases}
-        u = Re\ w = x^2 - y^2\\
-        v = Im\ w = 2xy
-    \end{cases}
+        u = \Re w = x^2 - y^2,\\
+        v = \Im w = 2xy,
+    \end{cases} \\
     L:
     \begin{cases}
         x = 1\\
-        y|_{-1}^1
+        y\big|_{-1}^1
     \end{cases}
     \implies
     \begin{cases}
-        u = 1 - y\\
-        v = 2y|_{-2}^2
+        u = 1 - y^2\\
+        v = 2y\big|_{-2}^2
     \end{cases}
     \implies
-    u = 1 - \frac{v^2}{4}, v|_{-2}^2 
-\end{equation*}
+    u = 1 - \frac{v^2}{4},\ v\big|_{-2}^2 
+\end{gather*}
 
-\center{\includegraphics[height=0.3\textwidth]{lec30_2.png}}
-
-
+\begin{center}
+\includegraphics[height=0.3\textwidth]{lec30_2.png}
+\end{center}
 
 \[\begin{gathered}
 \text{Длина }L \stackrel{\eqref{lec30:1}}{=}
 \left[
-  \begin{array}{ccc}
-     f^\prime\left(z\right) = \left(z^2\right) = 2z
-  \end{array}
+     f'(z) = \left(z^2\right)' = 2z
 \right]
-= \int\limits_l{2|z|\ |dz|} = 
+= \int\limits_l{2\abs z \abs{dz}} = 
 \left[
-  \begin{array}{ccc}
-     z = 1 + iy\\
-     y|_{-1}^1
-  \end{array}
+  z = 1 + iy,\ y|_{-1}^1
 \right]
-=  
+=\\=
 \left[
   \begin{array}{ccc}
      |z| = \sqrt{1 + y^2}\\
      dz = idy \implies |dz| = dy
   \end{array}
-\right]\\
+\right]
 = 2 \int\limits_{-1}^1{\sqrt{1 + y^2}\ dy} = 
-4\int\limits_0^1{\sqrt{1 + y^2}\ dy} = 4
+4\int\limits_0^1{\sqrt{1 + y^2}\ dy} =\\= 2
 \left[
-  \begin{array}{ccc}
-     \sqrt{1 + y^2} + ln(y + \sqrt{1 + y^2})
-  \end{array}
-\right]_0^1 = 
-4(\sqrt{2} + ln(1 + \sqrt{2}))
+  \sqrt{1 + y^2} + \ln(y + \sqrt{1 + y^2})
+\right]_0^1 =
+2(\sqrt{2} + \ln(1 + \sqrt{2})).
 \end{gathered}\]
 
-
-\item На комлексной плоскости рассмотрим квадрат D:
+\item На комплексной плоскости рассмотрим квадрат $D$:
 $\begin{cases}
-    0 \leqslant x \leqslant 1,\\
-    0 \leqslant y \leqslant 1;
-\end{cases} w = z^2$
+    0 \leq x \leq 1,\\
+    0 \leq y \leq 1;
+\end{cases}$ \hspace{-1.1em} и отображение ${w = z^2}$.
+\begin{center}
+\includegraphics[height=0.3\textwidth]{lec30_3.png}
+\end{center}
+\[\begin{cases}
+u = \Re w = \Re\ (x + iy)^2 = x^2 - y^2 \\
+v = \Im w = \Im\ (x + iy)^2 = 2xy
+\end{cases}\]
 
-\center{\includegraphics[height=0.3\textwidth]{lec30_3.png}}
-
-
-\[\begin{gathered}
-u = Re w = Re\ (x + iy)^2 = x^2 - y^2 \\
-v = Im w = Im\ (x + iy)^2 = 2xy\\
-    \text{a) }  l_1: y = 0,\ 0 \leqslant x \leqslant 1 \stackrel{w}{\implies}
-L_1:
+Рассмотрим все четыре стороны квадрата:
+\begin{itemize}
+\item[а)] $l_1: y = 0,\ 0 \leq x \leq 1 \stackrel{w}{\implies} L_1:
 \begin{cases}
-    u = x^2|_0^1\\
+    u = x^2\big|_0^1\\
     v = 0
-\end{cases}
-\end{gathered}\]
-\center{\includegraphics[height=0.3\textwidth]{lec30_4.png}}
+\end{cases}$
+\begin{center}
+\includegraphics[height=0.3\textwidth]{lec30_4.png}
+\end{center}
 
-
-\[
-\text{б) } l_2: x = 1, 0 \leqslant x \leqslant 1 \stackrel{w}{\implies}
+\item[б)]
+$l_2: x = 1, 0 \leq x \leq 1 \stackrel{w}{\implies}
 L_2: \begin{cases}
     u = 1 - y^2\\
-    v = 2y|_0^2
-\end{cases} \Longleftrightarrow
+    v = 2y\big|_0^2
+\end{cases} \hspace{-1em} \iff
 \begin{cases}
     u = 1 - \frac{v^2}{4}\\
-    v|_0^2
-\end{cases}
-\]
-\center{\includegraphics[height=0.3\textwidth]{lec30_5.png}}
+    v\big|_0^2
+\end{cases}$
+\begin{center}
+\includegraphics[height=0.3\textwidth]{lec30_5.png}
+\end{center}
 
-\[
-\text{в) } l_3: 
+\item[в)]
+$l_3: 
 \begin{cases}
     y = 1\\
-    x|_0^1
-\end{cases} \implies
+    x\big|_1^0
+\end{cases} \hspace{-1em} \stackrel{w}{\implies}
 L_3:
 \begin{cases}
     u = x^2 - 1\\
-    v = 2x|_0^2
-\end{cases} \Longleftrightarrow
+    v = 2x\big|_2^0
+\end{cases} \hspace{-1em} \iff
 \begin{cases}
     u = \frac{v^2}{4} - 1\\
-    v|_2^0
-\end{cases}
-\]
-\center{\includegraphics[height=0.3\textwidth]{lec30_6.png}}
+    v\big|_2^0
+\end{cases}$
+\begin{center}
+\includegraphics[height=0.3\textwidth]{lec30_6.png}
+\end{center}
 
-\[
-\text{г) } l_4:
+\item[г)]
+$l_4:
 \begin{cases}
     x = 0\\
-    y|_0^1
+    y\big|_1^0
 \end{cases}
-\stackrel{w}{\longrightarrow}
+\hspace{-1em} \stackrel{w}{\implies}
 L_4:
 \begin{cases}
-    u = -y^2\ |_0^1\\
+    u = -y^2\big|_1^0\\
     v = 0
-\end{cases}\]
-\center{\includegraphics[height=0.3\textwidth]{lec30_7.png}}
+\end{cases}$
+\begin{center}
+\includegraphics[height=0.3\textwidth]{lec30_7.png}
+\end{center}
+\end{itemize}
 
-\begin{flushleft}
-  Имеем для L:
-\end{flushleft}
+Имеем для $L$:
 
-\center{\includegraphics[height=0.3\textwidth]{lec30_8.png}}
-
+\begin{center}
+\includegraphics[height=0.3\textwidth]{lec30_8.png}
+\end{center}
 \[\begin{gathered}
-\text{пл. G} \stackrel{\eqref{lec30:2}}{=}  \left[
-  \begin{array}{ccc}
-     f^\prime\left(z\right) = 2z
-  \end{array}
+\text{Площадь G} \stackrel{\eqref{lec30:2}}{=}  \left[
+  f'(z) = 2z
 \right]
-= \iint\limits_D{|2z|^2dxdy} = 4\iint\limits_D{\left(x^2 + y^2\right)\
-dxdy} = \\
+= \iint\limits_D{|2z|^2dxdy} = 4\iint\limits_D{\left(x^2 + y^2\right)
+dxdy} = \\ =
 4\int\limits_0^1{dx}\int\limits_0^1{\left(x^2 + y^2\right) dy} = 
-u\int\limits_0^1(x^2y + \frac{y^3}{3})\bigg|_{y=0}^{y=1}\ dx = 
-4\int\limits_0^1{(x^2 + \frac{1}{3})\ dx} = 4(\frac{1}{3} + \frac{1}{3}) 
-= \frac{8}{3}
+4\int\limits_0^1\left(x^2y + \frac{y^3}{3}\right)\bigg|_{y=0}^{y=1}\ dx = 
+4\int\limits_0^1{\left(x^2 + \frac{1}{3}\right) dx} = 4\left(\frac{1}{3} +
+\frac{1}{3}\right) = \frac{8}{3}.
 \end{gathered}\]
 
 \end{enumerate}
