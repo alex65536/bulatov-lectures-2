@@ -337,14 +337,21 @@ $ l \subset D $, заданная параметрически: \[
 то тогда
 для $ L = f(l) $~--- образа $ l $ при аналитическом отображении $ w = f(z) $,  
 имеем:
-\[\text{Длина } L = \int\limits_{l} \abs{f'(z(t))} dt = 
-\int\limits_{l} \sqrt{(x'(t))^2 + (y'(t))^2} \; dt.\]
+\begin{equation}
+\label{lec30:1}
+\text{Длина } L = \int\limits_{l} \abs{f'(z)} \abs{dz}.
+% Было:
+% 
+% \text{Длина } L = \int\limits_{l} \abs{f'(z(t))} dt = 
+% \int\limits_{l} \sqrt{(x'(t))^2 + (y'(t))^2} \; dt.
+\end{equation}
 
 Аналогично, если рассматривается квадратная область $ G \subset D $, 
 то для площади $ G $ получаем следующее. Пусть $S$~--- площадь $f(G)$~--- 
 образа $G$ при аналитическом отображении $ w = f(z) $. Тогда
-\[
+\begin{equation}
+\label{lec30:2}
 S = \iint\limits_{G} \abs{f'(z)}^2 dx\;dy.
-\]
+\end{equation}
 
 \end{document}
