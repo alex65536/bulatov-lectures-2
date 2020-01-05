@@ -1,0 +1,454 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+
+\section{Непрерывные ФКП}
+
+Говорят, что $f(z)$ \emph{непрерывна} в $z_0$,
+если, во-первых, эта ФКП определена в $z_0$ и,
+во-вторых,
+\begin{equation}
+\label{lec28:2}
+\lim\limits_{z \to z_0} f(z)= f(z_0),
+\end{equation}
+т.~е.
+\[
+\forall \eps > 0 \quad \exists \delta = \delta_{\eps} > 0 : \ \
+\forall z \in D ,\ \abs{z - z_0} \le \delta
+\implies \abs{f(z) - f(z_0)} \le \eps.
+\]
+На языке окрестностей это утверждение равносильно следующему:
+\[
+\forall \eps > 0 \quad \exists \delta = \delta_{\eps} > 0 : \ \
+\forall z \in \overline{B}_{\delta} (z_0) \cap D
+\implies f(z) \in \overline{B}_{\eps} (f(z_0)).
+\]
+\begin{thm}[критерий непрерывности ФКП]
+	ФКП $f(z) = u(x, y) + i v(x, y)$, где $u = \Re f(z),\ v = \Im f(z)$,
+	непрерывна в точке $z_0 = x_0 + i y_0 \in D$
+	тогда и только тогда, когда
+	Ф2П $u = u(x, y)$ и $v = v(x, y)$ непрерывны в точке $M_0(x_0, y_0)$.
+\end{thm}
+\begin{proof}
+	\;
+	
+	\nec: Пусть выполнено \eqref{lec28:2}. Тогда, учитывая, что
+	\[\begin{gathered}
+	\abs{x - x_0} \le \sqrt{(x - x_0)^2 + (y - y_0)^2} = \abs{z - z_0}, \\
+	\abs{y - y_0} \le \sqrt{(x - x_0)^2 + (y - y_0)^2} = \abs{z - z_0},
+	\end{gathered}\]
+	получаем, что
+	\[
+	\forall \eps > 0 \quad \exists \delta = \delta_{\eps} > 0 : \ \
+	\forall z \in D,\ \abs{z - z_0} \le \delta \implies
+	\begin{cases}
+		\abs{x - x_0} \le \abs{z - z_0} \le \delta, \\
+		\abs{y - y_0} \le \abs{z - z_0} \le \delta,
+	\end{cases}
+	\]
+	а значит,
+	\[
+	\abs{u(x, y) - u(x_0, y_0)} \le
+	\sqrt{(u(x, y) - u(x_0, y_0))^2 + (v(x, y) - v(x_0, y_0))^2}
+	\le \abs{f(z) - f(z_0)} \le \eps,
+	\]
+	\[
+	\abs{v(x, y) - v(x_0, y_0)} \le \ldots \le \abs{f(z) - f(z_0)} \le \eps,
+	\]
+	т.~е.
+	\[
+	\begin{cases}
+		\lim\limits_{\substack{x \to x_0\\y \to y_0}} u(x, y) = u(x_0, v_0), \\
+		\lim\limits_{\substack{x \to x_0\\y \to y_0}} v(x, y) = v(x_0, v_0),
+	\end{cases}
+	\implies
+	\begin{cases}
+		u = \Re f, \\
+		v = \Im f,
+	\end{cases}
+	\text{непрерывны в }
+	M_0(x_0, y_0).
+	\]
+	
+	\suff: Пусть рассматриваемые $u = u(x, y),\ v = v(x, y)$
+	непрерывны в $M_0(x_0, y_0)$. Тогда
+	\begin{enumerate}
+		\item[а)] $\forall \eps > 0 \quad
+		\exists \widetilde{\delta} = \widetilde{\delta}_{\eps} > 0 : \ \
+		\forall (x, y) \in D(u),\
+		\sqrt{(x - x_0)^2 + (y - y_0)^2} \le \widetilde{\delta}
+		\implies \\ \implies
+		\abs{u(x, y) - u(x_0, y_0)} \le \dfrac{\eps}{\sqrt{2}}.$
+		\item[б)] $\forall \eps > 0 \quad
+		\exists \overline{\delta} = \overline{\delta}_{\eps} > 0 : \ \
+		\forall (x, y) \in D(v),\
+		\sqrt{(x - x_0)^2 + (y - y_0)^2} \le \overline{\delta}
+		\implies \\ \implies
+		\abs{v(x, y) - v(x_0, y_0)} \le \dfrac{\eps}{\sqrt{2}}.$
+	\end{enumerate}
+	Выбирая
+	\[\begin{gathered}
+	\delta = \min \left\{\overline{\delta},\ \widetilde{\delta}\right\} > 0
+	\implies \forall (x, y) \in D(u) \cap D(v),\
+	\abs{z - z_0} =
+	\sqrt{(x - x_0)^2 + (y - y_0)^2} \le \delta
+	\implies \\ \implies \abs{f(z) - f(z_0)} = \sqrt{
+	{\big(\underbrace{u(x, y) - u(x_0, y_0)}_{\le \tfrac{\eps}{\sqrt{2}}}\big)}^2
+	+
+	{\big(\underbrace{v(x, y) - v(x_0, y_0)}_{\le \tfrac{\eps}{\sqrt{2}}}\big)}^2
+	} \le \sqrt{\frac{\eps^2}{2} + \frac{\eps^2}{2}} = \eps.\qedhere
+	\end{gathered}\]
+\end{proof}
+\begin{rems}
+	\;
+	
+	\begin{enumerate}
+		\item Доказательство теоремы позволяет автоматически
+		перенести основные свойства Ф2П на непрерывные ФКП:
+		линейная комбинация, произведение, частное непрерывных ФКП (при условии, 
+		что знаменатель не равен $0$).
+		\item Имеет место также \emph{локальная ограниченность} непрерывной ФКП:
+		если $f(z)$ непрерывна в $z_0 \in D$, то
+		$\exists \overline{B}_{\delta} (z_0) \subset D \quad
+		\forall z \in \overline{B}_{\delta} (z_0) \implies
+		\abs{f(z)} \le const \in \R \ge 0$.
+		\item Справедлива также следующая аналогичная
+		\emph{теорема о сохранении знака}:
+		если $f(z)$ непрерывна в $z_0 \in D$ и $f(z) \ne 0$, то
+		$\exists \overline{B}_{\delta} (z_0) \subset D
+		\quad \forall z \in \overline{B}_{\delta} (z_0) \implies \abs{f(z)} > 0$.
+		\item Если $f(z)$ непрерывна в каждой точке множества $D \subset \C$,
+		где $D$ --- компакт в $\C$, то в случае ограниченности этого компакта
+		величина $\abs{f(z)}$ достигает своих наибольшего и наименьшего значения,
+		т.~е.
+		\[
+		\exists z_1, z_2 \in D, \quad
+		\begin{gathered}
+			\max\limits_{z \in D} \abs{f(z)} = \abs{f(z_1)}, \\
+			\min\limits_{z \in D} \abs{f(z)} = \abs{f(z_2)}.
+		\end{gathered}
+		\]
+		Далее будет показано, что всегда можно выбрать экстремальное значение
+		на границе $D$.
+		\item Имеем следующую аналогичную \emph{теорему Кантора}:
+		если $f(z)$ непрерывна на компакте $D$,
+		то $f(z)$ равномерно непрерывна на $D$, т.~е.
+		\[
+		\forall \eps > 0 \quad \exists \delta = \delta_{\eps} > 0 \quad
+		\forall z, t \in D, \quad \abs{z - t} \le \delta
+		\implies \abs{f(z) - f(t)} \le \eps.
+		\]
+		Отметим, что, как и в действительном случае, непрерывность ФКП на множестве
+		будем рассматривать как непрерывность в каждой точке этого множества.
+	\end{enumerate}
+\end{rems}
+
+\section{Дифференцируемые ФКП}
+
+Рассмотрим ФКП $f(z)$, определённую в некоторой окрестности
+$\overline{B}_r (z_0)$ точки $z_0$. Придадим этой точке произвольное 
+приращение $\D z \in \C$ так,
+чтобы $z + \D z \in \overline{B}_r (z_0)$ и рассмотрим
+\begin{equation}
+\label{lec28:3}
+\D f(z_0) = f(z_0 + \D z) - f(z_0).
+\end{equation}
+Рассматриваемую ФКП $f(z)$ будем называть \emph{дифференцируемой} в $z_0$,
+если
+\begin{equation}
+\label{lec28:4}
+\exists p = const \in \C : \ \
+\D f(z_0) = p\, \D z + \alpha,
+\end{equation}
+где $\alpha = o(\D z)$ при $\D z \to 0$,
+т.~е. $\lim\limits_{\D z \to 0} \dfrac{\alpha}{\D z} = 0$.
+
+Из \eqref{lec28:4} следует
+$\D f(z_0) \appr{\D z \to 0} 0$,
+т.~е. $f(z_0 + \D z) \appr{\D z \to 0} f(z_0)$,
+что равносильно непрерывности $f(z)$ в $z_0$,
+т.~е., как и в $\R$, непрерывность функции является необходимым условием её
+дифференцируемости.
+
+Из \eqref{lec28:4} при $\D z \ne 0$ следует: 
+$\dfrac{\D f(z_0)}{\D z} = p + o(1)$.
+Отсюда при $\D z \to 0$ получаем:
+\[\exists \lim\limits_{\D z \to 0} \dfrac{\D f(z_0)}{\D z} =
+\lim\limits_{\D z \to 0} \left(p + o(1)\right) = p \in \C.\]
+Как и для действительных функций, далее будем полагать, что
+\begin{equation}
+\label{lec28:5}
+\lim\limits_{\D z \to 0} \frac{\D f(z_0)}{\D z} =
+\lim\limits_{\D z \to 0} \frac{f(z_0 + \D z) - f(z_0)}{\D z} = f'(z_0),
+\end{equation}
+поэтому, как и для действительного случая, критерием дифференцируемости ФКП
+является существование в точке $z_0$ конечной производной \eqref{lec28:5}.
+Далее будет показано, что если существует \eqref{lec28:5}, то эта ФКП
+бесконечное число раз дифференцируема в $z_0$. В этом состоит отличие от 
+действительного случая, где из существования производной
+не следует существование производных высших порядков. 
+
+Как и в действительном случае, производные высших порядков определяются 
+рекуррентно:
+\begin{equation}
+\label{lec28:6}
+\begin{cases}
+	f^{(n)} (z) = \left(f^{(n - 1)} (z)\right)',\ n \in \N, \\
+	f^{(0)} (z) = f(z).
+\end{cases}
+\end{equation}
+В \eqref{lec28:6}, как и в действительном случае, дифференцируемость
+на множестве подразумевается как дифференцируемость в каждой точке
+этого множества.
+
+Используя \eqref{lec28:4}, \eqref{lec28:5}, имеем
+\begin{equation}
+\label{lec28:7}
+f(z_0 + \D z) \stackrel{\eqref{lec28:4}, \eqref{lec28:5}}{=}
+f(z_0) + f'(z_0)\, \D z + o(\D z).
+\end{equation}
+В \eqref{lec28:7} линейная часть по отношению к $\D z$, если отбросить
+$o(\D z)$, т.~е. слагаемое $f'(z_0) \D z$ называется \emph{дифференциалом}
+$f(z)$ в $z_0$ и обозначается 
+\begin{equation}
+\label{lec28:8}
+d f(z_0) = f'(z_0)\, \D z.
+\end{equation}
+
+\begin{exmp}
+Пусть $f(z) = z \in D = \C$. Тогда $\forall z_0 \implies
+\D f(z_0) = z_0 + \D z - z_0 = \D z$, что совпадает с \eqref{lec28:4},
+где $p = 1 = f'(z_0),\ \alpha = o(\D z)$.
+Здесь $\forall z \in \C \implies dz = \D z$,
+поэтому далее, как и в действительном случае, под дифференциалом
+независимой переменной $z$ будем понимать произвольное допустимое приращение.
+Поэтому для дифференцируемой на $D$ функции $f(z)$ формула \eqref{lec28:8} 
+имеет вид
+\begin{equation}
+\label{lec28:9}
+d f(z_0) = f'(z_0)\, dz,
+\end{equation}
+где $z$ --- независимая переменная.
+В \eqref{lec28:9} дифференциал ФКП является функцией двух переменных:
+независимой $z$ и произвольного допустимого приращения $dz = \D z$.
+\end{exmp}
+
+Как и в случае $\R$, обосновываются основные арифметические операции над
+дифференцируемыми ФКП (произвольная линейная комбинация, произведение, 
+частное);
+формулы аналогичны действительным функциям.
+
+Кроме того, по той же схеме, что и для $\R$, обосновывается \emph{правило
+дифференцирования сложной функции} (\emph{правило цепочки}):
+пусть существуют функции $w = f(t)$, $t \in G \subset \C$ и
+$t = g(z),\ z \in D \subset \C$.
+Если существует композиция $h(z) = \left(f \circ g\right) (z) =
+f(g(z))$, то в случае дифференцируемости $g(z)$
+в некоторой окрестности $z_0 \in D$ и дифференцируемости $f(t)$ в 
+соответствующей окрестности $t_0 = g(z_0)$, сложная ФКП $h(z)$ будет
+дифференцируемой, причём
+\begin{equation}
+\label{lec28:10}
+h'(z_0) = \ldots = f'(t_0)\, g'(z_0) = f'(g(z_0))\, g'(z_0).
+\end{equation}
+На основании \eqref{lec28:10} доказывается инвариантность формы
+первого дифференциала, а именно: для $h(z) = f(g(z))$ в точках 
+дифференцируемости
+имеем
+\begin{equation}
+\label{lec28:11}
+d g(z) = g'(z)\, dz,
+\end{equation}
+\begin{equation}
+\label{lec28:12}
+dh = d f(g(z)) = \left(f(g(z))\right)' dz = f'(g(z))\,
+\underbrace{g'(z)\, dz}_{d g(z)} \stk{lec28:11}{=} f'(g(z))\, dg = f'(t)\, dt,
+\end{equation}
+где $t$ --- промежуточный аргумент.
+
+Единственное отличие при использовании \eqref{lec28:11} и \eqref{lec28:12}
+в том, что $dz = \D z$ --- приращение независимой переменной,
+а $dt = g'(z)\, dz$ --- дифференциал промежуточной функции $t = g(z)$ и,
+как правило, $dt \ne \D t$.
+
+Дифференциалы высших порядков определяются по той же схеме, что и для $\R$:
+пусть для дифференцируемой $f(z)$ существует $F(z) = d f(z) = f'(z)\, dz$, 
+причем $F(z)$ --- дифференцируемая функция при $\fix dz = \D x$.
+Здесь, придавая рассматриваемой
+$z$ новое дополнительное приращение $\delta z \in \C$ так, чтобы
+$\left(z + \delta z\right) \in D$, можем рассматривать в $\delta z \in \C$
+соответствующий дифференциал $\delta F(z) = F'(z)\, \delta z$.
+Получим
+\begin{equation}
+\label{lec28:13}
+\delta F(z) = \left(f'(z)\, dz\right)' \delta z =
+\left[\D z = dz \text{ --- } \fix\right] = f''(z)\, dz\, \delta z.
+\end{equation}
+Если в \eqref{lec28:13} вместо нового приращения $\delta z$ использовать
+старое приращение $\delta z = \D z$, то получим дифференциал
+$d F(z) = f''(z)\, dz^2$, называемый \emph{дифференциалом второго порядка}
+от $f(z)$ в рассматриваемой точке $z$ на допустимом приращении $dz$.
+Используя обозначения,
+\begin{equation}
+\label{lec28:14}
+d^2 f(z) = f''(z)\, dz^2,
+\end{equation}
+где $dz^2 = (dz)^2$.
+
+Аналогично по индукции определяются дифференциалы высших порядков:
+\begin{equation}
+\label{lec28:15}
+d^0 f = f, \quad
+d^n f = d \left(d^{n - 1} f \right).
+\end{equation}
+Если $z$ --- независимая переменная, то для \eqref{lec28:15} имеем
+\begin{equation}
+\label{lec28:16}
+d^n f = f^{(n)} (z)\, dz^n,
+\end{equation}
+где $dz^n = (dz)^n$.
+
+В отличие от дифференциала первого порядка,
+дифференциалы высших порядков не обладают в общем случае свойством
+инвариантности формы.
+
+\section{Критерий Коши-Римана (Эйлера-Д'Аламбера) дифференцируемости ФКП}
+
+Будем говорить, что две действительные функции двух переменных
+$u = u(x, y),\ v = v(x, y)$ удовлетворяют \emph{условиям Коши-Римана},
+если, во-первых, у них существуют частные производные первого порядка,
+и, во-вторых,
+\begin{equation}
+\label{lec28:17}
+\begin{cases}
+	u'_x = v'_y, \\
+	u'_y = -v'_x.
+\end{cases}
+\end{equation}
+\begin{thm}[критерий дифференцируемости ФКП]
+	ФКП $f(z) = u + i v$, где $u, v$~--- действительные Ф2П, дифференцируема
+	в $z = x + i y,\ x, y \in \R$ тогда и только тогда, когда
+	$u = u(x, y)$ и $v = v(x, y)$ удовлетворяют условиям Коши-Римана 
+	\eqref{lec28:17}.
+\end{thm}
+\begin{proof}
+	\;
+
+	\nec: $f(z)$ дифференцируема в рассматриваемой $z = x + i y$.
+	Тогда для $z$ $\exists f'(z) \in \C$. Имеем
+	\begin{equation}
+	\label{lec28:18}
+	\begin{gathered}
+	f'(z) = \lim\limits_{\D z \to 0} \frac{\D f(z)}{\D z} = 
+	\left[\begin{gathered}
+	f(z) = u + i v \\
+	\D z = \D x + i \D y
+	\end{gathered}\right] = \\ =
+	\lim\limits_{\substack{\D x \to 0\\\D y \to 0}} \left(
+	\frac{u(x + \D x,\ y + \D y) - u(x, y)}{\D x + i \D y} +
+	i\, \frac{v(x + \D x,\ y + \D y) - v(x, y)}{\D x + i \D y}\right).
+	\end{gathered}
+	\end{equation}
+	В силу произвольности допустимых $\D x \to 0,\ \D y \to 0$
+	рассмотрим два случая:
+	\begin{enumerate}
+	\item $\D y = 0,\ \D x \to 0$. \\
+	Здесь $f'(z) \stk{lec28:18}{=} \lim\limits_{\D x \to 0}
+	\left(\dfrac{\D u(x, y)}{\D x} + i\, \dfrac{\D v(x, y)}{\D x}\right) =
+	u'_x + i v'_x$.
+	\item $\D x = 0,\ \D y \to 0$. \\
+	Здесь $f'(z) \stk{lec28:18}{=} \lim\limits_{\D y \to 0}
+	\left(\dfrac{\D u(x, y)}{i \D y} + \dfrac{\D v(x, y)}{\D y}\right) =
+	v'_y - i u'_y$.
+	\end{enumerate}
+	Таким образом,
+	\[
+	v'_y - i u'_y = f'(z) = u'_x + i v'_x.
+	\]
+	Отсюда имеем
+	\[
+	\begin{cases}
+		u'_x = v'_y, \\
+		u'_y = -v'_x
+	\end{cases}
+	\iff \eqref{lec28:17}.
+	\]
+	
+	\suff: Для простоты будем считать, что действительные Ф2П
+	$u = \Re f(z),\ v = \Im f(z)$ не только имеют частные производные
+	первого порядка, удовлетворяющие \eqref{lec28:17},
+	но и что эти производные непрерывны. Тогда рассматриваемые
+	$u = u(x, y),\ v = v(x, y)$ будут непрерывно дифференцируемы и,
+	следовательно, на соответствующих приращениях имеем:
+	\begin{equation}
+	\label{lec28:19}
+	\begin{cases}
+		\D u(x, y) = u(x + \D x,\ y + \D y) - u(x, y) =
+		u'_x\, \D x + u'_y\, \D y +
+		\underbrace{o\left(\sqrt{\D x^2 + \D y^2}\right)}_{\alpha}, \\
+		\D v(x, y) = v(x + \D x,\ y + \D y) - v(x, y) =
+		v'_x\, \D x + v'_y\, \D y +
+		\underbrace{o\left(\sqrt{\D x^2 + \D y^2}\right)}_{\beta}.
+	\end{cases}
+	\end{equation}
+	Отсюда для 
+	\[
+	\D f(z) = f(z + \D z) - f(z) = \D u(x, y) + i \D v(x, y)
+	\]
+	следует
+	\[
+	\D f(z) \stk{lec28:19}{=} u'_x\, \D x + u'_y\, \D y + \alpha +
+	i \left(v'_x\, \D x + v'_y\, \D y + \beta\right) =
+	\left(u'_x + i v'_x\right) \D x + \left(u'_y + i v'_y\right) \D y +
+	\underbrace{\alpha + i \beta}_{\gamma}.
+	\]
+	Используя далее условия Коши-Римана \eqref{lec28:17} имеем
+	\begin{equation}
+	\label{lec28:20}
+	\begin{gathered}
+	\D f(z) =
+	\left[\begin{gathered}
+		u'_x = v'_y \\
+		v'_x = -u'_y
+	\end{gathered}\right]
+	= \left(v'_y - i u'_y\right) \D x + \left(u'_y + i v'_y\right) \D y + \gamma
+	= \\ = v'_y\, (\D x + i \D y) + u'_y\, (\D y - i \D x) + \gamma =
+	v'_y\, \underbrace{(\D x + i \D y)}_{\D z} -
+	i u'_y\, \underbrace{(\D x + i \D y)}_{\D z} + \gamma = \\ =
+	\left(v'_y - i u'_y\right) \D z + \gamma.
+	\end{gathered}
+	\end{equation}
+	Осталось показать, что $\gamma = o(\D z)$ при $\D z \to 0$.
+	\[\begin{gathered}
+	\abs{\frac{\gamma}{\D z}} = \abs{\frac{\alpha + i \beta}{\D z}} =
+	\frac{\abs{\alpha + i \beta}}{\sqrt{\D x^2 + \D y^2}} =
+	\sqrt{
+	{\Bigg(\underbrace{\frac{\alpha}{\sqrt{\D x^2 + \D y^2}}}_{\to 0}\Bigg)}^2
+	+
+	{\Bigg(\underbrace{\frac{\beta}{\sqrt{\D x^2 + \D y^2}}}_{\to 0}\Bigg)}^2
+	} \appr{\substack{\D x \to 0\\\D y \to 0}} 0.
+	\end{gathered}\]
+	Следовательно, $\D z = \D x + i \D y \to 0 \implies \gamma = o(\D z)$,
+	значит, \eqref{lec28:20} принимает вид
+	\[
+	\D f(z) = \left(v'_y - i u'_y\right) \D z + o(\D z)
+	\quad \text{либо} \quad
+	\D f(z) = p\, \D z + \underset{\D z \to 0}{o(\D z)} ,\ p = v'_y - i u'_y.
+	\]
+	В силу определения дифференцируемой ФКП получаем, что $f(z)$ дифференцируема и
+	\begin{equation}
+	\label{lec28:21}
+	f'(z) = p = v'_y - i u'_y.
+	\end{equation}
+\end{proof}
+
+\end{document}
