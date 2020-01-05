@@ -17,7 +17,8 @@
 $ \phi_n(z) $ сходится поточечно к $ f(z), z \in D $, если
 
 \begin{equation}\label{34:1}
-	\forall\, \varepsilon > 0 \quad \forall\, z \in D \quad \exists\, \nu = \nu_\varepsilon (z) \in \R\, :\, \forall\, n \geq \nu \implies |\phi_n(z) - f(z)| \leq \varepsilon
+	\forall\, \varepsilon > 0 \quad \forall\, z \in D \quad \exists\, \nu = \nu_\varepsilon (z) \in \R\, :\,
+	\forall\, n \geq \nu \implies |\phi_n(z) - f(z)| \leq \varepsilon
 \end{equation}
 
 \[ \implies \exists\, \underset{n \to \infty}{\lim} \phi_n (z) = f(z),\, \forall z \in D \quad \phi_n(z) \overset{D}{\underset{n \to \infty}\longrightarrow} f(z) \]
@@ -25,7 +26,8 @@ $ \phi_n(z) $ сходится поточечно к $ f(z), z \in D $, если
 Последовательность $ (\phi_n(z)) $ называется равномерно сходящейся к $ f(z) $, если
 
 \begin{equation}\label{34:2}
-	\forall\, \varepsilon > 0 \quad \exists\, \nu = \nu_\varepsilon (z) \in \R\, :\, \forall\, n \geq \nu,\, \forall z \in D \implies |\phi_n(z) - f(z)| \leq \varepsilon
+	\forall\, \varepsilon > 0 \quad \exists\, \nu = \nu_\varepsilon (z) \in \R\, :\,
+	\forall\, n \geq \nu,\, \forall z \in D \implies |\phi_n(z) - f(z)| \leq \varepsilon
 \end{equation}
 
 $ \eqref{34:2} $ записывают следующим образом
@@ -205,7 +207,7 @@ $ \eqref{34:2} $ записывают следующим образом
 \begin{thm}{О разложении ФКП в степенной ряд}
 	\;
 	
-	Пусть $ f(z) $ аналитична в односвязной области $ D $. Для $ fix\, z_0 \in D $ рассмотрим $ R = \underset{z \in \partial D = l}{min}d(z, z_0) $.
+	Пусть $ f(z) $ аналитична в односвязной области $ D $. Для $ \fix\, z_0 \in D $ рассмотрим $ R = \underset{z \in \partial D = l}{min}d(z, z_0) $.
 	
 	Тогда $ f(z) $ разлагается в СтР $ \eqref{34:4} $ внутри круга $ K_R = \{z \in D | \quad |z - z_0| < R \} $, причем коэфициенты этого разложения можно вычислить по формулам $ \eqref{34:9} $.
 	
@@ -249,11 +251,11 @@ $ \eqref{34:2} $ записывают следующим образом
 		\item Как и в $R$, имеем следующие основные разложения в СтР:
 		
 		\begin{enumerate}
-			\item \[ (1 + z)^\alpha = e^{ln(1 + z)} = 1 + \sum\limits_{n = 1}^{\infty} \frac{\alpha(\alpha - 1) \ldots (\alpha - n +1)}{n!}z^n,\, |z| > 1 \]
+			\item \[ (1 + z)^\alpha = e^{\ln(1 + z)} = 1 + \sum\limits_{n = 1}^{\infty} \frac{\alpha(\alpha - 1) \ldots (\alpha - n +1)}{n!}z^n,\, |z| > 1 \]
 			
 			\item \[ e^z = \sum\limits_{n = 0}^{\infty} \frac{z^n}{n!},\, z \in \C \]
 			
-			\item \[ ln(1 + z) = \sum\limits_{n = 1}^{\infty} \frac{(-1)^nz^n}{n},\, |z| \leq 1,\, z \neq -1 \]
+			\item \[ \ln(1 + z) = \sum\limits_{n = 1}^{\infty} \frac{(-1)^nz^n}{n},\, |z| \leq 1,\, z \neq -1 \]
 			
 			\item \[ \cos{z} = \sum\limits_{n = 0}^{\infty} \frac{(-1)^nz^{2n}}{(2n)!},\, z \in \C \]
 			
