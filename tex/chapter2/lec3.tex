@@ -36,8 +36,9 @@ $X \neq \emptyset$, т.~к. \eqref{lec3_2:1}-\eqref{lec3_2:2}
 	\end{equation}
 \end{lem}
 \begin{proof}
-	При сходимости $\sum_{n=0}^{\infty}a_n(x_1-x_0)^n$ в силу необходимого
-	 условия сходимости ФР: $a_n(x_1-x_0)^n\underset{n\to\infty}{\rightarrow}0$. 
+	При сходимости $\sum\limits_{n=0}^{\infty}a_n(x_1-x_0)^n$ 
+	в силу необходимого
+	условия сходимости ФР: $a_n(x_1-x_0)^n\underset{n\to\infty}{\rightarrow}0$. 
 	Т.~к. последовательность $a_n(x_1-x_0)^n$ --- бмп, 
 	то $\abs{a_n(x_1-x_0)^n}$ сходится $\implies$ ограничена.
 	
@@ -51,8 +52,9 @@ $X \neq \emptyset$, т.~к. \eqref{lec3_2:1}-\eqref{lec3_2:2}
 		\cfrac{M}{\abs{x_1-x_0}^n}\cdot \abs{x-x_0}^n=Mq^n,
 	\end{equation*}
 	где $q=\cfrac{\abs{x-x_0}}{\abs{x_1-x_0}}\in{\left[0;1\right)}.$ Т.~к. $q < 
-	1$, то ряд $\sum_{n=0}^{\infty} Mq^n$ сходится при любом $x$, а значит, 
-	сходится и ряд $\sum_{n=0}^{\infty} a_n(x-x_0)^n$.
+	1$, то ряд $\sum\limits_{n=0}^{\infty} 
+	Mq^n$ сходится при любом $x$, а значит, 
+	сходится и ряд $\sum\limits_{n=0}^{\infty} a_n(x-x_0)^n$.
 \end{proof}	
 
 \begin{crl*}
@@ -61,8 +63,8 @@ $X \neq \emptyset$, т.~к. \eqref{lec3_2:1}-\eqref{lec3_2:2}
 \end{crl*}	
 \begin{rem}
 	Если $X$ --- множество сходимости \eqref{lec3_2:1}-\eqref{lec3_2:2}, 
-	то полагая $R=\underset{x\in X}{\sup} \abs{x-x_0}$ из полученных выше 
-	результатов и определения точной верхней грани получим, 
+	то, полагая $R=\underset{x\in X}{\sup} \abs{x-x_0}$ из полученных выше 
+	результатов и определения точной верхней грани, получим, 
 	что СтР \eqref{lec3_2:1}-\eqref{lec3_2:2}
 	будет сходиться при $\abs{x-x_0} < R$ и расходиться при $\abs{x-x_0}>R$.
 	
