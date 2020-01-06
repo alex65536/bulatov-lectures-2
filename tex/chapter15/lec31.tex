@@ -1,0 +1,78 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+
+\section{ИЗОП для ФКП}
+\begin{thm}[О дифференцировании ИЗОП ФКП]
+    Пусть при каждом $\fix \ t \in l \subset G$, где $l$ --- кусочно-гладкий
+    контур, а $G$ --- односвязная область, определена $ \phi(t, z), \
+    z \in D $, где $D$ --- односвязная область, причем
+    $\phi(t, z)$ и $\dfrac{\partial \phi}{\partial z}$ непрерывны при
+    $t \in l, \ z \in D$.
+    
+    Тогда ИЗОП
+    \begin{equation}
+        \label{lec31:9}
+        F(z) = \oint\limits_{l} \phi(t, z) dt
+    \end{equation}
+    является аналитической функцией в $D$, производная от которой вычисляется
+    по \emph{правилу Лейбница}:
+    \begin{equation}
+        \label{lec31:10}
+        F'(z) = \oint\limits_{l} \dfrac{\partial \phi}{\partial z} dt,
+        \ z \in D.
+    \end{equation}
+\end{thm}
+\begin{proof}
+    Пусть $z = x + i y \in D, \ \ x, y \in \R, \ \ t = \tau + i s \in l,
+    \ \ \tau, s \in \R$. Рассмотрим \[ \begin{gathered}
+    u = u(\tau, s, x, y) = \Re \phi(t, z), \\
+    v = v(\tau, s, x, y) = \Im \phi(t, z).
+    \end{gathered} \]
+    Тогда из формулы вычисления интеграла ФКП через КрИ-2 получим
+    \[ F(z) \stackrel{\eqref{lec31:9}}{=} \oint\limits_{l} (u + i v)
+    (d \tau + i d s) = \ldots = H(x, y) + i G(x, y),\]
+    где
+    \[ H(x, y) = \int\limits_{l} u d \tau - v d s, \]
+    \[ G(x, y) = \int\limits_{l} u d s + v d \tau. \]
+    Из формулы вычисления КрИ-2 через ОИ и правила Лейбница
+    дифференцирования действительных СИЗОП имеем:
+    \[ \begin{gathered} 
+        \exists H'_x = \int\limits_{l} u'_x d \tau - v'_x d s =
+        [ \phi = u + i v \text{~--- аналитическая по } z = x + i y ]
+        = \\ =
+        \left[\begin{gathered}
+            u'_x = v'_y \\
+            u'_y = - v'_x
+        \end{gathered}\right] =
+        \int\limits_{l} v'_y d \tau + u'_y d s =
+        \left(\int\limits_{l} v d \tau + u d s\right)'_y = G'_y.
+    \end{gathered} \]
+
+    Аналогично показывается, что $\exists H'_y = -G'_x$, поэтому для
+    $ F = H + i G $
+    выполняются условия Коши-Римана и, значит, $F$ аналитична по $z$.
+    При этом для ее производной получаем:
+    \[\begin{gathered}
+        \exists F'(z) = H'_x + i G'_x = \ldots =
+        \int\limits_{l} u'_x d \tau - v'_x d s + 
+        i \int\limits_{l} v'_x d \tau + u'_x d s = \ldots =
+        \int\limits_{l} \dfrac{\partial \phi (t, z)}{\partial z} dt. \qedhere
+    \end{gathered}\] 
+\end{proof}
+\begin{rem}
+    При выведении \eqref{lec31:10} предполагается, что $l$ ---
+    ограниченная кусочно-гладкая кривая. Доказательство сохраняется
+    и когда $l$ неограниченная (в этом случае имеем дифференцирование НИЗОП
+    ФКП).
+\end{rem}
+\end{document}
