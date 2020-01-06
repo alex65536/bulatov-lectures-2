@@ -71,7 +71,10 @@ $X \neq \emptyset$, т.~к. \eqref{lec3_2:1}-\eqref{lec3_2:2}
 	При этом в случае, когда $R=+\infty \implies 
 	x \in \R=\left]-\infty;+\infty\right[$.
 	Если же $R=0$, то $X=\{x_0\}$.	
-\end{rem}	
+\end{rem}
+
+\medskip
+
 В общем  случае неотрицательная величина $R$ (конечная или бесконечная) 
 называется \emph{радиусом сходимости}  \eqref{lec3_2:1}-\eqref{lec3_2:2}, а 
 промежуток $I=\left]x_0-R;x_0+R\right[$ называется 
@@ -79,12 +82,13 @@ $X \neq \emptyset$, т.~к. \eqref{lec3_2:1}-\eqref{lec3_2:2}
 СтР \eqref{lec3_2:1}-\eqref{lec3_2:2}.
 	
 Внутри $I$ СтР \eqref{lec3_2:1}-\eqref{lec3_2:2} сходится абсолютно. Вне $I$
-$\forall x-\in\left]-\infty;x_o-R\right[\cup\left]x_0+R;+\infty\right[$
+для
+$\forall x \in\left]-\infty;x_o-R\right[\cup\left]x_0+R;+\infty\right[$
 СтР будет расходиться.
 	 
 В общем случае $I\subset X$, причем интервал сходимости $I$ может
 отличаться от множества сходимости $X$ лишь может быть дополнительной 
-сходимостью или расходимостью в концевых точках $x=x_0\pm R$
+сходимостью или расходимостью в концевых точках $x=x_0\pm R$.
 	 
 \section{Вычисление радиуса сходимости СтР}
 	
@@ -99,8 +103,8 @@ R.
 \begin{thm}[формула Даламбера для радиуса сходимости СтР]
 	Если $\exists \lim\limits_{n\to\infty} \abs{\dfrac{a_n}{a_{n+1}}}$ (конечный 
 	или 
-	бесконечный), то радиус сходимости как \eqref{lec3_2:4} так и 
-	\eqref{lec3_2:1}-\eqref{lec3_2:2} имеем
+	бесконечный), то радиус сходимости как \eqref{lec3_2:4}, так и 
+	\eqref{lec3_2:1}-\eqref{lec3_2:2} равен
 	\begin{equation}
 		R=\lim\limits_{n\rightarrow\infty}
 		\abs{\frac{a_n}{a_{n+1}}}
