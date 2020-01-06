@@ -284,8 +284,7 @@ $\eqref{lec2:15}$. Если:
 \begin{proof}
 	\;
 	
-	\begin{enumerate}
-		\item Докажем, что $\exists \underset{x \to x_0}{\lim} f(x) = 
+		Докажем, что $\exists \underset{x \to x_0}{\lim} f(x) = 
 	p \in \R$. Для этого воспользуемся критерием Коши существования 
 	конечного предела функции. Нужно показать, что
 	\begin{equation}
@@ -294,7 +293,7 @@ $\eqref{lec2:15}$. Если:
 	\forall x_1,\ x_2 \in E, 
 	\begin{cases}
 	|x_1 - x_0| \leq \bar\delta, \\
-	|x_2 - x_0| \leq \bar\delta_1;
+	|x_2 - x_0| \leq \bar\delta;
 	\end{cases} \implies
 	|f(x_1) - f(x_2)| \leq \eps
 	\end{equation}
@@ -319,19 +318,19 @@ $\eqref{lec2:15}$. Если:
 	\end{gathered}
 	\right] \leq |S_n(x_2) - S_n(x_1)| + 2\eps.
 	\]
-	Далее из сходимости $S_n(x)$ к $f(x)$ на $E$ по критерию Коши для Ф1П
-	получаем, что $\exists \widetilde{\delta} = \widetilde{\delta_\eps} > 0,
+	Далее из сходимости $S_n(x)$ к $\sum\limits_{k=1}^n b_k$
+	на $E$ по критерию Коши для Ф1П
+	получаем, что \[\exists \widetilde{\delta} = \widetilde{\delta_\eps} > 0,
 	\begin{cases} 
 	|x_1 - x_0| \leq \widetilde{\delta}, \\
 	|x_2 - x_0| \leq \widetilde{\delta};
 	\end{cases} \implies
-	|S_n(x_2) - S_n(x_1)| \leq \eps$ 
+	|S_n(x_2) - S_n(x_1)| \leq \eps.\]
 	
 	В результате получаем, что $|f(x_1) - f(x_2)| \leq \ldots \leq 
 	\eps + 2\eps = 3\eps$, что в сочетании с М-леммой для Ф1П даёт
 	в силу критерия Коши для Ф1П, что $\exists \underset{x \to x_0}{\lim}
 	f(x) = p \in \R$.
-	\end{enumerate}
 	
 	Так как 
 \[

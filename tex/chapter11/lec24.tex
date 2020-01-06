@@ -202,7 +202,7 @@ $ (z_n) $ является ББП, если $ \forall \eps > 0\quad \exists \nu 
 z = \infty $, будем обозначать $ \overline{\C} = \C \cup {\infty} $.
 
 Для графического изображения $ \overline{\C} $ используют стереографическую 
-проекцию сферы Римана на плоскость. Эта сререографическая проекция дает 
+проекцию сферы Римана на плоскость. Эта стереографическая проекция дает 
 взаимооднозначное соответствие между сферой Римана и комплексной плоскостью. 
 Точке $ \infty $ соответствует точка $P$ сферы.
 
@@ -276,9 +276,9 @@ z = \infty $, будем обозначать $ \overline{\C} = \C \cup {\infty}
 \end{exmp}
 
 \begin{thm}(Критерий сходимости КЧР)
-	\[\text{Ряд} \quad \sum_{n=1}^{\infty}z^n\, \text{сходится} \iff 
-	\text{одновременно сходятся ряды} \sum_{n=1}^{\infty}\Re z^n\, \text{и}\, 
-	\sum_{n=1}^{\infty}\Im z^n.\]
+	\[\text{Ряд} \quad \sum_{n=1}^{\infty}z_n\, \text{сходится} \iff 
+	\text{одновременно сходятся ряды} \sum_{n=1}^{\infty}\Re z_n\, \text{и}\, 
+	\sum_{n=1}^{\infty}\Im z_n.\]
 \end{thm}
 \begin{proof}
 	Доказательство следует из того, что если $z_n = x_n + iy_n$, $x_n = 
@@ -289,7 +289,7 @@ z = \infty $, будем обозначать $ \overline{\C} = \C \cup {\infty}
 	
 	Из критерия сходимости КП получаем, что
 	\[ s_n\, \text{сходится} \iff \text{сходятся}\, X_n, Y_n \iff \text{сходятся} 
-	\sum_{n=1}^{\infty}\Re z^n, \quad \sum_{n=1}^{\infty}\Im z^n \qedhere\]
+	\sum_{n=1}^{\infty}\Re z_n, \quad \sum_{n=1}^{\infty}\Im z_n \qedhere\]
 \end{proof}
 
 \begin{rems}
@@ -304,23 +304,23 @@ z = \infty $, будем обозначать $ \overline{\C} = \C \cup {\infty}
 		сходящихся ЧР.
 		
 		\item Как и в $ \R $, определяется линейная комбинация КЧР:
-		\[\lambda \sum_{n=1}^{\infty}z^n + \mu \sum_{n=1}^{\infty}w^n = 
+		\[\lambda \sum_{n=1}^{\infty}z_n + \mu \sum_{n=1}^{\infty}w_n = 
 		\sum_{n=1}^{\infty}(\lambda z_n + \mu w_n)\]
 		
 		При этом, если $ \sum z_n $ и $ \sum w_n $ сходятся, то их линейная 
 		комбинация $ \forall\, \lambda, \mu \in \C $ также сходится.
 		
 		\item Как и для ЧР, определяется произведение КЧР по Коши:
-		\[\left(\sum_{n=1}^{\infty}z^n\right)\left(\sum_{n=1}^{\infty}w^n\right) 
+		\[\left(\sum_{n=1}^{\infty}z_n\right)\left(\sum_{n=1}^{\infty}w_n\right) 
 		= \sum_{n=1}^{\infty} 
-		u^n, \quad u_n = z_1w_{n} + z_2w_{n - 1} + \ldots + z_nw_1 = \sum_{i + j = n 
+		u_n, \quad u_n = z_1w_{n} + z_2w_{n - 1} + \ldots + z_nw_1 = \sum_{i + j = n 
 		+ 1} z_iw_j, \quad n \in \N.\]
 		
 		Если ряды $ \sum z_n $ и $ \sum w_n $ сходятся абсолютно, то есть сходятся $ 
 		\sum |z_n| $ и $ \sum |w_n| $, тогда их произведение по Коши будет 
 		сходящимся рядом, и при этом
-		\[\left(\sum_{n=1}^{\infty}z^n\right)\left(\sum_{n=1}^{\infty}w^n\right) = 
-		\left(\sum_{n=1}^{\infty}u^n\right).\]
+		\[\left(\sum_{n=1}^{\infty}z_n\right)\left(\sum_{n=1}^{\infty}w_n\right) = 
+		\left(\sum_{n=1}^{\infty}u_n\right).\]
 	\end{enumerate}
 \end{rems}
 
