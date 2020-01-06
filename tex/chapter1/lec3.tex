@@ -205,9 +205,12 @@
 	  Стокса-Зайделя получим, что 
 	  \begin{gather*}
 		  \forall \fix x\in\left[a,b\right]\implies
-		  \exists \int_{x_0}^{x}\underset{\text{непр.}}{g(t)}dt=
-		  \int_{x_0}^{x}\sum_{n=1}^{\infty}U_n'(t)dt=\sum_{n=1}^{\infty}
-		  \int_{x_0}^{x}U_n'(t)dt=\sum_{n=1}^{\infty}\left[U_n(t)\right]
+		  \exists \int\limits_{x_0}^{x}
+		  \underset{\text{непр.}}{g(t)}dt=
+		  \int\limits_{x_0}^{x}
+		  \sum_{n=1}^{\infty}U_n'(t)dt=\sum_{n=1}^{\infty}
+		  \int\limits_{x_0}^{x}
+		  U_n'(t)dt=\sum_{n=1}^{\infty}\left[U_n(t)\right]
 		  _{t=x_0}^{t=x}=\\
 		  =\sum_{n=1}^{\infty}(U_n(x)-U_n(x_0)) 
 		  =\sum_{n=1}^{\infty}U_n(x)-\sum_{n=1}^{\infty}U_n(x_0)\implies
@@ -218,7 +221,8 @@
 	  пределом от непрерывной функции, имеем:
 	  \begin{equation*}
 	  	\exists 
-	  	f'(x)=(C)'+\left(\int_{x_0}^xg(t)dt\right)'_x=0+g(t)\bigg|_{t=x}=g(x)
+	  	f'(x)=(C)'+\left(
+		\int\limits_{x_0}^xg(t)dt\right)'_x=0+g(t)\bigg|_{t=x}=g(x)
 	  	\iff \eqref{eq:20}
 	  \end{equation*} 
 \end{proof}	
