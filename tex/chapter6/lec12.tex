@@ -222,7 +222,12 @@ b = const > 0
 
 В результате получаем, что
 \[\int\limits_{\alpha a}^{\beta a} \dfrac{f(t)}t dt - \int\limits_{\alpha 
-b}^{\beta b} \frac{f(t)}t dt = \int\limits_{\alpha a}^{\alpha b} \frac{f(t)}t 
+b}^{\beta b} \frac{f(t)}t dt
+= \left(\,\int\limits_{\alpha a}^{\alpha b} \dfrac{f(t)}t dt
++ \int\limits_{\alpha b}^{\beta a} \dfrac{f(t)}t dt\right)
+- \left(\,\int\limits_{\alpha b}^{\beta a} \frac{f(t)}t dt
++ \int\limits_{\beta a}^{\beta b} \frac{f(t)}t dt\right) =\]
+\[= \int\limits_{\alpha a}^{\alpha b} \frac{f(t)}t 
 dt - \int\limits_{\beta a}^{\beta b} \frac{f(t)}t dt = [\text{обратная 
 замена}] = \left[
 \begin{gathered}
