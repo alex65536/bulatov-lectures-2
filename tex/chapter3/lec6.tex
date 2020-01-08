@@ -211,7 +211,7 @@ d]$,
 	\label{lec6:10} 
 	\forall\ \fix \ \Delta y \neq 0 \implies
 	\dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{\Delta y} 
-	\stackrel{[a, b]}{\underset{\Delta y \to 0}{\rightrightarrows}} f_y'(x, y).
+	\stackrel{[a, b]}{\underset{\Delta y \to 0}{\rightrightarrows}} f_y'(x, y_0).
 	\end{equation}
 	Используя формулу Лагранжа конечных приращений по второй переменной 
 	Ф2П получаем, что 
@@ -258,7 +258,7 @@ d]$,
 	\[F(y) = \int\limits_a^b f(x, y)\,dx\]
 	$a = a(y), b = b(y)$~--- непрерывно-дифференцируемые функции на $[c; d]$,
 	а их значения не выходят за соответствующий отрезок $[a^*;b^*]$ и $f(x, y),
-	f'_y(x, y)\in C([a^*; b^*])$, то тогда имеем следующее 
+	f'_y(x, y)\in C([a^*; b^*] \times [c; d])$, то тогда имеем следующее 
 	обобщение формулы Лагранжа:
 	\[\exists \left(\int\limits_{a(y)}^{b(y)} f(x, y)\,dx\right)'_y = 
 	f(b(y), y)b'(y) - f(a(y), y)a'(y) + 
@@ -289,7 +289,7 @@ d]$,
 	\begin{gather*}
 		F'(y) = f(b(y), y)b'(y) - f(a(y), y)a'(y) + 
 		\int\limits_c^{b(y)} f'_y(t, y)\,dt - 
-		\int\limits_c^{a(y)} f'_y(t, y)\,dt =\\=[t = x]=
+		\int\limits_c^{a(y)} f'_y(t, y)\,dt =\\=[t = x]
 		= f(b(y), y)b'(y) - f(a(y), y)a'(y) + 
 		\int\limits_{a(y)}^{b(y)} f'_y(x, y)\,dx. \qedhere
 	\end{gather*}

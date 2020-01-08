@@ -21,7 +21,7 @@
 	\[ \left| \int\limits_c^d\left(\int\limits_A^{+\infty}f(x, y)dx\right) 
 	dy\right| 
 	\leq \int\limits_c^d\left|\int\limits_A^{+\infty}f(x, y)dx\right| dy
-	\leq \int\limits_c^d \eps dy = \eps(c - d).\]
+	\leq \int\limits_c^d \eps dy = \eps(d - c).\]
 	Поэтому 
 	
 	\begin{equation} \label{lec11:1}
@@ -92,14 +92,14 @@
 		
 		\begin{equation*}
 		\begin{gathered}
-		\int\limits_c^y dt \int\limits_a^{+\infty} f^{'}_{t}(x, y) dx =
+		\int\limits_c^y dt \int\limits_a^{+\infty} f^{'}_{t}(x, t) dx =
 		\int\limits_a^{+\infty} \left( \int\limits_c^y f^{'}_{t} (x, t) dt \right) 
 		dx =
 		\int\limits_a^{+\infty} \left[ f(x, t) \right]_{t = c}^{t = y} dx
 		= \underbrace{\int\limits_a^{+\infty} f(x, y) dx}_{F(y)}\;- \\
 		- \underbrace{\int\limits_a^{+\infty} f (x, c) dx}_{c_0\;=\;const} \implies 
 		F(y) = c_0 + \int\limits_c^y \left( \int\limits_a^{+\infty} f^{'}_{t} (x, t) 
-		\right) dt.
+		dx \right) dt.
 		\end{gathered}
 		\end{equation*}
 		
@@ -272,6 +272,7 @@
 	\end{exc}
 
 	\begin{eans}
+	\begin{thm}[О почленом интегрировании НИЗОП-2]
 		Пусть:
 		\begin{enumerate}
 			\item $f(x, y)$ непрерывна на $[a, b) \times [c, d];$
@@ -285,7 +286,7 @@
 			\int\limits_c^d F(y) dy = \int\limits_c^d \left( \int\limits_a^b f(x, y) dx 
 			\right) dy = \int\limits_a^b \left( \int\limits_c^d f(x, y) dy \right) dx
 		\]
-	
+	\end{thm}
 	\end{eans}
 
 	Отметим, что на практике с помощью соответствующей замены 
