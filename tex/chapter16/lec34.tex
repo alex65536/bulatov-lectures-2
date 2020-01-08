@@ -260,7 +260,8 @@ u_n(z) = c_n(z - z_0)^n,\ n \in \N_0 $ аналитичны всюду в $ \C $
 
 \begin{proof}
 	Рассмотрим $ \forall z \in K_R $ и $R_1 : 0 \le |z - z_0| < R_1 < R$.
-	Пусть $ l_{R_1} = \partial K_{R_1} = \{t \in D\ |\ |t - z_0| = R_1 \} $. Тогда для $ \forall t \in l_{R_1} $ имеем
+	Пусть $ l_{R_1} = \partial K_{R_1} = \{t \in D\ |\ |t - z_0| = R_1 \} $. 
+	Тогда для $ \forall t \in l_{R_1} $ имеем
 	$ |z - z_0| < |t - z_0| = R_1, $
 	поэтому для $ q = \dfrac{z - z_0}{t - z_0} $ получаем
 	\[ |q| = \left|\frac{z - z_0}{t - z_0}\right| < 1. \]
@@ -280,7 +281,8 @@ u_n(z) = c_n(z - z_0)^n,\ n \in \N_0 $ аналитичны всюду в $ \C $
 	\underset{l_{R_1}}\oint\frac{f(t)dt}{(t - z_0)^{n + 1}} \right)(z - z_0)^n = 
 	\sum\limits_{n = 0}^{\infty} c_n (z - z_0)^n, \]
 	где
-	\[ c_n = \frac{1}{2 \pi i} \underset{l_{R_1}}\oint\frac{f(t)dt}{(t - z_0)^{n + 
+	\[ c_n = \frac{1}{2 \pi i} \underset{l_{R_1}}\oint\frac{f(t)dt}{(t - z_0)^{n 
+	+ 
 	1}} = [\text{интегральное представление производной}] = 
 	\frac{f^{(n)}(z_0)}{n!}. \]
 	Получаем в силу интегральной формулы Коши, что
