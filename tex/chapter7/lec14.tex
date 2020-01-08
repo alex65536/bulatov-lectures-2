@@ -283,15 +283,17 @@ x = \frac{t}{1+t}  \Big|_{1}^{0}
 				t^a}{1+t} \right) \; dt - (-1)^{n-1} \int\limits_{0}^{1} \frac{t^{n-a-1} - 
 				t^{n+a-1}}{1+t} \; dt   \right) \sin{\pi a}  \stackrel{\eqref{14:17}, 
 				\eqref{14:20}}= \]
-				\[ \stackrel{\eqref{14:17}, \eqref{14:20}}= \pi - \left( E(a) - b_n 
-				\right) \sin{\pi a} = \pi - E(a) \sin{\pi a} + b_n \sin{\pi a} \implies 
+				\[ \stackrel{\eqref{14:17}, \eqref{14:20}}= \pi - \left( E(a) - \
+				\frac{b_n}{ \sin{\pi a}} 
+				\right) \sin{\pi a} = \pi - E(a) \sin{\pi a} + b_n \implies 
 				\eqref{14:19}. 
 				\qedhere \]
 			\end{proof}	
 			
 		Продолжим доказательство формулы Эйлера \eqref{14:16}. Интегрируя по 
 		частям, для \eqref{14:18} получаем:
-		\[  \left| a_n \right|   = \left| -4 \int\limits_{0}^{\frac{\pi}{2}} 
+		\[  \left| a_n \right|   = \left| -\frac{4}{2n-1}
+		\int\limits_{0}^{\frac{\pi}{2}} 
 		\frac{\sin^2{at}}{\sin{t}} \; d\left( \cos{(2n-1)t}\right)   \right|  =\]
 		\[ = \frac{4}{2n-1} \left| \left[ \frac{\sin^2{at}}{\sin{t}} \cos{(2n-1)t} 
 		\right]_{0}^{\frac{\pi}{2}} -\int\limits_{0}^{\frac{\pi}{2}} \cos{(2n-1)t} 

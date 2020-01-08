@@ -120,7 +120,7 @@ H(a) = \ioinf \frac{x\sin ax}{x^2 + b^2} dx,\quad a, b \in \R.
 При вычислении \eqref{lec12:10} и \eqref{lec12:11} вначале ограничимся случаем 
 $a \ge 0$, $b > 0$. Тогда \eqref{lec12:10} является равномерно сходящимся 
 НИЗОП-1 для $a \ge 0$, т.~к. здесь у подынтегральной функции есть мажоранта 
-$\left|\dfrac{\cos{ax}}{x^2 + b^2}\right| \le \dfrac1{x^2}$, а 
+$\left|\dfrac{\cos{ax}}{x^2 + b^2}\right| \le \dfrac1{x^2 + b^2}$, а 
 $\displaystyle\ioinf \frac{dx}{x^2 + b^2} = \left[\frac1{\sqrt b}\arctg\frac 
 x{\sqrt b}\right]_0^{+\infty}$ сходится. Второй из интегралов Лапласа 
 \eqref{lec12:11} будет сходится локально равномерно относительно $a > 0$. При 
@@ -142,7 +142,7 @@ b^2 \ioinf \frac{\sin ax\;dx}{x(x^2 + b^2)}.\]
 составим характеристическое уравнение: $\lambda^2 - b^2 = 0 \implies 
 \lambda_{1, 2} = \pm b$. Т.~е. $G(a) = c_1e^{ab} + c_2e^{-ab},\ a > 0,\ b > 
 0$. Далее $c_1 = 0$, т.~к. функция \eqref{lec12:10} ограничена:
-\[|G_a| \le \ioinf \frac{|\cos x|}{x^2 + b^2} \le \ioinf \frac{dx}{x^2 + b^2} 
+\[|G(a)| \le \ioinf \frac{|\cos x|}{x^2 + b^2} \le \ioinf \frac{dx}{x^2 + b^2} 
 = \frac\pi{2|b|} \in \R.\] При этом $e^{ab} \appr{a\to \infty} \infty,\ b>0$. 
 Но тогда $G(a) = c_2e^{-ab},\ a > 0,\ b > 0$.
 
@@ -222,7 +222,12 @@ b = const > 0
 
 В результате получаем, что
 \[\int\limits_{\alpha a}^{\beta a} \dfrac{f(t)}t dt - \int\limits_{\alpha 
-b}^{\beta b} \frac{f(t)}t dt = \int\limits_{\alpha a}^{\alpha b} \frac{f(t)}t 
+b}^{\beta b} \frac{f(t)}t dt
+= \left(\,\int\limits_{\alpha a}^{\alpha b} \dfrac{f(t)}t dt
++ \int\limits_{\alpha b}^{\beta a} \dfrac{f(t)}t dt\right)
+- \left(\,\int\limits_{\alpha b}^{\beta a} \frac{f(t)}t dt
++ \int\limits_{\beta a}^{\beta b} \frac{f(t)}t dt\right) =\]
+\[= \int\limits_{\alpha a}^{\alpha b} \frac{f(t)}t 
 dt - \int\limits_{\beta a}^{\beta b} \frac{f(t)}t dt = [\text{обратная 
 замена}] = \left[
 \begin{gathered}
