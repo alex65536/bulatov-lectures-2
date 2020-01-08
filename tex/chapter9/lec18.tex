@@ -12,7 +12,7 @@
 \begin{document}
 \section{Формула Дирихле для частных сумм ряда Фурье}
 \begin{thm}
-	Пусть имеется $2\pi$-периодическая функция $f \in \R([-\pi;\pi])$. В этом 
+	Пусть имеется $2\pi$-периодическая функция $f \in R([-\pi;\pi])$. В этом 
 	случае для частных сумм
 	\begin{equation}
 		\label{18:1}
@@ -116,7 +116,7 @@
 	Для доказательства достаточно в формуле $\eqref{18:4}$ взять
 	$f(x) = 1,\ \forall x \in \R$ и далее, используя то, что в этом
 	случае коэффициенты Фурье $\eqref{18:2}$ и $\eqref{18:3}$
-	соответственно равны $a_0 = 1$, $a_k = b_k = 0$.
+	соответственно равны $a_0 = 2$, $a_k = b_k = 0$.
 	Поэтому все частные суммы дают $S_n(x_0) \stackrel{\eqref{18:1}}= 1$.
 	В результате получаем $\eqref{18:6}$.
 \end{proof}
@@ -234,7 +234,7 @@
 \begin{proof}
 	В силу формулы Дирихле, имеем:
 	\[S_n(x_0) = 
-	\int\limits_{0}^{\pi}\left(\dfrac{f(x_0 - t) + f(x_0 + t)}
+  \dfrac{1}{\pi}\int\limits_{0}^{\pi}\left(\dfrac{f(x_0 - t) + f(x_0 + t)}
 	{2\sin{\frac{t}{2}}}\right)\sin\left(n+\frac{1}{2}\right)t\;dt = 
 	\dfrac{1}{\pi}\left(\int\limits_{0}^{\delta_0} + 
 	\int\limits_{\delta_0}^{\pi}\right).\]
@@ -293,7 +293,7 @@
 	\int\limits_{0}^{\pi}{\dfrac{\sin(n+\frac{1}{2})t}{2\sin\frac{t}{2}}
 	dt} \cdot D_0.\]
 	Отсюда
-	\[S_n(x) - D_0 = \dfrac{1}{\pi}\int\limits_{0}^{\pi}
+	\[S_n(x_0) - D_0 = \dfrac{1}{\pi}\int\limits_{0}^{\pi}
 	{\dfrac{f(x_0 + t) + f(x_0 - t)}{2\sin\frac{t}{2}}} \cdot 
 	\sin\left(n + \frac{1}{2}\right)t\;dt - 
 	\left(\dfrac{2}{\pi}\int\limits_{0}^{\pi}
@@ -318,7 +318,7 @@
 	\stk{18:7}{\appr
 		{p=(n+\frac{1}{2}) \rightarrow \infty}} 0.\]
 	Значит, \[\exists \lim\limits_{n \rightarrow \infty}{(
-		S_n(x) - D_0)} = \lim\limits_{n\rightarrow \infty}
+		S_n(x_0) - D_0)} = \lim\limits_{n\rightarrow \infty}
 	{\dfrac{1}{\pi}} \int\limits_{0}^{\pi} 
 	{f_0(t)\sin\left(n+\dfrac{1}{2}\right)t\;dt} = 0
 	\implies \eqref{18:11}. \qedhere\]
@@ -331,9 +331,9 @@
 	\begin{equation}
 		\label{18:12}
 		\begin{cases}
-			\lim\limits_{t \rightarrow \pm 0}{\dfrac
+			\lim\limits_{t \rightarrow +0}{\dfrac
 				{f(x_0 + t) - f(x_0 + 0)}{t}} \in \R\\
-			\lim\limits_{t \rightarrow \pm 0}{\dfrac
+			\lim\limits_{t \rightarrow +0}{\dfrac
 				{f(x_0 - t) - f(x_0 - 0)}{t}} \in \R\\ 
 		\end{cases}
 	\end{equation}

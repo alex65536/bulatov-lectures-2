@@ -30,7 +30,7 @@
 Гейне существования частного предела Ф2П:
 \[
 \eqref{lec6:2} \iff \quad
-\forall (y_n) \in D,\ y_n \neq y_0,\ y_n \underset{n \to \infty}{\to} t_0 \
+\forall (y_n) \in D,\ y_n \neq y_0,\ y_n \underset{n \to \infty}{\to} y_0 \
 \text{[последовательности Гейне]} \implies f(x, y_n) 
 \stackrel{[a, b]}{\underset{n \to \infty}{\to}} g(x).
 \]
@@ -102,7 +102,7 @@ f(x, y_n) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x).
 \begin{rem}
 	Используя теорему Кантора о непрерывности Ф2П на компакте, нетрудно получить,
 	что если $ f(x, y) $ непрерывная Ф2П $ \forall x \in [a, b],\ 
-	y \in [c, d] $, то тогда, во-первых, $ \forall y \in [c, d] \implies 
+	y \in [c, d] $, то тогда, во-первых, $ \forall y_0 \in [c, d] \implies 
 	f(x, y) \stackrel{[a, b]}{\underset{y \to y_0}{\rightrightarrows}} f(x, y_0)
 	= g(x)
 	$, и, во-вторых, возможен почленный предельный переход 
@@ -203,7 +203,7 @@ d]$,
 		\lim\limits_{\Delta y \to 0} \dfrac{1}{\Delta y}
 		\int\limits_a^b (f(x, y_0 + \Delta y) - f(x, y_0)) dx = 
 		\lim\limits_{\Delta y \to 0}\int\limits_a^b
-		\dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{\Delta y}.
+		\dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{\Delta y} dx.
 	\end{gathered}
 	\end{equation}
 	Покажем, что в \eqref{lec6:9} 
@@ -211,7 +211,7 @@ d]$,
 	\label{lec6:10} 
 	\forall\ \fix \ \Delta y \neq 0 \implies
 	\dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{\Delta y} 
-	\stackrel{[a, b]}{\underset{\Delta y \to 0}{\rightrightarrows}} f_y'(x, y).
+	\stackrel{[a, b]}{\underset{\Delta y \to 0}{\rightrightarrows}} f_y'(x, y_0).
 	\end{equation}
 	Используя формулу Лагранжа конечных приращений по второй переменной 
 	Ф2П получаем, что 
@@ -222,7 +222,7 @@ d]$,
 	\]
 	В силу непрерывности $ f_y'(x, y) $ на компакте $ [a, b] \times 
 	[c, d] $ по теореме Кантора получаем, что $ f_y'(x, y) $ равномерно
-	непрерывна на это компакте. Поэтому
+	непрерывна на этом компакте. Поэтому
 	\begin{equation}
 		\begin{gathered}
 		\forall \eps > 0 \ \exists \delta = \delta(\eps) > 0: \ 
@@ -258,7 +258,7 @@ d]$,
 	\[F(y) = \int\limits_a^b f(x, y)\,dx\]
 	$a = a(y), b = b(y)$~--- непрерывно-дифференцируемые функции на $[c; d]$,
 	а их значения не выходят за соответствующий отрезок $[a^*;b^*]$ и $f(x, y),
-	f'_y(x, y)\in C([a^*; b^*])$, то тогда имеем следующее 
+	f'_y(x, y)\in C([a^*; b^*] \times [c; d])$, то тогда имеем следующее 
 	обобщение формулы Лагранжа:
 	\[\exists \left(\int\limits_{a(y)}^{b(y)} f(x, y)\,dx\right)'_y = 
 	f(b(y), y)b'(y) - f(a(y), y)a'(y) + 
@@ -275,24 +275,21 @@ d]$,
 	\[F(y) = G(b(y), y) - G(a(y), y),\]
 	\begin{gather*}
 		F'(y) = \left(G(b(y), y)\right)'_y -\left(G(a(y), y)\right)'_y =\\
-		= G'_x(b(y), y)b'(y) + G'_y(b(y), y) - G'_x(a(y), y)b'(y) - 
+		= G'_x(b(y), y)b'(y) + G'_y(b(y), y) - G'_x(a(y), y)a'(y) - 
 		G'_y(a(y), y).
 	\end{gather*}
 	
-	А теперь смотрите:
+	По теореме Барроу получим, что
 	\[G'_x(x, y) = \left(\int\limits_c^x f(t, y)\,dt\right)'_x = f(x, y)\]
-	по теореме Барроу, а
+	а по доказанной выше теореме, что
 	\[G'_y(x, y) = \left(\int\limits_c^x f(t, y)\,dt\right)'_y =
 	\int\limits_c^x f'_y(t, y)\,dt\]
-	по доказанной выше теореме.
 	
 	Тогда
 	\begin{gather*}
 		F'(y) = f(b(y), y)b'(y) - f(a(y), y)a'(y) + 
 		\int\limits_c^{b(y)} f'_y(t, y)\,dt - 
-		\int\limits_c^{a(y)} f'_y(t, y)\,dt =\\
-		= f(b(y), y)b'(y) - f(a(y), y)a'(y) + 
-		\int\limits_{a(y)}^{b(y)} f'_y(t, y)\,dt =\\
+		\int\limits_c^{a(y)} f'_y(t, y)\,dt =\\=[t = x]
 		= f(b(y), y)b'(y) - f(a(y), y)a'(y) + 
 		\int\limits_{a(y)}^{b(y)} f'_y(x, y)\,dx. \qedhere
 	\end{gather*}
