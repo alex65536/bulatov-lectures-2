@@ -311,15 +311,16 @@ x = \frac{t}{1+t}  \Big|_{1}^{0}
 		Отсюда 
 		$\left| a_n \right|{\underset{n \to \infty}\longrightarrow} 0 \implies   a_n 
 		{\underset{n \to \infty}\longrightarrow} 0$.
-		\[  \left| b_n \right| = \left| (-1)^{n-1} \int\limits_{0}^{1} 
+		\[  \left| b_n \right| = \left| (-1)^{n-1} \sin{\pi a} \int\limits_{0}^{1} 
 		\frac{t^{n-a-1} - t^{n+a-1}}{1+t} \; dt \right| = \left[
-		\text{подынтегральная функция} \ge 0 \right] =  \int\limits_{0}^{1} 
-		\frac{t^{n-a-1} - t^{n+a-1}}{1+t} \; dt \le  \]
-		\[  \le \int\limits_{0}^{1} (t^{n-a-1} - t^{n+a-1})\; dt = \left(  
-		\frac{1}{n-a} - \frac{1}{n+a}\right)  {\underset{n \to 
-		\infty}\longrightarrow} 0  \implies  \left| b_n \right| {\underset{n \to 
-		\infty}\longrightarrow} 0  \implies   b_n  {\underset{n \to 
-		\infty}\longrightarrow} 0  \]
+		\text{подынтегральная функция} \ge 0 \right] = \]
+		\[ = \abs{\sin{\pi a}} \int\limits_{0}^{1} 
+		\frac{t^{n-a-1} - t^{n+a-1}}{1+t} \; dt \le
+		\abs{\sin{\pi a}} \int\limits_{0}^{1} (t^{n-a-1} - t^{n+a-1})\; dt = \]
+		\[ = \abs{\sin{\pi a}} \left( \frac{1}{n-a} - \frac{1}{n+a}\right)  
+		{\underset{n \to \infty}\longrightarrow} 0  \implies
+		\left| b_n \right| {\underset{n \to \infty}\longrightarrow} 0 \implies
+		b_n  {\underset{n \to \infty}\longrightarrow} 0 \]
 		
 		Далее, переходя к пределу при $n \to \infty$ в $\eqref{14:19}$, получим:
 		\[ 0 = \lim_{n \to \infty} a_n =  \lim_{n \to \infty} \pi - E(a) \sin{\pi a} 
