@@ -109,13 +109,13 @@ a_0 &= \frac{1}{\pi} \int\limits_{-\pi}^{\pi} f(x) \ dx \tag*{(частный с
 будем называть \emph{рядом Фурье} для $f(x)$.
 
 Если мы возьмем произвольный 
-тригонометрический ряд \eqref{17:14}, то как было отмечено ранее, в случае 
+тригонометрический ряд \eqref{17:14}, то, как было отмечено ранее, в случае 
 сходимости рядов
 $\sum\limits_{k=1}^{\infty} \left| A_k \right|$ и $\sum\limits_{k=1}^{\infty} 
 \left| B_k \right|$ получаем, что
 \eqref{17:14}~--- равномерно сходящийся ряд, а поэтому в силу непрерывности 
 слагаемых этого ряда его сумма $S(x),\ x\in\left[ -\pi,\pi \right] $ будет 
-непрерывной, а значит, интегрируемой.
+непрерывной, а значит интегрируемой.
 Поэтому, умножая \eqref{17:14} на $\cos{mx},\ m \in \N_0$, получим равномерно 
 сходящийся ряд
 \[  S(x) \cos{mx} =  \frac{A_0}{2} \cos{mx} + \sum_{k=1}^{\infty}  \left( A_k 
@@ -169,33 +169,33 @@ T_n(x)\right)^2 \ dx \to \min
 	наименьшее отклонение от ${f \in R\left( \left[ -\pi,\pi\right]  \right)}$ в 
 	смысле \eqref{17:22} имеет многочлен, у которого
 	\[ A_k = a_k \ \eqref{17:17}, \quad \forall k \in \N_0  \]
-	\[ B_k = b_k \ \eqref{17:17}, \quad \forall k \in \N  \]
+	\[ B_k = b_k \ \eqref{17:18}, \quad \forall k \in \N  \]
 \end{thm}
 \begin{proof}
 	Используя лемму об одном интеграле от тригонометрического многочлена для 
 	\eqref{17:22}, имеем:
 	\[ \int\limits_{-\pi}^{\pi} \left( f(x) - T_n(x) \right)^2 \ dx = 
-	\int\limits_{-\pi}^{\pi} f(x)^2 \ dx + \int\limits_{-\pi}^{\pi} T_n(x)^2 \ dx 
+	\int\limits_{-\pi}^{\pi} f^2(x) \ dx + \int\limits_{-\pi}^{\pi} T_n^2(x) \ dx 
 	- 2\int\limits_{-\pi}^{\pi} f(x) T_n(x) \ dx  =  \]
-	\[ = \int\limits_{-\pi}^{\pi} f(x)^2 \ dx - 2 \int\limits_{-\pi}^{\pi} \left( 
+	\[ = \int\limits_{-\pi}^{\pi} f^2(x) \ dx - 2 \int\limits_{-\pi}^{\pi} \left( 
 	\frac{A_0 f(x) }{2} + \sum_{k=1}^{n} \left( A_k f(x) \cos{kx} + B_k f(x) 
-	\sin{kx} \right)  \right) \ dx +  \int\limits_{-\pi}^{\pi} T_n(x)^2 \ dx = \]
-	\[  = \int\limits_{-\pi}^{\pi} f(x)^2 \ dx - A_0 \int\limits_{-\pi}^{\pi} 
+	\sin{kx} \right)  \right) \ dx +  \int\limits_{-\pi}^{\pi} T_n^2(x) \ dx = \]
+	\[  = \int\limits_{-\pi}^{\pi} f^2(x) \ dx - A_0 \int\limits_{-\pi}^{\pi} 
 	f(x) \ dx - 2 \sum_{k=1}^{n} \int\limits_{-\pi}^{\pi} \left( A_k f(x) 
 	\cos{kx} + B_k f(x) \sin{kx} \right) \ dx + \pi \left( \frac{A_0^2}{2}  + 
 	\sum_{k=1}^{n} \left( A_k^2 + B_k^2\right) \right)  =    \]
-	\[  = \int\limits_{-\pi}^{\pi} f(x)^2 \ dx - \pi \left( a_0 A_0 + 2 
+	\[  = \int\limits_{-\pi}^{\pi} f^2(x) \ dx - \pi \left( a_0 A_0 + 2 
 	\sum_{k=1}^{n}\left( a_k A_k + b_k B_k \right)  \right) + \pi \left( 
 	\frac{A_0^2}{2} + \sum_{k=1}^{n}\left( A_k^2 + B_k^2\right)  \right) =      \]
-	\[  = \int\limits_{-\pi}^{\pi} f(x)^2 \ dx + \pi \left( \left( 
+	\[  = \int\limits_{-\pi}^{\pi} f^2(x) \ dx + \pi \left( \left( 
 	\frac{A_0^2}{2} - A_0 a_0\right) + \sum_{k=1}^{n} \left( A_k^2 - 2 A_k a_k + 
 	B_k^2 - 2 B_k b_k\right) \right) =      \]
-	\[  = \int\limits_{-\pi}^{\pi} f(x)^2 \ dx + \pi \left( \frac{\left( A_0 - 
+	\[  = \int\limits_{-\pi}^{\pi} f^2(x) \ dx + \pi \left( \frac{\left( A_0 - 
 	a_0\right)^2}{2} - \frac{a_0^2}{2} + \sum_{k=1}^{n} \left( \left( A_k - a_k 
 	\right)^2  + \left( B_k - b_k\right)^2 \right) - \sum_{k=1}^{n} \left( a_k^2 
 	+ b_k^2\right)   \right) \ge         \]
 	\[ \ge  \left[ \forall T_n(x) \text{ в } \eqref{17:13}  \right]   \ge 
-	\int\limits_{-\pi}^{\pi} f(x)^2 \ dx - \pi \left( \frac{a_0^2}{2} + 
+	\int\limits_{-\pi}^{\pi} f^2(x) \ dx - \pi \left( \frac{a_0^2}{2} + 
 	\sum_{k=1}^{n} \left( a_k^2 + b_k^2\right) \right)  {\underset{\forall 
 	T_n(x)}\longrightarrow} \min. \]
 	Если $\forall A_k = a_k,\ k \in \N_0,\ \forall B_k = b_k,\ k \in \N$ то 
@@ -208,7 +208,7 @@ T_n(x)\right)^2 \ dx \to \min
 	\begin{equation}
 	\label{17:23}
 	\frac{a_0^2}{2} + \sum_{k=1}^{n} \left( a_k^2 + b_k^2\right) \le 
-	\frac{1}{\pi}  \int\limits_{-\pi}^{\pi} f(x)^2 \ dx.
+	\frac{1}{\pi}  \int\limits_{-\pi}^{\pi} f^2(x) \ dx.
 	\end{equation}
 	Из неравенства \eqref{17:23} при $n \to \infty$, во-первых, получаем, что у 
 	положительного ряда
@@ -218,7 +218,7 @@ T_n(x)\right)^2 \ dx \to \min
 	\begin{equation}
 	\label{17:24}
 	\frac{a_0^2}{2} + \sum_{k=1}^{\infty} \left( a_k^2 + b_k^2\right) \le 
-	\frac{1}{\pi}  \int\limits_{-\pi}^{\pi} f(x)^2 \ dx
+	\frac{1}{\pi}  \int\limits_{-\pi}^{\pi} f^2(x) \ dx
 	\end{equation}
 	Далее мы выясним, при каких условиях неравенство Парсеваля переходит в 
 	равенство.
