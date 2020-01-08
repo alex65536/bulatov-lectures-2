@@ -23,25 +23,25 @@
 		Имеем:
 		\[ \biggl | \dfrac{u_n(x)}{u_{n+1}(x)} \biggr | \overset{x \ne x_0}
 		 = \biggl | \dfrac{a_n(x - x_0)^n }{a_{n+1}(x - x_0)^{n+1}} \biggr | = 
-		 \dfrac{1}{|(x - x_0)|} \cdot \biggl | \dfrac{a_n}{a_{n+1}} \biggr | 
+		 \dfrac{1}{|x - x_0|} \cdot \biggl | \dfrac{a_n}{a_{n+1}} \biggr | 
 		 \underset{n \to \infty} \longrightarrow \dfrac{p}{|x - x_0|}
 		\]
 		
 		\begin{enumerate}
 			\item $ \dfrac{p}{|x - x_0|} > 1 \iff
-			| x - x_0 | < p \implies \sum u_n(x)$ ~--- сходится абсолютно
+			| x - x_0 | < p \implies \sum u_n(x)$ сходится абсолютно
 			по признаку Даламбера.
 			
 			\medskip
 			
 			\item $ \dfrac{p}{|x - x_0|} < 1 \iff |x - x_0| > p
-			\implies \sum u_n(x)$ ~--- расходится по 
+			\implies \sum |u_n(x)|$ расходится по 
 			признаку Даламбера.
 		\end{enumerate}
 		Из доказательства признака Даламбера $ \implies 
 		|u_n(x)| \underset{n \to \infty}{\not \longrightarrow} 0
 		\implies u_n(x) \underset{n \to \infty}{\not \longrightarrow} 0
-		\implies \sum u_n(x) $ ~--- расходится.
+		\implies \sum u_n(x) $ расходится.
 		
 		Таким образом:
 		\[ \sum u_n(x) - 
@@ -56,11 +56,11 @@
 		$R = p$ ~--- радиус сходимости
 		
 		\item  $ p = 0, \text{т.~е.} \underset{n \to \infty}{\lim} 
-		\Bigl |\dfrac{a_n}{a_n+1} \Bigr | = 0 < 1$ \\
+		\Bigl |\dfrac{a_n}{a_{n+1}} \Bigr | = 0 < 1$ \\
 		Здесь множество сходимости $X = \{ x_0 \}$, т.~к. 
 		$\underset{n \to \infty}{\lim} \Bigl |\dfrac{ a_{n+1} }
 		{a_n} \Bigr | > 1
-		\implies$ ряд $\sum a_n(x - x_0)^n$ при $ x \ne x_0$ ~--- 
+		\implies$ ряд $\sum a_n(x - x_0)^n$ при $ x \ne x_0$
 		расходится. \\
 		В данном случае $I = \emptyset \implies R = p = 0$.
 		
@@ -74,7 +74,7 @@
 		\end{gathered}	\]
 		
 		В данном случае ряд будет сходиться для $ \forall x \in \R
-		\implies I = R \implies R = p = +\infty$
+		\implies I = \R \implies R = p = +\infty$.
 	\end{enumerate}
 \end{proof}
 
@@ -128,9 +128,9 @@
 		  \]
 		 Если $k|x - x_0| < 1$, т.~е. 
 		 $x \in \: \left] x_0 - \dfrac{1}{k}; x_0 + \dfrac{1}{k} \right[$, то
-		 $\sum |u_n(x)| $ ~--- сходится $\implies \sum u_n(x)$ ~--- сходится.
+		 $\sum |u_n(x)| $ сходится $\implies \sum u_n(x)$ сходится.
 		 
-		 Пусть $k|x - x_0| > 1 \implies \sum |u_n(x)|$ ~--- расходится
+		 Пусть $k|x - x_0| > 1 \implies \sum |u_n(x)|$ расходится
 		 по признаку Коши. \\
 		 Тогда из доказательства признака Коши $\implies |u_n(x)| 
 		 \underset{n \to \infty}{\not \longrightarrow} 0 \implies u_n(x)
@@ -156,10 +156,10 @@
 		 В этом случае рассматриваемый степенной ряд будет сходится
 		 только при $x = x_0$, т.~к. $\underset{n \to \infty}{\lim}
 		 \sqrt[n]{|u_n(x)|} \overset{x \ne x_0} = |x - x_0| \cdot k =
-		 +\infty > 1 \implies \sum |u_n(x)| $ ~--- расходится по 
+		 +\infty > 1 \implies \sum |u_n(x)| $ расходится по 
 		 признаку Коши
 		 $\implies u_n(x) \underset{n \to \infty}{\not \longrightarrow} 0 
-		 \implies \sum u_n(x)$ ~--- расходится. \\
+		 \implies \sum u_n(x)$ расходится. \\
 		 $X = \{ x_0 \} \implies I = \emptyset \implies R = 0$,
 		 что соответствует \eqref{lec4:7}, при $k = +\infty$.
 	\end{enumerate}
@@ -197,10 +197,10 @@
 		\sqrt[n]{|a_n|} \implies $ не работает \eqref{lec4:7},
 		не работает и \eqref{lec3_2:5}.
 		
-		\item  Можно показать, что в общем случае используя понятие
+		\item  Можно показать, что в общем случае, используя понятие
 		верхнего предела последовательности (супремум множества всевозможных
 		пределов сходящейся подпоследовательности
-		рассматриваемой последовательности), то тогда радиус сходимости
+		рассматриваемой последовательности), радиус сходимости
 		можно вычислить по формуле \emph{Коши-Адамара}:
 		\begin{equation} \label{lec4:8}
 			R = \dfrac{1}{\underset{n \to \infty}{\overline{\lim}}  
@@ -227,8 +227,7 @@
 \beta] \subset E$. В этом случае будем говорить, что имеет место 
 \emph{локальная равномерная сходимость}.
 
-%TODO mb add label to theorem
-Доказанные ранее теоремы Стокса-Зайделя о почленном 
+Доказанные ранее теорема Стокса-Зайделя и теорема о почленном 
 дифференцировании ФП и ФР
 остаются справедливыми, если в них условие равномерной сходимости 
 на рассматриваемом множестве заменить условиями 
@@ -245,7 +244,7 @@
 	степенной ряд вида \eqref{lec3_2:4}, для которого $I = \left]-R; R\right[,\ R 
 	> 0$.
 	
-	Выбирая $\forall [\alpha, \beta] \in ]-R; R[$ и полагая 
+	Выбирая $\forall [\alpha, \beta] \subset ]-R; R[$ и полагая 
 	$r = \max \{|\alpha|, |\beta|\}$, получаем, что $[\alpha, 
 	\beta] \subset [-r; r] \subset \\ \subset \: ]-R; R[$
 	
@@ -272,7 +271,7 @@
 		бы была равномерная сходимость, то на основании теоремы 
 		о предельном переходе в ФР для $f(x) = \sum\limits_{n = 0}^{\infty} 
 		a_n x^n$, при $x \longrightarrow R - 0$, получили бы:
-		\[ \exists \underset{x \to R - 0}{\lim} a_n x^n = 
+		\[ \exists \underset{x \to R - 0}{\lim} f(x) = 
 		\underset{x \to R - 0}{\lim} \sum\limits_{n = 0}^{\infty} a_n x^n = 	
 		\sum\limits_{n = 0}^{\infty} \underset{x \to R - 0}{\lim} a_n x^n = 
 		\sum\limits_{n = 0}^{\infty} a_n R^n - \text{ по условию расходится.}
@@ -345,7 +344,7 @@
 		\sum\limits_{n = 0}^{\infty} (n + 1) a_{n + 1} (x - x_0)^{n + 1} = 
 		\sum\limits_{n = 1}^{\infty} n a_n (x - x_0)^n
 	\end{equation}
-	одно и тоже множество сходимости $\implies $ один и тот же 
+	одно и то же множество сходимости $\implies $ один и тот же 
 	радиус и интервал сходимости.
 	
 	Для $\widetilde{R}$ ряда \eqref{lec4:10} в силу 
@@ -359,7 +358,8 @@
 	\underset{n \to \infty}{\longrightarrow} 1 \right] = 
 	\dfrac{1}{  \underset{n \to \infty}{\overline{\lim}} \sqrt[n]{|a_n|} } = R
 	\end{gathered} \]
-	Радиусы у \eqref{lec3_2:4} и у \eqref{lec4:10} совпадают, т.~е.
+	Радиусы у \eqref{lec3_2:1} - \eqref{lec3_2:2}
+	и у \eqref{lec4:10} совпадают, т.~е.
 	совпадают и интервалы сходимости.
 \end{proof}
 
@@ -395,7 +395,7 @@
 		a_n(x - x_0)^n dx = \sum\limits_{n = 0}^{\infty} a_n
 		\int_{\alpha}^{\beta} (x - x_0)^n dx
 	\end{equation}
-	У исходного ряда \eqref{lec3_2:1} - \eqref{lec3_2:2} и продифференцированного
+	У исходного ряда \eqref{lec3_2:1} - \eqref{lec3_2:2} и проинтегрированного
 	ряда 
 	\begin{equation} \label{lec4:12}
 		\sum\limits_{n = 0}^{\infty} a_n \int (x - x_0)^n dx =

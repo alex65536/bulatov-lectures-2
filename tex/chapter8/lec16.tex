@@ -20,19 +20,19 @@
 	 $f(x)$ нет минимального положительного периода, т.~е. у множества \[M =
 	  \{T\ |\ T > 0\text{~--- период $f(x)$}\}\] нет минимального положительного 
 	  элемента.
-	   Тогда \[\forall n \in N \quad
+	   Тогда \[\forall n \in \N \quad
 	\exists T_n > 0\text{~--- период $f(x)$} \implies 0 < T_n < \frac{1}{n}.\] 
 	Если $x_0$
 	\--- точка непрерывности $f(x)$, то $\forall \fix x \in D(f) \quad \exists 
 	 k_n =
 	  \left[\frac{x_0 - x}{T_n}\right] + 1 \in \Z$. Для этой последовательности
 	   рассмотрим  $x_n = x + k_n\cdot T_n$ . Используя свойства целой части 
-	   $\frac{x_0 - x}{T_n} < k_n < \frac{x_0 - x}{T_n} + 1$, получаем:
+	   $\frac{x_0 - x}{T_n} < k_n \le \frac{x_0 - x}{T_n} + 1$, получаем:
 	
 	\begin{enumerate}
 	\item $ x_n = x + k_n\cdot  T_n > x + \frac{x_0 - x}{T_n}\cdot T_n = x_0$;
 	\item $x_n = x + k_n\cdot T_n \leq x+ \left( \frac{x_0 - x}{T_n} + 1 
-	\right)T_n = k_0 + T_n$.
+	\right)T_n = x_0 + T_n$.
 	\end{enumerate}
 	
 	Отсюда $\forall n \in \N \implies 0 < x_n - x_0 \leq T_n \leq \frac{1}{n}
@@ -56,7 +56,7 @@
 	 Если $f(x)$ имеет период $T > 0$, то
 	 \begin{equation}
 	 \label{lec16:2}
-	  f \in R(\left[a, b\right]) \text{ (интегрируема на $[a, b]$)} \implies 
+	  f \in R(\left[0, T\right]) \text{ (интегрируема на $[0, T]$)} \implies 
 	  \forall a \in 
 	  \R
 	   \quad \exists \int\limits_a^{a+T} f(x)dx = \int \limits_0^T f(x)dx.
@@ -124,7 +124,8 @@
 	  Противоречие.
 	 \item Cимметричность:
 	 \[\forall f, g \in C(\left[a, b\right]) \implies \scal{f, g}
-	  \stackrel{\eqref{lec16:3}}{=} \int\limits_a^b f(x)g(x)\; = \int\limits_a^b 
+	  \stackrel{\eqref{lec16:3}}{=} \int\limits_a^b f(x)g(x)\; 
+	  dx = \int\limits_a^b 
 	  g(x)f(x)\; dx \stackrel{\eqref{lec16:3}}{=} \scal{g, f}.\]
 	 \item Линейность:
 	 \[\forall f, g, h \in C(\left[a, b\right]),\ \forall \lambda, \mu \in \R 
@@ -157,7 +158,7 @@
 	 На основании $\eqref{lec16:6}$ получаем \emph{неравенство Минковского}:
 	 \begin{equation}
 	 \label{lec16:7}
-	  \left(\int\limits_a^b(f(x) - g(x))^2\; dx\right)^\frac{1}{2} \le \left(\int
+	  \left(\int\limits_a^b(f(x) + g(x))^2\; dx\right)^\frac{1}{2} \le \left(\int
 	   \limits_a^b f^2(x)\; dx\right)^\frac{1}{2} + \left(\int \limits_a^b 
 	   g^2(x)\; dx\right) ^ \frac{1}{2}.
 	 \end{equation}
@@ -196,7 +197,7 @@
 	\scal{f, g} \stackrel{\eqref{lec16:3}}{=} 0.
 	\end{equation}
 	В этом случае будем писать $f \perp g$. В частности, для нулевой функции 
-	$f_0(x) \equiv 0 \forall x \in \left[a, b\right]$ имеем
+	$f_0(x) \equiv 0 \quad \forall x \in \left[a, b\right]$ имеем
 	$\scal{f_0, g} = \scal{0, g} = 0,\ \forall g \in C(\left[a, b\right])$, т.~е. 
 	$g\perp 0$.
 	 
@@ -271,8 +272,8 @@ a+2\pi],\ a \in \R$.
 функции имеем \[\int\limits_a^{a+2\pi}f(x)\; dx = \int\limits_0^{2\pi}f(x)\; 
 dx = const\quad
 \forall a \in \R,\]
-поэтому остаточно доказать теорему для $a = -\pi$, т.~е. на промежутке $]-\pi, 
-\pi[$.
+поэтому остаточно доказать теорему для $a = -\pi$, т.~е. на промежутке $[-\pi, 
+\pi]$.
 \begin{enumerate}
 \item Во-первых,
 \[\scal{1, \cos kx} = \int\limits_{-\pi}^{\pi} 1 \cdot \cos kx \; dx = 0,\]
@@ -290,11 +291,11 @@ kx$.
 \int\limits_{-\pi}^{\pi}\cos kx \sin mx \; dx = 0,\]
 т.~е. $\cos kx \perp \sin mx,\ \forall k, m \in \N$
 \item В-четвертых,
-\[\forall k, m \in N \implies \scal{\sin kx, \sin mx} =
+\[\forall k, m \in \N,\ k \neq m, \implies \scal{\sin kx, \sin mx} =
 \int\limits_{-\pi}^{\pi} \sin kx \sin mx \; dx =\]\[= \int\limits_0^{\pi} 
 (\cos(k-m)x -
 \cos(k+m)x)\; dx = \left[\frac{\sin(k-m)x}{k-m} -
-\frac{\sin(k+m)}{k+m}\right]_0^{\pi} = 0,\]
+\frac{\sin(k+m)x}{k+m}\right]_0^{\pi} = 0,\]
 т.~е. $\sin kx \perp \sin mx,\ \forall k \ne m$.
 \end{enumerate}
 Таким образом любые, две функции в $\ref{lec16:10}$ взаимно ортогональны.

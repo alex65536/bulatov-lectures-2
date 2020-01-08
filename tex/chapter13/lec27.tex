@@ -1,0 +1,151 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+
+\section{Предел ФКП}
+
+Рассмотрим ФКП $ w = f(z) $, определённую на некоторой области $ D \subset \C 
+$.
+Пусть $ z_0 $~--- предельная точка для $ D $. 
+Число $ p \in \C $~--- предел $ f(z) $ при $ z \to z_0 $, если
+\begin{equation}
+\label{lec27:1}
+\forall \eps > 0 \quad \exists \delta(\eps) > 0 \quad
+\forall z \in D,\ 0 < |z - z_0| \leq \delta \implies
+|f(z) - p| \leq \eps.
+\end{equation}
+При выполнении \eqref{lec27:1} пишут либо
+\[\lim\limits_{z \to z_0} f(z) = p,\]
+либо
+\[f(z) \underset{z \to z_0}{\to} p.\]
+Геометрически на комплексных плоскостях $ \encircle{z} $ и $ \encircle{w} $ 
+\eqref{lec27:1} означает на языке окрестностей, что
+\[
+\forall \eps > 0 \quad \exists \dot{\overline{B}}_\delta(z_0) 
+\text{ в } \encircle{z}\ (\text{открытый круг без центра } z_0 
+\text{ и с радиусом } \delta > 0)\quad 
+\forall z \in \dot{\overline{B}}_\delta(z_0)
+\]
+\[
+\text{ в } \encircle{z} \text{ его образ }
+w = f(z) \in \overline{B}_\eps(p).
+\]
+\begin{thm}[критерий сходимости ФКП]
+	Пусть имеется
+	$ f(z) = u + iv,\ u = u(x, y) \in \R,\ v = v(x, y) \in \R $ .
+	Тогда она сходится в точке
+	$ z_0 = x_0 + iy_0,$ где $x_0, y_0 \in \R $~--- предельная для $ D $, 
+	если и только если 
+	\[
+	\begin{cases}
+		\exists u_0 \in \R,\ \exists v_0 \in \R\\
+		u(x, y) \underset{\substack{
+				x \to x_0\\
+				y \to y_0}
+		}{\longrightarrow} u_0,\\
+		v(x, y) \underset{\substack{
+			x \to x_0\\
+			y \to y_0}
+		}{\longrightarrow} v_0,
+	\end{cases}
+	\]
+	при этом $ p = \lim\limits_{z \to z_0} f(z) = u_0 + iv_0$.
+\end{thm}
+\begin{proof}
+	Проводится по той же схеме, что и критерий сходимости комплексных 
+	последовательностей.
+\end{proof}
+
+В связи с тем, что сходимость ФКП равносильна сходимости 
+двух Ф2П, все основные свойства сходящихся Ф2П 
+автоматически
+переносятся на сходящиеся ФКП
+(единственность предела, предел линейной комбинации, 
+произведения, частного и т.~д.).
+Из локальных свойств сходящихся ФКП отметим локальную 
+ограниченность, т.~е. если
+$ f(z) \underset{z \to z_0}{\longrightarrow} p $, то 
+$ \exists \dot{\overline{B}}_\delta(z_0) \subset \C $ такой, 
+что $ \forall z \in 
+\dot{\overline{B}}_\delta(z_0) \implies \abs{f(z)} \leq c,\ c 
+= const \in\R\geq 0$.
+В этом случае по аналогии с действительными Ф2П будем использовать запись
+$ f(z) = O(1),\ z \to z_0 $. Если 
+$ f(z) \underset{z \to z_0}{\longrightarrow} 0 $, то
+$ f(z) $ называют бесконечно малой ФКП и в этом случае используют запись
+$ f(z) = o(1),\ z \to z_0 $.
+
+Кроме конечного предела в конечных точках для ФКП
+определяют и бесконечные пределы и пределы в бесконечных точках: для $ z_0 
+$~--- предельной для $ D \implies f(z)
+\underset{z \to z_0}{\longrightarrow} \infty$, если
+\[
+\forall \eps > 0\quad \exists \delta = \delta_\eps > 0\quad
+\forall z \in D,\ 0 < \abs{z - z_0} \leq \delta \implies \abs{f(z)} \geq \eps.
+\]
+Здесь также будем говорить, что $f(z)$~--- бесконечно большая 
+ФКП при $z\to z_0$.
+Бесконечно большая ФКП не является сходящейся, но имеет бесконечный предел.
+При этом, в отличие от действительных Ф2П знак бесконечности не определяется
+отдельно в связи с тем, что множество $ \C $ нельзя вполне упорядочить.
+
+Если $ f(z) = o(1) $ при $ z \to z_0,\ f(z) \neq 0 $, то $ \dfrac{1}{f(z)} 
+$~--- 
+ББФКП при $ z \to z_0 $ и наоборот. По той же схеме, как и для действительных
+Ф2П, для ФКП рассматриватся пределы на бесконечности.
+
+Пусть $ D $ неограниченна. Тогда 
+\[
+f(z) \underset{z \to \infty}{\longrightarrow} p \in \C \iff
+\forall \eps > 0 \quad \exists \delta = \delta_\eps > 0 \quad \forall z \in 
+D,\ 
+\abs{z} \geq \delta \implies 
+\abs{f(z) - p} \leq \eps.
+\]
+Здесь свойство локальной ограниченности также выполняется. 
+
+Для неограниченной
+области $ D $ рассматривается также для ФКП $ f(z) $ бесконечный 
+предел на бесконечности, а именно: $ f(z) \underset{z \to 
+z_0}{\longrightarrow} 
+\infty$, если
+\[
+\forall \eps > 0 \quad \exists \delta = \delta_\eps > 0 \quad \forall z \in 
+D,\ 
+\abs{z} \geq \delta \implies \abs{f(z)} \geq \eps.
+\]
+Здесь также в отличие от действительных Ф2П не рассматривается знак при
+бесконечности.
+Как и в случае действительных Ф2П, для ФКП справедлив \emph{критерий Гейне}
+существования конечного и бесконечного пределов в конечных точках или на 
+бесконечности:
+$\lim\limits_{z \to z_0} f(z) = p$ тогда и только тогда, когда
+\[\forall (z_n) \in D,\ z \underset{n \to \infty}{\longrightarrow} z_0,\ 
+z_n \neq z_0,\ \forall n \in \N\ (\text{последовательность Гейне}) \implies 
+f(z_n) \underset{n \to \infty}{\longrightarrow} p.
+\]
+\begin{proof}
+	По той же схеме, что и для действительных Ф2П.
+\end{proof}
+Кроме того, справедлив \emph{критерий Коши} сходимости ФКП:
+\[
+\lim\limits_{z \to z_0} f(z) = p \in \C \iff
+\forall \eps > 0 \quad \exists \delta = \delta_\eps > 0 \quad
+\forall z, t \in D : 
+\begin{cases}
+	0 < \abs{z - z_0} \leq \delta\\
+	0 < \abs{t - z_0} \leq \delta\\
+\end{cases}\hspace{-1em} \implies
+\abs{f(z) - f(t)} \leq \eps.
+\]
+
+\end{document}

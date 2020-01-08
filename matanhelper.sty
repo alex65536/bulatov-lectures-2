@@ -60,6 +60,7 @@
 \newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\appr}[1]{\xrightarrow[#1]{}}
 \newcommand{\scal}[1]{\left\langle #1 \right\rangle}
+\newcommand{\F}{\mathcal{F}}
 
 % Дуги и стрелки над обозначениями кривых
 \newcommand{\overbow@any}[2]{
@@ -114,6 +115,12 @@
 \renewcommand{\leq}{\leqslant}
 \renewcommand{\geq}{\geqslant}
 
+% Буквенные \Re и \Im
+\DeclareMathOperator{\@custom@Re}{Re}
+\DeclareMathOperator{\@custom@Im}{Im}
+\renewcommand{\Re}{\@custom@Re}
+\renewcommand{\Im}{\@custom@Im}
+
 % Еще переопределения
 \renewcommand{\emptyset}{\varnothing}
 
@@ -125,6 +132,16 @@
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\sign}{sgn}
 \DeclareMathOperator{\vp}{v.p.}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\Ln}{Ln}
+\DeclareMathOperator{\Arcsin}{Arcsin}
+\DeclareMathOperator{\Arccos}{Arccos}
+\DeclareMathOperator{\Arctg}{Arctg}
+\DeclareMathOperator{\Arcctg}{Arcctg}
+\DeclareMathOperator{\Arsh}{Arsh}
+\DeclareMathOperator{\Arch}{Arch}
+\DeclareMathOperator{\Arth}{Arth}
+\DeclareMathOperator{\Arcth}{Arcth}
 
 % arctan -> arctg
 \renewcommand{\arctan}{\arctg}

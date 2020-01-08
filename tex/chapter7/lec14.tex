@@ -102,15 +102,15 @@ x = \frac{t}{1+t}  \Big|_{1}^{0}
 	\cdot \frac{\Gamma(a) \Gamma(b)}{\Gamma(a+b)}  = \frac{b}{a+b}  B(a,b). \]
 	
 	В частности, если $a=m \in \N_0$, тогда:
-	\[  B(m+1,b) = \frac{m}{m+b} B(m,b) = \frac{m!}{(b+m)(b+m-1)\dots(b-2)(b-1)} 
+	\[  B(m+1,b) = \frac{m}{m+b} B(m,b) = \frac{m!}{(b+m)(b+m-1)\dots(b+2)(b+1)} 
 	B(1,b)  \]
 	
 	\[ B(1,b) = \int\limits_{0}^{1} \left( 1-x \right) ^{b-1} \; dx = \frac{1}{b} 
 	\]
 	В итоге получаем:
-	\[  B(m+1,b) = \frac{m!}{(b+m)(b+m-1)\dots(b-1)b}     \]
+	\[  B(m+1,b) = \frac{m!}{(b+m)(b+m-1)\dots(b+1)b}     \]
 	Аналогично, для $\forall n \in \N_0$:
-	\[  B(a,n+1) = \frac{n!}{(a+n)(a+n-1)\dots(a-1)a}  \]
+	\[  B(a,n+1) = \frac{n!}{(a+n)(a+n-1)\dots(a+1)a}  \]
 	В частности, для $\forall m,n \in \N_0$:
 	\[  B(m+1,n+1) = \frac{m! \; n!}{(1+m+n)!}   \]
 	
@@ -145,7 +145,7 @@ x = \frac{t}{1+t}  \Big|_{1}^{0}
 	\text{функция четна}
 	\end{gathered}	\right] = \frac{1}{2^{2a-1}} \cdot 2 \int\limits_{0}^{1} 
 	\left( 
-	1-t^2  \right)  \; dt =     \] 
+	1-t^2  \right)^{a-1}  \; dt =     \] 
 	\[  =  \left[  \begin{gathered}
 	t = \sqrt{y}, \; dt = \frac{dy}{2\sqrt{y}} \\
 	y = t^2  \big|_{0}^{1}
@@ -227,24 +227,24 @@ x = \frac{t}{1+t}  \Big|_{1}^{0}
 			\begin{equation}
 			\label{14:18}
 			a_n = 4 \int\limits_{0}^{\frac{\pi}{2}} \frac{\sin^2{at}}{\sin{t}} 
-			\sin{\left(2n-1 \right) } \; dt, \; n \in \N
+			\sin{(2n-1)t} \; dt, \; n \in \N
 			\end{equation}
 			имеем
 			\begin{equation}
 			\label{14:19}
-			a_n = \pi - E(a) \sin{\pi a} + b_n \sin{\pi a},
+			a_n = \pi - E(a) \sin{\pi a} + b_n,
 			\end{equation}
 			где
 			\begin{equation}
 			\label{14:20}
-			b_n = \left( - 1 \right)^{n-1} \int\limits_{0}^{1} \frac{t^{n-a-1} - 
-			t^{n+a-1} }{1+t} \; dt, \; n \in \N.
+			b_n = \left( - 1 \right)^{n-1} \sin{\pi a} \int\limits_{0}^{1}
+			\frac{t^{n-a-1} - t^{n+a-1} }{1+t} \; dt, \; n \in \N.
 			\end{equation}
 		\end{lemma}	
 			\begin{proof}
 				Для $\eqref{14:18}$ имеем
-				\[   a_n =  \int\limits_{0}^{\frac{\pi}{2}} \frac{\sin^2{at}}{\sin{t}} 
-				\sin{\left(2n-1 \right) } \; dt = \left[ 1 + \sum^{n-1}_{k = 1} \cos{2k t} 
+				\[   a_n =  4\int\limits_{0}^{\frac{\pi}{2}} \frac{\sin^2{at}}{\sin{t}} 
+				\sin{(2n-1)t} \; dt = \left[ 1 + 2\sum^{n-1}_{k = 1} \cos{2k t} 
 				= \frac{\sin{t} + 2 \sin{t} \cos{2t} + \dots + 2\sin{t} \cos{(2n - 
 				2)t}}{\sin{t}} \right. = \]
 				\[ = \left. \frac{\sin{t} + \left( \sin{3t} - \sin{t} \right) + \dots 
@@ -283,15 +283,17 @@ x = \frac{t}{1+t}  \Big|_{1}^{0}
 				t^a}{1+t} \right) \; dt - (-1)^{n-1} \int\limits_{0}^{1} \frac{t^{n-a-1} - 
 				t^{n+a-1}}{1+t} \; dt   \right) \sin{\pi a}  \stackrel{\eqref{14:17}, 
 				\eqref{14:20}}= \]
-				\[ \stackrel{\eqref{14:17}, \eqref{14:20}}= \pi - \left( E(a) - b_n 
-				\right) \sin{\pi a} = \pi - E(a) \sin{\pi a} + b_n \sin{\pi a} \implies 
+				\[ \stackrel{\eqref{14:17}, \eqref{14:20}}= \pi - \left( E(a) - \
+				\frac{b_n}{ \sin{\pi a}} 
+				\right) \sin{\pi a} = \pi - E(a) \sin{\pi a} + b_n \implies 
 				\eqref{14:19}. 
 				\qedhere \]
 			\end{proof}	
 			
 		Продолжим доказательство формулы Эйлера \eqref{14:16}. Интегрируя по 
 		частям, для \eqref{14:18} получаем:
-		\[  \left| a_n \right|   = \left| -4 \int\limits_{0}^{\frac{\pi}{2}} 
+		\[  \left| a_n \right|   = \left| -\frac{4}{2n-1}
+		\int\limits_{0}^{\frac{\pi}{2}} 
 		\frac{\sin^2{at}}{\sin{t}} \; d\left( \cos{(2n-1)t}\right)   \right|  =\]
 		\[ = \frac{4}{2n-1} \left| \left[ \frac{\sin^2{at}}{\sin{t}} \cos{(2n-1)t} 
 		\right]_{0}^{\frac{\pi}{2}} -\int\limits_{0}^{\frac{\pi}{2}} \cos{(2n-1)t} 
@@ -309,15 +311,16 @@ x = \frac{t}{1+t}  \Big|_{1}^{0}
 		Отсюда 
 		$\left| a_n \right|{\underset{n \to \infty}\longrightarrow} 0 \implies   a_n 
 		{\underset{n \to \infty}\longrightarrow} 0$.
-		\[  \left| b_n \right| = \left| (-1)^{n-1} \int\limits_{0}^{1} 
+		\[  \left| b_n \right| = \left| (-1)^{n-1} \sin{\pi a} \int\limits_{0}^{1} 
 		\frac{t^{n-a-1} - t^{n+a-1}}{1+t} \; dt \right| = \left[
-		\text{подынтегральная функция} \ge 0 \right] =  \int\limits_{0}^{1} 
-		\frac{t^{n-a-1} - t^{n+a-1}}{1+t} \; dt \le  \]
-		\[  \le \int\limits_{0}^{1} (t^{n-a-1} - t^{n+a-1})\; dt = \left(  
-		\frac{1}{n-a} - \frac{1}{n+a}\right)  {\underset{n \to 
-		\infty}\longrightarrow} 0  \implies  \left| b_n \right| {\underset{n \to 
-		\infty}\longrightarrow} 0  \implies   b_n  {\underset{n \to 
-		\infty}\longrightarrow} 0  \]
+		\text{подынтегральная функция} \ge 0 \right] = \]
+		\[ = \abs{\sin{\pi a}} \int\limits_{0}^{1} 
+		\frac{t^{n-a-1} - t^{n+a-1}}{1+t} \; dt \le
+		\abs{\sin{\pi a}} \int\limits_{0}^{1} (t^{n-a-1} - t^{n+a-1})\; dt = \]
+		\[ = \abs{\sin{\pi a}} \left( \frac{1}{n-a} - \frac{1}{n+a}\right)  
+		{\underset{n \to \infty}\longrightarrow} 0  \implies
+		\left| b_n \right| {\underset{n \to \infty}\longrightarrow} 0 \implies
+		b_n  {\underset{n \to \infty}\longrightarrow} 0 \]
 		
 		Далее, переходя к пределу при $n \to \infty$ в $\eqref{14:19}$, получим:
 		\[ 0 = \lim_{n \to \infty} a_n =  \lim_{n \to \infty} \pi - E(a) \sin{\pi a} 
