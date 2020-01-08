@@ -259,10 +259,10 @@ u_n(z) = c_n(z - z_0)^n,\ n \in \N_0 $ аналитичны всюду в $ \C $
 \end{thm}
 
 \begin{proof}
-	Пусть $ l_R = \partial K_R = \{t \in D\ |\ |t - z_0| = R \} $. Тогда для 
-	$ \forall z \in K_R $ и $ \forall t \in l_R $ имеем
-	$ |z - z_0| < |t - z_0| = R, $
-	поэтому для $ q = \dfrac{z - z_0}{t - z_0} $ имеем
+	Рассмотрим $ \forall z \in K_R $ и $R_1 : 0 \le |z - z_0| < R_1 < R$.
+	Пусть $ l_{R_1} = \partial K_{R_1} = \{t \in D\ |\ |t - z_0| = R_1 \} $. Тогда для $ \forall t \in l_{R_1} $ имеем
+	$ |z - z_0| < |t - z_0| = R_1, $
+	поэтому для $ q = \dfrac{z - z_0}{t - z_0} $ получаем
 	\[ |q| = \left|\frac{z - z_0}{t - z_0}\right| < 1. \]
 	
 	Тогда
@@ -273,14 +273,14 @@ u_n(z) = c_n(z - z_0)^n,\ n \in \N_0 $ аналитичны всюду в $ \C $
 	
 	Здесь, учитывая, что ряд
 	\[ \sum\limits_{n = 0}^{\infty}\frac{(z - z_0)^n f(t)}{(t - z_0)^{n + 1}} \]
-	сходится равномерно на $ l_R $, его можно почленно интегрировать:
+	сходится равномерно на $ l_{R_1} $, его можно почленно интегрировать:
 	
-	\[ \frac{1}{2 \pi i} \underset{l_R}\oint \frac{f(t)}{t - z} dt = 
+	\[ \frac{1}{2 \pi i} \underset{l_{R_1}}\oint \frac{f(t)}{t - z} dt = 
 	\frac{1}{2 \pi i} \sum\limits_{n = 0}^{\infty} \left( 
-	\underset{l_R}\oint\frac{f(t)dt}{(t - z_0)^{n + 1}} \right)(z - z_0)^n = 
+	\underset{l_{R_1}}\oint\frac{f(t)dt}{(t - z_0)^{n + 1}} \right)(z - z_0)^n = 
 	\sum\limits_{n = 0}^{\infty} c_n (z - z_0)^n, \]
 	где
-	\[ c_n = \frac{1}{2 \pi i} \underset{l_R}\oint\frac{f(t)dt}{(t - z_0)^{n + 
+	\[ c_n = \frac{1}{2 \pi i} \underset{l_{R_1}}\oint\frac{f(t)dt}{(t - z_0)^{n + 
 	1}} = [\text{интегральное представление производной}] = 
 	\frac{f^{(n)}(z_0)}{n!}. \]
 	Получаем в силу интегральной формулы Коши, что
@@ -389,7 +389,7 @@ z_0| < R $.
 	\eqref{34:11} $ и при этом коэффициенты этого разложения можно вычислить по 
 	формуле
 	\begin{equation}\label{34:12}
-		c_n = \frac{1}{2 \pi i} \underset{l_R}\oint\frac{f(t)}{(t - z_0)^{n + 1}} 
+		c_n = \frac{1}{2 \pi i} \underset{l}\oint\frac{f(t)}{(t - z_0)^{n + 1}} 
 		dt,\ n \in \Z,
 	\end{equation}
 	где $ l $~--- произвольный замкнутый кусочно-гладкий контур в кольце. При 
