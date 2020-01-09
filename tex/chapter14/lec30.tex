@@ -75,8 +75,8 @@ c_0\left(-z_0 + z_1 - z_1 + z_2 - \ldots - z_{n-1} + z_n\right) =
 c_0\left(z_n - z_0\right) = c_0\left(z_\beta - z_\alpha\right).\]
 
 В частности, если $c_0 = 1,$ то
-$\displaystyle\int\limits_{\tiny \overbow{z(\alpha)z(\beta)}}{dz} = 
-z(\beta) - z(\alpha).$
+$\displaystyle\int\limits_{\tiny \overbow{z_\alpha z_\beta}}{dz} = 
+z_\beta - z_\alpha.$
 Если же $c_0 = 0, $ то
 $\displaystyle\int\limits_{\tiny\overbow{z_\alpha z_\beta}}{0\;dz} = 0$.
 
@@ -88,7 +88,7 @@ $\displaystyle\int\limits_{\tiny\overbow{z_\alpha z_\beta}}{0\;dz} = 0$.
   v = v\left(x, y\right) = \Im f(z).
  \end{cases}
 \end{equation*}
-Используем разбиение точками $P = \{z_k\}$, где $z_k = x(t_k) + y(t_k)$, 
+Используем разбиение точками $P = \{z_k\}$, где $z_k = x(t_k) + iy(t_k)$, 
 причем $\{t_k\}_{k=0}^n $~--- соответствующие точки разбиения 
 $\left[\alpha,\beta\right]$. Множество отмеченных точек
 $S = \{M_k\} = \{(x(\tau_k), y(\tau_k))\}$. Тогда рассматриваемую интегральную 
@@ -231,7 +231,7 @@ M\int\limits_l{|dz|} = Ml_0,\] где $l_0 $~--- длина $l.$
 
 \begin{thm}[Интегральная теорема Коши]
 Если $f(z)$ непрерывно дифференцируема в односвязной области
-$D \subset \C,$ то тогда для любого замкнутого кусочно-непрерывного контура 
+$D \subset \C,$ то тогда для любого замкнутого кусочно-гладкого контура 
 выполняется
 \end{thm}
 \begin{equation}
