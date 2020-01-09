@@ -107,36 +107,31 @@ y
 [признак Дирихле равномерной сходимости НИЗОП-1]
 
 Пусть при каждом $\fix y \in Y$ функции $f(x,y)$, $g(x,y)$ непрерывны 
-для $\forall x \ge a$. Если функция $g(x,y)$ непрерывно дифференцируема по $x$
-(т.~е. $\exists g'_x(x,y)$ на $\left[a;+\infty\right[ \times Y $), то в 
-случае, когда $g'_x$ сохраняет один и тот же знак, т.~е. $g(x,y)$ 
-монотонна по $x \ge a$ для $\forall \fix \ y \in Y$, то 
-$\int\limits_a^{+\infty} g(x,y)f(x,y) \overset{Y}{\rightrightarrows}$ при 
-выполнении следующих условий:
+для $\forall x \ge a$, и функция $g(x, y)$ непрерывно дифференцируема по $x$.
+Тогда $\int\limits_a^{+\infty} g(x,y)f(x,y) \overset{Y}{\rightrightarrows}$
+при выполнении следующих условий:
 \begin{enumerate}
-\item $H(x,y) = \int\limits_a^x f(t,y)\;dt$ равномерно ограничена на 
-$[a;+\infty[$ 
-, т.~е. $\exists C = const \ge 0 \implies \left|H(x,y)\right| \le C \quad
-\forall x \ge a\quad \forall y \in Y$
-\item $g(x,y)\underset{x \to +\infty}{\overset{Y}{\rightrightarrows} 0}$
+	\item $H(x,y) = \int\limits_a^x f(t,y)\;dt$ равномерно ограничена на 
+	$[a;+\infty[$, т.~е. $\exists C = const \ge 0 \implies 
+	\left|H(x,y)\right| \le C \quad \forall x \ge a\quad \forall y \in Y$
+	
+	\item $g(x, y)$ монотонна по $x \ge a$ для $\forall \fix \ y \in Y$
+	
+	\item $g(x,y)\underset{x \to +\infty}{\overset{Y}{\rightrightarrows} 0}$
 \end{enumerate}
 \end{thm}
 
 \begin{thm}[признак Абеля равномерной сходимости НИЗОП-1]
 
-Пусть при $\forall \fix \ y \in Y $ функции $g(x,y)$, $f(x,y)$, $g'_x(x,y)$ 
-непрерывны на $\left[a;+\infty\right[\times Y.$Если $ g'_x(x,y) \not = 0\ 
-\forall x 
-\ge a \ \forall y \in Y $, то $\int\limits_a^{+\infty} g(x,y)f(x,y) 
-\overset{Y}{\rightrightarrows}$ при выполнении следующих условий:
-
+Пусть при каждом $\fix y \in Y$ функции $f(x,y)$, $g(x,y)$ непрерывны 
+для $\forall x \ge a$, и функция $g(x, y)$ непрерывно дифференцируема по $x$.
+Тогда $\int\limits_a^{+\infty} g(x,y) f(x,y) \overset{Y}{\rightrightarrows}$
+при выполнении следующих условий:
 \begin{enumerate}
-\item $\int\limits_a^{+\infty}f(x,y)dx \overset{Y}{\rightrightarrows}$
-
-\item $g(x,y)$ ограничена, то есть $\exists 
-C = 
-const \ge 0\forall x \ge a \quad \forall y \in Y 
-\quad  \implies \left|g(x,y)\right| \le C $
+	\item $\int\limits_a^{+\infty}f(x,y)dx \overset{Y}{\rightrightarrows}$
+	\item $g(x, y)$ монотонна по $x \ge a$ для $\forall \fix \ y \in Y$
+	\item $g(x,y)$ ограничена, то есть $\exists C = const \ge 0\forall x 
+	\ge a \quad \forall y \in Y \quad \implies \left|g(x,y)\right| \le C $
 \end{enumerate}
 \end{thm}
 
