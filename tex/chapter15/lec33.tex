@@ -20,8 +20,8 @@
 	
 	\begin{equation}
 	\label{lec33:7}
-	f^{(n)}(z_0) = \frac{n!}{2\pi i} \oint\limits_{l = \partial D}
-	\frac{f(t)}{(t-z_0)^{n+1}} dz,\
+	f^{(n)}(z) = \frac{n!}{2\pi i} \oint\limits_{l = \partial D}
+	\frac{f(t)}{(t-z)^{n+1}} dt,\
 	t \in l,\ z \in D,\ n \in \N_0.
 	\end{equation}
 	
@@ -30,13 +30,12 @@
 \begin{proof}
 	Если $n=0$, то по интегральной формуле Коши
 	\[
-	f(z_0) = \frac{1}{2\pi i} \oint \limits_l
-	\frac{f(t)}{t-z_0} dt,\ t \in l,\ z \in D.
+	f(z) = \frac{1}{2\pi i} \oint \limits_l
+	\frac{f(t)}{t-z} dt,\ t \in l,\ z \in D.
 	\]
-	Зафиксируем $t \in l$ и заключим $z_0 \in D$ в
-	некоторый компакт $D_0 \subset D$ с 
-	кусочно-гладкой положительно ориентированной границей $l_0 = \partial D_0$. 
-	Тогда
+	Заключим $z_0 \in D$ в некоторый компакт $D_0 \subset D$ с
+	кусочно-гладкой положительно ориентированной границей
+	$l_0 = \partial D_0$. Тогда
 	$
 	\forall t \in l_0,\ 
 	\forall z \in D_0
@@ -70,7 +69,7 @@
 	то есть \eqref{lec33:7} задана для $n = 1$.
 	Рассмотрим далее 
 	\[
-	\phi_1(t, z) = \frac{f(t)}{(t-z)^2},\ t \in l_0.
+	\phi_1(t, z) = \frac{f(t)}{(t-z)^2},\ t \in l_0, \
 	z \in D_0
 	\]
 	Снова получим, как и выше, что 
