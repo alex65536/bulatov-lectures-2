@@ -33,13 +33,9 @@
 	f(z) = \frac{1}{2\pi i} \oint \limits_l
 	\frac{f(t)}{t-z} dt,\ t \in l,\ z \in D.
 	\]
-	Заключим $z_0 \in D$ в некоторый компакт $D_0 \subset D$ с
-	кусочно-гладкой положительно ориентированной границей
-	$l_0 = \partial D_0$. Тогда
-	$
-	\forall t \in l_0,\ 
-	\forall z \in D_0
-	\implies t - z \neq 0.$
+	Пусть $n > 0$.
+	Заключим $z \in D$ в некоторый компакт $D_0 \subset D$. Тогда
+	$\forall t \in l\quad t - z \neq 0.$
 	Отсюда в силу аналитичности $f(t)$ получаем, что
 	\begin{equation}
 	\label{lec33:9}
@@ -55,17 +51,11 @@
 	получаем, что 
 	\begin{equation}
 	\label{lec33:10}
-	\exists f'(z) = \frac{1}{2\pi i} \oint\limits_{l_0}
+	\exists f'(z) = \frac{1}{2\pi i} \oint\limits_{l}
 	\frac{\partial \phi(t, z)}{\partial z} dt = 
-	\frac{1}{2\pi i} \oint\limits_{l_0}\frac{f(t)}{(t-z)^2} 
-	dt.
+	\frac{1}{2\pi i} \oint\limits_{l = \partial D}\frac{f(t)}{(t-z)^2} 
+	dt,
 	\end{equation}
-	Отсюда, учитывая замечание к интегральной формуле Коши 
-	для многосвязных областей, имеем 
-	\[
-	f'(z) = \frac{1}{2\pi i} \oint\limits_{l = \partial D} \frac{f(t)}{(t-z)^2} 
-	dt
-	\]
 	то есть \eqref{lec33:7} задана для $n = 1$.
 	Рассмотрим далее 
 	\[
@@ -74,7 +64,7 @@
 	\]
 	Снова получим, как и выше, что 
 	\[
-	\exists f''(z) = \frac{1}{2\pi i} \oint\limits_{l_0}
+	\exists f''(z) = \frac{1}{2\pi i} \oint\limits_{l}
 	\left( \frac{f(t)}{(t-z)^2} \right)' dt =
 	\frac{2!}{2\pi i} \oint\limits_{l = \partial D}
 	\frac{f(t)}{(t-z)^3} dt.
