@@ -72,13 +72,13 @@
 	Используя важный пример
 	\[  \oint \limits_{ l_{R}^{+} }  \frac{dz}{z-z_0} = 2 \pi i,    \]
 	имеем:
-	\[     \left| \frac{1}{2 \pi i} \oint \limits_{l_R} \frac{f(t)}{t-z_0} \ dt - 
-	f(z_0)   \right| =  \left| \frac{1}{2 \pi i} \oint \limits_{l_R} 
-	\frac{f(t)}{t-z_0} \ dt - \frac{f(z_0)}{2 \pi i} \oint \limits_{l_R} 
-	\frac{dt}{t-z_0}   \right| = \left| \frac{1}{2 \pi i} \oint \limits_{l_R} 
+	\[     \left| \frac{1}{2 \pi i} \oint \limits_{l_R^{+}} \frac{f(t)}{t-z_0} \ dt - 
+	f(z_0)   \right| =  \left| \frac{1}{2 \pi i} \oint \limits_{l_R^{+}} 
+	\frac{f(t)}{t-z_0} \ dt - \frac{f(z_0)}{2 \pi i} \oint \limits_{l_R^{+}} 
+	\frac{dt}{t-z_0}   \right| = \left| \frac{1}{2 \pi i} \oint \limits_{l_R^{+}} 
 	\frac{f(t) - f(z_0)}{t-z_0} \ dt  \right| = \]
-	\[  \frac{1}{2 \pi }  \left| \oint \limits_{l_R} \frac{f(t) - f(z_0)}{t-z_0} 
-	\ dt \right| \le  \frac{1}{2 \pi } \oint \limits_{l_R} \frac{ \left|  f(t) - 
+	\[  \frac{1}{2 \pi }  \left| \oint \limits_{l_R^{+}} \frac{f(t) - f(z_0)}{t-z_0} 
+	\ dt \right| \le  \frac{1}{2 \pi } \oint \limits_{l_R^{+}} \frac{ \left|  f(t) - 
 	f(z_0) \right| }{ \left|  t-z_0   \right|   } \ \left| dt   \right| \le    \]
 	\[  \le \left[ \begin{gathered}  
 	f \ \text{равномерно непрерывна на} \ K_R, \text{тогда} \\
@@ -89,7 +89,7 @@
 	\end{gathered}\right] \le   \]
 	\[ \le \frac{1}{2\pi} \oint \limits_{l_R^{+}} \frac{\eps}{R} \ |dt| = 
 	\frac{\eps}{2 \pi R } \oint \limits_{l_R^{+}} \ |dt| = \frac{\eps}{2 \pi R } 
-	\cdot 2 \pi R = \eps     \]
+	\cdot 2 \pi R = \eps.     \]
 	Т.~е. 
 	\[  \forall \eps > 0 \quad \exists R \le \delta : \text{на} \ l_R = \partial 
 	K_R \text{ такой, что}        \]
