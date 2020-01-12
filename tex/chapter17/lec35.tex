@@ -17,12 +17,14 @@
 	Здесь должны были быть определения особых точек. Вот они:
 	
 	\begin{defn}
-		Точка $z_0$ называется \emph{устранимой особой точкой (УОТ)} функции $f(z)$, если
+		Точка $z_0$ называется \emph{устранимой особой точкой (УОТ)} функции $f(z)$, 
+		если
 		\[\exists \lim_{z\to z_0}f(z)\in \mathbb{C}.\]
 	\end{defn}
 
 	\begin{defn}
-		Точка $z_0$ называется \emph{полюсом $k$-го порядка} функции $f(z)$ если все пределы вида
+		Точка $z_0$ называется \emph{полюсом $k$-го порядка} функции $f(z)$ если все 
+		пределы вида
 		\[\lim_{z\to z_0}\left((z - z_0)^{k - 1} f(z)\right) = \infty,\]а
 		\[\lim_{z\to z_0}\left((z - z_0)^k f(z)\right) \ne \infty.\]
 		
@@ -30,7 +32,8 @@
 	\end{defn}
 
 	\begin{defn}
-		Точка $z_0$ называется \emph{существенной особой точкой (СОТ)} функции $f(z)$, если
+		Точка $z_0$ называется \emph{существенной особой точкой (СОТ)} функции 
+		$f(z)$, если
 		\[\nexists \lim_{z\to z_0}f(z).\]
 	\end{defn}
 	\end{erem}
@@ -140,9 +143,11 @@
 			\item
 			$f(z) = \dfrac{1-e^{-z}}{z^2}, z = 0$ --- простой полюс, так как 
 			\[
-				f(z) = \dfrac{1- \left(1-\dfrac{z}{1!}+\dfrac{z^2}{2!}-\ldots\right)}{z^2} = \frac{1}{z} - \frac{1}{2} + \frac{z}{6}- \ldots
+				f(z) = \dfrac{1- \left(1-\dfrac{z}{1!}+\dfrac{z^2}{2!}-\ldots\right)}{z^2} 
+				= \frac{1}{z} - \frac{1}{2} + \frac{z}{6}- \ldots
 			\]
-			Из разложения следует, что $\underset{0}{\res}f(z) = c_{-1} = 1.$ Также в силу \eqref{35.3}
+			Из разложения следует, что $\underset{0}{\res}f(z) = c_{-1} = 1.$ Также в 
+			силу \eqref{35.3}
 			\[
 			\underset{0}{\res}f(z) = \lim_{z\to 0}\dfrac{1-e^{-z}}{z^2} =
 			 \lim_{z\to 0}\dfrac{1-e^{-z}}{z} = 1.
@@ -215,7 +220,8 @@
 		\]
 		Рассмотрим $z = 0$ как полюс порядка не выше $p=2.$
 		\[
-			\underset{0}{\res}f(z) = \dfrac{1}{1!}\lim_{z\to 0}\left(z^2\left(\dfrac{1-e^{-z}}{z^2}\right)\right)' = 
+			\underset{0}{\res}f(z) = \dfrac{1}{1!}\lim_{z\to 
+			0}\left(z^2\left(\dfrac{1-e^{-z}}{z^2}\right)\right)' = 
 			\lim_{z\to 0} (1 - e^{-z})' = 1.
 		\]
 	\end{example}
