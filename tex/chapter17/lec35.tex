@@ -129,7 +129,27 @@
 	Отметим, что \eqref{35.3} справедлива не только тогда, когда $z_0$ --- полюс,
 	но и для УОТ.
 	
-	% TODO: примеры
+		
+	\begin{examples}
+		\begin{enumerate}
+			\item 
+			$f(z) = \dfrac{\sin z}{z}, z = 0 $ --- УОТ, так как 
+			$\exists \lim\limits_{z\to z_0} = 1 \implies \underset{z_0}{\res}f(z) = 0,$
+			тоже самое получим и в силу \eqref{35.3}: 
+			$\underset{0}{\res}f(z)= \lim\limits_{z\to 0}z \dfrac{\sin z}{z} = 0.$
+			\item
+			$f(z) = \dfrac{1-e^{-z}}{z^2}, z = 0$ --- простой полюс, так как 
+			\[
+				f(z) = \dfrac{1- \left(1-\dfrac{z}{1!}+\dfrac{z^2}{2!}-\ldots\right)}{z^2} = \frac{1}{z} - \frac{1}{2} + \frac{z}{6}- \ldots
+			\]
+			Из разложения следует, что $\underset{0}{\res}f(z) = c_{-1} = 1.$ Также в силу \eqref{35.3}
+			\[
+			\underset{0}{\res}f(z) = \lim_{z\to 0}\dfrac{1-e^{-z}}{z^2} =
+			 \lim_{z\to 0}\dfrac{1-e^{-z}}{z} = 1.
+			\]
+		\end{enumerate}
+	\end{examples}
+	
 	
 	Отметим, что \eqref{35.3} принимает наиболее простой вид в случае, когда 
 	$f(z) = \frac{\varphi(z)}{\psi(z)},$ где 
@@ -186,7 +206,19 @@
 	полюс порядка $p,$ но и когда известно, что $x_0$ --- полюс порядка не выше 
 	$p.$
 	
-	% TODO : пример
+	\begin{example}
+		\[
+			\begin{cases}
+				f(z) = \dfrac{1-e^{-z}}{z^2} \\
+				z = 0 \text{ --- простой полюс}
+			\end{cases}
+		\]
+		Рассмотрим $z = 0$ как полюс порядка не выше $p=2.$
+		\[
+			\underset{0}{\res}f(z) = \dfrac{1}{1!}\lim_{z\to 0}\left(z^2\left(\dfrac{1-e^{-z}}{z^2}\right)\right)' = 
+			\lim_{z\to 0} (1 - e^{-z})' = 1.
+		\]
+	\end{example}
 	
 	Наиболее простой вид у \eqref{35.5} получается в случае, если $\begin{cases}
 	f(z)  = \frac{\varphi(z)}{(z-z_0)^p}, \\
