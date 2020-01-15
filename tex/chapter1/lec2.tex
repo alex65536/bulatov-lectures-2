@@ -99,9 +99,9 @@ S_n(x) = \underbrace{-f_0(x) + f_1(x)}_{= U_1} +
 		\item $\forall U_n(x),\ n \in \N$ непрерывна и неотрицательна на
 	$E=[a,b]$
 		\item $\sum U_n(x) \overset{[a,b]}{\longrightarrow} f(x)$
+		\item $f(x)$ непрерывна на $E=[a,b]$
 	\end{enumerate}
-Тогда, если $f(x) \in C([a,b])$, ряд 
-$\sum U_n(x) \overset{[a,b]}{\rightrightarrows} f(x)$
+Тогда ряд $\sum U_n(x) \overset{[a,b]}{\rightrightarrows} f(x)$
 \end{thm}	
 
 \begin{proof}
@@ -114,7 +114,7 @@ $\sum U_n(x) \overset{[a,b]}{\rightrightarrows} f(x)$
 		\item $\forall \fix \ x \in [a,b] \implies 
 	r_{n+1}(x) - r_n(x) = (f(x) - S_{n+1}(x)) - (f(x) - S_n(x)) = 
 	S_n(x) - S_{n+1}(x)= -U_{n+1}(x) \leq 0$, т.~е.
-	$r_n(x)$ как последовательность убывает.
+	$r_n(x)$ как последовательность монотонно убывает.
 		\item Так как $S_n(x) \overset{[a,b]}
 	{\underset{n \to \infty}\longrightarrow} f(x)$, то 
 	$r_n(x) = f(x) - S_n(x) \overset{[a,b]}
@@ -158,18 +158,17 @@ r_m(x_0) \underset{n \to \infty}{\not \longrightarrow} 0
 \end{rems}	
 
 \begin{thm}[признак Дини для ФП]
-Если для ФП $f_n(x),\ n \in \N,\ x \in [a,b]$ выполнены условия:
+Пусть для ФП $f_n(x),\ n \in \N,\ x \in [a,b]$ выполнены условия:
 	\begin{enumerate}
-		\item $\forall \fix \ n \in \N \implies
-		f_n(x) \in C([a,b])$
+		\item $\forall n \in \N \implies f_n(x) \in C([a,b])$
 		\item $\forall \fix \ x \in [a,b] \implies
 		(f_n(x))$ --- монотонная последовательность 
+		\item $f_n(x) \overset{[a,b]}
+		{\underset{n \to \infty}\longrightarrow} f(x) \in C([a,b])$
 	\end{enumerate}			
-Если $f_n(x) \overset{[a,b]}
-{\underset{n \to \infty}\longrightarrow} f(x) \in C([a,b])$, то
-$f_n(x) \overset{[a,b]}
-{\underset{n \to \infty}\rightrightarrows} f(x) \in C([a,b])$
-\end{thm}  
+Тогда $f_n(x) \overset{[a,b]} {\underset{n \to \infty}\rightrightarrows}
+f(x) \in C([a,b])$
+\end{thm}
 
 \begin{thm}[признак Абеля равномерной сходимости ФР]
 Пусть:
@@ -177,11 +176,13 @@ $f_n(x) \overset{[a,b]}
 	\item $\sum b_n(x) \overset{E}{\rightrightarrows}$
 	\item ФП $(a_n(x)),\ n \in \N,\ x \in E$ ограничена 
 в совокупности (равномерно ограничена как по $n$, так и по $x$, т.~е.
-$\exists c = const \geq 0 \implies (a_n(x)) \leq c,\ 
+$\exists c = const \geq 0 \implies |a_n(x)| \leq c,\ 
 \forall n \in N, \ \forall x \in E$)
+	\item
+	$\forall \fix \ x \in E \implies (a_n(x))$ --- монотонная 
+последовательность
 \end{enumerate}
-Если $\forall \fix \ x \in E \implies (a_n(x))$ --- монотонная 
-последовательность, то ряд $\sum a_n(x)b_n(x) \overset{E}{\rightrightarrows}$
+Тогда ряд $\sum a_n(x)b_n(x) \overset{E}{\rightrightarrows}$
 \end{thm}	
 
 \begin{proof}
@@ -200,10 +201,11 @@ $\exists c = const \geq 0 \implies (a_n(x)) \leq c,\
 	\item Для ФП $(a_n(x)),\ x \in E \implies a_n 
 \overset{E}
 {\underset{n \to \infty}\rightrightarrows} 0$
+	\item
+	$\forall \fix \ x \in E \implies (a_n(x))$ --- монотонная 
+последовательность
 \end{enumerate}
-Тогда, если $\forall \fix \ x \in E$ следует, 
-что $(a_n(x))$ --- монотонная последовательность, 
-то ряд $\sum a_n(x)b_n(x) \overset{E}
+Тогда ряд $\sum a_n(x)b_n(x) \overset{E}
 {\underset{n \to \infty}\rightrightarrows}$
 \end{thm}
 
