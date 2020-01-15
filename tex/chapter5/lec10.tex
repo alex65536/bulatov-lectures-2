@@ -144,17 +144,14 @@ y
 Пусть
 
 \begin{enumerate}
-\item Для $\forall \fix  y \in Y$ функция $f(x,y)$ непрерывна для $\forall x 
-\in 
-[a;+\infty)$ 
-.
-\item $\forall A \ge a \implies f(x,y) \overset{\forall [a;A]}{\underset{y \to 
-y_0}{\rightrightarrows}} \phi(x) $, где $y_0$~--- 
-предельная точка для множества $Y$.
+	\item Для $\forall \fix  y \in Y$ функция $f(x,y)$ непрерывна для $\forall x 
+\in [a;+\infty)$
+	\item $\forall A \ge a \implies f(x,y) 
+\overset{\forall [a;A]}{\underset{y \to y_0}{\rightrightarrows}} \phi(x)$,
+где $y_0$~--- предельная точка для множества $Y$.
+	\item $\int\limits_a^{+\infty}f(x,y)dx \overset{Y}\rightrightarrows$
 \end{enumerate}
-
-Если \[\int\limits_a^{+\infty}f(x,y)dx \overset{Y}\rightrightarrows, \] то 
-тогда 
+Тогда:
 \begin{equation}\label{lec10:12}
 \exists \underset{y \to y_0}\lim F(y) \stk{lec9_1:1}= \underset{y \to 
 y_0}\lim\int\limits_a^{+\infty}f(x,y)dx =\int\limits_a^{+\infty} \underset{y 
@@ -162,11 +159,9 @@ y_0}\lim\int\limits_a^{+\infty}f(x,y)dx =\int\limits_a^{+\infty} \underset{y
 \end{thm}
 
 \begin{proof}
-Используя критерий Гейне получаем, что предельная функция ${\phi(x) 
-=\underset{y \to y_0}{\lim}f(x,y)}$ непрерывна $\forall x \ge a$. Поэтому 
+Используя критерий Гейне, получаем, что для $\forall x \ge a$ предельная функция ${\phi(x) = \underset{y \to y_0}{\lim}f(x,y)}$ непрерывна. Поэтому 
 $\phi(x) \in R([\widetilde{A};\bar{A}])\quad \forall [\widetilde{A};\bar{A}] 
-\subset 
-[a;+\infty) $.
+\subset [a;+\infty) $.
 
 Далее из критерия Коши сходимости НИЗОП-1 в силу равномерной сходимости 
 \eqref{lec9_1:1} следует, что \[\forall \eps > 0\quad \exists \delta = 
@@ -215,7 +210,7 @@ A \ge \delta \quad \forall y \in Y  $ второе и третье слагае�
 \int\limits_{a}^{A}(f(x,y) - \phi(x))dx \right| + 2\eps \le 
 \int\limits_{a}^{A}\left| f(x,y) - \phi(x)\right|dx + 2\eps  .\]
 
-$ \forall A \ge \delta \ge a \quad \forall y \in Y$ зафиксируем $A$, тогда из 
+Зафиксируем $\forall A \ge \delta \ge a \quad \forall y \in Y$. Тогда из 
 теоремы о предельном переходе в СИЗОП следует: \[ \exists \sigma_\eps \quad 
 \forall y 
 \in Y \quad 0 < \left|y - y_0 \right| \le \sigma_\eps \implies 
