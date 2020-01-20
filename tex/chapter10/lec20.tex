@@ -78,8 +78,8 @@ f(x) \sim \dfrac{1}{\pi} \ioinf
 \right) \sin xy 
 \right) dy = \] \[ =
 \dfrac{1}{\pi}
-\ioinf f(t) \left(
-\int\limits_{-\infty}^{+\infty} (\cos ty\cos xy + \sin ty\sin xy) dt
+\ioinf \left(
+\int\limits_{-\infty}^{+\infty} f(t) (\cos ty\cos xy + \sin ty\sin xy) dt
 \right) dy =
 \dfrac{1}{\pi} \ioinf \left(
 \ipminf f(t) \cos(t - x)y\;dt
@@ -119,7 +119,7 @@ x - \fix
 1)& z = -t \\
 2)& z = t
 \end{bmatrix} =
-\lim\limits_{A \to \infty} \dfrac{1}{\pi}
+\lim\limits_{A \to +\infty} \dfrac{1}{\pi}
 \int\limits_{0}^{+\infty}
 \dfrac{f(x - t) + f(x + t)}{t} \sin At\;dt.
 \]

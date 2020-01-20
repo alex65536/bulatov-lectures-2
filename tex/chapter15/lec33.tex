@@ -13,15 +13,15 @@
 
 \section{Интегральное представление производной аналитичной ФКП}
 	
-\begin{thm}[об интегральном предствалении производной ФКП]
+\begin{thm}[об интегральном представлении производной ФКП]
 	Если $f(z)$ аналитична в односвязной области $D$ 
 	с кусочно-гладкой границей и непрерывна в $\overline D$, то 
 	$f(z)$ бесконечно дифференцируема в $D$, причем 
 	
 	\begin{equation}
 	\label{lec33:7}
-	f^{(n)}(z_0) = \frac{n!}{2\pi i} \oint\limits_{l = \partial D}
-	\frac{f(t)}{(t-z_0)^{n+1}} dz,\
+	f^{(n)}(z) = \frac{n!}{2\pi i} \oint\limits_{l = \partial D}
+	\frac{f(t)}{(t-z)^{n+1}} dt,\
 	t \in l,\ z \in D,\ n \in \N_0.
 	\end{equation}
 	
@@ -30,17 +30,12 @@
 \begin{proof}
 	Если $n=0$, то по интегральной формуле Коши
 	\[
-	f(z_0) = \frac{1}{2\pi i} \oint \limits_l
-	\frac{f(t)}{t-z_0} dt,\ t \in l,\ z \in D.
+	f(z) = \frac{1}{2\pi i} \oint \limits_l
+	\frac{f(t)}{t-z} dt,\ t \in l,\ z \in D.
 	\]
-	Зафиксируем $t \in l$ и заключим $z_0 \in D$ в
-	некоторый компакт $D_0 \subset D$ с 
-	кусочно-гладкой положительно ориентированной границей $l_0 = \partial D_0$. 
-	Тогда
-	$
-	\forall t \in l_0,\ 
-	\forall z \in D_0
-	\implies t - z \neq 0.$
+	Пусть $n > 0$.
+	Заключим $z \in D$ в некоторый компакт $D_0 \subset D$. Тогда
+	$\forall t \in l\quad t - z \neq 0.$
 	Отсюда в силу аналитичности $f(t)$ получаем, что
 	\begin{equation}
 	\label{lec33:9}
@@ -52,30 +47,24 @@
 	= \frac{f(t)}{(t-z)^2}
 	\text{~--- непрерывная на } D_0.
 	\]
-	Тогда в силу теоремы о дифференцировании СИЗОП ФКП
+	Тогда в силу теоремы о дифференцировании ИЗОП ФКП
 	получаем, что 
 	\begin{equation}
 	\label{lec33:10}
-	\exists f'(z) = \frac{1}{2\pi i} \oint\limits_{l_0}
+	\exists f'(z) = \frac{1}{2\pi i} \oint\limits_{l}
 	\frac{\partial \phi(t, z)}{\partial z} dt = 
-	\frac{1}{2\pi i} \oint\limits_{l_0}\frac{f(t)}{(t-z)^2} 
-	dt.
+	\frac{1}{2\pi i} \oint\limits_{l = \partial D}\frac{f(t)}{(t-z)^2} 
+	dt,
 	\end{equation}
-	Отсюда, учитывая замечание к интегральной формуле Коши 
-	для многосвязных областей, имеем 
-	\[
-	f'(z) = \frac{1}{2\pi i} \oint\limits_{l = \partial D} \frac{f(t)}{(t-z)^2} 
-	dt
-	\]
 	то есть \eqref{lec33:7} задана для $n = 1$.
 	Рассмотрим далее 
 	\[
-	\phi_1(t, z) = \frac{f(t)}{(t-z)^2},\ t \in l_0.
+	\phi_1(t, z) = \frac{f(t)}{(t-z)^2},\ t \in l_0, \
 	z \in D_0
 	\]
 	Снова получим, как и выше, что 
 	\[
-	\exists f''(z) = \frac{1}{2\pi i} \oint\limits_{l_0}
+	\exists f''(z) = \frac{1}{2\pi i} \oint\limits_{l}
 	\left( \frac{f(t)}{(t-z)^2} \right)' dt =
 	\frac{2!}{2\pi i} \oint\limits_{l = \partial D}
 	\frac{f(t)}{(t-z)^3} dt.
@@ -96,7 +85,7 @@
 	\item Как и в случае интегральной формулы Коши, 
 	\eqref{lec33:7} можно переписать в виде 
 	\[
-	\oint\limits_l \frac{f(t)}{(t-z)^{n+1}} = 
+	\oint\limits_l \frac{f(t)}{(t-z)^{n+1}} dt = 
 	\begin{cases}
 	\frac{2\pi i}{n!} f^{(n)}(z),& z \in D \\
 	0,& z \notin D
@@ -158,7 +147,7 @@
 \section{Некоторые приложения интегрального
 	представления производных ФКП}
 
-Далее $f(z)$, дифференцируемую для $\forall z \in \C$
+Далее $f(z)$, дифференцируемую для $\forall z \in \C$,
 будем называть \emph{целой ФКП}.
 \begin{thm}[Лиувилль]
 	Если целая $f(z)$ является ограниченной в $\C$,
@@ -219,11 +208,11 @@ $ \abs{\sin x} \leq 1,\ \abs{\cos x} \leq 1,\ \forall x \in \R $.
 $ \cos z = \cos iy = \ch y
 \underset{y \to \infty}{\to} \infty$.
 
-\begin{crl}[основная теорема алгебры]
+\begin{crl*}[основная теорема алгебры]
 	Если многочлен ${P_n(z) = c_0 + c_1z + \dots + c_nz^n}$, $c_k \in \C,\
 	k = \overline{0, n},\ c_n \neq 0 $, имеет $ n \geq 1 $, то уравнение
 	$ P_n(z) = 0 $ имеет хотя бы один комплексный корень.
-\end{crl}
+\end{crl*}
 \begin{proof}
 	Пусть $ P_n(z) \neq 0\quad \forall z \in \C $.
 	Тогда $ f(z) = \dfrac{1}{P_n(z)} $ не имеет особенностей в $ \C $ 
@@ -232,7 +221,7 @@ $ \cos z = \cos iy = \ch y
 	$ f(z) $~--- целая ФКП.
 	
 	Учитывая, что $ f(\infty) = 0$, получаем, что
-	\[\exists R = const > 0\quad \forall z \in \C,\ |z| \ge R \implies f(z) 
+	\[\exists R = const > 0\quad \forall z \in \C,\ |z| \ge R \quad f(z) 
 	\text{ ограничена}.\] Кроме того, по теореме Вейерштрасса, $f(z)$ будет 
 	ограничена и на компакте $ \abs{z} \leq R $.
 	Значит, $ f(z) $ ограничена на $ \C $ и поэтому по теореме Лиувилля следует, 

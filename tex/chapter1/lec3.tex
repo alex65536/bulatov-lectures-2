@@ -76,7 +76,7 @@
 \end{rem}
 
 \begin{exmp}
-	Пусть $U_n(x) = x^n(1 - x), n \in \N$.
+	Пусть $U_n(x) = x^n(1 - x), \ n \in \N$.
 	
 	Найдем множество сходимости этого ФР: $\sum U_n(x)$. Имеем:
 	\[
@@ -168,6 +168,13 @@
 	\]
 \end{proof}
 
+\begin{erem}
+Скорее всего, доказательство теоремы неполное, поскольку нигде не
+показывается, что $f(x) \in R([a; b])$. Здесь только показывается
+допустимость почленного интегрирования
+в случае, если $f(x)$ интегрируема.
+\end{erem}
+
 \begin{crl*}
 	Используя соответствующую связь между ФП и ФР, из доказанной выше теоремы 
 	получаем теорему о почленном интегрировании ФП:
@@ -186,15 +193,15 @@
 \end{crl*}
 
 \begin{thm}[о почленном дифференцировании ФР]
-	Пусть $\exists x_0 \in [a; b] \colon \sum U_n(x_0)$ сходится.
-	Если
-	$
-	\forall n \in \N \text{ и } \forall x \in [a; b] \implies \exists U_n'(x)
-	$ --- непрерывная на $[a; b]$, то в случае, когда ряд 
-	$
-	\sum U_n'(x) \overset{[a; b]}{\rightrightarrows},
-	$ 
-	то возможно почленное дифференцирование рассматриваемого ряда:
+	Пусть:
+	\begin{enumerate}
+		\item $\exists x_0 \in [a; b] \colon \sum U_n(x_0)$ сходится
+		\item $\forall n \in \N \text{ и } \forall x \in [a; b] \implies
+		\exists	U_n'(x)$ --- непрерывная на $[a; b]$
+		\item Ряд $\sum U_n'(x) 
+		\overset{[a; b]}{\rightrightarrows}$
+	\end{enumerate}
+	Тогда возможно почленное дифференцирование рассматриваемого ряда:
 	\begin{equation} \label{eq:20}
 	\exists \left(\sum U_n(x)\right)' = \sum U_n'(x) \ \forall x \in [a; b]
 	\end{equation}
@@ -232,16 +239,12 @@
 	Из доказанной теоремы непосредственно следует:
 	\begin{thm}[о почленном дифференцировании ФП]
 		 Пусть 
-		 $
-		 	\exists x_0\in \left[a,b\right], f_n(x_0)
-		 	\underset{n\longrightarrow \infty}{\longrightarrow}.
-		 $
+		 $ \exists x_0 \in \left[a,b\right], \ f_n(x_0)
+		 \underset{n\longrightarrow \infty}{\longrightarrow}. $
 		 Если 
-		 $
-		 	\exists f_n'(x)\in C(\left[a,b\right]), \forall n\in \N,
-		 $
-		 то в случае, когда $ f_n'\left(x\right)  \overset{[a; b]}{\underset{n\to 
-		 \infty}\rightrightarrows},$ имеем:
+		 $\exists f_n'(x) \in C(\left[a,b\right]), \ \forall n\in \N$ и
+		 $f_n' \left(x\right) \overset{[a; b]}{\underset{n\to 
+		 \infty}\rightrightarrows}$, имеем:
 		 \begin{equation*}
 		 	\exists(\lim\limits_{n\to \infty}f_n(x))'
 		 	\overset{\left[a,b\right]}{=}
