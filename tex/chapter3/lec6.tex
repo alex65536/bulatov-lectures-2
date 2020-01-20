@@ -29,9 +29,9 @@
 По аналогии с критерием Гейне существования предела Ф1П доказывается критерий
 Гейне существования частного предела Ф2П:
 \[
-\eqref{lec6:2} \iff \quad
+\eqref{lec6:2} \iff
 \forall (y_n) \in D,\ y_n \neq y_0,\ y_n \underset{n \to \infty}{\to} y_0 \
-\text{[последовательности Гейне]} \implies f(x, y_n) 
+\text{[последов-ти Гейне]} \implies f(x, y_n) 
 \stackrel{[a, b]}{\underset{n \to \infty}{\to}} g(x).
 \]
 Функцию $ g(x), x \in [a, b] $ будем называть 
@@ -60,11 +60,16 @@ y_n \underset{n \to \infty}{\to} y_0 \implies
 f(x, y_n) \stackrel{[a, b]}{\underset{n \to \infty}{\rightrightarrows}} g(x).
 \end{equation}
 \begin{thm}[о предельном переходе в СИЗОП]
-	Пусть при каждом $ \fix y \in D $ функция $ f(x, y) $ непрерывна 
-	$ \forall x \in [a, b] $. Если $
-	f(x, y) \stackrel{[a, b]}{\underset{y \to y_0}{\rightrightarrows}} g(x)$
-	, где $y_0$ ~--- предельная точка для $ D $, то, во-первых, 
-	$ g(x) \in C([a, b]) $, и, во-вторых, для СИЗОП \eqref{lec5:1} получаем:
+	Пусть:
+	\begin{enumerate}
+		\item При каждом $\fix y \in D$ функция $ f(x, y) $ непрерывна
+		для $\forall x \in [a, b]$
+		\item $f(x, y) 
+		\stackrel{[a, b]}{\underset{y \to y_0}{\rightrightarrows}}
+		g(x)$, где $y_0$ ~--- предельная точка для $D$		
+	\end{enumerate}	
+	Тогда, во-первых, $g(x) \in C([a, b])$, и, во-вторых, для СИЗОП
+	\eqref{lec5:1} получаем:
 	\begin{equation}
 	\label{lec6:6}
 	\exists \lim\limits_{y \to y_0} F(y) \stackrel{\eqref{lec5:1}}{=} 
@@ -214,14 +219,14 @@ d]$,
 	\stackrel{[a, b]}{\underset{\Delta y \to 0}{\rightrightarrows}} f_y'(x, y_0).
 	\end{equation}
 	Используя формулу Лагранжа конечных приращений по второй переменной 
-	Ф2П получаем, что 
+	Ф2П, получаем, что 
 	\[ 
 	\exists \Theta = \Theta(x, \Delta y) \in \left]0, 1\right[ 
 	\implies \dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{\Delta y} = 
 	f_y'(x, y_0 + \Theta\Delta y).
 	\]
 	В силу непрерывности $ f_y'(x, y) $ на компакте $ [a, b] \times 
-	[c, d] $ по теореме Кантора получаем, что $ f_y'(x, y) $ равномерно
+	[c, d] $, по теореме Кантора получаем, что $ f_y'(x, y) $ равномерно
 	непрерывна на этом компакте. Поэтому
 	\begin{equation}
 		\begin{gathered}
@@ -250,16 +255,16 @@ d]$,
 	\int\limits_a^b \dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{\Delta y} dx =
 	\int\limits_a^b \lim\limits_{\Delta y \to 0} 
 	\dfrac{f(x, y_0 + \Delta y) - f(x, y_0)}{\Delta y} dx = 
-	\int\limits_a^b f_y'(x, y_0) dx.
 	\]
+	\[ = \int\limits_a^b f_y'(x, y_0) dx. \]
 \end{proof}
 \begin{rem}[о дифференцировании СИЗОП с переменными пределами интегрирования]
 	Если в формуле
 	\[F(y) = \int\limits_a^b f(x, y)\,dx\]
 	$a = a(y), b = b(y)$~--- непрерывно-дифференцируемые функции на $[c; d]$,
-	а их значения не выходят за соответствующий отрезок $[a^*;b^*]$ и $f(x, y),
-	f'_y(x, y)\in C([a^*; b^*] \times [c; d])$, то тогда имеем следующее 
-	обобщение формулы Лагранжа:
+	а их значения не выходят за соответствующий отрезок $[a^*;b^*]$, и
+	$f(x, y), f'_y(x, y) \in C([a^*; b^*] \times [c; d])$, то тогда имеем 
+	следующее обобщение формулы Лагранжа:
 	\[\exists \left(\int\limits_{a(y)}^{b(y)} f(x, y)\,dx\right)'_y = 
 	f(b(y), y)b'(y) - f(a(y), y)a'(y) + 
 	\int\limits_{a(y)}^{b(y)}f'_y(x, y)\,dx.\]

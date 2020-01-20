@@ -77,21 +77,21 @@
 	\underbrace{\frac{|\sin x|}{x}}_{\leq 1} dx \leq \int\limits_0^{+\infty} 
 	e^{-xy} dx = \frac{1}{y} \in \R \text{~--- сходится для $\forall y > 0$}.\] 
 	
-	Кроме того, у $\displaystyle f(x, y) = e^{-xy} \frac{\sin x}{x}$ существует 
-	предел $\lim\limits_{x 
-	\rightarrow +0} f(x, y) = e^0 \cdot 1 = 1 \in \R$. Точка $x = 0$ является 
-	точкой устранимого разрыва и также $\displaystyle\forall y > 0\ \forall 
-	x > 0 \implies \exists f^{'}_y (x, y) = -e^{-xy} \sin x$, непрерывная для 
-	$\displaystyle\forall [\alpha, \beta] \subset (0, +\infty)$, поскольку 
-	$|f^{'}_y 
-	(x, y)| \leq e^{-xy} \leq e^{-\alpha x} = g(x)$.
+	Заметим, что у $\displaystyle f(x, y) = e^{-xy} \frac{\sin x}{x}$ 
+	существует предел $\lim\limits_{x \rightarrow +0} f(x, y) =
+	e^0 \cdot 1 = 1 \in \R$. Следовательно, точка $x = 0$ является
+	точкой устранимого разрыва. Кроме того, для $\displaystyle\forall y > 0
+	\ \forall x > 0 \implies \exists f^{'}_y (x, y) = -e^{-xy} \sin x$,
+	непрерывная для $\displaystyle\forall [\alpha, \beta]
+	\subset (0, +\infty)$.
 	
-	Так как
+	Поскольку $|f^{'}_y (x, y)| \leq e^{-xy} \leq e^{-\alpha x} = g(x)$, а
 	$\int\limits_0^{+\infty} g(x) dx = \int\limits_0^{+\infty} 
 	e^{-\alpha x} dx \overset{\alpha > 0}{=} \frac{1}{\alpha} \in \R$ 
-	сходится, то по признаку Вейерштрасса $\int\limits_0^{+\infty} f^{'}_y (x, y) 
-	dx$ сходится локально равномерно для $\forall y > 0$. Поэтому воспользуемся 
-	формулой Лейбница почленного дифференцирования:
+	сходится, то по признаку Вейерштрасса
+	$\int\limits_0^{+\infty} f^{'}_y (x, y)	dx$ сходится локально равномерно
+	для $\forall y > 0$. Поэтому мы имеем право	воспользоваться формулой
+	Лейбница почленного дифференцирования:
 	\[\exists F^{'}(y) = - \int\limits_0^{+\infty} e^{-xy} \sin x\; dx 
 	= \ldots = \text{[см. 
 \hyperref[lec9:eaxsinbx-exmp]{пример в пункте \ref*{lec8:methods}}]} = - 

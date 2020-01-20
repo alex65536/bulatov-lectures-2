@@ -69,10 +69,11 @@
  \label{lec12:9}
 \end{equation}
 
-Нетрудно показать, что \eqref{lec12:9} сходится по признаку Дирихле, причем 
-сходимость будет равномерной для $a \in [0; +\infty[$ в силу признака Абеля 
-равномерной сходимости НИЗОП-1. Учитывая, что из обобщенного интеграла 
-Эйлера-Пуассона следует, что \[\frac1{\sqrt t} = \frac2{\sqrt\pi} \ioinf 
+Нетрудно показать, что \eqref{lec12:9} сходится равномерно для
+$a \in [0; +\infty[$ в силу признака Абеля равномерной сходимости НИЗОП-1.
+Воспользовавшись следствием из обобщенного интеграла Эйлера-Пуассона,
+получим:
+\[\frac1{\sqrt t} = \frac2{\sqrt\pi} \ioinf 
 e^{-ty^2}\;dy,\ t > 0 \implies F(a) = \frac1{\sqrt\pi} \ioinf e^{-at} \sin t\; 
 dt \ioinf e^{-ty^2} dy =\]\[= \frac1{\sqrt\pi} \ioinf dt \ioinf e^{-(a + 
 y^2)t} \sin t\; dy = \left[\begin{array}{c}\text{допустима перестановка} \\ 
@@ -143,7 +144,7 @@ b^2 \ioinf \frac{\sin ax\;dx}{x(x^2 + b^2)}.\]
 \lambda_{1, 2} = \pm b$. Т.~е. $G(a) = c_1e^{ab} + c_2e^{-ab},\ a > 0,\ b > 
 0$. Далее $c_1 = 0$, т.~к. функция \eqref{lec12:10} ограничена:
 \[|G(a)| \le \ioinf \frac{|\cos x|}{x^2 + b^2} \le \ioinf \frac{dx}{x^2 + b^2} 
-= \frac\pi{2|b|} \in \R.\] При этом $e^{ab} \appr{a\to \infty} \infty,\ b>0$. 
+= \frac\pi{2b} \in \R.\] При этом $e^{ab} \appr{a\to \infty} \infty,\ b>0$. 
 Но тогда $G(a) = c_2e^{-ab},\ a > 0,\ b > 0$.
 
 Здесь возможен предельный переход при $a \to +0,\ b > 0$. В результате получим:
@@ -241,7 +242,7 @@ dt - \int\limits_{\beta a}^{\beta b} \frac{f(t)}t dt = [\text{обратная
 \end{proof}
 
 \begin{thm}[первая формула Фруллани]
-Если $f \in C([0; +\infty))$ и $\exists f(+\infty)$~--- конечное, то тогда для 
+Если $f \in C([0; +\infty))$ и $\exists f(+\infty) \in \R$, то тогда для 
 интеграла Фруллани \eqref{lec12:16} имеем:
 \begin{equation}
 \Phi(a, b) = [a > 0,\ b > 0] = (f(0) - f(+\infty))\ln \frac ba. 
@@ -285,8 +286,9 @@ d(\beta)
 f(+\infty), 
 \text{т.~к. } f \in C([a, b])
 \end{gathered}
-\right] \implies \Phi(a, b) = (f(0) - f(+\infty))\cdot \ln\left(\frac 
-ba\right).\qedhere\]
+\right] \implies \]
+\[ \implies \Phi(a, b) = (f(0) - f(+\infty))\cdot \ln\left(\frac 
+ba\right) \]
 \end{proof}
 
 
