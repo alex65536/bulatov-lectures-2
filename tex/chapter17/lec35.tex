@@ -166,18 +166,18 @@
 	\end{examples}
 	
 	Отметим, что \eqref{35.3} принимает наиболее простой вид в случае, когда 
-	$f(z) = \dfrac{\varphi(z)}{\psi(z)},$ где 
-	$\varphi(z)$ --- аналитическая в точке $z_0, \psi(z)$ такова, что $z_0$ --- 
+	$f(z) = \dfrac{\phi(z)}{\psi(z)},$ где 
+	$\phi(z)$ --- аналитическая в точке $z_0, \psi(z)$ такова, что $z_0$ --- 
 	простой нуль $(\psi(z_0) = 0, \psi'(z_0) \ne 0).$
 	\[
 		\underset{z_0}{\res} f(z) = \lim\limits_{z\to 
-		z_0}\frac{(z-z_0)\varphi(z)}{\psi(z) - \psi(z_0)} = 
-		\lim\limits_{z\to z_0}\frac{\varphi(z)}{\frac{\psi(z) - \psi(z_0)}{z - z_0}} 
-		= \frac{\varphi(z_0)}{\psi'(z_0)}.
+		z_0}\frac{(z-z_0)\phi(z)}{\psi(z) - \psi(z_0)} = 
+		\lim\limits_{z\to z_0}\frac{\phi(z)}{\frac{\psi(z) - \psi(z_0)}{z - z_0}} 
+		= \frac{\phi(z_0)}{\psi'(z_0)}.
 	\]
 	\begin{equation}\label{35.4}
-		\underset{z_0}{\res} \frac{\varphi(z)}{\psi(z)} = 
-		\frac{\varphi(z_0)}{\psi'(z_0)}.
+		\underset{z_0}{\res} \frac{\phi(z)}{\psi(z)} = 
+		\frac{\phi(z_0)}{\psi'(z_0)}.
 	\end{equation}
 	
 	В случае рациональной функции: $f(z) = \frac{P(z)}{Q(z)}$ --- правильная 
@@ -236,15 +236,15 @@
 	\end{example}
 	
 	Наиболее простой вид у \eqref{35.5} получается в случае, если $\begin{cases}
-	f(z)  = \frac{\varphi(z)}{(z-z_0)^p}, \\
+	f(z)  = \frac{\phi(z)}{(z-z_0)^p}, \\
 	f(z) \text{ --- аналитическая.}
 	\end{cases}$
 	\begin{equation} \label{35.6}
-		\underset{z_0}{\res}  \frac{\varphi(z)}{(z-z_0)^p} = \frac{1}{(p-1)!}
+		\underset{z_0}{\res}  \frac{\phi(z)}{(z-z_0)^p} = \frac{1}{(p-1)!}
 		 \lim\limits_{z\to z_0} \left((z-z_0)^p 
-		 \frac{\varphi(z)}{(z-z_0)^p}\right)^{(p-1)} = 
-		 \frac{1}{(p-1)!} \varphi^{(p-1)}(z)\bigg|_{z = z_0} = 
-		 \frac{\varphi^{(p-1)}(z_0)}{(p-1)!}.
+		 \frac{\phi(z)}{(z-z_0)^p}\right)^{(p-1)} = 
+		 \frac{1}{(p-1)!} \phi^{(p-1)}(z)\bigg|_{z = z_0} = 
+		 \frac{\phi^{(p-1)}(z_0)}{(p-1)!}.
 	\end{equation}
 	Как и \eqref{35.5}, \eqref{35.6} справедлива в случае, когда $z_0$ --- полюс 
 	порядка не выше $p$.
